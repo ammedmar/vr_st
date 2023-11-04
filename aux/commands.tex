@@ -1,3 +1,40 @@
 % !TEX root = ../stability.tex
 
 % Write new commands below
+
+\newcommand{\bbR}{\mathbb{R}}
+
+\definecolor{darkdgmcolor}{rgb}{0.0, 0.0, 0.8}
+\definecolor{darkgreen}{rgb}{0.0, 0.8, 0.0}
+\definecolor{purple}{RGB}{153,50,204}
+\definecolor{dgmcolor}{RGB}{255,20,147}
+\definecolor{barccolor}{RGB}{20,147,255}
+\definecolor{myred}{RGB}{227,26,28}
+
+\newcommand{\ling}[1]{{ \textcolor{purple} {#1}}}
+
+\newcommand{\facundo}[1]{{ \textcolor{blue} {#1}}}
+
+\DeclareMathOperator{\VR}{VR}
+\DeclareMathOperator{\opH}{H}
+% \newcommand{\sqbarc}[1]{\Sq^{#1}\barc}
+
+\DeclareMathOperator{\barc}{Bar}
+\DeclareMathOperator{\img}{Im}
+
+\newcommand{\Hpt}[4][\Ftwo]{\opH_{#2}(\VR_{#4}(#3);\,#1)}
+\newcommand{\Hbarc}[3][\Ftwo]{\barc \opH_{#2}(\VR_\bullet(#3);\,#1)}
+\newcommand{\sqbarc}[3][\Ftwo]{\barc\Sq^{#2}(\VR_\bullet(#3);\,#1)}
+\newcommand{\fillrad}[1]{\operatorname{FillRad}(#1)}
+\newcommand{\field}{\mathbb{F}}
+
+\newcommand{\rp}{\mathbb{RP}}
+\newcommand{\bbS}{\mathbb{S}} % for sphere
+\newcommand{\diam}{\operatorname{diam}}
+
+\newcommand{\db}{d_{\mathrm{B}}}
+\newcommand{\dgh}{d_{\mathrm{GH}}}
+
+\newcommand{\Coordinate}[2]%
+{ \coordinate (#1) at (#2);
+}
