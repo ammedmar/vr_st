@@ -2,4 +2,39 @@
 
 \section{Preliminaries}\label{s:preliminaries}
 
-\TBW
+\subsection{Vietoris--Rips complex}\label{ss:vietoris-rips}
+
+\ling{I am using the open Vietoris--Rips filtration in this section. This should be mentioned here or earlier.}
+\ling{mention somewhere that we identify the geometric realization of a simplicial complex with itself}
+\footnote{We identify a simplicial complex with its geometric realization.}
+
+\begin{enumerate}
+	\item\label{prop:manifold} {\rm \cite[Prop.~9.4]{lim2020vietoris}}.
+	If $M$ be a closed connected $n$-dimensional Riemannian manifold,
+	\[
+	(0,2\fillrad{M}) \in \Hbarc{n}{M}.
+	\]
+
+	\item\label{prop:pH1} {\rm \cite[Prop.~7.10]{virk20201}}.
+	If $X$ be a simply-connected geodesic space, then
+	\[
+	\Hbarc{1}{X} = \emptyset.
+	\]
+\end{enumerate}
+
+\subsection{Filling radius}\label{ss:filling_radius}
+
+Any compact metric space $X$ can be isometrically embedded into the space $L^\infty(X)$ of all bounded real-valued functions on $X$, via the map $x\in X\mapsto d_X(x,\cdot)$ where $d_X(x,\cdot)$ is the distance function to $x$. Let $U_\epsilon(X)$ denote the $\epsilon$-neighborhood of $X$ in $L^\infty(X)$.
+For an $n$-dimensional Riemannian manifold $M$, its \textbf{filling radius} is defined as the infimal $\epsilon>0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $M\hookrightarrow U_\epsilon(M)$ \cite[page 108]{gromov2007metric}.
+
+\subsection{Persistence theory}
+
+Let $\sR$ denote the category of real numbers and $\Vec_\bullet$ that of $\Z$-graded finite dimensional vector spaces over a fixed field $\k$, that is, collections $V = \set{V_n}_{n\in\Z}$ of such vector spaces as objects with collections $f = \set{f_n}_{n\in\Z}$ of linear maps as morphisms.
+The category of graded persistence modules $\Vec_\bullet^\sR$ is the functor category $\Fun(\sR, \Vec_\bullet)$.
+
+\subsection{Persistence cohomology}
+
+\subsection{Barcodes}
+
+We use open intervals to represent bars in the barcode of a persistence module. We say a bar $(b,d)$ is \textbf{dominated by} another bar $(b',d')$ if $b\geq b'$ and $d\leq d'$, or equivalently if $(b,d)$ is contained in $(b',d')$.
+
