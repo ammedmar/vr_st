@@ -1,0 +1,71 @@
+% !TEX root = ../vr_st.tex
+
+\section{Vietoris--Rips persistence}\label{s:preliminaries}
+
+\subsection{Vietoris--Rips complex}\label{ss:vietoris-rips}
+
+\ling{I am using the open Vietoris--Rips filtration in this section. This should be mentioned here or earlier.}
+\ling{mention somewhere that we identify the geometric realization of a simplicial complex with itself}
+\footnote{We identify a simplicial complex with its geometric realization.}
+
+\begin{enumerate}
+	\item\label{prop:manifold} {\rm \cite[Prop.~9.4]{lim2020vietoris}}.
+	If $M$ be a closed connected $n$-dimensional Riemannian manifold,
+	\[
+	(0,2\fillrad{M}) \in \Hbarc{n}{M}.
+	\]
+
+	\item\label{prop:pH1} {\rm \cite[Prop.~7.10]{virk20201}}.
+	If $X$ be a simply-connected geodesic space, then
+	\[
+	\Hbarc{1}{X} = \emptyset.
+	\]
+\end{enumerate}
+
+\subsection{Filling radius}\label{ss:filling_radius}
+
+Any compact metric space $X$ can be isometrically embedded into the space $L^\infty(X)$ of all bounded real-valued functions on $X$, via the map $x\in X\mapsto d_X(x,\cdot)$ where $d_X(x,\cdot)$ is the distance function to $x$. Let $U_\epsilon(X)$ denote the $\epsilon$-neighborhood of $X$ in $L^\infty(X)$.
+For an $n$-dimensional Riemannian manifold $M$, its \textbf{filling radius} is defined as the infimal $\epsilon>0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $M\hookrightarrow U_\epsilon(M)$ \cite[page 108]{gromov2007metric}.
+
+\subsection{Metric models}
+
+For any integer $n \geq 1$ and real number $r > 0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
+The real projective space $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
+Let $[x]$ denote the equivalence class of $x$. We equip $\rp^n(r)$ with the quotient metric defined as
+\[
+d_{\rp^n(r)}([x],[x'])\defeq\min \{d_{\bbS^n(r)}(x,x'),d_{\bbS^n(r)}(-x,x')\}.
+\]
+For the simplicity of notation, let $\bbS^n\defeq\bbS^n(1)$ and $\rp^n\defeq\rp^n(2)$, so that $\diam\left(\bbS^n \right)=\diam\left(\rp^n \right)=\pi.$
+It is proved in \cite{katz1983filling} that for any $n \geq 1$ their filling radius, as defined in \cref{ss:filling_radius}, satisfy
+\[
+\fillrad{\bbS^n} = \frac{1}{2}\arccos\left(\frac{-1}{n+1}\right), \qquad \fillrad{\rp^n}=\frac{\pi}{3}.
+\]
+We denote by $\zeta_n$ twice the filling radius of $\bbS^n$, i.e., $\zeta_n \defeq \arccos\left(\frac{-1}{n+1}\right)$.
+
+\subsection{Vietoris--Rips homotopy types}
+
+We recall the following results related to the homotopy type of the Vietoris--Rips complex of spheres and projective spaces.
+
+\begin{proposition}
+	Let $n$ be a positive integer.
+	\begin{enumerate}[{\rm (a)}]
+		\item\label{prop:S1}{\rm \cite[Thm.~7.4]{adamaszek2017vietoris}.}
+		For $t \in \left(\frac{2l\pi}{2l+1}, \frac{2(l+1)\pi}{2l+3}\right]$
+		\[
+		\VR_t(\bbS^1) \simeq \bbS^{2l+1}.
+		\]
+
+		\item\label{prop:Sn}{\rm \cite[Thm.~10]{lim2020vietoris}.}
+		For $t \in \left(0, \zeta_n\right]$
+		\[
+		\VR_t(\bbS^n) \simeq \bbS^n.
+		\]
+
+		\item\label{prop:RPn}{\rm \cite[Thm.~4.5]{adams2022metric}.}
+		For $t \in \left(0,\frac{2\pi}{3} \right]$
+		\[
+		\VR_t(\rp^n) \simeq \rp^n.
+		\]
+	\end{enumerate}
+	\anibal{Maybe unify $l$ and $n$.}
+\end{proposition}

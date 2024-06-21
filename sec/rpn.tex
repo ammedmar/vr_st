@@ -1,51 +1,8 @@
-% !TEX root = ../stability.tex
+% !TEX root = ../vr_st.tex
 
-\section{Real projective spaces}\label{s:continuous}
+\section{Computations}\label{s:computations}
 
 In this section ...
-
-\subsection{Metric models}
-
-For any integer $n\geq 1$ and real number $r>0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
-The real projective space $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
-Let $[x]$ denote the equivalence class of $x$. We equip $\rp^n(r)$ with the quotient metric defined as
-\[
-d_{\rp^n(r)}([x],[x'])\defeq\min \{d_{\bbS^n(r)}(x,x'),d_{\bbS^n(r)}(-x,x')\}.
-\]
-For the simplicity of notation, let $\bbS^n\defeq\bbS^n(1)$ and $\rp^n\defeq\rp^n(2)$, so that $\diam\left(\bbS^n \right)=\diam\left(\rp^n \right)=\pi.$
-It is proved in \cite{katz1983filling} that for any $n \geq 1$ their filling radius, as defined in \cref{ss:filling_radius}, satisfy
-\[
-\fillrad{\bbS^n} = \frac{1}{2}\arccos\left(\frac{-1}{n+1}\right), \qquad \fillrad{\rp^n}=\frac{\pi}{3}.
-\]
-We denote by $\zeta_n$ twice the filling radius of $\bbS^n$, i.e., $\zeta_n \defeq \arccos\left(\frac{-1}{n+1}\right)$.
-
-\subsection{Vietoris--Rips homotopy types}
-
-We recall the following results related to the homotopy type of the Vietoris--Rips complex of spheres and projective spaces.
-
-\begin{proposition}
-	Let $n$ be a positive integer.
-	\begin{enumerate}[{\rm (a)}]
-		\item\label{prop:S1}{\rm \cite[Thm.~7.4]{adamaszek2017vietoris}.}
-		For $t \in \left(\frac{2l\pi}{2l+1}, \frac{2(l+1)\pi}{2l+3}\right]$
-		\[
-		\VR_t(\bbS^1) \simeq \bbS^{2l+1}.
-		\]
-
-		\item\label{prop:Sn}{\rm \cite[Thm.~10]{lim2020vietoris}.}
-		For $t \in \left(0, \zeta_n\right]$
-		\[
-		\VR_t(\bbS^n) \simeq \bbS^n.
-		\]
-
-		\item\label{prop:RPn}{\rm \cite[Thm.~4.5]{adams2022metric}.}
-		For $t \in \left(0,\frac{2\pi}{3} \right]$
-		\[
-		\VR_t(\rp^n) \simeq \rp^n.
-		\]
-	\end{enumerate}
-	\anibal{Maybe unify $l$ and $n$.}
-\end{proposition}
 
 \subsection{Fundamental bars of $\VR_\bullet(\rp^n)$}
 
@@ -156,6 +113,7 @@ We recall the following results related to the homotopy type of the Vietoris--Ri
 \end{proof}
 
 \subsection{Barcodes and Steenrod barcodes of $\bbS^n$}\label{ex:Sn}
+
 Because the Vietoris--Rips complexes of $\bbS^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$. Therefore, all bars are dominated by $(0,\pi)$.
 
 First, consider the case of $n=1$.
@@ -173,57 +131,9 @@ For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
 
 \begin{figure}[ht]
 	\centering
-	\begin{tabular}{ c c  }
-		\begin{tikzpicture}[scale=0.6]
-			\begin{axis} [
-				title = {\LARGE $\Hbarc{n}{\bbS^n}$},
-				ticklabel style = {font=\Large},
-				axis y line=middle,
-				axis x line=middle,
-				ytick={0.5,0.57,0.67,0.95},
-				yticklabels={,$\zeta_n$,,$\pi$},
-				xtick={0.5,0.57,0.95},
-				xticklabels={$\frac{\pi}{2}$,$\zeta_n$, $\pi$},
-				xmin=-0.015, xmax=1.1,
-				ymin=0, ymax=1.1,]
-				\addplot [thick,color=black!20!white,fill=black!30!white,
-				fill opacity=0.4]coordinates {
-					(0.57,0.95)
-					(0.57,0.57)
-					(0.95,0.95)
-					(0.57,0.95)};
-				\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.57) (0.57,0.57)};
-				\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.57,0) (0.57,0.57)};
-				\addplot[barccolor,mark=*] (0, 0.57) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
-				\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\end{axis}
-		\end{tikzpicture}
-		&
-		\begin{tikzpicture}[scale=0.6]
-			\begin{axis} [
-				title = {\LARGE $\Hbarc{p}{\bbS^n}, p\geq 2$ and $p\neq n$},
-				ticklabel style = {font=\Large},
-				axis y line=middle,
-				axis x line=middle,
-				ytick={0.5,0.57,0.67,0.95},
-				yticklabels={,$\zeta_n$,,$\pi$},
-				xtick={0.5,0.57,0.95},
-				xticklabels={$\frac{\pi}{2}$,$\zeta_n$, $\pi$},
-				xmin=-0.015, xmax=1.1,
-				ymin=0, ymax=1.1,]
-				\addplot [thick,color=black!20!white,fill=black!30!white,
-				fill opacity=0.4]coordinates {
-					(0.57,0.95)
-					(0.57,0.57)
-					(0.95,0.95)
-					(0.57,0.95)};
-				\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.57) (0.57,0.57)};
-				\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.57,0) (0.57,0.57)};
-				\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\end{axis}
-		\end{tikzpicture}
-	\end{tabular}
-	\caption{Barcodes of $\bbS^n$, for $n\geq 2$ and degrees $p\geq 2$. Here, $\zeta_n=\arccos(-\frac{1}{n+1})$.
+	\input{sec/table_sphere}
+	\caption{
+		Barcodes of $\bbS^n$, for $n\geq 2$ and degrees $p\geq 2$. Here, $\zeta_n=\arccos(-\frac{1}{n+1})$.
 		In each figure, the gray area represents the only region, apart from the blue dots, where points could potentially exist within the corresponding barcode.}
 	\label{fig:Sk}
 \end{figure}
@@ -240,7 +150,7 @@ $$d_{\bigvee_{i=1}^n X_i}(x_i',x_j')\defeq d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\
 and $d_{X_i\vee X_i}|_{X_i\times X_i}\defeq d_{X_i}$ for any $1\leq i\leq n$.\\
 
 
-Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes. From this, we deduce the following proposition. \facundo{A priory, parameter wise homotphy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
+Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes. From this, we deduce the following proposition. \facundo{A priory, parameter wise homotopy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
 \ling{I have added the reference}
 
 \begin{proposition}\label{prop:wedge sum}
@@ -262,7 +172,7 @@ Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rip
 	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
 \end{proof}
 
-\subsection{Barcodes and Steenrod barcodes of $\bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$}
+\subsection{Barcodes and Steenrod barcodes of $\bbS^1 \vee \bbS^2 \vee \dots \vee \bbS^n$}
 
 Using Example \ref{ex:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain (an estimate of) the barcodes of $X_n\defeq \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$, illustrated in the top row of Figure \ref{fig:barcodes}:
 \begin{itemize}
@@ -275,191 +185,17 @@ Using Example \ref{ex:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge 
 
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title = {\LARGE $\Hbarc{p}{X_n},1\leq p\leq n$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.6,0.67,0.95},
-			yticklabels={,$\zeta_p$,,$\pi$},
-			xtick={0.5,0.55,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\zeta_n$, $\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.55,0.95)
-				(0.55,0.55)
-				(0.95,0.95)
-				(0.55,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.6) (0.6,0.6)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
-			\addplot[barccolor,mark=*] (0, 0.6) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
-			%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{2}{X_n}$};
-		\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title = {\LARGE $\Hbarc{p}{X_n}, p>n$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.55,0.67,0.95},
-			yticklabels={,$\zeta_n$,,$\pi$},
-			xtick={0.5,0.55,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\zeta_n$, $\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.55,0.95)
-				(0.55,0.55)
-				(0.95,0.95)
-				(0.55,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
-			%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{p}{X_n}, p\geq 3$};
-		\end{axis}
-	\end{tikzpicture}
-
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title = {\LARGE $\Hbarc{p}{\rp^n},1\leq p\leq n$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.67,0.72,0.95},
-			yticklabels={$\frac{\pi}{2}$,,$\frac{2\pi}{3}$,$\pi$},
-			xtick={0.5,0.67,0.72,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,,$\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.67,0.95)
-				(0.67,0.67)
-				(0.95,0.95)
-				(0.67,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.67) (0.67,0.67)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.72) (0.72,0.72)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.67,0) (0.67,0.67)};
-			\addplot[barccolor,mark=*] (0, 0.72) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
-			%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{1}{\rp^n}$};
-		\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title={\LARGE $\Hbarc{p}{\rp^n},\, p\geq 2$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.67,0.95},
-			yticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
-			xtick={0.5,0.67,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.67,0.95)
-				(0.67,0.67)
-				(0.95,0.95)
-				(0.67,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.67) (0.67,0.67)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.67,0) (0.67,0.67)};
-			% \addplot[barccolor,mark=*] (0, 0.67) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
-			% \node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{p}{\rp^n},\, p\geq 2$};
-		\end{axis}
-	\end{tikzpicture}
+	\input{sec/fig_barcodes}
 	\caption{\emph{Top row:} barcodes of $X_n=\bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$. \emph{Bottom row:} barcodes of $\rp^n$. }
 	\label{fig:barcodes}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title={\LARGE $\sqbarc{k}{X_n},\, k\geq 1$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.55,0.67,0.95},
-			yticklabels={,$\zeta_n$,,$\pi$},
-			xtick={0.5,0.55,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\zeta_n$, $\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.55,0.95)
-				(0.55,0.55)
-				(0.95,0.95)
-				(0.55,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
-			%\node[mark=none] at (axis cs:0.68,0.21){$\sqbarc{k}{X_n},\, k\geq 1$};
-		\end{axis}
-	\end{tikzpicture}
-
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title = {\LARGE $\sqbarc{k}{\rp^n},\,1\leq k\leq n-1$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.67,0.72,0.95},
-			yticklabels={$\frac{\pi}{2}$,,$\frac{2\pi}{3}$,$\pi$},
-			xtick={0.5,0.67,0.72,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,,$\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.67,0.95)
-				(0.67,0.67)
-				(0.95,0.95)
-				(0.67,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.67) (0.67,0.67)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.72) (0.72,0.72)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.67,0) (0.67,0.67)};
-			\addplot[barccolor,mark=*] (0, 0.72) circle (2pt) node[above right,barccolor]{\Large$\geq$\textsf{1}};
-		\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}[scale=0.52]
-		\begin{axis} [
-			title={\LARGE $\sqbarc{k}{\rp^n},\,k\geq n$},
-			ticklabel style = {font=\Large},
-			axis y line=middle,
-			axis x line=middle,
-			ytick={0.5,0.67,0.95},
-			yticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
-			xtick={0.5,0.67,0.95},
-			xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
-			xmin=-0.015, xmax=1.1,
-			ymin=0, ymax=1.1,]
-			\addplot [mark=none] coordinates {(0,0) (1,1)};
-			\addplot [thick,color=black!20!white,fill=black!30!white,
-			fill opacity=0.4]coordinates {
-				(0.67,0.95)
-				(0.67,0.67)
-				(0.95,0.95)
-				(0.67,0.95)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.67) (0.67,0.67)};
-			\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.67,0) (0.67,0.67)};
-		\end{axis}
-	\end{tikzpicture}
+	\input{sec/fig_sq_barcodes}
 	\caption{\emph{Top row:} Steenrod barcodes of $X_n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$. }
 	\label{fig:sq barcodes}
 \end{figure}
-
 
 \subsection{Barcodes and Steenrod barcodes of $\rp^n$}
 
@@ -484,7 +220,6 @@ Let $1\leq k\leq \frac{n-1}{2}$. Since the Vietoris--Rips complex $\VR_t\left(\r
 	\item For $1\leq k\leq n-1$, $\sqbarc{k}{\rp^n}$ contains one bar $\left(0,\frac{2\pi}{3}\right)$, and possibly some bars dominated by $\left(\frac{2\pi}{3},\pi\right)$;
 	\item For $k>n$, the possible bars in $\sqbarc{k}{\rp^n}$ are $\left(0,\frac{2\pi}{3}\right)$ or those dominated by $\left(\frac{2\pi}{3},\pi\right)$.
 \end{itemize}
-
 
 \subsection{Bottleneck distance estimation}
 
