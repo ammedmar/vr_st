@@ -82,3 +82,10 @@
 
 % table of contents
 \setcounter{tocdepth}{2}
+
+% space after \subsubsection
+\makeatletter
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}%
+	\z@{.5\linespacing\@plus.7\linespacing}{0em}%
+	{\normalfont\itshape}}
+\makeatother

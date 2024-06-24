@@ -2,11 +2,118 @@
 
 \section{Background}
 
-\subsection{Persistence theory}
+We recall some of the basic notions of the theory of persistence.
 
-Let $\sR$ denote the category of real numbers and $\Vec_\bullet$ that of $\Z$-graded finite dimensional vector spaces over a fixed field $\k$, that is, collections $V = \set{V_n}_{n\in\Z}$ of such vector spaces as objects with collections $f = \set{f_n}_{n\in\Z}$ of linear maps as morphisms.
-The category of graded persistence modules $\Vec_\bullet^\sR$ is the functor category $\Fun(\sR, \Vec_\bullet)$.
+\subsection{Persistence modules}
+
+Throughout the paper we think of the set of real numbers $\R$ as a category via its poset structure.
+We also fix a field $\kk$ and write $\Vec$ for the category of vector spaces over $\kk$.
+
+\subsubsection{} A \defn{persistence module} $V$ is a functor from $\R$ to $\Vec$
+Explicitly, it consists of a vector space $V_r$ for each $r \in \R$ and a linear map $V_{s,t} \colon V_s \to V_t$ for each $s \leq t$ such that $V_{r,r} = \id$ and
+$V_{s,t} \circ V_{r,s} = V_{r,t}$ if $r \leq s \leq t$.
+A \defn{morphism} $\varphi \colon V \to V'$ of persistent modules is a natural transformation.
+Explicitly, it is an assignment of a linear map $\varphi_t \colon V_t \to V'_t$ for every $t \in \R$ making the diagram
+\begin{equation*}
+	\begin{tikzcd}
+		V_{s} \arrow[r, "V_{s,t}"] \arrow[d] & V_{t} \arrow[d] \\
+		W_{s} \arrow[r, "W_{s,t}"] & W_{t}
+	\end{tikzcd}
+\end{equation*}
+commute for every pair $s \leq t$.
+
+We denote abusively by $\kk$ and $0$ the functors that assigns $0$ and $\kk$ respectively to every object of $\R$ and the identity map to each morphism.
+
+%Additionally, we remark that there is a canonical isomorphisms between chain complexes of persistence modules and \defn{persistence chain complexes}, i.e.,
+%\[
+%\Ch(\Fun(T, \Vec)) \cong \Fun(T, \Ch).
+%\]
+%\anibal{maybe unnecessary...}
+
+\subsubsection{} Two persistence modules $V$ and $W$ are said to be \defn{$\delta$-interleaved} for some $\delta \geq 0$ if there are natural transformations $f \colon V_{\bullet} \to W_{\bullet + \delta}$ and $g \colon W_{\bullet} \to V_{\bullet + \delta}$ such that $f \circ g$ and $g \circ f$ are equal to the structure maps $W_{\bullet} \to W_{\bullet + 2\delta}$ and $V_{\bullet} \to V_{\bullet + 2\delta}$, respectively.
+The \defn{interleaving distance} between them is defined by
+\[
+d(V, W) = \inf\set{\delta \geq 0 \mid V \text{ and } W \text{ are } \delta\text{-interleaved}}.
+\]
 
 \subsection{Barcodes}
 
-We use open intervals to represent bars in the barcode of a persistence module. We say a bar $(b,d)$ is \textbf{dominated by} another bar $(b',d')$ if $b\geq b'$ and $d\leq d'$, or equivalently if $(b,d)$ is contained in $(b',d')$.
+Let $I$ be an interval in $\R$, i.e., $I \subseteq \R$ and, if $r \leq s \leq t$ with $r, t \in I$, then $s \in I$.
+The persistence module $\kk[I]$, referred to as an \defn{interval module}, is defined explicitly by
+\[
+\kk[I]_t =
+\begin{cases}
+	\kk & \text{if } t \in I, \\
+	\hfil 0 & \text{otherwise},
+\end{cases}
+\qquad \qquad
+\kk[I]_{s, t} =
+\begin{cases}
+	\id & \text{if } s, t \in I, \\
+	\hfil 0 & \text{otherwise}.
+\end{cases}
+\]
+
+A persistence module $V$ is said to be \defn{interval decomposable} if there is a multiset of intervals $(I_\lambda)_{\lambda \in \Lambda}$ such that $V$ is isomorphic to $\bigoplus_{\lambda \in \Lambda} \kk[I_\lambda]$.
+In this case we refer to the multiset as the \defn{barcode} of $V$ and denote it $\barc V$.
+By Azumaya’s theorem \cite{azumaya1950theorem}, $\barc V$ is unique up to reordering.
+
+Crawley-Boevey's result \cite{Crawley-Boevey.2015} is a widely used existence theorem for barcode decompositions.
+It ensures that any persistence module \(V\) with \(V_t\) being a finite dimensional vector space for every \(t \in \R\) has a barcode decomposition.
+However, this condition is often too restrictive.
+
+A more general condition is is q-tameness, please consult \cite{Chazal.2016a, Chazal.2016b} for the approach we summarize below.
+A persistence module \(V\) is considered \defn{q-tame} if the rank of the map \(V_{s,t} \colon V_s \to V_t\) is finite for all \(s < t\).
+For instance, the infinite product of interval modules \(\prod_{n \in \N_{> 0}} C([0,1/n))\) demonstrates that not all q-tame persistence modules can have a barcode decomposition in the traditional sense.
+A persistence module \(M\) is termed \defn{ephemeral} if all the maps \(V_{s,t} \colon V_s \to V_t\) are zero for \(s < t\).
+The \defn{radical} \(\rad M\) of a persistence module \(M\) is defined as the unique minimal submodule of \(M\) such that the cokernel of the inclusion \(\rad M \hookrightarrow M\) is an ephemeral persistence module.
+Specifically, \((\rad V)_t = \sum_{s<t} \img V_{s,t}\).
+For example, the radical of the infinite product \(\prod_{n \in \N_{> 0}} C([0, 1/n))\) is the direct sum \(\bigoplus_{n \in \N_{> 0}} C((0,1/n))\).
+If \(V\) is q-tame its radical has a barcode decomposition, which describes the isomorphism type of \(M\) ``up to ephemerals".\footnote{
+This idea is formalized using the so-called \textit{observable category}, which is equivalent to the quotient of the category of persistence modules by the subcategory of ephemeral persistence modules.
+Consequently, the barcode of the radical of a q-tame persistence module \(V\) serves as a complete invariant of \(V\) in the observable category.}
+We define the barcode of $V$ as this multiset.
+
+\subsubsection{} Let $M$ and $M'$ be two possibly empty multisets of intervals.
+A subset $P \subset M \times M'$ is said to be a \defn{partial matching} between $M$ and $M'$ if every interval $I \in M$ is matched with at most one interval of $M'$ and every interval $I' \in M'$ is matched with at most one interval of $M$.
+
+The \defn{bottleneck distance} between $M$ and $M'$ is defined as
+\[
+d_B(M, M') = \
+\inf \set[\big]{\mathrm{cost}(P) \mid P \subset M \times M' \text{ is a partial matching}}
+\]
+where $\mathrm{cost}(P)$ is the largest between
+\[
+\sup_{(I, I') \in P} \set[\Big]{\max\set{|a - a'|, |b - b'|} \text{ for } I = [a, b], I' = [a', b']}
+\]
+and
+\[
+\frac{1}{2} \sup \set[\Big]{|a - b| \text{ for } [a,b] \in M \cup M' \text{ unmatched}}.
+\]
+
+The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
+
+\subsection{Persistent (co)homology}
+
+An \defn{$\R$-diagram of spaces} $X$ is a functor from $\R$ to the category $\Top$ of topological spaces with continuous maps.
+Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
+The space $\colim X$ will play a role below.
+An important class of $\R$-diagrams is one-parameter filtrations of a space.
+These are $\R$-diagrams with $X_s$ being a subspace of $X_t$ if $s \leq t$.
+In this case, said space is $\colim X = \bigcup_r X_r$.
+
+For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-diagram of spaces produces the persistence module $\rH_k(X; \kk)$, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
+We will refer to this persistence module as the \defn{persistent $k$-homology} of $X$.
+
+Another natural construction of a persistence module from an $\R$-diagram of spaces is obtained by considering relative cohomology with $\kk$ coefficients $\rH^k(\colim X, X; \kk)$.
+Notice that this is a functor from $\R$ to $\Vec$, since cohomology is contravariant and $(\colim X, X_s) \supseteq (\colim X, X_t)$ for $s \leq t$.
+We refer to it as the \defn{persistent relative $k$-cohomology} of $X$.
+
+It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
+The most important example is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-diagram of spaces $X$.
+Another example, defined analogously to the previous two, is \defn{persistent relative $k$-homology} $\rH_k(\colim X, X; \kk)$.
+
+When $X$ is a filtration that starts as the empty set and eventually stabilizes, any of these four persistent modules is q-tame if all of them are.
+In this case, their barcodes can be related by canonical bijections.\footnote{
+The correspondence between the homology and cohomology constructions is a consequence of the universal coefficient theorem.
+To relate absolute and relative constructions, it is sufficient that the natural maps $\colim \rH_k(X_r) \to \rH_k(\colim X_r) \to \lim \rH_k(\colim X_r, X)$ be isomorphisms for every $k$ \cite[Thm.~6.2]{bauer2023dualities}.}
