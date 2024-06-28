@@ -2,7 +2,49 @@
 
 \section{Computations}\label{s:computations}
 
-In this section ...
+\subsection{Spheres and projective spaces}
+
+For any integer $n \geq 1$ and real number $r > 0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
+The \defn{$n$-real projective space} $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
+Let $[x]$ denote the equivalence class of $x$. We equip $\rp^n(r)$ with the quotient metric defined as
+\[
+d_{\rp^n(r)}([x],[x'])\defeq\min \{d_{\bbS^n(r)}(x,x'),d_{\bbS^n(r)}(-x,x')\}.
+\]
+We write $\bbS^n$ and $\rp^n$ for $\bbS^n(1)$ and $\rp^n(2)$ respectively, so that
+\[
+\diam \left(\bbS^n \right) = \diam\left(\rp^n \right) = \pi.
+\]
+It is proved in \cite{katz1983filling} that for any $n \geq 1$ their filling radius, as defined in \cref{ss:filling_radius}, satisfy
+\[
+\fillrad{\bbS^n} = \frac{1}{2}\arccos\left(\frac{-1}{n+1}\right), \qquad \fillrad{\rp^n}=\frac{\pi}{3}.
+\]
+We denote by $\zeta_n$ twice the filling radius of $\bbS^n$, i.e., $\zeta_n \defeq \arccos\left(\frac{-1}{n+1}\right)$.
+
+In certain intervals, the homotopy type of the Vietoris--Rips complex of these spaces is known.
+This information is presented in the following.
+
+\begin{proposition}
+	Let $n$ be a positive integer.
+	\begin{enumerate}[{\rm (a)}]
+		\item\label{prop:S1}{\rm \cite[Thm.~7.4]{adamaszek2017vietoris}.}
+		For $t \in \left(\frac{2n\pi}{2n+1}, \frac{2(n+1)\pi}{2n+3}\right]$
+		\[
+		\VR_t(\bbS^1) \simeq \bbS^{2l+1}.
+		\]
+
+		\item\label{prop:Sn}{\rm \cite[Thm.~10]{lim2020vietoris}.}
+		For $t \in \left(0, \zeta_n\right]$
+		\[
+		\VR_t(\bbS^n) \simeq \bbS^n.
+		\]
+
+		\item\label{prop:RPn}{\rm \cite[Thm.~4.5]{adams2022metric}.}
+		For $t \in \left(0,\frac{2\pi}{3} \right]$
+		\[
+		\VR_t(\rp^n) \simeq \rp^n.
+		\]
+	\end{enumerate}
+\end{proposition}
 
 \subsection{Fundamental bars of $\VR_\bullet(\rp^n)$}
 

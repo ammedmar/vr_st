@@ -126,22 +126,22 @@ An $\R$-diagram of spaces is said to be q-tame if its persistent homology and co
 
 We will identify a simplicial complex with its geometric realization.
 Let $X$ be a metric space and $r > 0$.
-The \defn{Vietoris--Rips complex} $\VR_r(X)$ of $X$ is the simplicial complex whose vertices are the points of $X$ and whose simplices are the finite subsets of $X$ with diameter strictly less than $r$.
-Note that if $s \leq t$, then $\VR_s(X)$ is is a subset of $\VR_t(X)$.
-So, together with the inclusion maps, $\VR(X)$ defines an $\R$-diagram of spaces with $\VR_r(X) = \emptyset$ for non-positive values of $r$.
+Let $\VR_r(X)$ denote the simplicial complex whose vertices are the points of $X$ and whose simplices are the finite subsets of $X$ with diameter strictly less than $r$.
+Note that if $s \leq t$, then $\VR_s(X)$ is a subset of $\VR_t(X)$.
+So, together with the inclusion maps, these spaces define an $\R$-diagram of spaces with $\VR_r(X) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris–Rips complex} of $X$.
 
 \subsection{q-tameness results}
 
 \begin{remark}
-	In \cite{bib11}, it is proved that if $X$ is a totally bounded metric space, then $\mathrm{PH}_k(\VR(X); \kk)$ is $q$–tame for any nonnegative integer $k \geq 0$ and any field $\kk$.
+	In \cite{bib11}, it is proved that if $X$ is a totally bounded metric space, then $\rH_k(\VR(X); \kk)$ is $q$–tame for any nonnegative integer $k \geq 0$ and any field $\kk$.
 \end{remark}
 
 \begin{theorem}[\cite{bib7}]
-	If $X$ is a totally bounded metric space, then there is a (unique) persistence barcode associated to $\mathrm{PH}_k(\VR(X); \kk)$.
+	If $X$ is a totally bounded metric space, then there is a (unique) persistence barcode associated to $\rH_k(\VR(X); \kk)$.
 \end{theorem}
 
-If $X$ is a totally bounded metric space, then we denote the barcode corresponding to $\mathrm{PH}_k(\VR(X); \kk)$ by $\barc_{\VR}^k(X; \kk)$.
+If $X$ is a totally bounded metric space, then we denote the barcode corresponding to $\rH_k(\VR(X); \kk)$ by $\barc_{\VR}^k(X; \kk)$.
 
 %The most important existence result for persistence barcodes is Crawley-Boevey’s theorem \cite{bib5} which guarantees the existence of a persistence barcode associated to $V_{\bullet} = (V_r, v_{r,s})$ if $V_{\bullet}$ is pointwise finite-dimensional (i.e., $\dim(V_r) < \infty$ for all $r$). However, for many natural persistence modules (e.g., Vietoris–Rips persistent homology of a nonfinite metric space $X$), it is not straightforward to verify the pointwise finite-dimensionality condition. Nevertheless, in Theorem 2.9, we are able to establish that, if $X$ is totally bounded, then its Vietoris–Rips persistent homology has a (unique) persistence barcode. This is achieved without invoking Crawley-Boevey’s theorem and instead through combining our main (isomorphism) theorem (see Theorem 4.1) with a recent result by Schmahl \cite{bib6}. The proof of Theorem 2.9 can be found in the extended (arXiv) version of this paper \cite{bib7}. The totally boundedness condition is required in the theorem in order to guarantee the following notion of regularity:
 
@@ -168,11 +168,11 @@ For an $n$-dimensional Riemannian manifold $M$, its \defn{filling radius} is def
 	\]
 \end{enumerate}
 
-\subsubsection{} For the proof of the following theorem, see \cite{bib11} or \cite{bib13, bib14}.
+\subsubsection{} The Gromov--Hausdorff ...
 
 \begin{theorem}
 	Let $X$ and $Y$ be compact metric spaces and $\kk$ be an arbitrary field. Then, for any $k \in \mathbb{Z}_{\geq 0}$,
 	\[
-	d_I \left( \mathrm{PH}_k(\VR(X); \kk), \mathrm{PH}_k(\VR(Y); \kk) \right) \leq 2 d_{\mathrm{GH}}(X, Y).
+	d_I \left(\rH_k(\VR(X); \kk), \rH_k(\VR(Y); \kk)\right) \leq 2 d_{\mathrm{GH}}(X, Y).
 	\]
 \end{theorem}
