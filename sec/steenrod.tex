@@ -1,13 +1,183 @@
 % !TEX root = ../vr_st.tex
 
-\section{Persistence Steenrod modules}\label{s:steenrod}
+\section{Persistent Cohomology operations}\label{s:steenrod}
 
-\TBW
+\subsection{$K(\pi, n)$ spaces and cohomology operations}
+
+We review classical material as presented, for example, in \cite{mosheroperations1968}.
+To be consistent with the existing literature we let $\pi$ be an abelian group.
+%, not to be confused with homotopy groups denoted $\pi_n$ for $n \geq 0$.
+%For the applications of the ideas in this subsection the persistence context $\pi$ will be assumed to be a field.
+
+\subsubsection{} We denote by $K(\pi, n)$ any cellular space which has only one non-trivial homotopy group, namely, $\pi_n(K(\pi, n)) = \pi$.
+Such space is unique up to homotopy, and is referred to as an \defn{Eilenberg--MacLane space} of type $\pi,n$.
+For example, since the circle has universal cover the real line and fundamental group isomorphic to $\Z$, it is a model for $K(\Z,1)$.
+
+The \defn{Hurewicz homomorphism} $h \colon \pi_i(X) \rightarrow \rH_i(X)$ is defined by choosing a generator $u$ of $\rH_i(S^i)$ and sending the homotopy class $[f]$ of a based map $f \colon \bbS^i \to X$ to $f^*(u)$.
+Using the properties of this map and the universal coefficient theorem for cohomology one shows the existence of a preferred class $\iota_n \in \rH^n(K(\pi, n); \pi)$ termed the \defn{fundamental class} of $K(\pi, n)$.\footnote{The Hurewicz theorem states that if $X$ is such that $\pi_i(X)$ is trivial for all $i \leq n$, then the Hurewicz homomorphism is an isomorphism in dimensions $i \leq n$ and a surjection in dimension $n+1$.
+Hence, the first non-trivial homotopy group of $X$ and the first non-trivial homology group occur in the same dimension and are isomorphic under $h$.
+For $n=1$, the theorem requires certain modifications which do not affect the following analysis.
+The group $\Hom(\rH_n(X), \pi_n(X))$ contains $h^{-1}$, the inverse of the Hurewicz homomorphism.
+Subject to the hypothesis on $X$, the universal coefficient theorem for homology gives an isomorphism of $\Hom(\rH_n(X), \pi_n(X))$ and $\rH^n(X; \pi_n(X))$, and the fundamental class $\iota \in \rH^n(X; \pi_n(X))$ corresponds to $h^{-1}$ under this isomorphism.}
+
+The relevance of Eilenberg--MacLane space for cohomology is the following bijection
+\[
+\begin{tikzcd}[column sep=small, row sep=0]
+	{[X, K(\pi, n)]} \rar & \rH^n(X; \pi) \\
+	{[f]} \rar[maps to] & f^*(\iota_n)
+\end{tikzcd}
+\]
+where $[X, K(\pi, n)]$ denotes the set of homotopy classes of based maps from $X$ to $K(\pi, n)$.
+We refer to this bijection as the representability of cohomology.
+
+\subsubsection{} Let both $\pi$ and $G$ be abelian groups.
+A \defn{cohomology operation of type $(\pi, n; G, m)$} is a family of functions
+\[
+\theta \colon \rH^n(X; \pi) \rightarrow \rH^m(X; G),
+\]
+one for each space $X$, satisfying the naturality condition $f^* \theta = \theta f^*$ for any map $f \colon X \rightarrow Y$.
+We will denote by $\cO(\pi, n; G,m)$ the set of cohomology operations of type $(\pi, n; G,m)$.
+
+There is a bijection between $\cO(\pi, n; G,m)$ and homotopy classes of based maps between their Eilenberg--MacLane spaces.
+Explicitly, given $[f] \in [K(\pi,n), k(G,m)]$ and an $n$-cohomology class in a space $X$ with $\pi$ coefficients, say $g^*(\iota_m)$ for some $g \colon X \to K(G, m)$, the value of the cohomology operation $\theta_{[f]}$ on it is
+\[
+\theta_{[f]}(g^*(\iota_m)) = (f \circ g)^*(\iota_m).
+\]
+In other words, cohomology operations are parameterized by the cohomology of Eilenberg--MacLane spaces, i.e.,
+\[
+\cO(\pi, n; G,m) \cong \rH^m(K(\pi,n); G).
+\]
+
+\subsection{The Steenrod Algebra}\label{ss:steenrod}
+
+\subsubsection{} For a space $X$ let $\sus X$ denote the product of $X$ with the interval $[0,1]$ having each $X \times \set{0}$ and $X \times \set{1}$ collapsed to a point.
+For example, $\sus \bbS^n \sim \bbS^{n+1}$.
+
+The inclusion of $X$ into $\sus X$ induces an isomorphism
+\[
+\rH^n(X) \cong \rH^{n+1}(\sus X)
+\]
+in cohomology with any coefficients, referred to as the \defn{suspension isomorphism}.
+
+A \defn{stable cohomology operation of degree $k$} is a natural family of functions
+\[
+\set{\theta^n \colon \rH^n(X; \pi) \to \rH^{n+k}(X; G)}_{n \in \N}
+\]
+for each space $X$ commuting with suspension isomorphisms, i.e., making the diagram
+\[
+\begin{tikzcd}
+	\rH^n(X; \pi) \rar["\theta^n"] \dar & \rH^{n+k}(X; G) \dar \\
+	\rH^{n+1}(\sus X; \pi) \rar["\theta^{n+1}"] & \rH^{n+1+k}(\sus X; G)
+\end{tikzcd}
+\]
+commute for each $n \in \N$.
+We will denote by $\cO^{\mathrm{st}}_k(\pi, G)$ the set of stable cohomology operation of degree $k$.
+
+%An example of a cohomology operation that is not stable is the cup-product square
+%\[
+%\Big\{{\begin{tikzcd}[column sep=small,row sep=-6pt]
+%	\rH^n(X) \rar & \rH^{2n}(X) \\
+%	x \rar[maps to] & x^2
+%\end{tikzcd}}\Big\}
+%\]
+%ranging over all $n$.\footnote{To see this notice that suspending this map gives a map $\rH^{n+1}(\Sigma X) \to \rH^{2n+1}(\Sigma X)$, which has the wrong degree.
+%In fact, on $\rH^*(\Sigma X)$, all cup products vanish.}
+
+Using representability, $\cO^{\mathrm{st}}_k(\pi, G)$ can be described as the colimit of the groups
+\[
+H^{n+k}(K(\pi, n); G) \cong [K(\pi, n), K(G, n+k)]
+\]
+along certain maps
+\[
+[K(\pi, n), K(\pi, n+k)] \to [K(\pi, n+1), K(G, n+1+k)]
+\]
+defined by the functoriality of $\sus$ and a natural homotopy equivalence
+\begin{equation}\label{eq:suspension of K(pi,n)}
+	\sus K(\pi, n) \cong K(\pi, n+1)
+\end{equation}
+between the suspension of the $n^\th$ Eilenberg--MacLane space and the $(n+1)^\th$.\footnote{\anibal{include spectra?}}
+In other words, we have
+\[
+\cO^\st_k(\pi, G) \cong \colim_n \rH^{n+k}(K(\pi, n); G).
+\]
+
+We will be interested in combining all stable operations over a fixed coefficient field
+\[
+\cO^\st(\pi) = \bigsqcup_k \cO^{\mathrm{st}}_k(\pi, \pi),
+\]
+which defines a (graded) algebra with product given by composition.
+
+When $\pi$ is $\Z/p$ for some prime $p$, the algebra of stable cohomology operations, known as the \defn{mod $p$ Steenrod algebra}, is of central importance in homotopy theory.
+In the computational part of this paper, we will focus on the mod 2 case, referring to $\cO^{\mathrm{st}}(\Z/2)$ simply as the Steenrod algebra.
+
+%In terms of the representing object, this is an isomorphism
+%\[
+%[X, K(\pi, n)] \cong [\Sigma X, K(\pi, n+1)].
+%\]
+%The right-hand side is the same as \( [X, \Omega K(\pi, n+1)] \), so the suspension isomorphism is induced by the homotopy equivalence \( K(\pi, n) \simeq \Omega K(\pi, n+1) \).
+%
+%Again using representability, the set of stable cohomology operations will be the colimit of the groups
+%\[
+%[K(\pi, n), K(\pi, n+k)]
+%\]
+%along the maps
+%\[
+%[K(\pi, n), K(\pi, n+k)] \cong [\Omega K(\pi, n+1), \Omega K(\pi, n+k+1)] \cong [\Sigma \Omega K(\pi, n+1), K(\pi, n+k+1)] \to [K(\pi, n+1), K(\pi, n+k+1)].
+%\]
+%Equivalently, I want the colimit
+%\[
+%\varinjlim_n \rH^{n+k}(K(\pi, n))
+%\]
+%along the maps
+%\[
+%K(\pi, n+1) \to \Sigma \Omega K(\pi, n+1) \simeq \Sigma K(\pi, n).
+%\]
+%This colimit is the group of degree-\( n \) stable cohomology operations.
+%Taking this for all \( n \), we get a graded ring (I can compose two stable cohomology operations to get another one). This ring is the Steenrod algebra.
 
 
+\subsubsection{} By Identity \eqref{eq:suspension of K(pi,n)}, all Eilenberg--MacLane spaces can be constructed via iterated suspension of $K(\pi,1)$.
+We now recall a model for $K(\Z/2, 1)$.
 
-\subsubsection{Steenrod modules}\label{ss:steenrod}
+The antipodal map defines a free action of $\Z/2$ on the $n$-sphere \(\mathbb{S}^n\).
+The quotient space under this action, denoted by \(\rp^n\), is the \defn{real projective $n$-space}.
+The inclusion of \(\mathbb{S}^n\) into \(\mathbb{S}^{n+1}\) as the equatorial $n$-sphere is equivariant with respect to the antipodal action.
+It therefore induces an inclusion of \(\rp^n\) into \(\rp^{n+1}\).
+Since the infinite sphere \(\mathbb{S}^\infty = \bigcup_n \mathbb{S}^n\) is contractible, its induced projection onto $\rp^\infty = \bigcup_n \rp^n$ defines the universal cover of \(\rp^\infty\), so the (infinite) real projective space $\rp^\infty$ is a model for \(K(\Z/2, 1)\).
 
-\subsection{Stability}\label{ss:stability}
+A first approximation to $\cO^\st(\Z/2)$, defined as $\colim_n \rH^{\ast + n}(K(\Z/2, n); \Z/2)$, is $\rH^\ast(K(\Z/2, 1); \Z/2)$ or, equivalently, $\rH^\ast(\rp^\infty; \Z/2)$.
+This cohomology algebra is generated by a single element $x$ in degree 1.
+That is,
+\[
+\rH^\ast(\rp^\infty; \Z/2) \cong (\Z/2)[x].
+\]
 
-\input{sec/stability}
+The actual Steenrod algebra is generated by the \defn{Steenrod squares} $\set{\Sq^k}_{k \in \N}$, with $\Sq^k$ a degree $k$ stable operation and $\Sq^0 = \id$.
+The relations imposed on these generators are referred to as the \defn{Adem relations}:
+\[
+\Sq^a \Sq^b = \sum_{t = 0}^{\lfloor a/2 \rfloor} \binom{b-1-t}{a-2t} \Sq^{a+b-t} \Sq^t
+\]
+where $a$ and $b$ are positive integers such that $a < 2b$ and \(\binom{b-1-t}{a-2t}\) is a binomial coefficient in $\Z/2$.
+
+%Explicitly,
+%\[
+%\cO^\st(\Z/2) \cong \frac{(\Z/2)[\Sq^0,\Sq^1,\dots]}{(\Sq^0 = 1, \text{Adem})}.
+%\]
+
+\subsection{Persistent cohomology operations}
+
+\subsubsection{} Let $\varphi \colon V \to W$ be a morphisms between q-tame persistence modules.
+The \defn{image persistent module} $\img(\varphi)$ is defined by
+\[
+\img(\varphi)_r = \img(\varphi_r)
+\qquad\text{and}\qquad
+\img(\varphi)_{s,t} = W_{s,t}|_{\img(\varphi_s)}.
+\]
+Since the structure maps of $\img \varphi$ are restrictions of structure maps of a q-tame module, the persistence module $\img(\varphi)$ is q-tame.
+A similar construction defines the \defn{kernel persistence module} $\ker(\varphi)$.
+
+\subsubsection{} Any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphisms of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-diagram of spaces $X$.
+If $X$ is q-tame, we define its \defn{$\theta$-barcode} as the barcode of $\img(\theta)$.
+For example, taking $\theta$ to be the identity in degree $n$, the $\theta$-barcode of $X$ agrees with the barcode of the persistent $n$-cohomology of $X$.
+
+\subsubsection{} $\Sq^k$-barcodes were introduced in \cite{medina2022per_st} together with an implementation for their computation for finite filtered simplicial complexes.

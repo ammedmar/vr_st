@@ -2,18 +2,45 @@
 
 \section{Vietoris--Rips persistence}\label{s:preliminaries}
 
+
 \subsection{Vietoris--Rips complex}\label{ss:vietoris-rips}
 
-\ling{I am using the open Vietoris--Rips filtration in this section. This should be mentioned here or earlier.}
-\ling{mention somewhere that we identify the geometric realization of a simplicial complex with itself}
-\footnote{We identify a simplicial complex with its geometric realization.}
+We will identify a simplicial complex with its geometric realization.
+Let $X$ be a metric space and $r > 0$.
+The \defn{Vietoris--Rips complex} $\VR_r(X)$ of $X$ is the simplicial complex whose vertices are the points of $X$ and whose simplices are the finite subsets of $X$ with diameter strictly less than $r$.
+Note that if $s \leq t$, then $\VR_s(X)$ is is a subset of $\VR_t(X)$.
+So, together with the inclusion maps, $\VR(X)$ defines an $\R$-diagram of spaces with $\VR_r(X) = \emptyset$ for non-positive values of $r$.
+We refer to it as the \defn{Vietoris–Rips complex} of $X$.
 
-\begin{enumerate}
-	\item\label{prop:manifold} {\rm \cite[Prop.~9.4]{lim2020vietoris}}.
+\subsection{q-tameness results}
+
+\begin{remark}
+	In \cite{bib11}, it is proved that if $X$ is a totally bounded metric space, then $\mathrm{PH}_k(\VR_{\bullet}(X); \kk)$ is $q$–tame for any nonnegative integer $k \geq 0$ and any field $\kk$.
+\end{remark}
+
+\begin{theorem}[\cite{bib7}]
+	If $X$ is a totally bounded metric space, then there is a (unique) persistence barcode associated to $\mathrm{PH}_k(\VR_{\bullet}(X); \kk)$.
+\end{theorem}
+
+If $X$ is a totally bounded metric space, then we denote the barcode corresponding to $\mathrm{PH}_k(\VR_{\bullet}(X); \kk)$ by $\barc_{\VR}^k(X; \kk)$.
+
+%The most important existence result for persistence barcodes is Crawley-Boevey’s theorem \cite{bib5} which guarantees the existence of a persistence barcode associated to $V_{\bullet} = (V_r, v_{r,s})$ if $V_{\bullet}$ is pointwise finite-dimensional (i.e., $\dim(V_r) < \infty$ for all $r$). However, for many natural persistence modules (e.g., Vietoris–Rips persistent homology of a nonfinite metric space $X$), it is not straightforward to verify the pointwise finite-dimensionality condition. Nevertheless, in Theorem 2.9, we are able to establish that, if $X$ is totally bounded, then its Vietoris–Rips persistent homology has a (unique) persistence barcode. This is achieved without invoking Crawley-Boevey’s theorem and instead through combining our main (isomorphism) theorem (see Theorem 4.1) with a recent result by Schmahl \cite{bib6}. The proof of Theorem 2.9 can be found in the extended (arXiv) version of this paper \cite{bib7}. The totally boundedness condition is required in the theorem in order to guarantee the following notion of regularity:
+
+\subsection{Filling radius}\label{ss:filling_radius}
+
+Any compact metric space $X$ can be isometrically embedded into the space $L^\infty(X)$ of all bounded real-valued functions on $X$, via the map $x\in X\mapsto d_X(x,\cdot)$ where $d_X(x,\cdot)$ is the distance function to $x$. Let $U_\epsilon(X)$ denote the $\epsilon$-neighborhood of $X$ in $L^\infty(X)$.
+For an $n$-dimensional Riemannian manifold $M$, its \defn{filling radius} is defined as the infimal $\epsilon>0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $M \hookrightarrow U_\epsilon(M)$ \cite[page 108]{gromov2007metric}.
+
+\begin{proposition}[{\cite[Prop.~9.4]{lim2020vietoris}}]\label{prop:manifold}
 	If $M$ be a closed connected $n$-dimensional Riemannian manifold,
 	\[
 	(0,2\fillrad{M}) \in \Hbarc{n}{M}.
 	\]
+\end{proposition}
+
+\subsection{...}\anibal{Where does this statement belong to in the presentation?}
+
+\begin{enumerate}
 
 	\item\label{prop:pH1} {\rm \cite[Prop.~7.10]{virk20201}}.
 	If $X$ be a simply-connected geodesic space, then
@@ -22,35 +49,32 @@
 	\]
 \end{enumerate}
 
-\subsection{Filling radius}\label{ss:filling_radius}
-
-Any compact metric space $X$ can be isometrically embedded into the space $L^\infty(X)$ of all bounded real-valued functions on $X$, via the map $x\in X\mapsto d_X(x,\cdot)$ where $d_X(x,\cdot)$ is the distance function to $x$. Let $U_\epsilon(X)$ denote the $\epsilon$-neighborhood of $X$ in $L^\infty(X)$.
-For an $n$-dimensional Riemannian manifold $M$, its \textbf{filling radius} is defined as the infimal $\epsilon>0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $M\hookrightarrow U_\epsilon(M)$ \cite[page 108]{gromov2007metric}.
-
-\subsection{Metric models}
+\subsection{Spheres and projective spaces}
 
 For any integer $n \geq 1$ and real number $r > 0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
-The real projective space $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
+The \defn{$n$-real projective space} $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
 Let $[x]$ denote the equivalence class of $x$. We equip $\rp^n(r)$ with the quotient metric defined as
 \[
 d_{\rp^n(r)}([x],[x'])\defeq\min \{d_{\bbS^n(r)}(x,x'),d_{\bbS^n(r)}(-x,x')\}.
 \]
-For the simplicity of notation, let $\bbS^n\defeq\bbS^n(1)$ and $\rp^n\defeq\rp^n(2)$, so that $\diam\left(\bbS^n \right)=\diam\left(\rp^n \right)=\pi.$
+We write $\bbS^n$ and $\rp^n$ for $\bbS^n(1)$ and $\rp^n(2)$ respectively, so that
+\[
+\diam \left(\bbS^n \right) = \diam\left(\rp^n \right) = \pi.
+\]
 It is proved in \cite{katz1983filling} that for any $n \geq 1$ their filling radius, as defined in \cref{ss:filling_radius}, satisfy
 \[
 \fillrad{\bbS^n} = \frac{1}{2}\arccos\left(\frac{-1}{n+1}\right), \qquad \fillrad{\rp^n}=\frac{\pi}{3}.
 \]
 We denote by $\zeta_n$ twice the filling radius of $\bbS^n$, i.e., $\zeta_n \defeq \arccos\left(\frac{-1}{n+1}\right)$.
 
-\subsection{Vietoris--Rips homotopy types}
-
-We recall the following results related to the homotopy type of the Vietoris--Rips complex of spheres and projective spaces.
+In certain intervals, the homotopy type of the Vietoris--Rips complex of these spaces is known.
+This information is presented in the following.
 
 \begin{proposition}
 	Let $n$ be a positive integer.
 	\begin{enumerate}[{\rm (a)}]
 		\item\label{prop:S1}{\rm \cite[Thm.~7.4]{adamaszek2017vietoris}.}
-		For $t \in \left(\frac{2l\pi}{2l+1}, \frac{2(l+1)\pi}{2l+3}\right]$
+		For $t \in \left(\frac{2n\pi}{2n+1}, \frac{2(n+1)\pi}{2n+3}\right]$
 		\[
 		\VR_t(\bbS^1) \simeq \bbS^{2l+1}.
 		\]
@@ -67,5 +91,17 @@ We recall the following results related to the homotopy type of the Vietoris--Ri
 		\VR_t(\rp^n) \simeq \rp^n.
 		\]
 	\end{enumerate}
-	\anibal{Maybe unify $l$ and $n$.}
 \end{proposition}
+
+\subsubsection{} For the proof of the following theorem, see \cite{bib11} or \cite{bib13, bib14}.
+
+\begin{theorem}
+	Let $X$ and $Y$ be compact metric spaces and $\kk$ be an arbitrary field. Then, for any $k \in \mathbb{Z}_{\geq 0}$,
+	\[
+	d_I \left( \mathrm{PH}_k(\VR_{\bullet}(X); \kk), \mathrm{PH}_k(\VR_{\bullet}(Y); \kk) \right) \leq 2 d_{\mathrm{GH}}(X, Y).
+	\]
+\end{theorem}
+
+\subsection{Stability of persistent cohomology operations}\label{ss:stability}
+
+\input{sec/stability}
