@@ -95,22 +95,22 @@ The interleaving distance of $q$-tame persistence modules agrees with the bottle
 
 \subsection{Persistent (co)homology}
 
-\subsubsection{} An \defn{$\R$-diagram of spaces} $X$ is a functor from $\R$ to the category $\Top$ of (topological) spaces with (continuous) maps.
+\subsubsection{} An \defn{$\R$-space} $X$ is a functor from $\R$ to the category $\Top$ of (topological) spaces with (continuous) maps.
 Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
-For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-diagram of spaces produces the persistence module $\rH_k(X; \kk)$, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
+For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-space produces the persistence module $\rH_k(X; \kk)$, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
 We will refer to this persistence module as the \defn{persistent $k$-homology} of $X$.
 
 It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
-The most important example is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-diagram of spaces $X$.
+The most important example is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-space $X$.
 
-An $\R$-diagram of spaces is said to be q-tame if its persistent homology and cohomology are q-tame as persistence modules over $\kk$.
+An $\R$-space is said to be q-tame if its persistent homology and cohomology are q-tame as persistence modules over $\kk$.
 
 %\subsubsection{} An important class of $\R$-diagrams is one-parameter filtrations of a space.
 %These are $\R$-diagrams with $X_s$ being a subspace of $X_t$ if $s \leq t$.
 %In this case, said space is $\colim X = \bigcup_r X_r$.
 %
-%Another natural construction of a persistence module from an $\R$-diagram of spaces is obtained by considering relative cohomology with $\kk$ coefficients $\rH^k(\colim X, X; \kk)$.
+%Another natural construction of a persistence module from an $\R$-space is obtained by considering relative cohomology with $\kk$ coefficients $\rH^k(\colim X, X; \kk)$.
 %Notice that this is a functor from $\R$ to $\Vec$, since cohomology is contravariant and $(\colim X, X_s) \supseteq (\colim X, X_t)$ for $s \leq t$.
 %We refer to it as the \defn{persistent relative $k$-cohomology} of $X$.
 %
@@ -128,51 +128,50 @@ We will identify a simplicial complex with its geometric realization.
 Let $X$ be a metric space and $r > 0$.
 Let $\VR_r(X)$ denote the simplicial complex whose vertices are the points of $X$ and whose simplices are the finite subsets of $X$ with diameter strictly less than $r$.
 Note that if $s \leq t$, then $\VR_s(X)$ is a subset of $\VR_t(X)$.
-So, together with the inclusion maps, these spaces define an $\R$-diagram of spaces with $\VR_r(X) = \emptyset$ for non-positive values of $r$.
-We refer to it as the \defn{Vietoris–Rips complex} of $X$.
+So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(X) = \emptyset$ for non-positive values of $r$.
+We refer to it as the \defn{Vietoris--Rips complex} of $X$.
 
-\subsection{q-tameness results}
+\subsubsection{} In \cite[Prop.~5.1]{chazal2014geometric} is shown that if $X$ is a totally bounded metric space, then $\rH_k(\VR(X); \kk)$ is $q$-tame for any non-negative integer $k \geq 0$ and any field $\kk$.
 
-\begin{remark}
-	In \cite{bib11}, it is proved that if $X$ is a totally bounded metric space, then $\rH_k(\VR(X); \kk)$ is $q$–tame for any nonnegative integer $k \geq 0$ and any field $\kk$.
-\end{remark}
-
-\begin{theorem}[\cite{bib7}]
-	If $X$ is a totally bounded metric space, then there is a (unique) persistence barcode associated to $\rH_k(\VR(X); \kk)$.
-\end{theorem}
-
-If $X$ is a totally bounded metric space, then we denote the barcode corresponding to $\rH_k(\VR(X); \kk)$ by $\barc_{\VR}^k(X; \kk)$.
-
-%The most important existence result for persistence barcodes is Crawley-Boevey’s theorem \cite{bib5} which guarantees the existence of a persistence barcode associated to $V_{\bullet} = (V_r, v_{r,s})$ if $V_{\bullet}$ is pointwise finite-dimensional (i.e., $\dim(V_r) < \infty$ for all $r$). However, for many natural persistence modules (e.g., Vietoris–Rips persistent homology of a nonfinite metric space $X$), it is not straightforward to verify the pointwise finite-dimensionality condition. Nevertheless, in Theorem 2.9, we are able to establish that, if $X$ is totally bounded, then its Vietoris–Rips persistent homology has a (unique) persistence barcode. This is achieved without invoking Crawley-Boevey’s theorem and instead through combining our main (isomorphism) theorem (see Theorem 4.1) with a recent result by Schmahl \cite{bib6}. The proof of Theorem 2.9 can be found in the extended (arXiv) version of this paper \cite{bib7}. The totally boundedness condition is required in the theorem in order to guarantee the following notion of regularity:
+\subsubsection{} \label{prop:pH1}{\rm \cite[Prop.~7.10]{virk20201}}.
+If $X$ be a simply-connected geodesic space, then
+\[
+\Hbarc{1}{X} = \emptyset.
+\]
 
 \subsection{Filling radius}\label{ss:filling_radius}
 
 Any compact metric space $X$ can be isometrically embedded into the space $L^\infty(X)$ of all bounded real-valued functions on $X$, via the map $x\in X\mapsto d_X(x,\cdot)$ where $d_X(x,\cdot)$ is the distance function to $x$. Let $U_\epsilon(X)$ denote the $\epsilon$-neighborhood of $X$ in $L^\infty(X)$.
 For an $n$-dimensional Riemannian manifold $M$, its \defn{filling radius} is defined as the infimal $\epsilon>0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $M \hookrightarrow U_\epsilon(M)$ \cite[page 108]{gromov2007metric}.
 
-\begin{proposition}[{\cite[Prop.~9.4]{lim2020vietoris}}]\label{prop:manifold}
-	If $M$ be a closed connected $n$-dimensional Riemannian manifold,
-	\[
-	(0,2\fillrad{M}) \in \Hbarc{n}{M}.
-	\]
-\end{proposition}
+\subsubsection{}\label{prop:manifold}
 
-\subsection{...}\anibal{Where does this statement belong to in the presentation?}
+\proposition If $M$ be a closed connected $n$-dimensional Riemannian manifold,
+\[
+(0,2\fillrad{M}) \in \Hbarc{n}{M}.
+\]
 
-\begin{enumerate}
+\begin{proof}
+	This statement appears as Proposition~9.4 in \cite{lim2020vietoris}.
+\end{proof}
 
-	\item\label{prop:pH1} {\rm \cite[Prop.~7.10]{virk20201}}.
-	If $X$ be a simply-connected geodesic space, then
-	\[
-	\Hbarc{1}{X} = \emptyset.
-	\]
-\end{enumerate}
+\subsection{Homotopy interleaving and stability}
 
-\subsubsection{} The Gromov--Hausdorff ...
+\subsubsection{}\label{def:dhi} We recall the notion of the homotopy interleaving distance from \cite{blumberg2023interleaving}.
 
-\begin{theorem}
-	Let $X$ and $Y$ be compact metric spaces and $\kk$ be an arbitrary field. Then, for any $k \in \mathbb{Z}_{\geq 0}$,
-	\[
-	d_I \left(\rH_k(\VR(X); \kk), \rH_k(\VR(Y); \kk)\right) \leq 2 d_{\mathrm{GH}}(X, Y).
-	\]
-\end{theorem}
+Given two $\R$-diagrams of spaces $X$ and $Y$, a morphism $f \colon X \to Y$ is called an \defn{(objectwise) weak equivalence} if for each $r \in \R$, $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence, i.e., it induces isomorphisms on all homotopy groups.
+We say $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $\Wfunc$ and morphisms $f \colon \Wfunc \to X$ and $g \colon \Wfunc \to Y$ that are (objectwise) weak equivalences.
+We say $X$ and $Y$ are \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-diagrams of spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
+
+The \defn{homotopy interleaving distance} between two $\R$-diagrams of spaces $X$ and $Y$ is given by
+\[
+\dhi(X,Y):=\inf \left\{\delta\geq 0:X,Y \text{ are }\delta\text{-homotopy-interleaved}\right\}.
+\]
+In other words, $d_{\mathrm{HI}}(X,Y) = \inf\left\{\di(X',Y')\,\mid X'\simeq X\text{ and }Y'\simeq Y\right\}.$
+
+\subsubsection{}\label{thm:stability-HI} The homotopy interleaving distance satisfies the following stability result; see \cite[Prop.~1.9 \& Thm.~1.10]{blumberg2023interleaving} for more details.
+
+\medskip\theorem Let $X$ and $Y$ be compact metric spaces. Then, for any $k\in \Z_{\geq 0},$
+\[
+\di \left(\rH_k(\VR(X); \kk), \rH_k(\VR(Y); \kk)\right) \leq  \dhi(  \VR_{\bullet}(X)  ,  \VR_{\bullet}(Y)  )\leq 2\cdot d_{\mathrm{GH}}(X, Y).
+\]

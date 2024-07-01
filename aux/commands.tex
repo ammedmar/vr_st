@@ -16,16 +16,24 @@
 
 \definecolor{darkblue}{rgb}{0,0,0.7} % darkblue color
 \newcommand{\darkblue}{\color{darkblue}} % darkblue command
-\newcommand{\defn}[1]{{\darkblue \emph{#1}}} % for defining new concepts
+\newcommand{\defn}[1]{{\darkblue \emph{#1}}} % for new concepts
 
 \newcommand{\ling}[1]{{ \textcolor{purple} {#1}}}
-\newcommand{\facundo}[1]{{ \textcolor{blue} {#1}}}
 
 \DeclareMathOperator{\rad}{rad}
 \DeclareMathOperator{\VR}{VR}
 \DeclareMathOperator{\opH}{H}
 \newcommand{\PFD}{\mathrm{PFD}}
 % \newcommand{\sqbarc}[1]{\Sq^{#1}\barc}
+
+\renewcommand{\corollary}{\noindent\textit{Corollary}.\ }
+\renewcommand{\theorem}{\noindent\textit{Theorem}.\ }
+\renewcommand{\lemma}{\noindent\textit{Lemma}.\ }
+\renewcommand{\proposition}{\noindent\textit{Proposition}.\ }
+\renewcommand{\remark}{\noindent\textit{Remark}.\ }
+\renewcommand{\example}{\noindent\textit{Example}.\ }
+\renewcommand{\construction}{\noindent\textit{Construction}.\ }
+\newcommand{\conjecture}{\noindent\textit{Conjecture}.\ }
 
 \DeclareMathOperator{\barc}{Bar}
 \DeclareMathOperator{\img}{Im}
@@ -49,8 +57,8 @@
 }
 
 % Added by Ling
-\newcommand{\thetabarc}[2][\Ftwo]{\barc\theta(\VR_\bullet(#2);\,#1)}
-\newcommand{\thetamodule}[2][\k]{\img\left(\theta(#2;\,#1)\right)}
+\newcommand{\thetabarc}[1]{\barc(\img \theta_{\VR(#1)})}
+\newcommand{\thetamodule}[1]{\img\theta_{#1}}
 \newcommand{\dhi}{d_{\mathrm{HI}}}
 \newcommand{\di}{d_{\mathrm{I}}}
 \newcommand{\Xfunc}{X_\bullet}

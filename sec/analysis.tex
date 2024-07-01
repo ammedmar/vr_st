@@ -1,10 +1,10 @@
 % !TEX root = ../vr_st.tex
 
-\section{Computations}\label{s:computations}
+\section{Examples and analysis}\label{s:computations}
 
-\subsection{Spheres and projective spaces}
+\subsection{Metric $\bbS^n$ and $\rp^n$}
 
-For any integer $n \geq 1$ and real number $r > 0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
+\subsubsection{} For any integer $n \geq 1$ and real number $r > 0$, let $\bbS^n(r)$ be the $n$-sphere of radius $r$, equipped with the geodesic distance.
 The \defn{$n$-real projective space} $\rp^n(r)$ is the quotient space $\bbS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bbS^n$.
 Let $[x]$ denote the equivalence class of $x$. We equip $\rp^n(r)$ with the quotient metric defined as
 \[
@@ -20,7 +20,7 @@ It is proved in \cite{katz1983filling} that for any $n \geq 1$ their filling rad
 \]
 We denote by $\zeta_n$ twice the filling radius of $\bbS^n$, i.e., $\zeta_n \defeq \arccos\left(\frac{-1}{n+1}\right)$.
 
-In certain intervals, the homotopy type of the Vietoris--Rips complex of these spaces is known.
+\subsubsection{} In certain intervals, the homotopy type of the Vietoris--Rips complex of these spaces is known.
 This information is presented in the following.
 
 \begin{proposition}
@@ -29,7 +29,7 @@ This information is presented in the following.
 		\item\label{prop:S1}{\rm \cite[Thm.~7.4]{adamaszek2017vietoris}.}
 		For $t \in \left(\frac{2n\pi}{2n+1}, \frac{2(n+1)\pi}{2n+3}\right]$
 		\[
-		\VR_t(\bbS^1) \simeq \bbS^{2l+1}.
+		\VR_t(\bbS^1) \simeq \bbS^{2n+1}.
 		\]
 
 		\item\label{prop:Sn}{\rm \cite[Thm.~10]{lim2020vietoris}.}
@@ -46,9 +46,97 @@ This information is presented in the following.
 	\end{enumerate}
 \end{proposition}
 
-\subsection{Fundamental bars of $\VR_\bullet(\rp^n)$}
+\subsection{Barcodes of $\bbS^n$}\label{ss:Sn}
 
-\begin{lemma} \label{prop:RPn bar}
+\subsubsection{}
+
+Because the Vietoris--Rips complexes of $\bbS^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$. Therefore, all bars are dominated by $(0,\pi)$.
+
+First, consider the case of $n=1$.
+The barcodes of $\bbS^1$ can be obtained from Proposition \ref{prop:homotopy type} (\ref{prop:S1}), i.e. \cite[Theorem 7.4]{adamaszek2017vietoris}: for any $l\in \Z_{\geq 0}$,
+\begin{equation}\label{eq:barc of S1}
+	\Hbarc{2l+1}{\bbS^1}=\left\{\left(\tfrac{2l\pi}{2l+1},\tfrac{2(l+1)\pi}{2l+3}\right)\right\},\, \Hbarc{2l}{\bbS^1}=\emptyset.
+\end{equation}
+For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
+\begin{itemize}
+	\item $\Hbarc{1}{\bbS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
+	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. ( The Claim also follows from your own work on persistent homotopy groups.))}
+	\item $\Hbarc{n}{\bbS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:manifold})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
+	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bbS^n}$ are those  dominated by  $(\zeta_n,\pi)$. This follows from  Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
+\end{itemize}
+
+\begin{figure}[ht]
+	\centering
+	\input{sec/table_sphere}
+	\caption{
+		Barcodes of $\bbS^n$, for $n\geq 2$ and degrees $p\geq 2$. Here, $\zeta_n=\arccos(-\frac{1}{n+1})$.
+		In each figure, the gray area represents the only region, apart from the blue dots, where points could potentially exist within the corresponding barcode.}
+	\label{fig:Sk}
+\end{figure}
+
+\subsubsection{} We study the Steenrod barcodes of $\bbS^n$. For any $k\in \Z_{\geq 1}$, the Steenrod square operation $\Sq^k$ is trivial for $\bbS^n$. Combined with Proposition \ref{prop:homotopy type} (\ref{prop:Sn}), we conclude that no Steenrod bars can be born before $\zeta_n$. Thus, all bars in $\sqbarc{k}{\bbS^n}$ are those dominated by  $(\zeta_n,\pi)$.
+
+\subsection{Wedge sums}
+
+The wedge sum $(X_1,x_1)\vee (X_2,x_2)$ (or simply $X_1\vee X_2$) of two pointed metric spaces $(X_1,x_1)$ and $(X_2,x_2)$ is the quotient space of the disjoint union of $X_1$ and $X_2$ by the identification of basepoints $x_1\sim x_2$.
+Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1\vee X_2$ is given by \label{para:gluing}: %\facundo{Shouldn't cite Adams et al for this! They did not invent the glueing metric!!}
+$$d_{X_1\vee X_2}(x_1',x_2')\defeq d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2),\forall x_1'\in X_1, x_2'\in X_2$$
+and $d_{X_1\vee X_2}\vert_{X_1\times X_1}\defeq d_{X_1},d_{X_1\vee X_2}\vert_{X_2\times X_2}\defeq d_{X_2}$. Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(X_n,x_n)$ by identifying $x_i\sim x_j$ for all $1\leq i,j\leq n$. We denote the resulting space by $\bigvee_{i=1}^n (X_i,x_i)$, or $\bigvee_{i=1}^n X_i$ for simplicity, with the gluing metric:
+$$d_{\bigvee_{i=1}^n X_i}(x_i',x_j')\defeq d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\forall i\neq j, x_i'\in X_i, x_j'\in X_j$$
+and $d_{X_i\vee X_i}|_{X_i\times X_i}\defeq d_{X_i}$ for any $1\leq i\leq n$.\\
+
+Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes. From this, we deduce the following proposition. \facundo{A priory, parameter wise homotopy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
+\ling{I have added the reference}
+
+\begin{proposition}\label{prop:wedge sum}
+	Let $X$ and $Y$ be two compact metric spaces.
+	\begin{enumerate}[(a)]
+		\item\label{prop:wedge sum pH} For any degree $p$,
+		\begin{equation*}\label{eq:wedge sum pH}
+			\Hbarc{p}{X\vee Y}= \Hbarc{p}{X}\sqcup \Hbarc{p}{Y}.
+		\end{equation*}
+		\item\label{prop:wedge sum Sq} For any $k\in \Z_{\geq 1}$,
+		\begin{equation*}\label{eq:wedge sum Sq}
+			\sqbarc{k}{X\vee Y}= \sqbarc{k}{X}\sqcup \sqbarc{k}{Y}.
+		\end{equation*}
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 9 (2)]{lim2020vietoris}.
+
+	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
+\end{proof}
+
+\subsection{Barcodes of $\bbS^1 \vee \bbS^2 \vee \dots \vee \bbS^n$}
+
+\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain (an estimate of) the barcodes of $X_n\defeq \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$, illustrated in the top row of Figure \ref{fig:barcodes}:
+\begin{itemize}
+	\item $\Hbarc{1}{X_n}$ contains only one bar $\left(0,\frac{2\pi}{3}\right)$.
+	\item For any degree $2\leq p\leq n$, $\Hbarc{p}{X_n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$. For instance, when $p=2l+1$ is odd, $\Hbarc{p}{X_n}$ contains the bar $( \frac{2l\pi}{2l+1},\frac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
+	\item For any degree $p>n$, all bars in $\Hbarc{p}{X_n}$ are dominated by $(\zeta_n,\pi)$.
+\end{itemize}
+
+\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $X_n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
+
+\begin{figure}
+	\centering
+	\input{sec/fig_barcodes}
+	\caption{\emph{Top row:} barcodes of $X_n = \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$. \emph{Bottom row:} barcodes of $\rp^n$. }
+	\label{fig:barcodes}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\input{sec/fig_sq_barcodes}
+	\caption{\emph{Top row:} Steenrod barcodes of $X_n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$.}
+	\label{fig:sq barcodes}
+\end{figure}
+
+
+\subsection{Fundamental bars of $\rp^n$}
+
+\begin{lemma}\label{prop:RPn bar}
 	For integers $1 \leq p \leq n$,
 	\[
 	\left(0, \frac{2\pi}{3}\right) \in \Hbarc{p}{\rp^n}.
@@ -129,7 +217,8 @@ This information is presented in the following.
 	Because $\pi_{n}$ restricted to $\rp^{n-1}$ is equal to $\pi_{n-1}$, we conclude that $(\iota\circ \rho_{n-1})(y)=(\rho_n\circ\iota_t)(y)$ for any $y$. Thus, the claim holds.\\
 
 	For each $1\leq p\leq n-1$, applying the $p$-th homology functor (over $\Ftwo$) to the above diagram, we obtain the following commutative diagram of vector spaces:
-	\[\begin{tikzcd}
+	\[
+	\begin{tikzcd}
 		\mathrm{H}_p\left(\rp^{n-1}\right)
 		\ar[d, "\cong" left]
 		&
@@ -148,105 +237,21 @@ This information is presented in the following.
 		\ar[r, "g_n" , myred]
 		&
 		\mathrm{H}_p\left(\VR_{\frac{2\pi}{3}+\epsilon}(\rp^{n})\right).
-	\end{tikzcd}\]
+	\end{tikzcd}
+	\]
 	By induction assumption, $\left(0, \frac{2\pi}{3}\right)\in\Hbarc{p}{\rp^{n-1}}$, which implies that $g_{n-1}$ is the zero map. Commutativity of the left-hand side square further implies that $\mathrm{H}_p(\iota_t)$ is an isomorphism. Then, using the right-hand side square's commutativity, we deduce $g_n\circ \mathrm{H}_p(\iota_t)=0$. Since $\mathrm{H}_p(\iota_t)$ is an isomorphism, we conclude that $g_n=0$. This holds for any $\epsilon>0$, so we can conclude $\left(0, \frac{2\pi}{3}\right)\in\Hbarc{p}{\rp^{n}}$.
 
 	For the case when $p=n$, we can apply Item (\ref{prop:manifold}) to observe that $(0,2\fillrad{\rp^n}) = \left(0, \frac{2\pi}{3}\right)\in \Hbarc{n}{\rp^n}$. Therefore, $\left(0, \frac{2\pi}{3}\right)\in \Hbarc{p}{\rp^n}$ is established for all $1\leq p\leq n.$
 \end{proof}
 
-\subsection{Steenrod barcodes of $\bbS^n$}\label{ex:Sn}
-
-Because the Vietoris--Rips complexes of $\bbS^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$. Therefore, all bars are dominated by $(0,\pi)$.
-
-First, consider the case of $n=1$.
-The barcodes of $\bbS^1$ can be obtained from Proposition \ref{prop:homotopy type} (\ref{prop:S1}), i.e. \cite[Theorem 7.4]{adamaszek2017vietoris}: for any $l\in \Z_{\geq 0}$,
-\begin{equation}\label{eq:barc of S1}
-	\Hbarc{2l+1}{\bbS^1}=\left\{\left(\tfrac{2l\pi}{2l+1},\tfrac{2(l+1)\pi}{2l+3}\right)\right\},\, \Hbarc{2l}{\bbS^1}=\emptyset.
-\end{equation}
-For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
-\begin{itemize}
-	\item $\Hbarc{1}{\bbS^n}=\emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
-	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. ( The Claim also follows from your own work on persistent homotopy groups.))}
-	\item $\Hbarc{n}{\bbS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:manifold})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
-	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bbS^n}$ are those  dominated by  $(\zeta_n,\pi)$. This follows from  Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
-\end{itemize}
-
-\begin{figure}[ht]
-	\centering
-	\input{sec/table_sphere}
-	\caption{
-		Barcodes of $\bbS^n$, for $n\geq 2$ and degrees $p\geq 2$. Here, $\zeta_n=\arccos(-\frac{1}{n+1})$.
-		In each figure, the gray area represents the only region, apart from the blue dots, where points could potentially exist within the corresponding barcode.}
-	\label{fig:Sk}
-\end{figure}
-
-We study the Steenrod barcodes of $\bbS^n$. For any $k\in \Z_{\geq 1}$, the Steenrod square operation $\Sq^k$ is trivial for $\bbS^n$. Combined with Proposition \ref{prop:homotopy type} (\ref{prop:Sn}), we conclude that no Steenrod bars can be born before $\zeta_n$. Thus, all bars in $\sqbarc{k}{\bbS^n}$ are those dominated by  $(\zeta_n,\pi)$.
-
-\subsection{Wedge sums}
-
-The wedge sum $(X_1,x_1)\vee (X_2,x_2)$ (or simply $X_1\vee X_2$) of two pointed metric spaces $(X_1,x_1)$ and $(X_2,x_2)$ is the quotient space of the disjoint union of $X_1$ and $X_2$ by the identification of basepoints $x_1\sim x_2$.
-Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1\vee X_2$ is given by \label{para:gluing}: %\facundo{Shouldn't cite Adams et al for this! They did not invent the glueing metric!!}
-$$d_{X_1\vee X_2}(x_1',x_2')\defeq d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2),\forall x_1'\in X_1, x_2'\in X_2$$
-and $d_{X_1\vee X_2}\vert_{X_1\times X_1}\defeq d_{X_1},d_{X_1\vee X_2}\vert_{X_2\times X_2}\defeq d_{X_2}$. Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(X_n,x_n)$ by identifying $x_i\sim x_j$ for all $1\leq i,j\leq n$. We denote the resulting space by $\bigvee_{i=1}^n (X_i,x_i)$, or $\bigvee_{i=1}^n X_i$ for simplicity, with the gluing metric:
-$$d_{\bigvee_{i=1}^n X_i}(x_i',x_j')\defeq d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\forall i\neq j, x_i'\in X_i, x_j'\in X_j$$
-and $d_{X_i\vee X_i}|_{X_i\times X_i}\defeq d_{X_i}$ for any $1\leq i\leq n$.\\
-
-
-Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes. From this, we deduce the following proposition. \facundo{A priory, parameter wise homotopy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
-\ling{I have added the reference}
-
-\begin{proposition}\label{prop:wedge sum}
-	Let $X$ and $Y$ be two compact metric spaces.
-	\begin{enumerate}[(a)]
-		\item\label{prop:wedge sum pH} For any degree $p$,
-		\begin{equation*}\label{eq:wedge sum pH}
-			\Hbarc{p}{X\vee Y}= \Hbarc{p}{X}\sqcup \Hbarc{p}{Y}.
-		\end{equation*}
-		\item\label{prop:wedge sum Sq} For any $k\in \Z_{\geq 1}$,
-		\begin{equation*}\label{eq:wedge sum Sq}
-			\sqbarc{k}{X\vee Y}= \sqbarc{k}{X}\sqcup \sqbarc{k}{Y}.
-		\end{equation*}
-	\end{enumerate}
-\end{proposition}
-\begin{proof}
-	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 9 (2)]{lim2020vietoris}.
-
-	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
-\end{proof}
-
-\subsection{Barcodes and Steenrod barcodes of $\bbS^1 \vee \bbS^2 \vee \dots \vee \bbS^n$}
-
-Using Example \ref{ex:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain (an estimate of) the barcodes of $X_n\defeq \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$, illustrated in the top row of Figure \ref{fig:barcodes}:
-\begin{itemize}
-	\item $\Hbarc{1}{X_n}$ contains only one bar $\left(0,\frac{2\pi}{3}\right)$.
-	\item For any degree $2\leq p\leq n$, $\Hbarc{p}{X_n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$. For instance, when $p=2l+1$ is odd, $\Hbarc{p}{X_n}$ contains the bar $( \frac{2l\pi}{2l+1},\frac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
-	\item For any degree $p>n$, all bars in $\Hbarc{p}{X_n}$ are dominated by $(\zeta_n,\pi)$.
-\end{itemize}
-
-Using Example \ref{ex:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $X_n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
-
-\begin{figure}
-	\centering
-	\input{sec/fig_barcodes}
-	\caption{\emph{Top row:} barcodes of $X_n = \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$. \emph{Bottom row:} barcodes of $\rp^n$. }
-	\label{fig:barcodes}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{sec/fig_sq_barcodes}
-	\caption{\emph{Top row:} Steenrod barcodes of $X_n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$. }
-	\label{fig:sq barcodes}
-\end{figure}
-
-\subsection{Steenrod barcodes of $\rp^n$}
+\subsection{Barcodes of $\rp^n$}
 
 Because the Vietoris--Rips complexes of $\rp^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$. Therefore, all bars are dominated by $(0,\pi)$.
 
 For the standard barcodes of $\rp^n$, by applying Proposition \ref{prop:homotopy type} (\ref{prop:RPn}) and (\ref{prop:RPn bar}), %and the fact that $\opH_p(\rp^n;\,\Ftwo)$ is $\Ftwo$ for $p\leq n$ and $0$ otherwise,
 we obtain the following:
 \begin{itemize}
-	\item For any $1\leq p\leq n$, $\Hbarc{p}{\rp^n}$ contains one bar $\left(0,\frac{2\pi}{3}\right)$ and possibly some bars  dominated by $\left(\frac{2\pi}{3},\pi\right)$.
+	\item For any $1 \leq p \leq n$, $\Hbarc{p}{\rp^n}$ contains one bar $\left(0,\frac{2\pi}{3}\right)$ and possibly some bars  dominated by $\left(\frac{2\pi}{3}, \pi\right)$.
 	\item For $p>n$, all bars in $\Hbarc{p}{\rp^n}$ are dominated by $\left(\frac{2\pi}{3},\pi\right)$.
 \end{itemize}
 
@@ -257,7 +262,9 @@ To compute the Steenrod barcodes of $\rp^n$, we first recall the following prope
 	\item For $k>\frac{n-1}{2}$, $\Sq^k\equiv 0$. Indeed, for $m\leq \frac{n-1}{2}<k$, it follows from \cite[page 489, Item (5)]{hatcher2000} that $\Sq^k(\alpha^m)=0$. For $m> \frac{n-1}{2}$, $\Sq^k(\alpha^m)=\left({m \choose k} \mod 2\right)\alpha^{m+k}=0$ because $m+k>n-1.$ Thus, $\Sq^k(\alpha^m)=0$ for any $m$.
 	%For each $1\leq k\leq n-1$, let $k\leq m_k\leq n-1-k$ be such that ${m \choose k} \mod 2$
 \end{itemize}
-Let $1\leq k\leq \frac{n-1}{2}$. Since the Vietoris--Rips complex $\VR_t\left(\rp^n\right)$ retains the homotopy type of $\rp^n$ for $t\in \left(0,\frac{2\pi}{3}\right)$, we have at least one bar generated by $\Sq^k(\alpha^k)=\alpha^{2k}$ in the $\Sq^k$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(k+1)$ class $\alpha^{2k}$ dies at $\frac{2\pi}{3}$. Therefore,
+
+Let $1 \leq k \leq \frac{n-1}{2}$.
+Since the Vietoris--Rips complex $\VR_t\left(\rp^n\right)$ retains the homotopy type of $\rp^n$ for $t\in \left(0,\frac{2\pi}{3}\right)$, we have at least one bar generated by $\Sq^k(\alpha^k)=\alpha^{2k}$ in the $\Sq^k$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(k+1)$ class $\alpha^{2k}$ dies at $\frac{2\pi}{3}$. Therefore,
 \begin{itemize}
 	\item For $1\leq k\leq n-1$, $\sqbarc{k}{\rp^n}$ contains one bar $\left(0,\frac{2\pi}{3}\right)$, and possibly some bars dominated by $\left(\frac{2\pi}{3},\pi\right)$;
 	\item For $k>n$, the possible bars in $\sqbarc{k}{\rp^n}$ are $\left(0,\frac{2\pi}{3}\right)$ or those dominated by $\left(\frac{2\pi}{3},\pi\right)$.
@@ -286,4 +293,4 @@ We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the t
 	For Item (2), recall the Steenrod barcodes of the two spaces from Figure \ref{fig:sq barcodes}. For any $1\leq k\leq n-1$, the bar $\left(0,\frac{2\pi}{3}\right)$ in $\sqbarc{k}{\rp^n}$ can be mapped to either the diagonal or a point whose first coordinate is larger than or equal to $\zeta_n$. Therefore, a matching between the $\Sq^k$--barcodes will have a cost that is at least $\min\left\{\frac{1}{2}\cdot\frac{2\pi}{3}, \zeta_n\right\} = \frac{\pi}{3}.$
 \end{proof}
 
-Proposition \ref{prop:db estimate} shows that the Steenrod barcodes can have a stronger distinguishing power than the standard barcodes in all degrees.
+\cref{prop:db estimate} shows that the Steenrod barcodes can have a stronger distinguishing power than the standard barcodes in all degrees.
