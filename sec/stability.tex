@@ -1,1 +1,82 @@
-...
+Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-diagrams of spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}). Furthermore, when the $\R$-diagrams are given by the Vietoris-Rips filtrations of two metric spaces, this upper bound can be replaced with twice the Gromov-Hausdorff distance $\dgh$ between the metric spaces. See Theorem \ref{thm:theta stability} for details.
+
+% Let $X$ be a q-tame $\R$-diagram of spaces. 
+% Recall from \textsection \ref{subsubsec:theta-barcodes} that any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphism of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-diagram of spaces.
+
+Before stating Theorem \ref{thm:theta stability}, we recall the notion of the homotopy interleaving distance from \cite{blumberg2023universality} \ling{Note: unable to access the published version. I will use the arXiv version for now}. 
+
+Given two $\R$-diagrams of spaces $\Xfunc$ and $\Yfunc$, a morphism $f:\Xfunc\to \Yfunc$ is called an \defn{(objectwise) weak equivalence} if for each $t\in \R$, $f_t:X_t\to Y_t$ is a weak homotopy equivalence, i.e., it induces isomorphisms on all homotopy groups.
+We say $\Xfunc$ and $\Yfunc$ are \defn{weakly equivalent}, denoted by $\Xfunc\simeq \Yfunc$, if there exists an $\R$-diagram of spaces $\Wfunc$ and morphisms $f:\Wfunc\to \Xfunc$ and $g:\Wfunc\to \Yfunc$ that are (objectwise) weak equivalences.
+%The relation $\Xfunc\simeq \Yfunc$ is an equivalence relation (see \cite{blumberg2017universality} for details). 
+We say $\Xfunc$ and $\Yfunc$ are \defn{$\delta$-homotopy-interleaved} for some $\delta\geq 0$, if there exist $\R$-diagrams of spaces $\Xfunc'\simeq \Xfunc$ and $\Yfunc'\simeq \Yfunc$ such that $\Xfunc'$ and $\Yfunc'$ are $\delta$-interleaved. \label{para:weakly equivalent}
+
+\begin{definition}[Homotopy interleaving distance, {\cite[Definition 3.6]{blumberg2023universality}}] \label{def:dhi} The \defn{homotopy interleaving distance} between two $\R$-diagrams of spaces $\Xfunc$ and $\Yfunc$ is given by
+	$$\dhi(\Xfunc,\Yfunc):=\inf \left\{\delta\geq 0:\Xfunc,\Yfunc \text{ are }\delta\text{-homotopy-interleaved}\right\}.$$
+In other words, $d_{\mathrm{HI}}(\Xfunc,\Yfunc)=\inf\left\{\di(\Xfunc',\Yfunc')\,\mid\Xfunc'\simeq \Xfunc\text{ and }\Yfunc'\simeq \Yfunc\right\}.$
+\end{definition}
+
+The homotopy interleaving distance satisfies the following stability result; see \cite[Proposition 1.9 \& Theorem 1.10]{blumberg2023universality} for more details.
+
+\begin{theorem} 
+\label{thm:stability-HI}
+Let $X$ and $Y$ be compact metric spaces. Then, for any $k\in \Z_{\geq 0},$
+        \[
+	\di \left(\rH_k(\VR(X); \kk), \rH_k(\VR(Y); \kk)\right) \leq  \dhi(  \VR_{\bullet}(X)  ,  \VR_{\bullet}(Y)  )\leq 2\cdot d_{\mathrm{GH}}(X, Y).
+	\] 
+\end{theorem}
+
+\ling{add connecting sentence.}
+
+\begin{theorem}\label{thm:theta stability}
+    Given two $\R$-diagrams of spaces $\Xfunc$ and $\Yfunc$, we have
+    \begin{equation}\label{eq:theta di-stability}
+        \di\left(\thetamodule{\Xfunc}, \thetamodule{\Yfunc}\right)\leq \dhi(\Xfunc,\Yfunc)
+    \end{equation}
+
+    In the case of the Vietoris-Rips filtration of compact metric spaces $X$ and $Y$, we have
+    \ling{should we write '$\img$' in the notation of $\theta$-barcodes and $Sq$-barcodes?}
+    \[\db\left(\thetabarc{X}, \thetabarc{Y}\right)\leq 2\cdot \dgh(X,Y)\]
+
+    \ling{notation conflict: $X,Y$ are used both for metric spaces and diagrams of spaces. I will use $\Xfunc$ and $\Yfunc$ in this file and we can change them later.}
+\end{theorem}
+
+To prove Theorem \ref{thm:theta stability}, we first show the following two lemmas.
+
+\begin{lemma}\label{lem:di stability}
+    Given two $\R$-diagrams of spaces $\Xfunc$ and $\Yfunc$, we have
+    \[\di\left(\thetamodule{\Xfunc}, \thetamodule{\Yfunc}\right)\leq \di(\Xfunc,\Yfunc).\]
+\end{lemma}
+\begin{proof}
+    This follows directly from the fact that $X\mapsto \thetamodule{X}$ defines a functor from the category of spaces to the category of vector spaces over $\k$.
+\end{proof}
+
+\begin{lemma}\label{lem:w.h.e. preservance}
+    If two $\R$-diagrams of spaces $\Xfunc$ and $\Xfunc'$ are weakly equivalent, then $\thetamodule{\Xfunc}\cong\thetamodule{\Xfunc'}.$
+\end{lemma}
+\begin{proof}
+    Since $\Xfunc$ and $\Yfunc$ are weakly equivalent, there exists an $\R$-diagram of spaces $\Wfunc$ and morphisms $f:\Wfunc\to \Xfunc$ and $g:\Wfunc\to \Xfunc'$ that  $f_t$ and $g_t$ are weak homotopy equivalences for any $t\in \R$.
+    \ling{to continue: here we need to check that the image of $\theta$ is preserved up to isomorphism under w.h.e.}
+\end{proof}
+
+We now prove Theorem \ref{thm:theta stability}.
+
+\begin{proof}[Proof of Theorem \ref{thm:theta stability}]
+    Let $\Xfunc$ and $\Yfunc$ be $\R$-diagrams of spaces. Take any $\delta>\dhi(\Xfunc,\Yfunc)$. By the definition of the homotopy interleaving distance, there exist $\R$-diagrams of spaces $\Xfunc'\simeq \Xfunc$ and $\Yfunc'\simeq \Yfunc$ such that $\Xfunc'$ and $\Yfunc'$ are $\delta$-interleaved. By applying the triangle inequality, Lemma \ref{lem:di stability} and Lemma \ref{lem:w.h.e. preservance}, we obtain
+    \begin{align*}
+            &\di\left(\thetamodule{\Xfunc}, \thetamodule{\Yfunc}\right)\\
+        \leq\, &  \di\left(\thetamodule{\Xfunc}, \thetamodule{\Xfunc'}\right)+
+        \di\left(\thetamodule{\Xfunc'}, \thetamodule{\Yfunc'}\right)\\
+        &+\di\left(\thetamodule{\Yfunc'}, \thetamodule{\Yfunc}\right)\\
+        =\, & 0+\di\left(\thetamodule{\Xfunc'}, \thetamodule{\Yfunc'}\right)+0\\
+        \leq \,& \di(\Xfunc',\Yfunc') \\
+        \leq \,& \delta.
+    \end{align*}
+    Since $\delta$ is arbitrary, we obtain the desired inequality given in Equation (\ref{eq:theta di-stability}).
+
+    In the case of the Vietoris-Rips filtration of compact metric spaces $X$ and $Y$, first note that the persistence modules $\thetamodule{\Xfunc}$ and $\thetamodule{\Yfunc}$ are q-tame. Thus, 
+    \[\db\left(\thetabarc{X}, \thetabarc{Y}\right)=\di\left(\thetamodule{\Xfunc}, \thetamodule{\Yfunc}\right).\]
+    %$\di$ between these two persistence modules agree with the bottleneck distance $\db$ between their corresponding barcodes.
+    Combining Equation (\ref{eq:theta di-stability}) with Theorem \ref{thm:stability-HI} the stability of $\dhi$, we have
+    \[\di\left(\thetamodule{\Xfunc}, \thetamodule{\Yfunc}\right)\leq \dhi(\Xfunc,\Yfunc)\leq 2\cdot \dgh(X,Y).\]
+    Therefore, the bottleneck distance $\db$ between the $\theta$-barcodes is also bounded above by $2\cdot \dgh(X,Y)$.
+\end{proof}
