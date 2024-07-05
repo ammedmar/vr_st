@@ -1,6 +1,6 @@
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title = {\LARGE $\Hbarc{p}{X_n},1\leq p\leq n$},
+		title = {\LARGE $\Hbarc{p}{\VS^n},1\leq p\leq n$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
@@ -21,12 +21,12 @@
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
 		\addplot[barccolor,mark=*] (0, 0.6) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
-		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{2}{X_n}$};
+		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{2}{\VS^n}$};
 	\end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title = {\LARGE $\Hbarc{p}{X_n}, p>n$},
+		title = {\LARGE $\Hbarc{p}{\VS^n}, p>n$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
@@ -45,7 +45,7 @@
 			(0.55,0.95)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
-		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{p}{X_n}, p\geq 3$};
+		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{p}{\VS^n}, p\geq 3$};
 	\end{axis}
 \end{tikzpicture}
 

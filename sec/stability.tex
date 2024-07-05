@@ -12,7 +12,8 @@ Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish th
 \]
 
 \begin{proof}
-	This follows directly from the fact that $X\mapsto \thetamodule{X}$ defines a functor from the category of spaces to the category of vector spaces over $\k$.
+	This follows directly from the fact that $X \mapsto \thetamodule{X}$ defines a functor from the category of spaces to the category of vector spaces over $\k$.
+	\anibal{I think more should be said.}
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
@@ -23,33 +24,40 @@ Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish th
 \end{equation}
 
 \begin{proof}
-    Let $X$ and $Y$ be $\R$-diagrams of spaces. Take any $\delta>\dhi(X,Y)$. By the definition of the homotopy interleaving distance, there exist $\R$-diagrams of spaces $X'\simeq X$ and $Y'\simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved. By applying the triangle inequality, Lemma \ref{lem:di stability} and Lemma \ref{lem:w.h.e. preservance}, we obtain
+    Let $X$ and $Y$ be $\R$-diagrams of spaces. 
+    Take any $\delta > \dhi(X,Y)$.
+    By the definition of the homotopy interleaving distance, there exist $\R$-diagrams of spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
+    By applying the triangle inequality, Lemma \ref{lem:di stability} and Lemma \ref{lem:w.h.e. preservance}, we obtain
     \begin{align*}
-        \di(\thetamodule{X}, \thetamodule{Y}) \leq& \, \di(\thetamodule{X}, \thetamodule{X'}) +
-        \di\left(\thetamodule{X'}, \thetamodule{Y'}\right) \\
-        &+\di\left(\thetamodule{Y'}, \thetamodule{Y}\right) \\ =\, 
-        & 0+\di\left(\thetamodule{X'}, \thetamodule{Y'}\right)+0\\
-        \leq \,& \di(X',Y') \\
-        \leq \,& \delta.
+        \di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
+        \di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \, 
+        0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
+        \di(X',Y') \\ \leq \,&
+        \delta.
     \end{align*}
-    Since $\delta$ is arbitrary, we obtain the desired inequality given in Equation (\ref{eq:theta di-stability}).
+    Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality given in Equation (\ref{eq:theta di-stability}).
 \end{proof}
 
 \subsubsection{}
 \corollary
-In the case of the Vietoris-Rips filtration of compact metric spaces $X$ and $Y$, we have
+In the case of the Vietoris--Rips filtration of compact metric spaces $\cX$ and $\cY$, we have
 \ling{should we write '$\img$' in the notation of $\theta$-barcodes and $Sq$-barcodes?}
 \[
-\db(\thetabarc{X}, \thetabarc{Y}) \leq 2 \cdot \dgh(X,Y)
+\db(\thetabarc{\cX}, \thetabarc{\cY}) \leq 2 \cdot \dgh(X,Y)
 \]
 
 \ling{notation conflict: $X,Y$ are used both for metric spaces and diagrams of spaces. I will use $X$ and $Y$ in this file and we can change them later.}
 
-In the case of the Vietoris-Rips filtration of compact metric spaces $X$ and $Y$, first note that the persistence modules $\thetamodule{X}$ and $\thetamodule{Y}$ are q-tame. Thus,
+In the case of the Vietoris--Rips filtration of compact metric spaces $\cX$ and $\cY$, first note that the persistence modules $\thetamodule{\cX}$ and $\thetamodule{\cY}$ are q-tame.
+Thus,
 \[
-\db(\thetabarc{X}, \thetabarc{Y}) = \di(\thetamodule{X}, \thetamodule{Y}).
+\db\big(\thetabarc{\cX}, \thetabarc{\cY}\big) =
+\di(\thetamodule{\cX}, \thetamodule{\cY}).
 \]
 %$\di$ between these two persistence modules agree with the bottleneck distance $\db$ between their corresponding barcodes.
 Combining Equation (\ref{eq:theta di-stability}) with Theorem \ref{thm:stability-HI} the stability of $\dhi$, we have
-\[\di\left(\thetamodule{X}, \thetamodule{Y}\right)\leq \dhi(X,Y)\leq 2\cdot \dgh(X,Y).\]
+\[
+\di(\thetamodule{X}, \thetamodule{Y}) \leq
+\dhi(X,Y)\leq 2\cdot \dgh(X,Y).
+\]
 Therefore, the bottleneck distance $\db$ between the $\theta$-barcodes is also bounded above by $2\cdot \dgh(X,Y)$.

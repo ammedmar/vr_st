@@ -85,18 +85,18 @@ Thus, all bars in $\sqbarc{k}{\bbS^n}$ are those dominated by  $(\zeta_n,\pi)$.
 
 \subsection{Wedge sums}
 
-The wedge sum $(X_1, x_1)\vee (X_2, x_2)$ (or simply $X_1 \vee X_2$) of two pointed metric spaces $(X_1, x_1)$ and $(X_2, x_2)$ is the quotient space of the disjoint union of $X_1$ and $X_2$ by the identification of basepoints $x_1 \sim x_2$.
-Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1 \vee X_2$ is given by \label{para:gluing}:
+The wedge sum $(X_1, x_1) \vee  (X_2, x_2)$ (or simply $X_1  \vee  X_2$) of two pointed metric spaces $(X_1, x_1)$ and $(X_2, x_2)$ is the quotient space of the disjoint union of $X_1$ and $X_2$ by the identification of basepoints $x_1 \sim x_2$.
+Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1  \vee  X_2$ is given by \label{para:gluing}:
 \[
-d_{X_1\vee X_2}(x_1',x_2') \defeq d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2), \forall x_1' \in X_1, x_2' \in X_2
+d_{X_1 \vee  X_2}(x_1',x_2') \defeq d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2), \forall x_1' \in X_1, x_2' \in X_2
 \]
-and $d_{X_1 \vee X_2} \vert_{X_1 \times X_1} \defeq d_{X_1},d_{X_1 \vee X_2} \vert_{X_2 \times X_2} \defeq d_{X_2}$.
-Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(X_n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
+and $d_{X_1  \vee  X_2} \vert_{X_1 \times X_1} \defeq d_{X_1},d_{X_1  \vee  X_2} \vert_{X_2 \times X_2} \defeq d_{X_2}$.
+Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(\VS^n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
 We denote the resulting space by $\bigvee_{i=1}^n (X_i,x_i)$, or $\bigvee_{i=1}^n X_i$ for simplicity, with the gluing metric:
 \[
 d_{\bigvee_{i=1}^n X_i}(x_i',x_j')\defeq d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\forall i\neq j, x_i'\in X_i, x_j'\in X_j
 \]
-and $d_{X_i\vee X_i}|_{X_i\times X_i}\defeq d_{X_i}$ for any $1\leq i\leq n$.
+and $d_{X_i \vee  X_i}|_{X_i\times X_i}\defeq d_{X_i}$ for any $1\leq i\leq n$.
 
 \subsubsection{}\label{prop:wedge sum}
 Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
@@ -109,11 +109,11 @@ Let $X$ and $Y$ be two compact metric spaces.
 \begin{enumerate}[(a)]
 	\item\label{prop:wedge sum pH} For any degree $p$,
 	\begin{equation*}\label{eq:wedge sum pH}
-		\Hbarc{p}{X\vee Y}= \Hbarc{p}{X}\sqcup \Hbarc{p}{Y}.
+		\Hbarc{p}{X \vee  Y}= \Hbarc{p}{X}\sqcup \Hbarc{p}{Y}.
 	\end{equation*}
 	\item\label{prop:wedge sum Sq} For any $k\in \Z_{\geq 1}$,
 	\begin{equation*}\label{eq:wedge sum Sq}
-		\sqbarc{k}{X\vee Y}= \sqbarc{k}{X}\sqcup \sqbarc{k}{Y}.
+		\sqbarc{k}{X \vee  Y}= \sqbarc{k}{X}\sqcup \sqbarc{k}{Y}.
 	\end{equation*}
 \end{enumerate}
 
@@ -123,29 +123,30 @@ Let $X$ and $Y$ be two compact metric spaces.
 	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
 \end{proof}
 
-\subsection{Barcodes of $\bV\bS^n$ $\bigvee_{i=1}^n \bS^i$}
+\subsection{Barcodes of $\VS^n$}
 
-\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $X_n \defeq \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$, illustrated in the top row of Figure \ref{fig:barcodes}:
+\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bbS^1  \vee  \bbS^2 \vee \dots \vee \bbS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
+Explicitly, we have the following:
 \begin{itemize}
-	\item $\Hbarc{1}{X_n}$ contains only one bar $\left(0,\frac{2\pi}{3}\right)$.
-	\item For any degree $2\leq p\leq n$, $\Hbarc{p}{X_n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$.
-	For instance, when $p=2l+1$ is odd, $\Hbarc{p}{X_n}$ contains the bar $( \frac{2l\pi}{2l+1},\frac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
-	\item For any degree $p>n$, all bars in $\Hbarc{p}{X_n}$ are dominated by $(\zeta_n,\pi)$.
+	\item $\Hbarc{1}{\VS^n}$ contains only one bar $\left(0,\frac{2\pi}{3}\right)$.
+	\item For any degree $2\leq p\leq n$, $\Hbarc{p}{\VS^n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$.
+	For instance, when $p=2l+1$ is odd, $\Hbarc{p}{\VS^n}$ contains the bar $( \frac{2l\pi}{2l+1},\frac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
+	\item For any degree $p>n$, all bars in $\Hbarc{p}{\VS^n}$ are dominated by $(\zeta_n,\pi)$.
 \end{itemize}
 
-\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $X_n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
+\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $\VS^n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
 
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes}
-	\caption{\emph{Top row:} barcodes of $X_n = \bbS^1\vee\bbS^2\vee\dots\vee\bbS^n$. \emph{Bottom row:} barcodes of $\rp^n$.}
+	\caption{\emph{Top row:} barcodes of $\VS^n = \bbS^1 \vee \bbS^2 \vee \dots \vee \bbS^n$. \emph{Bottom row:} barcodes of $\rp^n$.}
 	\label{fig:barcodes}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\input{sec/fig_sq_barcodes}
-	\caption{\emph{Top row:} Steenrod barcodes of $X_n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$.}
+	\caption{\emph{Top row:} Steenrod barcodes of $\VS^n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$.}
 	\label{fig:sq barcodes}
 \end{figure}
 
@@ -299,12 +300,12 @@ Therefore,
 
 \subsection{Bottleneck distance}\label{prop:db estimate}
 
-We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the two space $X_n$ and $\rp^n$, and show that it provides a better (lower-bound) approximation of the Gromov-Hausdorff distance than $\db$ between the standard barcodes.
+We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the two space $\VS^n$ and $\rp^n$, and show that it provides a better (lower-bound) approximation of the Gromov-Hausdorff distance than $\db$ between the standard barcodes.
 
 \medskip\theorem
 \begin{itemize}
-	\item[(1)] $\max_{p\geq 1}\db\left(\Hbarc{p}{X_n}, \Hbarc{p}{\rp^n}\right)\leq \frac{\pi-\zeta_n}{2}<\frac{\pi}{4}$.
-	\smallskip\item[(2)] $\db\left(\sqbarc{k}{X_n}, \sqbarc{k}{\rp^n}\right)\geq \frac{\pi}{3},\forall 1\leq k\leq n-1$.
+	\item[(1)] $\max_{p\geq 1}\db\left(\Hbarc{p}{\VS^n}, \Hbarc{p}{\rp^n}\right)\leq \frac{\pi-\zeta_n}{2}<\frac{\pi}{4}$.
+	\smallskip\item[(2)] $\db\left(\sqbarc{k}{\VS^n}, \sqbarc{k}{\rp^n}\right)\geq \frac{\pi}{3},\forall 1\leq k\leq n-1$.
 \end{itemize}
 
 \begin{proof}
