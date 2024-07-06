@@ -9,6 +9,7 @@ TBW
 
 ## Bibliography: technical aspects 
 This project uses the package biblatex to handle the bibliography, therefore it needs biber as the bibliography tool, instead of bibtex. Additionally, it is suggested that all bib entries include a DOI and/or URL. 
+
 ## Suggested LaTeX practices
 
 1. Use `\colon` instead of `:` for defining functions.
