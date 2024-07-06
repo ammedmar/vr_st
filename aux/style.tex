@@ -16,8 +16,8 @@
 	isbn=false,
 	eprint=false]{biblatex}
 
-\renewbibmacro{in:}{}  % don't display "in:" before the journal name
-\AtEveryBibitem{\clearfield{pages}}  % don't show page numbers
+\renewbibmacro{in:}{} % don't display "in:" before the journal name
+\AtEveryBibitem{\clearfield{pages}} % don't show page numbers
 
 \DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
 \DeclareFieldFormat

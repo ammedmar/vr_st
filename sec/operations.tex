@@ -12,10 +12,10 @@
 \subsection{$K(\pi, n)$ spaces}
 
 We denote by $K(\pi, n)$ any cellular space which has only one non-trivial homotopy group, namely, $\pi_n(K(\pi, n)) = \pi$.
-Such space is unique up to homotopy, and is referred to as an \defn{Eilenberg--MacLane space} of type $\pi,n$.
+Such space is unique up to homotopy, and is referred to as an \defn{Eilenberg--MacLane space}.
 For example, since the circle has universal cover the real line and fundamental group isomorphic to $\Z$, it is a model for $K(\Z,1)$.
 
-The \defn{Hurewicz homomorphism} $h \colon \pi_i(X) \rightarrow \rH_i(X)$ is defined by choosing a generator $u$ of $\rH_i(S^i)$ and sending the homotopy class $[f]$ of a based map $f \colon \bbS^i \to X$ to $f^*(u)$.
+The \defn{Hurewicz homomorphism} $h \colon \pi_i(X) \to \rH_i(X)$ is defined by choosing a generator $u$ of $\rH_i(S^i)$ and sending the homotopy class $[f]$ of a based map $f \colon \bS^i \to X$ to $f^*(u)$.
 Using the properties of this map and the universal coefficient theorem for cohomology one shows the existence of a preferred class $\iota_n \in \rH^n(K(\pi, n); \pi)$ termed the \defn{fundamental class} of $K(\pi, n)$.\footnote{The Hurewicz theorem states that if $X$ is such that $\pi_i(X)$ is trivial for all $i \leq n$, then the Hurewicz homomorphism is an isomorphism in dimensions $i \leq n$ and a surjection in dimension $n+1$.
 Hence, the first non-trivial homotopy group of $X$ and the first non-trivial homology group occur in the same dimension and are isomorphic under $h$.
 For $n=1$, the theorem requires certain modifications which do not affect the following analysis.
@@ -37,12 +37,12 @@ We refer to this bijection as the \textit{representability of cohomology}.
 Let both $\pi$ and $G$ be abelian groups.
 A \defn{cohomology operation} of type $(\pi, n; G, m)$ is a family of functions
 \[
-\theta_X \colon \rH^n(X; \pi) \rightarrow \rH^m(X; G),
+\theta_X \colon \rH^n(X; \pi) \to \rH^m(X; G),
 \]
-one for each space $X$, satisfying the naturality condition $f^* \theta = \theta f^*$ for any map $f \colon X \rightarrow Y$.
+one for each space $X$, satisfying the naturality condition $f^* \theta = \theta f^*$ for any map $f \colon X \to Y$.
 We will denote by $\cO(\pi, n; G,m)$ the set of cohomology operations of type $(\pi, n; G,m)$.
 
-There is a bijection between $\cO(\pi, n; G,m)$ and homotopy classes of based maps between their Eilenberg--MacLane spaces.
+There is bijection between $\cO(\pi, n; G,m)$ and homotopy classes of based maps between their Eilenberg--MacLane spaces.
 Explicitly, given $[f] \in [K(\pi,n), k(G,m)]$ and an $n$-cohomology class in a space $X$ with $\pi$ coefficients, say $g^*(\iota_m)$ for some $g \colon X \to K(G, m)$, the value of the cohomology operation $\theta_{[f]}$ on it is
 \[
 \theta_{[f]}(g^*(\iota_m)) = (f \circ g)^*(\iota_m).
@@ -55,7 +55,7 @@ In other words, cohomology operations are parameterized by the cohomology of Eil
 \subsection{The Steenrod Algebra}\label{ss:steenrod}
 
 \subsubsection{} For a space $X$ let $\sus X$ denote the product of $X$ with the interval $[0,1]$ having each $X \times \set{0}$ and $X \times \set{1}$ collapsed to a point.
-For example, $\sus \bbS^n \sim \bbS^{n+1}$.
+For example, $\sus \bS^n \sim \bS^{n+1}$.
 
 The inclusion of $X$ into $\sus X$ induces an isomorphism
 \[
@@ -174,13 +174,6 @@ The action of $\cA_2$ on $\rH^*(\rp^n, \Z/2)$, for $n$ possibly equal to $\infty
 \Sq^k(\alpha^m) = \binom{m}{k}\alpha^{m+k}
 \]
 for $0 \leq k \leq \frac{n-1}{2}$ and $k \leq m$.
-
-%\begin{itemize}
-%	\item The cohomology ring $\opH^*\left(\rp^n;\,\Ftwo\right)$ is isomorphic to $\Ftwo[\alpha]/(\alpha^{n+1})$ (see \cite[Theorem 3.19]{hatcher2000});
-%	\item The Steenrod operations satisfy $\Sq^k(\alpha^m)=\left({m \choose k} \mod 2\right)\alpha^{m+k}$ for any $0\leq k\leq m\leq n$, according to Formula (*) on page 490 of \cite{hatcher2000}.
-%	\item For $k>\frac{n-1}{2}$, $\Sq^k\equiv 0$. Indeed, for $m\leq \frac{n-1}{2}<k$, it follows from \cite[page 489, Item (5)]{hatcher2000} that $\Sq^k(\alpha^m)=0$. For $m> \frac{n-1}{2}$, $\Sq^k(\alpha^m)=\left({m \choose k} \mod 2\right)\alpha^{m+k}=0$ because $m+k>n-1.$ Thus, $\Sq^k(\alpha^m)=0$ for any $m$.
-%	%For each $1\leq k\leq n-1$, let $k\leq m_k\leq n-1-k$ be such that ${m \choose k} \mod 2$
-%\end{itemize}
 
 \subsection{Odd primes}
 
