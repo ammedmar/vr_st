@@ -1,9 +1,10 @@
-Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}).
+Throughout this subsection we consider an arbitrary cohomology operation $\theta$ in $\theta \in \cO(\kk, n; \kk, m)$ for some field $\k$.
+
+%, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}).
 %Furthermore, when the $\R$-diagrams are given by the Vietoris--Rips filtrations of two metric spaces, this upper bound can be replaced with twice the Gromov--Hausdorff distance $\dgh$ between the metric spaces. See Theorem \ref{thm:theta stability} for details.
 
 % Let $X$ be a q-tame $\R$-diagram of spaces.
 % Recall from \textsection \ref{subsubsec:theta-barcodes} that any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphism of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-diagram of spaces.
-
 \subsubsection{}\label{lem:di stability}
 
 \lemma Given two $\R$-diagrams of spaces $X$ and $Y$, we have
@@ -14,6 +15,26 @@ Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish th
 \begin{proof}
 	This follows directly from the fact that $X \mapsto \thetamodule{X}$ defines a functor from the category of spaces to the category of vector spaces over $\k$.
 	\anibal{I think more should be said.}
+\end{proof}
+
+\subsubsection{}\label{lem:w.h.e. preservance}
+\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then
+\[
+\di(\thetamodule{X},\thetamodule{X'}) = 0.
+\]
+%for any cohomology operation $\theta \in \cO(n,m;\k)$ and coefficient field $\k$.
+
+\begin{proof}
+	Since $X$ and $X'$ are weakly equivalent, there exists an $\R$-diagram of spaces $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
+	Both $f$ and $g$ induce an isomorphism $f^* \colon \thetamodule{Z} \to \thetamodule{X}$ and $g^* \colon \thetamodule{Z} \to \thetamodule{X'}$.
+	From these we have
+	\begin{align*}
+		\di(\thetamodule{X},\thetamodule{X'}) &\leq
+		\di(\thetamodule{X},\thetamodule{Z}) + \di(\thetamodule{Z},\thetamodule{X'}) \\ &=
+		0.
+	\end{align*}
+	%	\ling{to continue: here we need to check that the image of $\theta$ is preserved up to isomorphism under w.h.e.}
+	%	\anibal{A bit tricky... One know that a weak equivalence induces iso. in cohomology (Hatcher 4.28), but I am not sure about how to make the inverse consistent across $\R$. This issue should have already appeared the study of persistent homology and the homotopy interleaving distance.}
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
@@ -27,7 +48,7 @@ Given any cohomology operation $\theta \in \cO(\kk, n; \kk, m)$, we establish th
 	Let $X$ and $Y$ be $\R$-diagrams of spaces. 
 	Take any $\delta > \dhi(X,Y)$.
 	By the definition of the homotopy interleaving distance, there exist $\R$-diagrams of spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
-	By applying the triangle inequality, Lemma \ref{lem:di stability} and Lemma \ref{lem:w.h.e. preservance}, we obtain
+	By applying the triangle inequality, and Lemmas \ref{lem:w.h.e. preservance} and \ref{lem:di stability}, we obtain
 	\begin{align*}
 		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
 		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \, 
