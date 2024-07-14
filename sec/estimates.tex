@@ -18,7 +18,7 @@ For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
 \begin{itemize}
 	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
 	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. ( The Claim also follows from your own work on persistent homotopy groups.))}
-	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:manifold})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
+	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
 	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
 	This follows from Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
 \end{itemize}
@@ -114,7 +114,7 @@ Explicitly, we have the following:
 
 \begin{proof}
 	We will use an induction argument on $n$.
-	When $n = 1$, \cref{prop:manifold} implies that
+	When $n = 1$, \cref{ss:filling_radius} implies that
 	\[
 	(0, 2\fillrad{\rp^1}) = \left(0, \frac{2\pi}{3}\right) \in \Hbarc{1}{\rp^1}.
 	\]
@@ -218,7 +218,7 @@ Explicitly, we have the following:
 	Since $\rH_p(\iota_t)$ is an isomorphism, we conclude that $g_n=0$.
 	This holds for any $\epsilon>0$, so we can conclude $(0, \frac{2\pi}{3})\in\Hbarc{p}{\rp^{n}}$.
 	
-	For the case when $p=n$, we can apply Item (\ref{prop:manifold}) to observe that $(0,2\fillrad{\rp^n}) = (0, \frac{2\pi}{3}) \in \Hbarc{n}{\rp^n}$.
+	For the case when $p=n$, we can apply Item (\ref{ss:filling_radius}) to observe that $(0,2\fillrad{\rp^n}) = (0, \frac{2\pi}{3}) \in \Hbarc{n}{\rp^n}$.
 	Therefore, $(0, \frac{2\pi}{3}) \in \Hbarc{p}{\rp^n}$ is established for all $1\leq p\leq n.$
 \end{proof}
 

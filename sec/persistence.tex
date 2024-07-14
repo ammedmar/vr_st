@@ -3,35 +3,95 @@
 \section{Persistence theory}
 
 We recall some of the basic notions of the theory of persistence.
+%We also fix a field $\kk$ and write $\Vec$ for the category of vector spaces over $\kk$.
+
+\subsection{$\R$-diagrams}
+
+\subsubsection{}
+Throughout, we think of the set of real numbers $\R$ as a category via its poset structure.
+
+For any category $\cC$, the category $\cC^\R$ of \defn{$\R$-diagrams} in $\cC$ is that of functors from $\R$ to $\cC$ together with and natural transformations between them.
+
+For any such $\R$-diagram $F$, we denote the image of an object $r \in \R$ as $F_r$ and the image of a morphism $s \leq t$ as $F_{s,t}$.
+
+\subsubsection{}\label{ss:interleaving}
+Let $\delta$ be a fixed non-negative real number.
+For any $\R$-diagram $F \colon \R \to \cC$, we write $F^\delta$ for the $\R$-diagram
+\[
+F^\delta_r = F_{r+\delta}
+\quad\text{and}\quad
+F^\delta_{s \leq t} = F_{s+\delta \leq t+\delta}.
+\]
+
+A \defn{$\delta$-interleaving} of two $\R$-diagrams $F,G \colon \R \to \cC$ is a pair of natural transformations
+$\phi \colon F \to G[\delta]$ and $\psi \colon G \to F[\delta]$ such that for any $r \in \R$ the morphism $\psi_{r+\delta} \circ \phi_r$ and $\phi_{r+\delta} \circ \psi_r$ are respectively equal to $F_{r,r+2\delta}$ and $G_{r,r+2\delta}$.
+
+The \defn{interleaving distance} between them is defined by
+\[
+\di(F, G) = \inf\set{\delta \geq 0 \mid F \text{ and } G \text{ are } \delta\text{-interleaved}}.
+\]
+
+Changing the target category $\cC$ does not increase the interleaving distance.
+More precisely, we have the following.
+
+\medskip\lemma For any functor $\Phi \colon \cC \to \cD$ we have
+\[
+\di(\Phi \circ F, \Phi \circ G) \leq \di(F, G)
+\]
+for any pair of functors $F, G \colon \R \to \cC$.
+
+\begin{proof}
+	This follows from the fact that the functors defining a $\delta$-interleaving of $F$ and $G$ can be composed with $\Phi$ to give a $\delta$-interleaving of $\Phi \circ F$ and $\Phi \circ G$.  
+\end{proof}
+
+%The target categories considered in this work will either be that of topological or vector spaces.
+
+\subsection{$\R$-spaces}
+
+\subsubsection{}
+Let $\Top$ be the category of topological spaces and continuous maps.
+We refer to $\Top^\R$ as the category of \defn{$\R$-spaces}.
+%A \defn{morphism} $f \colon X \to Y$ of $\R$-spaces is a natural transformation.
+We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence for each $r \in \R$.
+%, i.e., it induces isomorphisms on all homotopy groups.
+%Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
+
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and morphisms $f \colon W \to X$ and $g \colon W \to Y$ that are weak equivalences.
+
+\subsubsection{}\label{def:dhi}
+
+Two $\R$-spaces are $X$ and $Y$ are said to be \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
+
+The \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is given by
+\[
+\dhi(X,Y) = \inf \set{\delta \geq 0 \mid X,Y \text{ are }\delta\text{-homotopy-interleaved}}.
+\]
+%In other words, $d_{\mathrm{HI}}(X,Y) = \inf\{\di(X',Y')\,\mid X'\simeq X\text{ and }Y'\simeq Y\}.$
 
 \subsection{Persistence modules}
 
-Throughout the paper we think of the set of real numbers $\R$ as a category via its poset structure.
-We also fix a field $\kk$ and write $\Vec$ for the category of vector spaces over $\kk$.
+\subsubsection{}
+Let $\Vec$ be the category of vector spaces and linear maps over a fixed field $\k$.
+We refer to $\Vec^\R$ as the category of \defn{persistence modules}.
 
-\subsubsection{} A \defn{persistence module} $V$ is a functor from $\R$ to $\Vec$.
-Explicitly, it consists of a vector space $V_r$ for each $r \in \R$ and a linear map $V_{s,t} \colon V_s \to V_t$ for each $s \leq t$ such that $V_{r,r} = \id$ and
-$V_{s,t} \circ V_{r,s} = V_{r,t}$ if $r \leq s \leq t$.
-A \defn{morphism} $\varphi \colon V \to V'$ of persistent modules is a natural transformation.
-Explicitly, it is an assignment of a linear map $\varphi_t \colon V_t \to V'_t$ for every $t \in \R$ making the diagram
-\begin{equation*}
-	\begin{tikzcd}
-		V_{s} \arrow[r, "V_{s,t}"] \arrow[d] & V_{t} \arrow[d] \\
-		W_{s} \arrow[r, "W_{s,t}"] & W_{t}
-	\end{tikzcd}
-\end{equation*}
-commute for every pair $s \leq t$.
+%A \defn{persistence module} $V$ is a functor from $\R$ to $\Vec$, the category of vector spaces over a fixed field $\k$.
+%Explicitly, it consists of a vector space $V_r$ for each $r \in \R$ and a linear map $V_{s,t} \colon V_s \to V_t$ for each $s \leq t$ such that $V_{r,r} = \id$ and
+%$V_{s,t} \circ V_{r,s} = V_{r,t}$ if $r \leq s \leq t$.
+%A \defn{morphism} $\varphi \colon V \to V'$ of persistent modules is a natural transformation.
+%Explicitly, it is an assignment of a linear map $\varphi_t \colon V_t \to V'_t$ for every $t \in \R$ making the diagram
+%\begin{equation*}
+%	\begin{tikzcd}
+%		V_{s} \arrow[r, "V_{s,t}"] \arrow[d] & V_{t} \arrow[d] \\
+%		W_{s} \arrow[r, "W_{s,t}"] & W_{t}
+%	\end{tikzcd}
+%\end{equation*}
+%commute for every pair $s \leq t$.
 
 We denote abusively by $\kk$ and $0$ the functors that assigns $0$ and $\kk$ respectively to every object of $\R$ and the identity map to each morphism.
 
-\subsubsection{} Two persistence modules $V$ and $W$ are said to be \defn{$\delta$-interleaved} for some $\delta \geq 0$ if there are natural transformations $f \colon V_{\bullet} \to W_{\bullet + \delta}$ and $g \colon W_{\bullet} \to V_{\bullet + \delta}$ such that $f \circ g$ and $g \circ f$ are equal to the structure maps $W_{\bullet} \to W_{\bullet + 2\delta}$ and $V_{\bullet} \to V_{\bullet + 2\delta}$, respectively.
-The \defn{interleaving distance} between them is defined by
-\[
-\di(V, W) = \inf\set{\delta \geq 0 \mid V \text{ and } W \text{ are } \delta\text{-interleaved}}.
-\]
+%\subsection{Barcodes and q-tameness}
 
-\subsection{Barcodes and q-tameness}
-
+\subsubsection{}
 Let $I$ be a closed interval in $\R$.
 %, i.e., $I \subseteq \R$ and, if $r \leq s \leq t$ with $r, t \in I$, then $s \in I$.
 The persistence module $\kk[I]$, referred to as an \defn{interval module}, is defined explicitly by
@@ -70,7 +130,8 @@ This idea is formalized using the so-called \textit{observable category}, which 
 The barcode of the radical of a q-tame persistence module \(V\) serves as a complete invariant of \(V\) in the observable category.}
 We define the barcode of a q-tame persistent module as the barcode of its radical.
 
-\subsubsection{} Let $M$ and $M'$ be two possibly empty multisets of intervals.
+\subsubsection{}
+Let $M$ and $M'$ be two possibly empty multisets of intervals.
 A subset $P \subset M \times M'$ is said to be a \defn{partial matching} between $M$ and $M'$ if every interval $I \in M$ is matched with at most one interval of $M'$ and every interval $I' \in M'$ is matched with at most one interval of $M$.
 
 The \defn{bottleneck distance} between $M$ and $M'$ is defined as
@@ -88,31 +149,16 @@ and
 \]
 
 \subsubsection{}
-\theorem The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
+\theorem(\cite[Thm.~5.14]{chazal2016stability}) The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
 
-\subsection{$\R$-spaces}
-
-\subsubsection{} An \defn{$\R$-space} $X$ is a functor from $\R$ to the category $\Top$ of (topological) spaces with (continuous) maps.
-Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
-
-\subsubsection{}\label{def:dhi}
-%We recall the notion of the homotopy interleaving distance from \cite{blumberg2023interleaving}.
-Given two $\R$-spaces $X$ and $Y$, a morphism $f \colon X \to Y$ is called a \defn{weak equivalence} if for each $r \in \R$, $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence, i.e., it induces isomorphisms on all homotopy groups.
-We say $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and morphisms $f \colon W \to X$ and $g \colon W \to Y$ that are weak equivalences.
-We say $X$ and $Y$ are \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-diagrams of spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
-
-The \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is given by
-\[
-\dhi(X,Y) = \inf \set{\delta \geq 0 \mid X,Y \text{ are }\delta\text{-homotopy-interleaved}}.
-\]
-%In other words, $d_{\mathrm{HI}}(X,Y) = \inf\{\di(X',Y')\,\mid X'\simeq X\text{ and }Y'\simeq Y\}.$
-
-\subsection{Persistent (co)homology}
+%\subsection{Persistent (co)homology}
 
 %\subsubsection{} An \defn{$\R$-space} $X$ is a functor from $\R$ to the category $\Top$ of (topological) spaces with (continuous) maps.
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
-For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-space produces the persistence module $\rH_k(X; \kk)$, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
+\subsubsection{}
+For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-space produces the persistence module $\rH_k(X; \kk)$.
+%, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
 We will refer to this persistence module as the \defn{persistent $k$-homology} of $X$.
 
 It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
@@ -136,11 +182,12 @@ An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomol
 %The correspondence between the homology and cohomology constructions is a consequence of the universal coefficient theorem and holds in general.
 %To relate absolute and relative constructions, one also needs that the natural maps $\colim \rH_k(X_r) \to \rH_k(\colim X_r) \to \lim \rH_k(\colim X_r, X)$ be isomorphisms for every $k$.}
 
-\subsection{Vietoris--Rips complex}\label{ss:vietoris-rips}
+\subsection{Metric spaces}
 
-We will identify a simplicial complex with its geometric realization.
+\subsubsection{}
+%We will identify a simplicial complex with its geometric realization.
 Given a metric space $\cX$ and $r > 0$.
-Let $\VR_r(\cX)$ denote the simplicial complex whose vertices are the points of $\cX$ and whose simplices are the finite subsets of $\cX$ with diameter strictly less than $r$.
+Let $\VR_r(\cX)$ denote the geometric realization of the simplicial complex whose vertices are the points of $\cX$ and whose simplices are the finite subsets of $\cX$ with diameter strictly less than $r$.
 Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
@@ -157,40 +204,36 @@ If $\cX$ be a simply-connected geodesic space, then
 \]
 \anibal{Where is this used?}
 
-\subsection{Stability}
-
-\subsubsection{} The \defn{Gromov--Hausdorff distance} $d_{\mathrm{GH}}(X, Y)$ between two compact metric spaces $X$ and $Y$ is defined as
+\subsubsection{}\label{thm:stability-HI}
+The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metric spaces $\cX$ and $\cY$ is defined as
 \[
-d_{\mathrm{GH}}(\cX, Y) = \inf_{Z, \varphi, \psi} \set[\Big]{d_H\big(\varphi(X), \psi(Y)\big)},
+\dgh(\cX, \cY) = \inf_{\cZ, \varphi, \psi} \set[\Big]{d_\rH\big(\varphi(\cX), \psi(\cY)\big)},
 \]
-where the infimum is taken over all metric spaces $Z$ and isometric embeddings $\varphi \colon X arrow Z$ and $\psi \colon Y arrow Z$, and $d_H$ denotes the Hausdorff distance.\footnote{
+where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_H$ denotes the Hausdorff distance.\footnote{
 The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance you have to travel from a point in one set to the closest point in the other set.
 }
-
-\subsubsection{}\label{thm:stability-HI}
 
 \medskip\theorem Let $\cX$ and $\cY$ be compact metric spaces.
 Then, for any $k \in \Z_{\geq 0},$
 \[
 \di(\rH_k(\VR(\cX); \kk), \rH_k(\VR(\cY); \kk)) \leq
 \dhi(\VR(\cX), \VR(\cY)) \leq
-2 \cdot d_{\mathrm{GH}}(\cX, \cY).
+2 \cdot \dgh(\cX, \cY).
 \]
 
 \begin{proof}
 	These inequalities appear as Proposition~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.\anibal{Check references please, since now we a citation to the published version.}
 \end{proof}
 
-\subsection{Filling radius}\label{ss:filling_radius}
+\subsubsection{}\label{ss:filling_radius}
 
 Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
 Let $U_\epsilon(\cX)$ denote the $\epsilon$-neighborhood of $\cX$ in $L^\infty(\cX)$.
 
 For an $n$-dimensional Riemannian manifold $\cM$, its \defn{filling radius} is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$ \cite[page 108]{gromov2007metric}.
 
-\subsubsection{}\label{prop:manifold}
-
 \proposition If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillrad{\cM})\).
+
 \begin{proof}
 	This statement is proven as Proposition~9.4 in \cite{lim2020vietoris}.
 \end{proof}
