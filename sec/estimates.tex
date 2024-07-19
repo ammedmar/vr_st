@@ -16,9 +16,9 @@ The barcodes of $\bS^1$ can be obtained from Proposition \ref{prop:homotopy type
 \end{equation}
 For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
 \begin{itemize}
-	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
+	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:pH1}. \ling{This could also be derived from Proposition \ref{prop:homotopy type} (\ref{prop:Sn})}
 	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. ( The Claim also follows from your own work on persistent homotopy groups.))}
-	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
+	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
 	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
 	This follows from Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
 \end{itemize}
@@ -45,7 +45,7 @@ Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1 \vee X
 d_{X_1 \vee X_2}(x_1',x_2') = d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2), \forall x_1' \in X_1, x_2' \in X_2
 \]
 and $d_{X_1 \vee X_2} \vert_{X_1 \times X_1} = d_{X_1},d_{X_1 \vee X_2} \vert_{X_2 \times X_2} = d_{X_2}$.
-Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(\VS^n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
+Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(X_n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
 We denote the resulting space by $\bigvee_{i=1}^n (X_i,x_i)$, or $\bigvee_{i=1}^n X_i$ for simplicity, with the gluing metric:
 \[
 d_{\bigvee_{i=1}^n X_i}(x_i',x_j') = d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\forall i\neq j, x_i' \in X_i, x_j' \in X_j
@@ -72,7 +72,7 @@ Let $X$ and $Y$ be two compact metric spaces.
 \end{enumerate}
 
 \begin{proof}
-	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 9 (2)]{lim2020vietoris}.
+	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
 	
 	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
 \end{proof}
@@ -100,7 +100,7 @@ Explicitly, we have the following:
 \begin{figure}
 	\centering
 	\input{sec/fig_sq_barcodes}
-	\caption{\emph{Top row:} Steenrod barcodes of $\VS^n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$.}
+	\caption{\emph{Top row:} Steenrod barcodes of $\VS^n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$. Each figure applies to all positive degrees.}
 	\label{fig:sq barcodes}
 \end{figure}
 
@@ -132,7 +132,7 @@ Explicitly, we have the following:
 			&
 			\VR_t(\rp^{n-1})
 			\ar[d, hook,"\iota_t"]
-			\ar[l, "\rho_{n-1}" above, "\simeq" below]
+			\ar[l, "\rho^{n-1}" above, "\simeq" below]
 			\ar[r, hook]
 			&
 			\VR_{\frac{2\pi}{3}+\epsilon}(\rp^{n-1})
@@ -141,7 +141,7 @@ Explicitly, we have the following:
 			\rp^{n}
 			&
 			\VR_t(\rp^{n})
-			\ar[l, "\rho_n" below, "\simeq" above]
+			\ar[l, "\rho^n" below, "\simeq" above]
 			\ar[r, hook]
 			&
 			\VR_{\frac{2\pi}{3}+\epsilon}(\rp^{n}).
@@ -150,43 +150,44 @@ Explicitly, we have the following:
 	In the above diagram, the horizontal inclusions are induced by the Vietoris--Rips filtration, whereas the vertical maps are induced by the equatorial inclusion of real projective spaces $\iota \colon \rp^{n-1} \hookrightarrow \rp^{n}$.
 	It is therefore clear that the right square of \eqref{d:fundamental_bars_diagram} commutes.
 	
-	We now construct the remaining two maps $\rho_{n-1}$ and $\rho_{n}$ as in \cite[\textsection 4.3]{adams2022metric}.
-	Let $f_n$ be the composition
+	We now construct the remaining two maps $\rho^{n-1}$ and $\rho^{n}$ as in \cite[\textsection 4.3]{adams2022metric}.
+	Let $f^n$ be the composition
 	\[
-	f_n \colon \VR_t(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi_n} \bS^{n},
+	f^n \colon \VR_t(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi^n} \bS^{n},
 	\]
-	where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in $\VR_t(\bS^n)$ to the sum $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^{n}$ and $\lambda_i \in \bbR$, and the second map $\pi_n$ is the radial projection map.\anibal{How are points in the VR cpx represented by formal sum? Probably this will be address in \cref{ss:vietoris-rips}}
-	Because $f_n$ preserves the equivalence relation $x \sim -x$, we have the induced map \anibal{Maybe use superscripts for these maps and the $\rho$ too?}
+	where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in $\VR_t(\bS^n)$ to the sum $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^{n}$ and $\lambda_i \in \bbR$, and the second map $\pi^n$ is the radial projection map.\anibal{How are points in the VR cpx represented by formal sum? Probably this will be address in \cref{ss:vietoris-rips}} 
+        \ling{Here, I was not distinguishing a simplicial complex with its geometric realization. The linear sums are actually points in the geometric realization of VR cpx.}
+	Because $f^n$ preserves the equivalence relation $x \sim -x$, we have the induced map %\anibal{Maybe use superscripts for these maps and the $\rho$ too?}
 	\[
-	f_n/\sim \colon \VR_t(\bS^{n})/\sim\to \bS^{n}/\sim\cong \rp^n.
+	f^n/\sim \colon \VR_t(\bS^{n})/\sim\to \bS^{n}/\sim\cong \rp^n.
 	\]
 	Because $t < \frac{2\pi}{3}$, it follows from \cite[Lemma 4.4]{adams2022metric} that the map
 	\[
-	\alpha_n \colon \VR_t(\rp^n) \to \VR_t(\bS^n)/\sim \text{ with }
+	\alpha^n \colon \VR_t(\rp^n) \to \VR_t(\bS^n)/\sim \text{ with }
 	\sum_{i=1}^k \lambda_i [x_i] \mapsto \left[\sum_{i=1}^k \lambda_i x_i\right]
 	\]
 	is a homeomorphism, where $x_i \in \bS^{n}$, $\lambda_i \in \bbR$, and $[\cdot]$ denotes the equivalence class of an element under the relation $x \sim -x$.
 	We define
-	\[\rho_n = f_n/\sim \circ \,\alpha_n\]
-	It is shown in \cite[Theorem 4.5]{adams2022metric} that $\rho_n$ is a homotopy equivalence from $\VR_t(\rp^n)$ to $\rp^n$ for any $n$.
+	\[\rho^n = f^n/\sim \circ \,\alpha^n\]
+	It is shown in \cite[Theorem 4.5]{adams2022metric} that $\rho^n$ is a homotopy equivalence from $\VR_t(\rp^n)$ to $\rp^n$ for any $n$.
 	% In summary, we have defined the map
-	% \[\rho_n: \VR_t(\rp^n)\xrightarrow{\cong} \VR_t(\bS^n)/\sim\to \bS^{n}/\sim\cong \rp^n\]
+	% \[\rho^n: \VR_t(\rp^n)\xrightarrow{\cong} \VR_t(\bS^n)/\sim\to \bS^{n}/\sim\cong \rp^n\]
 	
-	We claim that the left square in the previous diagram commutes, i.e. $\iota \circ \rho_{n-1}=\rho_{n} \circ \iota_t$.
+	We claim that the left square in the previous diagram commutes, i.e. $\iota \circ \rho^{n-1}=\rho^{n} \circ \iota_t$.
 	Indeed, for any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\rp^{n-1})$, we have
 	\begin{center}
-		$(\iota \circ \rho_{n-1})(y)
-		=\iota(f_{n-1}/\sim([\sum_i \lambda_i x_i]))
-		=\iota([f_{n-1}(\sum_i \lambda_i x_i)])
-		=[\pi_{n-1}(\sum_i \lambda_i x_i)]
+		$(\iota \circ \rho^{n-1})(y)
+		=\iota(f^{n-1}/\sim([\sum_i \lambda_i x_i]))
+		=\iota([f^{n-1}(\sum_i \lambda_i x_i)])
+		=[\pi^{n-1}(\sum_i \lambda_i x_i)]
 		$
 	\end{center}
 	as an element in $\rp^n$, and
 	\begin{center}
-		$(\rho_{n} \circ \iota_t)(y) = \rho_{n}(y) = f_{n}/\sim([\sum_i \lambda_i x_i]) = [f_{n}(\sum_{i=1}^k \lambda_i x_i)] = [\pi_{n}(\sum_{i=1}^k \lambda_i x_i)]
+		$(\rho^{n} \circ \iota_t)(y) = \rho^{n}(y) = f^{n}/\sim([\sum_i \lambda_i x_i]) = [f^{n}(\sum_{i=1}^k \lambda_i x_i)] = [\pi^{n}(\sum_{i=1}^k \lambda_i x_i)]
 		$
 	\end{center}
-	Because $\pi_{n}$ restricted to $\rp^{n-1}$ is equal to $\pi_{n-1}$, we conclude that $(\iota \circ \rho_{n-1})(y) = (\rho_n \circ \iota_t)(y)$ for any $y$.
+	Because $\pi^{n}$ restricted to $\rp^{n-1}$ is equal to $\pi^{n-1}$, we conclude that $(\iota \circ \rho^{n-1})(y) = (\rho^n \circ \iota_t)(y)$ for any $y$.
 	Thus, the claim holds.
 	
 	For each $1\leq p\leq n-1$, applying the $p$-th homology functor (over $\Ftwo$) to the above diagram, we obtain the following commutative diagram of vector spaces:
@@ -198,7 +199,7 @@ Explicitly, we have the following:
 		\rH_p(\VR_t(\rp^{n-1}))
 		\ar[d, "\rH_p(\iota_t)" left, "\cong" right, myred]
 		\ar[l, "\cong" above]
-		\ar[r, "g_{n-1}=0", myred]
+		\ar[r, "g^{n-1}=0", myred]
 		&
 		\rH_p(\VR_{\frac{2\pi}{3}+\epsilon}(\rp^{n-1}))
 		\ar[d]
@@ -207,15 +208,15 @@ Explicitly, we have the following:
 		&
 		\rH_p(\VR_t(\rp^{n}))
 		\ar[l, "\cong"]
-		\ar[r, "g_n" , myred]
+		\ar[r, "g^n" , myred]
 		&
 		\rH_p(\VR_{\frac{2\pi}{3}+\epsilon}(\rp^{n})).
 	\end{tikzcd}
 	\]
-	By induction assumption, $(0, \frac{2\pi}{3})\in\Hbarc{p}{\rp^{n-1}}$, which implies that $g_{n-1}$ is the zero map.
+	By induction assumption, $(0, \frac{2\pi}{3})\in\Hbarc{p}{\rp^{n-1}}$, which implies that $g^{n-1}$ is the zero map.
 	Commutativity of the left-hand side square further implies that $\rH_p(\iota_t)$ is an isomorphism.
-	Then, using the right-hand side square's commutativity, we deduce $g_n \circ \rH_p(\iota_t)=0$.
-	Since $\rH_p(\iota_t)$ is an isomorphism, we conclude that $g_n=0$.
+	Then, using the right-hand side square's commutativity, we deduce $g^n \circ \rH_p(\iota_t)=0$.
+	Since $\rH_p(\iota_t)$ is an isomorphism, we conclude that $g^n=0$.
 	This holds for any $\epsilon>0$, so we can conclude $(0, \frac{2\pi}{3})\in\Hbarc{p}{\rp^{n}}$.
 	
 	For the case when $p=n$, we can apply Item (\ref{ss:filling_radius}) to observe that $(0,2\fillrad{\rp^n}) = (0, \frac{2\pi}{3}) \in \Hbarc{n}{\rp^n}$.
@@ -261,6 +262,7 @@ We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the t
 	\smallskip\item[(2)] $\db(\sqbarc{k}{\VS^n}, \sqbarc{k}{\rp^n})\geq \frac{\pi}{3},\forall 1\leq k\leq n-1$.
 \end{itemize}
 
+
 \begin{proof}
 	For Item (1), recall the barcodes of the two spaces from Figure \ref{fig:barcodes}, and note that to prove the bottleneck distance is upper bounded by $\frac{\pi-\zeta_n}{2}$, it is enough to find one matching with cost no larger than this value.
 	Note that
@@ -268,7 +270,7 @@ We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the t
 	\frac{\pi}{2} < \zeta_n < \dots < \zeta_2 < \zeta_1 =\frac{2\pi}{3}.
 	\]
 	
-	For any degree $1\leq p\leq n$, consider a matching such that $(0,\zeta_p)rightarrow (0,\frac{2\pi}{3})$ and all other points are matched to the diagonal.
+	For any degree $1\leq p\leq n$, consider a matching such that $(0,\zeta_p)\rightarrow (0,\frac{2\pi}{3})$ and all other points are matched to the diagonal.
 	The cost of this matching is at most
 	\[
 	\max\left\{\frac{2\pi}{3}-\zeta_p,\,\frac{\pi-\zeta_p}{2}\right\}.
