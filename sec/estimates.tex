@@ -2,7 +2,7 @@
 
 \section{Barcode estimates}\label{s:computations}
 
-\subsection{Barcodes of $\bS^n$}\label{ss:Sn}
+\subsection{$n$-sphere}\label{ss:Sn}
 
 \subsubsection{}
 
@@ -17,7 +17,7 @@ The barcodes of $\bS^1$ can be obtained from Proposition \ref{prop:homotopy type
 For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
 \begin{itemize}
 	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
-	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. ( The Claim also follows from your own work on persistent homotopy groups.))}
+	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. (The Claim also follows from your own work on persistent homotopy groups.))}
 	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
 	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
 	This follows from Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
@@ -77,7 +77,7 @@ Let $X$ and $Y$ be two compact metric spaces.
 	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
 \end{proof}
 
-\subsection{Barcodes of $\VS^n$}
+\subsection{Wedge of spheres}
 
 \subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bS^1 \vee \bS^2 \vee \dots \vee \bS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
 Explicitly, we have the following:
@@ -104,7 +104,7 @@ Explicitly, we have the following:
 	\label{fig:sq barcodes}
 \end{figure}
 
-\subsection{Barcodes of $\rp^n$}
+\subsection{$n$-projective space}
 
 \subsubsection{}\label{prop:RPn bar}
 \lemma For integers $1 \leq p \leq n$,
@@ -251,7 +251,7 @@ Therefore,
 	\item For $k>n$, the possible bars in $\sqbarc{k}{\rp^n}$ are $(0,\frac{2\pi}{3})$ or those dominated by $(\frac{2\pi}{3},\pi)$.
 \end{itemize}
 
-\subsection{Bottleneck distance}\label{prop:db estimate}
+\subsection{Bottleneck estimates}\label{prop:db estimate}
 
 We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the two space $\VS^n$ and $\rp^n$, and show that it provides a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the standard barcodes.
 
