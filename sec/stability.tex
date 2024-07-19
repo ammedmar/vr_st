@@ -27,7 +27,8 @@ Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in 
 
 \begin{proof}
 	Since $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
-	Both $f$ and $g$ induce an isomorphism $f^* \colon \thetamodule{Z} \to \thetamodule{X}$ and $g^* \colon \thetamodule{Z} \to \thetamodule{X'}$.
+	\ling{Do we have a reference for this:}
+        Both $f$ and $g$ induce an isomorphism $f^* \colon \thetamodule{Z} \to \thetamodule{X}$ and $g^* \colon \thetamodule{Z} \to \thetamodule{X'}$. 
 	From these we have
 	\[
 	\di(\thetamodule{X},\thetamodule{X'}) \leq
@@ -61,29 +62,28 @@ Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in 
 	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality given in (\ref{eq:theta di-stability}).
 \end{proof}
 
-\subsubsection{}
+\subsubsection{}\label{cor:theta stability VR}
 \corollary
 In the case of the Vietoris--Rips filtration of compact metric spaces $\cX$ and $\cY$, we have
-\ling{should we write '$\img$' in the notation of $\theta$-barcodes and $Sq$-barcodes?}
+%\ling{should we write '$\img$' in the notation of $\theta$-barcodes and $Sq$-barcodes?}
 \[
-\db(\thetabarc{\cX}, \thetabarc{\cY}) \leq 2 \cdot \dgh(X,Y)
+\db(\thetabarc{\cX}, \thetabarc{\cY}) = \di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y)
 \]
 
-\ling{notation conflict: $X,Y$ are used both for metric spaces and spaces. I will use $X$ and $Y$ in this file and we can change them later.}
+%\ling{notation conflict: $X,Y$ are used both for metric spaces and spaces. I will use $X$ and $Y$ in this file and we can change them later.}
+\begin{proof}
+        By applying Equation (\ref{eq:theta di-stability}) and the stability of $\dhi$ (Theorem \ref{thm:stability-HI}), we obtain
+        \[
+        \di(\thetamodule{X}, \thetamodule{Y}) \leq
+        \dhi(X,Y)\leq 2\cdot \dgh(X,Y).
+        \]
+        Since $\cX$ and $\cY$ are compact metric spaces, the persistence modules $\thetamodule{\cX}$ and $\thetamodule{\cY}$ are q-tame.
+        Thus,
+        \[
+        \db\big(\thetabarc{\cX}, \thetabarc{\cY}\big) =
+        \di(\thetamodule{\cX}, \thetamodule{\cY})\leq 2\cdot \dgh(X,Y).
+        \]
+        %Therefore, the bottleneck distance $\db$ between the $\theta$-barcodes is also bounded above by $2\cdot \dgh(X,Y)$.
+\end{proof}
 
-In the case of the Vietoris--Rips filtration of compact metric spaces $\cX$ and $\cY$, first note that the persistence modules $\thetamodule{\cX}$ and $\thetamodule{\cY}$ are q-tame.
-Thus,
-\[
-\db\big(\thetabarc{\cX}, \thetabarc{\cY}\big) =
-\di(\thetamodule{\cX}, \thetamodule{\cY}).
-\]
-%$\di$ between these two persistence modules agree with the bottleneck distance $\db$ between their corresponding barcodes.
-Combining Equation (\ref{eq:theta di-stability}) with Theorem \ref{thm:stability-HI} the stability of $\dhi$, we have
-\[
-\di(\thetamodule{X}, \thetamodule{Y}) \leq
-\dhi(X,Y)\leq 2\cdot \dgh(X,Y).
-\]
-Therefore, the bottleneck distance $\db$ between the $\theta$-barcodes is also bounded above by $2\cdot \dgh(X,Y)$.
-
-\ling{apply to Steenrod barcodes}
 \anibal{Ling, please rewrite this subsubsection.}

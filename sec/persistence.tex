@@ -34,6 +34,9 @@ The \defn{interleaving distance} between them is defined by
 Changing the target category $\cC$ does not increase the interleaving distance.
 More precisely, we have the following.
 
+\ling{Should we cite this paper: \url{https://link.springer.com/article/10.1007/s10208-014-9229-5}?}
+\ling{It is the first paper defining interleaving for general category and proving the lemma below (see Theorem on page 1508).}
+
 \medskip\lemma For any functor $\Phi \colon \cC \to \cD$ we have
 \[
 \di(\Phi \circ F, \Phi \circ G) \leq \di(F, G)
@@ -235,6 +238,7 @@ Then, for any $k \in \Z_{\geq 0},$
 Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
 Let $U_\epsilon(\cX)$ denote the $\epsilon$-neighborhood of $\cX$ in $L^\infty(\cX)$.
 
-For an $n$-dimensional Riemannian manifold $\cM$, its \defn{filling radius} is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\opH_n(M)$ is mapped to zero under the induced map of the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$ \cite[page 108]{gromov2007metric}.
+For an $n$-dimensional Riemannian manifold $\cM$, its \defn{filling radius} is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\opH_n(M;\mathbb{Z})$ is mapped to zero under the induced map of the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$ \cite[page 108]{gromov2007metric}.
+In a similar way, one can define a version of the filling radius, denoted as \(\fillrad[\kk]{\cM}\), associated to the fundamental class with coefficients in some field $\kk$.
 
 \medskip\lemma(\cite[Prop.9.4]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillrad{\cM})\).
