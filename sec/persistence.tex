@@ -8,15 +8,15 @@ We recall some of the basic notions of the theory of persistence.
 \subsection{$\R$-diagrams}
 
 \subsubsection{}
-Throughout, we think of the set of real numbers $\R$ as a category via its poset structure.
+We think of the set of real numbers $\R$ as a category via its poset structure.
 
-For any category $\cC$, the category $\cC^\R$ of \defn{$\R$-diagrams} in $\cC$ is that of functors from $\R$ to $\cC$ together with and natural transformations between them.
+For any category $\cC$, the category $\cC^\R$ of \defn{$\R$-diagrams in $\cC$} is that of functors from $\R$ to $\cC$ together with natural transformations between them.
 
 For any such $\R$-diagram $F$, we denote the image of an object $r \in \R$ as $F_r$ and the image of a morphism $s \leq t$ as $F_{s,t}$.
 
 \subsubsection{}\label{ss:interleaving}
 Let $\delta$ be a fixed non-negative real number.
-For any $\R$-diagram $F \colon \R \to \cC$, we write $F^\delta$ for the $\R$-diagram
+For any $\R$-diagram $F \colon \R \to \cC$, we write $F^\delta$ for the $\R$-diagram defined by
 \[
 F^\delta_r = F_{r+\delta}
 \quad\text{and}\quad
@@ -24,7 +24,7 @@ F^\delta_{s \leq t} = F_{s+\delta \leq t+\delta}.
 \]
 
 A \defn{$\delta$-interleaving} of two $\R$-diagrams $F,G \colon \R \to \cC$ is a pair of natural transformations
-$\phi \colon F \to G[\delta]$ and $\psi \colon G \to F[\delta]$ such that for any $r \in \R$ the morphism $\psi_{r+\delta} \circ \phi_r$ and $\phi_{r+\delta} \circ \psi_r$ are respectively equal to $F_{r,r+2\delta}$ and $G_{r,r+2\delta}$.
+$\phi \colon F \to G^\delta$ and $\psi \colon G \to F^\delta$ such that for any $r \in \R$ the morphism $\psi_{r+\delta} \circ \phi_r$ and $\phi_{r+\delta} \circ \psi_r$ are respectively equal to $F_{r,r+2\delta}$ and $G_{r,r+2\delta}$.
 
 The \defn{interleaving distance} between them is defined by
 \[
@@ -59,7 +59,8 @@ We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalen
 %, i.e., it induces isomorphisms on all homotopy groups.
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
-Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and morphisms $f \colon W \to X$ and $g \colon W \to Y$ that are weak equivalences.
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and morphisms $f \colon W \to X$ and $g \colon W \to Y$ that are weak equivalences.\footnote{
+For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the homotopy category of $\Top^\R$, i.e. its localization with respect to weak equivalences.}
 
 \subsubsection{}\label{def:dhi}
 
@@ -116,6 +117,7 @@ A persistence module $V$ is said to be \defn{interval decomposable} if there is 
 In this case we refer to the multiset as the \defn{barcode} of $V$ and denote it $\barc V$.
 By Azumaya’s theorem \cite{azumaya1950theorem}, $\barc V$ is unique up to reordering.
 
+\subsubsection{}
 Crawley-Boevey's result \cite{Crawley-Boevey.2015} is a widely used existence theorem for barcode decompositions.
 It ensures that any persistence module \(V\) with \(V_t\) being a finite dimensional vector space for every \(t \in \R\) has a barcode decomposition.
 However, this condition is often too restrictive.
@@ -151,8 +153,8 @@ and
 \frac{1}{2} \sup \set[\Big]{|a - b| \text{ for } [a,b] \in M \cup M' \text{ unmatched}}.
 \]
 
-\subsubsection{}
-\theorem(\cite[Thm.~5.14]{chazal2016stability}) The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
+\medskip\theorem(\cite[Thm.~5.14]{chazal2016stability})
+The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
 
 %\subsection{Persistent (co)homology}
 
@@ -160,9 +162,7 @@ and
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
 \subsubsection{}
-For any $k \geq 0$, applying the degree $k$ homology functor (with coefficients in $\kk$) to an $\R$-space produces the persistence module $\rH_k(X; \kk)$.
-%, where the morphisms are those induced by $\set{X_{r,s}}_{r \leq s}$.
-We will refer to this persistence module as the \defn{persistent $k$-homology} of $X$.
+For any integer $k \geq 0$, applying the degree $k$ homology functor (with coefficients in~$\kk$) to an $\R$-space produces its \defn{persistent $k$-homology}, a persistence module denoted $\rH_k(X; \kk)$.
 
 It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
 The most important example of these is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-space $X$.
@@ -195,17 +195,20 @@ Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
 
-\subsubsection{} Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
+\subsubsection{}
+Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
 
-In \cite[Prop.~5.1]{chazal2014geometric} is shown that if $\cX$ is a totally bounded metric space, then $\rH_k(\VR(\cX); \kk)$ is $q$-tame for any non-negative integer $k \geq 0$ and any field $\kk$.
-\anibal{Is cohomology q-tame?}
+\medskip\lemma(\cite[Prop.~5.1]{chazal2014geometric}).
+If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
 
-\subsubsection{} \label{prop:pH1}{\rm \cite[Prop.~7.10]{virk20201}}.
-If $\cX$ be a simply-connected geodesic space, then
+\subsubsection{}\label{prop:pH1}{\rm \cite[Prop.~7.10]{virk20201}}.
+Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
+ 
+\medskip\lemma If $\cX$ be a simply-connected geodesic space, then
 \[
 \Hbarc{1}{\cX} = \emptyset.
 \]
-\anibal{Where is this used?}
+\anibal{Is this really used?}
 
 \subsubsection{}\label{thm:stability-HI}
 The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metric spaces $\cX$ and $\cY$ is defined as
@@ -225,8 +228,10 @@ Then, for any $k \in \Z_{\geq 0},$
 \]
 
 \begin{proof}
-	These inequalities appear as Proposition~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.\anibal{Check references please, since now we a citation to the published version.}
+	These inequalities appear as Proposition~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.
 \end{proof}
+
+\anibal{Check references please, since now we a citation to the published version.}
 
 \subsubsection{}\label{ss:filling_radius}
 
@@ -236,8 +241,4 @@ Let $U_\epsilon(\cX)$ denote the $\epsilon$-neighborhood of $\cX$ in $L^\infty(\
 For an $n$-dimensional Riemannian manifold $\cM$, its \defn{filling radius} is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\opH_n(M;\mathbb{Z})$ is mapped to zero under the induced map of the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$ \cite[page 108]{gromov2007metric}.
 In a similar way, one can define a version of the filling radius, denoted as \(\fillrad[\kk]{\cM}\), associated to the fundamental class with coefficients in some field $\kk$.
 
-\proposition If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc[\kk]{n}{\cM}\) contains \((0,2\fillrad[\kk]{\cM})\), when $\kk$ is an arbitrary field if $\cM$ is orientable and $\kk=\Ftwo$ if $\cM$ is non-orientable.
-
-\begin{proof}
-	This statement is proven as Proposition~9.28 in \cite{lim2020vietoris}.
-\end{proof}
+\medskip\lemma(\cite[Prop.9.4]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillrad{\cM})\).
