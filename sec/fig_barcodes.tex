@@ -20,7 +20,7 @@
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.6) (0.6,0.6)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.55) (0.55,0.55)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.55,0) (0.55,0.55)};
-		\addplot[barccolor,mark=*] (0, 0.6) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
+		\addplot[barccolor,mark=*] (0, 0.6) circle (2pt) node[above right,barccolor]{};%{\Large\textsf{1}};
 		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{2}{\VS^n}$};
 	\end{axis}
 \end{tikzpicture}
@@ -55,10 +55,10 @@
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
-		ytick={0.5,0.67,0.72,0.95},
-		yticklabels={$\frac{\pi}{2}$,,$\frac{2\pi}{3}$,$\pi$},
-		xtick={0.5,0.67,0.72,0.95},
-		xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,,$\pi$},
+		ytick={0.5,0.67,0.95},
+		yticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
+		xtick={0.5,0.67,0.95},
+		xticklabels={$\frac{\pi}{2}$,$\frac{2\pi}{3}$,$\pi$},
 		xmin=-0.015, xmax=1.1,
 		ymin=0, ymax=1.1,]
 		\addplot [mark=none] coordinates {(0,0) (1,1)};
@@ -69,15 +69,15 @@
 			(0.95,0.95)
 			(0.67,0.95)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.67) (0.67,0.67)};
-		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.72) (0.72,0.72)};
+		%\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0,0.72) (0.72,0.72)};
 		\addplot [black!40!white,mark=none,dashed, thin] coordinates {(0.67,0) (0.67,0.67)};
-		\addplot[barccolor,mark=*] (0, 0.72) circle (2pt) node[above right,barccolor]{\Large\textsf{1}};
+		\addplot[barccolor,mark=*] (0, 0.67) circle (2pt) node[above right,barccolor]{};%{\Large\textsf{1}};
 		%\node[mark=none] at (axis cs:0.68,0.21){$\Hbarc{1}{\rp^n}$};
 	\end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title={\LARGE $\Hbarc{p}{\rp^n},\, p\geq 2$},
+		title={\LARGE $\Hbarc{p}{\rp^n},\, p>n$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,

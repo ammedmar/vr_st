@@ -194,6 +194,19 @@ Let $\VR_r(\cX)$ denote the geometric realization of the simplicial complex whos
 Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
+In this paper, we will not distinguish a simplicial complex from its geometric realization.
+
+The Vietoris--Rips thickening, often denoted as $\VR_r^m(X)$, is introduced in \cite{adamaszek2018metric} as a metric space analogue of $\VR_r(X)$. 
+For a metric space $X$ and $r>0$, the \defn{Vietoris-Rips thickening} is 
+\label{para:VR thickening}
+\[
+    \VR_r^m(X) \defeq \{\sum_{i=1}^k\lambda_i\delta_{x_i}\mid k\geq 2, \lambda_i\geq 0, \sum \lambda_i = 1, \diam(\{x_1,\dots, x_k\})<r\}, 
+\]
+where $\delta_{x}$ is the Dirac probability measure with mass one at $x$ and $\VR_t^m(X)$ is equipped with the $1$-Wasserstein metric. 
+There is a set bijection from (the geometric realization of) $\VR_r(X)$ to $\VR_r^m(X)$, given by $\sum_{i=1}^k\lambda_i x_i\mapsto \sum_{i=1}^k\lambda_i\delta_{x_i}.$ 
+We will refer to a point $\sum_{i=1}^k\lambda_i\delta_{x_i}$ in the Vietoris--Rips thickening simply as $\sum_{i=1}^k\lambda_i x_i$, when the meaning of the notation is clear from the context. 
+
+It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijection from $\VR_r(X)$ to $\VR_r^m(X)$ is a weak homotopy equivalence. 
 
 \subsubsection{}
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
