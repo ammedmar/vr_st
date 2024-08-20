@@ -4,91 +4,135 @@
 
 \subsection{$n$-sphere}\label{ss:Sn}
 
+For any integer $n \geq 1$ and real number $r > 0$, let $\bS^n(r)$ be the \defn{$n$-sphere} of radius $r$ centered at the origin of $\R^{n+1}$.
+We consider it equipped with the geodesic distance.
+
 \subsubsection{}
 
-Because the Vietoris--Rips complexes of $\bS^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$.
-Therefore, all bars are dominated by $(0,\pi)$.
+Because the Vietoris--Rips complexes of $\bS^n$ are contractible when the scale parameter $t>\pi$, no standard or Steenrod bar can stay alive after $\pi$.
+Therefore, all bars are dominated by $(0, \pi)$.
 
-First, consider the case of $n=1$.
-The barcodes of $\bS^1$ can be obtained from Proposition \ref{prop:homotopy type} (\ref{prop:S1}), i.e. \cite[Theorem~7.4]{adamaszek2017vietoris}: for any $l \in \Z_{\geq 0}$,
-\begin{equation}\label{eq:barc of S1}
-	\Hbarc{2l+1}{\bS^1}=\{(\tfrac{2l\pi}{2l+1},\tfrac{2(l+1)\pi}{2l+3})\},\, \Hbarc{2l}{\bS^1}=\emptyset.
-\end{equation}
-For $n\geq 2$, we have the following (see Figure \ref{fig:Sk}):
-\begin{itemize}
-	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{prop:pH1}.
-	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. (The Claim also follows from your own work on persistent homotopy groups.))}
-	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
-	\item For any degree $p\geq 2$ and $p\neq n$, the only possible bars in $\Hbarc{p}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
-	This follows from Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
-\end{itemize}
+\subsubsection{} 
+
+Recall from \cite[Thm.~10]{lim2020vietoris} that for $n \in \N$ and  $0 < r \leq \zeta_n$, where $\zeta_n = \arccos(\tfrac{-1}{n+1})$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$.\anibal{Is this the right citation?}
+\footnote{The case $n = 1$ has more information.
+	From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r(\bS^1)$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
+	Therefore, for any degree~$d$,
+	\[
+	\barc \rH_{d}(\bS^1) =
+	\begin{cases}
+		\set[\big]{\big(\tfrac{2\ell\pi}{2\ell+1}, \tfrac{2(\ell+1)\pi}{2\ell+3}\big)} & d = 2\ell+1, \\
+		\hfil\emptyset & d = 2\ell.
+	\end{cases}
+	\]
+	
+	For $n > 1$, the case $d=1$ also has more information.
+	Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
+	As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
+	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
+This implies that, for any degree $d$, all bars in $\barc\rH_d(\VR(\bS^n))$ are dominated by $(\zeta_n,\pi)$ with the exception of a single bar $(0,\zeta_n)$ when $d = n$ (see Figure \ref{fig:Sk}).\anibal{Notice that I am treating the case $n=1$ in here as well since the claims also hold there. I moved the extra information to the footnote.}
+%Therefore, for $n \geq 2$, \cref{ss:simply connected geodesic spaces} implies that $\Hbarc{1}{\bS^n} = \emptyset$, since $\$
+
+%we have the following (see Figure \ref{fig:Sk}):
+%\begin{itemize}
+%%	\item $\Hbarc{1}{\bS^n} = \emptyset$, by \cref{prop:homotopy type} \cref{ss:simply connected geodesic spaces}.
+%	%\facundo{(VR-PH1 of any geodesic metric space is trivial. See papers by Virk. (The Claim also follows from your own work on persistent homotopy groups.))}
+%	\item $\Hbarc{n}{\bS^n}$ consists of one bar $(0,\zeta_n)$ (by Proposition \ref{prop:homotopy type} (\ref{ss:filling_radius})) and possibly some bars dominated by $(\zeta_n,\pi)$ (by Proposition \ref{prop:homotopy type} (\ref{prop:Sn})).
+%	\item For any degree $p \geq 2$ and $p \neq n$, the only possible bars in $\Hbarc{p}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
+%	This follows from Proposition \ref{prop:homotopy type} (\ref{prop:Sn}).
+%\end{itemize}
 
 \begin{figure}[ht]
 	\centering
 	\input{sec/table_sphere}
-	\caption{Barcodes of $\bS^n$, for $n\geq 2$ and degrees $p\geq 2$.
-		Here, $\zeta_n=\arccos(-\tfrac{1}{n+1})$.
-		In each figure, the gray area represents the only region, apart from the blue dots, where points could potentially exist within the corresponding barcode.}
+	\caption{Estimation of the $\rH_d$ barcode of $\bS^n$.
+		In each figure, the gray area represents the only region, apart from the blue dot, where points could potentially exist within the corresponding barcode.
+		Here, and throughout the paper, $\zeta_n = \arccos(\tfrac{-1}{n+1})$ and $\rH_d$ denotes reduced $d$-homology.}
 	\label{fig:Sk}
 \end{figure}
 
-\subsubsection{} We study the Steenrod barcodes of $\bS^n$.
-For any $k \in \Z_{\geq 1}$, the Steenrod square operation $\Sq^k$ is trivial for $\bS^n$.
-Combined with Proposition \ref{prop:homotopy type} (\ref{prop:Sn}), we conclude that no Steenrod bars can be born before $\zeta_n$.
-Thus, all bars in $\sqbarc{k}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
+Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR(\bS^n)}$ is dominated by $(\zeta_n,\pi)$.
+
+%We study the Steenrod barcodes of $\bS^n$.
+%For any $k \in \Z_{\geq 1}$, the Steenrod square operation $\Sq^k$ is trivial for $\bS^n$.
+%Combined with Proposition \ref{prop:homotopy type} (\ref{prop:Sn}), we conclude that no Steenrod bars can be born before $\zeta_n$.
+%Thus, all bars in $\sqbarc{k}{\bS^n}$ are those dominated by $(\zeta_n,\pi)$.
 
 \subsection{Wedge sums}
 
-The wedge sum $(X_1, x_1) \vee (X_2, x_2)$ (or simply $X_1 \vee X_2$) of two pointed metric spaces $(X_1, x_1)$ and $(X_2, x_2)$ is the quotient space of the disjoint union of $X_1$ and $X_2$ by the identification of basepoints $x_1 \sim x_2$.
-Recall from \cite{burago2001course} that the \emph{gluing metric} on $X_1 \vee X_2$ is given by \label{para:gluing}:
+The \defn{wedge sum} $(\cX_1, x_1) \vee (\cX_2, x_2)$ (or simply $\cX_1 \vee \cX_2$) of two pointed metric spaces $(\cX_1, x_1)$ and $(\cX_2, x_2)$ is the quotient space of the disjoint union of $\cX_1$ and $\cX_2$ by the identification of basepoints $x_1 \sim x_2$.
+
+The \defn{gluing metric} on the wedge sum of $n$ metric spaces, denoted $\bigvee_{i=1}^n \cX_i$, is given by
 \[
-d_{X_1 \vee X_2}(x_1',x_2') = d_{X_1}(x_1',x_1)+d_{X_2}(x_2',x_2), \forall x_1' \in X_1, x_2' \in X_2
+d(x_i', x_j') = d_{\cX_i}(x_i', x_i) + d_{\cX_j}(x_j', x_j)
 \]
-and $d_{X_1 \vee X_2} \vert_{X_1 \times X_1} = d_{X_1},d_{X_1 \vee X_2} \vert_{X_2 \times X_2} = d_{X_2}$.
-Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(X_1,x_1),\cdots,(X_n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
-We denote the resulting space by $\bigvee_{i=1}^n (X_i,x_i)$, or $\bigvee_{i=1}^n X_i$ for simplicity, with the gluing metric:
-\[
-d_{\bigvee_{i=1}^n X_i}(x_i',x_j') = d_{X_i}(x_i',x_i)+d_{X_j}(x_j',x_j),\forall i\neq j, x_i' \in X_i, x_j' \in X_j
-\]
-and $d_{X_i \vee X_i}|_{X_i\times X_i} = d_{X_i}$ for any $1\leq i\leq n$.
+if $x_i' \in \cX_i$ and $x_j' \in \cX_j$ with $i \neq j$, and agrees with $d_{\cX_i}$ if $i = j$.
+
+%and $d_{\cX_1 \vee \cX_2} \vert_{\cX_1 \times \cX_1} = d_{\cX_1},d_{\cX_1 \vee \cX_2} \vert_{\cX_2 \times \cX_2} = d_{\cX_2}$.
+%Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(\cX_1,x_1),\cdots,(\cX_n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
+%More generally, the gluing metric on the space $\bigvee_{i=1}^n \cX_i$ is
+%\[
+%d_{\bigvee_{i=1}^n \cX_i}(x_i',x_j') = d_{\cX_i}(x_i',x_i)+d_{\cX_j}(x_j',x_j),\forall i\neq j, x_i' \in \cX_i, x_j' \in \cX_j
+%\]
+%and $d_{\cX_i \vee \cX_i}|_{\cX_i\times \cX_i} = d_{\cX_i}$ for any $1\leq i\leq n$.
 
 \subsubsection{}\label{prop:wedge sum}
 Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
 From this, we deduce the following.
 %\facundo{A priory, parameter wise homotopy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
 %\ling{I have added the reference}
+\anibal{Proposition 3.7 doesn't seem to exist in the paper \cite{adamaszek2020homotopy}}
 
 \medskip\proposition
-Let $X$ and $Y$ be two compact metric spaces.
-\begin{enumerate}[(a)]
-	\item\label{prop:wedge sum pH} For any degree $p$,
-	\begin{equation*}\label{eq:wedge sum pH}
-		\Hbarc{p}{X \vee Y}= \Hbarc{p}{X}\sqcup \Hbarc{p}{Y}.
-	\end{equation*}
-	\item\label{prop:wedge sum Sq} For any $k \in \Z_{\geq 1}$,
-	\begin{equation*}\label{eq:wedge sum Sq}
-		\sqbarc{k}{X \vee Y}= \sqbarc{k}{X}\sqcup \sqbarc{k}{Y}.
-	\end{equation*}
-\end{enumerate}
+Let $\cX$ and $\cY$ be two compact metric spaces.
+For any degree $d$ we have
+\[
+\rH_d(\VR(\cX \vee \cY)) \cong \rH_d(\VR(\cX)) \oplus \rH_d(\VR(\cY)),
+\]
+and, for any cohomology operation $\theta$, we have
+\begin{align*}
+	\img\theta_{\VR(\cX \vee \cY)} &\cong \img\theta_{\VR(\cX)} \oplus \img\theta_{\VR(\cY)}, \\
+	\ker\theta_{\VR(\cX \vee \cY)} &\cong \ker\theta_{\VR(\cX)} \oplus \ker\theta_{\VR(\cY)}.
+\end{align*}
+%\begin{proof}
+%	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
+%	
+%	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
+%\end{proof}
 
-\begin{proof}
-	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
-	
-	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
-\end{proof}
+\subsubsection{}
 
-\subsection{Wedge of spheres}
+For $n, \ell_1, \dots, \ell_n \in \N^n$ let
+\[
+\VS^{\ell_1,\dots,\ell_n} = 
+\overbrace{\bS^1\vee\dots\vee\bS^1}^{\ell_1} \vee\dots\vee \overbrace{\bS^n\vee\dots\vee\bS^n}^{\ell_n}.
+%(\bS^1)^{\vee m_1} \vee \dots \vee (\bS^n)^{\vee m_n}.
+\]
+The barcode of its $d$-homology contains $m_d$ copies of $(0,\zeta_p)$ and possibly other bars dominated by $(\zeta_n,\pi)$.
+This holds for all degrees with the convention that $m_d = 0$ for $d > n$.
 
-\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bS^1 \vee \bS^2 \vee \dots \vee \bS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
-Explicitly, we have the following:
-\begin{itemize}
-	\item $\Hbarc{1}{\VS^n}$ contains only one bar $(0,\tfrac{2\pi}{3})$.
-	\item For any degree $2\leq p\leq n$, $\Hbarc{p}{\VS^n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$.
-	For instance, when $p=2l+1$ is odd, $\Hbarc{p}{\VS^n}$ contains the bar $( \tfrac{2l\pi}{2l+1},\tfrac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
-	\item For any degree $p>n$, all bars in $\Hbarc{p}{\VS^n}$ are dominated by $(\zeta_n,\pi)$.
-\end{itemize}
+Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in its $\img\theta$ barcode is dominated by $(\zeta_n,\pi)$.
+%(top row of Figure \ref{fig:sq barcodes}).
 
-\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $\VS^n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
+%\proposition For a degree $d$, denote $\barc\rH_d(\VS^{(\ell_1,\dots,\ell_n)})$ simply as $B_d$.
+%
+%\begin{enumerate}
+%	\item $B_1$ is the multiset containing $r_1$ copies of $(0,\tfrac{2\pi}{3})$.
+%	\item If $1 < d \leq n$, 
+%\end{enumerate}
+%
+%Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bS^1 \vee \bS^2 \vee \dots \vee \bS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
+%Explicitly, we have the following:
+%\begin{itemize}
+%	\item $\Hbarc{1}{\VS^n}$ contains only one bar $(0,\tfrac{2\pi}{3})$.
+%	\item For any degree $2 \leq p \leq n$, $\Hbarc{p}{\VS^n}$ contains one bar $(0,\zeta_p)$, and possibly some bars dominated by $(\zeta_n,\pi)$.
+%	For instance, when $p=2l+1$ is odd, $\Hbarc{p}{\VS^n}$ contains the bar $( \tfrac{2l\pi}{2l+1},\tfrac{2(l+1)\pi}{2l+3})$ which is dominated by $(\zeta_n,\pi)$.
+%	\item For any degree $p>n$, all bars in $\Hbarc{p}{\VS^n}$ are dominated by $(\zeta_n,\pi)$.
+%\end{itemize}
+
+
+
+%\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $\VS^n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
 
 \begin{figure}
 	\centering

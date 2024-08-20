@@ -1,0 +1,163 @@
+\subsection{Eilenberg--MacLane spaces}
+
+\subsubsection{}
+
+We denote by $K(\pi, n)$ any cellular space which has only one non-trivial homotopy group, namely, $\pi_n(K(\pi, n)) = \pi$.
+Such space is unique up to homotopy, and is referred to as an \defn{Eilenberg--MacLane space}.
+For example, since the circle has universal cover the real line and fundamental group isomorphic to $\Z$, it is a model for $K(\Z,1)$.
+
+The \defn{Hurewicz homomorphism} $h \colon \pi_i(X) \to \rH_i(X)$ is defined by choosing a generator $u$ of $\rH_i(S^i)$ and sending the homotopy class $[f]$ of a based map $f \colon \bS^i \to X$ to $f^*(u)$.
+Using the properties of this map and the universal coefficient theorem for cohomology one shows the existence of a preferred class $\iota_n \in \rH^n(K(\pi, n); \pi)$ termed the \defn{fundamental class} of $K(\pi, n)$.\footnote{The Hurewicz theorem states that if $X$ is such that $\pi_i(X)$ is trivial for all $i \leq n$, then the Hurewicz homomorphism is an isomorphism in dimensions $i \leq n$ and a surjection in dimension $n+1$.
+	Hence, the first non-trivial homotopy group of $X$ and the first non-trivial homology group occur in the same dimension and are isomorphic under $h$.
+	For $n=1$, the theorem requires certain modifications which do not affect the following analysis.
+	The group $\Hom(\rH_n(X), \pi_n(X))$ contains $h^{-1}$, the inverse of the Hurewicz homomorphism.
+	Subject to the hypothesis on $X$, the universal coefficient theorem for homology gives an isomorphism of $\Hom(\rH_n(X), \pi_n(X))$ and $\rH^n(X; \pi_n(X))$, and the fundamental class $\iota \in \rH^n(X; \pi_n(X))$ corresponds to $h^{-1}$ under this isomorphism.}
+
+The relevance of Eilenberg--MacLane space for the study of cohomology is the following bijection:
+\[
+\begin{tikzcd}[column sep=small, row sep=0]
+	{[X, K(\pi, n)]} \rar & \rH^n(X; \pi) \\
+	{[f]} \rar[maps to] & f^*(\iota_n)
+\end{tikzcd}
+\]
+where $[X, K(\pi, n)]$ denotes the set of homotopy classes of based maps from $X$ to $K(\pi, n)$.
+We refer to this bijection as the \textit{representability of cohomology}.
+
+\subsection{Cohomology operations}
+
+\subsubsection{}
+Let both $\pi$ and $G$ be abelian groups.
+A \defn{cohomology operation} of type $(\pi, n; G, m)$ is a family of functions
+\[
+\theta_X \colon \rH^n(X; \pi) \to \rH^m(X; G),
+\]
+one for each space $X$, satisfying the naturality condition $f^* \theta = \theta f^*$ for any map $f \colon X \to Y$.
+We will denote by $\cO(\pi, n; G,m)$ the set of cohomology operations of type $(\pi, n; G,m)$.
+
+\subsubsection{}
+There is bijection between $\cO(\pi, n; G,m)$ and homotopy classes of based maps between their Eilenberg--MacLane spaces.
+Explicitly, given $[f] \in [K(\pi,n), k(G,m)]$ and an $n$-cohomology class in a space $X$ with $\pi$ coefficients, say $g^*(\iota_m)$ for some $g \colon X \to K(G, m)$, the value of the cohomology operation $\theta_{[f]}$ on it is
+\[
+\theta_{[f]}(g^*(\iota_m)) = (f \circ g)^*(\iota_m).
+\]
+In other words, cohomology operations are parameterized by the cohomology of Eilenberg--MacLane spaces, i.e.,
+\[
+\cO(\pi, n; G,m) \cong \rH^m(K(\pi,n); G).
+\]
+
+\subsection{The Steenrod Algebra}\label{ss:steenrod}
+
+\subsubsection{} For a space $X$ let $\sus X$ denote the product of $X$ with the interval $[0,1]$ having each $X \times \set{0}$ and $X \times \set{1}$ collapsed to a point.
+For example, $\sus \bS^n \sim \bS^{n+1}$.
+
+The inclusion of $X$ into $\sus X$ induces an isomorphism
+\[
+\rH^n(X) \cong \rH^{n+1}(\sus X)
+\]
+in cohomology with any coefficients, referred to as the \defn{suspension isomorphism}.
+
+\subsubsection{} A \defn{stable cohomology operation} of degree $k$ is a natural family of functions
+\[
+\set{\theta^n_X \colon \rH^n(X; \pi) \to \rH^{n+k}(X; G)}_{n \in \N}
+\]
+for each space $X$ commuting with suspension isomorphisms, i.e., making the diagram
+\[
+\begin{tikzcd}
+	\rH^n(X; \pi) \rar["\theta^n_X"] \dar & \rH^{n+k}(X; G) \dar \\
+	\rH^{n+1}(\sus X; \pi) \rar["\theta^{n+1}_X"] & \rH^{n+1+k}(\sus X; G)
+\end{tikzcd}
+\]
+commute for each $n \in \N$.
+We will denote by $\cO^{\mathrm{st}}_k(\pi, G)$ the set of stable cohomology operation of degree $k$.
+
+%An example of a cohomology operation that is not stable is the cup-product square
+%\[
+%\Big\{{\begin{tikzcd}[column sep=small,row sep=-6pt]
+%	\rH^n(X) \rar & \rH^{2n}(X) \\
+%	x \rar[maps to] & x^2
+%\end{tikzcd}}\Big\}
+%\]
+%ranging over all $n$.\footnote{To see this notice that suspending this map gives a map $\rH^{n+1}(\Sigma X) \to \rH^{2n+1}(\Sigma X)$, which has the wrong degree.
+	%In fact, on $\rH^*(\Sigma X)$, all cup products vanish.}
+
+Using the representability of cohomology, $\cO^{\mathrm{st}}_k(\pi, G)$ can be described as the colimit of the groups
+\[
+H^{n+k}(K(\pi, n); G) \cong [K(\pi, n), K(G, n+k)]
+\]
+along certain maps
+\[
+[K(\pi, n), K(\pi, n+k)] \to [K(\pi, n+1), K(G, n+1+k)]
+\]
+defined by the functoriality of $\sus$ and a natural homotopy equivalence
+\begin{equation}\label{eq:suspension of K(pi,n)}
+	\sus K(\pi, n) \cong K(\pi, n+1)
+\end{equation}
+between the suspension of the $n^\th$ Eilenberg--MacLane space and the $(n+1)^\th$.\footnote{\anibal{include spectra?}}
+In other words, we have
+\[
+\cO^\st_k(\pi, G) \cong \colim_n \rH^{n+k}(K(\pi, n); G).
+\]
+
+\subsubsection{} We will be interested in combining all stable operations
+\[
+\cO^\st(\k) = \bigsqcup_k \cO^{\mathrm{st}}_k(\k, \k),
+\]
+over a fixed coefficient field $\k$.
+With compositions, $\cO^\st(\k)$ forms a (graded) algebra.
+For any prime $p$, the algebra $\cO^\st(\Z/p)$ is denoted $\cA_p$ and referred to as the mod~$p$ \defn{Steenrod Algebra}.
+%Its importance in stable homotopy theory is hard to overstate.
+%When $\k$ is $\Z/p$ for some prime $p$, the algebra of stable cohomology operations is known as the mod $p$ \defn{Steenrod Algebra} and is of central importance in homotopy theory.
+%In the computational part of this paper, we will focus on the mod 2 case, referring to $\cO^{\mathrm{st}}(\Z/2)$ simply as the Steenrod Algebra.
+
+%In terms of the representing object, this is an isomorphism
+%\[
+%[X, K(\pi, n)] \cong [\Sigma X, K(\pi, n+1)].
+%\]
+%The right-hand side is the same as \( [X, \Omega K(\pi, n+1)] \), so the suspension isomorphism is induced by the homotopy equivalence \( K(\pi, n) \simeq \Omega K(\pi, n+1) \).
+%
+%Again using representability, the set of stable cohomology operations will be the colimit of the groups
+%\[
+%[K(\pi, n), K(\pi, n+k)]
+%\]
+%along the maps
+%\[
+%[K(\pi, n), K(\pi, n+k)] \cong [\Omega K(\pi, n+1), \Omega K(\pi, n+k+1)] \cong [\Sigma \Omega K(\pi, n+1), K(\pi, n+k+1)] \to [K(\pi, n+1), K(\pi, n+k+1)].
+%\]
+%Equivalently, I want the colimit
+%\[
+%\varinjlim_n \rH^{n+k}(K(\pi, n))
+%\]
+%along the maps
+%\[
+%K(\pi, n+1) \to \Sigma \Omega K(\pi, n+1) \simeq \Sigma K(\pi, n).
+%\]
+%This colimit is the group of degree-\( n \) stable cohomology operations.
+%Taking this for all \( n \), we get a graded ring (I can compose two stable cohomology operations to get another one). This ring is the Steenrod Algebra.
+
+\subsubsection{} 
+The Steenrod algebra $\cA_2$ is generated by the \defn{Steenrod squares} $\set{\Sq^i}_{i \in \N}$.
+These are degree $i$ stable operations which are axiomatically characterized by the following properties holding for all cohomology classes $\alpha,\beta \in \rH^*(\cX; \Z/2)$ in any space $\cX$:
+\begin{enumerate}
+	\item \(\Sq^0(\alpha) = \alpha.\)
+	\item \(\Sq^i(\alpha) = 0, \quad \text{if } i > \deg\alpha.\)
+	\item \(\Sq^i(\alpha) = \alpha^2, \quad \text{if } i = \deg\alpha.\)
+	\item \(\Sq^i(\alpha \beta) = \textstyle\sum_{j=0}^{i} \Sq^j(\alpha) \Sq^{i-j}(\beta).\)
+\end{enumerate}
+We mention that $\Sq^1$ is the Bockstein $\beta$ of the exact sequence
+\[
+0 \to \Z/2 \to \Z/4 \to \Z/2 \to 0.
+\]
+
+\subsubsection{} For an odd prime \(p\), the Steenrod algebra $\cA_p$ is generated by the \defn{Bockstein} \(\beta\) of the exact sequence
+\[
+0 \to \Z/p \to \Z/p^2 \to \Z/p \to 0
+\]
+and the \defn{Steenrod reduced powers} \(\set{\mathcal{P}^i}_{i \in \N}\).
+These are degree \(2i(p-1)\) stable operations which are axiomatically characterized by the following properties holding for all cohomology classes \(\alpha, \beta \in \rH^*(\cX; \Z/p)\) in any space \(\cX\):
+
+\begin{enumerate}
+	\item \(\mathcal{P}^0(\alpha) = \alpha.\)
+	\item \(\mathcal{P}^i(\alpha) = 0, \quad \text{if } 2i > \deg\alpha.\)
+	\item \(\mathcal{P}^i(\alpha) = \alpha^p, \quad \text{if } 2i = \deg\alpha.\)
+	\item \(\mathcal{P}^i(\alpha \beta) = \textstyle\sum_{j=0}^{i} \mathcal{P}^j(\alpha) \mathcal{P}^{i-j}(\beta).\)
+\end{enumerate}

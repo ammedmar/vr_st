@@ -1,10 +1,12 @@
-Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in $\theta \in \cO(\k, n; \bF, m)$ with $\k$ and $\bF$ fields.
+\subsection{Stability of $\theta$-barcodes}\label{ss:stability}
+
+Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, n)$ for some arbitrary $m$ and $n$.
 
 %, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}).
 %Furthermore, when the $\R$-diagrams are given by the Vietoris--Rips filtrations of two metric spaces, this upper bound can be replaced with twice the Gromov--Hausdorff distance $\dgh$ between the metric spaces. See Theorem \ref{thm:theta stability} for details.
 
 % Let $X$ be a q-tame $\R$-space.
-% Recall from \textsection \ref{subsubsec:theta-barcodes} that any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphism of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space.
+% Recall from \textsection \ref{ss:theta-barcodes} that any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphism of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space.
 
 %\subsubsection{}\label{lem:di stability}
 %
@@ -19,13 +21,15 @@ Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in 
 %\end{proof}
 
 \subsubsection{}\label{lem:w.h.e. preservance}
-\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then
-\[
-\di(\thetamodule{X},\thetamodule{X'}) = 0.
-\]
+\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then for any cohomology operation $\theta$ we have
+\begin{align*}
+	\di(\thetamodule{X},\thetamodule{X'}) &= 0, \\
+	\di(\ker\theta_{X}, \ker\theta_{X'}) &= 0.
+\end{align*}
 %for any cohomology operation $\theta \in \cO(n,m;\k)$ and coefficient field $\k$.
 
 \begin{proof}
+	We write the proof for $\img$ only since that for $\ker$ is analogous.
 	Since $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
 	\ling{Do we have a reference for this:}
         Both $f$ and $g$ induce an isomorphism $f^* \colon \thetamodule{Z} \to \thetamodule{X}$ and $g^* \colon \thetamodule{Z} \to \thetamodule{X'}$. 
@@ -40,13 +44,14 @@ Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in 
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
-\theorem For any two $\R$-spaces $X$ and $Y$,
-\begin{equation}\label{eq:theta di-stability}
-	\di(\thetamodule{X}, \thetamodule{Y}) \leq \dhi(X,Y).
-\end{equation}
+\theorem For any two $\R$-spaces $X$ and $Y$ and cohomology operation $\theta$,
+\begin{align*}
+	\di(\thetamodule{X}, \thetamodule{Y}) &\leq \dhi(X,Y), \\
+	\di(\ker\theta_{X}, \ker\theta_{Y}) &\leq \dhi(X,Y).
+\end{align*}
 
 \begin{proof}
-	Let $X$ and $Y$ be $\R$-spaces. 
+	We only write the proof for $\img\theta$ since that for $\ker\theta$ is similar.
 	Take any $\delta > \dhi(X,Y)$.
 	By the definition of the homotopy interleaving distance, there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
 	By applying the triangle inequality and Lemma \ref{lem:w.h.e. preservance}, we obtain
@@ -58,33 +63,24 @@ Throughout this subsection we fix an arbitrary cohomology operation $\theta$ in 
 		\delta.
 	\end{align*}
 	where, for the third line, we used Lemma~\ref{ss:interleaving}.
-	
- 	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality given in (\ref{eq:theta di-stability}).
+ 	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality.
 \end{proof}
 
 \subsubsection{}\label{cor:theta stability VR}
-\corollary
-In the case of the Vietoris--Rips filtration of compact metric spaces $\cX$ and $\cY$, we have
-%\ling{should we write '$\img$' in the notation of $\theta$-barcodes and $Sq$-barcodes?}
+\corollary If $\cX$ and $\cY$ are compact metric spaces, we have
 \[
-\db(\thetabarc{\cX}, \thetabarc{\cY}) = \di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y)
+\di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y)
 \]
 
-%\ling{notation conflict: $X,Y$ are used both for metric spaces and spaces. I will use $X$ and $Y$ in this file and we can change them later.}
 \begin{proof}
-        By applying Equation (\ref{eq:theta di-stability}) and the stability of $\dhi$ (Theorem \ref{thm:stability-HI}), we obtain
+        By applying \cref{thm:theta stability} and the stability of $\dhi$ (\cref{thm:stability-HI}), we obtain
         \[
         \di(\thetamodule{X}, \thetamodule{Y}) \leq
-        \dhi(X,Y)\leq 2\cdot \dgh(X,Y).
+        \dhi(X,Y) \leq 2\cdot \dgh(X,Y).
         \]
         Since $\cX$ and $\cY$ are compact metric spaces, the persistence modules $\thetamodule{\cX}$ and $\thetamodule{\cY}$ are q-tame.
         Thus,
         \[
-        \db\big(\thetabarc{\cX}, \thetabarc{\cY}\big) =
-        \di(\thetamodule{\cX}, \thetamodule{\cY})\leq 2\cdot \dgh(X,Y).
+        \di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y). \qedhere
         \]
-        %Therefore, the bottleneck distance $\db$ between the $\theta$-barcodes is also bounded above by $2\cdot \dgh(X,Y)$.
 \end{proof}
-
-\anibal{Ling, please rewrite this subsubsection.}
-\ling{Done.}

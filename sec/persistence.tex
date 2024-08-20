@@ -163,6 +163,7 @@ The interleaving distance of $q$-tame persistence modules agrees with the bottle
 
 \subsubsection{}
 For any integer $k \geq 0$, applying the degree $k$ homology functor (with coefficients in~$\kk$) to an $\R$-space produces its \defn{persistent $k$-homology}, a persistence module denoted $\rH_k(X; \kk)$.
+We will also consider the reduced version of this construction.
 
 It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
 The most important example of these is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-space $X$.
@@ -210,18 +211,10 @@ It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijectio
 
 \subsubsection{}
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
+As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 
-\medskip\lemma(\cite[Prop.~5.1]{chazal2014geometric}).
+\medskip\lemma
 If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
-
-\subsubsection{}\label{prop:pH1}{\rm \cite[Prop.~7.10]{virk20201}}.
-Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
- 
-\medskip\lemma If $\cX$ be a simply-connected geodesic space, then
-\[
-\Hbarc{1}{\cX} = \emptyset.
-\]
-\anibal{Is this really used?}
 
 \subsubsection{}\label{thm:stability-HI}
 The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metric spaces $\cX$ and $\cY$ is defined as
@@ -233,7 +226,7 @@ The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric s
 }
 
 \medskip\theorem Let $\cX$ and $\cY$ be compact metric spaces.
-Then, for any $k \in \Z_{\geq 0},$
+Then, for any $k \in \N,$
 \[
 \di(\rH_k(\VR(\cX); \kk), \rH_k(\VR(\cY); \kk)) \leq
 \dhi(\VR(\cX), \VR(\cY)) \leq
