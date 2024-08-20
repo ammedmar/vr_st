@@ -21,12 +21,11 @@ Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, 
 %\end{proof}
 
 \subsubsection{}\label{lem:w.h.e. preservance}
+
 \lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then for any cohomology operation $\theta$ we have
-\begin{align*}
-	\di(\thetamodule{X},\thetamodule{X'}) &= 0, \\
-	\di(\ker\theta_{X}, \ker\theta_{X'}) &= 0.
-\end{align*}
-%for any cohomology operation $\theta \in \cO(n,m;\k)$ and coefficient field $\k$.
+\[
+\di(\thetamodule{X},\thetamodule{X'}) = \di(\ker\theta_{X}, \ker\theta_{X'}) = 0.
+\]
 
 \begin{proof}
 	We write the proof for $\img$ only since that for $\ker$ is analogous.
@@ -44,10 +43,9 @@ Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, 
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
-\theorem For any two $\R$-spaces $X$ and $Y$ and cohomology operation $\theta$,
+\theorem For $\R$-spaces $X$ and $Y$ and cohomology operation $\theta$ we have
 \begin{align*}
-	\di(\thetamodule{X}, \thetamodule{Y}) &\leq \dhi(X,Y), \\
-	\di(\ker\theta_{X}, \ker\theta_{Y}) &\leq \dhi(X,Y).
+	\di(\thetamodule{X}, \thetamodule{Y}),\ \di(\ker\theta_{X}, \ker\theta_{Y}) \leq \dhi(X,Y).
 \end{align*}
 
 \begin{proof}

@@ -9,13 +9,12 @@ We consider it equipped with the geodesic distance.
 
 \subsubsection{}
 
-Because the Vietoris--Rips complexes of $\bS^n$ are contractible when the scale parameter $t>\pi$, no standard or Steenrod bar can stay alive after $\pi$.
-Therefore, all bars are dominated by $(0, \pi)$.
+Because the Vietoris--Rips complexes of $\bS^n$ is contractible when the scale parameter is greater than $\pi$, all its bars are dominated by $(0, \pi)$.
 
 \subsubsection{} 
 
 Recall from \cite[Thm.~10]{lim2020vietoris} that for $n \in \N$ and  $0 < r \leq \zeta_n$, where $\zeta_n = \arccos(\tfrac{-1}{n+1})$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$.\anibal{Is this the right citation?}
-\footnote{The case $n = 1$ has more information.
+This implies that, for any degree $d$, all bars in $\barc\rH_d(\VR(\bS^n))$ are dominated by $(\zeta_n,\pi)$ with the exception of a single bar $(0,\zeta_n)$ when $d = n$ (see Figure \ref{fig:Sk}).\footnote{The case $n = 1$ has more information.
 	From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r(\bS^1)$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
 	Therefore, for any degree~$d$,
 	\[
@@ -30,7 +29,7 @@ Recall from \cite[Thm.~10]{lim2020vietoris} that for $n \in \N$ and  $0 < r \leq
 	Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
 	As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
 	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
-This implies that, for any degree $d$, all bars in $\barc\rH_d(\VR(\bS^n))$ are dominated by $(\zeta_n,\pi)$ with the exception of a single bar $(0,\zeta_n)$ when $d = n$ (see Figure \ref{fig:Sk}).\anibal{Notice that I am treating the case $n=1$ in here as well since the claims also hold there. I moved the extra information to the footnote.}
+\anibal{Notice that I am treating the case $n=1$ in here as well since the claims also hold there. I moved the extra information to the footnote.}
 %Therefore, for $n \geq 2$, \cref{ss:simply connected geodesic spaces} implies that $\Hbarc{1}{\bS^n} = \emptyset$, since $\$
 
 %we have the following (see Figure \ref{fig:Sk}):
@@ -51,7 +50,7 @@ This implies that, for any degree $d$, all bars in $\barc\rH_d(\VR(\bS^n))$ are 
 	\label{fig:Sk}
 \end{figure}
 
-Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR(\bS^n)}$ is dominated by $(\zeta_n,\pi)$.
+Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR(\bS^n)}$ or $\ker\theta_{\VR(\bS^n)}$ is dominated by $(\zeta_n,\pi)$.
 
 %We study the Steenrod barcodes of $\bS^n$.
 %For any $k \in \Z_{\geq 1}$, the Steenrod square operation $\Sq^k$ is trivial for $\bS^n$.
@@ -78,22 +77,23 @@ if $x_i' \in \cX_i$ and $x_j' \in \cX_j$ with $i \neq j$, and agrees with $d_{\c
 
 \subsubsection{}\label{prop:wedge sum}
 Recall from \cite[Proposition 3.7]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
-From this, we deduce the following.
+From this we deduce that the usual barcode and $\theta$-barcodes of a wedge sum $\cX \vee \cY$ decomposes as the union of the corresponding barcodes of $\cX$ and $\cY$.\anibal{Proposition 3.7 doesn't seem to exist in the paper \cite{adamaszek2020homotopy}}
+
+%From this, we deduce the following.
 %\facundo{A priory, parameter wise homotopy equivalences do not guarantee same barcodes. One has to have some commutativity. See paper with Osman and Sunhyuk.}
 %\ling{I have added the reference}
-\anibal{Proposition 3.7 doesn't seem to exist in the paper \cite{adamaszek2020homotopy}}
 
-\medskip\proposition
-Let $\cX$ and $\cY$ be two compact metric spaces.
-For any degree $d$ we have
-\[
-\rH_d(\VR(\cX \vee \cY)) \cong \rH_d(\VR(\cX)) \oplus \rH_d(\VR(\cY)),
-\]
-and, for any cohomology operation $\theta$, we have
-\begin{align*}
-	\img\theta_{\VR(\cX \vee \cY)} &\cong \img\theta_{\VR(\cX)} \oplus \img\theta_{\VR(\cY)}, \\
-	\ker\theta_{\VR(\cX \vee \cY)} &\cong \ker\theta_{\VR(\cX)} \oplus \ker\theta_{\VR(\cY)}.
-\end{align*}
+%\medskip\proposition
+%Let $\cX$ and $\cY$ be two compact metric spaces.
+%For any degree $d$ we have
+%\[
+%\rH_d(\VR(\cX \vee \cY)) \cong \rH_d(\VR(\cX)) \oplus \rH_d(\VR(\cY)),
+%\]
+%and, for any cohomology operation $\theta$, we have
+%\begin{align*}
+%	\img\theta_{\VR(\cX \vee \cY)} &\cong \img\theta_{\VR(\cX)} \oplus \img\theta_{\VR(\cY)}, \\
+%	\ker\theta_{\VR(\cX \vee \cY)} &\cong \ker\theta_{\VR(\cX)} \oplus \ker\theta_{\VR(\cY)}.
+%\end{align*}
 %\begin{proof}
 %	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
 %	
@@ -108,10 +108,10 @@ For $n, \ell_1, \dots, \ell_n \in \N^n$ let
 \overbrace{\bS^1\vee\dots\vee\bS^1}^{\ell_1} \vee\dots\vee \overbrace{\bS^n\vee\dots\vee\bS^n}^{\ell_n}.
 %(\bS^1)^{\vee m_1} \vee \dots \vee (\bS^n)^{\vee m_n}.
 \]
-The barcode of its $d$-homology contains $m_d$ copies of $(0,\zeta_p)$ and possibly other bars dominated by $(\zeta_n,\pi)$.
+Since $\zeta_{n}$ is decreasing as a function of $n$, the barcode of $\rH_d(\VS^{\ell_1,\dots,\ell_n})$ contains $m_d$ copies of $(0,\zeta_p)$ and possibly other bars dominated by $(\zeta_n,\pi)$.
 This holds for all degrees with the convention that $m_d = 0$ for $d > n$.
 
-Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in its $\img\theta$ barcode is dominated by $(\zeta_n,\pi)$.
+Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in either its $\img\theta$ and $\ker\theta$ barcode is dominated by $(\zeta_n, \pi)$.
 %(top row of Figure \ref{fig:sq barcodes}).
 
 %\proposition For a degree $d$, denote $\barc\rH_d(\VS^{(\ell_1,\dots,\ell_n)})$ simply as $B_d$.
@@ -151,9 +151,22 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 \subsection{$n$-projective space}
 
 \subsubsection{}\label{prop:RPn bar}
-\lemma For integers $1 \leq p \leq n$,
+
+Recall that the filling radius of $\rp^n$ is $\frac{\pi}{3}$ for any $n \geq 1$.
+Therefore, \cref{ss:filling_radius} gives that
 \[
-\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{p}{\rp^n}.
+\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{n}{\rp^n}.
+\]
+Additionally, we have that
+\[
+\rp^1 \subset \rp^2 \subset \dots \subset \rp^n,
+\]
+with $\rp^d$ generating the $d^\th$ mod 2 homology of $\rp^n$ for every $d \geq 1$.
+We will use these facts to prove the following.
+
+\medskip\lemma For integers $1 \leq d \leq n$ we have
+\[
+\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{d}{\rp^n}.
 \]
 
 \begin{proof}
@@ -163,9 +176,9 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 	(0, 2\fillrad{\rp^1}) = \left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{1}{\rp^1}.
 	\]
 	Assume the statement holds for $\rp^{n-1}$.
-	That is, for any $1 \leq p \leq n-1$,
+	That is, for any $1 \leq d \leq n-1$,
 	\[
-	\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{p}{\rp^{n-1}}.
+	\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{d}{\rp^{n-1}}.
 	\]
 	Let $t, \epsilon > 0$ be small.
 	We claim that the following diagram of topological spaces commutes:
@@ -199,8 +212,7 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 	\[
 	f^n \colon \VR_t(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi^n} \bS^{n},
 	\]
-	where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in $\VR_t(\bS^n)$ to the sum $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^{n}$ and $\lambda_i \in \bbR$, and the second map $\pi^n$ is the radial projection map.\anibal{How are points in the VR cpx represented by formal sum? Probably this will be address in \cref{ss:vietoris-rips}} 
-        \ling{Here, I was not distinguishing a simplicial complex with its geometric realization. The linear sums are actually points in the geometric realization of VR cpx.}
+	where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in $\VR_t(\bS^n)$ to the sum $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^{n}$ and $\lambda_i \in \bbR$, and the second map $\pi^n$ is the radial projection map.
 	Because $f^n$ preserves the equivalence relation $x \sim -x$, we have the induced map %\anibal{Maybe use superscripts for these maps and the $\rho$ too?}
 	\[
 	f^n/\sim \colon \VR_t(\bS^{n})/\sim\to \bS^{n}/\sim\cong \rp^n.
