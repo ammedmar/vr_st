@@ -127,32 +127,26 @@ Because $\pi^{n}$ restricted to $\bS^{n-1}_G$ is equal to $\pi^{n-1}$, we conclu
 Thus, the claim holds.
 
 \subsubsection{}
+\label{subsub:foundamental_bar_rpn}
 
 \lemma 
-\ling{Here mention the several values; make assumptions.}
-For integers $1 \leq \degp \leq n$,
+Let $\delta_n$ and $\alpha_n$ be the filling radius of $\bS^n_G$ and the first critical value of $\VR(\bS^n_G)$, respectively.
+For any degree $1 \leq \degp \leq n$, let $\beta_{\degp, n}$ be the first critical value of the $\degp$-th homology of $\VR(\bS^n_G)$.
+Then, for any $1 \leq p \leq n$,
 \[
-\left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{\degp}{\bS^n_G}.
+(0, ???) \in \Hbarc[\field]{\degp}{\bS^n_G}.
 \]
-
-\ling{We need the first critical value of the $\degp$-th homology of $\bS^n_G$ for all $1\leq \degp\leq n-1$ and all $n.$}
 
 \begin{proof}
 	We will use an induction argument on $n$.
 	When $n = 1$, \cref{ss:filling_radius} implies that
- \ling{here we need the filling radius of $\bS^1/G$}
 	\[
-	(0, 2\fillrad{\rp^1}) = \left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{1}{\rp^1}.
+	(0, 2\fillrad[\field]{\bS^1_G}) = (0, \delta_n) \in \Hbarc[\field]{1}{\bS^1_G}.
 	\]
 	Assume the statement holds for $\bS^{n-1}_G$.
-	% That is, for any $1 \leq \degp \leq n-1$,
-	% \[
-	% \left(0, \tfrac{2\pi}{3}\right) \in \Hbarc{\degp}{\bS^{n-1}_G}.
-	% \]
 
-    For the case when $1\leq \degp\leq n-1$, applying the $\degp$-th homology functor (over $\Ftwo$ \ling{replace with a suitable field}) to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
-    \ling{For the first $\frac{2\pi}{3}$, we want to replace it with a value such that $\rH_\degp(v^{n-1})$ is zero. 
-    The first critical value may not be enough (unless the homology is always at most dimension one): changing type is different from being zero.}
+    For the case when $1\leq \degp\leq n-1$, applying the $\degp$-th homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
+    for $t,\epsilon>$ small,
     \[
     \begin{tikzcd}
         \rH_\degp(\bS^{n-1}_G)
@@ -190,7 +184,7 @@ For integers $1 \leq \degp \leq n$,
     (0,2\fillrad{\bS^n_G}) = (0, \tfrac{2\pi}{3}) \in \Hbarc{n}{\bS^n_G}.
     \]
         
-	Therefore, $(0, \tfrac{2\pi}{3}) \in \Hbarc{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
+	Therefore, $(0, \tfrac{2\pi}{3}) \in \Hbarc[\field]{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
 \end{proof}
 
 We will refer to the bar in this lemma as the \defn{fundamental bar} of $\bS^n_G$.
