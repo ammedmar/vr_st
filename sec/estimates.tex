@@ -112,6 +112,7 @@ Since $\zeta_{n}$ is decreasing as a function of $n$, the barcode of $\rH_d(\VS^
 This holds for all degrees with the convention that $\ell_d = 0$ for $d > n$. \ling{double check}
 
 Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in either its $\img\theta$ and $\ker\theta$ barcode is dominated by $(\zeta_n, \pi)$.
+\ling{to do: figures need to be adjusted accordingly}
 %(top row of Figure \ref{fig:sq barcodes}).
 
 %\proposition For a degree $\degp$, denote $\barc\rH_\degp (\VS^{(\ell_1,\dots,\ell_n)})$ simply as $B_\degp $.
@@ -136,19 +137,74 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 
 \begin{figure}
 	\centering
-	\input{sec/fig_barcodes}
-	\caption{\emph{Top row:} barcodes of $\VS^n = \bS^1 \vee \bS^2 \vee \dots \vee \bS^n$. \emph{Bottom row:} barcodes of $\rp^n$.}
+	\input{sec/fig_barcodes_spheres}
+	\caption{\emph{Top row:} usual barcodes of $\VS^n$. \emph{Bottom row:} Steenrod barcodes of $\VS^n$. \ling{this needs to be adjusted}}
 	\label{fig:barcodes}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\input{sec/fig_sq_barcodes}
-	\caption{\emph{Top row:} Steenrod barcodes of $\VS^n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$. Each figure applies to all positive degrees.\ling{there should be an upper bound on the degree}}
+	\input{sec/fig_barcodes_rpn}
+	\caption{\emph{Top row:} usual barcodes of $\rp^n$. \emph{Bottom row:} Steenrod barcodes of $\rp^n$. Each figure applies to all positive degrees. \ling{update the degrees}}
 	\label{fig:sq barcodes}
 \end{figure}
 
-\subsection{$n$-projective space}
+\subsection{$n$-projective space and more general spaces}
+
+We first identify some important quantities, referred to as first critical values, that will facilitate us to estimate the barcodes.
+
+\subsubsection{}
+\label{subsub:first_critical_value}
+
+Let $X$ be an $n$-dimensional manifold.
+The \defn{first critical value of $\VR(X)$} is some $\alpha\geq 0$ such that 
+\begin{itemize}
+    \item for any $0 \leq t\leq t'\leq \alpha$, $\VR_t(X)\simeq X$ and $\VR_{t}(X) \hookrightarrow \VR_{t'}(X)$ is a homotopy equivalence;
+    \item $\VR_t(X)$ changes homotopy type at $t=\alpha$.
+\end{itemize}
+Similarly, we define the \defn{first critical value of a persistence module $V$} to be some $\beta_\degp \geq 0$ such that the structure maps before $\beta_\degp $ are isomorphism and $V_t$ changes isomorphism type at $t = \beta_\degp $.
+
+\medskip\example
+In the case of $X = \rp^n$, $\field = \Ftwo$ and the cohomology operations $\theta$ being the Steenrod squares, we have the following results on the first critical values.
+\begin{itemize}
+    \item  The first critical value $\alpha$ of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$; see \cref{ss:filling_radius}.
+    \item The first critical value $\beta_\degp$ of the $\degp$-th homology of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$, for any $1 \leq \degp \leq n$; see the lemma in \cref{subsub:foundamental_bar_rpn}.
+    \item The first critical value $\gamma_\degp$ of the degree-$\degp$ component of $\sqbarc{k}{\rp^n}$ is $\tfrac{2\pi}{3}$, for any $\degp = 2k$ and $1 \leq k \leq \tfrac{n}{2}$. 
+\end{itemize}
+We explain why the last item holds.
+Since the Vietoris--Rips complex $\VR_t(\rp^n)$ retains the homotopy type of $\rp^n$ for $t \in (0,\tfrac{2\pi}{3})$, $\alpha^{2k}=\Sq^k(\alpha^k)$ generates a bar in the $\Sq^k$--barcode that is born at $0$ and stay alive until the non-trivial degree-$2k$ class $\alpha^{2k}$ dies at $\tfrac{2\pi}{3}$.
+Thus, $\gamma_{2k} = \tfrac{2\pi}{3}$ for any $k \leq \tfrac{n}{2}$.
+
+\subsubsection{}
+\label{subsub:general_barcodes}
+
+Let $X$ be an $n$-dimensional manifold with diameter $\pi$ satisfying the following properties:
+\begin{itemize}
+    \item $\mathrm{H}_\degp (X; \field)\cong \field$ for any $1\leq \degp\leq n$ and some field $\field$.
+    \item the first critical value of $\VR(X)$ lies in $[\zeta_n, \pi)$.
+    %\item the first critical value of the $\degp$-th homology of $\VR(X)$ is less than $\tfrac{\zeta_n}{2}+\zeta_\degp .$
+\end{itemize}
+
+For any $1 \leq p \leq n$, let $\theta$ be a cohomology operation of type $(\kk,n; \kk,\degp)$. 
+%$\theta_X \colon \rH^n(X; \pi) \to \rH^m(X; G)$.
+Let $\beta_p$ and $\gamma_p$ be the first critical values of $\rH_\degp(\VR(X))$ and $\img \theta_{\VR(X)}$, respectively.
+Then we have the following estimates of the usual barcodes and the $\theta$-barcodes of $X$. 
+\begin{itemize}
+    \item The usual barcodes of $X$ satisfy the following properties:
+        \begin{itemize}
+            \item For any $1 \leq \degp \leq n$, $\Hbarc[\field]{\degp}{X}$ contains $(0,\beta_\degp )$ for some $\beta_\degp \in [\alpha, \pi)$ and possibly some bars dominated by $(\alpha, \pi)$.
+            \item For $\degp > n$, all bars in $\Hbarc[\field]{\degp}{X}$ are dominated by $(\alpha, \pi)$.
+        \end{itemize}
+    \item The $\theta$-barcodes of $X$ satisfy the following properties: 
+        \begin{itemize}
+            \item For $1 \leq \degp \leq n$ such that the image of $\theta_X \colon \rH^n(X; \field) \to \rH^p(X; \field)$ is non-trivial, $\thetabarc{X}$ contains at least one bar $(0,\gamma_\degp )$ for some $\gamma_\degp \in [\alpha, \pi)$ and possibly some bars dominated by $(\alpha, \pi)$. 
+            \item For $p$ such that $\img \theta_X$ is trivial, all bars in $\thetabarc{X}$ are dominated by $(\alpha, \pi)$. 
+        \end{itemize}
+\end{itemize}
+
+\example 
+In the case of the real projective planes, we have seen in \cref{subsub:first_critical_value} that $\alpha = \beta_\degp = \gamma_\degp = \tfrac{2\pi}{3}$ for any $1 \leq p \leq n$. 
+By plugging in these values to the above discussion, we obtain an estimate of the barcodes of $\rp^n$, as illustrated in \cref{fig:sq barcodes}.
 
 \subsubsection{}\label{prop:RPn bar}
 
@@ -281,88 +337,12 @@ We will use these facts to prove the following lemma. \ling{this papragraph will
 
 % We will refer to the bar in this lemma as the \defn{fundamental bar} of $\rp^n$.
 
-\subsubsection{} \ling{move this}
-Because the Vietoris--Rips complexes of $\rp^n$ are contractible when the scale parameter $t>\pi$, neither the standard barcodes nor the Steenrod barcodes can stay alive after $\pi$.
-Therefore, all bars are dominated by $(0,\pi)$.
-
-For the standard barcodes of $\rp^n$, by applying Proposition \ref{prop:homotopy type} (\ref{prop:RPn}) and (\ref{prop:RPn bar}), %and the fact that $\opH_\degp (\rp^n;\,\Ftwo)$ is $\Ftwo$ for $m\leq n$ and $0$ otherwise,
-we obtain the following:
-\begin{itemize}
-	\item For any $1 \leq m \leq n$, $\Hbarc{\degp}{\rp^n}$ contains one bar $(0,\tfrac{2\pi}{3})$ and possibly some bars dominated by $(\tfrac{2\pi}{3}, \pi)$.
-	\item For $\degp > n$, all bars in $\Hbarc{\degp}{\rp^n}$ are dominated by $(\tfrac{2\pi}{3},\pi)$.
-\end{itemize}
-
-%To compute the Steenrod barcodes of $\rp^n$, we first recall the following properties of $\rp^n$:
-%\begin{itemize}
-%	\item The cohomology ring $\opH^*(\rp^n;\,\Ftwo)$ is isomorphic to $\Ftwo[\alpha]/(\alpha^{n+1})$ (see \cite[Theorem 3.19]{hatcher2000});
-%	\item The Steenrod operations satisfy $\Sq^k(\alpha^m)=({m \choose k} \mod 2)\alpha^{m+k}$ for any $0\leq k\leq m\leq n$, according to Formula (*) on page 490 of \cite{hatcher2000}.
-%	\item For $k>\tfrac{n-1}{2}$, $\Sq^k\equiv 0$.
-%	Indeed, for $m\leq \tfrac{n-1}{2} < k$, it follows from \cite[page 489, Item (5)]{hatcher2000} that $\Sq^k(\alpha^m)=0$.
-%	For $m> \tfrac{n-1}{2}$, $\Sq^k(\alpha^m)=({m \choose k} \mod 2)\alpha^{m+k}=0$ because $m+k>n-1.$ Thus, $\Sq^k(\alpha^m)=0$ for any $m$.
-%\end{itemize}
-
-Let $1 \leq k \leq \tfrac{n-1}{2}$.
-Since the Vietoris--Rips complex $\VR_t(\rp^n)$ retains the homotopy type of $\rp^n$ for $t \in (0,\tfrac{2\pi}{3})$, we have at least one bar generated by $\Sq^k(\alpha^k)=\alpha^{2k}$ in the $\Sq^k$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(k+1)$ class $\alpha^{2k}$ dies at $\tfrac{2\pi}{3}$.
-Therefore,
-\begin{itemize}
-	\item For $1\leq k\leq n-1$, $\sqbarc{k}{\rp^n}$ contains one bar $(0,\tfrac{2\pi}{3})$, and possibly some bars dominated by $(\tfrac{2\pi}{3},\pi)$;\anibal{I would state this in terms of a canonical map $X \subseteq \VR_r(X)$}
-	\item For $k>n$, the possible bars in $\sqbarc{k}{\rp^n}$ are $(0,\tfrac{2\pi}{3})$ or those dominated by $(\tfrac{2\pi}{3},\pi)$.
-\end{itemize}
-
 \subsection{Bottleneck estimates}\label{prop:db estimate}
 
 We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the two space $\VS^n$ and $\rp^n$, and show that it provides a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the standard barcodes.
 See the theorem in \cref{subsub:comparison} for details.
 Although this theorem is stated for $\VS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
 This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
-
-Let $X$ be an $n$-dimensional manifold.
-The \defn{first critical value} of the Vietoris-Rips filtration of a metric space $X$ is some $\alpha\geq 0$ such that 
-\begin{itemize}
-    \item for any $0 \leq t\leq t'\leq \alpha$, $\VR_t(X)\simeq X$ and $\VR_{t}(X) \hookrightarrow \VR_{t'}(X)$ is a homotopy equivalence;
-    \item $\VR_t(X)$ changes homotopy type at $t=\alpha$.
-\end{itemize}
-Similarly, we define the \defn{first critical value of the $\degp$-th homology} of $\VR(X)$ to be some $\beta_\degp \geq 0$ such that the structure maps before $\beta_\degp $ are isomorphism and $\mathrm{H}_\degp (\VR_t(X); \field)$ changes isomorphism type at $t = \beta_\degp $.
-
-Let $X$ be an $n$-dimensional manifold with diameter $\pi$ satisfying the following properties:
-\begin{itemize}
-    \item $\mathrm{H}_\degp (X; \field)\cong \field$ for any $1\leq \degp\leq n$ and some field $\field$.
-    \item the first critical value of $\VR(X)$ lies in $[\zeta_n, \pi)$.
-    %\item the first critical value of the $\degp$-th homology of $\VR(X)$ is less than $\tfrac{\zeta_n}{2}+\zeta_\degp .$
-\end{itemize}
-As a consequence, we have the following estimates of the usual barcodes and the $\theta$-barcodes of $X$.
-\begin{itemize}
-    \item The usual barcodes of $X$ satisfy the following properties:
-        \begin{itemize}
-            \item For any $1 \leq \degp \leq n$, $\Hbarc[\field]{\degp}{X}$ contains $(0,\beta_\degp )$ for some $\beta_\degp \in [\alpha, \tfrac{\zeta_n}{2}+\zeta_\degp )$ and possibly some bars dominated by $(\alpha, \pi)$.
-            \item For $\degp > n$, all bars in $\Hbarc[\field]{\degp}{X}$ are dominated by $(\alpha, \pi)$.
-        \end{itemize}
-    \item The $\theta$-barcodes of $X$ satisfy the following properties: 
-        \begin{itemize}
-            \item For $1 \leq \degp \leq n$ such that $\img \theta_X$ is of dimension $1$ at degree $\degp$, the degree-$\degp$ component of $\thetabarc{X}$ contains one bar $(0,\gamma_\degp )$ for some $\gamma_\degp \in [\alpha, \pi)$ and possibly some bars dominated by $(\alpha, \pi)$. 
-            \item For $1 \leq \degp \leq n$ such that $\img \theta_X$ is trivial at degree $\degp$, all bars in the degree-$\degp$ component of $\thetabarc{X}$ are dominated by $(\alpha, \pi)$. 
-        \end{itemize}
-\end{itemize}
-
-\example \ling{placeholder}
-
-% \subsection{Visualization of the barcodes}
-
-% \begin{figure}[ht]
-% 	\centering
-% 	\input{sec/fig_barcodes_X}
-% 	\caption{Barcodes of $\VS$ and barcodes of $X$.}
-% 	\label{fig:VS_X}
-% \end{figure}
-
-% \begin{figure}[ht]
-% 	\centering
-% 	\input{sec/fig_sq_barcodes_X}
-% 	\caption{Barcodes of $\bS^n$, for $n\geq 2$ and degrees $m\geq 2$.
-% 		Here, $\zeta_n=\arccos(-\tfrac{1}{n+1})$.
-% 		In each figure, the gray area represents the only region, apart from the blue dots, where points could potentially exist within the corresponding barcode.}
-% 	\label{fig:Sq_VS_X}
-% \end{figure}
 
 \subsubsection{Upper bound on $\db$ between usual barcodes}
 \label{subsub:db_upper_bound}
@@ -394,7 +374,7 @@ Therefore,
 \subsubsection{Lower bound on $\db$ between $\theta$-barcodes}
 \label{subsub:db_theta_lower_bound}
 
-To obtain a lower bound on the bottleneck distance, it suffices to calculate the minimum cost of matching a certain bar. 
+To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated. 
 For $1 \leq \degp \leq n$ such that $\img \theta_X$ is of dimension $1$ at degree $\degp$, we calculate the minimum cost of matching the bar $(0,\gamma_\degp )$ in the degree-$\degp$ component of $\thetabarc{X}$.
 
 \ling{notation issue: how to indicate the degree-$\degp$ component of $\thetabarc{X}$}
@@ -466,7 +446,7 @@ We apply results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_
 \medskip\theorem
 \begin{itemize} 
 	\item[(a)] $\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS^n}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}$.
-	\smallskip\item[(b)] $\db(\sqbarc{k}{\VS^n}, \sqbarc{k}{\rp^n})\geq \tfrac{\pi}{3},\forall 1\leq k\leq n-1$.
+	\smallskip\item[(b)] $\db(\sqbarc{k}{\VS^n}, \sqbarc{k}{\rp^n})\geq \tfrac{\pi}{3},\forall 1\leq k\leq \tfrac{n}{2}$.
 \end{itemize}
 
 \begin{proof}
@@ -474,10 +454,9 @@ We apply results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_
         It is clear that $\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and $\beta_\degp = \tfrac{2\pi}{3}$ lies in $[\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ satisfying the first condition of the above lemma. 
         Thus, Item (a) follows from \cref{eq:db_usual_upper_bound} and the lemma.
 
-        For any $k$ in \ling{clarify the bounds}, the degree-$\degp$ component of $\sqbarc{k}{\rp^n}$ contains the bar $(0,\tfrac{2\pi}{3})$. 
-        This implies that $\gamma_p =\tfrac{2\pi}{3}$ for $p$ \ling{fill in the condition}. 
+        For $1 \leq k \leq \tfrac{n}{2}$, we have shown in \cref{subsub:first_critical_value} that the first critical value $\gamma_{2k}$ of the degree-$2k$ component of $\sqbarc{k}{\rp^n}$ is $\tfrac{2\pi}{3}$. 
         Thus, Item (b) follows from \cref{eq:db_theta_lower_bound} and the fact that
-        \[\min\{\tfrac{\gamma_p}{2}, \zeta_n\} = \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\} = \tfrac{\pi}{3}.\]
+        \[\min\{\tfrac{\gamma_{2k}}{2}, \zeta_n\} = \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\} = \tfrac{\pi}{3}.\]
 \end{proof}
 
-The above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov-Hausdorff distance than the standard barcodes do in all degrees.
+Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov-Hausdorff distance than the standard barcodes do in all degrees.
