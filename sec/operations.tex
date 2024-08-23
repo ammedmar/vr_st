@@ -15,21 +15,63 @@
 
 \subsubsection{}
 
-Any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
-The \defn{image persistent $\theta$-module} $\img(\theta_X)$ is defined by
-\[
-\img(\theta_X)_r = \img((\theta_X)_r)
-\qquad\text{and}\qquad
-\img(\theta)_{s,t} = W_{s,t}\big|_{\img(\theta_s)}\,.
-\]
-Since the structure maps of $\img \theta$ are restrictions of structure maps of a q-tame module, the persistence module $\img(\theta)$ is q-tame.
-A similar construction defines the \defn{kernel persistence module} $\ker(\theta)$.
+A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear}, if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any topological space $\cX$.
+We denote this subset of cohomology operations by $\cO(m,n;\k)$.
+For any prime $p$, the field $\Z/p$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
+A linear cohomology operation defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
+The \defn{image} and \defn{kernel} of $\theta$, denoted $\img\theta$ and $\ker\theta$ respectively, are natural persistence modules defined for any $\R$-space $X$ by
+\begin{align*}
+	\img(\theta_X)_r &= \img((\theta_X)_r)\,, &
+	\ker(\theta_X)_r &= \ker((\theta_X)_r)\,, \\
+	\img(\theta_X)_{s,t} &= \rH^n(X;\k)_{s,t}\big|_{\img(\theta_s)}\,, &
+	\ker(\theta_X)_{s,t} &= \rH^m(X;\k)_{s,t}\big|_{\ker(\theta_s)}\,,
+\end{align*}
+the usual notion of image and kernel of a persistence module morphism.
 
-If $X$ is q-tame, we define its \defn{$\theta$-barcode} as the barcode of $\img\theta_X$.
-
-For example, taking $\theta$ to be the identity map in degree $n$, the $\theta$-barcode of $X$ is equal to the barcode of the persistent $n$-cohomology of $X$ with $\k$ coefficients.
-
-
+If $X$ is q-tame, the structure maps of $\img\theta$ and $\ker\theta$ are restrictions of structure maps of a q-tame module, therefore $\img(\theta_X)$ and $\ker(\theta_X)$ are q-tame.
+In this case we refer to their barcodes as $\theta$-barcodes.
+Barcodes of cohomology operations generalize cohomology barcodes since, for the identity and zero maps in $\cO(m,n;\k)$, we have $\img\id_X \cong \ker0_X \cong \rH^n(X;\k)$..
 
 \input{sec/stability}
+
+\subsection{Products}
+
+\subsubsection{}
+The \defn{wedge sum} $\cX \vee \cY$ of two pointed spaces is the quotient of their disjoint union by the identification of basepoints.
+Given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \cY_1 \to \cY_2$ the map $(f \vee g) \colon \cX_1 \vee \cY_1 \to \cX_2 \vee \cY_2$ is given by
+\[
+(f \vee g)(z) =
+\begin{cases}
+	f(z) & z \in \cX_1, \\
+	g(z) & z \in \cY_1.\\
+\end{cases}
+\]
+Recall that for ...
+
+\subsubsection{}
+For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, is defined by
+\[
+(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
+\]
+
+\medskip\theorem For any linear cohomology operation $\theta$,
+\begin{align*}
+	\img\theta_{X \vee Y} &\cong \img\theta_X \oplus \img\theta_Y, \\
+	\ker\theta_{X \vee Y} &\cong \ker\theta_X \oplus \ker\theta_Y.
+\end{align*}
+
+\begin{proof}
+%	This follows from naturality and the usual isomorphism $(\iota_\cX \oplus \iota_\cY) \colon \rH^n(\cX \vee \cY; \k) \xra{\cong} \rH^n(\cX; \k) \oplus \rH^n(\cY; \k)$ where $\iota$ denotes the inclusion of a summand into the wedge sum.
+\end{proof}
+
+\subsubsection{}
+
+Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is defined by
+\[
+(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
+\]
+
+... for Steenrod only ...
+
+\subsubsection{VR version}
