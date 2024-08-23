@@ -1,6 +1,6 @@
 \subsection{Stability of $\theta$-barcodes}\label{ss:stability}
 
-Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, n)$ for some arbitrary $m$ and $n$.
+%Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, n)$ for some arbitrary $m$ and $n$.
 
 %, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}).
 %Furthermore, when the $\R$-diagrams are given by the Vietoris--Rips filtrations of two metric spaces, this upper bound can be replaced with twice the Gromov--Hausdorff distance $\dgh$ between the metric spaces. See Theorem \ref{thm:theta stability} for details.
@@ -21,8 +21,7 @@ Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, 
 %\end{proof}
 
 \subsubsection{}\label{lem:w.h.e. preservance}
-
-\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then for any cohomology operation $\theta$ we have
+\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then, for any linear cohomology operation $\theta$,
 \[
 \di(\thetamodule{X},\thetamodule{X'}) = \di(\ker\theta_{X}, \ker\theta_{X'}) = 0.
 \]
@@ -43,7 +42,7 @@ Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, 
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
-\theorem For $\R$-spaces $X$ and $Y$ and cohomology operation $\theta$ we have
+\theorem For any two $\R$-spaces $X$ and $Y$ and linear cohomology operation $\theta$,
 \begin{align*}
 	\di(\thetamodule{X}, \thetamodule{Y}),\ \di(\ker\theta_{X}, \ker\theta_{Y}) \leq \dhi(X,Y).
 \end{align*}
@@ -65,9 +64,9 @@ Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, 
 \end{proof}
 
 \subsubsection{}\label{cor:theta stability VR}
-\corollary If $\cX$ and $\cY$ are compact metric spaces, we have
+\corollary For any two compact metric spaces $\cX$ and $\cY$ and linear cohomology operation $\theta$,
 \[
-\di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y)
+\di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y).
 \]
 
 \begin{proof}
