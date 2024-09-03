@@ -1,0 +1,188 @@
+\section{Notes (Excluded from Final Paper)}
+
+\subsection{First critical value of homology}
+
+We show that for any degree $1 \leq \degp \leq n$, the first critical value of the $\degp$-th homology of the Vietoris-Rips filtration of $\rp^n$ is $\tfrac{2\pi}{3}.$
+
+We fix some $n\geq 2.$
+
+\subsubsection{}
+
+\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. 
+We should ask Liam Barham for permission to cite his unpublished work.}
+
+Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
+Let $r_0>0$. The action of a group $G$ on $\cX$ is an \defn{$r_0^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r_0$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r_0$. 
+
+Assume the action of $G$ on $\cX$ is a $r_0^*$-diameter action for some $r_0> 0$.
+In \cite[Proposition 3.5]{adams2022metric}, the authors constructed a homomeorphism from $\VR_r^m(\cX_G)$ to $\VR_r^m(\cX)/G$ for all $r \leq r_0$.
+We review their constructions below. 
+
+Define the map $h$ to be
+\[
+h \colon \VR_r^m(\cX) \to \VR_r^m(\cX_G) 
+\text{ with }
+\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
+\]
+Because $G$ acts isometrically, $h$ is well-defined.
+Because two points in the same orbit of the $G$ action always have the same image under $h$, it induces a map $h/G \colon \VR_r^m(\cX)/G \to \VR_r^m(\cX_G)$.
+Moreover, $h/G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
+
+Assuming that the action of $G$ on $\cX$ is a $r_0^*$-diameter action, for any $0<r<r_0$, we can consider the inverse of $h/G$ and we denote it as
+\[
+h \colon \VR_r^m(\cX_G) \to \VR_r^m(\cX)/G
+\text{ with }
+\sum_{i=1}^k \lambda_i [x_i] \mapsto [\sum_{i=1}^k \lambda_i x_i].
+\]
+
+
+\subsubsection{}
+
+Let $\bS^n$ the sphere of radius $2$ and let $G=\Z/2\Z$ act on $\bS^n$ by identifying the antipodal points.
+It follows from \cite[Corollary]{adams2022metric} that the action of $G$ on $\bS^n$ is a $r^*$-diameter action for any $r<\tfrac{2\pi}{3}$.
+
+For any $r<\pi$, let $\tilde{f}^n$ be the composition
+\[
+    \tilde{f}^n \colon \VR_r^m(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi^n} \bS^n,
+\]
+where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in the Vietoris--Rips thickening $\VR_r^m(\bS^n)$ to the point $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i=1$, and the second map $\pi^n$ is the radial projection map.
+
+By \cite[Proposition 5.3]{adamaszek2018metric}, the map $\tilde{f}^n$ is a homotopy equivalence for all $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$.
+% When $n=1$, this is $\tfrac{4\pi}{3}.$
+
+\ling{To Anibal: please check that $\tilde{f}^n/G$ is well-defined for lens spaces and if it is a homotopy equivalence. }
+
+Because $\tilde{f}^n$ preserves group action, i.e. $\tilde{f}^n(x) = \tilde{f}^n(gx)$ for any $x\in \bS^n$ and $g\in G$, we have the homotopy equivalence for $0<r<\zeta_n$, %\anibal{Maybe use superscripts for these maps and the $\rho$ too?}
+\[
+\tilde{f}^n/G \colon 
+\VR_r^m(\bS^n)/G \, 
+\to \bS^n_G.
+%\cong \rp^n.
+\]
+By composing $h^n$ with $\tilde{f}^n/G$, we obtain a map 
+\[
+\rho^n = h^n \circ \tilde{f}^n/G 
+\colon \VR_r^m(\bS^n_G) \to \bS^n_G
+\]
+
+\subsubsection{} 
+
+For $0<t\leq s \leq s'$, we consider the following diagram of topological spaces:
+\begin{equation}\label{d:fundamental_bars_diagram}
+    \begin{tikzcd}
+        \bS^{n-1}_G
+        \ar[d, hook,"{\iota}" left]
+        &
+        \VR_t(\bS^{n-1}_G)
+        \ar[d, hook,"\iota_r"]
+        \ar[l, "\rho^{n-1}" above, "\simeq" below]
+        \ar[r, hook, "v^{n-1}"]
+        &
+        \VR_{s}(\bS^{n-1}_G)
+        \ar[d, hook]
+        \\
+        \bS^{n}_G
+        &
+        \VR_t(\bS^{n}_G)
+        \ar[l, "\rho^n" below, "\simeq" above]
+        \ar[r, hook, "v^{n}"]
+        &
+        \VR_{s'}(\bS^{n}_G).
+    \end{tikzcd}
+\end{equation}
+Here, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, whereas the vertical maps are induced by the equatorial inclusion of real projective spaces $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.
+
+We claim that diagram \eqref{d:fundamental_bars_diagram} commutes. 
+The commutativity of the right-hand-side square is straightforward.
+For the left-hand-side square, we need to verify that $\iota \circ \rho^{n-1}=\rho^{n} \circ \iota_r$.
+\ling{notation for maps below need to be fixed at the end.}
+Indeed, for any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\bS^{n-1}_G)$, we have
+\begin{center}
+    $(\iota \circ \rho^{n-1})(y)
+    =\iota(f^{n-1}/\sim([\sum_i \lambda_i x_i]))
+    =\iota([f^{n-1}(\sum_i \lambda_i x_i)])
+    =[\pi^{n-1}(\sum_i \lambda_i x_i)]
+    $
+\end{center}
+as an element in $\bS^n_G$, and
+\begin{center}
+    $(\rho^{n} \circ \iota_r)(y) = \rho^{n}(y) = f^{n}/\sim([\sum_i \lambda_i x_i]) = [f^{n}(\sum_{i=1}^k \lambda_i x_i)] = [\pi^{n}(\sum_{i=1}^k \lambda_i x_i)]
+    $
+\end{center}
+Because $\pi^{n}$ restricted to $\bS^{n-1}_G$ is equal to $\pi^{n-1}$, we conclude that $(\iota \circ \rho^{n-1})(y) = (\rho^n \circ \iota_r)(y)$ for any $y$.
+Thus, the claim holds.
+
+\subsubsection{}
+\label{subsub:foundamental_bar_rpn}
+
+Let $\delta_n=2\fillrad[\field]{\bS^n_G}$ and 
+let $\alpha_1$ be the first critical value of $\VR(\bS^1_G)$.
+For any degree $1 \leq \degp \leq n$, let $\beta_{\degp, n}$ be the first critical value of the $\degp$-th homology of $\VR(\bS^n_G)$. 
+
+\lemma 
+If $\delta_1 = \dots = \delta_n \leq \alpha_1$ and $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$, then
+\[
+\beta_{m, n} = \delta_1, \, \text{for any $1 \leq m \leq n$.}
+\]
+
+\begin{proof}
+	We will use an induction argument on $n$.
+	When $n = 1$, \cref{ss:filling_radius} implies that
+	\[
+	(0, 2\fillrad[\field]{\bS^1_G}) = (0, \delta_1) \in \Hbarc[\field]{1}{\bS^1_G}.
+	\]
+        Because $\rH_1(\VR_r(\bS^1_G)) \cong \rH_1(\bS^1_G)$ has dimension one for all $0 < r < \delta_1 \leq \alpha_1$, $(0, \delta_1)$ is the only bar born at $0$. 
+        It follows that $\delta_1$ is the first time when  $\rH_1(\VR(\bS^1_G))$ changes isomorphism types.
+        Thus, $\beta_{1, 1} =\delta_1$. 
+        
+	Assume the statement holds for $\bS^{n-1}_G$, that is, $\beta_{m, n-1} = \delta_1$ for any $1\leq m \leq n-1$.
+    Applying the $\degp$-th homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
+    for $r,\epsilon>0$ small,
+    \[
+    \begin{tikzcd}
+        \rH_\degp(\bS^{n-1}_G)
+        \ar[d, "\cong" left]
+        &
+        \rH_\degp(\VR_r(\bS^{n-1}_G))
+        \ar[d, "\rH_\degp(\iota_r)" left, "\cong" right, myred]
+        \ar[l, "\cong" above]
+        \ar[rr, "\rH_\degp(v^{n-1})=0", myred]
+        &
+        &
+        \rH_\degp(\VR_{\delta_1+\epsilon}(\bS^{n-1}_G))
+        \ar[d]
+        \\
+        \rH_\degp(\bS^{n}_G)
+        &
+        \rH_\degp(\VR_r(\bS^{n}_G))
+        \ar[l, "\cong"]
+        \ar[rr, "\rH_\degp(v^n)" , myred]
+        &
+        &
+        \rH_\degp(\VR_{\delta_1+\epsilon}(\bS^{n}_G)).
+    \end{tikzcd}
+    \]
+    Here, $\rH_\degp(f)$ for some map $f$ between topological spaces denotes the induced map of $f$ on the $\degp$-th homology. 
+
+    Commutativity of the left-hand-side square implies that $\rH_\degp(\iota_r)$ is an isomorphism.
+    By induction assumption, $\beta_{m, n-1} = \delta_1$ is the first critical value of $\rH_\degp(\VR(\bS^{n-1}_G))$, which implies that $\rH_\degp(v^{n-1})$ is the zero map.
+    Then, using the right-hand-side square's commutativity, we deduce $\rH_\degp(v^n) \circ \rH_\degp(\iota_r)=0$.
+    Since $\rH_\degp(\iota_r)$ is an isomorphism, we conclude that $\rH_\degp(v^n)=0$.
+    This holds for any $\epsilon>0$, so we can conclude $\beta_{m, n} \leq \delta_1$. 
+    On the other hand, we have $\delta_1 = \beta_{m, n-1} \leq \beta_{m, n}$. 
+    Therefore, $\beta_{m, n} = \delta_1$ holds.
+	
+	For the case when $\degp=n$, we can apply the lemma in \textsection \ref{ss:filling_radius} to obtain 
+    \[
+    (0,2\fillrad{\bS^n_G}) = (0, \delta_n) = (0, \delta_1) \in \Hbarc{n}{\bS^n_G}.
+    \]
+        
+	Therefore, $(0, \delta_1) \in \Hbarc[\field]{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
+\end{proof}
+
+We will refer to the bar in this lemma as the \defn{fundamental bar} of $\bS^n_G$.
+
+Applying the above lemma to real projective planes, we obtain
+\[\beta_{m,n} = \delta_1 = \tfrac{2\pi}{3},\]
+for any $n\geq 1$ and $1 \leq m \leq n$.
+
