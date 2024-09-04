@@ -150,27 +150,30 @@ We first identify some important quantities, referred to as first critical value
 \label{subsub:first_critical_value}
 
 % Let $\cX$ be an $n$-dimensional manifold.
-% Let $X$ be an $\R$-space which is empty for negative numbers.
-Its \defn{first critical value} is the supremum among real numbers $r$ such that for any
-% $0 \leq s \leq t \leq \r$, $\VR_t(\cX) \simeq \cX$ and $\VR_s(\cX) \hookrightarrow \VR_{t}(\cX)$ is a homotopy equivalence
+ Let $X$ be an $\R$-space which is empty for negative numbers.
+Its \defn{first critical value} is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$. 
 
-\anibal{I am changing this def since it should be better express for more general $\R$-spaces}
-Similarly, we define the \defn{first critical value of a persistence module $V$} to be some $\beta \geq 0$ such that the structure maps before $\beta$ are isomorphisms and $V_r$ changes isomorphism type at $r = \beta$.
-\anibal{I replaced $\beta$ by $\beta$ since $m$ is playing no role in this definition.}
+Let $V$ be a persistence module which is $0$ for negative numbers.
+Its \defn{first critical value} is defined similarly. 
 
-%\l{spaces are $\cX$. parameters are $r$, instead of $t$. $\degp$ change to $m$}
 \medskip\example
-In the case of $\cX = \rp^n$, $\field = \Ftwo$ and the cohomology operations $\theta$ being the Steenrod squares, we have the following results on the first critical values.
-\begin{itemize}
-    \item  The first critical value $\alpha$ of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$; see \cref{ss:filling_radius}.
-    \item The first critical value $\beta_\degp$ of the $\degp$-th homology of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$, for any $1 \leq \degp \leq n$. We will prove this as the lemma in \cref{subsub:foundamental_bar_rpn}.
-    \item The first critical value $\gamma_{\ell+k}$ of $\sqbarcl{k}{\ell}{\rp^n}$ is $\tfrac{2\pi}{3}$, for positive integers $k, \ell$ such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k} \mod 2\neq 0$. \ling{mention somewhere that the field coefficient will be omitted.}
-\end{itemize}
-We explain why the last item holds, assuming $k$ and $\ell$ satisfy the required conditions.
-Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
-Thus, the claim holds.
+By \cref{ss:filling_radius}, the first critical value $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$.\anibal{The reference doesn't seem to prove the claim.}
+
+    The first critical value $\beta_\degp$ of the $\degp$-th homology of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$, for any $1 \leq \degp \leq n$. We will prove this as the lemma in \cref{subsub:foundamental_bar_rpn}.
+    
+
+\medskip\lemma
+For positive integers such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ odd,
+the first critical value of $\img (\Sq^k \colon \rH^\ell(\rp^n) \to \rH^{\ell+k}(\rp^n))$ is $\tfrac{2\pi}{3}$.
+
+\begin{proof}
+	We explain why the last item holds, assuming $k$ and $\ell$ satisfy the required conditions.
+	Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
+	Thus, the claim holds.\anibal{Please write as a proof}
+\end{proof}
 
 \medskip\remark
+Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $m$-homology, as well as that of any 
 For general spaces, these first critical values are not necessarily the same, but we always have $\alpha \leq \beta_m$ and $\alpha \leq \gamma_m$.
 
 % We show that for any degree $1 \leq \degp \leq n$, the first critical value of the $\degp$-th homology of the Vietoris-Rips filtration of $\rp^n$ is $\tfrac{2\pi}{3}.$
@@ -184,7 +187,7 @@ Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
 Let $r_0>0$. The action of a group $G$ on $\cX$ is an \defn{$r_0^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r_0$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r_0$. 
 
 Assume the action of $G$ on $\cX$ is a $r_0^*$-diameter action for some $r_0> 0$.
-In \cite[Proposition 3.5]{adams2022metric}, the authors constructed a homomeorphism from $\VR_r^m(\cX_G)$ to $\VR_r^m(\cX)/G$ for all $r \leq r_0$.
+In \cite[Proposition 3.5]{adams2022metric}, the authors constructed a homeomorphism from $\VR_r^m(\cX_G)$ to $\VR_r^m(\cX)_G$ for all $r \leq r_0$.
 We review their constructions below. 
 
 Define the map $h$ to be
@@ -194,12 +197,12 @@ h \colon \VR_r^m(\cX) \to \VR_r^m(\cX_G)
 \sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
 \]
 Because $G$ acts isometrically, $h$ is well-defined.
-Because two points in the same orbit of the $G$ action always have the same image under $h$, it induces a map $h/G \colon \VR_r^m(\cX)/G \to \VR_r^m(\cX_G)$.
-Moreover, $h/G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
+Because two points in the same orbit of the $G$ action always have the same image under $h$, it induces a map $h_G \colon \VR_r^m(\cX)_G \to \VR_r^m(\cX_G)$.
+Moreover, $h_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
 
-Assuming that the action of $G$ on $\cX$ is a $r_0^*$-diameter action, for any $0<r<r_0$, we can consider the inverse of $h/G$ and we denote it as
+Assuming that the action of $G$ on $\cX$ is a $r_0^*$-diameter action, for any $0<r<r_0$, we can consider the inverse of $h_G$ and we denote it as
 \[
-h \colon \VR_r^m(\cX_G) \to \VR_r^m(\cX)/G
+h \colon \VR_r^m(\cX_G) \to \VR_r^m(\cX)_G
 \text{ with }
 \sum_{i=1}^k \lambda_i [x_i] \mapsto [\sum_{i=1}^k \lambda_i x_i].
 \]
@@ -219,18 +222,18 @@ where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in th
 By \cite[Proposition 5.3]{adamaszek2018metric}, the map $\tilde{f}^n$ is a homotopy equivalence for all $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$.
 % When $n=1$, this is $\tfrac{4\pi}{3}.$
 
-\ling{To Anibal: please check that $\tilde{f}^n/G$ is well-defined for lens spaces and if it is a homotopy equivalence. }
+\ling{To Anibal: please check that $\tilde{f}^n_G$ is well-defined for lens spaces and if it is a homotopy equivalence. }
 
 Because $\tilde{f}^n$ preserves group action, i.e. $\tilde{f}^n(x) = \tilde{f}^n(gx)$ for any $x\in \bS^n$ and $g\in G$, we have the homotopy equivalence for $0<r<\zeta_n$, %\anibal{Maybe use superscripts for these maps and the $\rho$ too?}
 \[
-\tilde{f}^n/G \colon 
-\VR_r^m(\bS^n)/G \, 
+\tilde{f}^n_G \colon 
+\VR_r^m(\bS^n)_G \, 
 \to \bS^n_G.
 %\cong \rp^n.
 \]
-By composing $h^n$ with $\tilde{f}^n/G$, we obtain a map 
+By composing $h^n$ with $\tilde{f}^n_G$, we obtain a map 
 \[
-\rho^n = h^n \circ \tilde{f}^n/G 
+\rho^n = h^n \circ \tilde{f}^n_G 
 \colon \VR_r^m(\bS^n_G) \to \bS^n_G
 \]
 
@@ -511,7 +514,7 @@ By plugging in these values to the above discussion, we obtain an estimate of th
 
 % We will refer to the bar in this lemma as the \defn{fundamental bar} of $\rp^n$.
 
-\section{Gromov-Hausdorff estimates}\label{prop:db estimate}
+\section{Gromov--Hausdorff estimates}\label{prop:db estimate}
 
 We estimate the bottleneck distance $\db$ between the Steenrod barcodes of the two space $\VS^n$ and $\rp^n$, and show that it provides a better (lower-bound) approximation of the Gromov--Hausdorff distance $\dgh(\VS^n, \rp^n)$ than $\db$ between the standard barcodes.
 See the theorem in \cref{subsub:main_theorem} for details.
@@ -648,4 +651,4 @@ For any $1\leq k \leq \frac{n-1}{2}$ s.t. $\binom{\ell}{k} \mod 2\neq 0$, we hav
         = \tfrac{\pi}{3}.\]
 \end{proof}
 
-Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov-Hausdorff distance than the standard barcodes do in all degrees.
+Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the standard barcodes do in all degrees.
