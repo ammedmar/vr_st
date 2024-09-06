@@ -35,7 +35,7 @@ Barcodes of cohomology operations generalize cohomology barcodes since, for the 
 
 \input{sec/stability}
 
-\subsection{Products}
+\subsection{Sums and products}
 
 \subsubsection{}
 The \defn{wedge sum} $\cX \vee \cY$ of two pointed spaces is the quotient of their disjoint union by the identification of basepoints.
@@ -47,15 +47,12 @@ Given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \c
 	g(z) & z \in \cY_1.\\
 \end{cases}
 \]
-Recall that for ...
-
-\subsubsection{}
 For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, is defined by
 \[
 (X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
 \]
 
-\medskip\theorem For any linear cohomology operation $\theta$,
+\medskip\theorem For any linear cohomology operation $\theta$:
 \begin{align*}
 	\img\theta_{X \vee Y} &\cong \img\theta_X \oplus \img\theta_Y, \\
 	\ker\theta_{X \vee Y} &\cong \ker\theta_X \oplus \ker\theta_Y.
@@ -69,9 +66,18 @@ For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, 
 
 Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is defined by
 \[
-(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
+(X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}).
 \]
 
-... for Steenrod only ...
+\theorem For any $k \in \N$, the Steenrod persistence modules satisfy:
+\begin{align*}
+	\img\Sq^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, & \ker\Sq^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\
+	\img\rP^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,, & 
+	\ker\rP^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,. &
+\end{align*}
+
+\begin{proof}
+	
+\end{proof}
 
 \subsubsection{VR version}
