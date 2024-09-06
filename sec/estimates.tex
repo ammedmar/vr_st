@@ -157,20 +157,24 @@ Let $V$ be a persistence module which is $0$ for negative numbers.
 Its \defn{first critical value} is defined similarly. 
 
 \medskip\example
-By \cref{ss:filling_radius}, the first critical value $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$.\anibal{The reference doesn't seem to prove the claim.}
+By \cref{prop:homotopy type}, the first critical value $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$.
 
-    The first critical value $\beta_\degp$ of the $\degp$-th homology of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$, for any $1 \leq \degp \leq n$. We will prove this as the lemma in \cref{subsub:foundamental_bar_rpn}.
+The first critical value $\beta_\degp$ of the $\degp$-th homology of $\VR(\rp^n)$ is $\tfrac{2\pi}{3}$, for any $1 \leq \degp \leq n$. We will prove this as the lemma in \cref{subsub:foundamental_bar_rpn}.
     
 
 \medskip\lemma
 For positive integers such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ odd,
-the first critical value of $\img (\Sq^k \colon \rH^\ell(\rp^n) \to \rH^{\ell+k}(\rp^n))$ is $\tfrac{2\pi}{3}$.
+the first critical value $\gamma_{k+\ell}$ of $\img (\Sq^k \colon \rH^\ell(\rp^n) \to \rH^{\ell+k}(\rp^n))$ is $\tfrac{2\pi}{3}$.
 
 \begin{proof}
-	We explain why the last item holds, assuming $k$ and $\ell$ satisfy the required conditions.
+	Assuming $k$ and $\ell$ satisfy the required conditions.
 	Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
-	Thus, the claim holds.\anibal{Please write as a proof}
+        Thus, the first critical value of $\gamma_{k+\ell} \leq \tfrac{2\pi}{3}$.
+        On the other hand, $\gamma_{k+\ell} \geq \alpha = \tfrac{2\pi}{3}$ the first critical value of $\VR(\rp^n)$.
+        Thus, $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
 \end{proof}
+
+\ling{reminder: move the remark below to be before the lemma.}
 
 \medskip\remark
 Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $m$-homology, as well as that of any 
