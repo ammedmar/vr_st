@@ -21,17 +21,17 @@
 %\end{proof}
 
 \subsubsection{}\label{lem:w.h.e. preservance}
-\lemma If two $\R$-spaces $X$ and $X'$ are weakly equivalent, then, for any linear cohomology operation $\theta$,
+\lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent, then, for any linear cohomology operation $\theta$,
 \[
 \di(\thetamodule{X},\thetamodule{X'}) = \di(\ker\theta_{X}, \ker\theta_{X'}) = 0.
 \]
 
 \begin{proof}
-	We write the proof for $\img$ only since that for $\ker$ is analogous.
+	We write the proof for $\img\theta$ only since that for $\ker\theta$ is analogous.
 	Since $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
-	\ling{Do we have a reference for this:}
-        Both $f$ and $g$ induce an isomorphism $f^* \colon \thetamodule{Z} \to \thetamodule{X}$ and $g^* \colon \thetamodule{Z} \to \thetamodule{X'}$. 
-	From these we have
+	Without loss of generality we can assume $Z$ to be cellular using the cofibrant replacement functor of the model category structure on $\R$-spaces \cite{blumberg2023interleaving}.
+    Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\thetamodule{Z}$ and $\thetamodule{X}$ are isomorphic, as well as $\thetamodule{Z}$ and $\thetamodule{X'}$. 
+	Therefore,
 	\[
 	\di(\thetamodule{X},\thetamodule{X'}) \leq
 	\di(\thetamodule{X},\thetamodule{Z}) + \di(\thetamodule{Z},\thetamodule{X'}) =
@@ -66,7 +66,7 @@
 \subsubsection{}\label{cor:theta stability VR}
 \corollary For any two compact metric spaces $\cX$ and $\cY$ and linear cohomology operation $\theta$,
 \[
-\di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y).
+\di(\thetamodule{\VR\cX}, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(X,Y).
 \]
 
 \begin{proof}
@@ -81,3 +81,5 @@
         \di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y). \qedhere
         \]
 \end{proof}
+
+\anibal{The notation is not right. Also, what's the role of q-tameness?}

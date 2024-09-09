@@ -54,12 +54,13 @@ for any pair of functors $F, G \colon \R \to \cC$.
 \subsubsection{}
 Let $\Top$ be the category of topological spaces and continuous maps.
 We refer to $\Top^\R$ as the category of \defn{$\R$-spaces}.
+An $\R$-space $X$ for which each $X_r$ is a CW-complex is said to be \defn{cellular}.
 %A \defn{morphism} $f \colon X \to Y$ of $\R$-spaces is a natural transformation.
 We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence for each $r \in \R$.
 %, i.e., it induces isomorphisms on all homotopy groups.
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
-Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and morphisms $f \colon W \to X$ and $g \colon W \to Y$ that are weak equivalences.\footnote{
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and weak equivalences $X \leftarrow W \rightarrow Y$.\footnote{
 For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the homotopy category of $\Top^\R$, i.e. its localization with respect to weak equivalences.}
 
 \subsubsection{}\label{def:dhi}
@@ -196,6 +197,8 @@ Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
 In this paper, we will not distinguish a simplicial complex from its geometric realization.
+
+\subsubsection{}
 
 The Vietoris--Rips thickening, often denoted as $\VR_r^m(X)$, is introduced in \cite{adamaszek2018metric} as a metric space analogue of $\VR_r(X)$. 
 For a metric space $X$ and $r>0$, the \defn{Vietoris-Rips thickening} is 

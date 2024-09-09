@@ -25,13 +25,12 @@ The \defn{image} and \defn{kernel} of $\theta$, denoted $\img\theta$ and $\ker\t
 	\img(\theta_X)_r &= \img((\theta_X)_r)\,, &
 	\ker(\theta_X)_r &= \ker((\theta_X)_r)\,, \\
 	\img(\theta_X)_{s,t} &= \rH^n(X;\k)_{s,t}\big|_{\img(\theta_s)}\,, &
-	\ker(\theta_X)_{s,t} &= \rH^m(X;\k)_{s,t}\big|_{\ker(\theta_s)}\,,
+	\ker(\theta_X)_{s,t} &= \rH^m(X;\k)_{s,t}\big|_{\ker(\theta_s)}\,.
 \end{align*}
-the usual notion of image and kernel of a persistence module morphism.
 
-If $X$ is q-tame, the structure maps of $\img\theta$ and $\ker\theta$ are restrictions of structure maps of a q-tame module, therefore $\img(\theta_X)$ and $\ker(\theta_X)$ are q-tame.
+If $\rH(X;\k)$ is q-tame, the structure maps of $\img\theta$ and $\ker\theta$ are restrictions of the structure maps of a q-tame module, therefore $\img(\theta_X)$ and $\ker(\theta_X)$ are q-tame.
 In this case we refer to their barcodes as $\theta$-barcodes.
-Barcodes of cohomology operations generalize cohomology barcodes since, for the identity and zero maps in $\cO(m,n;\k)$, we have $\img\id_X \cong \ker0_X \cong \rH^n(X;\k)$..
+Barcodes of cohomology operations generalize cohomology barcodes since, for the identity and zero maps in $\cO(n,n;\k)$, we have $\img\id_X \cong \ker0_X \cong \rH^n(X;\k)$.
 
 \input{sec/stability}
 
@@ -39,7 +38,7 @@ Barcodes of cohomology operations generalize cohomology barcodes since, for the 
 
 \subsubsection{}
 The \defn{wedge sum} $\cX \vee \cY$ of two pointed spaces is the quotient of their disjoint union by the identification of basepoints.
-Given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \cY_1 \to \cY_2$ the map $(f \vee g) \colon \cX_1 \vee \cY_1 \to \cX_2 \vee \cY_2$ is given by
+Given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \cY_1 \to \cY_2$ the map $(f \vee g) \colon \cX_1 \vee \cY_1 \to \cX_2 \vee \cY_2$ is defined by
 \[
 (f \vee g)(z) =
 \begin{cases}
@@ -52,13 +51,18 @@ For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, 
 (X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
 \]
 
-\medskip\theorem For any linear cohomology operation $\theta$:
+\medskip\theorem
+Let $X$ and $Y$ be pointed cellular $\R$-spaces.
+For any linear cohomology operation $\theta$:
 \begin{align*}
 	\img\theta_{X \vee Y} &\cong \img\theta_X \oplus \img\theta_Y, \\
 	\ker\theta_{X \vee Y} &\cong \ker\theta_X \oplus \ker\theta_Y.
 \end{align*}
 
 \begin{proof}
+	The inclusions $X \xra{\iota_X} X \vee Y \xla{\iota_Y} Y$ induce an isomorphism $(\iota^*_X \oplus \iota^*_Y) \colon \rH(X \vee Y) \to \rH(X) \oplus \rH(Y)$ (\cite[Corollary 2.25.]{hatcher2000}).
+	By the naturality of $\theta$ we have that $\theta_{X \vee Y} \circ (\iota^*_X \oplus \iota^*_Y) = (\iota^*_X \circ \theta_X) \oplus (\iota^*_Y \circ \theta_Y)$.
+	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$. 
 %	This follows from naturality and the usual isomorphism $(\iota_\cX \oplus \iota_\cY) \colon \rH^n(\cX \vee \cY; \k) \xra{\cong} \rH^n(\cX; \k) \oplus \rH^n(\cY; \k)$ where $\iota$ denotes the inclusion of a summand into the wedge sum.
 \end{proof}
 
@@ -69,7 +73,9 @@ Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is 
 (X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}).
 \]
 
-\theorem For any $k \in \N$, the Steenrod persistence modules satisfy:
+\theorem
+Let $X$ and $Y$ be pointed cellular $\R$-spaces.
+For any $k \in \N$, the Steenrod persistence modules satisfy:
 \begin{align*}
 	\img\Sq^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, & \ker\Sq^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\
 	\img\rP^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,, & 
@@ -77,7 +83,8 @@ Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is 
 \end{align*}
 
 \begin{proof}
-	
+	By the K\"unneth formula with field coefficients, the projections $X \xla{} X \times Y \xra{} Y$ induce an isomorphism $\rH^*(X) \otimes \rH^*(Y) \to \rH^*(X \times Y)$.
+	This isomorphism makes the exterior Cartan formula natural, which proves the statement.
 \end{proof}
 
 \subsubsection{VR version}
