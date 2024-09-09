@@ -53,12 +53,6 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 
 \subsection{Wedge sum of spheres}
 
-The \defn{gluing metric} $d$ on the wedge sum $\bigvee_{i=1}^n \cX_i$ of $n$ metric spaces is defined as follows: for $x \in \cX_i$ and $x' \in \cX_j$ with $i \neq j$,
-\[
-d(x, x') = d_{\cX_i}(x, x_i) + d_{\cX_j}(x', x_j);
-\]
-for $x, x' \in \cX_i$, $d(x, x') = d_{\cX_i}(x, x')$.
-
 %and $d_{\cX_1 \vee \cX_2} \vert_{\cX_1 \times \cX_1} = d_{\cX_1},d_{\cX_1 \vee \cX_2} \vert_{\cX_2 \times \cX_2} = d_{\cX_2}$.
 %Notice that the above definition can be generalized to the case when we glue $n$ pointed metric spaces $(\cX_1,x_1),\cdots,(\cX_n,x_n)$ by identifying $x_i\sim x_j$ for all $1 \leq i,j\leq n$.
 %More generally, the gluing metric on the space $\bigvee_{i=1}^n \cX_i$ is
@@ -67,9 +61,6 @@ for $x, x' \in \cX_i$, $d(x, x') = d_{\cX_i}(x, x')$.
 %\]
 %and $d_{\cX_i \vee \cX_i}|_{\cX_i\times \cX_i} = d_{\cX_i}$ for any $1\leq i\leq n$.
 
-\subsubsection{}\label{prop:wedge sum}
-Recall from \cite[Proposition 1 \& Corollary 2]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
-From this we deduce that the usual barcode and $\theta$-barcodes of a wedge sum $\cX \vee \cY$ decomposes as the union of the corresponding barcodes of $\cX$ and $\cY$.
 %\anibal{Proposition 3.7 doesn't seem to exist in the paper \cite{adamaszek2020homotopy}}
 
 %From this, we deduce the following.
@@ -88,9 +79,9 @@ From this we deduce that the usual barcode and $\theta$-barcodes of a wedge sum 
 %	\ker\theta_{\VR(\cX \vee \cY)} &\cong \ker\theta_{\VR(\cX)} \oplus \ker\theta_{\VR(\cY)}.
 %\end{align*}
 %\begin{proof}
-%	Item (\ref{prop:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
+%	Item (\ref{ss:wedge sum pH}) follows from \cite[Proposition 3.7]{adamaszek2020homotopy} and \cite[Thoerem 6.1 (2)]{lim2020vietoris}.
 %	
-%	\ling{add the proof of Item (\ref{prop:wedge sum Sq}).}
+%	\ling{add the proof of Item (\ref{ss:wedge sum Sq}).}
 %\end{proof}
 
 \subsubsection{}
@@ -115,7 +106,7 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 %	\item If $1 < \degp \leq n$, 
 %\end{enumerate}
 %
-%Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bS^1 \vee \bS^2 \vee \dots \vee \bS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
+%Using Example \ref{ss:Sn} and Proposition \ref{ss:wedge sum} (\ref{ss:wedge sum pH}), we obtain an estimate of the barcodes of $\VS^n$ defined as $\bS^1 \vee \bS^2 \vee \dots \vee \bS^n$, illustrated in the top row of Figure \ref{fig:barcodes}.
 %Explicitly, we have the following:
 %\begin{itemize}
 %	\item $\Hbarc{1}{\VS^n}$ contains only one bar $(0,\tfrac{2\pi}{3})$.
@@ -126,7 +117,7 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 
 
 
-%\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{prop:wedge sum} (\ref{prop:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $\VS^n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
+%\subsubsection{} Using Example \ref{ss:Sn} and Proposition \ref{ss:wedge sum} (\ref{ss:wedge sum Sq}), we see that all bars in the Steenrod barcodes of $\VS^n$ are dominated by $\cup_{1\leq i\leq n}(\zeta_i,\pi)=(\zeta_n,\pi)$, so they can be illustrated as in the top row of Figure \ref{fig:sq barcodes}.
 
 \begin{figure}
 	\centering

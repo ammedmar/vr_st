@@ -62,9 +62,39 @@ For any linear cohomology operation $\theta$:
 \begin{proof}
 	The inclusions $X \xra{\iota_X} X \vee Y \xla{\iota_Y} Y$ induce an isomorphism $(\iota^*_X \oplus \iota^*_Y) \colon \rH(X \vee Y) \to \rH(X) \oplus \rH(Y)$ (\cite[Corollary 2.25.]{hatcher2000}).
 	By the naturality of $\theta$ we have that $\theta_{X \vee Y} \circ (\iota^*_X \oplus \iota^*_Y) = (\iota^*_X \circ \theta_X) \oplus (\iota^*_Y \circ \theta_Y)$.
-	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$. 
-%	This follows from naturality and the usual isomorphism $(\iota_\cX \oplus \iota_\cY) \colon \rH^n(\cX \vee \cY; \k) \xra{\cong} \rH^n(\cX; \k) \oplus \rH^n(\cY; \k)$ where $\iota$ denotes the inclusion of a summand into the wedge sum.
+	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$.
 \end{proof}
+
+\subsubsection{}\label{ss:wedge sum}
+
+The \defn{gluing metric} on the wedge sum of pointed metric spaces ${(\cX_i, x_i)}_{i = 0}^k$ is defined as follows: For $x \in \cX_i$ and $x' \in \cX_j$, let
+\[
+d(x, x') =
+\begin{cases}
+	d_{\cX_i}(x, x_i) + d_{\cX_j}(x', x_j) & i \neq j, \\
+	\hfil d_{\cX_i}(x, x') & i = j.
+\end{cases}
+\]
+%if $i \neq j$, and 
+%\[
+%d(x, x') = d_{\cX_i}(x, x')
+%\]
+%if $i =j$,
+
+Recall from \cite[Proposition 1]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
+Explicitly, that the natural inclusions
+\[
+\VR_r\cX \vee \VR_r\cY \to \VR_R(\cX \vee \cY)
+\]
+is a homotopy equivalence for each $r \in \R$.
+From this we deduce the following.
+
+\medskip\corollary
+For $\cX$ and $\cY$ be pointed metric spaces,
+\begin{align*}
+	\img\theta_{(\VR X \, \vee \, \VR Y)} &\cong \, \img\theta_{\VR X} \oplus \img\theta_{\VR Y}, \\
+	\ker\theta_{(\VR X \, \vee \, \VR Y)} &\cong \, \ker\theta_{\VR X} \oplus \ker\theta_{\VR Y}.
+\end{align*}
 
 \subsubsection{}
 
@@ -87,4 +117,24 @@ For any $k \in \N$, the Steenrod persistence modules satisfy:
 	This isomorphism makes the exterior Cartan formula natural, which proves the statement.
 \end{proof}
 
-\subsubsection{VR version}
+\subsubsection{}
+
+Given two metric spaces $\cX$ and $\cY$.
+The $\ell^\infty$ metric on $\cX \times \cY$ is defined by
+\[
+d(x \times y, \, x' \times y') = \max\set{d(x,x'), d(y,y')}.
+\]
+with this metric we have the following.
+
+\medskip\corollary
+Steenrod persistence modules satisfy:
+\begin{align*}
+	\img\Sq^k_{\VR X \times \VR Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR X} \ot \Sq^j_{\VR Y}\,, \\ \ker\Sq^k_{\VR X \times \VR Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR X} \ot \Sq^j_{\VR Y}\,, \\
+	\img\rP^k_{\VR X \times \VR Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_{\VR X} \otimes \rP^j_{\VR Y}\,, \\ 
+	\ker\rP^k_{\VR X \times \VR Y} &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_{\VR X} \otimes \rP^j_{\VR Y}\,,
+\end{align*}
+for any $k \in \N$.
+
+\begin{proof}
+	This follows from the proof of \cite[Theorem~6.1(1)]{lim2020vietoris}, which constructs a natural isomorphism $\rH(\VR\cX) \otimes \rH(\VR\cY) \cong \rH(\VR(\cX \times \cY))$.
+\end{proof}
