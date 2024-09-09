@@ -226,8 +226,6 @@ where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in th
 By \cite[Proposition 5.3]{adamaszek2018metric}, the map $\tilde{f}^n$ is a homotopy equivalence for all $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$.
 % When $n=1$, this is $\tfrac{4\pi}{3}.$
 
-\ling{To Anibal: please check that $\tilde{f}^n_G$ is well-defined for lens spaces and if it is a homotopy equivalence. }
-
 Because $\tilde{f}^n$ preserves group action, i.e. $\tilde{f}^n(x) = \tilde{f}^n(gx)$ for any $x\in \bS^n$ and $g\in G$, we have the homotopy equivalence for $0<r<\zeta_n$, %\anibal{Maybe use superscripts for these maps and the $\rho$ too?}
 \[
 \tilde{f}^n_G \colon 
@@ -371,16 +369,17 @@ Applying the above lemma, we obtain $\beta_{m,n} = \delta_1 = \tfrac{2\pi}{3},$ 
 \subsection{Barcode estimates}
 \label{subsub:general_barcodes}
 
-Let $\cX$ be an $n$-dimensional manifold with diameter $\pi$ satisfying the following properties:
-\begin{itemize}
-    \item $\mathrm{H}_\degp (\cX; \field)\cong \field$ for any $1\leq \degp\leq n$ and some field $\field$.
-    \item the first critical value of $\VR(\cX)$ lies in $[\zeta_n, \pi)$.
-    %\item the first critical value of the $\degp$-th homology of $\VR(\cX)$ is less than $\tfrac{\zeta_n}{2}+\zeta_\degp .$
-\end{itemize}
+Let $\cX$ be an $n$-dimensional manifold with diameter $\pi$ such that the first critical value of $\VR(\cX)$ is greater than $\zeta_n$.
+From now on, we will consider this $\R$-space and omit it from the notation.
+% \begin{itemize}
+%     \item $\mathrm{H}_\degp (\cX; \field)\cong \field$ for any $1\leq \degp\leq n$ and some field $\field$.\anibal{I would not impose this}
+    
+%     %\item the first critical value of the $\degp$-th homology of $\VR(\cX)$ is less than $\tfrac{\zeta_n}{2}+\zeta_\degp .$
+% \end{itemize}
 
-For any $1 \leq \ell, \degp \leq n$, let $\theta \in \cO(\ell, \degp; \kk)$. 
+Let $\theta \in \cO(\ell, \degp; \kk)$ be a linear cohomology operation with $1 \leq \ell, \degp \leq n$. 
 %$\theta_\cX \colon \rH^n(\cX; \pi) \to \rH^m(\cX; G)$.
-Let $\beta_\degp$ and $\gamma_\degp$ be the first critical values of $\rH_\degp(\VR(\cX))$ and $\img \theta_{\VR(\cX)}$, respectively.
+Let $\beta_\degp$ and $\gamma_\degp$ be the first critical values of $\rH_\degp$ and $\img \theta$, respectively.
 Then we have the following estimates of the usual barcodes and the $\theta$-barcodes of $\cX$. 
 \begin{itemize}
     \item The usual barcodes of $\cX$ satisfy the following properties:
