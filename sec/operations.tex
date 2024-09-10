@@ -15,8 +15,8 @@
 
 \subsubsection{}
 
-A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear}, if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any topological space $\cX$.
-We denote this subset of cohomology operations by $\cO(m,n;\k)$.
+A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any topological space $\cX$.
+We denote the set of linear cohomology operations by $\cO(m,n;\k)$.
 For any prime $p$, the field $\Z/p$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
 A linear cohomology operation defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
@@ -27,8 +27,9 @@ The \defn{image} and \defn{kernel} of $\theta$, denoted $\img\theta$ and $\ker\t
 	\img(\theta_X)_{s,t} &= \rH^n(X;\k)_{s,t}\big|_{\img(\theta_s)}\,, &
 	\ker(\theta_X)_{s,t} &= \rH^m(X;\k)_{s,t}\big|_{\ker(\theta_s)}\,.
 \end{align*}
+When $\theta$ is a Steenrod operation we refer to these as \defn{Steenrod persistence modules}.
 
-If $\rH(X;\k)$ is q-tame, the structure maps of $\img\theta$ and $\ker\theta$ are restrictions of the structure maps of a q-tame module, therefore $\img(\theta_X)$ and $\ker(\theta_X)$ are q-tame.
+If $\rH^*(X;\k)$ is q-tame, the structure maps of $\img\theta$ and $\ker\theta$ are restrictions of the structure maps of a q-tame module, therefore $\img(\theta_X)$ and $\ker(\theta_X)$ are q-tame.
 In this case we refer to their barcodes as $\theta$-barcodes.
 Barcodes of cohomology operations generalize cohomology barcodes since, for the identity and zero maps in $\cO(n,n;\k)$, we have $\img\id_X \cong \ker0_X \cong \rH^n(X;\k)$.
 
@@ -127,11 +128,12 @@ d(x \times y, \, x' \times y') = \max\set{d(x,x'), d(y,y')}.
 with this metric we have the following.
 
 \medskip\corollary
+For any two metric spaces $\cX$ and $\cY$,
 Steenrod persistence modules satisfy:
 \begin{align*}
-	\img\Sq^k_{\VR X \times \VR Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR X} \ot \Sq^j_{\VR Y}\,, \\ \ker\Sq^k_{\VR X \times \VR Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR X} \ot \Sq^j_{\VR Y}\,, \\
-	\img\rP^k_{\VR X \times \VR Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_{\VR X} \otimes \rP^j_{\VR Y}\,, \\ 
-	\ker\rP^k_{\VR X \times \VR Y} &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_{\VR X} \otimes \rP^j_{\VR Y}\,,
+	\img\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\ \ker\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\
+	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\ 
+	\ker\rP^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,,
 \end{align*}
 for any $k \in \N$.
 

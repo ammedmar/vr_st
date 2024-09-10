@@ -23,12 +23,15 @@
 \subsubsection{}\label{lem:w.h.e. preservance}
 \lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent, then, for any linear cohomology operation $\theta$,
 \[
-\di(\thetamodule{X},\thetamodule{X'}) = \di(\ker\theta_{X}, \ker\theta_{X'}) = 0.
+\begin{split}
+	\di(\thetamodule{X}, \thetamodule{X'}) &= 0, \\
+	\di(\ker\theta_{X}, \ker\theta_{X'}) &= 0.
+\end{split}
 \]
 
 \begin{proof}
-	We write the proof for $\img\theta$ only since that for $\ker\theta$ is analogous.
-	Since $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
+	We write the proof only for $\img\theta$ since that for $\ker\theta$ is analogous.
+	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
 	Without loss of generality we can assume $Z$ to be cellular using the cofibrant replacement functor of the model category structure on $\R$-spaces \cite{blumberg2023interleaving}.
     Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\thetamodule{Z}$ and $\thetamodule{X}$ are isomorphic, as well as $\thetamodule{Z}$ and $\thetamodule{X'}$. 
 	Therefore,
@@ -42,21 +45,33 @@
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
-\theorem For any two $\R$-spaces $X$ and $Y$ and linear cohomology operation $\theta$,
+
+\theorem
+For cellular $\R$-spaces $X$ and $Y$ and linear cohomology operation $\theta$,
 \begin{align*}
-	\di(\thetamodule{X}, \thetamodule{Y}),\ \di(\ker\theta_{X}, \ker\theta_{Y}) \leq \dhi(X,Y).
+	\di(\thetamodule{X}, \thetamodule{Y}) &\leq \dhi(X,Y), \\
+	\di(\ker\theta_{X}, \ker\theta_{Y}) &\leq \dhi(X,Y).
 \end{align*}
 
 \begin{proof}
 	We only write the proof for $\img\theta$ since that for $\ker\theta$ is similar.
 	Take any $\delta > \dhi(X,Y)$.
 	By the definition of the homotopy interleaving distance, there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
+	Applying the cofibrant replacement functor $\rQ$ we get $d_\rI(\rQ X', \rQ Y') \leq \delta$ since applying any functor does not increase the interleaving distance.
+	Both $\rQ X$ and $\rQ Y$ can be assumed to be cellular $\R$-spaces, since cofibrant objects in $\Top^\R$ are in particular objectwise cofibrant.
 	By applying the triangle inequality and Lemma \ref{lem:w.h.e. preservance}, we obtain
+%	\begin{align*}
+%		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
+%		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \, 
+%		0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
+%		\di(X',Y') \\ \leq \,&
+%		\delta.
+%	\end{align*}
 	\begin{align*}
 		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
-		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \, 
-		0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
-		\di(X',Y') \\ \leq \,&
+		\di(\thetamodule{X}, \thetamodule{\rQ X'}) + \di(\thetamodule{\rQ X'}, \thetamodule{\rQ Y'}) + \di(\thetamodule{\rQ Y'}, \thetamodule{Y}) \\ =& \, 
+		0 + \di(\thetamodule{\rQ X'}, \thetamodule{\rQ Y'}) + 0 \\ \leq \,&
+		\di(\rQ X', \rQ Y') \\ \leq \,&
 		\delta.
 	\end{align*}
 	where, for the third line, we used Lemma~\ref{ss:interleaving}.
@@ -64,22 +79,18 @@
 \end{proof}
 
 \subsubsection{}\label{cor:theta stability VR}
+
 \corollary For any two compact metric spaces $\cX$ and $\cY$ and linear cohomology operation $\theta$,
-\[
-\di(\thetamodule{\VR\cX}, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(X,Y).
-\]
+\begin{align*}
+	\di(\thetamodule{\VR\cX},\, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(X,Y), \\
+	\di(\ker\theta_{\VR\cX},\, \ker\theta_{\VR\cY}) \leq 2 \cdot \dgh(X,Y).
+\end{align*}
 
 \begin{proof}
-        By applying \cref{thm:theta stability} and the stability of $\dhi$ (\cref{thm:stability-HI}), we obtain
+        From \cref{thm:stability-HI} and the previous theorem we obtain
         \[
-        \di(\thetamodule{X}, \thetamodule{Y}) \leq
-        \dhi(X,Y) \leq 2\cdot \dgh(X,Y).
+        \di(\thetamodule{\VR\cX}, \thetamodule{\VR\cY}) \leq
+        \dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(X,Y).
         \]
-        Since $\cX$ and $\cY$ are compact metric spaces, the persistence modules $\thetamodule{\cX}$ and $\thetamodule{\cY}$ are q-tame.
-        Thus,
-        \[
-        \di(\thetamodule{\cX}, \thetamodule{\cY}) \leq 2 \cdot \dgh(X,Y). \qedhere
-        \]
+        The same argument applies to $\ker\theta$.\anibal{What's the role of compactness?}
 \end{proof}
-
-\anibal{The notation is not right. Also, what's the role of q-tameness?}
