@@ -169,6 +169,8 @@ We will also consider the reduced version of this construction.
 It is also convenient to consider functors from $\R^\op$ to $\Vec$, which, by abuse of terminology, we also refer to as persistence modules.
 The most important example of these is the \defn{persistent $k$-cohomology} $\rH^k(X; \kk)$ of an $\R$-space $X$.
 
+For simplicity, we often omit the coefficient field $\kk$ when the results do not depend on the choice of coefficient fields.
+
 An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomology are both q-tame as persistence modules for any degree and field of coefficients.
 
 %\subsubsection{} An important class of $\R$-diagrams is one-parameter filtrations of a space.
@@ -200,17 +202,27 @@ In this paper, we will not distinguish a simplicial complex from its geometric r
 
 \subsubsection{}
 
-The Vietoris--Rips thickening, often denoted as $\VR_r^m(X)$, is introduced in \cite{adamaszek2018metric} as a metric space analogue of $\VR_r(X)$. 
-For a metric space $X$ and $r>0$, the \defn{Vietoris-Rips thickening} is 
-\label{para:VR thickening}
-\[
-    \VR_r^m(X) \defeq \{\sum_{i=1}^k\lambda_i\delta_{x_i}\mid k\geq 2, \lambda_i\geq 0, \sum \lambda_i = 1, \diam(\{x_1,\dots, x_k\})<r\}, 
-\]
-where $\delta_{x}$ is the Dirac probability measure with mass one at $x$ and $\VR_t^m(X)$ is equipped with the $1$-Wasserstein metric. 
-There is a set bijection from (the geometric realization of) $\VR_r(X)$ to $\VR_r^m(X)$, given by $\sum_{i=1}^k\lambda_i x_i\mapsto \sum_{i=1}^k\lambda_i\delta_{x_i}.$ 
-We will refer to a point $\sum_{i=1}^k\lambda_i\delta_{x_i}$ in the Vietoris--Rips thickening simply as $\sum_{i=1}^k\lambda_i x_i$, when the meaning of the notation is clear from the context. 
+%An action of a group $G$ on a set $X$ is a function $G\times X\to X$ such that $g\cdot (h\cdot x)=(gh)\cdot x$, and $e\cdot x = x$ for all $x\in X$ and $g,h\in G$, where $e$ is the identity element of $G$.
 
-It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijection from $\VR_r(X)$ to $\VR_r^m(X)$ is a weak homotopy equivalence. 
+Let $G$ be a group acting on a metric space $\cX$ and $\cX_G$ be the quotient of $X$ under the group action $G$. 
+Elements in $\cX_G$ will be denoted as $[x]$ for $x\in \cX$.
+We say the action of $G$ is \defn{proper} if, for every $x\in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r)\cap B(x,r)=\emptyset\}$ is finite. 
+We say $G$ \defn{acts by isometries} on $\cX$, if for very $g\in G$, the map $g:X\to X$ with $x\mapsto g\cdot x$ is an isometry.
+
+Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
+Then there is a well-defined metric on $\cX_G$, called \defn{quotient metric}, defined by 
+\[
+    d_{\cX_G}([x], [x']) \defeq \inf_{g\in G} d_\cX(x, g\cdot x').
+\]
+
+The action of $G$ on $\cX$ induces a group action of $G$ on the Vietoris-Rips complexes $\VR_r(\cX)$, defined by
+\[
+    g \cdot \sum \lambda_i x_i \defeq \sum \lambda_i (g\cdot x_i).
+\]
+
+Let $r>0$. The action of a group $G$ on $\cX$ is an \defn{$r^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r$. 
+\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. 
+We should ask Liam Barham for permission to cite his unpublished work.}
 
 \subsubsection{}
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
@@ -228,7 +240,7 @@ where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings
 The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance you have to travel from a point in one set to the closest point in the other set.
 }
 
-\medskip\theorem Let $\cX$ and $\cY$ be compact metric spaces.
+\medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.
 Then, for any $k \in \N,$
 \[
 \di(\rH_k(\VR(\cX)), \rH_k(\VR(\cY))) \leq
@@ -252,5 +264,3 @@ In a similar way, one can define the filling radius over $\k$, denoted \(\fillra
 
 \medskip\lemma(\cite[Prop.9.28]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillradnofield{\cM})\) for arbitrary field if $M$ is orientable, and for mod $2$ coefficients in general.
 Moreover, this is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
-
-\anibal{Is this the right citation? I am surprised to see $\Ftwo$.}
