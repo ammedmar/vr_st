@@ -1,0 +1,158 @@
+% !TEX root = ../vr_st.tex
+
+\section{Gromov--Hausdorff estimates}\label{prop:db estimate}
+
+We estimate the bottleneck distance $\db$ between the Steenrod barcodes of certain pairs of metric spaces and demonstrate that it provides a tighter lower-bound approximation of the Gromov–Hausdorff distance between the spaces than $\db$ between their persistent homology barcodes.
+See the theorem in \cref{subsub:main_theorem} for details.
+Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
+This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
+
+Let $\cX$ be a totally bounded metric space of diameter $\pi$, where the first critical value $\alpha$ of $\VR\cX$ satisfies $\alpha \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$ and $n$ is the largest degree such that the $n^\th$ reduced homology of $\cX$ is non-trivial.
+Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i=1, \dots, n$.
+
+Let $\beta_\degp$ and $\gamma_\degp$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
+
+\subsection{Upper bound on $\db$ between homology barcodes}
+\label{subsub:db_upper_bound}
+
+To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
+
+\medskip\proposition
+For any degree $\degp$ such that $\opH_\degp(\cX)$ is non-trivial,
+\begin{equation}\label{eq:db_usual_upper_bound}
+	\db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX})
+	%\leq \cost(P)
+	\leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}.
+\end{equation}
+
+\begin{proof}
+	Consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc[\field]{\degp}{\cX}$ such that $(0,\zeta_\degp ) \leftrightarrow (0, \beta_\degp )$ and all other bars unmatched.
+	Using the barcode estimates \cref{fig:barcodes_vs} and \cref{fig:barcodes_general}, we obtain that the cost of $P$ satisfies
+	\begin{align*}
+		\cost(P)
+		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\} \\
+		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} && \mbox{(because $\zeta_n \leq \alpha$)}.
+	\end{align*}
+	Therefore, \cref{eq:db_usual_upper_bound} holds.
+\end{proof}
+
+
+% For any degree $m > n$, consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc{\degp}{\cX}$ such that all bars are unmatched. Then the cost of $P$ satisfies:
+% \[
+%     \cost(P)
+%     = \max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\}
+%     = \tfrac{\pi - \zeta_n}{2}.
+% \]
+
+\subsection{Lower bound on $\db$ between $\theta$-barcodes}
+\label{subsub:db_theta_lower_bound}
+
+To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated.
+
+\medskip\proposition
+Let $\theta \in \cO(\ell, \degp)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
+Then,
+\begin{equation}\label{eq:db_theta_lower_bound}
+	\db(\thetabarc{\VS}, \thetabarc{\cX})
+	%= \min_Q \cost(Q)
+	\geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
+\end{equation}
+
+\begin{proof}
+	Recall from \cref{fig:barcodes_general} that $\thetabarc{\cX}$ contains a bar $(0,\gamma_\degp)$.
+	We calculate the minimum cost of matching the bar $(0,\gamma_\degp)$.
+
+	Let $Q$ be an arbitrary matching between $\thetabarc{\VS}$ and $\thetabarc{\cX}$.
+	If $(0,\gamma_\degp )$ is unmatched in $Q$, then $\cost(Q) \geq \tfrac{\gamma_\degp }{2}$.
+	If $(0,\gamma_\degp )$ is matched to some bar $(a,b) \subset (\zeta_n, \pi)$ in $\thetabarc{\VS}$ in $Q$, then
+	$\cost(Q) =  \|(0,\gamma_\degp ) - (a,b)\|_\infty \geq \zeta_n$.
+	Thus, an arbitrary matching $Q$ between $\thetabarc{\VS}$ and $\thetabarc{\cX}$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}.$
+	Therefore, \cref{eq:db_theta_lower_bound} holds.
+\end{proof}
+
+\subsection{Technical lemma}
+\label{subsub:comparison_lemma}
+
+We establish a technical lemma.
+
+\medskip\lemma
+\begin{itemize}
+	\item If $\beta_\degp \in [\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$, then
+	$\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
+	\leq \tfrac{\pi - \zeta_n}{2}$.
+	\item If $\beta_\degp \in (\tfrac{\pi - \zeta_n}{2}+\zeta_\degp, \tfrac{\zeta_n}{2}+\zeta_\degp)$, then
+	$\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
+	\leq \tfrac{\zeta_n}{2}$.
+\end{itemize}
+
+\begin{proof}
+	First consider when $\beta_\degp \in [\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ and divide the discussion to two cases.
+	If $\beta_\degp \leq \zeta_\degp$, then because $\tfrac{\pi}{2} < \alpha \leq \beta_\degp \leq \zeta_\degp  \leq \tfrac{2\pi}{3}$ and $\zeta_n \leq \tfrac{2\pi}{3}$, we have
+	\[
+	|\zeta_\degp  - \beta_\degp |
+	= \zeta_\degp  - \beta_\degp
+	< \tfrac{2\pi}{3} - \tfrac{\pi}{2}
+	= \tfrac{\pi}{6}
+	\leq \tfrac{\pi - \zeta_n}{2}.
+	\]
+	If $\beta_\degp > \zeta_\degp$, then
+	\[
+	|\zeta_\degp  - \beta_\degp |
+	= \beta_\degp - \zeta_\degp
+	\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp
+	= \tfrac{\pi - \zeta_n}{2}.
+	\]
+	Thus, $\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}.$
+
+	When $\beta_\degp \in (\tfrac{\pi - \zeta_n}{2}+\zeta_\degp, \tfrac{\zeta_n}{2}+\zeta_\degp)$, we have
+	\[
+	\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
+	= \max\{\beta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
+	< \max\{\tfrac{\zeta_n}{2}+\zeta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
+	= \tfrac{\zeta_n}{2} .
+	\]
+\end{proof}
+
+\subsection{Comparison}
+\label{subsub:main_theorem}
+
+\subsubsection{}
+By combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, we immediately obtain that the lower bound of the bottleneck distance $\db$ between the $\theta$-barcodes of the two space $\VS$ and $\cX$ (Equation (\ref{eq:db_theta_lower_bound})) is larger than the upper bound of $\db$ between the persistent homology barcodes of the two spaces (Equation (\ref{eq:db_usual_upper_bound})).
+As a consequence, the $\theta$-barcodes provide a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the persistent homology barcodes.
+
+\medskip\proposition
+
+If $\theta \in \cO(\ell, \degp)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
+\[\db(\thetabarc{\VS}, \thetabarc{\cX}) \geq \db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}).\]
+
+\subsubsection{}
+
+In the case of $\cX = \rp^n$ and the cohomology operations $\theta$ being the Steenrod squares, all with mod $2$ coefficients, we have a finer estimate as in the theorem below.
+Below, $\VS$ is $\bS^1\vee\dots\vee \bS^n$.
+
+\medskip\theorem
+We have
+\begin{itemize}
+	\item[(a)] $\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}$.
+	\smallskip\item[(b)] $\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})\geq \tfrac{\pi}{3}$, for $k,\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
+\end{itemize}
+
+\begin{proof}
+	As shown in \cref{sub:first_critical_value_rpn}, the first critical values satisfy
+	$$
+	\alpha = \beta_\degp = \gamma_{k+\ell} = \frac{2\pi}{3}
+	$$
+	for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
+	It is clear that $\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and $\beta_\degp = \tfrac{2\pi}{3}$ lies in $[\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ satisfying the first condition of the lemma in \cref{subsub:comparison_lemma}.
+	It follows from \cref{eq:db_usual_upper_bound} and \cref{subsub:comparison_lemma} that
+	\[\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}.\]
+
+	We have shown in \cref{subsub:first_critical_value} that the first critical value $\gamma_{\ell+k}$ is $\tfrac{2\pi}{3}$.
+	Applying \cref{eq:db_theta_lower_bound}, we have
+	\[\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})
+	\geq \min\{\tfrac{\gamma_{\ell+k}}{2}, \zeta_n\}
+	= \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\}
+	= \tfrac{\pi}{3}.\]
+\end{proof}
+
+Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the persistent homology barcodes do in all degrees.

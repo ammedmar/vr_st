@@ -2,9 +2,10 @@
 
 \section{Barcode estimates}\label{s:computations}
 
-\subsection{Barcode estimates}\label{sub:general_barcodes}
+In this section, we provide estimates of the barcode of $\R$-spaces in terms of their \textit{first critical values}.
+The main examples we analyze in detail are the Vietoris--Rips complexes of wedges and quotients of spheres.
 
-We estimate the barcodes of $\R$-spaces in terms of their \textit{first critical values}.
+\subsection{First critical values and general estimates}\label{sub:general_barcodes}
 
 \subsubsection{}\label{subsub:first_critical_value}
 
@@ -12,13 +13,12 @@ Let $X$ be an $\R$-space which is empty for negative numbers, with the Vietoris-
 From now on, we will consider this $\R$-space and omit it from the notation when convenient.
 Its \defn{first critical value} is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$.
 
-The \defn{first critical value} of a persistent module which is \(0\) for negative numbers is defined analogously.
-
-\medskip\remark
-Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of any $\theta$-barcode for $\theta$ a linear cohomology operation.
+The first critical value of a persistent module which is \(0\) for negative numbers is defined analogously.
+Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of \(\img\theta\) and \(\ker\theta\) for any linear cohomology operation $\theta$.
 
 \subsubsection{}\label{subsub:barcode_general}
 
+Let $X$ be an $\R$-space which is empty for negative numbers.
 Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with \(\ell \neq \degp\).
 We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\degp$ the first critical values of $X$, \(\rH_\degp\), and \(\img_\theta\).
 
@@ -37,7 +37,7 @@ We illustrate our estimate of the barcodes of $X$ in \cref{fig:barcodes_general}
 	\label{fig:barcodes_general}
 \end{figure}
 
-\subsection{$n$-sphere}\label{ss:Sn}
+\subsection{Spheres}\label{ss:Sn}
 
 For any integer $n \geq 1$ and real number $r > 0$, let $\bS^n(r)$ be the \defn{$n$-sphere} of radius $r$ centered at the origin of $\R^{n+1}$.
 We consider it equipped with the geodesic distance.
@@ -70,6 +70,8 @@ This implies that, for any degree~$\degp$, all bars in $\barc\rH_\degp (\VR\bS^n
 
 Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR\bS^n}$ or $\ker\theta_{\VR\bS^n}$ is dominated by $(\zeta_n,\pi)$.
 
+\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact.}
+
 \subsection{Wedge sum of spheres}
 
 \subsubsection{}
@@ -98,73 +100,15 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_spheres}
-	\caption{Let $\VS\defeq \VS^{\ell_1,\dots,\ell_n}$.
+	\caption{Let $\VS = \VS^{\ell_1,\dots,\ell_n}$ for some tuple of non-negative integers.
 	\emph{Top row:} persistent homology barcodes of $\VS$, where the dot $(0,\zeta_m)$ has multiplicity $\ell_m$.
 	\emph{Bottom row:} $\theta$-barcodes of $\VS$ where $\theta \in \cO(\ell,m)$ is any linear cohomology operation with \(\ell \neq m\).}
 	\label{fig:barcodes_vs}
 \end{figure}
 
-\subsection{First critical values of $\rp^n$}\label{sub:first_critical_value_rpn}
+\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact.}
 
-\subsubsection{}
-
-We will consider the following metric model of the \defn{real projective $n$-space}.
-Let $\rp^n(r)$ be the quotient space $\bS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bS^n$.
-We equip $\rp^n(r)$ with the quotient metric:
-\[
-d\big([x],[x']\big) =
-\min\set[\big]{d(x, x'), d(-x, x')}.
-\]
-To simplify notation we denote $\rp^n(2)$ by $\rp^n$ noticing that
-\[
-\diam(\bS^n) = \diam(\rp^n) = \pi.
-\]
-
-\subsubsection{}
-
-Let \(\alpha\) denote the first critical value of \(\VR\rp^n\).
-From \cite[Thm.~4.5]{adams2022metric} we have the following.
-
-\medskip\proposition
-The first critical value of \(\VR\rp^n\) is \(\alpha = \frac{2\pi}{3}\).
-%
-%for $r \in (0,\frac{2\pi}{3}]$
-%\[
-%\VR_r(\rp^n) \simeq \rp^n.
-%\]
-
-
-%For \(\degp \in \N\) we denote by \(\beta_\degp\) the first critical value of its \(\degp^\th\) reduced homology with mod 2 coefficients, and \(\gamma_{\ell+\degp}\)
-
-
-%, consider the cohomology operations to be the Steenrod squares.
-%Let $\alpha, \beta_\degp$ and $\gamma_\degp$ denote the first critical values of $\VR\rp^n$, the $\degp^\th$ reduced homology of $\VR\rp^n$ with mod two coefficients and the degree-$\degp$ component of the Steenrod barcode of $\VR\rp^n$, respectively.
-%
-%It follows from \cref{prop:homotopy type} that $\alpha = \frac{2\pi}{3}$.
-%For the values of $\beta_\degp$ and $\gamma_\degp$, see \cref{subsub:beta_m_rpn} and \cref{subsub:gamma_rpn}, respectively.
-
-\subsubsection{}\label{subsub:gamma_rpn}
-
-Let us now consider the mod-\(2\) cohomology of \(\VR\rp^n\) and the linear cohomology operations defined by Steenrod squares \(\Sq^k_\ell \in \cO(\ell,\ell+k)\).
-Denoting by \(\gamma_{\ell+k}\) the first critical value of \(\img_{\Sq^k_\ell}\) on \(\VR\rp^n\) we have the following.
-
-\medskip\proposition
-If $k,\ell$ are positive integers such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is odd, then $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
-
-\begin{proof}
-	Since the Vietoris--Rips complex $\VR_r\rp^n$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
-	Thus, the first critical value of $\gamma_{k+\ell} \leq \tfrac{2\pi}{3}$.
-	On the other hand, $\gamma_{k+\ell} \geq \alpha = \tfrac{2\pi}{3}$ the first critical value of $\VR\rp^n$.
-	Thus, $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
-	\anibal{We do not know that it dies.}
-\end{proof}
-
-\subsubsection{}\label{subsub:beta_m_rpn}
-
-We devote the remaining part of \cref{sub:general_barcodes} to prove the following proposition about the first critical value of the homology of $\VR\rp^n$.
-
-\medskip\proposition
-$\beta_m=\frac{2\pi}{3}$ for any $1\leq m\leq n$.
+\subsection{Quotients of spheres}
 
 \subsubsection{}\label{subsub:h}
 
@@ -357,6 +301,54 @@ If $\delta_1 = \dots = \delta_n \leq \alpha_1$ and $\beta_{\degp, n} \leq \beta_
 	Therefore, $(0, \delta_1) \in \Hbarc[\field]{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
 \end{proof}
 
+\subsection{Real projective spaces}\label{sub:first_critical_value_rpn}
+
+\subsubsection{}
+
+We will consider the following metric model of the \defn{real projective $n$-space}.
+Let $\rp^n(r)$ be the quotient space $\bS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bS^n$.
+We equip $\rp^n(r)$ with the quotient metric:
+\[
+d\big([x],[x']\big) =
+\min\set[\big]{d(x, x'), d(-x, x')}.
+\]
+To simplify notation we denote $\rp^n(2)$ by $\rp^n$ noticing that
+\[
+\diam(\bS^n) = \diam(\rp^n) = \pi.
+\]
+
+\subsubsection{}
+
+Let \(\alpha\) denote the first critical value of \(\VR\rp^n\).
+From \cite[Thm.~4.5]{adams2022metric} we have the following.
+
+\medskip\proposition
+The first critical value of \(\VR\rp^n\) is \(\alpha = \frac{2\pi}{3}\).
+%
+%for $r \in (0,\frac{2\pi}{3}]$
+%\[
+%\VR_r(\rp^n) \simeq \rp^n.
+%\]
+
+
+%For \(\degp \in \N\) we denote by \(\beta_\degp\) the first critical value of its \(\degp^\th\) reduced homology with mod 2 coefficients, and \(\gamma_{\ell+\degp}\)
+
+
+%, consider the cohomology operations to be the Steenrod squares.
+%Let $\alpha, \beta_\degp$ and $\gamma_\degp$ denote the first critical values of $\VR\rp^n$, the $\degp^\th$ reduced homology of $\VR\rp^n$ with mod two coefficients and the degree-$\degp$ component of the Steenrod barcode of $\VR\rp^n$, respectively.
+%
+%It follows from \cref{prop:homotopy type} that $\alpha = \frac{2\pi}{3}$.
+%For the values of $\beta_\degp$ and $\gamma_\degp$, see \cref{subsub:beta_m_rpn} and \cref{subsub:gamma_rpn}, respectively.
+
+\subsubsection{}\label{subsub:beta_m_rpn}
+
+\anibal{This subsubsection needs to be updated to reflect changes in the presentation order.}
+
+We devote the remaining part of \cref{sub:general_barcodes} to prove the following proposition about the first critical value of the homology of $\VR\rp^n$.
+
+\medskip\proposition
+$\beta_m=\frac{2\pi}{3}$ for any $1\leq m\leq n$.
+
 \subsubsection{}
 We now prove the proposition in \cref{subsub:beta_m_rpn}.
 
@@ -370,6 +362,22 @@ We now prove the proposition in \cref{subsub:beta_m_rpn}.
 	with $\rp^\degp$ generating the $\degp^\th$ mod 2 homology of $\rp^n$ for every $1 \leq \degp \leq n$.
 	This implies that $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$ and $\degp$.
 	Applying \cref{subsub:foundamental_bar_rpn_lemma}, we obtain that $\beta_{m,n} = \delta_1 = \tfrac{2\pi}{3},$ for any $n\geq 1$ and $1 \leq m \leq n$.
+\end{proof}
+
+\subsubsection{}\label{subsub:gamma_rpn}
+
+Let us now consider the mod-\(2\) cohomology of \(\VR\rp^n\) and the linear cohomology operations defined by Steenrod squares \(\Sq^k_\ell \in \cO(\ell,\ell+k)\).
+Denoting by \(\gamma_{\ell+k}\) the first critical value of \(\img_{\Sq^k_\ell}\) on \(\VR\rp^n\) we have the following.
+
+\medskip\proposition
+If $k,\ell$ are positive integers such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is odd, then $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
+
+\begin{proof}
+	Since the Vietoris--Rips complex $\VR_r\rp^n$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
+	Thus, the first critical value of $\gamma_{k+\ell} \leq \tfrac{2\pi}{3}$.
+	On the other hand, $\gamma_{k+\ell} \geq \alpha = \tfrac{2\pi}{3}$ the first critical value of $\VR\rp^n$.
+	Thus, $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
+	\anibal{We do not know that it dies.}
 \end{proof}
 
 \subsection{Barcodes of $\rp^n$}\label{sub:barcode_rpn}
@@ -391,161 +399,3 @@ Applying \cref{subsub:barcode_general}, we obtain an estimate of the barcodes of
 	}
 	\label{fig:sq barcodes}
 \end{figure}
-
-
-\section{Gromov--Hausdorff estimates}\label{prop:db estimate}
-
-We estimate the bottleneck distance $\db$ between the Steenrod barcodes of certain pairs of metric spaces and demonstrate that it provides a tighter lower-bound approximation of the Gromov–Hausdorff distance between the spaces than $\db$ between their persistent homology barcodes.
-See the theorem in \cref{subsub:main_theorem} for details.
-Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
-This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
-
-Let $\cX$ be a totally bounded metric space of diameter $\pi$, where the first critical value $\alpha$ of $\VR\cX$ satisfies $\alpha \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$ and $n$ is the largest degree such that the $n^\th$ reduced homology of $\cX$ is non-trivial.
-Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i=1, \dots, n$.
-
-Let $\beta_\degp$ and $\gamma_\degp$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
-
-\subsection{Upper bound on $\db$ between homology barcodes}
-\label{subsub:db_upper_bound}
-
-To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
-
-\medskip\proposition
-For any degree $\degp$ such that $\opH_\degp(\cX)$ is non-trivial,
-\begin{equation}\label{eq:db_usual_upper_bound}
-	\db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX})
-	%\leq \cost(P)
-	\leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}.
-\end{equation}
-
-\begin{proof}
-	Consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc[\field]{\degp}{\cX}$ such that $(0,\zeta_\degp ) \leftrightarrow (0, \beta_\degp )$ and all other bars unmatched.
-	Using the barcode estimates \cref{fig:barcodes_vs} and \cref{fig:barcodes_general}, we obtain that the cost of $P$ satisfies
-	\begin{align*}
-		\cost(P)
-		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\} \\
-		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} && \mbox{(because $\zeta_n \leq \alpha$)}.
-	\end{align*}
-	Therefore, \cref{eq:db_usual_upper_bound} holds.
-\end{proof}
-
-
-% For any degree $m > n$, consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc{\degp}{\cX}$ such that all bars are unmatched. Then the cost of $P$ satisfies:
-% \[
-%     \cost(P)
-%     = \max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\}
-%     = \tfrac{\pi - \zeta_n}{2}.
-% \]
-
-\subsection{Lower bound on $\db$ between $\theta$-barcodes}
-\label{subsub:db_theta_lower_bound}
-
-To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated.
-
-\medskip\proposition
-Let $\theta \in \cO(\ell, \degp)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
-Then,
-\begin{equation}\label{eq:db_theta_lower_bound}
-	\db(\thetabarc{\VS}, \thetabarc{\cX})
-	%= \min_Q \cost(Q)
-	\geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
-\end{equation}
-
-\begin{proof}
-	Recall from \cref{fig:barcodes_general} that $\thetabarc{\cX}$ contains a bar $(0,\gamma_\degp)$.
-	We calculate the minimum cost of matching the bar $(0,\gamma_\degp)$.
-
-	Let $Q$ be an arbitrary matching between $\thetabarc{\VS}$ and $\thetabarc{\cX}$.
-	If $(0,\gamma_\degp )$ is unmatched in $Q$, then $\cost(Q) \geq \tfrac{\gamma_\degp }{2}$.
-	If $(0,\gamma_\degp )$ is matched to some bar $(a,b) \subset (\zeta_n, \pi)$ in $\thetabarc{\VS}$ in $Q$, then
-	$\cost(Q) =  \|(0,\gamma_\degp ) - (a,b)\|_\infty \geq \zeta_n$.
-	Thus, an arbitrary matching $Q$ between $\thetabarc{\VS}$ and $\thetabarc{\cX}$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}.$
-	Therefore, \cref{eq:db_theta_lower_bound} holds.
-\end{proof}
-
-\subsection{Technical lemma}
-\label{subsub:comparison_lemma}
-
-We establish a technical lemma.
-
-\medskip\lemma
-\begin{itemize}
-	\item If $\beta_\degp \in [\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$, then
-	$\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
-	\leq \tfrac{\pi - \zeta_n}{2}$.
-	\item If $\beta_\degp \in (\tfrac{\pi - \zeta_n}{2}+\zeta_\degp, \tfrac{\zeta_n}{2}+\zeta_\degp)$, then
-	$\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
-	\leq \tfrac{\zeta_n}{2}$.
-\end{itemize}
-
-\begin{proof}
-	First consider when $\beta_\degp \in [\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ and divide the discussion to two cases.
-	If $\beta_\degp \leq \zeta_\degp$, then because $\tfrac{\pi}{2} < \alpha \leq \beta_\degp \leq \zeta_\degp  \leq \tfrac{2\pi}{3}$ and $\zeta_n \leq \tfrac{2\pi}{3}$, we have
-	\[
-	|\zeta_\degp  - \beta_\degp |
-	= \zeta_\degp  - \beta_\degp
-	< \tfrac{2\pi}{3} - \tfrac{\pi}{2}
-	= \tfrac{\pi}{6}
-	\leq \tfrac{\pi - \zeta_n}{2}.
-	\]
-	If $\beta_\degp > \zeta_\degp$, then
-	\[
-	|\zeta_\degp  - \beta_\degp |
-	= \beta_\degp - \zeta_\degp
-	\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp
-	= \tfrac{\pi - \zeta_n}{2}.
-	\]
-	Thus, $\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}.$
-
-	When $\beta_\degp \in (\tfrac{\pi - \zeta_n}{2}+\zeta_\degp, \tfrac{\zeta_n}{2}+\zeta_\degp)$, we have
-	\[
-	\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
-	= \max\{\beta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
-	< \max\{\tfrac{\zeta_n}{2}+\zeta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
-	= \tfrac{\zeta_n}{2} .
-	\]
-\end{proof}
-
-\subsection{Comparison}
-\label{subsub:main_theorem}
-
-\subsubsection{}
-By combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, we immediately obtain that the lower bound of the bottleneck distance $\db$ between the $\theta$-barcodes of the two space $\VS$ and $\cX$ (Equation (\ref{eq:db_theta_lower_bound})) is larger than the upper bound of $\db$ between the persistent homology barcodes of the two spaces (Equation (\ref{eq:db_usual_upper_bound})).
-As a consequence, the $\theta$-barcodes provide a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the persistent homology barcodes.
-
-\medskip\proposition
-
-If $\theta \in \cO(\ell, \degp)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
-\[\db(\thetabarc{\VS}, \thetabarc{\cX}) \geq \db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}).\]
-
-\subsubsection{}
-
-In the case of $\cX = \rp^n$ and the cohomology operations $\theta$ being the Steenrod squares, all with mod $2$ coefficients, we have a finer estimate as in the theorem below.
-Below, $\VS$ is $\bS^1\vee\dots\vee \bS^n$.
-
-\medskip\theorem
-We have
-\begin{itemize}
-	\item[(a)] $\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}$.
-	\smallskip\item[(b)] $\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})\geq \tfrac{\pi}{3}$, for $k,\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
-\end{itemize}
-
-\begin{proof}
-	As shown in \cref{sub:first_critical_value_rpn}, the first critical values satisfy
-	$$
-	\alpha = \beta_\degp = \gamma_{k+\ell} = \frac{2\pi}{3}
-	$$
-	for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
-	It is clear that $\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and $\beta_\degp = \tfrac{2\pi}{3}$ lies in $[\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ satisfying the first condition of the lemma in \cref{subsub:comparison_lemma}.
-	It follows from \cref{eq:db_usual_upper_bound} and \cref{subsub:comparison_lemma} that
-	\[\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}.\]
-
-	We have shown in \cref{subsub:first_critical_value} that the first critical value $\gamma_{\ell+k}$ is $\tfrac{2\pi}{3}$.
-	Applying \cref{eq:db_theta_lower_bound}, we have
-	\[\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})
-	\geq \min\{\tfrac{\gamma_{\ell+k}}{2}, \zeta_n\}
-	= \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\}
-	= \tfrac{\pi}{3}.\]
-\end{proof}
-
-Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the persistent homology barcodes do in all degrees.
