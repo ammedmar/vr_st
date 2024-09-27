@@ -201,30 +201,6 @@ We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
 In this paper, we will not distinguish a simplicial complex from its geometric realization.
 
 \subsubsection{}
-
-%An action of a group $G$ on a set $X$ is a function $G\times X\to X$ such that $g\cdot (h\cdot x)=(gh)\cdot x$, and $e\cdot x = x$ for all $x\in X$ and $g,h\in G$, where $e$ is the identity element of $G$.
-
-Let $G$ be a group acting on a metric space $\cX$ and $\cX_G$ be the quotient of $X$ under the group action $G$. 
-Elements in $\cX_G$ will be denoted as $[x]$ for $x\in \cX$.
-We say the action of $G$ is \defn{proper} if, for every $x\in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r)\cap B(x,r)=\emptyset\}$ is finite. 
-We say $G$ \defn{acts by isometries} on $\cX$, if for very $g\in G$, the map $g:X\to X$ with $x\mapsto g\cdot x$ is an isometry.
-
-Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
-Then there is a well-defined metric on $\cX_G$, called \defn{quotient metric}, defined by 
-\[
-    d_{\cX_G}([x], [x']) \defeq \inf_{g\in G} d_\cX(x, g\cdot x').
-\]
-
-The action of $G$ on $\cX$ induces a group action of $G$ on the Vietoris-Rips complexes $\VR_r(\cX)$, defined by
-\[
-    g \cdot \sum \lambda_i x_i \defeq \sum \lambda_i (g\cdot x_i).
-\]
-
-Let $r>0$. The action of a group $G$ on $\cX$ is an \defn{$r^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r$. 
-\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. 
-We should ask Liam Barham for permission to cite his unpublished work.}
-
-\subsubsection{}
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
 As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 

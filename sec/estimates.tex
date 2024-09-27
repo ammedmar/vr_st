@@ -18,7 +18,7 @@ Clearly, the first critical value of an $\R$-space is bounded above by the first
 
 \subsubsection{}\label{subsub:barcode_general}
 
-Let $X$ be an $\R$-space which is empty for negative numbers.
+%Let $X$ be an $\R$-space which is empty for negative numbers.
 Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with \(\ell \neq \degp\).
 We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\degp$ the first critical values of $X$, \(\rH_\degp\), and \(\img_\theta\).
 
@@ -56,7 +56,7 @@ This implies that, for any degree~$\degp$, all bars in $\barc\rH_\degp (\VR\bS^n
 	For $d=1$ and $n > 1$ and one also has more information.
 	Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
 	As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
-	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty. \ling{We may simplify the footnote.}}
+	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
 
 \begin{figure}[ht]
 	\centering
@@ -109,6 +109,30 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 \anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact.}
 
 \subsection{Quotients of spheres}
+
+\subsubsection{}
+
+%An action of a group $G$ on a set $X$ is a function $G\times X\to X$ such that $g\cdot (h\cdot x)=(gh)\cdot x$, and $e\cdot x = x$ for all $x\in X$ and $g,h\in G$, where $e$ is the identity element of $G$.
+
+Let $G$ be a group acting on a metric space $\cX$ and $\cX_G$ be the quotient of $X$ under the group action $G$. 
+Elements in $\cX_G$ will be denoted as $[x]$ for $x\in \cX$.
+We say the action of $G$ is \defn{proper} if, for every $x\in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r)\cap B(x,r)=\emptyset\}$ is finite. 
+We say $G$ \defn{acts by isometries} on $\cX$, if for very $g\in G$, the map $g:X\to X$ with $x\mapsto g\cdot x$ is an isometry.
+
+Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
+Then there is a well-defined metric on $\cX_G$, called \defn{quotient metric}, defined by 
+\[
+    d_{\cX_G}([x], [x']) \defeq \inf_{g\in G} d_\cX(x, g\cdot x').
+\]
+
+The action of $G$ on $\cX$ induces a group action of $G$ on the Vietoris-Rips complexes $\VR_r(\cX)$, defined by
+\[
+    g \cdot \sum \lambda_i x_i \defeq \sum \lambda_i (g\cdot x_i).
+\]
+
+Let $r>0$. The action of a group $G$ on $\cX$ is an \defn{$r^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r$. 
+\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. 
+We should ask Liam Barham for permission to cite his unpublished work.}
 
 \subsubsection{}\label{subsub:h}
 
@@ -234,17 +258,16 @@ The vertical maps are induced by the equatorial inclusion of real projective spa
 \subsubsection{}
 \label{subsub:foundamental_bar_rpn_lemma}
 
-Let $\delta_n=2\mathrm{Fillrad}(\bS^n_G)$ and
-let $\alpha_1$ be the first critical value of $\VR\bS^1_G$.
-For any degree $1 \leq \degp \leq n$, let $\beta_{\degp, n}$ be the first critical value of the $\degp^\th$ reduced homology of $\VR(\bS^n_G)$.
+Let $\delta_n=2\mathrm{Fillrad}(\bS^n_G)$, which is clearly upper bounded by $\alpha_n$ the first critical value of $\VR\bS^n_G$.
+For any degree $1 \leq \degp \leq n$, let $\beta_{\degp, n}$ be the first critical value of the $\degp^\th$ reduced homology of $\VR\bS^n_G$.
 
 \medskip\lemma
-If $\delta_1 = \dots = \delta_n \leq \alpha_1$ and $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$, then
+If $\delta_1 = \dots = \delta_n$ and $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$, then
 \[
 \beta_{m, n} = \delta_1, \, \text{for any $1 \leq m \leq n$.}
 \]
 
-%We will refer to the bar in this lemma as the \defn{fundamental bar} of $\bS^n_G$.
+\ling{can the above be relaxed?}
 
 \begin{proof}
 	We will use an induction argument on $n$.
@@ -301,101 +324,4 @@ If $\delta_1 = \dots = \delta_n \leq \alpha_1$ and $\beta_{\degp, n} \leq \beta_
 	Therefore, $(0, \delta_1) \in \Hbarc[\field]{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
 \end{proof}
 
-\subsection{Real projective spaces}\label{sub:first_critical_value_rpn}
 
-\subsubsection{}
-
-We will consider the following metric model of the \defn{real projective $n$-space}.
-Let $\rp^n(r)$ be the quotient space $\bS^n(r)$ by the antipodal map $x \mapsto -x$ for all $x \in \bS^n$.
-We equip $\rp^n(r)$ with the quotient metric:
-\[
-d\big([x],[x']\big) =
-\min\set[\big]{d(x, x'), d(-x, x')}.
-\]
-To simplify notation we denote $\rp^n(2)$ by $\rp^n$ noticing that
-\[
-\diam(\bS^n) = \diam(\rp^n) = \pi.
-\]
-
-\subsubsection{}
-
-Let \(\alpha\) denote the first critical value of \(\VR\rp^n\).
-From \cite[Thm.~4.5]{adams2022metric} we have the following.
-
-\medskip\proposition
-The first critical value of \(\VR\rp^n\) is \(\alpha = \frac{2\pi}{3}\).
-%
-%for $r \in (0,\frac{2\pi}{3}]$
-%\[
-%\VR_r(\rp^n) \simeq \rp^n.
-%\]
-
-
-%For \(\degp \in \N\) we denote by \(\beta_\degp\) the first critical value of its \(\degp^\th\) reduced homology with mod 2 coefficients, and \(\gamma_{\ell+\degp}\)
-
-
-%, consider the cohomology operations to be the Steenrod squares.
-%Let $\alpha, \beta_\degp$ and $\gamma_\degp$ denote the first critical values of $\VR\rp^n$, the $\degp^\th$ reduced homology of $\VR\rp^n$ with mod two coefficients and the degree-$\degp$ component of the Steenrod barcode of $\VR\rp^n$, respectively.
-%
-%It follows from \cref{prop:homotopy type} that $\alpha = \frac{2\pi}{3}$.
-%For the values of $\beta_\degp$ and $\gamma_\degp$, see \cref{subsub:beta_m_rpn} and \cref{subsub:gamma_rpn}, respectively.
-
-\subsubsection{}\label{subsub:beta_m_rpn}
-
-\anibal{This subsubsection needs to be updated to reflect changes in the presentation order.}
-
-We devote the remaining part of \cref{sub:general_barcodes} to prove the following proposition about the first critical value of the homology of $\VR\rp^n$.
-
-\medskip\proposition
-$\beta_m=\frac{2\pi}{3}$ for any $1\leq m\leq n$.
-
-\subsubsection{}
-We now prove the proposition in \cref{subsub:beta_m_rpn}.
-
-\begin{proof}[Proof of \cref{subsub:beta_m_rpn}.]
-	Recall that the filling radius of $\rp^n$ is $\frac{\pi}{3}$ for any $n \geq 1$.
-	Therefore, \cref{ss:filling_radius} gives that $\delta_n = \tfrac{2\pi}{3} = \alpha_1$ for all $n$.
-	Additionally, we have that
-	\[
-	\rp^1 \subset \rp^2 \subset \dots \subset \rp^n,
-	\]
-	with $\rp^\degp$ generating the $\degp^\th$ mod 2 homology of $\rp^n$ for every $1 \leq \degp \leq n$.
-	This implies that $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$ and $\degp$.
-	Applying \cref{subsub:foundamental_bar_rpn_lemma}, we obtain that $\beta_{m,n} = \delta_1 = \tfrac{2\pi}{3},$ for any $n\geq 1$ and $1 \leq m \leq n$.
-\end{proof}
-
-\subsubsection{}\label{subsub:gamma_rpn}
-
-Let us now consider the mod-\(2\) cohomology of \(\VR\rp^n\) and the linear cohomology operations defined by Steenrod squares \(\Sq^k_\ell \in \cO(\ell,\ell+k)\).
-Denoting by \(\gamma_{\ell+k}\) the first critical value of \(\img_{\Sq^k_\ell}\) on \(\VR\rp^n\) we have the following.
-
-\medskip\proposition
-If $k,\ell$ are positive integers such that $k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is odd, then $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
-
-\begin{proof}
-	Since the Vietoris--Rips complex $\VR_r\rp^n$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\alpha^\ell) = \binom{\ell}{k}\alpha^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\alpha^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
-	Thus, the first critical value of $\gamma_{k+\ell} \leq \tfrac{2\pi}{3}$.
-	On the other hand, $\gamma_{k+\ell} \geq \alpha = \tfrac{2\pi}{3}$ the first critical value of $\VR\rp^n$.
-	Thus, $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
-	\anibal{We do not know that it dies.}
-\end{proof}
-
-\subsection{Barcodes of $\rp^n$}\label{sub:barcode_rpn}
-
-\anibal{This subsection is redundant if the subsection on barcode estimates is presented well. I placed it at the beginning of the section. Then the 3 examples will follow and use it to obtain the desired estimates.}
-
-We have seen in \cref{sub:first_critical_value_rpn} that $\alpha = \beta_\degp = \gamma_{k+\ell} = \tfrac{2\pi}{3}$ for any $1 \leq \degp \leq n$ and $k, \ell$ such that $k \leq \frac{n-1}{2}$ s.t. $\binom{\ell}{k} \mod 2\neq 0$.
-
-Applying \cref{subsub:barcode_general}, we obtain an estimate of the barcodes of $\rp^n$ and illustrate it in \cref{fig:sq barcodes}.
-
-\begin{figure}
-	\centering
-	\input{sec/fig_barcodes_rpn}
-	\caption{\emph{Top row:} the $\degp^\th$ persistent homology barcode of $\rp^n$.
-		When $1\leq \degp \leq n$, the barcode consists of one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
-		\emph{Bottom row:} the degree-$(k+\ell)$ component of the $\Sq^k$-barcode of $\rp^n$.
-		The leftmost barcode contains at least one $(0,\gamma_m)$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
-		See \cref{sub:barcode_rpn}.
-	}
-	\label{fig:sq barcodes}
-\end{figure}

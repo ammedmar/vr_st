@@ -15,8 +15,8 @@
 
 \subsubsection{}
 
-A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any topological space $\cX$.
-We denote the set of linear cohomology operations by $\cO(m,n;\k)$.
+A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any space $\cX$.
+We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$.
 For any prime $p$, the field $\Z/p$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
 A linear cohomology operation defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
@@ -38,18 +38,20 @@ Barcodes of cohomology operations generalize cohomology barcodes since, for the 
 \subsection{Sums and products}
 
 \subsubsection{}
-The \defn{wedge sum} $\cX \vee \cY$ of two pointed spaces is the quotient of their disjoint union by the identification of basepoints.
-Given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \cY_1 \to \cY_2$ the map $(f \vee g) \colon \cX_1 \vee \cY_1 \to \cX_2 \vee \cY_2$ is defined by
+
+For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, their \defn{wedge sum} is defined by
+\[
+(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
+\footnote{
+We remind the reader that, for two pointed topological spaces, $\cX \vee \cY$ is the quotient of their disjoint union by the identification of basepoints.
+Additionally, given two base point preserving maps $f \colon \cX_1 \to \cX_2$ and $g \colon \cY_1 \to \cY_2$ the map $(f \vee g) \colon \cX_1 \vee \cY_1 \to \cX_2 \vee \cY_2$ is defined by
 \[
 (f \vee g)(z) =
 \begin{cases}
 	f(z) & z \in \cX_1, \\
 	g(z) & z \in \cY_1.\\
 \end{cases}
-\]
-For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, is defined by
-\[
-(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,y} \vee Y_{s,t}).
+\]}
 \]
 
 \medskip\theorem

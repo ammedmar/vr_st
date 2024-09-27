@@ -1,4 +1,4 @@
-\subsection{Stability of $\theta$-barcodes}\label{ss:stability}
+\subsection{Stability}\label{ss:stability}
 
 %Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, n)$ for some arbitrary $m$ and $n$.
 
@@ -82,17 +82,17 @@ For cellular $\R$-spaces $X$ and $Y$ and linear cohomology operation $\theta$,
 
 \corollary For any two metric spaces $\cX$ and $\cY$ and linear cohomology operation $\theta$,
 \begin{align*}
-	\di(\thetamodule{\VR\cX},\, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(X,Y), \\
-	\di(\ker\theta_{\VR\cX},\, \ker\theta_{\VR\cY}) \leq 2 \cdot \dgh(X,Y).
+	\di(\thetamodule{\VR\cX},\, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(\cX,\cY), \\
+	\di(\ker\theta_{\VR\cX},\, \ker\theta_{\VR\cY}) \leq 2 \cdot \dgh(\cX,\cY).
 \end{align*}
 
 \begin{proof}
         From \cref{thm:stability-HI} and the previous theorem we obtain
         \[
         \di(\thetamodule{\VR\cX}, \thetamodule{\VR\cY}) \leq
-        \dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(X,Y).
+        \dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(\cX,\cY).
         \]
-        The same argument applies to $\ker\theta$.\anibal{What's the role of compactness?}
+        The same argument applies to $\ker\theta$.
 \end{proof}
 
 We remark that if the metric spaces are compact or, more generally, totally bounded, the above persistent modules are q-tame and the bottleneck distance of their barcodes is bounded by twice the Gromov--Hausdorff distance, since bottleneck and interleaving distances agree.
