@@ -17,7 +17,7 @@
 
 A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any space $\cX$.
 We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$.
-For any prime $p$, the field $\Z/p$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
+For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
 A linear cohomology operation defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
 The \defn{image} and \defn{kernel} of $\theta$, denoted $\img\theta$ and $\ker\theta$ respectively, are natural persistence modules defined for any $\R$-space $X$ by
@@ -78,7 +78,7 @@ d(x, x') =
 	\hfil d_{\cX_i}(x, x') & i = j.
 \end{cases}
 \]
-%if $i \neq j$, and 
+%if $i \neq j$, and
 %\[
 %d(x, x') = d_{\cX_i}(x, x')
 %\]
@@ -112,7 +112,7 @@ Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 For any $k \in \N$, the Steenrod persistence modules satisfy:
 \begin{align*}
 	\img\Sq^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, & \ker\Sq^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\
-	\img\rP^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,, & 
+	\img\rP^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,, &
 	\ker\rP^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,. &
 \end{align*}
 
@@ -135,7 +135,7 @@ For any two metric spaces $\cX$ and $\cY$,
 Steenrod persistence modules satisfy:
 \begin{align*}
 	\img\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\ \ker\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\
-	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\ 
+	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\
 	\ker\rP^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,,
 \end{align*}
 for any $k \in \N$.

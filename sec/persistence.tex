@@ -8,6 +8,7 @@ We recall some of the basic notions of the theory of persistence.
 \subsection{$\R$-diagrams}
 
 \subsubsection{}
+
 We think of the set of real numbers $\R$ as a category via its poset structure.
 
 For any category $\cC$, the category $\cC^\R$ of \defn{$\R$-diagrams in $\cC$} is that of functors from $\R$ to $\cC$ together with natural transformations between them.
@@ -15,6 +16,7 @@ For any category $\cC$, the category $\cC^\R$ of \defn{$\R$-diagrams in $\cC$} i
 For any such $\R$-diagram $F$, we denote the image of an object $r \in \R$ as $F_r$ and the image of a morphism $s \leq t$ as $F_{s,t}$.
 
 \subsubsection{}\label{ss:interleaving}
+
 Let $\delta$ be a fixed non-negative real number.
 For any $\R$-diagram $F \colon \R \to \cC$, we write $F^\delta$ for the $\R$-diagram defined by
 \[
@@ -32,10 +34,7 @@ The \defn{interleaving distance} between them is defined by
 \]
 
 Changing the target category $\cC$ does not increase the interleaving distance.
-More precisely, we have the following.
-
-\ling{Should we cite this paper: \url{https://link.springer.com/article/10.1007/s10208-014-9229-5}?}
-\ling{It is the first paper defining interleaving for general category and proving the lemma below (see Theorem on page 1508).}
+More precisely, we have the following result that first appeared in \cite[p.~1508]{bubenik2015metrics}.
 
 \medskip\lemma For any functor $\Phi \colon \cC \to \cD$ we have
 \[
@@ -44,7 +43,7 @@ More precisely, we have the following.
 for any pair of functors $F, G \colon \R \to \cC$.
 
 \begin{proof}
-	This follows from the fact that the functors defining a $\delta$-interleaving of $F$ and $G$ can be composed with $\Phi$ to give a $\delta$-interleaving of $\Phi \circ F$ and $\Phi \circ G$.  
+	This follows from the fact that the functors defining a $\delta$-interleaving of $F$ and $G$ can be composed with $\Phi$ to give a $\delta$-interleaving of $\Phi \circ F$ and $\Phi \circ G$.
 \end{proof}
 
 %The target categories considered in this work will either be that of topological or vector spaces.
@@ -52,6 +51,7 @@ for any pair of functors $F, G \colon \R \to \cC$.
 \subsection{$\R$-spaces}
 
 \subsubsection{}
+
 Let $\Top$ be the category of topological spaces and continuous maps.
 We refer to $\Top^\R$ as the category of \defn{$\R$-spaces}.
 An $\R$-space $X$ for which each $X_r$ is a CW-complex is said to be \defn{cellular}.
@@ -60,14 +60,14 @@ We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalen
 %, i.e., it induces isomorphisms on all homotopy groups.
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
-Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there exists an $\R$-space $W$ and weak equivalences $X \leftarrow W \rightarrow Y$.\footnote{
-For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the homotopy category of $\Top^\R$, i.e. its localization with respect to weak equivalences.}
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there are weak equivalences $X \leftarrow W \rightarrow Y$ for some $\R$-space $W$.\footnote{
+For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the the localization of $\Top^\R$ with respect to weak equivalences \cite{blumberg2023interleaving}.}
 
 \subsubsection{}\label{def:dhi}
 
 Two $\R$-spaces are $X$ and $Y$ are said to be \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
 
-The \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is given by
+Following \cite{blumberg2023interleaving}, the \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is given by
 \[
 \dhi(X,Y) = \inf \set{\delta \geq 0 \mid X,Y \text{ are }\delta\text{-homotopy-interleaved}}.
 \]
@@ -76,6 +76,7 @@ The \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is
 \subsection{Persistence modules}
 
 \subsubsection{}
+
 Let $\Vec$ be the category of vector spaces and linear maps over a fixed field $\k$.
 We refer to $\Vec^\R$ as the category of \defn{persistence modules}.
 
@@ -97,6 +98,7 @@ We denote abusively by $\kk$ and $0$ the functors that assigns $0$ and $\kk$ res
 %\subsection{Barcodes and q-tameness}
 
 \subsubsection{}
+
 Let $I$ be a closed interval in $\R$.
 %, i.e., $I \subseteq \R$ and, if $r \leq s \leq t$ with $r, t \in I$, then $s \in I$.
 The persistence module $\kk[I]$, referred to as an \defn{interval module}, is defined explicitly by
@@ -119,6 +121,7 @@ In this case we refer to the multiset as the \defn{barcode} of $V$ and denote it
 By Azumaya’s theorem \cite{azumaya1950theorem}, $\barc V$ is unique up to reordering.
 
 \subsubsection{}
+
 Crawley-Boevey's result \cite{Crawley-Boevey.2015} is a widely used existence theorem for barcode decompositions.
 It ensures that any persistence module \(V\) with \(V_t\) being a finite dimensional vector space for every \(t \in \R\) has a barcode decomposition.
 However, this condition is often too restrictive.
@@ -137,6 +140,7 @@ The barcode of the radical of a q-tame persistence module \(V\) serves as a comp
 We define the barcode of a q-tame persistent module as the barcode of its radical.
 
 \subsubsection{}
+
 Let $M$ and $M'$ be two possibly empty multisets of intervals.
 A subset $P \subset M \times M'$ is said to be a \defn{partial matching} between $M$ and $M'$ if every interval $I \in M$ is matched with at most one interval of $M'$ and every interval $I' \in M'$ is matched with at most one interval of $M$.
 
@@ -163,6 +167,7 @@ The interleaving distance of $q$-tame persistence modules agrees with the bottle
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
 \subsubsection{}
+
 For any integer $k \geq 0$, applying the degree $k$ homology functor (with coefficients in~$\kk$) to an $\R$-space produces its \defn{persistent $k$-homology}, a persistence module denoted $\rH_k(X; \kk)$.
 We will also consider the reduced version of this construction.
 
@@ -192,15 +197,16 @@ An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomol
 \subsection{Metric spaces}
 
 \subsubsection{}
-%We will identify a simplicial complex with its geometric realization.
+
 Given a metric space $\cX$ and $r > 0$.
 Let $\VR_r(\cX)$ denote the geometric realization of the simplicial complex whose vertices are the points of $\cX$ and whose simplices are the finite subsets of $\cX$ with diameter strictly less than $r$.
 Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
-In this paper, we will not distinguish a simplicial complex from its geometric realization.
+\anibal{The comment: ``In this paper, we will not distinguish a simplicial complex from its geometric realization'' should be next to the first place this abuse of terminology is used.}
 
 \subsubsection{}
+
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
 As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 
@@ -208,12 +214,13 @@ As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
 
 \subsubsection{}\label{thm:stability-HI}
+
 The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metric spaces $\cX$ and $\cY$ is defined as
 \[
 \dgh(\cX, \cY) = \inf_{\cZ, \varphi, \psi} \set[\Big]{d_\rH\big(\varphi(\cX), \psi(\cY)\big)},
 \]
 where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_H$ denotes the Hausdorff distance.\footnote{
-The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance you have to travel from a point in one set to the closest point in the other set.
+The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
 }
 
 \medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.
@@ -225,10 +232,8 @@ Then, for any $k \in \N,$
 \]
 
 \begin{proof}
-	These inequalities follow from Theorem.~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.\anibal{I do not see the compactness assumption here}
+	These inequalities follow from Theorem.~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.
 \end{proof}
-
-%\anibal{Check references please, since now we a citation to the published version.}
 
 \subsubsection{}\label{ss:filling_radius}
 
