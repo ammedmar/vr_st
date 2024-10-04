@@ -3,18 +3,27 @@
 \section{Barcode estimates}\label{s:computations}
 
 In this section, we provide estimates of the barcode of $\R$-spaces in terms of their \textit{first critical values}.
-The main examples we analyze in detail are the Vietoris--Rips complexes of wedges and quotients of spheres.
+The main examples we analyze in detail are the Vietoris--Rips complexes of wedges and certain quotients of spheres.
 
 \subsection{First critical values and general estimates}\label{sub:general_barcodes}
 
+Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r\geq R$ for some real number $R$.
+The Vietoris--Rips complex of a metric space is our primary example.
+In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
+
 \subsubsection{}\label{subsub:first_critical_value}
+\label{subsub:beta v.s. fillrad}
+The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$.
 
-Let $X$ be an $\R$-space which is empty for negative numbers, with the Vietoris--Rips complex of a metric space as a primary example.
-From now on, we will consider this $\R$-space and omit it from the notation when convenient.
-Its \defn{first critical value} is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$.
+The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that the interval \((0, \beta)\) appears as a bar in the barcode of the persistence module.
 
-The first critical value of a persistent module which is \(0\) for negative numbers is defined analogously.
 Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of \(\img\theta\) and \(\ker\theta\) for any linear cohomology operation $\theta$.
+In addition, all these critical values are bounded above by $R$.
+
+\medskip \remark
+Let $\cX$ be an $n$-dimensional manifold.
+Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
+By the definition of the filling radius, it follows that the first critical value of the $n^\th$ homology of $\VR(\cX)$ is at most $2\fillradnofield{\cX}$.
 
 \subsubsection{}\label{subsub:barcode_general}
 
@@ -24,16 +33,19 @@ We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\degp$ the first cri
 
 Because the $\R$-space $X$ begins at $r=0$ and the homotopy type of $X_r$ remains unchanged for $r\in [0,\alpha)$, bars in both the homology barcodes and the $\theta$-barcodes either start at $0$ or start after $\alpha$.
 
-In addition, for degrees $\degp$ such that $\rH_\degp(X_0)$ is non-trivial, the barcode of the $\degp^\th$ reduced homology of $X$ always contains $(0,\beta_\degp )$.
+In addition, for degrees $\degp$ such that $\rH_\degp(X_0)$ is non-trivial, the barcode of the $\degp^\th$ homology of $X$ always contains $(0,\beta_\degp )$.
 For linear cohomology operations $\theta \in \cO(\ell, \degp)$ such that $\img \theta_{X_0}$ is non-trivial, the $\theta$-barcode of $X$ always contains $(0,\gamma_\degp)$.
-\anibal{The fact that the maps are not isomorphisms after their critical value does not imply that they are not injective. You can say that they contain a bar dominated by \((0,\gamma_\degp)\)}.
-We illustrate our estimate of the barcodes of $X$ in \cref{fig:barcodes_general}\anibal{Why are there 3 dots on the left?}.
+\anibal{The fact that the maps are not isomorphisms after their critical value does not imply that they are not injective. You can say that they contain a bar dominated by \((0,\gamma_\degp)\) \ling{I need a notation for the exact death time, so I modified the definition of first critical values for persistence modules}}.
+We illustrate our estimate of the barcodes of $X$ in \cref{fig:barcodes_general}\anibal{Why are there 3 dots on the left? \ling{because there can be other bars born at $0$. I gave explanations in the caption}}.
 
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_general}
-	\caption{Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r\geq R$ for some real number $R$. \emph{Top row:} the $\degp^\th$ persistent homology barcode of $X$; the leftmost one contains one $(0,\beta_m)$ and some bars of the form $(0,a)$ for some $a\in [\beta_\degp, R]$.
-		\emph{Bottom row:} $\theta$-barcodes of $X$, where $\theta\in\cO(\ell,\degp)$ is a linear cohomology operation; the leftmost one contains one $(0,\gamma_m)$ and some bars of the form $(0,b)$ for some $b\in [\beta_\degp, R]$.}
+	\caption{
+        \emph{Top row:} the $\degp^\th$ persistent homology barcode of $X$; the leftmost one contains one $(0,\beta_m)$ and \((\dim \opH_\degp(X_0) - 1)\) additional bars of the form \((0, a)\) for \(a \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+		\emph{Bottom row:} $\theta$-barcodes of $X$, where $\theta\in\cO(\ell,\degp)$ is a linear cohomology operation; the leftmost one contains one \((0, \gamma_m)\) and \((\dim \img \theta_{X_0} - 1)\) additional bars of the form \((0, b)\) for \(b \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+        In each figure, the gray region represents, apart from the blue dot, where bars could potentially exist within the corresponding barcode.
+  }
 	\label{fig:barcodes_general}
 \end{figure}
 
@@ -43,38 +55,58 @@ For any integer $n \geq 1$ and real number $r > 0$, let $\bS^n(r)$ be the \defn{
 We consider it equipped with the geodesic distance.
 We simplify notation writing \(\bS^n\) instead of \(\bS^n(1)\).
 
-Because the Vietoris--Rips complexes of $\bS^n$ is contractible when the scale parameter is greater than $\pi$, all its bars are dominated by $(0, \pi)$.
+%\subsubsection{}
+\label{subsub:critical values of Sn}
 
-Recall from \cite[Thm.~7.1]{lim2020vietoris} that for $n \in \N$ and
-\[
-0 < r \leq \zeta_n \defeq \arccos(\tfrac{-1}{n+1}),
-\]
-the space $\VR_r\bS^n$ is homotopy equivalent to $\bS^n$.
-This implies that, for any degree~$\degp$, all bars in $\barc\rH_\degp (\VR\bS^n)$ are dominated by $(\zeta_n,\pi)$ with the exception of a single bar $(0,\zeta_n)$ when $d = n$ (see Figure \ref{fig:Sk}).\footnote{
-	The case $n = 1$ has more information.
-	From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r\bS^1$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
-	For $d=1$ and $n > 1$ and one also has more information.
-	Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
-	As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
-	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
+We apply the notations and results from \cref{sub:general_barcodes} to the Vietoris--Rips complexes of $\bS^n$ with $R=\pi$ the diameter of the sphere. 
+%Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with \(\ell \neq \degp\).
+Let $\alpha, \beta_\degp$ and $\gamma_\degp$ be the first critical values of the Vietoris--Rips complexes of $\bS^n$, its $\degp^{\th}$ homology, and $\theta$-module, respectively.
 
-\begin{figure}[ht]
-	\centering
-	\input{sec/table_sphere}
-	\caption{Estimation of the persistent homology barcode of $\bS^n$.
-	In each figure, the gray area represents the only region, apart from the blue dot, where points could potentially exist within the corresponding barcode.
-	Here, and throughout the paper, $\zeta_n = \arccos(\tfrac{-1}{n+1})$ and $\rH_\degp $ denotes reduced $\degp$-homology.
-	We remark that for any \(n \in \N\) the value \(\zeta_n\) is bounded below by \(\pi/2\).}
-	\label{fig:Sk}
-\end{figure}
+\medskip\proposition
+Let \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1}).\) Then, we have
+\begin{itemize}
+    \item $\alpha = \zeta_n$;
+    \item $\beta_n =\zeta_n$ and $\beta_\degp = 0$ for $1\leq \degp \neq n$;
+    \item $\gamma_\degp = 0$, for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).
+\end{itemize}
 
-Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR\bS^n}$ or $\ker\theta_{\VR\bS^n}$ is dominated by $(\zeta_n,\pi)$.
+\begin{proof}
+        Recall from \cite[Thm.~7.1]{lim2020vietoris} that for any $0 < r \leq \zeta_n$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$, and the homotopy type of $\VR_r(\bS^n)$ changes at $\zeta_n$.\footnote{
+    	The case $n = 1$ has more information.
+    	From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r(\bS^1)$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
+    	For $d=1$ and $n > 1$ and one also has more information.
+    	Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
+    	As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
+    	Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
+        This implies $\alpha=\zeta_n$.
+        
+        According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\). 
+        From \cref{ss:filling_radius}, it follows that \((0, \zeta_n)\) is a bar in the \(n^{\text{th}}\) homology of \(\VR (\bS^n)\). 
+        Thus, \(\beta_n \leq \zeta_n\). 
+        On the other hand, since \(\beta_n \geq \alpha = \zeta_n\), we conclude that \(\beta_n = \zeta_n\).
 
-\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact.}
+        The remaining parts of the proposition follow from the fact that the initial space in the filtration has trivial $\degp^{\th}$ homology for $1\leq \degp \neq n$ and trivial $\theta$ cohomology operations for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).
+\end{proof}
+
+For any \(m \geq 1\), \(\dim \opH_\degp(\bS^n)\) is one for \(\degp = n\) and zero otherwise. 
+For any \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\theta_{\bS^n}\) is trivial. 
+Applying these facts, along with the above proposition, to the results in \cref{sub:general_barcodes}, we obtain barcode estimates for \(\bS^n\).
+\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact. \ling{I revised \cref{sub:general_barcodes}, so that the case of $\bS^n$ is an example of \cref{sub:general_barcodes}.}}
+
+% Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR\bS^n}$ or $\ker\theta_{\VR\bS^n}$ is dominated by $(\zeta_n,\pi)$.
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\input{sec/table_sphere}
+% 	\caption{Estimation of the persistent homology barcode of $\bS^n$.
+% 	%Here, and throughout the paper, $\rH_\degp $ denotes $\degp$-homology.
+% 	We remark that for any \(n \in \N\) the value \(\zeta_n\) is bounded below by \(\pi/2\).}
+% 	\label{fig:Sk}
+% \end{figure}
 
 \subsection{Wedge sum of spheres}
 
-\subsubsection{}
+%\subsubsection{}
 
 For $n \in \N$ and $\ell_1, \dots, \ell_n \in \N^n$, let
 \[
@@ -91,11 +123,17 @@ for any \(m \in \N\) and
 \img\theta_{\VR(\VS^{\ell_1,\dots,\ell_n})} \cong \, \bigoplus_{i=1}^n (\img\theta_{\VR\bS^i})^{\oplus \ell_i}
 \]
 for any linear cohomology operation.
-Therefore, the barcode of $\rH_\degp(\VS^{\ell_1,\dots,\ell_n})$ contains $\ell_\degp$ copies of $(0,\zeta_\degp)$.
-All remaining bars in this barcode must be dominated by $(\zeta_n, \pi)$.
-This holds for all degrees, with the convention that $\ell_\degp = 0$ for $\degp > n$.
 
-Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in either its $\img\theta$ or $\ker\theta$ barcode is dominated by $(\zeta_n, \pi)$.
+Therefore, both the homology barcodes and \(\theta\)-barcodes of \(\VS^{\ell_1, \dots, \ell_n}\) can be obtained by taking appropriate unions of the corresponding barcodes of \(\bS^1, \dots, \bS^n\). 
+To facilitate the bottleneck distance estimates in later sections, we illustrate the barcode estimates for the wedge sum of spheres in \cref{fig:barcodes_vs}.
+
+\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact. \ling{I think it is helpful to keep this figure and I add a brief reasoning to this.}}
+
+% $\rH_\degp(\VS^{\ell_1,\dots,\ell_n})$ contains $\ell_\degp$ copies of $(0,\zeta_\degp)$.
+% All remaining bars in this barcode must be dominated by $(\zeta_n, \pi)$.
+% This holds for all degrees, with the convention that $\ell_\degp = 0$ for $\degp > n$.
+
+% Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in either its $\img\theta$ or $\ker\theta$ barcode is dominated by $(\zeta_n, \pi)$.
 
 \begin{figure}
 	\centering
@@ -106,7 +144,6 @@ Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\e
 	\label{fig:barcodes_vs}
 \end{figure}
 
-\anibal{The analysis here is a special case of the one on the first subsection. Please rewrite to reflect this fact.}
 
 \subsection{Quotients of spheres}
 
@@ -142,7 +179,7 @@ The following proposition is proved in \cite[Proposition 3.5]{adams2022metric}, 
 \medskip\lemma
 Let $G$ acts properly and by isometry on $\cX$, and the action of $G$ on $\cX$ is a $r^*$-diameter action for $r>0$. Then, the map
 \[
-h \colon \VR_r\cX_G \to (\VR_r\cX)_G
+h \colon \VR_r(\cX_G) \to (\VR_r\cX)_G
 \text{ with }
 \sum_{i=1}^k \lambda_i [x_i] \mapsto [\sum_{i=1}^k \lambda_i x_i]
 \]
@@ -151,11 +188,11 @@ is an isomorphism of simplicial complexes.
 \begin{proof}
 	Because $G$ acts by isometry, we have a well-defined map
 	\[
-	\tilde{h} \colon \VR_r\cX \to \VR_r\cX_G
+	\tilde{h} \colon \VR_r\cX \to \VR_r(\cX_G)
 	\text{ with }
 	\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
 	\]
-	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r\cX_G$.
+	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r(\cX_G)$.
 
 	Moreover, $\tilde{h}_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
 	Therefore, $h$, the inverse of $\tilde{h}_G$, is also an isomorphism.
@@ -166,13 +203,12 @@ is an isomorphism of simplicial complexes.
 
 For any $r<\pi$, let $f$ be the composition
 \[
-f \colon \VR_r\bS^n \to \R^{n+1} \setminus \set{0} \xra{\pi} \bS^n,
+f \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi} \bS^n,
 \]
-where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in the Vietoris--Rips thickening $\VR_r\bS^n$ to the point $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i=1$, and the second map $\pi$ is the radial projection map.
+where the first map sends a formal linear sum $\sum_{i=1}^k \lambda_i x_i$ in the Vietoris--Rips thickening $\VR_r(\bS^n)$ to the point $\sum_{i=1}^k \lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i=1$, and the second map $\pi$ is the radial projection map.
 
 \medskip\lemma
-When $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$, the map $f$ is a weak homotopy equivalence.
-\footnote{For $0<r<\zeta_n$, the Vietoris-Rips complex $\VR_r\bS^n$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.}
+When $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$, the map $f$ is a weak homotopy equivalence.\footnote{For $0<r<\zeta_n$, the Vietoris-Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.}
 
 \begin{proof}
 	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
@@ -183,7 +219,7 @@ When $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$, the map $f$ is a weak homotopy eq
 	It is shown in \cite[Theorem 1]{gillespie2024vietoris} that (for open Vietoris-Rips complexes) the natural bijection $g$ is a weak homotopy equivalence.
 
 	In the case of $\cX = \bS^n$, the map $f$ is the composition of two maps
-	\[\VR_r\bS^n\xrightarrow{g}\VR_r^m\bS^n\xrightarrow{f \circ g^{-1}}\bS^n.\]
+	\[\VR_r(\bS^n)\xrightarrow{g}\VR_r^m\bS^n\xrightarrow{f \circ g^{-1}}\bS^n.\]
 	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f \circ g^{-1}$ is a homotopy equivalence, implying that $f = (f \circ g^{-1}) \circ g$ is a weak homotopy equivalence.
 \end{proof}
 
@@ -191,13 +227,13 @@ When $0<r<\zeta_n=\arccos{(-\tfrac{1}{n+1})}$, the map $f$ is a weak homotopy eq
 \label{subsub:rho}
 Let $f$ be the map defined in \cref{subsub:f}.
 Let $G$ be a group action on $\bS^n$ that commutes with $f$.
-Let $f_G \colon \VR_r\bS^n_G \to \bS^n_G$ be the induced map of $f$.
+Let $f_G \colon \VR_r(\bS^n)_G \to \bS^n_G$ be the induced map of $f$.
 
 \medskip\lemma
 For any $0<r<\zeta_n$, the following composition is a weak homotopy equivalence
 \[
 \rho \defeq h \circ f_G
-\colon \VR_r\bS^n_G \to \bS^n_G.
+\colon \VR_r(\bS^n)_G \to \bS^n_G.
 \]
 \begin{proof}
 	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
@@ -210,7 +246,7 @@ For any $0<r<\zeta_n$, the following composition is a weak homotopy equivalence
 Let $\rho^n$ (or $\rho^{n-1}$) be the weak homotopy equivalence defined in \cref{subsub:rho} for the case of $\bS^n$ (or $\bS^{n-1}$).
 
 \medskip\lemma
-For $0<t\leq s $, we have the following diagram of topological spaces:
+For $0<t\leq s \leq s'$, we have the following diagram of topological spaces:
 \begin{equation}\label{d:fundamental_bars_diagram}
 	\begin{tikzcd}
 		\bS^{n-1}_G
@@ -230,7 +266,7 @@ For $0<t\leq s $, we have the following diagram of topological spaces:
 		\ar[l, "\rho^n" below]
 		\ar[r, hook, "v^{n}"]
 		&
-		\VR_{s}\bS^{n}_G.
+		\VR_{s'}\bS^{n}_G.
 	\end{tikzcd}
 \end{equation}
 The horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration.
@@ -258,29 +294,32 @@ The vertical maps are induced by the equatorial inclusion of real projective spa
 \subsubsection{}
 \label{subsub:foundamental_bar_rpn_lemma}
 
-Let $\delta_n=2\mathrm{Fillrad}(\bS^n_G)$, which is clearly upper bounded by $\alpha_n$ the first critical value of $\VR\bS^n_G$.
-For any degree $1 \leq \degp \leq n$, let $\beta_{\degp, n}$ be the first critical value of the $\degp^\th$ reduced homology of $\VR\bS^n_G$.
+Let $\delta_n=2\mathrm{Fillrad}(\bS^n_G)$. %, which is clearly bounded below by $\alpha_n$ the first critical value of $\VR(\bS^n_G)$.
+For any degree $1 \leq \degp \leq n$, let $\beta_{\degp}^{n}$ be the first critical value of the $\degp^\th$ homology of $\VR(\bS^n_G)$.
+It follows from \cref{subsub:beta v.s. fillrad} that $(\alpha \leq) \beta_{n}^{n} \leq \delta_n$.
+We represent these values using the following lower triangular matrix:
+\[
+    \begin{pmatrix}
+        \beta_{1}^{1}\leq \delta_1 & & &&\\
+        \beta_1^2 & \beta_{2}^{2} \leq \delta_2 & &&\\
+        \beta_1^3 & \beta_{2}^{3} & \beta_{3}^{3} \leq \delta_3 &&\\
+        \dots & \dots & \dots & \dots &\\
+        \beta_1^n & \beta_2^n & \beta_3^n & \dots & \beta_n^n \leq \delta_n
+    \end{pmatrix}
+\]
+In the lemma below, we show that all elements in the above matrix are bounded above by $\delta_n$, if $\{\delta_1, \dots, \delta_n\}$ is monotonically non-decreasing.
 
 \medskip\lemma
-If $\delta_1 = \dots = \delta_n$ and $\beta_{\degp, n} \leq \beta_{\degp, n'}$ for any $n\leq n'$, then
-\[
-\beta_{m, n} = \delta_1, \, \text{for any $1 \leq m \leq n$.}
-\]
-
-\ling{can the above be relaxed?}
+If $\delta_1 \leq \dots \leq \delta_n$, then $\beta_{\degp}^{n} \leq \delta_n$ for any $1 \leq m \leq n$.
 
 \begin{proof}
 	We will use an induction argument on $n$.
-	When $n = 1$, it follows from \cref{ss:filling_radius} that
-	\[
-	(0, 2\mathrm{Fillrad}(\bS^1_G)) = (0, \delta_1) \in \Hbarc[\field]{1}{\bS^1_G}.
-	\]
-	This implies that $\rH_1(\VR\bS^1_G)$ changes isomorphism types at $\delta_1$, so $\beta_{1, 1} \leq \delta_1$.
-	On the other hand, because $\delta_1 \leq \alpha_1$, $\rH_1(\VR\bS^1_G)$ retains the same isomorphism type before $\delta_1$, implying that $\beta_{1, 1} \geq \delta_1$.
-	Thus, $\beta_{1, 1} =\delta_1$.
+	When $n = 1$, $\beta_{1}^{1} \leq \delta_1$ holds.
+	%Because $\delta_1 \leq \alpha_1$, $\rH_1(\VR\bS^1_G)$ retains the same isomorphism type before $\delta_1$, implying that $\beta_{1, 1} \geq \delta_1$.
+	%Thus, $\beta_{1, 1} =\delta_1$.
 
-	Assume the statement holds for $\bS^{n-1}_G$, that is, $\beta_{m, n-1} = \delta_1$ for any $1\leq m \leq n-1$.
-	Applying the $\degp^\th$ reduced homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
+	Assume the statement holds for $\bS^{n-1}_G$, that is, $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ for any $1\leq m \leq n-1$.
+	Since $\delta_{n-1} \leq \delta_n$, applying the $\degp^\th$ homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
 	\[
 	\begin{tikzcd}
@@ -290,38 +329,32 @@ If $\delta_1 = \dots = \delta_n$ and $\beta_{\degp, n} \leq \beta_{\degp, n'}$ f
 		\rH_\degp(\VR_r\bS^{n-1}_G)
 		\ar[d, "\rH_\degp(\iota_r)" left, "\cong" right, myred]
 		\ar[l, "\cong" above]
-		\ar[rr, "\rH_\degp(v^{n-1})=0", myred]
+		\ar[rr, "\rH_\degp(v^{n-1})", myred]
 		&
 		&
-		\rH_\degp(\VR_{\delta_1+\epsilon}\bS^{n-1}_G)
+		\rH_\degp(\VR_{\delta_{n-1}+\epsilon}\bS^{n-1}_G)
 		\ar[d]
 		\\
 		\rH_\degp(\bS^{n}_G)
 		&
-		\rH_\degp(\VR_r(\bS^{n}_G))
+		\rH_\degp(\VR_r \bS^{n}_G)
 		\ar[l, "\cong"]
 		\ar[rr, "\rH_\degp(v^n)" , myred]
 		&
 		&
-		\rH_\degp(\VR_{\delta_1+\epsilon}\bS^{n}_G).
+		\rH_\degp(\VR_{\delta_n+\epsilon}\bS^{n}_G).
 	\end{tikzcd}
 	\]
-	Here, $\rH_\degp(f)$ for some map $f$ between topological spaces denotes the induced map of $f$ on the $\degp^\th$ reduced homology.
+	Here, $\rH_\degp(f)$ for some map $f$ between topological spaces denotes the induced map on the $\degp^\th$ homology.
 
-	Commutativity of the left-hand-side square implies that $\rH_\degp(\iota_r)$ is an isomorphism.
-	By induction assumption, $\beta_{m, n-1} = \delta_1$ is the first critical value of $\rH_\degp(\VR\bS^{n-1}_G)$, which implies that $\rH_\degp(v^{n-1})$ is the zero map.
-	Then, using the right-hand-side square's commutativity, we deduce $\rH_\degp(v^n) \circ \rH_\degp(\iota_r)=0$.
-	Since $\rH_\degp(\iota_r)$ is an isomorphism, we conclude that $\rH_\degp(v^n)=0$.
-	This holds for any $\epsilon>0$, so we can conclude $\beta_{m, n} \leq \delta_1$.
-	On the other hand, we have $\delta_1 = \beta_{m, n-1} \leq \beta_{m, n}$.
-	Therefore, $\beta_{m, n} = \delta_1$ holds for any $1\leq m \leq n-1$.
+    Let $\sigma$ be a representative cycle for the bar $(0,\, \beta_{\degp}^{n-1})$ in $\VR \bS^{n-1}_G$.
+    Commutativity of the left-hand-side square implies that $\rH_\degp(\iota_r)$ is an isomorphism, implying that $\rH_\degp(\iota_r)(\sigma)$ is born at $0$.
+	It follows from $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ that $\rH_\degp(v^{n-1})(\sigma) = 0$. 
+    Using the right-hand-side square's commutativity, we deduce $(\rH_\degp(v^n) \circ \rH_\degp(\iota_r))(\sigma)=0$, which means $\rH_\degp(\iota_r)(\sigma)$ dies after $\delta_n+\epsilon$.
+	This holds for any $\epsilon>0$, so we can conclude $\beta_{\degp}^{n} \leq \delta_n$.
 
-	For the case when $\degp=n$, we can apply \cref{ss:filling_radius} to obtain
-	\[
-	(0,2\mathrm{Fillrad}(\bS^n_G)) = (0, \delta_n) = (0, \delta_1) \in \Hbarc{n}{\bS^n_G}.
-	\]
-
-	Therefore, $(0, \delta_1) \in \Hbarc[\field]{\degp}{\bS^n_G}$ is established for all $1\leq \degp\leq n.$
+	For the case when $\degp=n$, we also have $\beta_{n}^{n} \leq \delta_n$. 
+    This completes the proof.
 \end{proof}
 
 
