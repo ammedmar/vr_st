@@ -2,4 +2,57 @@
 
 \section{Introduction} \label{s:introduction}
 
-\TBW
+When studying the shape and structure of spaces equipped with a filtration, \textit{persistent homology} has emerged as a crucial tool in both applied and theoretical topology.
+%By tracking the evolution of homological features across the filtration, persistent homology captures essential geometric and topological information
+%Combined
+By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning to simplectic geometry and functional analysis.
+A few among many examples can be found in: ...
+Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces; just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of filtered spaces.
+
+%To address these shortcomings, researchers have begun exploring extensions of persistent homology that can incorporate more refined information, particularly, by shifting focus to cohomology, which carries additional algebraic structure.
+%For the incorporation of the cup product into the persistent pipeline we cite \cite{memoli2024persistent} and the references therein.\anibal{Please complete list}
+%We will ground our approach on cohomology operations, such as the Steenrod squares, which provide a set of invariants extending homological ones.
+%Earlier work attempting or succeeding to adapt Steenrod squares to the realm of persistent topology includes Aubrey's PhD thesis \cite{aubrey2011thesis} and the work of Lupo et al \cite{medina2022per_st}.
+%A systematic exploration of persistent cohomology operations was missing and several foundational questions about their properties, stability, and applications remained open.
+
+To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined information; particularly by shifting the focus to cohomology, which carries more algebraic structure.
+For the incorporation of the cup product into the persistent pipeline we refer to \cite{memoli2024persistent} and the references therein.\anibal{Please complete list}
+Our approach is grounded in cohomology operations, such as the Steenrod squares, which are powerful yet computable homotopical invariants.
+Previous efforts to adapt Steenrod squares to the realm of persistent topology include Aubrey's PhD thesis \cite{aubrey2011thesis} and the work of Lupo et al.\ \cite{medina2022per_st}.
+The latter introduces computable invariants, known as Steenrod barcodes, along with software for its application to real-world data.
+Despite these advances, a comprehensive exploration of persistent cohomology operations remained absent, leaving key questions about their properties and broader applications in theoretical mathematics unresolved.
+
+In this paper, we investigate \textit{persistent cohomology operations} with the goal of filling this gap.
+Specifically, we aim to systematically define these, explore their stability properties, and derive product formulas for their associated barcodes.
+Furthermore, our study offers a framework for leveraging cohomology operations to achieve finer discriminatory power of filtered spaces.
+Specifically, we provide tighter bounds for the Gromov--Hausdorff distance of metric spaces than those obtained using persistent homology.
+Let us expand on each of these contributions in turn.
+%In particular, we explore the implications of persistent cohomology operations for the study of metric spaces when combined with the \textit{Vietoris--Rips construction}.
+
+Given a
+
+EXPAND One of the most useful features of persistent homology is their stability under perturbations of the input filtered space.
+Stability i	s a cornerstone of persistent topology; it guarantees that small changes in the input (e.g., noise in data or slight perturbations of a metric space) result in correspondingly small changes in the persistence invariants.
+We extend the notion of stability to persistent cohomology operations, providing rigorous estimates that demonstrate their robustness.
+
+EXPAND Additionally, we derive explicit \textit{product} and \textit{wedge sum formulas} that describe how these invariants decompose when applied to combinations of filtered spaces.
+%These results significantly extend the algebraic toolkit available for analyzing filtered topological spaces through persistence.
+
+%Armed with these theoretical developments, we turn our attention to applications in the geometry of metric spaces.
+%Using our framework, we derive \textit{Gromov--Hausdorff estimates} that illustrate the enhanced discriminatory power of persistent cohomology operations.
+%The Gromov--Hausdorff distance is a fundamental metric in geometry that measures how close two metric spaces are to being isometric.
+%By applying persistent cohomology operations to the Vietoris--Rips complexes of two metric spaces --a wedge sum of spheres and the corresponding real projective space-- we show that these invariants can provide tighter lower bounds for Gromov--Hausdorff distance than those obtained from standard persistent homology.
+
+Building on these theoretical developments, we then explore applications in the geometry of metric spaces.
+In particular, we derive refined \textit{Gromov--Hausdorff estimates} that demonstrate the enhanced discriminatory power of persistent cohomology operations.
+The Gromov--Hausdorff distance serves as a fundamental metric in geometry, quantifying how closely two metric spaces approximate each other.
+By applying persistent cohomology operations to the Vietoris--Rips complexes of two specific metric spaces --namely, a wedge sum of spheres and a real projective space-- we show that these invariants yield tighter lower bounds for the Gromov--Hausdorff distance than those achievable through standard persistent homology.
+
+%Overall, this work makes several key contributions.
+%First, we provide a systematic study of persistent cohomology operations, developing a theoretical framework that encompasses their stability and product structures.
+%Second, we demonstrate how these operations can be used to derive tighter Gromov--Hausdorff estimates, highlighting their potential for applications in metric geometry and data analysis.
+%Through these investigations, we aim to broaden the scope of persistence theory, opening new avenues for the study of filtered spaces and their topological properties.
+
+\subsection*{Previous work}
+
+
