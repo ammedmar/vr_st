@@ -1,0 +1,55 @@
+% !TEX root = ../vr_st.tex
+
+\subsection{First critical values}\label{sub:general_barcodes}
+
+%Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r\geq R$ for some real number $R$.
+%The Vietoris--Rips complex of a metric space is our primary example.
+%In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
+
+\subsubsection{}\label{subsub:first_critical_value}\label{subsub:beta v.s. fillrad}
+
+Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r \geq R$ for some real number $R$.
+The Vietoris--Rips complex of a metric space is our primary example.
+The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$.
+
+The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that \((0, \beta)\) appears as a bar in the barcode of the persistence module.\anibal{Careful with the open vs closed interval here}
+
+Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of \(\img\theta\) and \(\ker\theta\) for any linear cohomology operation $\theta$.
+In addition, all these critical values are bounded above by $R$.
+
+\subsubsection{}
+
+Let $\cX$ be an $n$-dimensional manifold.
+Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
+By the definition of the filling radius, it follows that the first critical value of the $n^\th$ homology of $\VR(\cX)$ is at most $2\fillradnofield{\cX}$.\anibal{I don't think this fragment is doing much. I would remove it if not referenced anywhere below.}
+
+\subsubsection{}\label{subsub:barcode_general}
+
+Let $X$ be an $\R$-space as before.
+Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation.
+We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\theta$ the first critical values of $X$, \(\rH_\degp(X)\), and \(\img_\theta(X)\).\anibal{It should be \(\gamma_\theta\) not \(\gamma_\degp\).
+	Additionally, We should talk about \(\img_\theta\)-barcodes not \(\theta\)-barcodes since this analysis is not been carried through for \(\ker_\theta\). Or is it?}
+
+Because the $\R$-space $X$ is empty for \(r < 0\) and the homotopy type of $X_r$ remains unchanged for $r \in [0, \alpha)$, bars in \(\barc \rH_\degp(X)\) and $\barc\img_\theta(X)$ either start at $0$ or start after $\alpha$.
+
+%In addition, for degrees $\degp$ such that $\rH_\degp(X_0)$ is non-trivial, the barcode of the $\degp^\th$ homology of $X$ always contains $(0,\beta_\degp)$.
+%More precisely,
+Furthermore, if \(k = \dim \opH_\degp(X_0) > 0\) then the $\barc\rH_\degp X$ contains $(0,\beta_m)$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+
+if ...
+
+Similarly, if ...
+
+$\theta$-barcodes of $X$, where $\theta\in\cO(\ell,\degp)$ is a linear cohomology operation; the leftmost one contains one \((0, \gamma_m)\) and \((\dim \img \theta_{X_0} - 1)\) additional bars of the form \((0, b)\) for \(b \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+
+and if ...
+
+Please consult \cref{fig:barcodes_general} for a depiction of these four barcode estimates.
+
+\begin{figure}
+	\centering
+	\input{sec/fig_barcodes_general}
+	\caption{In each figure the gray region represents where additional bars could potentially exist within the corresponding barcode.}
+	\anibal{Instead of additional points I would use a gray region in the y axis.}
+	\label{fig:barcodes_general}
+\end{figure}
