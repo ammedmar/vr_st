@@ -101,7 +101,7 @@ For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivale
 \begin{proof}
 	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
 	Then, because $G$ is a group action on $\bS^n$ preserved by $f$, the induced map $f_G$ is also a weak homotopy equivalence.
-	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.
+	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.\anibal{Homo? not iso?}
 \end{proof}
 
 \subsubsection{}
@@ -114,12 +114,12 @@ For $0 < t\leq s \leq s'$, consider the following diagram of topological spaces:
 		\bS^{n-1}_G
 		\ar[d, hook,"{\iota}" left]
 		&
-		\VR_t\bS^{n-1}_G
+		\VR_t(\bS^{n-1}_G)
 		\ar[d, hook,"\iota_t"]
 		\ar[l, "\ \rho^{n-1}" above]
 		\ar[r, hook, "v^{n-1}"]
 		&
-		\VR_{s}\bS^{n-1}_G
+		\VR_{s}(\bS^{n-1}_G)
 		\ar[d, hook]
 		\\
 		\bS^{n}_G
@@ -128,17 +128,18 @@ For $0 < t\leq s \leq s'$, consider the following diagram of topological spaces:
 		\ar[l, "\rho^n" above]
 		\ar[r, hook, "v^{n}"]
 		&
-		\VR_{s'}\bS^{n}_G,
+		\VR_{s'}(\bS^{n}_G),
 	\end{tikzcd}
 \end{equation}
-where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the equatorial inclusion of real projective spaces $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.\anibal{What? equatorial inclusions of projective spaces?}
+where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the inclusions $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.
+\anibal{The existance of these inclusions is not for free. I think one needs to assume that the equatorial inclusions are equivariant wrt a group acting on every sphere, at least, two consecutives, before this makes sense}
 
 \medskip\lemma
 Diagram \eqref{d:fundamental_bars_diagram} commutes.
 
 \begin{proof}
 	The commutativity of the right-hand-side square is straightforward.
-	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t\bS^{n-1}_G$ and verify that
+	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\bS^{n-1}_G)$ and verify that
 	\begin{center}
 		$(\iota \circ \rho^{n-1})(y)
 		=\iota(f^{n-1}_G([\sum_i \lambda_i x_i]))
