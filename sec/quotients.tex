@@ -43,29 +43,30 @@ Then, the map
 \end{align*}
 is an isomorphism of simplicial complexes.\anibal{\(r*\) does not imply proper?}
 
-\begin{proof}
-	Because $G$ acts by isometry, we have a well-defined map
-	\[
-	\tilde{h} \colon \VR_r\cX \to \VR_r(\cX_G)
-	\text{ with }
-	\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
-	\]
-	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r(\cX_G)$.
+% \begin{proof}
+% 	Because $G$ acts by isometry, we have a well-defined map
+% 	\[
+% 	\tilde{h} \colon \VR_r\cX \to \VR_r(\cX_G)
+% 	\text{ with }
+% 	\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
+% 	\]
+% 	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r(\cX_G)$.
 
-	Moreover, $\tilde{h}_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
-	Therefore, $h$, the inverse of $\tilde{h}_G$, is also an isomorphism.
-\end{proof}
+% 	Moreover, $\tilde{h}_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
+% 	Therefore, $h$, the inverse of $\tilde{h}_G$, is also an isomorphism.
+% \end{proof}
 
 \subsubsection{}\label{subsub:f}
 
-For any $r<\pi$, let $f$ be the composition
+For any $r<\pi$, let $f_r$ be the composition
 \[
-f \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi} \bS^n,
+f_r \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi} \bS^n,
 \]
-where the first map sends a formal linear combination $\sum_i\lambda_i x_i$ in the Vietoris--Rips thickening\anibal{thickening?} $\VR_r(\bS^n)$ to the point $\sum_i\lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i = 1$, and the second map $\pi$ is the radial projection map.
+where the first map sends a formal linear combination $\sum_i\lambda_i x_i$ in the Vietoris--Rips complex $\VR_r(\bS^n)$ to the point $\sum_i\lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i = 1$, and the second map $\pi$ is the radial projection map.
 
 \medskip\lemma
-When $0 < r < \zeta_n$, the map $f$ is a weak homotopy equivalence.\footnote{For $0 < r < \zeta_n$, the Vietoris--Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.\anibal{This comment should be something like: in ... a different map was used to show that ... (I guess is the inclusion) I am assuming that is the case, otherwise there would be no need for this proof.}}
+The map $f_r$ is well defined if $r < \pi$ and it is a homotopy equivalence when $0 < r < \zeta_n$.\anibal{why is r=0 excluded?}
+\footnote{For $0 < r < \zeta_n$, the Vietoris--Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.\anibal{This comment should be something like: in ... a different map was used to show that ... (I guess is the inclusion) I am assuming that is the case, otherwise there would be no need for this proof.}}
 
 \begin{proof}
 	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
@@ -97,7 +98,7 @@ For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivale
 \begin{proof}
 	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
 	Then, because $G$ is a group action on $\bS^n$ preserved by $f$, the induced map $f_G$ is also a weak homotopy equivalence.
-	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.
+	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.\anibal{Homo? not iso?}
 \end{proof}
 
 \subsubsection{}
@@ -108,12 +109,12 @@ For $0<t\leq s \leq s'$, consider the following diagram of topological spaces:
 		\bS^{n-1}_G
 		\ar[d, hook,"{\iota}" left]
 		&
-		\VR_t\bS^{n-1}_G
+		\VR_t(\bS^{n-1}_G)
 		\ar[d, hook,"\iota_t"]
 		\ar[l, "\ \rho^{n-1}" above]
 		\ar[r, hook, "v^{n-1}"]
 		&
-		\VR_{s}\bS^{n-1}_G
+		\VR_{s}(\bS^{n-1}_G)
 		\ar[d, hook]
 		\\
 		\bS^{n}_G
@@ -122,17 +123,18 @@ For $0<t\leq s \leq s'$, consider the following diagram of topological spaces:
 		\ar[l, "\rho^n" above]
 		\ar[r, hook, "v^{n}"]
 		&
-		\VR_{s'}\bS^{n}_G,
+		\VR_{s'}(\bS^{n}_G),
 	\end{tikzcd}
 \end{equation}
-where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the equatorial inclusion of real projective spaces $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.\anibal{What? equatorial inclusions of projective spaces?}
+where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the inclusions $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.
+\anibal{The existance of these inclusions is not for free. I think one needs to assume that the equatorial inclusions are equivariant wrt a group acting on every sphere, at least, two consecutives, before this makes sense}
 
 \medskip\lemma
 Diagram \eqref{d:fundamental_bars_diagram} commutes.
 
 \begin{proof}
 	The commutativity of the right-hand-side square is straightforward.
-	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t\bS^{n-1}_G$ and verify that
+	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\bS^{n-1}_G)$ and verify that
 	\begin{center}
 		$(\iota \circ \rho^{n-1})(y)
 		=\iota(f^{n-1}_G([\sum_i \lambda_i x_i]))
