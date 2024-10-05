@@ -1,6 +1,6 @@
 % !TEX root = ../vr_st.tex
 
-\subsection{Quotients of spheres}
+\subsection{General quotients}
 
 \subsubsection{}
 
@@ -22,7 +22,7 @@ is a well-defined metric on $\cX_G$.
 
 Let $r>0$.
 The action of a group $G$ on $\cX$ is an \defn{$r^*$-diameter action} if for any non-negative integer $k$, $\diam_{\cX_G}\{[x_0],\dots,[x_k]\}<r$ implies that there exist unique choice of $g_i$'s for $1\leq i\leq k$ such that $\diam_{\cX}\{x_0,g_1x_1,\dots,g_kx_k\}<r$.
-\anibal{Please finish this.
+\anibal{Please finish this. Why \(r \neq 0\)? Whats the quantifier: for all or there is?
 	\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. We should ask Liam Barham for permission to cite his unpublished work.}}
 
 \subsubsection{}\label{subsub:h}
@@ -43,29 +43,34 @@ Then, the map
 \end{align*}
 is an isomorphism of simplicial complexes.\anibal{\(r*\) does not imply proper?}
 
-\begin{proof}
-	Because $G$ acts by isometry, we have a well-defined map
-	\[
-	\tilde{h} \colon \VR_r\cX \to \VR_r(\cX_G)
-	\text{ with }
-	\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
-	\]
-	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r(\cX_G)$.
+%\begin{proof}
+%	Because $G$ acts by isometry, we have a well-defined map
+%	\[
+%	\tilde{h} \colon \VR_r\cX \to \VR_r(\cX_G)
+%	\text{ with }
+%	\sum_{i=1}^k \lambda_i x_i \mapsto \sum_{i=1}^k \lambda_i [x_i],
+%	\]
+%	Because two points in the same orbit of the $G$ action always have the same image under $\tilde{h}$, it induces a map $\tilde{h}_G \colon (\VR_r\cX)_G \to \VR_r(\cX_G)$.
+%
+%	Moreover, $\tilde{h}_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
+%	Therefore, $h$, the inverse of $\tilde{h}_G$, is also an isomorphism.
+%\end{proof}
 
-	Moreover, $\tilde{h}_G$ is an isomorphism, following from the fact that the action of $G$ on $\cX$ is an $r^*$-diameter action; see \cite[Proposition 3.5]{adams2022metric} for further details.
-	Therefore, $h$, the inverse of $\tilde{h}_G$, is also an isomorphism.
-\end{proof}
+\subsection{Quotients of spheres}
 
 \subsubsection{}\label{subsub:f}
 
-For any $r<\pi$, let $f$ be the composition
+Consider the composition
 \[
-f \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \xra{\pi} \bS^n,
+f_r \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \to \bS^n,
 \]
-where the first map sends a formal linear combination $\sum_i\lambda_i x_i$ in the Vietoris--Rips thickening\anibal{thickening?} $\VR_r(\bS^n)$ to the point $\sum_i\lambda_i x_i \in \bbR^{n+1}$ where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i = 1$, and the second map $\pi$ is the radial projection map.
+where the first map sends a formal linear combination $\sum_i\lambda_i x_i$ in the Vietoris--Rips complex $\VR_r(\bS^n)$ to the point $\sum_i\lambda_i x_i \in \bbR^{n+1}$
+%where $x_i \in \bS^n$ and $\lambda_i \in [0,1]$ satisfying $\sum_i\lambda_i = 1$,
+and the second map is the radial projection.
 
 \medskip\lemma
-When $0 < r < \zeta_n$, the map $f$ is a weak homotopy equivalence.\footnote{For $0 < r < \zeta_n$, the Vietoris--Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.\anibal{This comment should be something like: in ... a different map was used to show that ... (I guess is the inclusion) I am assuming that is the case, otherwise there would be no need for this proof.}}
+The map $f_r$ is well defined if $r < \pi$ and it is a homotopy equivalence when $0 < r < \zeta_n$.\anibal{why is r=0 excluded?}
+\footnote{For $0 < r < \zeta_n$, the Vietoris--Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.\anibal{This comment should be something like: in ... a different map was used to show that ... (I guess is the inclusion) I am assuming that is the case, otherwise there would be no need for this proof.}}
 
 \begin{proof}
 	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
@@ -79,20 +84,19 @@ When $0 < r < \zeta_n$, the map $f$ is a weak homotopy equivalence.\footnote{For
 	\[
 	\VR_r(\bS^n) \xrightarrow{g} \VR_r^m(\bS^n) \xrightarrow{f \circ g^{-1}} \bS^n.
 	\]
-	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f \circ g^{-1}$ is a homotopy equivalence, implying that $f = (f \circ g^{-1}) \circ g$ is a weak homotopy equivalence.
+	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f \circ g^{-1}$ is a homotopy equivalence, implying that $f = (f \circ g^{-1}) \circ g$ is a weak homotopy equivalence.\anibal{should be \(f_r\)}
 \end{proof}
 
-\subsubsection{}
-\label{subsub:rho}
-Let $f$ be the map defined in \cref{subsub:f}.
-Let $G$ be a group action on $\bS^n$ that commutes with $f$.
-Let $f_G \colon \VR_r(\bS^n)_G \to \bS^n_G$ be the induced map of $f$.
+\subsubsection{}\label{subsub:rho}
+
+A group action on \(\bS^n\) is said to be \defn{\(r\)-spherical} if it commutes with \(f_r\) as defined in \cref{subsub:f}.
+%Let $G$ be a group action on $\bS^n$ that commutes with $f$.
+%Let $f_G \colon \VR_r(\bS^n)_G \to \bS^n_G$ be the induced map of $f$.
 
 \medskip\lemma
 For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivalence
 \[
-\rho \defeq h \circ f_G
-\colon \VR_r(\bS^n)_G \to \bS^n_G.
+\rho \colon \VR_r(\bS^n)_G \xra{(f_r)_G} ? \xra{h} \bS^n_G.\anibal{the domain and target of \(h\) seem wrong}
 \]
 \begin{proof}
 	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
@@ -102,7 +106,9 @@ For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivale
 
 \subsubsection{}
 
-For $0<t\leq s \leq s'$, consider the following diagram of topological spaces:
+\anibal{I would only consider the first square. Furthermore, I would make its commutativity a property of the action that will be later verified for real projective spaces.}
+
+For $0 < t\leq s \leq s'$, consider the following diagram of topological spaces:
 \begin{equation}\label{d:fundamental_bars_diagram}
 	\begin{tikzcd}
 		\bS^{n-1}_G
@@ -169,6 +175,7 @@ In the lemma below, we show that all elements in the above matrix are bounded ab
 
 \medskip\lemma
 If $\delta_1 \leq \dots \leq \delta_n$, then $\beta_{\degp}^{n} \leq \delta_n$ for any $1 \leq m \leq n$.
+\anibal{DO you need the inequalities on the deltas? I guess this can be stated using the \(\max\)}
 
 \begin{proof}
 	We will use an induction argument on $n$.
