@@ -1,8 +1,8 @@
 % !TEX root = ../vr_st.tex
 
-\section{Persistence theory}
+\section{Persistence and metric spaces}
 
-We recall some notions underpinning the theory of persistence.
+%We recall some notions underpinning the theory of persistence.
 %We also fix a field $\kk$ and write $\Vec$ for the category of vector spaces over $\kk$.
 
 \subsection{$\R$-diagrams}
@@ -194,7 +194,7 @@ An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomol
 %The correspondence between the homology and cohomology constructions is a consequence of the universal coefficient theorem and holds in general.
 %To relate absolute and relative constructions, one also needs that the natural maps $\colim \rH_k(X_r) \to \rH_k(\colim X_r) \to \lim \rH_k(\colim X_r, X)$ be isomorphisms for every $k$.}
 
-\subsection{Metric spaces}
+\subsection{Vietoris--Rips complexes}
 
 \subsubsection{}
 
@@ -219,15 +219,16 @@ The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metri
 \[
 \dgh(\cX, \cY) = \inf_{\cZ, \varphi, \psi} \set[\Big]{d_\rH\big(\varphi(\cX), \psi(\cY)\big)},
 \]
-where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_H$ denotes the Hausdorff distance.\footnote{
-The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
-}
+where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_H$ denotes the Hausdorff distance.
+%\footnote{
+%The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
+%}
 
 \medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.
 Then, for any $k \in \N,$
 \[
-\di(\rH_k(\VR(\cX)), \rH_k(\VR(\cY))) \leq
-\dhi(\VR(\cX), \VR(\cY)) \leq
+\di\big(\rH_k(\VR(\cX)), \rH_k(\VR(\cY))\big) \leq
+\dhi\big(\VR(\cX), \VR(\cY)\big) \leq
 2 \cdot \dgh(\cX, \cY).
 \]
 
@@ -235,14 +236,28 @@ Then, for any $k \in \N,$
 	These inequalities follow from Theorem.~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.
 \end{proof}
 
+\subsection{Filling radii}\anibal{Reorganize this discussion}
+
 \subsubsection{}\label{ss:filling_radius}
 
 Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
 Let $U_\epsilon(\cX)$ denote the $\epsilon$-neighborhood of $\cX$ in $L^\infty(\cX)$.
-It follows from \cite[Theorem.4.1]{lim2020vietoris} that $\VR_{2\bullet}(\cX)$ and $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
 
-For an $n$-dimensional Riemannian manifold $\cM$, its \defn{filling radius} is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\opH_n(M;\mathbb{Z})$ is mapped to zero under the induced map of the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$ \cite[page 108]{gromov2007metric}.
-In a similar way, one can define the filling radius over $\k$, denoted \(\fillrad[\kk]{\cM}\).
+\medskip\lemma $\VR_{2\bullet}(\cX)$ and $U_\bullet(\cX)$ are homotopy equivalent. \anibal{Maybe state this for \(r\) and say they are naturally homotopy equivalent}
+
+\begin{proof}
+	It follows from \cite[Theorem.4.1]{lim2020vietoris}.\anibal{Maybe say more.}
+\end{proof}
+
+\subsubsection{}
+
+Following \cite{gromov1983filling}, the \defn{filling radius} of a closed orientable $n$-manifold $\cM$ equipped with a metric is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$.
+The filling radius of non-orientable manifolds is defined similarly using \(\Z/2\) coefficients.
 
 \medskip\lemma(\cite[Prop.9.28]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillradnofield{\cM})\) for arbitrary field if $M$ is orientable, and for mod $2$ coefficients in general.
 Moreover, this is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
+\anibal{Geodesic distance? That is why assuming Riemannian and not giving a metric}
+
+\subsubsection{}
+
+\lemma Filling radius is increased by decreasing functions.\anibal{State well and cite \cite{gromov1983filling}}

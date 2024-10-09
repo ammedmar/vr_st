@@ -19,12 +19,20 @@ The \defn{first critical value} of a persistence module which is \(0\) for negat
 Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of \(\img\theta\) and \(\ker\theta\) for any linear cohomology operation $\theta$.
 In addition, all these critical values are bounded above by $R$.
 
-\subsubsection{}
-\ling{label and reference (may write it as a lemma) or remove; make correct assumptions on $\cX$.}
+\subsubsection{}\label{l:crit_val and fill_rad 1}
 
-Let $\cX$ be an $n$-dimensional manifold.
-Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
-By the definition of the filling radius, it follows that the first critical value of the $n^\th$ homology of $\VR(\cX)$ is at most $2\fillradnofield{\cX}$.\anibal{I don't think this fragment is doing much. I would remove it if not referenced anywhere below.}
+\lemma Let $\cX$ be a closed $n$-manifold which is orientable with \(\k\)-coefficients.
+If \(\beta_n\) denotes the first critical value of \(\rH_n(\VR(\cX); \k)\) then
+\[
+\beta_m \leq 2 \cdot \fillrad(\cX; \k).
+\]
+
+\begin{proof}
+	This follows directly from the lemma in \cref{ss:filling_radius}.
+\end{proof}
+
+%\medskip Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
+%By the definition of the filling radius, it follows that the first critical value of the $n^\th$ homology of $\VR(\cX)$ is at most $2\fillradnofield{\cX}$.
 
 \subsubsection{}\label{subsub:barcode_general}
 

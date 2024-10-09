@@ -1,10 +1,9 @@
 % !TEX root = ../vr_st.tex
 
-\subsection{Spheres}\label{ss:Sn}\label{subsub:critical values of Sn}
+\subsection{Spheres and their wedge sum }\label{ss:Sn}\label{subsub:critical values of Sn}
 
-For any integer $n \geq 1$ and real number $r > 0$, let $\bS^n(r)$ be the \defn{$n$-sphere} of radius $r$ centered at the origin of $\R^{n+1}$.
-We consider it equipped with the geodesic distance.
-We simplify notation writing \(\bS^n\) instead of \(\bS^n(1)\).
+For any integer $n \geq 1$ and real number $\rho > 0$, let $\bS^n(\rho)$ be the \defn{$n$-sphere} of radius $\rho$ centered at the origin of $\R^{n+1}$.
+We consider it equipped with the geodesic distance and simplify notation writing \(\bS^n\) instead of \(\bS^n(1)\).
 
 %We apply the notations and results from \cref{sub:general_barcodes} to the Vietoris--Rips complexes of $\bS^n$ with $R = \pi$ the diameter of the sphere.
 %Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with \(\ell \neq \degp\).
@@ -35,7 +34,7 @@ where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homolo
 		Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
 	This implies $\alpha=\zeta_n$.
 
-	(2) According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\).
+	(2) According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\).\anibal{I read this claim in Gromov \cite{gromov1983filling}}.
 	From \cref{ss:filling_radius}, it follows that \((0, \zeta_n)\) is a bar in the \(n^{\text{th}}\) reduced homology of \(\VR (\bS^n)\).
 	Thus, \(\beta_n \leq \zeta_n\).
 	On the other hand, since \(\beta_n \geq \alpha = \zeta_n\), we conclude that \(\beta_n = \zeta_n\).\anibal{missing the \(\degp \neq n\) \ling{it is included in the next paragraph}} case.
@@ -63,8 +62,6 @@ Applying these facts, along with the above proposition, to the results in \cref{
 		% 	We remark that for any \(n \in \N\) the value \(\zeta_n\) is bounded below by \(\pi/2\).}
 	% 	\label{fig:Sk}
 	% \end{figure}
-
-\subsection{Wedge sum of spheres}
 
 %\subsubsection{}
 
