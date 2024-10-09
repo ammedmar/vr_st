@@ -23,7 +23,7 @@ Then:
 \qquad
 \mathrm{(3)}\ \gamma_\theta = 0,
 \]
-where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homology is better to consider in this whole section, no?}
+where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homology is better to consider in this whole section, no? \ling{yes.}}
 
 \begin{proof}
 	(1) Recall from \cite[Thm.~7.1]{lim2020vietoris} that for any $0 < r \leq \zeta_n$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$, and the homotopy type of $\VR_r(\bS^n)$ changes at $\zeta_n$.\footnote{
@@ -38,16 +38,20 @@ where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homolo
 	(2) According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\).
 	From \cref{ss:filling_radius}, it follows that \((0, \zeta_n)\) is a bar in the \(n^{\text{th}}\) reduced homology of \(\VR (\bS^n)\).
 	Thus, \(\beta_n \leq \zeta_n\).
-	On the other hand, since \(\beta_n \geq \alpha = \zeta_n\), we conclude that \(\beta_n = \zeta_n\).\anibal{missing the \(\degp \neq n\)} case.
+	On the other hand, since \(\beta_n \geq \alpha = \zeta_n\), we conclude that \(\beta_n = \zeta_n\).\anibal{missing the \(\degp \neq n\) \ling{it is included in the next paragraph}} case.
 
-	(3) The remaining parts of the proposition follow from the fact that the initial space in the filtration has trivial $\degp^{\th}$ homology for $1\leq \degp \neq n$ and trivial $\theta$ cohomology operations for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).\anibal{I did not touch this proof. The statement us already strange. \(\gamma_\theta = 0\) means that at \((0,0)\) appears in the barcode. Is that what you mean?}
+ \ling{Move the $m\neq n$ part to (2). In (3) say it is similar.}
+
+	(3) The remaining parts of the proposition follow from the fact that the initial space in the filtration has trivial $\degp^{\th}$ homology for $1\leq \degp \neq n$ and trivial $\theta$ cohomology operations for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).\anibal{I did not touch this proof. The statement us already strange. \(\gamma_\theta = 0\) means that at \((0,0)\) appears in the barcode. Is that what you mean? \ling{Nope. It means no bars are born at $0$.}}
 \end{proof}
 
 \subsubsection{}
 
 For any \(m \geq 1\), \(\dim \opH_\degp(\bS^n)\) is one for \(\degp = n\) and zero otherwise.
 For any \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\theta_{\bS^n}\) is trivial.
-Applying these facts, along with the above proposition, to the results in \cref{sub:general_barcodes}, we obtain barcode estimates for \(\bS^n\).\anibal{I think this SS is redundant if the general estimates are well written.}
+Applying these facts, along with the above proposition, to the results in \cref{sub:general_barcodes}, we obtain barcode estimates for \(\bS^n\).\anibal{I think this SS is redundant if the general estimates are well written.\ling{I think it is necessary to show how the barcodes of spheres and rpn look like, to facilitate the reading of the distance estimates.}}
+
+\ling{use reduced homology and reference to other results; improve the paragraph.}
 
 % Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR\bS^n}$ or $\ker\theta_{\VR\bS^n}$ is dominated by $(\zeta_n,\pi)$.
 
@@ -78,8 +82,8 @@ Using the homotopy equivalence between the Vietoris--Rips filtration of a metric
 \end{split}
 \]
 
-Therefore, both the homology barcodes and \(\img_\theta\)-barcodes of \(\VS^{\ell_1, \dots, \ell_n}\) can be obtained by taking appropriate unions of the corresponding barcodes of \(\bS^1, \dots, \bS^n\).
-To facilitate the bottleneck distance estimates in later sections, we illustrate the barcode estimates for the wedge sum of spheres in \cref{fig:barcodes_vs}.\anibal{More needs to be said in words. What does ``appropriate unions'' means? I also think the monotonicity of \(\zeta_n\) wrt \(n\) is important, no?}
+Therefore, both the homology barcodes and \(\img_\theta\)-barcodes of \(\VS^{\ell_1, \dots, \ell_n}\) are the multiset unions of the corresponding barcodes of \(\bS^1, \dots, \bS^n\); see \cref{fig:barcodes_vs}.
+%To facilitate the bottleneck distance estimates in later sections, we illustrate the barcode estimates for the wedge sum of spheres in \cref{fig:barcodes_vs}.\anibal{More needs to be said in words. What does ``appropriate unions'' means? I also think the monotonicity of \(\zeta_n\) wrt \(n\) is important, no? \ling{It means taking unions degree-wise. I guess this is apparent, so I removed the word `appropriate'. The monotonicity does not really matter.}}
 
 % $\rH_\degp(\VS^{\ell_1,\dots,\ell_n})$ contains $\ell_\degp$ copies of $(0,\zeta_\degp)$.
 % All remaining bars in this barcode must be dominated by $(\zeta_n, \pi)$.
@@ -92,7 +96,7 @@ To facilitate the bottleneck distance estimates in later sections, we illustrate
 	\input{sec/fig_barcodes_spheres}
 	\caption{Let $\VS = \VS^{\ell_1,\dots,\ell_n}$ for some tuple of non-negative integers.
 		\emph{Top row:} persistent homology barcodes of $\VS$, where the dot $(0,\zeta_m)$ has multiplicity $\ell_m$.
-		\emph{Bottom row:} $\theta$-barcodes of $\VS$ where $\theta \in \cO(\ell,m)$ is any linear cohomology operation with \(\ell \neq m\).}
+		\emph{Bottom row:} $\theta$-barcodes of $\VS$ where $\theta \in \cO(\ell,m)$ is any linear cohomology operation with \(\ell \neq m\).
+        In each figure, the gray region represents where additional bars could exist within the corresponding barcode.}
 	\label{fig:barcodes_vs}
-	\anibal{Meaning of gray area missing.}
 \end{figure}

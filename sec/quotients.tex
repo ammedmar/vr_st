@@ -19,9 +19,9 @@ d_{\cX_G}\big([x], [x']\big) \defeq \inf_{g\in G} d_\cX(x, g\cdot x')
 is a well-defined metric on $\cX_G$.
 
 The action of a group $G$ on $\cX$ is said to be \defn{$r^*$-diameter}, where $r > 0$, if for any non-negative integer $k$, the condition $\diam_{\cX_G}\set[\big]{[x_0],\dots,[x_k]} < r$ implies the existence of a unique choice of $g_i$ for each $i \in \set{1,\dots,k}$ such that $\diam_{\cX}\set{x_0, g_1x_1, \dots, g_kx_k} < r$.
-\anibal{Please finish this. Why \(r \neq 0\)? Whats the quantifier: for all or there is?
-	\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. We should ask Liam Barham for permission to cite his unpublished work.}}
-\anibal{I ask this below, but here is the appropriate place to answer: Does \(r^*\)-diam imply proper?}
+% \anibal{Please finish this. Why \(r \neq 0\)? Whats the quantifier: for all or there is?
+% 	\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. We should ask Liam Barham for permission to cite his unpublished work.}}
+% \anibal{I ask this below, but here is the appropriate place to answer: Does \(r^*\)-diam imply proper?}
 
 \subsubsection{}\label{subsub:h}
 
@@ -36,10 +36,9 @@ With respect to this action there is an induced map on orbit spaces given by
 	\tilde h_r \colon \VR_r(\cX_G) &\to \VR_r(\cX)_G \\
 	\textstyle\sum\lambda_i [x_i] &\mapsto \textstyle \big[\sum\lambda_i x_i\big].
 \end{align*}
-If the action proper and by isometries as well as \(t^*\)-diameter, then for any \(s < t\), this map is a simplicial isomorphism.
+If the action is proper and by isometries as well as \(t^*\)-diameter, then for any \(s < t\), this map is a simplicial isomorphism\ling{verify. should it be a homomorphism. And use the footnote to mention the original proof is for the inverse direction.}. 
 This result was initially stated in \cite[Prop.~3.5]{adams2022metric} under a weaker assumption than the \(t^*\)-diameter condition.
 A counterexample to the original statement, as well as a proof of the corrected version, were provided by Liam Barham \cite{bibid}.
-
 
 %, we include a proof sketch below for clarity.\anibal{Is the inverse map, the \(\tilde h\), ever used? I think the proof sketch does not add clarity. I would remove it.}
 
@@ -70,45 +69,45 @@ f_r^n \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \to \bS^n
 \]
 be the composition of the map sending a formal linear combination $\sum\lambda_i x_i$ to the point \(\sum\lambda_i x_i\) in \(\bbR^{n+1}\) and the map sending a point in \(\R^{n+1} \setminus \set{0}\) to its radial projection.\anibal{I would like a comment about why this is well defined.}
 
-A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{admissible} if it commutes with \(f_r^n\) and the induced quotient,
+A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{admissible} if, for each $0 < r < \zeta_n$ it commutes with \(f_r^n\) and the induced map
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G,
 \]
-is a weak equivalence for $r < \zeta_n$.\anibal{why was \(r=0\) excluded?}
+is a weak equivalence.\anibal{why was \(r=0\) excluded? \ling{Because we consider open Vietoris-Rips.}}
 
 \medskip\lemma
 %The map $f_r^n$ is well defined if $r < \pi$ and it is a homotopy equivalence when $0 < r < \zeta_n$.
 The trivial action is admissible.\anibal{The word admissible is overused in mathematics. I am using it as a place holder until finding a better one.}
-\footnote{For $0 < r < \zeta_n$, the Vietoris--Rips complex $\VR_r(\bS^n)$ is indeed homotopic to $\bS^n$, as shown in \cite[Theorem 7.1]{lim2020vietoris}.\anibal{This comment should be something like: in ... a different map was used to show that ... (I guess is the inclusion) I am assuming that is the case, otherwise there would be no need for this proof.}}
+\footnote{The fact that for $0 < r < \zeta_n$ the spaces $\VR_r(\bS^n)$ and $\bS^n$ are homotopy equivalent was shown in \cite[Theorem 7.1]{lim2020vietoris} using the filtered homotopy equivalence between the Vietoris-Rips filtration and the Kuratowski filtration. Our claim is that $f_r^n$ is a weak equivalence.}
 
 \begin{proof}
 	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
 
 	The Vietoris--Rips thickening $\VR_r^m\cX$ of a metric space $\cX$ at a given scale $r$ is defined as the set of convex linear combinations of the Dirac probability measures $\delta_{x}$ on points $x \in X$, equipped with the $1$-Wasserstein metric.
-	There is a set bijection from $g \colon \VR_r\cX \to \VR_r^m\cX$, given by $\sum \lambda_i x_i \mapsto \sum \lambda_i \delta_{x_i}.$
+	There is a set bijection from $g_r \colon \VR_r\cX \to \VR_r^m\cX$, given by $\sum \lambda_i x_i \mapsto \sum \lambda_i \delta_{x_i}.$
 	%As this object is not the center of the discussion here, we omit the details and only state the related results here.
-	It is shown in \cite[Theorem 1]{gillespie2024vietoris} that (for open Vietoris--Rips complexes) the natural bijection $g$ is a weak homotopy equivalence.\anibal{What is the word open doing? How does it relate to our definition. If our definition is open, the the word should be removed.}
+	It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijection $g_r$ is a weak homotopy equivalence.
 
-	In the case of $\cX = \bS^n$, the map $f$ is the composition of two maps
+	In the case of $\cX = \bS^n$, the map $f_r^n$ is the composition of two maps
 	\[
-	\VR_r(\bS^n) \xrightarrow{g} \VR_r^m(\bS^n) \xrightarrow{f \circ g^{-1}} \bS^n.
+	\VR_r(\bS^n) \xrightarrow{g_r} \VR_r^m(\bS^n) \xrightarrow{f_r^n \circ g_r^{-1}} \bS^n.
 	\]
-	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f \circ g^{-1}$ is a homotopy equivalence, implying that $f = (f \circ g^{-1}) \circ g$ is a weak homotopy equivalence.\anibal{should be \(f_r^n\)}
+	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f_r^n \circ g_r^{-1}$ is a homotopy equivalence, implying that $f_r^n = (f_r^n \circ g_r^{-1}) \circ g_r$ is a weak homotopy equivalence.\anibal{should be \(f_r^n\)}
 \end{proof}
 
 \anibal{The commented out stuff below is not clear to me. A equivariant map inducing a weak equivalence is not necessarily a weak equivalence on orbits. I added the conclusion to the definition of admissible action}
-%\subsubsection{}\label{subsub:rho}
-%
-%\medskip\lemma
-%For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivalence
-%\[
-%\rho \colon \VR_r(\bS^n)_G \xra{(f_r^n)_G} ? \xra{h} \bS^n_G.\anibal{the domain and target of \(h\) seem wrong}
-%\]
-%\begin{proof}
-%	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
-%	Then, because $G$ is a group action on $\bS^n$ preserved by $f$, the induced map $f_G$ is also a weak homotopy equivalence.
-%	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.\anibal{Homo? not iso?}
-%\end{proof}
+% \subsubsection{}\label{subsub:rho}
+
+% \medskip\lemma
+% For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivalence
+% \[
+% \rho \colon \VR_r(\bS^n)_G \xra{(f_r^n)_G} ? \xra{h} \bS^n_G.\anibal{the domain and target of \(h\) seem wrong}
+% \]
+% \begin{proof}
+% 	By \cref{subsub:f}, the map $f$ is a weak homotopy equivalence when $0<r<\zeta_n$.
+% 	Then, because $G$ is a group action on $\bS^n$ preserved by $f$, the induced map $f_G$ is also a weak homotopy equivalence.
+% 	Furthermore, as the map $h$ (defined in \cref{subsub:h}) is a homomorphism, its composition with $f_G$ is a weak homotopy equivalence.\anibal{Homo? not iso?}
+% \end{proof}
 
 \subsubsection{}
 
@@ -138,15 +137,15 @@ Similarly, if \(\rC_m\) is the multiplicative subgroup of \(\bC\) defined by the
 We say that a \(G\)-action on an equatorial system is \defn{admissible} if the \(G\)-action on each \(\bS^{n_i}\) is admissible and the following diagram commutes:
 \[
 \begin{tikzcd}
-	\VR_r(\bS^{n_i}_G)
+	\VR_r(\bS^{n_i})_G
 	\ar[d, hook, "{\VR_r(\iota)}" left]
-	\ar[r, "\tilde f_r" above]
+	\ar[r, "\tilde f_r^{{n_i}}" above]
 	&
 	\bS^{n_i}_G
 	\ar[d, hook, "\iota"]
 	\\
-	\VR_r(\bS^{n_{i+1}}_G)
-	\ar[r, "\tilde f_r" above]
+	\VR_r(\bS^{n_{i+1}})_G
+	\ar[r, "\tilde f_r^{n_{i+1}}" above]
 	&
 	\bS^{n_{i+1}}_G.
 \end{tikzcd}
@@ -159,6 +158,8 @@ We say that a \(G\)-action on an equatorial system is \defn{admissible} if the \
 \anibal{I don't know what you are proving below. Also, the commutativity with \(\tilde h\) should be immediate, at least on a range. Maybe the lemma below is what you want to use your proof for?}
 
 \lemma Both actions, \(\rC_2\) on \(\bS^0 \to \bS^1 \to \bS^2 \to \dotsb\) and \(\rC_m\) on \(\bS^1 \to \bS^3 \to \bS^5 \to \dotsb\), are admissible.
+
+\ling{verify.}
 
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -241,7 +242,8 @@ In the lemma below, we show that all elements in the above matrix are bounded ab
 
 \medskip\lemma
 If $\delta_1 \leq \dots \leq \delta_n$, then $\beta_{\degp}^{n} \leq \delta_n$ for any $1 \leq m \leq n$.
-\anibal{DO you need the inequalities on the deltas? I guess this can be stated using the \(\max\)}
+\anibal{DO you need the inequalities on the deltas? I guess this can be stated using the \(\max\). \ling{The inequality is needed in the proof. To build the commutative diagram, the top right index needs to be smaller than the bottom right index.}}
+\ling{change $\beta_{\degp}^{n}$}
 
 \begin{proof}
 	We will use an induction argument on $n$.

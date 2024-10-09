@@ -10,7 +10,9 @@
 
 Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r \geq R$ for some real number $R$.
 The Vietoris--Rips complex of a metric space is our primary example.
-The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$.
+The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughtout the paper that the filtration is open Vietoris-Rips.}
+
+\ling{use reduced homology.}
 
 The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that \((0, \beta)\) appears as a bar in the barcode of the persistence module.\anibal{Careful with the open vs closed interval here}
 
@@ -18,6 +20,7 @@ Clearly, the first critical value of an $\R$-space is bounded above by the first
 In addition, all these critical values are bounded above by $R$.
 
 \subsubsection{}
+\ling{label and reference (may write it as a lemma) or remove; make correct assumptions on $\cX$.}
 
 Let $\cX$ be an $n$-dimensional manifold.
 Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
@@ -29,12 +32,15 @@ Let $X$ be an $\R$-space as before.
 Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation.
 We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\theta$ the first critical values of $X$, \(\rH_\degp(X)\), and \(\img_\theta(X)\).\anibal{It should be \(\gamma_\theta\) not \(\gamma_\degp\).
 	Additionally, We should talk about \(\img_\theta\)-barcodes not \(\theta\)-barcodes since this analysis is not been carried through for \(\ker_\theta\). Or is it?}
+ \ling{Follow this convention and unify notation.}
 
 Because the $\R$-space $X$ is empty for \(r < 0\) and the homotopy type of $X_r$ remains unchanged for $r \in [0, \alpha)$, bars in \(\barc \rH_\degp(X)\) and $\barc\img_\theta(X)$ either start at $0$ or start after $\alpha$.
 
 %In addition, for degrees $\degp$ such that $\rH_\degp(X_0)$ is non-trivial, the barcode of the $\degp^\th$ homology of $X$ always contains $(0,\beta_\degp)$.
 %More precisely,
 Furthermore, if \(k = \dim \opH_\degp(X_0) > 0\) then the $\barc\rH_\degp X$ contains $(0,\beta_m)$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+
+\ling{continue editting}
 
 if ...
 
@@ -50,6 +56,6 @@ Please consult \cref{fig:barcodes_general} for a depiction of these four barcode
 	\centering
 	\input{sec/fig_barcodes_general}
 	\caption{In each figure the gray region represents where additional bars could potentially exist within the corresponding barcode.}
-	\anibal{Instead of additional points I would use a gray region in the y axis.}
+	\anibal{Instead of additional points I would use a gray region in the y axis. \ling{Done.}}
 	\label{fig:barcodes_general}
 \end{figure}
