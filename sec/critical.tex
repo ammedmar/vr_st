@@ -8,27 +8,34 @@
 
 \subsubsection{}\label{subsub:first_critical_value}\label{subsub:beta v.s. fillrad}
 
-Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r \geq R$ for some real number $R$.
-The Vietoris--Rips complex of a metric space is our primary example.
-The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughtout the paper that the filtration is open Vietoris-Rips.}
+Let \(\cX\) be a metric space.
+%Let $X$ be an $\R$-space where $X_r$ is empty for $r \leq 0$ and contractible for $r \geq R$ for some real number $R$.
+%The Vietoris--Rips complex of a metric space is our primary example.
+%The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughtout the paper that the filtration is open Vietoris-Rips.}
+The \defn{first critical value} of \(\cX\), denoted \(\crit(\cX)\), is the supremum among real numbers $r$ such that $\VR_{s,t}(\cX)$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughout the paper that the filtration is open Vietoris-Rips.}
 
-\ling{use reduced homology.}
+Let us fix a field which we suppress from the notation.
+For any \(m \in \N\), .... \anibal{define \(\crit_m(\cX)\) just as before using reduced homology. Do not use bars, since we are not assuming it is q-tame}
 
-The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that \((0, \beta)\) appears as a bar in the barcode of the persistence module.\anibal{Careful with the open vs closed interval here}
+Similarly, consider \(\theta \in \cO(\ell, m)\), \anibal{define \(\crit_\theta(\cX)\) as before}
 
-Clearly, the first critical value of an $\R$-space is bounded above by the first critical value of its $\degp^\th$ homology, as well as that of \(\img\theta\) and \(\ker\theta\) for any linear cohomology operation $\theta$.
-In addition, all these critical values are bounded above by $R$.
+%The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that \((0, \beta)\) appears as a bar in the barcode of the persistence module.\anibal{Careful with the open vs closed interval here}
+%
+%\ling{use reduced homology.}
+
+Clearly, \(\crit(\cX)\) is bounded above by \(\crit_m(\cX)\) and \(\crit_\theta(\cX)\).
+In addition, all of these are bounded above by $R$.\anibal{Use this notation instead of \(\alpha, \beta, \gamma\)} \anibal{What is \(R\) in terms of \(\cX\)?}
 
 \subsubsection{}\label{l:crit_val and fill_rad 1}
 
-\lemma Let $\cX$ be a closed $n$-manifold which is orientable with \(\k\)-coefficients.
-If \(\beta_n\) denotes the first critical value of \(\rH_n(\VR(\cX); \k)\) then
+\lemma For a connected closed $n$-manifold $\cM$ we have
+%If \(\beta_n\) denotes the first critical value of \(\rH_n(\VR(\cX); \k)\) then
 \[
-\beta_m \leq 2 \cdot \fillrad(\cX; \k).
+\crit_m(\cM) \leq 2 \cdot \fillrad(\cM).
 \]
 
 \begin{proof}
-	This follows directly from the lemma in \cref{ss:filling_radius}.
+	This follows directly from the lemma in \cref{ss:filling_radius}. \anibal{Improve please}
 \end{proof}
 
 %\medskip Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.

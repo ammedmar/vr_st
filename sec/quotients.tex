@@ -12,11 +12,11 @@ We say the action of $G$ is \defn{proper} if, for every $x \in \cX$, there is so
 We say $G$ \defn{acts by isometries} on $\cX$, if the map $g \colon \cX \to \cX$ is an isometry for very $g \in G$.
 
 Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
-Then the \defn{quotient metric}
+Then the \defn{quotient metric}, defined by
 \[
-d_{\cX_G}\big([x], [x']\big) \defeq \inf_{g\in G} d_\cX(x, g\cdot x')
+d_{\cX_G}\big([x], [x']\big) = \inf_{g \in G} d_\cX(x, g \cdot x'),
 \]
-is a well-defined metric on $\cX_G$.
+is well-defined on $\cX_G$.
 
 The action of a group $G$ on $\cX$ is said to be \defn{$r^*$-diameter}, where $r > 0$, if for any non-negative integer $k$, the condition $\diam_{\cX_G}\set[\big]{[x_0],\dots,[x_k]} < r$ implies the existence of a unique choice of $g_i$ for each $i \in \set{1,\dots,k}$ such that $\diam_{\cX}\set{x_0, g_1x_1, \dots, g_kx_k} < r$.
 % \anibal{Please finish this. Why \(r \neq 0\)? Whats the quantifier: for all or there is?
@@ -61,47 +61,20 @@ A counterexample to the original statement, as well as a proof of the corrected 
 
 \subsection{Quotients of spheres}
 
-\subsubsection{}\label{subsub:f}
-
-For \(n \in \N\) and \(r < \pi\) let
-\[
-f_r^n \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \to \bS^n
-\]
-be the composition of the map sending a formal linear combination $\sum\lambda_i x_i$ to the point \(\sum\lambda_i x_i\) in \(\bbR^{n+1}\) and the map sending a point in \(\R^{n+1} \setminus \set{0}\) to its radial projection.\anibal{I would like a comment about why this is well defined.}
-
 \subsubsection{}
 
-A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{admissible} if, for each $0 < r < \zeta_n$ it commutes with \(f_r^n\) and the induced map
+A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{\(\VR\)-compatible} if, for each $r \in (0, \zeta_n)$, it commutes with the \(\VR_r(\bS^n)\)-projection and the induced map
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G,
 \]
-is a weak equivalence.\anibal{why was \(r=0\) excluded? \ling{Because we consider open Vietoris-Rips.}}
+is a weak equivalence.
+For example, the trivial action is \(\VR\)-compatible.
 
-\medskip\lemma
-%The map $f_r^n$ is well defined if $r < \pi$ and it is a homotopy equivalence when $0 < r < \zeta_n$.
-The trivial action is admissible.\anibal{The word admissible is overused in mathematics. I am using it as a place holder until finding a better one.}
-\footnote{The fact that for $0 < r < \zeta_n$ the spaces $\VR_r(\bS^n)$ and $\bS^n$ are homotopy equivalent was shown in \cite[Theorem 7.1]{lim2020vietoris} using the filtered homotopy equivalence between the Vietoris-Rips filtration and the Kuratowski filtration. Our claim is that $f_r^n$ is a weak equivalence.}
-
-\begin{proof}
-	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
-
-	The Vietoris--Rips thickening $\VR_r^m\cX$ of a metric space $\cX$ at a given scale $r$ is defined as the set of convex linear combinations of the Dirac probability measures $\delta_{x}$ on points $x \in X$, equipped with the $1$-Wasserstein metric.
-	There is a set bijection from $g_r \colon \VR_r\cX \to \VR_r^m\cX$, given by $\sum \lambda_i x_i \mapsto \sum \lambda_i \delta_{x_i}.$
-	%As this object is not the center of the discussion here, we omit the details and only state the related results here.
-	It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijection $g_r$ is a weak homotopy equivalence.
-
-	In the case of $\cX = \bS^n$, the map $f_r^n$ is the composition of two maps
-	\[
-	\VR_r(\bS^n) \xrightarrow{g_r} \VR_r^m(\bS^n) \xrightarrow{f_r^n \circ g_r^{-1}} \bS^n.
-	\]
-	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f_r^n \circ g_r^{-1}$ is a homotopy equivalence, implying that $f_r^n = (f_r^n \circ g_r^{-1}) \circ g_r$ is a weak homotopy equivalence.\anibal{should be \(f_r^n\)}
-\end{proof}
-
-\anibal{The commented out stuff below is not clear to me. A equivariant map inducing a weak equivalence is not necessarily a weak equivalence on orbits. I added the conclusion to the definition of admissible action}
+\anibal{The commented out stuff below is not clear to me. A equivariant map inducing a weak equivalence is not necessarily a weak equivalence on orbits. I added the conclusion to the definition of \(\VR\)-compatible action}
 % \subsubsection{}\label{subsub:rho}
 
 % \medskip\lemma
-% For any $0 < r < \zeta_n$, the following composition is a weak homotopy equivalence
+% For any $r \in (0, \zeta_n)$, the following composition is a weak homotopy equivalence
 % \[
 % \rho \colon \VR_r(\bS^n)_G \xra{(f_r^n)_G} ? \xra{h} \bS^n_G.\anibal{the domain and target of \(h\) seem wrong}
 % \]
@@ -124,7 +97,7 @@ For example, the real and complex equatorial systems
 \quad\text{and}\quad
 \bS^1 \to \bS^3 \to \bS^5 \to \dotsb
 \]
-are induced respectively by the canonical inclusions
+are respectively defined by the canonical inclusions
 \[
 \R \to \R^2 \to \R^3 \to \dotsb
 \quad\text{and}\quad
@@ -133,23 +106,22 @@ are induced respectively by the canonical inclusions
 
 \subsubsection{}
 
-A \(G\)-action on an equatorial system consists of a \(G\)-action on each \(\bS^{n_i}\) commuting with the equatorial inclusions.
+A \defn{\(G\)-action} on an equatorial system consists of a \(G\)-action on each sphere commuting that commutes with the isometric embeddings.
+For example, the group \(\rC_2 = \set{1,-1} \subset \R\) acts antipodally on the real equatorial system.
+Similarly, for \(n \in \N\), the multiplicative subgroup \(\rC_m\) of \(\bC\) defined by the \(m\)-roots of unity acts on the complex equatorial system.
 
-For example, \(\rC_2 = \set{1,-1} \subset \R\) acts antipodally on the equatorial system \(\bS^0 \to \bS^1 \to \bS^2 \to \dotsb\).
-Similarly, if \(\rC_m\) is the multiplicative subgroup of \(\bC\) defined by the \(m\)-roots of unity, \(\rC_m\) acts on the equatorial system \(\bS^1 \to \bS^3 \to \bS^5 \to \dotsb\) by acting on each coordinate of every sphere.
-
-We say that a \(G\)-action on an equatorial system is \defn{admissible} if the \(G\)-action on each \(\bS^{n_i}\) is admissible and the following diagram commutes:
+We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\):
 \[
 \begin{tikzcd}
 	\VR_r(\bS^{n_i})_G
-	\ar[d, hook, "{\VR_r(\iota)}" left]
-	\ar[r, "\tilde f_r^{{n_i}}" above]
+	\ar[d]
+	\ar[r, "\tilde f_{\,r}^{\,n_i}" above]
 	&
 	\bS^{n_i}_G
-	\ar[d, hook, "\iota"]
+	\ar[d]
 	\\
 	\VR_r(\bS^{n_{i+1}})_G
-	\ar[r, "\tilde f_r" above]
+	\ar[r, "\tilde f_{\,r}^{\,n_{i+1}}" above]
 	&
 	\bS^{n_{i+1}}_G.
 \end{tikzcd}
@@ -159,61 +131,61 @@ We say that a \(G\)-action on an equatorial system is \defn{admissible} if the \
 %\rho_r^n \colon \VR_r(\bS^n)_G \xra{\tilde h_r} \VR_r(\bS^n)_G \xra{\tilde f_r^n} \bS^n_G.
 %\]
 
-\anibal{I don't know what you are proving below. Also, the commutativity with \(\tilde h\) should be immediate, at least on a range. Maybe the lemma below is what you want to use your proof for?}
+\anibal{I don't know what you are proving in the hidden text below. Also, the commutativity with \(\tilde h\) should be immediate, at least on a range. Maybe the lemma below is what you want to use your proof for?}
 
-\lemma Both actions, \(\rC_2\) on \(\bS^0 \to \bS^1 \to \bS^2 \to \dotsb\) and \(\rC_m\) on \(\bS^1 \to \bS^3 \to \bS^5 \to \dotsb\), are admissible.
+\lemma The \(\rC_2\)-action on the real equatorial system and the \(\rC_m\)-action on the complex one are \(\VR\)-compatible for every \(m \in \N\).
 
 \ling{verify.}
 
 \noindent\rule{\textwidth}{0.4pt}
 
-For $0 < t\leq s \leq s'$, consider the following diagram of topological spaces:
-\begin{equation}\label{d:fundamental_bars_diagram}
-	\begin{tikzcd}
-		\bS^{n-1}_G
-		\ar[d, hook,"{\iota}" left]
-		&
-		\VR_t(\bS^{n-1}_G)
-		\ar[d, hook,"\iota_t"]
-		\ar[l, "\ \rho^{n-1}" above]
-		\ar[r, hook, "v^{n-1}"]
-		&
-		\VR_{s}(\bS^{n-1}_G)
-		\ar[d, hook]
-		\\
-		\bS^{n}_G
-		&
-		\VR_t(\bS^{n}_G)
-		\ar[l, "\rho^n" above]
-		\ar[r, hook, "v^{n}"]
-		&
-		\VR_{s'}(\bS^{n}_G),
-	\end{tikzcd}
-\end{equation}
-where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the inclusions $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.
-\anibal{The existance of these inclusions is not for free. I think one needs to assume that the equatorial inclusions are equivariant wrt a group acting on every sphere, at least, two consecutives, before this makes sense}
-
-\medskip\lemma
-Diagram \eqref{d:fundamental_bars_diagram} commutes.
-
-\begin{proof}
-	The commutativity of the right-hand-side square is straightforward.
-	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\bS^{n-1}_G)$ and verify that
-	\begin{center}
-		$(\iota \circ \rho^{n-1})(y)
-		=\iota(f^{n-1}_G([\sum \lambda_i x_i]))
-		=\iota([f^{n-1}(\sum \lambda_i x_i)])
-		=[\pi^{n-1}(\sum \lambda_i x_i)]
-		$
-	\end{center}
-	as an element in $\bS^n_G$, and
-	\begin{center}
-		$(\rho^{n} \circ \iota_t)(y) = \rho^{n}(y) = f^{n}_G([\sum \lambda_i x_i]) = [f^{n}(\sum_{i=1}^k \lambda_i x_i)] = [\pi^{n}(\sum \lambda_i x_i)].
-		$
-	\end{center}
-	Because $\pi^{n}$ restricted to $\bS^{n-1}_G$ is equal to $\pi^{n-1}$, we conclude that $(\iota \circ \rho^{n-1})(y) = (\rho^n \circ \iota_t)(y)$ for any $y$.
-	Thus, the diagram commutes.\anibal{Please use `big' for parenthesis that are nested.}
-\end{proof}
+%For $0 < t\leq s \leq s'$, consider the following diagram of topological spaces:
+%\begin{equation}\label{d:fundamental_bars_diagram}
+%	\begin{tikzcd}
+%		\bS^{n-1}_G
+%		\ar[d, hook,"{\iota}" left]
+%		&
+%		\VR_t(\bS^{n-1}_G)
+%		\ar[d, hook,"\iota_t"]
+%		\ar[l, "\ \rho^{n-1}" above]
+%		\ar[r, hook, "v^{n-1}"]
+%		&
+%		\VR_{s}(\bS^{n-1}_G)
+%		\ar[d, hook]
+%		\\
+%		\bS^{n}_G
+%		&
+%		\VR_t(\bS^{n}_G)
+%		\ar[l, "\rho^n" above]
+%		\ar[r, hook, "v^{n}"]
+%		&
+%		\VR_{s'}(\bS^{n}_G),
+%	\end{tikzcd}
+%\end{equation}
+%where $\rho^n$ and $\rho^{n-1}$ are the weak homotopy equivalence defined in \cref{subsub:rho}, the horizontal inclusions $v^{n-1}$ and $v^n$ are induced by the Vietoris--Rips filtration, and the vertical maps are induced by the inclusions $\iota \colon \bS^{n-1}_G \hookrightarrow \bS^{n}_G$.
+%\anibal{The existance of these inclusions is not for free. I think one needs to assume that the equatorial inclusions are equivariant wrt a group acting on every sphere, at least, two consecutives, before this makes sense}
+%
+%\medskip\lemma
+%Diagram \eqref{d:fundamental_bars_diagram} commutes.
+%
+%\begin{proof}
+%	The commutativity of the right-hand-side square is straightforward.
+%	For the left-hand-side square, take any $y = \sum_{i=1}^k \lambda_i [x_i] \in \VR_t(\bS^{n-1}_G)$ and verify that
+%	\begin{center}
+%		$(\iota \circ \rho^{n-1})(y)
+%		=\iota(f^{n-1}_G([\sum \lambda_i x_i]))
+%		=\iota([f^{n-1}(\sum \lambda_i x_i)])
+%		=[\pi^{n-1}(\sum \lambda_i x_i)]
+%		$
+%	\end{center}
+%	as an element in $\bS^n_G$, and
+%	\begin{center}
+%		$(\rho^{n} \circ \iota_t)(y) = \rho^{n}(y) = f^{n}_G([\sum \lambda_i x_i]) = [f^{n}(\sum_{i=1}^k \lambda_i x_i)] = [\pi^{n}(\sum \lambda_i x_i)].
+%		$
+%	\end{center}
+%	Because $\pi^{n}$ restricted to $\bS^{n-1}_G$ is equal to $\pi^{n-1}$, we conclude that $(\iota \circ \rho^{n-1})(y) = (\rho^n \circ \iota_t)(y)$ for any $y$.
+%	Thus, the diagram commutes.\anibal{Please use `big' for parenthesis that are nested.}
+%\end{proof}
 
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -232,80 +204,78 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 %\beta_{n_j}(\bS^{n_j}_G) \leq 2 \cdot \fillrad(\bS^{n_j}_G)
 %\]
 %where \(\beta_{n_j}(\bS^{n_j})\) is the first critical value of \(\rH_{n_j}(\VR \bS^{n_j}_G)\).
-We have the following generalization of \cref{l:crit_val and fill_rad 1}.
 
-\medskip\lemma If the free \(G\)-action in the above equatorial system is admissible then, for any \(i \leq j\),
+\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible then, for any \(i \leq j\),
 \[
-\beta_{n_i}(\bS^{n_j}_G) \leq 2 \cdot \fillrad(\bS^{n_j}_G),
+\crit_{n_i}(\bS^{n_j}_G) \leq 2 \cdot \fillrad(\bS^{n_j}_G),
 \]
-where \(\beta_{n_j}(\bS^{n_j})\) is the first critical value of \(\rH_{n_j}(\VR \bS^{n_j}_G)\).
 
 \begin{proof}
-	\anibal{Here is where the proof should go, using the monotonicity of the filling radius as in my email (now written as a lemma early in the paper)}
+	\anibal{Here is where the proof hidden below should go, using the monotonicity of the filling radius as in my email (now written as a lemma early in the paper)}
 \end{proof}
 
 \noindent\rule{\textwidth}{0.4pt}
 
 %, which is clearly bounded below by $\alpha_n$ the first critical value of $\VR(\bS^n_G)$.
-For any degree $1 \leq \degp \leq n$, let $\beta_{\degp}^{n}$ be the first critical value of the $\degp^\th$ homology of $\VR(\bS^n_G)$.
-It follows from \cref{subsub:beta v.s. fillrad} that $(\alpha \leq) \beta_{n}^{n} \leq \delta_n$.
-We represent these values using the following lower triangular matrix:
-\[
-\begin{pmatrix}
-	\beta_{1}^{1}\leq \delta_1 & & &&\\
-	\beta_1^2 & \beta_{2}^{2} \leq \delta_2 & &&\\
-	\beta_1^3 & \beta_{2}^{3} & \beta_{3}^{3} \leq \delta_3 &&\\
-	\dots & \dots & \dots & \dots &\\
-	\beta_1^n & \beta_2^n & \beta_3^n & \dots & \beta_n^n \leq \delta_n
-\end{pmatrix}
-\]
-In the lemma below, we show that all elements in the above matrix are bounded above by $\delta_n$, if $\{\delta_1, \dots, \delta_n\}$ is monotonically non-decreasing.
-
-\medskip\lemma
-If $\delta_1 \leq \dots \leq \delta_n$, then $\beta_{\degp}^{n} \leq \delta_n$ for any $1 \leq m \leq n$.
-\anibal{DO you need the inequalities on the deltas? I guess this can be stated using the \(\max\). \ling{The inequality is needed in the proof. To build the commutative diagram, the top right index needs to be smaller than the bottom right index.}}
-\ling{change $\beta_{\degp}^{n}$}
-
-\begin{proof}
-	We will use an induction argument on $n$.
-	When $n = 1$, $\beta_{1}^{1} \leq \delta_1$ holds.
-	%Because $\delta_1 \leq \alpha_1$, $\rH_1(\VR\bS^1_G)$ retains the same isomorphism type before $\delta_1$, implying that $\beta_{1, 1} \geq \delta_1$.
-	%Thus, $\beta_{1, 1} =\delta_1$.
-
-	Assume the statement holds for $\bS^{n-1}_G$, that is, $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ for any $1\leq m \leq n-1$.
-	Since $\delta_{n-1} \leq \delta_n$, applying the $\degp^\th$ homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
-	for $r,\epsilon>0$ small,
-	\[
-	\begin{tikzcd}
-		\rH_\degp(\bS^{n-1}_G)
-		\ar[d, "\cong" left]
-		&
-		\rH_\degp(\VR_r\bS^{n-1}_G)
-		\ar[d, "\rH_\degp(\iota_r)" left, "\cong" right, myred]
-		\ar[l, "\cong" above]
-		\ar[rr, "\rH_\degp(v^{n-1})", myred]
-		&
-		&
-		\rH_\degp(\VR_{\delta_{n-1}+\epsilon}\bS^{n-1}_G)
-		\ar[d]
-		\\
-		\rH_\degp(\bS^{n}_G)
-		&
-		\rH_\degp(\VR_r \bS^{n}_G)
-		\ar[l, "\cong"]
-		\ar[rr, "\rH_\degp(v^n)" , myred]
-		&
-		&
-		\rH_\degp(\VR_{\delta_n+\epsilon}\bS^{n}_G).
-	\end{tikzcd}
-	\]
-
-	Let $\sigma$ be a representative cycle for the bar $(0,\, \beta_{\degp}^{n-1})$ in $\VR \bS^{n-1}_G$.
-	Commutativity of the left-hand-side square implies that $\rH_\degp(\iota_r)$ is an isomorphism, implying that $\rH_\degp(\iota_r)(\sigma)$ is born at $0$.
-	It follows from $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ that $\rH_\degp(v^{n-1})(\sigma) = 0$.
-	Using the right-hand-side square's commutativity, we deduce $(\rH_\degp(v^n) \circ \rH_\degp(\iota_r))(\sigma)=0$, which means $\rH_\degp(\iota_r)(\sigma)$ dies after $\delta_n+\epsilon$.
-	This holds for any $\epsilon>0$, so we can conclude $\beta_{\degp}^{n} \leq \delta_n$.
-
-	For the case when $\degp=n$, we also have $\beta_{n}^{n} \leq \delta_n$.
-	This completes the proof.
-\end{proof}
+%For any degree $1 \leq \degp \leq n$, let $\beta_{\degp}^{n}$ be the first critical value of the $\degp^\th$ homology of $\VR(\bS^n_G)$.
+%It follows from \cref{subsub:beta v.s. fillrad} that $(\alpha \leq) \beta_{n}^{n} \leq \delta_n$.
+%We represent these values using the following lower triangular matrix:
+%\[
+%\begin{pmatrix}
+%	\beta_{1}^{1}\leq \delta_1 & & &&\\
+%	\beta_1^2 & \beta_{2}^{2} \leq \delta_2 & &&\\
+%	\beta_1^3 & \beta_{2}^{3} & \beta_{3}^{3} \leq \delta_3 &&\\
+%	\dots & \dots & \dots & \dots &\\
+%	\beta_1^n & \beta_2^n & \beta_3^n & \dots & \beta_n^n \leq \delta_n
+%\end{pmatrix}
+%\]
+%In the lemma below, we show that all elements in the above matrix are bounded above by $\delta_n$, if $\{\delta_1, \dots, \delta_n\}$ is monotonically non-decreasing.
+%
+%\medskip\lemma
+%If $\delta_1 \leq \dots \leq \delta_n$, then $\beta_{\degp}^{n} \leq \delta_n$ for any $1 \leq m \leq n$.
+%\anibal{DO you need the inequalities on the deltas? I guess this can be stated using the \(\max\). \ling{The inequality is needed in the proof. To build the commutative diagram, the top right index needs to be smaller than the bottom right index.}}
+%\ling{change $\beta_{\degp}^{n}$}
+%
+%\begin{proof}
+%	We will use an induction argument on $n$.
+%	When $n = 1$, $\beta_{1}^{1} \leq \delta_1$ holds.
+%	%Because $\delta_1 \leq \alpha_1$, $\rH_1(\VR\bS^1_G)$ retains the same isomorphism type before $\delta_1$, implying that $\beta_{1, 1} \geq \delta_1$.
+%	%Thus, $\beta_{1, 1} =\delta_1$.
+%
+%	Assume the statement holds for $\bS^{n-1}_G$, that is, $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ for any $1\leq m \leq n-1$.
+%	Since $\delta_{n-1} \leq \delta_n$, applying the $\degp^\th$ homology functor to diagram \eqref{d:fundamental_bars_diagram}, we obtain the following commutative diagram of vector spaces:
+%	for $r,\epsilon>0$ small,
+%	\[
+%	\begin{tikzcd}
+%		\rH_\degp(\bS^{n-1}_G)
+%		\ar[d, "\cong" left]
+%		&
+%		\rH_\degp(\VR_r\bS^{n-1}_G)
+%		\ar[d, "\rH_\degp(\iota_r)" left, "\cong" right, myred]
+%		\ar[l, "\cong" above]
+%		\ar[rr, "\rH_\degp(v^{n-1})", myred]
+%		&
+%		&
+%		\rH_\degp(\VR_{\delta_{n-1}+\epsilon}\bS^{n-1}_G)
+%		\ar[d]
+%		\\
+%		\rH_\degp(\bS^{n}_G)
+%		&
+%		\rH_\degp(\VR_r \bS^{n}_G)
+%		\ar[l, "\cong"]
+%		\ar[rr, "\rH_\degp(v^n)" , myred]
+%		&
+%		&
+%		\rH_\degp(\VR_{\delta_n+\epsilon}\bS^{n}_G).
+%	\end{tikzcd}
+%	\]
+%
+%	Let $\sigma$ be a representative cycle for the bar $(0,\, \beta_{\degp}^{n-1})$ in $\VR \bS^{n-1}_G$.
+%	Commutativity of the left-hand-side square implies that $\rH_\degp(\iota_r)$ is an isomorphism, implying that $\rH_\degp(\iota_r)(\sigma)$ is born at $0$.
+%	It follows from $\beta_{\degp}^{n-1} \leq \delta_{n-1}$ that $\rH_\degp(v^{n-1})(\sigma) = 0$.
+%	Using the right-hand-side square's commutativity, we deduce $(\rH_\degp(v^n) \circ \rH_\degp(\iota_r))(\sigma)=0$, which means $\rH_\degp(\iota_r)(\sigma)$ dies after $\delta_n+\epsilon$.
+%	This holds for any $\epsilon>0$, so we can conclude $\beta_{\degp}^{n} \leq \delta_n$.
+%
+%	For the case when $\degp=n$, we also have $\beta_{n}^{n} \leq \delta_n$.
+%	This completes the proof.
+%\end{proof}

@@ -8,8 +8,8 @@ We consider it equipped with the geodesic distance and simplify notation writing
 %We apply the notations and results from \cref{sub:general_barcodes} to the Vietoris--Rips complexes of $\bS^n$ with $R = \pi$ the diameter of the sphere.
 %Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with \(\ell \neq \degp\).
 
-\medskip\proposition
-Let $\alpha, \beta_\degp$ and $\gamma_\theta$ be respectively the first critical values of $\VR\bS^n$, its $\degp^{\th}$ reduced homology, and its $\img_\theta$-module for \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).
+\medskip\proposition \anibal{Please rewrite in terms of \(\crit\). I don't even think we need \(\zeta\). Here is best to express in terms of filling radius}
+Let $\alpha, \beta_\degp$ and $\gamma_\theta$ be respectively the first critical values of $\VR(\bS^n)$, its $\degp^{\th}$ reduced homology, and its $\img_\theta$-module for some \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).
 Then:
 \[
 \mathrm{(1)}\ \alpha = \zeta_n,
@@ -22,16 +22,18 @@ Then:
 \qquad
 \mathrm{(3)}\ \gamma_\theta = 0,
 \]
-where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homology is better to consider in this whole section, no? \ling{yes.}}
+where \(\zeta_n = 2 \cdot \fillrad(\bS^n)\).
+%= \arccos(\tfrac{-1}{n+1})\).
 
 \begin{proof}
-	(1) Recall from \cite[Thm.~7.1]{lim2020vietoris} that for any $0 < r \leq \zeta_n$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$, and the homotopy type of $\VR_r(\bS^n)$ changes at $\zeta_n$.\footnote{
-		The case $n = 1$ has more information.
-		From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r(\bS^1)$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
-		For $d=1$ and $n > 1$ and one also has more information.
-		Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
-		As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
-		Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
+	(1) Recall from \cite[Thm.~7.1]{lim2020vietoris} that for any $0 < r \leq \zeta_n$, the space $\VR_r(\bS^n)$ is homotopy equivalent to $\bS^n$, and the homotopy type of $\VR_r(\bS^n)$ changes at $\zeta_n$.
+%	\footnote{
+%		The case $n = 1$ has more information.
+%		From \cite[Thm.~7.4]{adamaszek2017vietoris} it is known that $\VR_r(\bS^1)$ is homotopy equivalent to $\bS^{2n+1}$ for any $n \in \N$ and $\frac{2n\pi}{2n+1} < r \leq \frac{2(n+1)\pi}{2n+3}$.
+%		For $d=1$ and $n > 1$ and one also has more information.
+%		Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
+%		As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
+%		Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
 	This implies $\alpha=\zeta_n$.
 
 	(2) According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\).\anibal{I read this claim in Gromov \cite{gromov1983filling}}.
@@ -41,16 +43,39 @@ where \(\zeta_n \defeq \arccos(\tfrac{-1}{n+1})\).\anibal{I think reduced homolo
 
  \ling{Move the $m\neq n$ part to (2). In (3) say it is similar.}
 
-	(3) The remaining parts of the proposition follow from the fact that the initial space in the filtration has trivial $\degp^{\th}$ homology for $1\leq \degp \neq n$ and trivial $\theta$ cohomology operations for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).\anibal{I did not touch this proof. The statement us already strange. \(\gamma_\theta = 0\) means that at \((0,0)\) appears in the barcode. Is that what you mean? \ling{Nope. It means no bars are born at $0$.}}
+	(3) The remaining parts of the proposition follow from the fact that the initial space in the filtration has trivial $\degp^{\th}$ homology for $1\leq \degp \neq n$ and trivial $\theta$ cohomology operations for any \(\theta \in \cO(\ell,\degp)\) with \(\ell \neq \degp\).
+
+	\footnote{The fact that for $0 < r < \zeta_n$ the spaces $\VR_r(\bS^n)$ and $\bS^n$ are homotopy equivalent was shown in \cite[Theorem 7.1]{lim2020vietoris} using the filtered homotopy equivalence between the Vietoris-Rips filtration and the Kuratowski filtration. Our claim is that $f_r^n$ is a weak equivalence.\anibal{This comment is redundant given that the first critical value of is \(\zeta_n\).}}
 \end{proof}
 
-\subsubsection{}
+\subsubsection{}\label{ss:VRSn projection}
 
-For any \(m \geq 1\), \(\dim \opH_\degp(\bS^n)\) is one for \(\degp = n\) and zero otherwise.
-For any \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\theta_{\bS^n}\) is trivial.
-Applying these facts, along with the above proposition, to the results in \cref{sub:general_barcodes}, we obtain barcode estimates for \(\bS^n\).\anibal{I think this SS is redundant if the general estimates are well written.\ling{I think it is necessary to show how the barcodes of spheres and rpn look like, to facilitate the reading of the distance estimates.}}
+From the previous proposition we know that for \(r \in (0, \zeta_n)\) the spaces \(\VR_r(\bS^n)\) and \(\bS^n\) are homotopy equivalent for any \(n \in \N\).
+We now recall from \cite{bibid} a natural map realizing this equivalence.\anibal{reference?}
 
-\ling{use reduced homology and reference to other results; improve the paragraph.}
+For \(n \in \N\) and \(r < \pi\), the \defn{\(\VR_r(\bS^n)\)-projection}
+\[
+f_r^n \colon \VR_r(\bS^n) \to \R^{n+1} \setminus \set{0} \to \bS^n
+\]
+is the composition of the map sending a formal linear combination $\sum\lambda_i x_i$ to the point \(\sum\lambda_i x_i\) in \(\bbR^{n+1}\) and the map sending a point in \(\R^{n+1} \setminus \set{0}\) to its radial projection.\anibal{I would like a comment about why this is well defined.}
+
+\medskip\proposition
+The \(\VR_r(\bS^n)\)-projection is a homotopy equivalence when $r \in (0, \zeta_n)$.
+
+\begin{proof}1
+	To prove the statement, we use an intermediate construction called the Vietoris--Rips thickening, introduced in \cite{adamaszek2018metric} as a metric space analogue of the Vietoris--Rips complexes.
+
+	The Vietoris--Rips thickening $\VR_r^m\cX$ of a metric space $\cX$ at a given scale $r$ is defined as the set of convex linear combinations of the Dirac probability measures $\delta_{x}$ on points $x \in X$, equipped with the $1$-Wasserstein metric.
+	There is a set bijection from $g_r \colon \VR_r\cX \to \VR_r^m\cX$, given by $\sum \lambda_i x_i \mapsto \sum \lambda_i \delta_{x_i}.$
+	%As this object is not the center of the discussion here, we omit the details and only state the related results here.
+	It is shown in \cite[Theorem 1]{gillespie2024vietoris} that the natural bijection $g_r$ is a weak homotopy equivalence.
+
+	In the case of $\cX = \bS^n$, the map $f_r^n$ is the composition of two maps
+	\[
+	\VR_r(\bS^n) \xrightarrow{g_r} \VR_r^m(\bS^n) \xrightarrow{f_r^n \circ g_r^{-1}} \bS^n.
+	\]
+	According to \cite[Proposition 5.3]{adamaszek2018metric}, when $0<r<\zeta_n$, $f_r^n \circ g_r^{-1}$ is a homotopy equivalence, implying that $f_r^n = (f_r^n \circ g_r^{-1}) \circ g_r$ is a weak homotopy equivalence.\anibal{should be \(f_r^n\)}
+\end{proof}
 
 % Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in the barcode of $\img\theta_{\VR\bS^n}$ or $\ker\theta_{\VR\bS^n}$ is dominated by $(\zeta_n,\pi)$.
 
@@ -63,7 +88,15 @@ Applying these facts, along with the above proposition, to the results in \cref{
 	% 	\label{fig:Sk}
 	% \end{figure}
 
-%\subsubsection{}
+\subsubsection{}
+
+For any \(m \geq 1\), \(\dim \opH_\degp(\bS^n)\) is one for \(\degp = n\) and zero otherwise.
+For any \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\theta_{\bS^n}\) is trivial.
+Applying these facts, along with the above proposition, to the results in \cref{sub:general_barcodes}, we obtain barcode estimates for \(\bS^n\).
+
+\ling{use reduced homology and reference to other results; improve the paragraph.}
+
+\subsubsection{}
 
 For $n \in \N$ and $\ell_1, \dots, \ell_n \in \N^n$, let
 \[
