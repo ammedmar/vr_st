@@ -194,7 +194,7 @@ An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomol
 %The correspondence between the homology and cohomology constructions is a consequence of the universal coefficient theorem and holds in general.
 %To relate absolute and relative constructions, one also needs that the natural maps $\colim \rH_k(X_r) \to \rH_k(\colim X_r) \to \lim \rH_k(\colim X_r, X)$ be isomorphisms for every $k$.}
 
-\subsection{Vietoris--Rips complexes}
+\subsection{Vietoris--Rips complexes and stability}
 
 \subsubsection{}
 
@@ -235,25 +235,3 @@ Then, for any $k \in \N,$
 \begin{proof}
 	These inequalities follow from Theorem.~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.
 \end{proof}
-
-\subsection{Kuratowski embedding and the filling radius}
-
-\subsubsection{}\label{ss:kuratowski}
-
-Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
-Let $U_r(\cX)$ denote the $r$-neighborhood of $\cX$ in $L^\infty(\cX)$.
-
-\medskip\lemma The spaces $\VR_{2r}(\cX)$ and $U_r(\cX)$ are homotopy equivalent naturally for every \(r > 0\).
-
-\begin{proof}
-	This is a special case of \cite[Theorem.4.1]{lim2020vietoris}.\anibal{original says naturally isomorphic. What does that mean?}
-\end{proof}
-
-\subsubsection{}\label{ss:filling_radius}
-
-We will consider Riemannian manifolds as metric spaces by equipping them the geodesic distance.
-Following \cite{gromov1983filling}, the \defn{filling radius} of a closed orientable Riemannian $n$-manifold $\cM$ is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$.
-The filling radius of non-orientable manifolds is defined similarly using \(\Z/2\) coefficients.
-
-\medskip\lemma(\cite[Prop.9.28]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillradnofield{\cM})\) for arbitrary field if $M$ is orientable, and for mod $2$ coefficients in general.
-Moreover, this is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.

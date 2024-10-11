@@ -1,13 +1,30 @@
 % !TEX root = ../vr_st.tex
 
-\subsection{First critical values}\label{sub:general_barcodes}
-
-\anibal{self: rewrite using Hausmann $\VR\cX \to \cX$ \url{https://publish.illinois.edu/ymb/files/2020/03/Hausmann-1995-On-the-Vietoris-Rips-complexes-and-a-cohomology-th.pdf}}
-
-\anibal{Ling's question: Can something be born before something dies in the $\VR$ homology}
 %Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r\geq R$ for some real number $R$.
 %The Vietoris--Rips complex of a metric space is our primary example.
 %In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
+
+\subsection{Kuratowski embedding and the filling radii}\label{sub:general_barcodes}
+
+\subsubsection{}\label{ss:kuratowski}
+
+Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
+Let $U_r(\cX)$ denote the $r$-neighborhood of $\cX$ in $L^\infty(\cX)$.
+
+\medskip\lemma The spaces $\VR_{2r}(\cX)$ and $U_r(\cX)$ are homotopy equivalent naturally for every \(r > 0\).
+
+\begin{proof}
+	This is a special case of \cite[Theorem.4.1]{lim2020vietoris}.\anibal{original says naturally isomorphic. What does that mean?}
+\end{proof}
+
+\subsubsection{}\label{ss:filling_radius}
+
+We will consider Riemannian manifolds as metric spaces by equipping them the geodesic distance.
+Following \cite{gromov1983filling}, the \defn{filling radius} of a closed orientable Riemannian $n$-manifold $\cM$ is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$.
+The filling radius of non-orientable manifolds is defined similarly using \(\Z/2\) coefficients.
+
+\medskip\lemma(\cite[Prop.9.28]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillradnofield{\cM})\) for arbitrary field if $M$ is orientable, and for mod $2$ coefficients in general.
+Moreover, this is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
 
 \subsubsection{}\label{subsub:first_critical_value}\label{subsub:beta v.s. fillrad}
 
@@ -18,31 +35,26 @@ We define the \defn{first critical \(\VR\)-value} of \(\cM\), denoted by \(\crit
 Let \(\cM\) be connected.
 Since, as stated in \cref{ss:kuratowski}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\crit(\cM)\) is \(2\cdot\fillrad(\cM)\).
 We generalize this from the top homology to every other degree \(\degp\).
-Let \(\fillrad_m(\cM)\) be the smallest positive radius $r$ for which a reduced homology class in \(\cH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\) and $\infty$ if $\rH_m(\cM) = 0$. \ling{I think the notation $\fillrad$ is too `heavy' (mathematically). It is a quantity we `create' to describe the barcode estimates. It might have deeper meanings, but we are not presenting those.}
-Clearly
+If \(\rH_\degp(\cM) = 0\), set \(\fillrad_m(\cM) = 0\), and if not, let \(\fillrad_m(\cM)\) be the smallest positive radius $r$ for which a non-zero homology class in \(\cH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\).
+Since \(\VR(\cM)\) is \(q\)-tame,
 \[
-\crit(\cM) \leq 2 \cdot \fillrad_m(\cM)
+\fillrad_m(\cM) = \min\set[\big]{r \mid (0, 2r) \in \barc \rH^{\VR}_m(\cM)}.
+\]
+We can generalize this to a linear cohomology operation \(\theta\), defining
+\[
+\fillrad_\theta(\cM) = \min\set[\big]{r \mid (0, 2r) \in \barc \img_\theta^{\!\VR}(\cM)}.
+\]
+
+\ling{I think the notation $\fillrad$ is too suggestive. It is a quantity we `create' to describe the barcode estimates. It might have deeper meanings, but we are not present those.}
+
+Clearly, if \(\rH_m(\cM) \neq 0\) (resp. \(\img_\theta(\cM) \neq 0\)) then
+\[
+\crit(\cM) \leq 2 \cdot \fillrad_m(\cM) \qquad (\text{resp. } \crit(\cM) \leq 2 \cdot \fillrad_m(\cM))
 \]
 and, if \(\cM\) is connected and \(n\)-dimensional,
 \[
 \fillrad_n(\cM) = \fillrad(\cM).
 \]
-
-Similarly, consider \(\theta \in \cO(\ell, m)\), \anibal{continue here}
-
-\subsubsection{}\label{l:crit_val and fill_rad 1}
-
-\lemma For a closed connected $n$-manifold $\cM$, we have
-\[
-\crit_n(\cM) = 2 \cdot \fillrad(\cM).
-\]
-
-\begin{proof}
-	This follows from the lemma in \cref{ss:filling_radius}, which states that \((0,2\fillradnofield{\cM})\) is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
-\end{proof}
-
-%\medskip Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
-%By the definition of the filling radius, it follows that the first critical value of the $n^\th$ homology of $\VR(\cX)$ is at most $2\fillradnofield{\cX}$.
 
 \subsubsection{}\label{subsub:barcode_general}
 
