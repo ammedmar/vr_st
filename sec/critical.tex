@@ -2,40 +2,43 @@
 
 \subsection{First critical values}\label{sub:general_barcodes}
 
+\anibal{self: rewrite using Hausmann $\VR\cX \to \cX$ \url{https://publish.illinois.edu/ymb/files/2020/03/Hausmann-1995-On-the-Vietoris-Rips-complexes-and-a-cohomology-th.pdf}}
+
+\anibal{Ling's question: Can something be born before something dies in the $\VR$ homology}
 %Let $X$ be an $\R$-space where $X_r$ is empty for $r<0$ and contractible for $r\geq R$ for some real number $R$.
 %The Vietoris--Rips complex of a metric space is our primary example.
 %In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
 
 \subsubsection{}\label{subsub:first_critical_value}\label{subsub:beta v.s. fillrad}
 
-Let \(\cX\) be a metric space.
-%Let $X$ be an $\R$-space where $X_r$ is empty for $r \leq 0$ and contractible for $r \geq R$ for some real number $R$.
-%The Vietoris--Rips complex of a metric space is our primary example.
-%The \defn{first critical value} of the $\R$-space $X$ is the supremum among real numbers $r$ such that $X_{s,t}$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughtout the paper that the filtration is open Vietoris-Rips.}
-The \defn{first critical value} of \(\cX\), denoted \(\crit(\cX)\), is the supremum among real numbers $r$ such that $\VR_{s,t}(\cX)$ is a homotopy equivalence for any $s,t \in [0,r]$. \ling{change throughout the paper that the filtration is open Vietoris-Rips.}
+Let \(\cM\) be a closed Riemannian manifold.
+By \cite[Thm.3.5]{hausmann1995vietoris}, we know that there is a \(r(\cM) > 0\) such that for all \(r \in (0,r(\cM))\) the spaces \(\VR_r(\cM)\) and \(\cM\) are homotopy equivalent.
+We define the \defn{first critical \(\VR\)-value} of \(\cM\), denoted by \(\crit(\cM)\), as the supremum among all such real numbers.
 
-Let us fix a field which we suppress from the notation.
-For any \(m \in \N\), .... \anibal{define \(\crit_m(\cX)\) just as before using reduced homology. Do not use bars, since we are not assuming it is q-tame}
+Let \(\cM\) be connected.
+Since, as stated in \cref{ss:kuratowski}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\crit(\cM)\) is \(2\cdot\fillrad(\cM)\).
+We generalize this from the top homology to every other degree \(\degp\).
+Let \(\fillrad_m(\cM)\) be the smallest positive radius $r$ for which a reduced homology class in \(\cH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\) and $\infty$ if $\rH_m(\cM) = 0$. \ling{I think the notation $\fillrad$ is too `heavy' (mathematically). It is a quantity we `create' to describe the barcode estimates. It might have deeper meanings, but we are not presenting those.}
+Clearly
+\[
+\crit(\cM) \leq 2 \cdot \fillrad_m(\cM)
+\]
+and, if \(\cM\) is connected and \(n\)-dimensional,
+\[
+\fillrad_n(\cM) = \fillrad(\cM).
+\]
 
-Similarly, consider \(\theta \in \cO(\ell, m)\), \anibal{define \(\crit_\theta(\cX)\) as before}
-
-%The \defn{first critical value} of a persistence module which is \(0\) for negative numbers, is defined as the smallest value \(\beta\) such that \((0, \beta)\) appears as a bar in the barcode of the persistence module.\anibal{Careful with the open vs closed interval here}
-%
-%\ling{use reduced homology.}
-
-Clearly, \(\crit(\cX)\) is bounded above by \(\crit_m(\cX)\) and \(\crit_\theta(\cX)\).
-In addition, all of these are bounded above by $R$.\anibal{Use this notation instead of \(\alpha, \beta, \gamma\)} \anibal{What is \(R\) in terms of \(\cX\)?}
+Similarly, consider \(\theta \in \cO(\ell, m)\), \anibal{continue here}
 
 \subsubsection{}\label{l:crit_val and fill_rad 1}
 
-\lemma For a connected closed $n$-manifold $\cM$ we have
-%If \(\beta_n\) denotes the first critical value of \(\rH_n(\VR(\cX); \k)\) then
+\lemma For a closed connected $n$-manifold $\cM$, we have
 \[
-\crit_m(\cM) \leq 2 \cdot \fillrad(\cM).
+\crit_n(\cM) = 2 \cdot \fillrad(\cM).
 \]
 
 \begin{proof}
-	This follows directly from the lemma in \cref{ss:filling_radius}. \anibal{Improve please}
+	This follows from the lemma in \cref{ss:filling_radius}, which states that \((0,2\fillradnofield{\cM})\) is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
 \end{proof}
 
 %\medskip Recall from \cref{ss:filling_radius} that $\VR_{2\bullet}(\cX)$ and the Kuratowski filtration $U_\bullet(\cX)$ are (filtered) homotopy equivalent.
@@ -44,33 +47,26 @@ In addition, all of these are bounded above by $R$.\anibal{Use this notation ins
 \subsubsection{}\label{subsub:barcode_general}
 
 Let $X$ be an $\R$-space as before.
-Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation.
-We respectively denote by $\alpha, \beta_\degp$ and $\gamma_\theta$ the first critical values of $X$, \(\rH_\degp(X)\), and \(\img_\theta(X)\).\anibal{It should be \(\gamma_\theta\) not \(\gamma_\degp\).
+Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with $\ell \neq m$.
+\anibal{It should be \(\gamma_\theta\) not \(\gamma_\degp\).
 	Additionally, We should talk about \(\img_\theta\)-barcodes not \(\theta\)-barcodes since this analysis is not been carried through for \(\ker_\theta\). Or is it?}
  \ling{Follow this convention and unify notation.}
 
-Because the $\R$-space $X$ is empty for \(r < 0\) and the homotopy type of $X_r$ remains unchanged for $r \in [0, \alpha)$, bars in \(\barc \rH_\degp(X)\) and $\barc\img_\theta(X)$ either start at $0$ or start after $\alpha$.
+Because the $\R$-space $X$ is empty for \(r \leq 0\) and the homotopy type of $X_r$ remains unchanged for $r \in (0, \crit(X))$, bars in \(\barc \rH_\degp(X)\) and $\barc\img_\theta(X)$ either start at $0$ or start after $\crit(X)$.
 
-%In addition, for degrees $\degp$ such that $\rH_\degp(X_0)$ is non-trivial, the barcode of the $\degp^\th$ homology of $X$ always contains $(0,\beta_\degp)$.
-%More precisely,
-Furthermore, if \(k = \dim \opH_\degp(X_0) > 0\) then the $\barc\rH_\degp X$ contains $(0,\beta_m)$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
+Furthermore, we estimate the reduced homology barcode by considering two cases.
+If \(k = \dim \opH_\degp(X_0) > 0\) then the $\barc\rH_\degp X$ contains $(0,\firstdeath{m}{X})$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\firstdeath{m}{X}, R]\), along with possibly more bars dominated by \((\crit(X), \pi)\).
+If $\dim \opH_\degp(X_0) = 0$, then all bars in $\barc\rH_\degp X$ are dominated by \((\crit(X), \pi)\).
+See the first row of \cref{fig:barcodes_general} for the barcode estimates of the reduced homology.
 
-\ling{continue editting}
-
-if ...
-
-Similarly, if ...
-
-$\theta$-barcodes of $X$, where $\theta\in\cO(\ell,\degp)$ is a linear cohomology operation; the leftmost one contains one \((0, \gamma_m)\) and \((\dim \img \theta_{X_0} - 1)\) additional bars of the form \((0, b)\) for \(b \in [\beta_\degp, R]\), along with possibly more bars dominated by \((\alpha, \pi)\).
-
-and if ...
-
-Please consult \cref{fig:barcodes_general} for a depiction of these four barcode estimates.
+A similar analysis applies to $\barc\img_\theta(X)$.
+% Similarly, if \(k = \dim \img \theta_{X_0} > 0\) then the $\barc\img_\theta(X)$ contains $(0,\crit_\theta(X))$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\crit_\theta(X), R]\), along with possibly more bars dominated by \((\crit(X), \pi)\).
+% If $\dim \img \theta_{X_0} = 0$, then all bars in $\barc\img_\theta(X)$ are dominated by \((\crit(X), \pi)\).
+See the second row of \cref{fig:barcodes_general} for the estimates of the $\img_\theta$-barcodes.
 
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_general}
-	\caption{In each figure the gray region represents where additional bars could potentially exist within the corresponding barcode.}
-	\anibal{Instead of additional points I would use a gray region in the y axis. \ling{Done.}}
+	\caption{In each figure, the gray region represents where additional bars could potentially exist within the corresponding barcode.}
 	\label{fig:barcodes_general}
 \end{figure}

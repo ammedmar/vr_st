@@ -26,20 +26,20 @@ Therefore, it induces an inclusion of \(\rp^n\) into \(\rp^{n+1}\).
 % \anibal{This subsection is redundant if the subsection on barcode estimates is presented well. I placed it at the beginning of the section. Then the 3 examples will follow and use it to obtain the desired estimates.}
 
 Consider the mod-\(2\) cohomology of \(\VR(\rp^n)\) and the linear cohomology operations defined by Steenrod squares \(\Sq^k_\ell \in \cO(\ell,\ell+k)\).
-We respectively denote by $\alpha, \beta_\degp$ and $\gamma_{k + \ell}$ the first critical values of \(\VR(\rp^n)\), \(\rH_\degp(\VR(\rp^n))\), and \(\img_{\Sq^k_\ell}\).
+%We respectively denote by $\crit(\rp^n), \crit_m(\rp^n)$ and $\crit_{\Sq_\ell^k}(\rp^n)$ the first critical values of \(\VR(\rp^n)\), \(\rH_\degp(\VR(\rp^n))\), and \(\img_{\Sq^k_\ell}\).
 
-In \cref{subsub:rpn homotopy type}, \cref{subsub:beta_m_rpn} and \cref{subsub:gamma_rpn}, we will respectively prove that all three critical values are $\frac{2\pi}{3}$, when $1 \leq \degp \leq n$, $0 \leq k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is odd.
+In \cref{subsub:rpn homotopy type}, \cref{subsub:beta_m_rpn} and \cref{subsub:gamma_rpn}, we will respectively prove that $\crit(\rp^n), \crit_m(\rp^n)$ and $\crit_{\Sq_\ell^k}(\rp^n)$ are all $\frac{2\pi}{3}$, when $1 \leq \degp \leq n$, $0 \leq k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is odd.
 
-Applying results in \cref{subsub:barcode_general}, we obtain an estimate of the barcodes of $\rp^n$ and illustrate it in \cref{fig:sq barcodes}.
-We illustrate it in \cref{fig:sq barcodes}, as this will be needed for estimating the bottleneck distance between barcodes.
+Applying results in \cref{subsub:barcode_general}, we obtain an estimate of the barcodes of $\rp^n$ and illustrate it in \cref{fig:sq barcodes}, as this will be needed for estimating the bottleneck distance between barcodes.
 
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_rpn}
-	\caption{\emph{Top row:} the $\degp^\th$ persistent homology barcode of $\rp^n$.
-		When $1\leq \degp \leq n$, the barcode consists of one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
-		\emph{Bottom row:} the degree-$(k+\ell)$ component of the $\Sq^k$-barcode of $\rp^n$.
-		The leftmost barcode contains at least one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$; see \cref{sub:barcode_rpn}.
+	\caption{\emph{Top row:} the persistent reduced homology barcode of $\rp^n$.
+		%When $1\leq \degp \leq n$, the barcode consists of one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
+		\emph{Bottom row:} the $\img_{\Sq_\ell^k}$-barcode of $\rp^n$.
+		%The leftmost barcode contains at least one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$; 
+        See \cref{sub:barcode_rpn} for details.
         In each figure, the gray region represents where additional bars could exist within the corresponding barcode.
 	}
 	\label{fig:sq barcodes}
@@ -59,7 +59,7 @@ and the homotopy type of $\VR_r(\rp^n)$ changes after $\tfrac{2\pi}{3}$.
 In other words,
 
 \medskip\proposition
-The first critical value of \(\VR(\rp^n)\) is \(\alpha = \frac{2\pi}{3}\).
+The first critical value of \(\VR(\rp^n)\) is \(\crit(\rp^n) = \frac{2\pi}{3}\).
 
 \subsubsection{}
 \label{subsub:beta_m_rpn}
@@ -72,7 +72,7 @@ The first critical value of the $\degp^{\th}$ homology of $\VR(\rp^n)$ is $\beta
 \begin{proof}%[Proof of \cref{subsub:beta_m_rpn}.]
 	It follows from \cite{katz1983filling} that the filling radius of $\rp^n$ is $\frac{\pi}{3}$ for any $n \geq 1$.
 	By \cref{subsub:foundamental_bar_rpn_lemma}, $\beta_m\leq \tfrac{2\pi}{3}$.
-    On the other hand, $\beta_\degp\geq \alpha = \tfrac{2\pi}{3}$.
+    On the other hand, $\crit_m(\rp^n)\geq \crit(\rp^n) = \tfrac{2\pi}{3}$.
     This finishes the proof.
 	% Additionally, we have that
 	% \[
@@ -93,6 +93,6 @@ If $0 \leq k \leq \min\{\frac{n-1}{2}, \ell\} \leq n$ and $\binom{\ell}{k}$ is o
 \begin{proof}
 	Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\sigma^\ell) = \binom{\ell}{k}\sigma^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\sigma^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
 	Thus, the first critical value of $\gamma_{k+\ell} \leq \tfrac{2\pi}{3}$.
-	On the other hand, $\gamma_{k+\ell} \geq \alpha = \tfrac{2\pi}{3}$ the first critical value of $\VR(\rp^n)$.
+	On the other hand, $\gamma_{k+\ell} \geq \crit(\rp^n) = \tfrac{2\pi}{3}$ the first critical value of $\VR(\rp^n)$.
 	Thus, $\gamma_{k+\ell} = \tfrac{2\pi}{3}$.
 \end{proof}
