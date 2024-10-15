@@ -1,13 +1,13 @@
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title = {\LARGE $\barc\opH_\degp(X)$, if $\opH_\degp(X_0) \neq 0$},
+		title = {\LARGE $\barc\opH_m^{\VR}(\cM)$, if $\opH_m(\cM) \neq 0$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
 		ytick={0.7,0.95},
-		yticklabels={$\firstdeath{m}{X}$,$R$},
+		yticklabels={$\firstdeath{m}{\cM}$,$\diam(\cM)$},
 		xtick={0.55,0.95},
-		xticklabels={$\alpha$, $R$},
+		xticklabels={$\crit(\cM)$, $\diam(\cM)$},
 		xmin=-0.015, xmax=1.1,
 		ymin=0, ymax=1.1,]
 		\addplot [mark=none] coordinates {(0,0) (1,1)};
@@ -26,14 +26,14 @@
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title = {\LARGE $\barc\opH_\degp(X)$, if $\opH_\degp(X_0) = 0$},
+		title = {\LARGE $\barc\opH_m^{\VR}(\cM)$, if $\opH_m(\cM) = 0$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
 		ytick={0.95},
-		yticklabels={$R$},
+		yticklabels={$\diam(\cM)$},
 		xtick={0.55,0.95},
-		xticklabels={$\alpha$, $R$},
+		xticklabels={$\crit(\cM)$, $\diam(\cM)$},
 		xmin=-0.015, xmax=1.1,
 		ymin=0, ymax=1.1,]
 		\addplot [mark=none] coordinates {(0,0) (1,1)};
@@ -50,14 +50,14 @@
 
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title={\LARGE $\barc\img\theta_{X}$, if $\img\theta_{X_0}\neq 0$},
+		title={\LARGE $\thetabarc{\cM}$, if $\img\theta_{\cM}\neq 0$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
 		ytick={0.7,0.95},
-		yticklabels={$\firstdeath{\theta}{X}$,$R$},
+		yticklabels={$\firstdeath{\theta}{\cM}$,$\diam(\cM)$},
 		xtick={0.55,0.95},
-		xticklabels={$\alpha$, $R$},
+		xticklabels={$\crit(\cM)$, $\diam(\cM)$},
 		xmin=-0.015, xmax=1.1,
 		ymin=0, ymax=1.1,]
 		\addplot [mark=none] coordinates {(0,0) (1,1)};
@@ -76,14 +76,14 @@
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.52]
 	\begin{axis} [
-		title={\LARGE $\barc\img\theta_{X}$, if $\img\theta_{X_0}= 0$},
+		title={\LARGE $\thetabarc{\cM}$, if $\img\theta_{\cM}= 0$},
 		ticklabel style = {font=\Large},
 		axis y line=middle,
 		axis x line=middle,
 		ytick={0.95},
-		yticklabels={$R$},
+		yticklabels={$\diam(\cM)$},
 		xtick={0.55,0.95},
-		xticklabels={$\alpha$, $R$},
+		xticklabels={$\crit(\cM)$, $\diam(\cM)$},
 		xmin=-0.015, xmax=1.1,
 		ymin=0, ymax=1.1,]
 		\addplot [mark=none] coordinates {(0,0) (1,1)};

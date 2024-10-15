@@ -21,6 +21,7 @@ For any prime $p$, the field $\Fp$ is additively generated, so all cohomology op
 
 A linear cohomology operation defines a natural morphism of persistence modules $\theta_X \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space $X$.
 The \defn{image} and \defn{kernel} of $\theta$, denoted $\img\theta$ and $\ker\theta$ respectively, are natural persistence modules defined for any $\R$-space $X$ by
+\ling{I think $\img$ and $\ker$ should have the same format: either both with capitalized first letters or both with lower case letters}
 \begin{align*}
 	\img(\theta_X)_r &= \img((\theta_X)_r)\,, &
 	\ker(\theta_X)_r &= \ker((\theta_X)_r)\,, \\
@@ -85,22 +86,22 @@ d(x, x') =
 %if $i =j$,
 
 Recall from \cite[Proposition 1]{adamaszek2020homotopy} that the Vietoris--Rips complex of a metric gluing is homotopy equivalent to the wedge sum of the Vietoris--Rips complexes.
-Explicitly, that the natural inclusion
+Explicitly, the natural inclusion
 \[
 \VR_r\cX \vee \VR_r\cY \to \VR_r(\cX \vee \cY)
 \]
 is a homotopy equivalence for each $r \in \R$.
-From this we deduce the following.
+From this, we deduce the following.
 
 \medskip\corollary
-For $\cX$ and $\cY$ be pointed metric spaces.
+Let $\cX$ and $\cY$ be pointed metric spaces.
 For any linear cohomology operation $\theta$:
 \begin{align*}
 	\img\theta_{(\VR \cX \, \vee \, \VR \cY)} &\cong \, \img\theta_{\VR \cX} \oplus \img\theta_{\VR \cY}, \\
 	\ker\theta_{(\VR \cX \, \vee \, \VR \cY)} &\cong \, \ker\theta_{\VR \cX} \oplus \ker\theta_{\VR \cY}.
 \end{align*}
 
-\subsubsection{}
+\subsubsection{}\ling{Should we say something about why we only consider Steenrod but not the general cohomology operations?}
 
 Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is defined by
 \[
@@ -108,7 +109,7 @@ Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is 
 \]
 
 \theorem
-Let $X$ and $Y$ be pointed cellular $\R$-spaces.
+Let $X$ and $Y$ be cellular $\R$-spaces.
 For any $k \in \N$, the Steenrod persistence modules satisfy:
 \begin{align*}
 	\img\Sq^k_{X \times Y} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, & \ker\Sq^k_{X \times Y} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\

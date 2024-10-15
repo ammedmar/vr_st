@@ -33,7 +33,7 @@ The \defn{interleaving distance} between them is defined by
 \di(F, G) = \inf\set{\delta \geq 0 \mid F \text{ and } G \text{ are } \delta\text{-interleaved}}.
 \]
 
-Changing the target category $\cC$ does not increase the interleaving distance.
+Changing the target category $\cC$ \ling{add the word `functorially'} does not increase the interleaving distance.
 More precisely, we have the following result that first appeared in \cite[p.~1508]{bubenik2015metrics}.
 
 \medskip\lemma For any functor $\Phi \colon \cC \to \cD$ we have
@@ -61,11 +61,11 @@ We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalen
 %Explicitly, it consists of a space $X_r$ for each $r \in \R$ and a map $X_{s,t} \colon X_s \to X_t$ for each $s \leq t$ such that $X_{r,r} = \id$ and $X_{s,t} \circ X_{r,s} = X_{r,t}$ if $r \leq s \leq t$.
 
 Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there are weak equivalences $X \leftarrow W \rightarrow Y$ for some $\R$-space $W$.\footnote{
-For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the the localization of $\Top^\R$ with respect to weak equivalences \cite{blumberg2023interleaving}.}
+For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the localization of $\Top^\R$ with respect to weak equivalences \cite{blumberg2023interleaving}.}
 
 \subsubsection{}\label{def:dhi}
 
-Two $\R$-spaces are $X$ and $Y$ are said to be \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
+Two $\R$-spaces $X$ and $Y$ are said to be \defn{$\delta$-homotopy-interleaved} for some $\delta \geq 0$, if there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
 
 Following \cite{blumberg2023interleaving}, the \defn{homotopy interleaving distance} between two $\R$-spaces $X$ and $Y$ is given by
 \[
@@ -93,13 +93,13 @@ We refer to $\Vec^\R$ as the category of \defn{persistence modules}.
 %\end{equation*}
 %commute for every pair $s \leq t$.
 
-We denote abusively by $\kk$ and $0$ the functors that assigns $0$ and $\kk$ respectively to every object of $\R$ and the identity map to each morphism.
+We denote abusively by $\kk$ and $0$ the functors that assign $\kk$ and $0$ respectively to every object of $\R$ and the identity map to each morphism.
 
 %\subsection{Barcodes and q-tameness}
 
 \subsubsection{}
 
-Let $I$ be a closed interval in $\R$.
+Let $I$ be an interval in $\R$.
 %, i.e., $I \subseteq \R$ and, if $r \leq s \leq t$ with $r, t \in I$, then $s \in I$.
 The persistence module $\kk[I]$, referred to as an \defn{interval module}, is defined explicitly by
 \[
@@ -141,22 +141,41 @@ We define the barcode of a q-tame persistent module as the barcode of its radica
 
 \subsubsection{}
 
-Let $M$ and $M'$ be two possibly empty multisets of intervals.
-A subset $P \subset M \times M'$ is said to be a \defn{partial matching} between $M$ and $M'$ if every interval $I \in M$ is matched with at most one interval of $M'$ and every interval $I' \in M'$ is matched with at most one interval of $M$.
+\ling{I changed the bottleneck distance definition to be free from intervals and barcodes.}
 
-The \defn{bottleneck distance} between $M$ and $M'$ is defined as
+Let $A$ and $A'$ be two possibly empty multisets of points in $\R^2$ lying above the diagonal.
+A subset $P \subset A \times A'$ is said to be a \defn{partial matching} between $A$ and $A'$ if every point $(a, b) \in A$ is matched with at most one point of $A'$ and every point $(a', b') \in A'$ is matched with at most one point of $A$.
+
+The \defn{bottleneck distance} between $A$ and $A'$ is defined as
 \[
-d_B(M, M') = \
-\inf \set[\big]{\mathrm{cost}(P) \mid P \subset M \times M' \text{ is a partial matching}}
+d_B(A, A') = \
+\inf \set[\big]{\mathrm{cost}(P) \mid P \subset A \times A' \text{ is a partial matching}}
 \]
 where $\mathrm{cost}(P)$ is the largest between
 \[
-\sup_{(I, I') \in P} \set[\Big]{\max\set{|a - a'|, |b - b'|} \text{ for } I = [a, b], I' = [a', b']}
+\sup \set[\Big]{\max\set{|a - a'|, |b - b'|} \bigm| (a, b) \in A, (a', b') \in A' \text{ are matched in }P}
 \]
 and
 \[
-\frac{1}{2} \sup \set[\Big]{|a - b| \text{ for } [a,b] \in M \cup M' \text{ unmatched}}.
+\sup \set[\Big]{\tfrac{ |a - b|}{2}  \bigm| (a, b) \in A \cup A' \text{ are unmatched}}.
 \]
+
+% Let $A$ and $A'$ be two possibly empty multisets of intervals.
+% A subset $P \subset A \times A'$ is said to be a \defn{partial matching} between $A$ and $A'$ if every interval $I \in A$ is matched with at most one interval of $A'$ and every interval $I' \in A'$ is matched with at most one interval of $A$.
+
+% The \defn{bottleneck distance} between $A$ and $A'$ is defined as
+% \[
+% d_B(A, A') = \
+% \inf \set[\big]{\mathrm{cost}(P) \mid P \subset A \times A' \text{ is a partial matching}}
+% \]
+% where $\mathrm{cost}(P)$ is the largest between
+% \[
+% \sup_{(I, I') \in P} \set[\Big]{\max\set{|a - a'|, |b - b'|} \text{ for } I = [a, b], I' = [a', b']}
+% \]
+% and
+% \[
+% \frac{1}{2} \sup \set[\Big]{|a - b| \text{ for } [a,b] \in A \cup A' \text{ unmatched}}.
+% \]
 
 \medskip\theorem(\cite[Thm.~5.14]{chazal2016stability})
 The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
@@ -203,7 +222,7 @@ Let $\VR_r(\cX)$ denote the geometric realization of the simplicial complex whos
 Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
 We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
-\anibal{The comment: ``In this paper, we will not distinguish a simplicial complex from its geometric realization'' should be next to the first place this abuse of terminology is used.}
+\ling{Tranditionally, $\VR(\cX)$ is called `Vietoris-Rips filtration'. Then, use the term `Vietoris-Rips complex at a scale $r$' to refer to $\VR_r(\cX)$}
 
 \subsubsection{}
 
@@ -211,7 +230,15 @@ Recall that a metric space is said to be \defn{totally bounded} if, for every $\
 As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 
 \medskip\lemma
-If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
+If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame. 
+\medskip
+
+Moreover, \cite[Thm.~5.2]{lim2020vietoris} states that, when $\cX$ is compact, the barcode of the persistent homology of $\VR(\cX)$ always consists of intervals that are left-open and right-closed.
+
+For notational simplicity, when referring to intervals (or bars) in a barcode of $\VR(\cX)$, we will use the notation $(a, b)$ to denote the left-open, right-closed interval $(a, b]$.
+This should not cause confusion, as $(a, b)$ and $(a, b]$ are identified with the same point in $\R^2$.
+
+% The paper does not consider general totally bounded spaces, so I am not sure if this can be generalized.
 
 \subsubsection{}\label{thm:stability-HI}
 
@@ -219,9 +246,9 @@ The \defn{Gromov--Hausdorff distance} $\dgh(\cX, \cY)$ between two compact metri
 \[
 \dgh(\cX, \cY) = \inf_{\cZ, \varphi, \psi} \set[\Big]{d_\rH\big(\varphi(\cX), \psi(\cY)\big)},
 \]
-where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_H$ denotes the Hausdorff distance.
+where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings $\varphi \colon \cX \to \cZ$ and $\psi \colon \cY \to \cZ$, and $d_\rH$ denotes the Hausdorff distance.
 %\footnote{
-%The Hausdorff distance $d_H(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
+%The Hausdorff distance $d_\rH(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
 %}
 
 \medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.

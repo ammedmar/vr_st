@@ -7,10 +7,12 @@ See the theorem in \cref{subsub:main_theorem} for details.
 Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
 This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
 
-Let $\cX$ be a totally bounded metric space of diameter $\pi$, where the first critical value $\alpha$ of $\VR\cX$ satisfies $\alpha \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$ and $n$ is the largest degree such that the $n^\th$ reduced homology of $\cX$ is non-trivial.
+Let $\cX$ be a totally bounded metric space of diameter $\pi$, 
+where $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$ for $n$ the largest degree such that the degree $n$ reduced homology of $\cX$ is non-trivial.
 Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i=1, \dots, n$.
+\ling{should we restrict ourselves to manifolds only?} 
 
-Let $\beta_\degp$ and $\gamma_\degp$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
+%Let $\beta_\degp$ and $\gamma_\theta$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
 
 \subsection{Upper bound on $\db$ between homology barcodes}
 \label{subsub:db_upper_bound}
@@ -20,18 +22,19 @@ To obtain an upper bound on the bottleneck distance, it suffices to find one mat
 \medskip\proposition
 For any degree $\degp$ such that $\opH_\degp(\cX)$ is non-trivial,
 \begin{equation}\label{eq:db_usual_upper_bound}
-	\db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX})
+	\db\big(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}\big)
 	%\leq \cost(P)
-	\leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}.
+	\leq \max\big\{|\zeta_\degp  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\}.
 \end{equation}
 
 \begin{proof}
+    Let $\beta_m = 2\firstdeath{m}{\cX}$.
 	Consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc[\field]{\degp}{\cX}$ such that $(0,\zeta_\degp ) \leftrightarrow (0, \beta_\degp )$ and all other bars unmatched.
-	Using the barcode estimates \cref{fig:barcodes_vs} and \cref{fig:barcodes_general}, we obtain that the cost of $P$ satisfies
+	Using the barcode estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we obtain that %the cost of $P$ satisfies
 	\begin{align*}
 		\cost(P)
-		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\} \\
-		= & \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} && \mbox{(because $\zeta_n \leq \alpha$)}.
+		= & \max\big\{|\zeta_\degp  - \beta_\degp |,\, \tfrac{\pi - \zeta_n}{2},\, \tfrac{\pi - \alpha}{2}\big\} \\
+		= & \max\big\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\big\} && \mbox{(because $\zeta_n \leq \alpha$)}.
 	\end{align*}
 	Therefore, \cref{eq:db_usual_upper_bound} holds.
 \end{proof}
@@ -53,20 +56,21 @@ To obtain a lower bound on the bottleneck distance, the minimum cost of matching
 Let $\theta \in \cO(\ell, \degp)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
-	\db(\thetabarc{\VS}, \thetabarc{\cX})
+	\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big)
 	%= \min_Q \cost(Q)
-	\geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
+	\geq \min\{\firstdeath{\theta}{\cX}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
 \end{equation}
 
 \begin{proof}
-	Recall from \cref{fig:barcodes_general} that $\thetabarc{\cX}$ contains a bar $(0,\gamma_\degp)$.
-	We calculate the minimum cost of matching the bar $(0,\gamma_\degp)$.
+    Let $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
+	Recall from \cref{fig:barcodes_general} that $\thetabarc{\cX}$ contains a bar $(0,\gamma_\theta)$.
+	We calculate the minimum cost of matching the bar $(0,\gamma_\theta)$.
 
 	Let $Q$ be an arbitrary matching between $\thetabarc{\VS}$ and $\thetabarc{\cX}$.
-	If $(0,\gamma_\degp )$ is unmatched in $Q$, then $\cost(Q) \geq \tfrac{\gamma_\degp }{2}$.
-	If $(0,\gamma_\degp )$ is matched to some bar $(a,b) \subset (\zeta_n, \pi)$ in $\thetabarc{\VS}$ in $Q$, then
-	$\cost(Q) =  \|(0,\gamma_\degp ) - (a,b)\|_\infty \geq \zeta_n$.
-	Thus, an arbitrary matching $Q$ between $\thetabarc{\VS}$ and $\thetabarc{\cX}$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\degp }{2}, \zeta_n\}.$
+	If $(0,\gamma_\theta )$ is unmatched in $Q$, then $\cost(Q) \geq \tfrac{\gamma_\theta }{2}$.
+	If $(0,\gamma_\theta )$ is matched to some bar $(a,b) \in \thetabarc{\VS}$, then
+	$\cost(Q) =  \|(0,\gamma_\theta ) - (a,b)\|_\infty \geq a \geq \zeta_n$, because $(a,b) \subset (\zeta_n, \pi)$.
+	Thus, an arbitrary matching $Q$ between $\thetabarc{\VS}$ and $\thetabarc{\cX}$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\theta }{2}, \zeta_n\}.$
 	Therefore, \cref{eq:db_theta_lower_bound} holds.
 \end{proof}
 
@@ -76,40 +80,37 @@ Then,
 \subsubsection{}
 \label{subsub:comparison_lemma}
 
-We establish a technical lemma.
+We establish a technical lemma. 
+As before, let $\zeta_n = 2 \cdot \fillrad(\bS^n)$, which decreases as $n$ increases.
+In addition, the following relations hold: for any $m \leq n$,
+\[\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\]
 
 \medskip\lemma
-If $\beta_\degp < \tfrac{\zeta_n}{2}+\zeta_\degp$, then
-$\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} \leq \tfrac{\zeta_n}{2}$.
+Let $m \leq n$. 
 
-Moreover, if $\beta_\degp \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp (< \tfrac{\zeta_n}{2}+\zeta_\degp)$, then $\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
+(1) For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_\degp\big]$, $\max\big\{|\zeta_\degp  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
+
+(2) For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_\degp\big]$, $\max\{|\zeta_\degp  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
 
 \begin{proof}
-    	Since $\beta_\degp \leq \tfrac{\zeta_n}{2} + \zeta_\degp$, we have
-    	\[
-    	\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
-    	= \max\{\beta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
-    	< \max\{\tfrac{\zeta_n}{2}+\zeta_\degp - \zeta_\degp, \tfrac{\pi - \zeta_n}{2}\}
-    	= \tfrac{\zeta_n}{2} .
-    	\]
+    	(1) Since $\tfrac{\pi - \zeta_n}{2} \leq \tfrac{\zeta_n}{2}$, it remains to show $|\zeta_\degp  - r | \leq \tfrac{\zeta_n}{2}$, which follows from
+    	\(
+    	|\zeta_\degp  - r | \leq \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2}.
+    	\)
      
-    	If, in addition, $\beta_\degp \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp$, we divide the discussion to two cases.
-    	When $\beta_\degp \leq \zeta_\degp$, it follows from $\tfrac{\pi}{2} < \alpha \leq \beta_\degp \leq \zeta_\degp  \leq \tfrac{2\pi}{3}$ and $\zeta_n \leq \tfrac{2\pi}{3}$ that
-    	\[
-    	|\zeta_\degp  - \beta_\degp |
-    	= \zeta_\degp  - \beta_\degp
-    	< \tfrac{2\pi}{3} - \tfrac{\pi}{2}
-    	= \tfrac{\pi}{6}
+    	(2) Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp$. 
+        To show the desired equality, it suffices to show $|\zeta_\degp  - r | \leq \tfrac{\pi - \zeta_n}{2}$. 
+        We consider two cases.
+        When $r > \zeta_\degp$, 
+    	$|\zeta_\degp  - r | = r - \zeta_\degp \leq
+    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp = 
+        \tfrac{\pi - \zeta_n}{2}
+    	$ is clear.
+    	When $r \leq \zeta_\degp$, we have
+    	\(
+    	|\zeta_\degp  - r | \leq \zeta_m - \zeta_n
     	\leq \tfrac{\pi - \zeta_n}{2}.
-    	\]
-    	When $\beta_\degp > \zeta_\degp$, 
-    	\[
-    	|\zeta_\degp  - \beta_\degp |
-    	= \beta_\degp - \zeta_\degp
-    	\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp
-    	= \tfrac{\pi - \zeta_n}{2}.
-    	\]
-    	Thus, $\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}.$
+    	\)
 \end{proof}
 
 \subsubsection{}
@@ -117,23 +118,24 @@ By combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lo
 As a consequence, the $\theta$-barcodes provide a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the persistent homology barcodes.
 
 \medskip\proposition
-If $\beta_\degp < \tfrac{\zeta_n}{2}+\zeta_\degp$ and $\theta \in \cO(\ell, \degp)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
-\[\db(\thetabarc{\VS}, \thetabarc{\cX}) \geq \db(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}).\]
+If $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_\degp$ and $\theta \in \cO(\ell, \degp)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
+\[\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big) \geq \db\big(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}\big).\]
 
 \begin{proof}
-        It suffices to show that
-        \[
-        \min\{\tfrac{\gamma_\degp}{2}, \zeta_n\} \geq \max\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\}.
-        \]
-        Since \(\gamma_\degp \geq \alpha \geq \zeta_n\), we have
-        \(
-        \min\{\tfrac{\gamma_\degp}{2}, \zeta_n\} \geq \tfrac{\zeta_n}{2}.
-        \)
-        On the other hand, because \(\beta_\degp < \tfrac{\zeta_n}{2} + \zeta_\degp\), applying \cref{subsub:comparison_lemma} gives
-        \(
-        \max\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\} \leq \tfrac{\zeta_n}{2}.
-        \)
-        Thus, we have the desired inequality.
+    Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
+    By \cref{eq:db_usual_upper_bound} and \cref{eq:db_theta_lower_bound}, it suffices to show that
+    \[
+    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\big\}.
+    \]
+    Since \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\), we have
+    \(
+    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \tfrac{\zeta_n}{2}.
+    \)
+    On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_\degp < \tfrac{\zeta_n}{2} + \zeta_\degp\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
+    \(
+    \max\big\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
+    \)
+    Thus, we have the desired inequality.
 \end{proof}
 
 \subsubsection{}
@@ -144,29 +146,36 @@ Below, $\VS$ is $\bS^1\vee\dots\vee \bS^n$.
 \medskip\theorem
 We have
 \begin{itemize}
-	\item[(a)] $\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})\leq \tfrac{\pi - \zeta_n}{2}$.
-	\smallskip\item[(b)] $\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})\geq \tfrac{\pi}{3}$, for $k,\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
+	\item[(1)] $\displaystyle \max_{\degp\geq 1}\, \db\big(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n}\big)\leq \tfrac{\pi - \zeta_n}{2}$.
+	\smallskip
+    \item[(2)] $\displaystyle \min_{%(k,\ell) \text{ s.t. }
+    k \leq \frac{n-1}{2},\, \binom{\ell}{k}\text{ odd}} \db\big(\sqbarcl{k}{\ell}{\VS},\, \sqbarcl{k}{\ell}{\rp^n}\big)\geq \tfrac{\pi}{3}$. %for $k,\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
 \end{itemize}
 
 \begin{proof}
-	As shown in \cref{sub:first_critical_value_rpn}, the first critical values satisfy
+	Take arbitrary $m, k, \ell$ such that $1 \leq \degp \leq n$, $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
+    Let $\alpha = \crit(\rp^n)$, $\beta_m = 2\firstdeath{m}{\rp^n}$ and $\gamma_{\Sq_\ell^k}= 2\firstdeath{\theta}{\rp^n}$.
+    We have shown in \cref{sub:first_critical_value_rpn} that
 	$$
-	\alpha = \beta_\degp = \gamma_{k+\ell} = \frac{2\pi}{3}
+	\alpha = \beta_\degp = \gamma_{\Sq_\ell^k} = \frac{2\pi}{3}.
 	$$
-	for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $1\leq k \leq \frac{n-1}{2}$ and $\binom{\ell}{k} \mod 2 \neq 0$.
-	It is clear that $\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and $\beta_\degp = \tfrac{2\pi}{3}$ lies in $[\alpha, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp]$ satisfying the first condition of the lemma in \cref{subsub:comparison_lemma}.
+	%for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
+	
+    (1) It is clear that %$\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and 
+    $\beta_\degp = \tfrac{2\pi}{3}$ lies in $\big[\zeta_n, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp\big]$ satisfying the condition of Part (2) of the lemma in \cref{subsub:comparison_lemma}.
 	Applying \cref{eq:db_usual_upper_bound} and \cref{subsub:comparison_lemma}, we obtain
-	\[\max_{\degp\geq 1}\db(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n})
+	\[\db\big(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n}\big)
     \leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
     = \tfrac{\pi - \zeta_n}{2}.\]
-
-	We have shown in \cref{subsub:first_critical_value} that the first critical value $\gamma_{\ell+k}$ is $\tfrac{2\pi}{3}$.
-	Applying \cref{eq:db_theta_lower_bound}, we have
-	\[\db(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n})
-	\geq \min\{\tfrac{\gamma_{\ell+k}}{2}, \zeta_n\}
+    Since $m$ is taken arbitrarily, we obtain the desired inequality.
+    
+	(2) On the other hand, applying \cref{eq:db_theta_lower_bound}, we have
+	\[\db\big(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n}\big)
+	\geq \min\{\tfrac{1}{2}\gamma_{\Sq_\ell^k}, \zeta_n\}
 	= \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\}
-	= \tfrac{\pi}{3}.\qedhere
-\]
+	= \tfrac{\pi}{3}.%\qedhere
+    \]
+    Since $k$ and $\ell$ are taken arbitrarily, we obtain the desired inequality. 
 \end{proof}
 
-Because $\tfrac{\pi}{3} < (\tfrac{\pi}{4} <) \tfrac{\pi - \zeta_n}{2}$, the above theorem shows that the Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the persistent homology barcodes do in all degrees.
+Since \(\tfrac{\pi}{3} < \tfrac{\pi - \zeta_n}{2}\), with the difference larger than \(\tfrac{\pi}{12}\), the theorem above demonstrates that Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the persistent homology barcodes do in all degrees.
