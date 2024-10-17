@@ -7,10 +7,8 @@ See the theorem in \cref{subsub:main_theorem} for details.
 Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
 This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
 
-Let $\cX$ be a totally bounded metric space of diameter $\pi$, 
-where $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$ for $n$ the largest degree such that the degree $n$ reduced homology of $\cX$ is non-trivial.
-Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i=1, \dots, n$.
-\ling{should we restrict ourselves to manifolds only?} 
+Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
+Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
 
 %Let $\beta_\degp$ and $\gamma_\theta$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
 
@@ -80,13 +78,13 @@ Then,
 \subsubsection{}
 \label{subsub:comparison_lemma}
 
-We establish a technical lemma. 
+We establish a technical lemma.
 As before, let $\zeta_n = 2 \cdot \fillrad(\bS^n)$, which decreases as $n$ increases.
 In addition, the following relations hold: for any $m \leq n$,
 \[\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\]
 
 \medskip\lemma
-Let $m \leq n$. 
+Let $m \leq n$.
 
 (1) For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_\degp\big]$, $\max\big\{|\zeta_\degp  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
 
@@ -97,13 +95,13 @@ Let $m \leq n$.
     	\(
     	|\zeta_\degp  - r | \leq \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2}.
     	\)
-     
-    	(2) Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp$. 
-        To show the desired equality, it suffices to show $|\zeta_\degp  - r | \leq \tfrac{\pi - \zeta_n}{2}$. 
+
+    	(2) Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp$.
+        To show the desired equality, it suffices to show $|\zeta_\degp  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
         We consider two cases.
-        When $r > \zeta_\degp$, 
+        When $r > \zeta_\degp$,
     	$|\zeta_\degp  - r | = r - \zeta_\degp \leq
-    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp = 
+    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp =
         \tfrac{\pi - \zeta_n}{2}
     	$ is clear.
     	When $r \leq \zeta_\degp$, we have
@@ -160,22 +158,22 @@ We have
 	\alpha = \beta_\degp = \gamma_{\Sq_\ell^k} = \frac{2\pi}{3}.
 	$$
 	%for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
-	
-    (1) It is clear that %$\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and 
+
+    (1) It is clear that %$\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and
     $\beta_\degp = \tfrac{2\pi}{3}$ lies in $\big[\zeta_n, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp\big]$ satisfying the condition of Part (2) of the lemma in \cref{subsub:comparison_lemma}.
 	Applying \cref{eq:db_usual_upper_bound} and \cref{subsub:comparison_lemma}, we obtain
 	\[\db\big(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n}\big)
     \leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
     = \tfrac{\pi - \zeta_n}{2}.\]
     Since $m$ is taken arbitrarily, we obtain the desired inequality.
-    
+
 	(2) On the other hand, applying \cref{eq:db_theta_lower_bound}, we have
 	\[\db\big(\sqbarcl{k}{\ell}{\VS}, \sqbarcl{k}{\ell}{\rp^n}\big)
 	\geq \min\{\tfrac{1}{2}\gamma_{\Sq_\ell^k}, \zeta_n\}
 	= \min\{\tfrac{1}{2}\cdot\tfrac{2\pi}{3}, \zeta_n\}
 	= \tfrac{\pi}{3}.%\qedhere
     \]
-    Since $k$ and $\ell$ are taken arbitrarily, we obtain the desired inequality. 
+    Since $k$ and $\ell$ are taken arbitrarily, we obtain the desired inequality.
 \end{proof}
 
 Since \(\tfrac{\pi}{3} < \tfrac{\pi - \zeta_n}{2}\), with the difference larger than \(\tfrac{\pi}{12}\), the theorem above demonstrates that Steenrod barcodes provide a better lower bound estimate of the Gromov--Hausdorff distance than the persistent homology barcodes do in all degrees.

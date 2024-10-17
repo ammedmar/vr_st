@@ -4,83 +4,83 @@
 %The Vietoris--Rips complex of a metric space is our primary example.
 %In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
 
-\subsection{Kuratowski embedding and the filling radii}
-\label{sub:filling radii}
+\subsection{Kuratowski embedding and the filling radii}\label{sub:filling radii}
 
 \subsubsection{}\label{ss:kuratowski}
 
-Any compact metric space $\cX$ can be isometrically embedded into the space $L^\infty(\cX)$ of all bounded real-valued functions on $\cX$, via the map $x \in \cX \mapsto d_\cX(x,\cdot)$ where $d_\cX(x,\cdot)$ is the distance function to $x$.
-Let $U_r(\cX)$ denote the $r$-neighborhood of $\cX$ in $L^\infty(\cX)$.
+Any compact metric space $\cX$ can be isometrically embedded into the space $\rL^\infty(\cX)$ of all bounded real-valued functions on $\cX$ via the map $x \in \cX \mapsto d_\cX(x,\cdot)$.
+%where $d_\cX(x,\cdot)$ is the distance function to $x$.
+As proven in \cite[Theorem.4.1]{lim2020vietoris}, there is deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at distance \(2r\), stated in the following.
 
-\medskip\lemma The spaces $\VR_{2r}(\cX)$ and $U_r(\cX)$ are homotopy equivalent naturally for every \(r > 0\).
-
-\begin{proof}
-	This is a special case of \cite[Theorem.4.1]{lim2020vietoris}.
-\end{proof}
+\medskip\lemma The spaces $\VR_{2r}(\cX)$ and $U_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
 
 \subsubsection{}\label{ss:filling_radius}
 
 We will consider Riemannian manifolds as metric spaces by equipping them the geodesic distance.
 Following \cite{gromov1983filling}, the \defn{filling radius} of a closed orientable Riemannian $n$-manifold $\cM$ is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow U_\epsilon(\cM)$.
-This definition can be generalized by considering different homology coefficients. 
 For non-orientable manifolds, the filling radius is defined similarly using \(\Ftwo\) coefficients.
+The previous natural homotopy equivalence gives rise to the following result proven in \cite[Prop.9.28]{lim2020vietoris}.
 
-\medskip\lemma(\cite[Prop.9.28]{lim2020vietoris}). If $\cM$ be a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains \((0,2\fillradnofield{\cM}]\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ is non-orientable.
-Moreover, this is the unique interval in \(\Hbarc{n}{\cM}\) starting at $0$.
+\medskip\lemma
+If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillradnofield{\cM})\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.
+Moreover, this is the unique bar in \(\Hbarc{n}{\cM}\) starting at $0$.
 
-\subsubsection{}
-\label{subsub:first_critical_value}
-\label{subsub:beta v.s. fillrad}
+\subsubsection{}\label{ss:first_critical_value}
 
 Let \(\cM\) be a closed Riemannian manifold.
 By \cite[Thm.3.5]{hausmann1995vietoris}, we know that there is a \(r(\cM) > 0\) such that for all \(r \in (0,r(\cM))\) the spaces \(\VR_r(\cM)\) and \(\cM\) are homotopy equivalent.
 We define the \defn{first critical \(\VR\)-value} of \(\cM\), denoted by \(\crit(\cM)\), as the supremum among all such real numbers.
 
-\ling{Just a warning that we restrict ourselves to only talking about the critical values of manifolds. This seems fine. The only non-manifold spaces we are studying are wedge sums of spheres, whose barcodes are obtained by taking unions of barcodes of spheres.}
+%\ling{Just a warning that we restrict ourselves to only talking about the critical values of manifolds. This seems fine. The only non-manifold spaces we are studying are wedge sums of spheres, whose barcodes are obtained by taking unions of barcodes of spheres.}
 
-Let \(\cM\) be connected.
+\subsubsection{}
+
+Let us assume \(\cM\) connected.
 Since, as stated in \cref{ss:kuratowski}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\crit(\cM)\) is \(2\cdot\fillrad(\cM)\).
-We generalize this from the top homology to every other degree \(\degp\).
+We generalize this from the top homology to every other degree \(\degp\) and to non-connected manifolds so that
+\[
+\fillrad_\degp(\cM) = \fillrad(\cM)
+\]
+if \(\cM\) connected and \(\degp\)-dimensional.
+
 If \(\rH_\degp(\cM) = 0\), set \(\fillrad_m(\cM) = 0\), and if not, let \(\fillrad_m(\cM)\) be the smallest positive radius $r$ for which a non-zero homology class in \(\rH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\).
 Since \(\VR(\cM)\) is \(q\)-tame,
 \[
 \fillrad_m(\cM) = \min\set[\big]{r \mid (0, 2r) \in \barc \rH^{\VR}_m(\cM)}.
 \]
-We can generalize this to a linear cohomology operation \(\theta\), defining
+Clearly, if \(\rH_m(\cM) \neq 0\),
 \[
-\fillrad_\theta(\cM) = \min\set[\big]{r \mid (0, 2r) \in \barc \img_\theta^{\!\VR}(\cM)}.
+\crit(\cM) \leq 2 \cdot \fillrad_m(\cM).
 \]
+Similarly, for a linear cohomology operation \(\theta\), we define
+\[
+\fillrad_\theta(\cM) = \min\set[\big]{r \mid (0, 2r) \in \barc \img_\theta^{\!\VR}(\cM)}
+\]
+and observe that
+\[
+\crit(\cM) \leq 2 \cdot \fillrad_\theta(\cM))
+\]
+if \(\img_\theta(\cM) \neq 0\).
 
 %\ling{I think the notation $\fillrad$ is too suggestive. It is a quantity we `create' to describe the barcode estimates. It might have deeper meanings, but we are not present those.}
 
-Clearly, if \(\rH_m(\cM) \neq 0\) (resp. \(\img_\theta(\cM) \neq 0\)) then
-\[
-\crit(\cM) \leq 2 \cdot \fillrad_m(\cM) \qquad (\text{resp. } \crit(\cM) \leq 2 \cdot \fillrad_\theta(\cM))
-\]
-and, if \(\cM\) is connected and \(n\)-dimensional,
-\[
-\fillrad_n(\cM) = \fillrad(\cM).
-\]
+\subsection{General estimates}\label{ss:barcode_general}
 
-\subsection{General barcode estimates}
-\label{subsub:barcode_general}
+Let \(\cM\) be a closed Riemannian manifold with diameter \(R\), \(\degp \in \N\), and \(\theta \in \cO(\ell,\degp)\).
+We will simplify notation writing \(\alpha = \crit(\cM)\), \(\beta_m = \firstdeath{\degp}{\cM}\), and \(\gamma_\theta = \firstdeath{\theta}{\cM}\).
 
-Let \(\cM\) be a closed Riemannian manifold as before.
-Let \(\degp \in \N\) and \(\theta \in \cO(\ell,\degp)\) a linear cohomology operation with $\ell \neq m$.
+Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_\degp^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
 
-Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \crit(\cM))$, bars in \(\barc \rH_\degp^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\crit(\cM)$.
-
-Furthermore, we estimate the reduced homology barcode of $\cM$ by considering two cases.
-If \(k = \dim \opH_\degp(\cM) > 0\) then the $\barc\rH_\degp^{\VR}(\cM)$ contains $(0,\firstdeath{m}{\cM})$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\firstdeath{m}{\cM}, R]\), along with possibly more bars dominated by \((\crit(\cM), \diam(\cM))\). 
-We say a bar $(a, b)$ is \defn{dominated by} another bar $(c,d)$ if $c \leq a < b \leq d$.
-If $\dim \opH_\degp(\cM) = 0$, then all bars in the persistent $m$-homology barcode %$\barc\rH_\degp^{\VR}(\cM)$ 
-are dominated by \((\crit(\cM), \diam(\cM))\).
-See the first row of \cref{fig:barcodes_general} for the barcode estimates of the reduced homology.
+More precisely,
+%we estimate the reduced homology barcode of $\cM$ by considering two cases.
+if \(k = \dim \opH_\degp(\cM) > 0\) then $\barc\rH_\degp^{\VR}(\cM)$ contains $(0, \beta_m)$ and \((k - 1)\) additional bars of the form \((0, b)\) with \(\beta_m \leq b \leq R\).
+Additionally, all other bars are dominated by \((\alpha, R)\).
+Recall that a bar $(a, b)$ is said to be dominated by another $(c,d)$ if $c \leq a < b \leq d$.
+If \(\dim \opH_\degp(\cM) = 0\) then all bars in \(\barc\rH_\degp^{\VR}(\cM)\) are dominated by \((\alpha, R)\).
+See the first row of \cref{fig:barcodes_general} for a pictorial representation of these estimates.
 
 A similar analysis applies to $\barc\img_\theta^{\VR}(\cM)$.
-% Similarly, if \(k = \dim \img \theta_{\cM} > 0\) then the $\barc\img_\theta(\cM)$ contains $(0,\crit_\theta(\cM))$ and \((k - 1)\) additional bars of the form \((0, a)\) for \(a \in [\crit_\theta(\cM), R]\), along with possibly more bars dominated by \((\crit(\cM), \diam(\cM))\).
-% If $\dim \img \theta_{\cM} = 0$, then all bars in $\barc\img_\theta(\cM)$ are dominated by \((\crit(\cM), \diam(\cM))\).
-See the second row of \cref{fig:barcodes_general} for the estimates of the $\img_\theta$-barcodes.
+See the second row of \cref{fig:barcodes_general} these estimates.
 
 \begin{figure}
 	\centering
