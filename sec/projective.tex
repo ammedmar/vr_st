@@ -56,13 +56,14 @@ $\firstdeath{m}{\rp^n}$ is $\frac{\pi}{3}$ for any $1\leq m\leq n$, and $0$ othe
 \subsubsection{}\label{subsub:gamma_rpn}
 
 \medskip\proposition
-$\firstdeath{\Sq_\ell^k}{\rp^n}$ is $\tfrac{\pi}{3}$ for $k, \ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd, and $0$ otherwise.
+$\firstdeath{\Sq_\ell^k}{\rp^n}$ is $\tfrac{\pi}{3}$ for $k, \ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd, and is $0$ for other $k,\ell$.
 
 \begin{proof}
 	We only need to prove for the case of $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd, as the other case is trivial.
-    Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\sigma^\ell) = \binom{\ell}{k}\sigma^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial degree-$(\ell+k)$ class $\sigma^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
+    Since the Vietoris--Rips complex $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, $\Sq^k(\sigma^\ell) = \binom{\ell}{k}\sigma^{\ell+k}$ generates a bar in the $\Sq^k_\ell$--barcode that is born at $0$ and stay alive until the non-trivial class $\sigma^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
 	Thus, $\firstdeath{\Sq_\ell^k}{\rp^n} \leq \tfrac{\pi}{3}$.
 	On the other hand, $\firstdeath{\Sq_\ell^k}{\rp^n} \geq \tfrac{1}{2}\crit(\rp^n) = \tfrac{\pi}{3}$.
+    This finishes the proof.
 \end{proof}
 
 \subsubsection{}\label{sub:barcode_rpn}
