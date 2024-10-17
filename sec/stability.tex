@@ -21,23 +21,24 @@
 %\end{proof}
 
 \subsubsection{}\label{lem:w.h.e. preservance}
-\lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent, then, for any linear cohomology operation $\theta$,
+
+\lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent (\cref{ss:R-spaces}), then, for any linear cohomology operation $\theta$, one has
 \[
 \begin{split}
-	\di(\thetamodule{X}, \thetamodule{X'}) &= 0, \\
-	\di(\ker\theta_{X}, \ker\theta_{X'}) &= 0.
+	\di(\img_\theta(X), \img_\theta(X')) &= 0, \\
+	\di(\ker_\theta(X), \ker_\theta(X')) &= 0.
 \end{split}
 \]
 
 \begin{proof}
-	We write the proof only for $\img\theta$ since that for $\ker\theta$ is analogous.
+	We write the proof only for $\img_\theta(X)$ since that for $\ker_\theta(X)$ is analogous.
 	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
 	Without loss of generality we can assume $Z$ to be cellular using the cofibrant replacement functor of the model category structure on $\R$-spaces described in \cite{blumberg2023interleaving}.
-    Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\thetamodule{Z}$ and $\thetamodule{X}$ are isomorphic, as well as $\thetamodule{Z}$ and $\thetamodule{X'}$.
+	Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\img_\theta(Z)$ and $\img_\theta(X)$ are isomorphic, as well as $\img_\theta(Z)$ and $\img_\theta(X')$.
 	Therefore,
 	\[
-	\di(\thetamodule{X},\thetamodule{X'}) \leq
-	\di(\thetamodule{X},\thetamodule{Z}) + \di(\thetamodule{Z},\thetamodule{X'}) =
+	\di(\img_\theta(X),\img_\theta(X')) \leq
+	\di(\img_\theta(X),\img_\theta(Z)) + \di(\img_\theta(Z),\img_\theta(X')) =
 	0.\qedhere
 	\]
 	%	\ling{to continue: here we need to check that the image of $\theta$ is preserved up to isomorphism under w.h.e.}
@@ -47,52 +48,55 @@
 \subsubsection{}\label{thm:theta stability}
 
 \theorem
-For cellular $\R$-spaces $X$ and $Y$ and linear cohomology operation $\theta$,
+For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$ one has
 \begin{align*}
-	\di(\thetamodule{X}, \thetamodule{Y}) &\leq \dhi(X,Y), \\
-	\di(\ker\theta_{X}, \ker\theta_{Y}) &\leq \dhi(X,Y).
+	\di(\img_\theta(X), \img_\theta(Y)) &\leq \dhi(X,Y), \\
+	\di(\ker_\theta(X), \ker_\theta(Y)) &\leq \dhi(X,Y).
 \end{align*}
 
 \begin{proof}
-	We only write the proof for $\img\theta$ since that for $\ker\theta$ is similar.
+	We only write the proof for $\img_\theta(X)$ since that for $\ker_\theta(X)$ is similar.
 	Take any $\delta > \dhi(X,Y)$.
 	By the definition of the homotopy interleaving distance, there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
 	Applying the cofibrant replacement functor $\rQ$ we get $d_\rI(\rQ X', \rQ Y') \leq \delta$ since applying any functor does not increase the interleaving distance.
 	Both $\rQ X$ and $\rQ Y$ can be assumed to be cellular $\R$-spaces, since cofibrant objects in $\Top^\R$ are in particular objectwise cofibrant.
 	By applying the triangle inequality and Lemma \ref{lem:w.h.e. preservance}, we obtain
-%	\begin{align*}
-%		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
-%		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \,
-%		0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
-%		\di(X',Y') \\ \leq \,&
-%		\delta.
-%	\end{align*}
+	%	\begin{align*}
+		%		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
+		%		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \,
+		%		0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
+		%		\di(X',Y') \\ \leq \,&
+		%		\delta.
+		%	\end{align*}
 	\begin{align*}
-		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
-		\di(\thetamodule{X}, \thetamodule{\rQ X'}) + \di(\thetamodule{\rQ X'}, \thetamodule{\rQ Y'}) + \di(\thetamodule{\rQ Y'}, \thetamodule{Y}) \\ =& \,
-		0 + \di(\thetamodule{\rQ X'}, \thetamodule{\rQ Y'}) + 0 \\ \leq \,&
+		\di(\img_\theta(X), \img_\theta(Y)) \leq& \,
+		\di(\img_\theta(X), \img_\theta(\rQ X')) \\ +& \,
+		\di(\img_\theta(\rQ X'), \img_\theta(\rQ Y')) + \di(\img_\theta(\rQ Y'), \img_\theta(Y)) \\ =& \,
+		0 + \di(\img_\theta(\rQ X'), \img_\theta(\rQ Y')) + 0 \\ \leq \,&
 		\di(\rQ X', \rQ Y') \\ \leq \,&
 		\delta.
 	\end{align*}
-	where, for the third line, we used Lemma~\ref{ss:interleaving}.
- 	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality.
+	where, for the second inequality, we used Lemma~\ref{ss:interleaving}.
+	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality.
 \end{proof}
 
 \subsubsection{}\label{cor:theta stability VR}
 
-\corollary For any two metric spaces $\cX$ and $\cY$ and linear cohomology operation~$\theta$,
+For a metric space \(\cX\) and a linear cohomology operation \(\theta\) we denote \(\img_\theta\big(\VR(\cX)\big)\) and \(\ker_\theta\big(\VR(\cX)\big)\) respectively by \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
+
+\medskip\corollary For any two metric spaces $\cX$ and $\cY$ and linear cohomology operation~$\theta$,
 \begin{align*}
-	\di(\thetamodule{\VR\cX},\, \thetamodule{\VR\cY}) \leq 2 \cdot \dgh(\cX,\cY), \\
-	\di(\ker\theta_{\VR\cX},\, \ker\theta_{\VR\cY}) \leq 2 \cdot \dgh(\cX,\cY).
+	\di(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY), \\
+	\di(\ker_\theta^\VR(\cX),\, \ker_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY).
 \end{align*}
 
 \begin{proof}
-        From \cref{thm:stability-HI} and the previous theorem we obtain
-        \[
-        \di(\thetamodule{\VR\cX}, \thetamodule{\VR\cY}) \leq
-        \dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(\cX,\cY).
-        \]
-        The same argument applies to $\ker\theta$.
+	From \cref{thm:stability-HI} and the previous theorem we obtain
+	\[
+	\di(\img_\theta^\VR(\cX), \img_\theta^\VR(\cY)) \leq
+	\dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(\cX,\cY).
+	\]
+	The same argument applies to $\ker_\theta^\VR(\cX)$.
 \end{proof}
 
 We remark that if the metric spaces are compact or, more generally, totally bounded, the above persistent modules are q-tame and the bottleneck distance of their barcodes is bounded by twice the Gromov--Hausdorff distance, since bottleneck and interleaving distances agree.

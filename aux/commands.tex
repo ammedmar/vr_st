@@ -21,7 +21,7 @@
 
 
 \DeclareMathOperator{\rad}{rad}
-\DeclareMathOperator{\VR}{VR}
+\newcommand{\VR}{\mathrm{VR}}
 \DeclareMathOperator{\opH}{H}
 \newcommand{\PFD}{\mathrm{PFD}}
 % \newcommand{\sqbarc}[1]{\Sq^{#1}\barc}
@@ -37,6 +37,7 @@
 
 \DeclareMathOperator{\barc}{Bar}
 \DeclareMathOperator{\img}{Im}
+\renewcommand{\ker}{\operatorname{Ker}}
 
 \newcommand{\field}{\kk}
 
@@ -68,7 +69,7 @@
 \newcommand{\sqbarcl}[3]{\barc\img_{\Sq^{#1}_{#2}}^{\VR} (#3)}
 %\newcommand{\fillrad}[2][\Ftwo]{\operatorname{FillRad}(#2;#1)}
 \DeclareMathOperator{\fillrad}{FillRad}
-\DeclareMathOperator{\crit}{Crit}
+\DeclareMathOperator{\crit}{Crit^{\VR}_{1^{\mathrm{st}}}}
 \newcommand{\fillradnofield}[1]{\operatorname{FillRad}(#1)}
 \newcommand{\sqbarcgeneral}[2]{\barc\Sq^{#1}(\VR #2)}
 \newcommand{\ling}[1]{\noindent\textcolor{purple}{\underline{Ling}: #1}}

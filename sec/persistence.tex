@@ -5,7 +5,7 @@
 %We recall some notions underpinning the theory of persistence.
 %We also fix a field $\kk$ and write $\Vec$ for the category of vector spaces over $\kk$.
 
-\subsection{$\R$-diagrams}
+\subsection{$\R$-diagrams ad interleaving distance}
 
 \subsubsection{}
 
@@ -33,7 +33,7 @@ The \defn{interleaving distance} between them is defined by
 \di(F, G) = \inf\set{\delta \geq 0 \mid F \text{ and } G \text{ are } \delta\text{-interleaved}}.
 \]
 
-Changing the target category $\cC$ \ling{add the word `functorially'} does not increase the interleaving distance.
+Functorially changing the target category $\cC$ does not increase the interleaving distance.
 More precisely, we have the following result that first appeared in \cite[p.~1508]{bubenik2015metrics}.
 
 \medskip\lemma For any functor $\Phi \colon \cC \to \cD$ we have
@@ -48,9 +48,9 @@ for any pair of functors $F, G \colon \R \to \cC$.
 
 %The target categories considered in this work will either be that of topological or vector spaces.
 
-\subsection{$\R$-spaces}
+\subsection{$\R$-spaces and homotopy interleaving distance}
 
-\subsubsection{}
+\subsubsection{}\label{ss:R-spaces}
 
 Let $\Top$ be the category of topological spaces and continuous maps.
 We refer to $\Top^\R$ as the category of \defn{$\R$-spaces}.
@@ -73,7 +73,7 @@ Following \cite{blumberg2023interleaving}, the \defn{homotopy interleaving dista
 \]
 %In other words, $d_{\mathrm{HI}}(X,Y) = \inf\{\di(X',Y')\,\mid X'\simeq X\text{ and }Y'\simeq Y\}.$
 
-\subsection{Persistence modules}
+\subsection{Persistence modules and bottleneck distance}
 
 \subsubsection{}
 
@@ -140,8 +140,6 @@ The barcode of the radical of a q-tame persistence module \(V\) serves as a comp
 We define the barcode of a q-tame persistent module as the barcode of its radical.
 
 \subsubsection{}
-
-\ling{I changed the bottleneck distance definition to be free from intervals and barcodes.}
 
 Let $A$ and $A'$ be two possibly empty multisets of points in $\R^2$ lying above the diagonal.
 A subset $P \subset A \times A'$ is said to be a \defn{partial matching} between $A$ and $A'$ if every point $(a, b) \in A$ is matched with at most one point of $A'$ and every point $(a', b') \in A'$ is matched with at most one point of $A$.
@@ -213,7 +211,7 @@ An $\R$-space is said to be \defn{q-tame} if its persistent homology and cohomol
 %The correspondence between the homology and cohomology constructions is a consequence of the universal coefficient theorem and holds in general.
 %To relate absolute and relative constructions, one also needs that the natural maps $\colim \rH_k(X_r) \to \rH_k(\colim X_r) \to \lim \rH_k(\colim X_r, X)$ be isomorphisms for every $k$.}
 
-\subsection{Vietoris--Rips complexes and stability}
+\subsection{Vietoris--Rips filtrationes and stability}
 
 \subsubsection{}
 
@@ -221,8 +219,8 @@ Given a metric space $\cX$ and $r > 0$.
 Let $\VR_r(\cX)$ denote the geometric realization of the simplicial complex whose vertices are the points of $\cX$ and whose simplices are the finite subsets of $\cX$ with diameter strictly less than $r$.
 Note that if $s \leq t$, then $\VR_s(\cX)$ is a subset of $\VR_t(\cX)$.
 So, together with the inclusion maps, these spaces define an $\R$-space with $\VR_r(\cX) = \emptyset$ for non-positive values of $r$.
-We refer to it as the \defn{Vietoris--Rips complex} of $\cX$.
-\ling{Tranditionally, $\VR(\cX)$ is called `Vietoris-Rips filtration'. Then, use the term `Vietoris-Rips complex at a scale $r$' to refer to $\VR_r(\cX)$}
+We refer to it as the \defn{Vietoris--Rips filtration} of $\cX$.
+For any \(\degp \in \N\) we denote the persistence module \(\rH_\degp\big(\VR(\cX)\big)\) by \(\rH_\degp^{\VR}(\cX)\).
 
 \subsubsection{}
 
@@ -230,7 +228,7 @@ Recall that a metric space is said to be \defn{totally bounded} if, for every $\
 As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 
 \medskip\lemma
-If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame. 
+If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
 \medskip
 
 Moreover, \cite[Thm.~5.2]{lim2020vietoris} states that, when $\cX$ is compact, the barcode of the persistent homology of $\VR(\cX)$ always consists of intervals that are left-open and right-closed.
@@ -254,7 +252,7 @@ where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings
 \medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.
 Then, for any $k \in \N,$
 \[
-\di\big(\rH_k(\VR(\cX)), \rH_k(\VR(\cY))\big) \leq
+\di\big(\rH_k^\VR(\cX), \rH_k^\VR(\cY)\big) \leq
 \dhi\big(\VR(\cX), \VR(\cY)\big) \leq
 2 \cdot \dgh(\cX, \cY).
 \]

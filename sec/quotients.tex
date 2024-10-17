@@ -37,8 +37,7 @@ With respect to this action, there is an induced map on orbit spaces given by
 \end{align*}
 If the action is proper and by isometries as well as \(r^*\)-diameter, then for any \(s \leq r\), the map $\tilde{h}_s$ is a simplicial isomorphism.
 This result was initially stated in \cite[Prop.~3.5]{adams2022metric} under a weaker assumption than the \(r^*\)-diameter condition.
-A counterexample to the original statement, as well as a proof of the corrected version, were provided by Liam Barham \cite{bibid}.
-\ling{This paragraph does not explicitly say Liam Barham introduced the correct definition.}
+A counterexample to the original statement and the above corrected one were provided by Liam Barham \cite{bibid}.
 
 % \medskip\lemma
 % Let $G$ act properly and by isometries on $\cX$.
@@ -93,7 +92,7 @@ are respectively defined by the canonical inclusions
 
 A \defn{\(G\)-action} on an equatorial system consists of a \(G\)-action on each sphere that commutes with the isometric embeddings.
 For example, the group \(\rC_2 = \set{1,-1} \subset \R\) acts antipodally on the real equatorial system.
-Similarly, for \(n \in \N\), the multiplicative subgroup \(\rC_m\) of \(\bC\) defined by the \(m\)-roots of unity acts on the complex equatorial system.
+Similarly, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(m\)-roots of unity acts on the complex equatorial system.
 
 We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
 \begin{equation}\label{eq:VR_quotient}
@@ -119,15 +118,15 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
 
 %\anibal{I don't know what you are proving in the hidden text below. Also, the commutativity with \(\tilde h\) should be immediate, at least on a range. Maybe the lemma below is what you want to use your proof for?}
 
-\lemma The \(\rC_2\)-action on the real equatorial system and the \(\rC_m\)-action on the complex one are \(\VR\)-compatible for every \(m \in \N\). \ling{notation conflict: $m$ is used for degrees of homology.}
+\lemma The above \(\rC_2\)-action on the real equatorial system and the \(\rC_q\)-action on the complex one are \(\VR\)-compatible for every \(q \in \N\).
 
-\begin{proof} 
+\begin{proof}
     Take any $n \in \N$ and arbitrary $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
     The commutativity of diagram \ref{eq:VR_quotient}, with $n_i = n$ and $n_{i+1} = n+1$ follows directly from the commutativity of the corresponding diagram without group actions.
 
     It remains to check that the group action on each sphere $\bS^n$ is \(\VR\)-compatible.
     By \cref{ss:VRSn projection}, the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ is a homotopy equivalence.
-    In the case of the $\rC_2$-action, because $f_r^{n}$ is $\rC_2$-equivariant, the induced map $\tilde{f}_r^{n}$ is also a homotopy equivalence. \ling{This is the argument used by \cite[Theorem 4.5]{adamaszek2018metric}, but I am not sure why it is true and I am not sure if it generalizes to $\rC_m$-actions.}
+    In the case of the $\rC_2$-action, because $f_r^{n}$ is $\rC_2$-equivariant, the induced map $\tilde{f}_r^{n}$ is also a homotopy equivalence. \ling{This is the argument used by \cite[Theorem 4.5]{adamaszek2018metric}, but I am not sure why it is true and I am not sure if it generalizes to $\rC_m$-actions.\anibal{Since the action is proper and free, a weak equivalence equivariant wrt the action induces a weak equivalence of orbits. It is easy to see that \(f\) is equivariant wrt the \(\bS^1\) action defining the action of \(\cyc_q\)}}
 \end{proof}
 
 \subsubsection{}\label{subsub:foundamental_bar_rpn_lemma}
@@ -152,7 +151,7 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 \]
 
 \begin{proof}
-    To simplify notation, for any $i \leq j$, let 
+    To simplify notation, for any $i \leq j$, let
     \[
         \cX_j = \bS^{n_j}_G, \,\delta_j = \fillrad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.
     \]
@@ -189,8 +188,8 @@ In this case, each orbit space is a closed manifold which is equipped with the q
     The horizontal inclusion $v^{j-1}$ (resp. $v^j$) in the right-hand-side square is the inclusion map in the corresponding Vietoris--Rips filtration.
     The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{subsub:h} and \cref{ss:VRSn projection}, respectively:
     \[\VR_r\cX_{j-1} \xrightarrow{\tilde{h}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
-    The horizontal map $\rho^j$ is defined in a similar way. 
-    
+    The horizontal map $\rho^j$ is defined in a similar way.
+
     For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram (\ref{d:fundamental_bars_diagram}) and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{subsub:system VR compatible}), we obtain a commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
 	\begin{equation}\label{eq:diagram of H}
@@ -217,11 +216,11 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 		\rH_{n_i}(\VR_{\delta_n+\epsilon}\cX_j).
 	\end{tikzcd}
 	\end{equation}
- 
+
 	Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR \cX_{j-1}$.
 	Commutativity of the left-hand-side square of diagram (\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
     As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
-	Moreover, this bar dies after $\delta_j$ as explained below. 
+	Moreover, this bar dies after $\delta_j$ as explained below.
     It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies after $\delta_{j-1}$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
 	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies after $\delta_j+\epsilon$.
     Since this holds for any \(\epsilon > 0\), we conclude that \(\beta_i^j \leq \delta_j\).
