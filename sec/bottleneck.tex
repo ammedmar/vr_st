@@ -2,18 +2,38 @@
 
 \section{Gromov--Hausdorff estimates}\label{prop:db estimate}
 
-We estimate the bottleneck distance $\db$ between the Steenrod barcodes of certain pairs of metric spaces and demonstrate that it provides a tighter lower-bound approximation of the Gromov–Hausdorff distance between the spaces than $\db$ between their persistent homology barcodes.
-See the theorem in \cref{subsub:main_theorem} for details.
-Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
-This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
+In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through persistent homology.
+This demonstrates the enhanced discriminatory power of these persistent invariants in the context of metric geometry.
+
+Specifically, let us consider, for any \(n \leq 2\), the wedge of Riemannian spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
+Additionally, we consider \(\rp^n\), the real projective space obtained as the quotient of \(\bS^n(2)\) under the antipodal action, where \(\bS^n(2)\) denotes the \(n\)-dimensional sphere of radius 2, and the resulting quotient space \(\rp^n\) also has diameter \(\pi\).
+Then,
+
+\medskip (1) For any \(m \in \N\) one has
+\[
+\di\big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\big) \leq \frac{\pi}{4}.
+\]
+
+(2) There is \(\degp \in \N\) and \(\Sq^k \in \cO(\degp-k, \degp)\) such that
+\[
+\di\big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\big) \geq \frac{\pi}{3}.
+\]
+
+We will prove more general statements with the goal of proving similar estimates for Lens spaces.\anibal{This is as far as I went. I would like to know exactly what needs to hold for Lens spaces to get similar estimates}
+
+%We estimate the interleaving distance $\db$ between the Steenrod barcodes of certain pairs of metric spaces and demonstrate that it provides a tighter lower-bound approximation of the Gromov–Hausdorff distance between the spaces than $\db$ between their persistent homology barcodes.
+%See the theorem in \cref{subsub:main_theorem} for details.
+%Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
+%This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
+
+\subsubsection{}
 
 Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
 Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
 
 %Let $\beta_m$ and $\gamma_\theta$ denote the first critical values of the $m^\th$ reduced homology of $\VR\cX$ and the degree-$m$ component of the $\theta$-barcode of $\VR\cX$, respectively.
 
-\subsection{Upper bound on $\db$ between homology barcodes}
-\label{subsub:db_upper_bound}
+\subsection{Upper bound on $\db$ between homology barcodes}\label{subsub:db_upper_bound}
 
 To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
 
