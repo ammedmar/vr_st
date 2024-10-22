@@ -10,7 +10,7 @@ This allows us to identify the essential components of the proof, laying the gro
 Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
 Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
 
-%Let $\beta_\degp$ and $\gamma_\theta$ denote the first critical values of the $\degp^\th$ reduced homology of $\VR\cX$ and the degree-$\degp$ component of the $\theta$-barcode of $\VR\cX$, respectively.
+%Let $\beta_m$ and $\gamma_\theta$ denote the first critical values of the $m^\th$ reduced homology of $\VR\cX$ and the degree-$m$ component of the $\theta$-barcode of $\VR\cX$, respectively.
 
 \subsection{Upper bound on $\db$ between homology barcodes}
 \label{subsub:db_upper_bound}
@@ -18,27 +18,27 @@ Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ fo
 To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
 
 \medskip\proposition
-For any degree $\degp$ such that $\opH_\degp(\cX)$ is non-trivial,
+For any degree $m$ such that $\opH_m(\cX)$ is non-trivial,
 \begin{equation}\label{eq:db_usual_upper_bound}
-	\db\big(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}\big)
+	\db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big)
 	%\leq \cost(P)
-	\leq \max\big\{|\zeta_\degp  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\}.
+	\leq \max\big\{|\zeta_m  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\}.
 \end{equation}
 
 \begin{proof}
     Let $\beta_m = 2\firstdeath{m}{\cX}$.
-	Consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc[\field]{\degp}{\cX}$ such that $(0,\zeta_\degp ) \leftrightarrow (0, \beta_\degp )$ and all other bars unmatched.
+	Consider the matching $P$ between $\Hbarc[\field]{m}{\VS}$ and $\Hbarc[\field]{m}{\cX}$ such that $(0,\zeta_m ) \leftrightarrow (0, \beta_m )$ and all other bars unmatched.
 	Using the barcode estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we obtain that %the cost of $P$ satisfies
 	\begin{align*}
 		\cost(P)
-		= & \max\big\{|\zeta_\degp  - \beta_\degp |,\, \tfrac{\pi - \zeta_n}{2},\, \tfrac{\pi - \alpha}{2}\big\} \\
-		= & \max\big\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\big\} && \mbox{(because $\zeta_n \leq \alpha$)}.
+		= & \max\big\{|\zeta_m  - \beta_m |,\, \tfrac{\pi - \zeta_n}{2},\, \tfrac{\pi - \alpha}{2}\big\} \\
+		= & \max\big\{|\zeta_m  - \beta_m |, \tfrac{\pi - \zeta_n}{2}\big\} && \mbox{(because $\zeta_n \leq \alpha$)}.
 	\end{align*}
 	Therefore, \cref{eq:db_usual_upper_bound} holds.
 \end{proof}
 
 
-% For any degree $m > n$, consider the matching $P$ between $\Hbarc[\field]{\degp}{\VS}$ and $\Hbarc{\degp}{\cX}$ such that all bars are unmatched. Then the cost of $P$ satisfies:
+% For any degree $m > n$, consider the matching $P$ between $\Hbarc[\field]{m}{\VS}$ and $\Hbarc{m}{\cX}$ such that all bars are unmatched. Then the cost of $P$ satisfies:
 % \[
 %     \cost(P)
 %     = \max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\}
@@ -51,7 +51,7 @@ For any degree $\degp$ such that $\opH_\degp(\cX)$ is non-trivial,
 To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated.
 
 \medskip\proposition
-Let $\theta \in \cO(\ell, \degp)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
+Let $\theta \in \cO(\ell, m)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
 	\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big)
@@ -86,27 +86,27 @@ In addition, the following relations hold: for any $m \leq n$,
 \medskip\lemma
 Let $m \leq n$.
 
-(1) For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_\degp\big]$, $\max\big\{|\zeta_\degp  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
+(1) For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big]$, $\max\big\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
 
-(2) For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_\degp\big]$, $\max\{|\zeta_\degp  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
+(2) For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
 
 \begin{proof}
-    	(1) Since $\tfrac{\pi - \zeta_n}{2} \leq \tfrac{\zeta_n}{2}$, it remains to show $|\zeta_\degp  - r | \leq \tfrac{\zeta_n}{2}$, which follows from
+    	(1) Since $\tfrac{\pi - \zeta_n}{2} \leq \tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m  - r | \leq \tfrac{\zeta_n}{2}$, which follows from
     	\(
-    	|\zeta_\degp  - r | \leq \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2}.
+    	|\zeta_m  - r | \leq \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2}.
     	\)
 
-    	(2) Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp$.
-        To show the desired equality, it suffices to show $|\zeta_\degp  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
+    	(2) Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_m$.
+        To show the desired equality, it suffices to show $|\zeta_m  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
         We consider two cases.
-        When $r > \zeta_\degp$,
-    	$|\zeta_\degp  - r | = r - \zeta_\degp \leq
-    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp - \zeta_\degp =
+        When $r > \zeta_m$,
+    	$|\zeta_m  - r | = r - \zeta_m \leq
+    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_m - \zeta_m =
         \tfrac{\pi - \zeta_n}{2}
     	$ is clear.
-    	When $r \leq \zeta_\degp$, we have
+    	When $r \leq \zeta_m$, we have
     	\(
-    	|\zeta_\degp  - r | \leq \zeta_m - \zeta_n
+    	|\zeta_m  - r | \leq \zeta_m - \zeta_n
     	\leq \tfrac{\pi - \zeta_n}{2}.
     	\)
 \end{proof}
@@ -116,22 +116,22 @@ By combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lo
 As a consequence, the $\theta$-barcodes provide a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the persistent homology barcodes.
 
 \medskip\proposition
-If $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_\degp$ and $\theta \in \cO(\ell, \degp)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
-\[\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big) \geq \db\big(\Hbarc[\field]{\degp}{\VS}, \Hbarc[\field]{\degp}{\cX}\big).\]
+If $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_m$ and $\theta \in \cO(\ell, m)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
+\[\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big) \geq \db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big).\]
 
 \begin{proof}
     Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
     By \cref{eq:db_usual_upper_bound} and \cref{eq:db_theta_lower_bound}, it suffices to show that
     \[
-    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\big\}.
+    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\}.
     \]
     Since \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\), we have
     \(
     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \tfrac{\zeta_n}{2}.
     \)
-    On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_\degp < \tfrac{\zeta_n}{2} + \zeta_\degp\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
+    On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
     \(
-    \max\big\{|\zeta_\degp - \beta_\degp|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
+    \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
     \)
     Thus, we have the desired inequality.
 \end{proof}
@@ -144,26 +144,26 @@ Below, $\VS$ is $\bS^1\vee\dots\vee \bS^n$.
 \medskip\theorem
 We have
 \begin{itemize}
-	\item[(1)] $\displaystyle \max_{\degp\geq 1}\, \db\big(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n}\big)\leq \tfrac{\pi - \zeta_n}{2}$.
+	\item[(1)] $\displaystyle \max_{m\geq 1}\, \db\big(\Hbarc{m}{\VS}, \Hbarc{m}{\rp^n}\big)\leq \tfrac{\pi - \zeta_n}{2}$.
 	\smallskip
     \item[(2)] $\displaystyle \min_{%(k,\ell) \text{ s.t. }
     k \leq \frac{n-1}{2},\, \binom{\ell}{k}\text{ odd}} \db\big(\sqbarcl{k}{\ell}{\VS},\, \sqbarcl{k}{\ell}{\rp^n}\big)\geq \tfrac{\pi}{3}$. %for $k,\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
 \end{itemize}
 
 \begin{proof}
-	Take arbitrary $m, k, \ell$ such that $1 \leq \degp \leq n$, $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
+	Take arbitrary $m, k, \ell$ such that $1 \leq m \leq n$, $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
     Let $\alpha = \crit(\rp^n)$, $\beta_m = 2\firstdeath{m}{\rp^n}$ and $\gamma_{\Sq_\ell^k}= 2\firstdeath{\theta}{\rp^n}$.
     We have shown in \cref{sub:first_critical_value_rpn} that
 	$$
-	\alpha = \beta_\degp = \gamma_{\Sq_\ell^k} = \frac{2\pi}{3}.
+	\alpha = \beta_m = \gamma_{\Sq_\ell^k} = \frac{2\pi}{3}.
 	$$
-	%for any $1 \leq \degp \leq n$, and $k$ and $\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
+	%for any $1 \leq m \leq n$, and $k$ and $\ell$ such that $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ is odd.
 
     (1) It is clear that %$\alpha= \tfrac{2\pi}{3}$ lies in $[\zeta_n, \pi)$ and
-    $\beta_\degp = \tfrac{2\pi}{3}$ lies in $\big[\zeta_n, \tfrac{\pi - \zeta_n}{2}+\zeta_\degp\big]$ satisfying the condition of Part (2) of the lemma in \cref{subsub:comparison_lemma}.
+    $\beta_m = \tfrac{2\pi}{3}$ lies in $\big[\zeta_n, \tfrac{\pi - \zeta_n}{2}+\zeta_m\big]$ satisfying the condition of Part (2) of the lemma in \cref{subsub:comparison_lemma}.
 	Applying \cref{eq:db_usual_upper_bound} and \cref{subsub:comparison_lemma}, we obtain
-	\[\db\big(\Hbarc{\degp}{\VS}, \Hbarc{\degp}{\rp^n}\big)
-    \leq \max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\}
+	\[\db\big(\Hbarc{m}{\VS}, \Hbarc{m}{\rp^n}\big)
+    \leq \max\{|\zeta_m  - \beta_m |, \tfrac{\pi - \zeta_n}{2}\}
     = \tfrac{\pi - \zeta_n}{2}.\]
     Since $m$ is taken arbitrarily, we obtain the desired inequality.
 
