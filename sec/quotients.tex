@@ -125,7 +125,7 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
     The commutativity of diagram \ref{eq:VR_quotient}, with $n_i = n$ and $n_{i+1} = n+1$ follows directly from the commutativity of the corresponding diagram without group actions.
 
     It remains to check that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{subsub:VR-compatible-Sn}), which means the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and $f_r^{n}$ induces weak equivalences on the orbit spaces.
-    
+
     By \cref{ss:VRSn projection}, $f_r^{n}$ is a homotopy equivalence.
     In the case of the $\rC_2$-action, because $f_r^{n}$ is $\rC_2$-equivariant, the induced map $\tilde{f}_r^{n}$ is also a homotopy equivalence. \ling{This is the argument used by \cite[Theorem 4.5]{adamaszek2018metric}, but I am not sure why it is true and I am not sure if it generalizes to $\rC_m$-actions.\anibal{Since the action is proper and free, a weak equivalence equivariant wrt the action induces a weak equivalence of orbits. It is easy to see that \(f\) is equivariant wrt the \(\bS^1\) action defining the action of \(\cyc_q\)}}
 \end{proof}
@@ -146,10 +146,11 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 %\]
 %where \(\beta_{n_j}(\bS^{n_j})\) is the first critical value of \(\rH_{n_j}(\VR \bS^{n_j}_G)\).
 
-\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible and if $\fillrad(\bS^{n_i}_G)$ is non-decreasing as \(i\) increases, then for any \(i \leq j\),
+\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible and $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\),
 \[
-\firstdeath{n_i}{\bS^{n_j}_G} \leq \fillrad(\bS^{n_j}_G).
+\firstdeath{n_i}{\bS^{n_j}_G} \leq \fillrad(\bS^{n_j}_G)
 \]
+for any \(i \leq j\).
 
 \begin{proof}
     To simplify notation, for any $i \leq j$, let

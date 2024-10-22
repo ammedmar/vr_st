@@ -4,7 +4,7 @@
 %The Vietoris--Rips complex of a metric space is our primary example.
 %In this subsection, we will consider this $\R$-space and omit it from the notation when convenient.
 
-\subsection{Kuratowski embedding and the filling radii}\label{sub:filling radii}
+\subsection{Kuratowski embedding, filling radii, and the first \(\VR\)-critical value}\label{sub:filling radii}
 
 \subsubsection{}\label{ss:kuratowski}
 
@@ -41,7 +41,7 @@ We generalize this from the top homology to every other degree \(\degp\) and to 
 \[
 \fillrad_\degp(\cM) = \fillrad(\cM)
 \]
-if \(\cM\) connected and \(\degp\)-dimensional.
+if \(\cM\) is connected and \(\degp\)-dimensional.
 
 If \(\rH_\degp(\cM) = 0\), set \(\fillrad_m(\cM) = 0\), and if not, let \(\fillrad_m(\cM)\) be the smallest positive radius $r$ for which a non-zero homology class in \(\rH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\).
 Since \(\VR(\cM)\) is \(q\)-tame,
@@ -66,7 +66,8 @@ if \(\img_\theta(\cM) \neq 0\).
 
 \subsection{General estimates}\label{ss:barcode_general}
 
-Let \(\cM\) be a closed Riemannian manifold with diameter \(R\), \(\degp \in \N\), and \(\theta \in \cO(\ell,\degp)\).
+Let \(\cM\) be a closed Riemannian manifold with diameter \(R\).
+Consider \(\ell, \degp \in \N\) and \(\theta \in \cO(\ell,\degp)\).
 We will simplify notation writing \(\alpha = \crit(\cM)\), \(\beta_m = \firstdeath{\degp}{\cM}\), and \(\gamma_\theta = \firstdeath{\theta}{\cM}\).
 
 Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_\degp^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
