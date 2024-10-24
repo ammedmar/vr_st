@@ -14,7 +14,7 @@ Using the properties of this map and the universal coefficient theorem for cohom
 	The group $\Hom(\rH_n(\cX), \pi_n(\cX))$ contains $h^{-1}$, the inverse of the Hurewicz homomorphism.
 	Subject to the hypothesis on $\cX$, the universal coefficient theorem for homology gives an isomorphism of $\Hom(\rH_n(\cX), \pi_n(\cX))$ and $\rH^n(\cX; \pi_n(\cX))$, and the fundamental class $\iota \in \rH^n(\cX; \pi_n(\cX))$ corresponds to $h^{-1}$ under this isomorphism.}
 
-The relevance of Eilenberg--MacLane space for the study of cohomology is the following bijection:
+The relevance of Eilenberg--MacLane space for the study of cohomology is the following bijection holding for any space \(\cX\) with the homotopy type of a CW complex:
 \[
 \begin{tikzcd}[column sep=small, row sep=0]
 	{[\cX, K(\pi, n)]} \rar & \rH^n(\cX; \pi) \\
@@ -32,7 +32,7 @@ A \defn{cohomology operation} of type $(\pi, n; G, m)$ is a family of functions
 \[
 \theta_\cX \colon \rH^n(\cX; \pi) \to \rH^m(\cX; G),
 \]
-one for each space $\cX$ \ling{should this be cellular space?}, satisfying the naturality condition $f^* \theta_{\cY} = \theta_{\cX} f^*$ for any map $f \colon \cX \to \cY$.
+one for each cellular space $\cX$, satisfying the naturality condition $f^* \theta_{\cY} = \theta_{\cX} f^*$ for any map $f \colon \cX \to \cY$.
 We will denote by $\cO(\pi, n; G,m)$ the set of cohomology operations of type $(\pi, n; G,m)$.
 
 \subsubsection{}
@@ -57,18 +57,21 @@ The inclusion of $\cX$ into $\sus \cX$ induces an isomorphism
 \]
 in cohomology with any coefficients, referred to as the \defn{suspension isomorphism}.
 
-\subsubsection{} A \defn{stable cohomology operation} of degree $k$ is a natural family of functions
+\subsubsection{} A \defn{stable cohomology operation of degree $k$} is a natural family of cohomology operations
+%\[
+%\set{\theta^n_\cX \colon \rH^n(\cX; \pi) \to \rH^{n+k}(\cX; G)}_{n \in \N}
+%\]
 \[
-\set{\theta^n_\cX \colon \rH^n(\cX; \pi) \to \rH^{n+k}(\cX; G)}_{n \in \N}
+\set{\theta^n \in \cO(n,\pi,n+k,G)}_{n \in \N}
 \]
-for each space $\cX$ commuting with suspension isomorphisms, i.e., making the diagram
+commuting with suspension isomorphisms, i.e., making the diagram
 \[
 \begin{tikzcd}
 	\rH^n(\cX; \pi) \rar["\theta^n_\cX"] \dar["\cong" left] & \rH^{n+k}(\cX; G) \dar["\cong" right] \\
 	\rH^{n+1}(\sus \cX; \pi) \rar["\theta^{n+1}_\cX"] & \rH^{n+1+k}(\sus \cX; G)
 \end{tikzcd}
 \]
-commute for each $n \in \N$.
+commute for each \(\cX\) and $n$.
 We will denote by $\cO^{\mathrm{st}}_k(\pi, G)$ the set of stable cohomology operation of degree $k$.
 
 %An example of a cohomology operation that is not stable is the cup-product square
@@ -91,15 +94,15 @@ along certain maps
 \]
 defined by the functoriality of $\sus$ and a natural homotopy equivalence
 \begin{equation}\label{eq:suspension of K(pi,n)}
-	\sus K(\pi, n) \cong K(\pi, n+1)
+	\sus K(\pi, n) \cong K(\pi, n+1).
 \end{equation}
-between the suspension of the $n^\th$ Eilenberg--MacLane space and the $(n+1)^\th$.\footnote{\anibal{include spectra?}}
+%between the suspension of the $n^\th$ Eilenberg--MacLane space and the $(n+1)^\th$.\footnote{\anibal{include spectra?}}
 In other words, we have
 \[
 \cO^\st_k(\pi, G) \cong \colim_n \rH^{n+k}(K(\pi, n); G).
 \]
 
-\subsubsection{} We will be interested in combining all stable operations over a fixed coefficient field $\k$ to form a (graded) algebra via compositions:
+\subsubsection{} We will be interested in combining all stable operations over a fixed coefficient field $\k$ to form, via compositions, the (graded) algebra:
 \[
 \cO^\st(\k) = \bigsqcup_k \cO^{\mathrm{st}}_k(\k, \k).
 \]
