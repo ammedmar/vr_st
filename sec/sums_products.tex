@@ -43,7 +43,7 @@ d(x, x') =
 Recall from \cite[Proposition 1]{adamaszek2020homotopy} that the Vietoris--Rips filtration of a metric gluing is homotopy equivalent to the wedge sum of their Vietoris--Rips filtrations.
 Explicitly, the natural inclusion
 \[
-\VR_r\cX \vee \VR_r\cY \to \VR_r(\cX \vee \cY)
+\VR_r(\cX) \vee \VR_r(\cY) \to \VR_r(\cX \vee \cY)
 \]
 is a homotopy equivalence for each $r \in \R$.
 From this, we deduce the following.
@@ -58,17 +58,16 @@ For any linear cohomology operation $\theta$:
 
 \subsubsection{}
 
-Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, is defined by
+Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, their \defn{product}, is defined by
 \[
 (X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}).
 \]
 
-For general cohomology operations there is no formula expressing its action on a product in terms of its action on the factors.
-For Steenrod operations one does.
+%For a general cohomology operation there is no formula expressing its action on the product of two cellular \(\R\)spaces in terms of its action on its factors, but for Steenrod operations there is.
 
 \medskip\theorem
 Let $X$ and $Y$ be cellular $\R$-spaces.
-For any $k \in \N$, the Steenrod persistence modules satisfy:
+For any $k \in \N$, one has
 \begin{align*}
 	\img_{\Sq^k}(X \times Y) &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, &
 	\ker_{\Sq^k}(X \times Y) &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\

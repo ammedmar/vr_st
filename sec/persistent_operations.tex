@@ -4,20 +4,38 @@
 
 \subsubsection{}
 
-A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX) \to \rH^n(\cX)$ is linear for any space $\cX$.
+A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX) \to \rH^n(\cX)$ is linear for any cellular space $\cX$.
 We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$ and omit the field \(\k\) from the notation when no confusion arises from doing so.
 For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear.\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
-A linear cohomology operation \(\theta \in \cO(\ell,m)\) defines a natural morphism of persistence modules $\theta_X \colon \rH^\ell(X) \to \rH^m(X)$ for any $\R$-space $X$.
-The \defn{image} and \defn{kernel} of $\theta$ at \(X\), denoted $\img_\theta(X)$ and $\ker_\theta(X)$ respectively, are natural persistence modules defined for any $\R$-space $X$ by
+A linear cohomology operation \(\theta \in \cO(\ell,m)\) defines a natural morphism of persistence modules $\theta_X \colon \rH^\ell(X) \to \rH^m(X)$ for any cellular $\R$-space $X$.
+The \defn{image} and \defn{kernel} of $\theta$ at \(X\), denoted \defn{$\img_\theta(X)$} and \defn{$\ker_\theta(X)$} respectively, are the natural persistence modules defined by
 \begin{align*}
 	\img_\theta(X)_r &= \img((\theta_X)_r)\,, &
 	\ker_\theta(X)_r &= \ker((\theta_X)_r)\,, \\
 	\img_\theta(X)_{s,t} &= \rH^m(X)_{s,t}\big|_{\img(\theta_s)}\,, &
 	\ker_\theta(X)_{s,t} &= \rH^\ell(X)_{s,t}\big|_{\ker(\theta_s)}\,.
 \end{align*}
-When $\theta$ is a Steenrod operation we refer to these as \defn{Steenrod persistence modules}.
+%When $\theta$ is a Steenrod operation we refer to these as \defn{Steenrod persistence modules}.
+
+\subsubsection{}
 
 If $\rH^m(X)$ (resp. \(\rH^\ell(X)\)) is q-tame, then $\img_\theta(X)$ (resp. $\ker_\theta(X)$) is q-tame.
 In this case we refer to its barcodes as the \defn{$\img_\theta$-barcode} (resp. \defn{\(\ker_\theta\)-barcode}) of \(X\).
 Barcodes of cohomology operations generalize the barcodes of persistent cohomology since, for the identity and zero maps in $\cO(m,m)$, we have $\img_\id(X) \cong \ker_0(X) \cong \rH^m(X)$.
+
+\subsubsection{}
+
+The image persistent modules of Steenrod squares were introduced in \cite{medina2022per_st} alongside the computational tool \texttt{steenroder} for the computation of their barcodes on finite filtered simplicial complexes.
+By detecting non-trivial bars in the Vietoris--Rips filtration of a sample of the conformation space of molecule, this tool was used to detect the presence of non-trivial persistent cohomology operations in real-world data.
+
+%\subsubsection{}
+%
+%If $\rH^m(X)$ (resp. \(\rH^\ell(X)\)) is q-tame, then $\img_\theta(X)$ (resp. $\ker_\theta(X)$) is q-tame.
+%In this case we refer to its barcodes as the \defn{$\img_\theta$-barcode} (resp. \defn{\(\ker_\theta\)-barcode}) of \(X\).
+%Barcodes of cohomology operations generalize the barcodes of persistent cohomology since, for the identity and zero maps in $\cO(m,m)$, we have $\img_\id(X) \cong \ker_0(X) \cong \rH^m(X)$.
+%
+%\subsubsection{}
+%
+%The image persistent module of Steenrod squares was introduced in \cite{medina2022per_st} alongside the computational tool \texttt{steenroder} for the computation of their barcode on finite filtered simplicial complexes.
+%By detecting non-trivial bars in Vietoris--Rips filtration of a sample of the conformation space of molecule, this tool was used to detect the presence of non-trivial persistent cohomology operations in real-world data.

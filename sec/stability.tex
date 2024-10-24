@@ -30,9 +30,6 @@
 \end{split}
 \]
 
-\ling{Do we need the cellular structure? I see the reason of having it for $\Sq^k$ when the cohomology ring structure needs to be preserved.
-For $\Sq^k_\ell$ and general $\theta\in \cO(\ell,m)$, we do not need the cohomology operation to preserve the ring structure (it only needs to preserved cohomology vector spaces.)}
-
 \begin{proof}
 	We write the proof only for $\img_\theta(X)$ since that for $\ker_\theta(X)$ is analogous.
 	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
@@ -87,7 +84,7 @@ For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$ 
 
 For a metric space \(\cX\) and a linear cohomology operation \(\theta\) we denote \(\img_\theta\big(\VR(\cX)\big)\) and \(\ker_\theta\big(\VR(\cX)\big)\) respectively by \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
 
-\medskip\corollary For any two metric spaces $\cX$ and $\cY$ and linear cohomology operation~$\theta$,
+\medskip\corollary For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$ one has
 \begin{align*}
 	\di(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY), \\
 	\di(\ker_\theta^\VR(\cX),\, \ker_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY).
@@ -96,10 +93,10 @@ For a metric space \(\cX\) and a linear cohomology operation \(\theta\) we denot
 \begin{proof}
 	From \cref{thm:stability-HI} and the previous theorem we obtain
 	\[
-	\di(\img_\theta^\VR(\cX), \img_\theta^\VR(\cY)) \leq
-	\dhi(\VR\cX, \VR\cY) \leq 2 \cdot \dgh(\cX,\cY).
+	\di\big(\img_\theta^\VR(\cX), \img_\theta^\VR(\cY)\big) \leq
+	\dhi\big(\VR(\cX), \VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY).
 	\]
-	The same argument applies to $\ker_\theta^\VR(\cX)$.
+	The same argument applies to $\ker_\theta^\VR$.
 \end{proof}
 
 We remark that if the metric spaces are compact or, more generally, totally bounded, the above persistent modules are q-tame and the bottleneck distance of their barcodes is bounded by twice the Gromov--Hausdorff distance, since bottleneck and interleaving distances agree.
