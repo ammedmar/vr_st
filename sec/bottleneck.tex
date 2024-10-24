@@ -19,67 +19,94 @@ Then,
 \di\big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\big) \geq \frac{\pi}{3}.
 \]
 
-We will prove more general statements with the goal of proving similar estimates for Lens spaces.\anibal{This is as far as I went. I would like to know exactly what needs to hold for Lens spaces to get similar estimates}
+We will prove more general statements with the goal of proving similar estimates for Lens spaces.\anibal{This is as far as I went. I would like to know exactly what needs to hold for Lens spaces to get similar estimates 
+\ling{see \cref{ss:genberal_distance_comparison}}}
 
 %We estimate the interleaving distance $\db$ between the Steenrod barcodes of certain pairs of metric spaces and demonstrate that it provides a tighter lower-bound approximation of the Gromov–Hausdorff distance between the spaces than $\db$ between their persistent homology barcodes.
 %See the theorem in \cref{subsub:main_theorem} for details.
 %Although this theorem is stated for $\bS^1\vee\dots\vee \bS^n$ and $\rp^n$ only, we present our methodology within a more general framework.
 %This allows us to identify the essential components of the proof, laying the groundwork for extending these results to other spaces.
 
-\subsubsection{}
+\subsection{General estimates}
 
-Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that $\crit(\cX) \geq \zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
-Let $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
+\label{ss:genberal_distance_comparison}
 
-%Let $\beta_m$ and $\gamma_\theta$ denote the first critical values of the $m^\th$ reduced homology of $\VR\cX$ and the degree-$m$ component of the $\theta$-barcode of $\VR\cX$, respectively.
+Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that 
+\begin{itemize}
+    \item $\crit(\cX) \geq \zeta_n $;
+    \item $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_m$.
+\end{itemize}
+Here, $\zeta_n = 2 \cdot \fillrad(\bS^n)= \arccos{(-\tfrac{1}{n+1})}$ for any $n\geq 1$.
+Let $\VS$ be the wedge of unit geodesic spheres with the same reduced homology groups as $\cX$.
+More precisely, $\VS \defeq \VS^{\ell_1, \dots, \ell_n}$ with $\ell_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
 
-\subsection{Upper bound on $\db$ between homology barcodes}\label{subsub:db_upper_bound}
+We establish the following result to show that the $\theta$-barcodes can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cX$ and $\VS$ than $\db$ between the persistent homology barcodes.
 
-To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
+\ling{explain the steps needed to prove it and say each one will be a lemma blabla and link them; stay result using interleaving and hide barcode in the proof}
 
-\medskip\proposition
+\medskip\theorem
+For any $m>1$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cX$ is non-trivial, we have
+\begin{equation}\label{eq:comparison}
+    \di\big(\rH^{\VR}_{m}(\VS), \rH^{\VR}_{m}(\cX)\big) < \di\big(\img^{\VR}_{\theta}(\VS), \img^{\VR}_{\theta}(\cX)\big) .
+\end{equation}
+
+% \[\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big) > \db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big).\]
+
+The proof of the above theorem involves the following three steps, which we will prove in \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, respectively. 
+\begin{enumerate}
+    \item [(a)] LHS of \cref{eq:comparison} is bounded above by $\max\big\{|\zeta_m  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\}$.
+    \item [(b)] RHS of \cref{eq:comparison} is bounded below by $\min\{\firstdeath{\theta}{\cX}, \zeta_n\}$.
+    \item [(c)] The value in (a) is strictly less than the value in (b).
+\end{enumerate}
+Thus, LHS of \cref{eq:comparison} is strictly less than RHS of \cref{eq:comparison}.
+
+
+\subsubsection{}\label{subsub:db_upper_bound}
+
+\medskip\lemma
 For any degree $m$ such that $\opH_m(\cX)$ is non-trivial,
 \begin{equation}\label{eq:db_usual_upper_bound}
-	\db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big)
+    \di\big(\rH^{\VR}_{m}(\VS), \rH^{\VR}_{m}(\cX)\big) 
+	%\db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big)
 	%\leq \cost(P)
 	\leq \max\big\{|\zeta_m  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\}.
 \end{equation}
 
 \begin{proof}
+    Because the two metric spaces are totally bounded, their persistent homology is $q$-tame. 
+    By \cref{ss:algebraic_stability}, the interleaving distance between the persistent homology equals the bottleneck distance between the corresponding barcodes.
+    
+    To obtain an upper bound on the bottleneck distance, it suffices to find one matching and compute the cost of it.
+    
     Let $\beta_m = 2\firstdeath{m}{\cX}$.
 	Consider the matching $P$ between $\Hbarc[\field]{m}{\VS}$ and $\Hbarc[\field]{m}{\cX}$ such that $(0,\zeta_m ) \leftrightarrow (0, \beta_m )$ and all other bars unmatched.
 	Using the barcode estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we obtain that %the cost of $P$ satisfies
 	\begin{align*}
 		\cost(P)
-		= & \max\big\{|\zeta_m  - \beta_m |,\, \tfrac{\pi - \zeta_n}{2},\, \tfrac{\pi - \alpha}{2}\big\} \\
-		= & \max\big\{|\zeta_m  - \beta_m |, \tfrac{\pi - \zeta_n}{2}\big\} && \mbox{(because $\zeta_n \leq \alpha$)}.
+		= & \max\big\{|\zeta_m  - \beta_m |,\, \tfrac{\pi - \zeta_n}{2},\, \tfrac{\pi - \crit(\cX)}{2}\big\} \\
+		= & \max\big\{|\zeta_m  - \beta_m |, \tfrac{\pi - \zeta_n}{2}\big\} && \mbox{(because $\zeta_n \leq \crit(\cX)$)}.
 	\end{align*}
 	Therefore, \cref{eq:db_usual_upper_bound} holds.
 \end{proof}
 
+\subsubsection{}\label{subsub:db_theta_lower_bound}
 
-% For any degree $m > n$, consider the matching $P$ between $\Hbarc[\field]{m}{\VS}$ and $\Hbarc{m}{\cX}$ such that all bars are unmatched. Then the cost of $P$ satisfies:
-% \[
-%     \cost(P)
-%     = \max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi - \alpha}{2}\}
-%     = \tfrac{\pi - \zeta_n}{2}.
-% \]
-
-\subsection{Lower bound on $\db$ between $\theta$-barcodes}
-\label{subsub:db_theta_lower_bound}
-
-To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated.
-
-\medskip\proposition
-Let $\theta \in \cO(\ell, m)$ be a linear cohomology operation such that $\img \theta_\cX$ is non-trivial.
+\medskip\lemma
+Let $\theta \in \cO(\ell, m)$ be such that $\img \theta_\cX$ is non-trivial.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
-	\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big)
+	\di\big(\img^{\VR}_{\Sq^k}(\VS), \img^{\VR}_{\Sq^k}(\cX)\big)
+    %\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big)
 	%= \min_Q \cost(Q)
 	\geq \min\{\firstdeath{\theta}{\cX}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
 \end{equation}
 
 \begin{proof}
+    Since the metric spaces are totally bounded, their persistent cohomology is $q$-tame, making the persistent $\img_\theta$-modules $q$-tame as well (see \cref{ss:theta-modules}).
+    Thus, we can replace the left-hand-side of \cref{eq:db_theta_lower_bound} with the bottleneck distance between the corresponding $\img_\theta$-barcodes.
+    
+    To obtain a lower bound on the bottleneck distance, the minimum cost of matching a certain bar is calculated.
+
     Let $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
 	Recall from \cref{fig:barcodes_general} that $\thetabarc{\cX}$ contains a bar $(0,\gamma_\theta)$.
 	We calculate the minimum cost of matching the bar $(0,\gamma_\theta)$.
@@ -92,26 +119,29 @@ Then,
 	Therefore, \cref{eq:db_theta_lower_bound} holds.
 \end{proof}
 
-\subsection{Comparison of distinguishing powers}
-\label{subsub:main_theorem}
 
 \subsubsection{}
 \label{subsub:comparison_lemma}
 
-We establish a technical lemma.
 As before, let $\zeta_n = 2 \cdot \fillrad(\bS^n)$, which decreases as $n$ increases.
-In addition, the following relations hold: for any $m \leq n$,
-\[\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\]
+We derive the following results, which, while straightforward, require careful exposition.
 
 \medskip\lemma
 Let $m \leq n$.
+\begin{enumerate}
+    \item \(\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\)
 
-(1) For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big]$, $\max\big\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
+    \item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big]$, $\max\big\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}$.
 
-(2) For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
+    \item For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
+\end{enumerate}
+
 
 \begin{proof}
-    	(1) Since $\tfrac{\pi - \zeta_n}{2} \leq \tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m  - r | \leq \tfrac{\zeta_n}{2}$, which follows from
+    	(1) The first inequality follows from $\zeta_m - \zeta_n < \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
+        The second inequality holds because $\zeta_n > \tfrac{\pi}{2}$.
+     
+        (2) Since $\tfrac{\pi - \zeta_n}{2} \leq \tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m  - r | \leq \tfrac{\zeta_n}{2}$, which follows from
     	\(
     	|\zeta_m  - r | \leq \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2}.
     	\)
@@ -131,32 +161,42 @@ Let $m \leq n$.
     	\)
 \end{proof}
 
-\subsubsection{}
-By combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, we deduce that the lower bound of the bottleneck distance $\db$ between the $\theta$-barcodes of the two space $\VS$ and $\cX$ (Equation (\ref{eq:db_theta_lower_bound})) is larger than the upper bound of $\db$ between the persistent homology barcodes of the two spaces (Equation (\ref{eq:db_usual_upper_bound})).
-As a consequence, the $\theta$-barcodes provide a better (lower-bound) approximation of the Gromov--Hausdorff distance than $\db$ between the persistent homology barcodes.
-
-\medskip\proposition
-If $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_m$ and $\theta \in \cO(\ell, m)$ is a linear cohomology operation such that $\img \theta_\cX$ is non-trivial, then
-\[\db\big(\thetabarc{\VS}, \thetabarc{\cX}\big) \geq \db\big(\Hbarc[\field]{m}{\VS}, \Hbarc[\field]{m}{\cX}\big).\]
-
+\medskip \corollary
+\(\max\big\{|\zeta_m  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\} < \min\{\firstdeath{\theta}{\cX}, \zeta_n\}.\)
 \begin{proof}
     Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
-    By \cref{eq:db_usual_upper_bound} and \cref{eq:db_theta_lower_bound}, it suffices to show that
+    Because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), $\beta_m$ satisfies the condition in Part (2) of the lemma in \cref{subsub:comparison_lemma}.
+    Thus, we have the leftmost inequality below:
     \[
-    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\}.
+    \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}
+    \leq
+    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\}.
     \]
-    Since \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\), we have
-    \(
-    \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \tfrac{\zeta_n}{2}.
-    \)
-    On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
-    \(
-    \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
-    \)
-    Thus, we have the desired inequality.
+    To obtain the rightmost inequality, note that \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\).
 \end{proof}
 
-\subsubsection{}
+% \subsubsection{}
+% \label{ss:proof of genberal_distance_comparison}
+% We prove \cref{ss:genberal_distance_comparison} by combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, we deduce that the lower bound of the bottleneck distance $\db$ between the $\theta$-barcodes of the two space $\VS$ and $\cX$ (Equation (\ref{eq:db_theta_lower_bound})) is larger than the upper bound of $\db$ between the persistent homology barcodes of the two spaces (Equation (\ref{eq:db_usual_upper_bound})).
+
+% \begin{proof}[Proof of \cref{ss:genberal_distance_comparison}]
+%     Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
+%     By \cref{eq:db_usual_upper_bound} and \cref{eq:db_theta_lower_bound}, it suffices to show that
+%     \[
+%     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\}.
+%     \]
+%     Since \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\), we have
+%     \(
+%     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \tfrac{\zeta_n}{2}.
+%     \)
+%     On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
+%     \(
+%     \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
+%     \)
+%     Thus, we have the desired inequality.
+% \end{proof}
+
+\subsection{Real projection spaces}
 
 In the case of $\cX = \rp^n$ and the cohomology operations $\theta$ being the Steenrod squares, all with mod $2$ coefficients, we have a finer estimate as in the theorem below.
 Below, $\VS$ is $\bS^1\vee\dots\vee \bS^n$.
