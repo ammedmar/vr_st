@@ -7,7 +7,7 @@ We will consider every sphere \(\bS^n(2)\) to have radius 2 so the quotient \(\r
 We will consider reduced (co)homology with mod 2 coefficients.
 
 \medskip\proposition
-For \(k,\ell,n,m \in \N\) and \(\Sq^k \in \cO(\ell, k+\ell)\) we have:
+For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \begin{enumerate}
 	\item \(\crit(\rp^n) = \frac{2\pi}{3}\).
 	\item \(\firstdeath{m}{\rp^n} =
@@ -17,7 +17,7 @@ For \(k,\ell,n,m \in \N\) and \(\Sq^k \in \cO(\ell, k+\ell)\) we have:
 	\end{cases}\)
 	\item \(\firstdeath{\Sq^k}{\rp^n} =
 	\begin{cases}
-		\tfrac{\pi}{3} & k \leq \frac{n-1}{2} \text{ and } \binom{\ell}{k} \text{ is odd},\\
+		\tfrac{\pi}{3} & k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ is odd},\\
 		\hfil 0 & \text{otherwise}. \\
 	\end{cases}\)
 \end{enumerate}
@@ -30,9 +30,11 @@ For \(k,\ell,n,m \in \N\) and \(\Sq^k \in \cO(\ell, k+\ell)\) we have:
 	By \cref{subsub:foundamental_bar_rpn_lemma}, we have that $\firstdeath{m}{\rp^n}\leq \tfrac{\pi}{3}$.
 	On the other hand, $\firstdeath{m}{\rp^n}\geq \tfrac{1}{2}\crit(\rp^n) = \tfrac{\pi}{3}$.
 
-	(3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{\ell}{k}$ odd, since \(\Sq^k = 0\) otherwise.
-	Given that $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in [0,\tfrac{2\pi}{3})$, \anibal{Recall the cohomology ring in order to use the generator \(\sigma\)} and $\Sq^k(\sigma^\ell) = \binom{\ell}{k}\sigma^{\ell+k}$ generates a bar in $\barc \img_{\Sq^k}$ that is born at $0$ and stays alive until the non-trivial degree-$(\ell+k)$ class $\sigma^{k+\ell}$ dies at $\tfrac{2\pi}{3}$.
-	Thus, $\firstdeath{\Sq_\ell^k}{\rp^n} \leq \tfrac{\pi}{3}$.
+	(3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{m-k}{k}$ odd, since \(\Sq^k = 0\) otherwise.
+	Because $\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$. 
+    Recall from \cref{sss:cohomology_rpn} the cohomology algebra \(\rH^\ast(\rp^n; \Ftwo) \cong \frac{\Ftwo[\sigma]}{(\sigma^{n+1} = 1)}.\)
+    Thus, $\Sq^k(\sigma^{m-k}) = \sigma^{m}$ generates a bar in the $\img_{\Sq^k}$-barcode that is born at $0$ and stays alive until the non-trivial class $\sigma^{m}$ dies at $\tfrac{2\pi}{3}$.
+	Thus, $\firstdeath{\Sq^k}{\rp^n} \leq \tfrac{\pi}{3}$.
 	On the other hand, $\firstdeath{\Sq^k}{\rp^n} \geq \tfrac{1}{2}\crit(\rp^n) = \tfrac{\pi}{3}$.
 \end{proof}
 
@@ -41,9 +43,10 @@ Using the above values, the estimates resulting from the analysis of \cref{ss:ba
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_rpn}
-	\caption{\emph{Top row:} the persistent reduced homology barcode of $\rp^n$.
+	\caption{Let $m \in \N$ and $\Sq^k \in \cO(m-k, k)$.
+        \emph{Top row:} the persistent reduced homology barcode of $\rp^n$.
 		%When $1\leq \degp \leq n$, the barcode consists of one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
-		\emph{Bottom row:} the $\img_{\Sq_\ell^k}$-barcode of $\rp^n$.
+		\emph{Bottom row:} the $\img_{\Sq^k}$-barcode of $\rp^n$.
 		%The leftmost barcode contains at least one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$;
         %See \cref{s:first_critical_value_rpn} for details.
         In each figure, the gray region represents where additional bars could exist within the corresponding barcode.

@@ -374,3 +374,25 @@ Moreover, if $\beta_\degp \leq \tfrac{\pi - \zeta_n}{2} + \zeta_\degp (< \tfrac{
     	\]
     	Thus, $\max\{|\zeta_\degp  - \beta_\degp |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}.$
 \end{proof}
+
+
+% \subsubsection{}
+% \label{ss:proof of genberal_distance_comparison}
+% We prove \cref{ss:genberal_distance_comparison} by combining results from \cref{subsub:db_upper_bound}, \cref{subsub:db_theta_lower_bound} and \cref{subsub:comparison_lemma}, we deduce that the lower bound of the bottleneck distance $\db$ between the $\theta$-barcodes of the two space $\VS$ and $\cX$ (Equation (\ref{eq:db_theta_lower_bound})) is larger than the upper bound of $\db$ between the persistent homology barcodes of the two spaces (Equation (\ref{eq:db_usual_upper_bound})).
+
+% \begin{proof}[Proof of \cref{ss:genberal_distance_comparison}]
+%     Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
+%     By \cref{eq:db_usual_upper_bound} and \cref{eq:db_theta_lower_bound}, it suffices to show that
+%     \[
+%     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\}.
+%     \]
+%     Since \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\), we have
+%     \(
+%     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\} \geq \tfrac{\zeta_n}{2}.
+%     \)
+%     On the other hand, because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), applying Part (1) of the lemma in \cref{subsub:comparison_lemma} gives
+%     \(
+%     \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} \leq \tfrac{\zeta_n}{2}.
+%     \)
+%     Thus, we have the desired inequality.
+% \end{proof}
