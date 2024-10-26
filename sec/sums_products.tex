@@ -4,12 +4,15 @@
 
 \subsubsection{}
 
-For any two pointed $\R$-spaces $X$ and $Y$, the pointed $\R$-space $X \vee Y$, their \defn{wedge sum}, is defined by
+The \defn{wedge sum} of two pointed $\R$-spaces $X$ and $Y$ is defined by
 \[
-(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,t} \vee Y_{s,t}).
+(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,t} \vee Y_{s,t})
 \]
+where \(r,s,t \in \R\) and \(s \leq t\).
 
-\medskip\theorem
+Since for any \(r \in \R\), the natural inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Cor.~2.25.]{hatcher2000}), we have the following.
+
+\medskip\lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 For any linear cohomology operation $\theta$:
 \begin{align*}
@@ -17,12 +20,12 @@ For any linear cohomology operation $\theta$:
 	\ker_\theta(X \vee Y) &\cong \ker_\theta(X) \oplus \ker_\theta(Y).
 \end{align*}
 
-\begin{proof}
-	For any \(r \in \R\), the inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Corollary 2.25.]{hatcher2000}).
-	The claim follows from the naturality of \(\theta\).\anibal{note to self: Say more?}
-%	By the naturality of $\theta$ we have that $\theta_{X \vee Y} \circ (\iota^*_X \oplus \iota^*_Y) = (\iota^*_X \circ \theta_X) \oplus (\iota^*_Y \circ \theta_Y)$.
-%	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$.
-\end{proof}
+%\begin{proof}
+%
+%	The claim follows from the naturality of \(\theta\).\anibal{note to self: Say more?}
+%%	By the naturality of $\theta$ we have that $\theta_{X \vee Y} \circ (\iota^*_X \oplus \iota^*_Y) = (\iota^*_X \circ \theta_X) \oplus (\iota^*_Y \circ \theta_Y)$.
+%%	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$.
+%\end{proof}
 
 \subsubsection{}\label{ss:wedge sum}
 
@@ -40,21 +43,22 @@ d(x, x') =
 %\]
 %if $i =j$,
 
-Recall from \cite[Proposition 1]{adamaszek2020homotopy} that the Vietoris--Rips filtration of a metric gluing is homotopy equivalent to the wedge sum of their Vietoris--Rips filtrations.
-Explicitly, the natural inclusion
-\[
-\VR_r(\cX) \vee \VR_r(\cY) \to \VR_r(\cX \vee \cY)
-\]
-is a homotopy equivalence for each $r \in \R$.
-From this, we deduce the following.
-
-\medskip\corollary
+\medskip\theorem
 Let $\cX$ and $\cY$ be pointed metric spaces.
 For any linear cohomology operation $\theta$:
 \begin{align*}
-	\img_\theta^\VR(\cX \, \vee \, \cY) &\cong \, \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY), \\
-	\ker_\theta^\VR(\cX \, \vee \, \cY) &\cong \, \ker_\theta^\VR(\cX) \oplus \ker_\theta^\VR(\cY).
+	\img_\theta^\VR(\cX \vee \cY) &\cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY), \\
+	\ker_\theta^\VR(\cX \vee \cY) &\cong \ker_\theta^\VR(\cX) \oplus \ker_\theta^\VR(\cY),
 \end{align*}
+where \(\cX \vee \cY\) is equipped with the gluing metric.
+
+\begin{proof}
+	This follows from the previous lemma and the fact, proven in \cite[Prop.~1]{adamaszek2020homotopy}, that the natural inclusion
+	\[
+	\VR_r(\cX) \vee \VR_r(\cY) \to \VR_r(\cX \vee \cY)
+	\]
+	is a homotopy equivalence for each $r \in \R$.
+\end{proof}
 
 \subsubsection{}
 
@@ -62,43 +66,54 @@ Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, the
 \[
 (X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}).
 \]
+Analogously, the \defn{tensor product} \(V \ot W\) of two persistence modules is defined by
+\[
+(M \ot N)_r = M_r \ot N_r \quad\text{and}\quad (M \ot N)_{s,t} = (M_{s,y} \ot N_{s,t}).
+\]
 
 %For a general cohomology operation there is no formula expressing its action on the product of two cellular \(\R\)spaces in terms of its action on its factors, but for Steenrod operations there is.
 
-\medskip\theorem
-Let $X$ and $Y$ be cellular $\R$-spaces.
-For any $k \in \N$, one has
-\begin{align*}
-	\img_{\Sq^k}(X \times Y) &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, &
-	\ker_{\Sq^k}(X \times Y) &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_X \ot \Sq^j_Y\,, \\
-	\img_{\rP^k}(X \times Y) &\cong\, \img\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,, &
-	\ker_{\rP^k}(X \times Y) &\cong\, \ker\sum_{\mathclap{i+j=s}} \rP^i_X \otimes \rP^j_Y\,. &
-\end{align*}
+From the naturality of the K\"unneth isomorphism and the Cartan relations we have the following.
 
-\begin{proof}
-	For any \(r \in \R\), by the K\"unneth formula with field coefficients, the projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce an isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$ natural with respect to \(r\).
-	The claim now follows from the Cartan formula and the naturality of Steenrod operations.
-\end{proof}
+\medskip\lemma
+Let $X$ and $Y$ be pointed cellular $\R$-spaces.
+The total Steenrod operations satisfy:
+%For cohomology with coefficients in \(\Ftwo\) and \(\Fp\) respectively one has:
+\begin{align*}
+	\img_\Sq(X \times Y) &\cong \img_\Sq(X) \ot \img_\Sq(Y),
+	&\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
+	\ker_\Sq(X \times Y) &\cong \ker_\Sq(X) \ot \ker_\Sq(Y),
+	&\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y).
+\end{align*}
 
 \subsubsection{}
 
 Given two metric spaces $\cX$ and $\cY$.
-The $\ell^\infty$ metric on $\cX \times \cY$ is defined by
+The \defn{$\ell^\infty$ metric} on $\cX \times \cY$ is defined by
 \[
 d(x \times y, \, x' \times y') = \max\set{d(x,x'), d(y,y')}.
 \]
-with this metric we have the following.
 
-\medskip\corollary
-For any two metric spaces $\cX$ and $\cY$,
-Steenrod persistence modules satisfy:
+\medskip\theorem
+Let $\cX$ and $\cY$ be metric spaces.
+The total Steenrod operations satisfy:
 \begin{align*}
-	\img\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\ \ker\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\
-	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\
-	\ker\rP^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,,
+	&\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY), \\
+	&\ker^{\VR}_\Sq(\cX \times \cY) \cong \ker^{\VR}_\Sq(\cX) \ot \ker^{\VR}_\Sq(\cY), \\
+	&\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY), \\
+	&\ker^{\VR}_\rP(\cX \times \cY) \cong \ker^{\VR}_\rP(\cX) \ot \ker^{\VR}_\rP(\cY),
 \end{align*}
-for any $k \in \N$.
+where \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
+
+%\medskip\corollary
+%For any two metric spaces $\cX$ and $\cY$.
+%\begin{align*}
+%	\img\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\ \ker\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\
+%	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\
+%	\ker\rP^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,,
+%\end{align*}
+%for any $k \in \N$.
 
 \begin{proof}
-	This follows from the proof of \cite[Theorem~6.1(1)]{lim2020vietoris}, which constructs a natural isomorphism $\rH(\VR\cX) \otimes \rH(\VR\cY) \cong \rH(\VR(\cX \times \cY))$.\anibal{Note to self: Think more about this and fix notation}
+	This follows from the previous lemma and the proof of \cite[Thm.~6.1(1)]{lim2020vietoris}, which constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$ when the metric is \(\ell^\infty\).
 \end{proof}
