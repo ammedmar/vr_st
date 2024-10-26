@@ -27,10 +27,10 @@ We will prove more general statements with the goal of proving similar estimates
 
 Let $\cX$ be a closed connected \(n\)-manifold of diameter $\pi$ such that
 \begin{itemize}
-    \item $\crit(\cX) \geq \zeta_n $;
+    \item $\Rad_{htpy}(\cX) \geq \zeta_n $;
     \item $2\firstdeath{m}{\cX} < \tfrac{\zeta_n}{2}+\zeta_m$ for any $m \in N$.
 \end{itemize}
-Here, $\zeta_n = 2 \cdot \fillrad(\bS^n)= \arccos{(-\tfrac{1}{n+1})}$ for any $n\geq 1$.
+Here, $\zeta_n = 2 \cdot \Rad(\bS^n)= \arccos{(-\tfrac{1}{n+1})}$ for any $n\geq 1$.
 Let $\VS$ be the wedge of unit geodesic spheres with the same reduced homology groups as $\cX$.
 More precisely, $\VS \defeq \VS^{u_1, \dots, u_n}$ with $u_i = \dim \opH_i(\cX)$ for each $i = 1,\dots, n$.
 
@@ -70,8 +70,8 @@ If \( \opH_m(\cX) \) is zero, a similar result holds, with the upper bound being
     Consider the matching \( P \) between \( \Hbarc[\field]{m}{\VS} \) and \( \Hbarc[\field]{m}{\cX} \) such that the bar \( (0, \zeta_m) \) from \( \Hbarc[\field]{m}{\VS} \) is matched to \( (0, \beta_m) \) from \( \Hbarc[\field]{m}{\cX} \), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \( P \) satisfies
     \begin{align*}
         \cost(P)
-        = & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2},\, \frac{\pi - \crit(\cX)}{2}\Big\} \\
-        = & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2}\Big\} \quad \text{(since \( \zeta_n \leq \crit(\cX) \))}.
+        = & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2},\, \frac{\pi - \Rad_{htpy}(\cX)}{2}\Big\} \\
+        = & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2}\Big\} \quad \text{(since \( \zeta_n \leq \Rad_{htpy}(\cX) \))}.
     \end{align*}
     Thus, \cref{eq:db_usual_upper_bound} follows.
 
@@ -163,14 +163,14 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cX$ is 
 \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cX} |, \tfrac{\pi - \zeta_n}{2}\big\} < \min\{\firstdeath{\theta}{\cX}, \zeta_n\}.\]
 \begin{proof}
     Let $\beta_m = 2\firstdeath{m}{\cX}$ and $\gamma_\theta = 2\firstdeath{\theta}{\cX}$.
-    Because \(\zeta_n \leq \crit(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), $\beta_m$ satisfies the condition in Part (2) of the above lemma.
+    Because \(\zeta_n \leq \Rad_{htpy}(\cX) \leq \beta_m < \tfrac{\zeta_n}{2} + \zeta_m\), $\beta_m$ satisfies the condition in Part (2) of the above lemma.
     Thus, we have the leftmost inequality below:
     \[
     \max\big\{|\zeta_m - \beta_m|, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}
     \leq
     \min\big\{\tfrac{\gamma_\theta}{2}, \zeta_n\big\}.
     \]
-    To obtain the rightmost inequality, note that \(\zeta_n \leq \crit(\cX) \leq \gamma_\theta\).
+    To obtain the rightmost inequality, note that \(\zeta_n \leq \Rad_{htpy}(\cX) \leq \gamma_\theta\).
 \end{proof}
 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
