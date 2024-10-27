@@ -26,11 +26,14 @@ A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transforma
 \theta \colon \rH^\ell(-;\k) \to \rH^\degp(-;\k),
 \]
 between cohomology functors.
-The image and kernel of \(\theta\) define two persistent modules for every persistent space \(X\) which we denote \(\img_\theta(X)\) and \(\ker_\theta(X)\).
-When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\) we simplify notation writing \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
-We now state part of two decomposition theorems fully stated and proven in \cref{ss:sums_products}.
+In this introduction we will omit \(\k\) from the notation.
 
-\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$ and linear cohomology operation \(\theta\) one has:
+For every persistent space \(X\), the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
+When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\) for these.
+
+We now present partial statements of two decomposition theorems for persistent \(\theta\)-modules, fully detailed and proven in \cref{ss:sums_products}.
+
+\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$ and a linear cohomology operation \(\theta\):
 \[
 \img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
 \]
@@ -43,38 +46,53 @@ For any two metric spaces $\cX$ and $\cY$, the total Steenrod square satisfies:
 \]
 where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 
-STABILITY
+\medskip One of the primary reasons persistent homology is widely used is its stability.
+Persistent cohomology operations share this stability, as stated below for the image persistent module.
+A full statement and proof can be found in \cref{ss:stability}.
 
-SHARPER ESTIMATES
+\medskip\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
+\[
+\di\big(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY),
+\]
+where \(\di\) and \(\dgh\) are respectively the interleaving and Gromov--Hausdorff distances.
 
-%Furthermore, our study offers a framework for leveraging cohomology operations to achieve finer discriminatory power of filtered spaces.
-%Specifically, we provide tighter bounds for the Gromov--Hausdorff distance of metric spaces than those obtained using persistent homology alone.
-%In particular, we explore the implications of persistent cohomology operations for the study of metric spaces when combined with the \textit{Vietoris--Rips construction}.
-
-%Given a
+%\medskip In recent work, \cite{lim2024vietoris} established a deep connection between the Vietoris--Rips filtration of a metric space \(\cX\) and its Kuratowski embedding \(K \colon \cX \to \rL^\infty(\cX)\), which is the canonical isometric inclusion of \(\cX\) into a Banach space.
+%%use by Gromov for the definition of the filling radius of closed connected Riemannian manifolds.
+%More precisely, \cite{lim2024vietoris} proved that, if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_r(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
 %
-%EXPAND One of the most useful features of persistent homology is their stability under perturbations of the input filtered space.
-%Stability i	s a cornerstone of persistent topology; it guarantees that small changes in the input (e.g., noise in data or slight perturbations of a metric space) result in correspondingly small changes in the persistence invariants.
-%We extend the notion of stability to persistent cohomology operations, providing rigorous estimates that demonstrate their robustness.
+%Gromov's filling radius is the smallest \(r\) for which the fundamental class of a closed connected Riemanninan manifold is null-homologous in \(\rU_r(\cM)\).
+%Using this invariant and other similar critical radii, construct examples of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provide bounds that are tighter than those obtained through persistent homology.
 %
-%EXPAND Additionally, we derive explicit \textit{product} and \textit{wedge sum formulas} that describe how these invariants decompose when applied to combinations of filtered spaces.
-%These results significantly extend the algebraic toolkit available for analyzing filtered topological spaces through persistence.
+%Specifically, let us consider the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
+%Additionally, we consider the real projective space \(\rp^n\), obtained as the quotient of a round sphere under the antipodal action, also with diameter \(\pi\).
 
-%Armed with these theoretical developments, we turn our attention to applications in the geometry of metric spaces.
-%Using our framework, we derive \textit{Gromov--Hausdorff estimates} that illustrate the enhanced discriminatory power of persistent cohomology operations.
-%The Gromov--Hausdorff distance is a fundamental metric in geometry that measures how close two metric spaces are to being isometric.
-%By applying persistent cohomology operations to the Vietoris--Rips complexes of two metric spaces --a wedge sum of spheres and the corresponding real projective space-- we show that these invariants can provide tighter lower bounds for Gromov--Hausdorff distance than those obtained from standard persistent homology.
+\medskip In recent work, \cite{lim2024vietoris} established a deep connection between the Vietoris--Rips filtration of a metric space \(\cX\) and its Kuratowski embedding \(K \colon \cX \to \rL^\infty(\cX)\), the canonical isometric inclusion of \(\cX\) into a Banach space.
+More precisely, \cite{lim2024vietoris} proved that if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_r(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
 
-%Building on these theoretical developments, we then explore applications in the geometry of metric spaces.
-%In particular, we derive refined \textit{Gromov--Hausdorff estimates} that demonstrate the enhanced discriminatory power of persistent cohomology operations.
-%The Gromov--Hausdorff distance serves as a fundamental metric in geometry, quantifying how closely two metric spaces approximate each other.
-%By applying persistent cohomology operations to the Vietoris--Rips complexes of two specific metric spaces --namely, a wedge sum of spheres and a real projective space-- we show that these invariants yield tighter lower bounds for the Gromov--Hausdorff distance than those achievable through standard persistent homology.
+Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
+Using these invariants and other similar critical radii, we construct pairs of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimates derived from the stability of persistent cohomology operations provide sharper bounds than those obtained from persistent homology.
 
-%Overall, this work makes several key contributions.
-%First, we provide a systematic study of persistent cohomology operations, developing a theoretical framework that encompasses their stability and product structures.
-%Second, we demonstrate how these operations can be used to derive tighter Gromov--Hausdorff estimates, highlighting their potential for applications in metric geometry and data analysis.
-%Through these investigations, we aim to broaden the scope of persistence theory, opening new avenues for the study of filtered spaces and their topological properties.
+%Using this invariant and other similar critical radii, we can construct examples of pairs of Riemannian pseudomanifolds where the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations, provides a sharper bound than those obtained through persistent homology.
 
-\subsection*{Previous work}
+%Specifically, we consider in one hand the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each having diameter \(\pi\), and in the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
 
+Specifically, we consider, on one hand, the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\); and on the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
+
+\medskip\theorem
+For every \(n > 1\) we have the following inequalities:
+\begin{enumerate}
+	\item For any \(m \in \N\)
+	\[
+	\di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
+	\]
+
+	\item There are \(\degp, k \in \N\) such that
+	\[
+	\di\Big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3},
+	\]
+	where \(\Sq^k\) is the Steenrod square between degrees \(\degp-k\) and \(\degp\).
+\end{enumerate}
+
+\medskip Our arguments would also apply to Lens spaces and odd prime Steenrod operations if certain statements about their critical radii were known.
+Please consult \cref{...} for the precise inequalities.
 
