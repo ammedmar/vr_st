@@ -17,20 +17,23 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 Let \(\cM\) be a closed Riemannian manifold.
 By \cite[Thm.~3.5]{hausmann1995vietoris} and \cite[Thm.~4.1]{lim2020vietoris}, we know that there exists \(r_\cM > 0\) such that for all \(r \in (0,r_\cM)\) the inclusion \(\cM \to \rU_r(\cM)\) is a homotopy equivalence.
-We define the \defn{homotopical radius} of \(\cM\), denoted by \(\Rad_{htpy}(\cM)\), as the supremum among all such real numbers.
+We define the \defn{homotopical radius} of \(\cM\), denoted by \(\crit(\cM)\), as the supremum among all such real numbers.
+
+\ling{I will use commands for all critical values. 
+`fillrad' for filling radius; `crit' for homotopy radius; `firstdeath' for both homological radius and image of theta. Please change the corresponding commands if you would like to change the notations later on.} 
 
 %Clearly, if \(\cM\) is connected we have
 %\[
-%\Rad_{htpy}(\cM) \leq \Rad(\cM).
+%\crit(\cM) \leq \Rad(\cM).
 %\]
 
 \subsubsection{}
 
-Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold $\cM$, denoted \(\Rad_{fill}(\cM)\), is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow \rU_\epsilon(\cM)$, where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
+Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold $\cM$, denoted \(\fillrad(\cM)\), is defined as the infimal $\epsilon > 0$ such that the fundamental class in $\rH_n(M; \Z)$ is mapped to zero by the inclusion $\cM \hookrightarrow \rU_\epsilon(\cM)$, where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
 For connected non-orientable manifolds, the filling radius is defined similarly using mod~2 coefficients.
 Notice that, in this case,
 \[
-\Rad_{fill}(\cM) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \Ftwo)}.
+\fillrad(\cM) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \Ftwo)}.
 \]
 
 \subsubsection{}
@@ -41,25 +44,26 @@ Let us fix a field \(\bK\) and an integer \(m \in \N\), the \defn{\(m\)-homologi
 %If \(\rH_\degp(\cM) = 0\), set \(\Rad_m(\cM) = 0\), and if not, let \(\Rad_m(\cM)\) be the smallest positive radius $r$ for which a non-zero homology class in \(\rH_\degp(\cM)\) becomes \(0\) in \(U_r(\cM)\).
 %Since \(\VR(\cM)\) is \(q\)-tame,
 \[
-\Rad_m(\cX; \bK) = \min\set[\big]{r \mid (0, r) \in \barc \rH_m(\rU(\cM); \bK)}.
+\firstdeath{m}{\cX; \bK} = \min\set[\big]{r \mid (0, r) \in \barc \rH_m(\rU(\cM); \bK)}.
 \]
 We will omit \(\bK\) from the notation when clear from the context.
 
 %Clearly, if \(\rH_m(\cM) \neq 0\),
 %\[
-%\Rad_{htpy}(\cM) \leq 2 \cdot \Rad_m(\cM).
+%\crit(\cM) \leq 2 \cdot \Rad_m(\cM).
 %\]
 Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\img_\theta\)-radius} of \(\cX\) by
 \[
-\Rad_\theta(\cX) = \min\set[\big]{r \mid (0, r) \in \barc \img_\theta(\rU(\cX))}.
+\firstdeath{\theta}{\cX} = \min\set[\big]{r \mid (0, r) \in \barc \img_\theta(\rU(\cX))}.
 \]
 The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in this work.
 
-\anibal{Please study this label: \{subsub:beta v.s. fillrad\}. I.e., where is it used and what to cite instead.}
+\anibal{Please study this label: \{subsub:beta v.s. fillrad\}. I.e., where is it used and what to cite instead.
+\ling{The label is needed to refer to what is commented out below:}}
 
 %and observe that
 %\[
-%\Rad_{htpy}(\cM) \leq 2 \cdot \Rad_\theta(\cM))
+%\crit(\cM) \leq 2 \cdot \Rad_\theta(\cM))
 %\]
 %if \(\img_\theta(\cM) \neq 0\).
 
@@ -72,7 +76,7 @@ The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in t
 %\]
 %Clearly, if \(\rH_m(\cM) \neq 0\),
 %\[
-%\Rad_{htpy}(\cM) \leq 2 \cdot \Rad_m(\cM).
+%\crit(\cM) \leq 2 \cdot \Rad_m(\cM).
 %\]
 %Similarly, for a linear cohomology operation \(\theta\), we define
 %\[
@@ -80,7 +84,7 @@ The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in t
 %\]
 %and observe that
 %\[
-%\Rad_{htpy}(\cM) \leq 2 \cdot \Rad_\theta(\cM))
+%\crit(\cM) \leq 2 \cdot \Rad_\theta(\cM))
 %\]
 %if \(\img_\theta(\cM) \neq 0\).
 
@@ -89,7 +93,7 @@ The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in t
 %\subsubsection{}
 
 %Let us assume \(\cM\) connected.
-%Since, as stated in \cref{ss:kuratowski_vr}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\Rad_{htpy}(\cM)\) is \(2\cdot\Rad(\cM)\).
+%Since, as stated in \cref{ss:kuratowski_vr}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\crit(\cM)\) is \(2\cdot\Rad(\cM)\).
 %
 %We generalize this from the top homology to every other degree \(\degp\) and to non-connected manifolds so that
 %\[
@@ -112,7 +116,7 @@ As proven in \cite[Thm.~4.1]{lim2020vietoris}, there is deep relationship betwee
 The previous natural homotopy equivalence gives rise to the following result proven in \cite[Prop.~9.28]{lim2020vietoris}.
 
 \medskip\lemma
-If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2{\cM})\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.\anibal{Fix interval please}
+If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillrad(\cM))\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.\anibal{Fix interval please }
 Moreover, this is the unique bar in \(\Hbarc{n}{\cM}\) starting at $0$.
 
 
@@ -120,7 +124,7 @@ Moreover, this is the unique bar in \(\Hbarc{n}{\cM}\) starting at $0$.
 
 Let \(\cM\) be a closed Riemannian manifold with diameter \(R\).
 Consider \(\ell, \degp \in \N\) and \(\theta \in \cO(\ell,\degp)\).
-We will simplify notation writing \(\alpha = \Rad_{htpy}(\cM)\), \(\beta_m = \firstdeath{\degp}{\cM}\), and \(\gamma_\theta = \firstdeath{\theta}{\cM}\).
+We will simplify notation writing \(\alpha = \crit(\cM)\), \(\beta_m = \firstdeath{\degp}{\cM}\), and \(\gamma_\theta = \firstdeath{\theta}{\cM}\).
 
 Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_\degp^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
 

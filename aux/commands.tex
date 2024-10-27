@@ -68,8 +68,15 @@
 \newcommand{\Hpt}[4][\Ftwo]{\opH_{#2}(\VR_{#4}(#3);\,#1)}
 \newcommand{\Hbarc}[3][\Ftwo]{\barc \opH_{#2}^{\VR} (#3)}
 \newcommand{\sqbarcl}[3]{\barc\img_{\Sq^{#1}_{#2}}^{\VR} (#3)}
-\DeclareMathOperator{\fillrad}{FillRad}
+
 \newcommand{\fillradnofield}[1]{\operatorname{FillRad}(#1)}
 \newcommand{\sqbarcgeneral}[2]{\barc\Sq^{#1}(\VR #2)}
 \newcommand{\ling}[1]{\noindent\textcolor{purple}{\underline{Ling}: #1}}
-\newcommand{\firstdeath}[2]{\fillrad_{#1}(#2)}
+
+% Commands for critical values
+\newcommand{\fillrad}{\mathrm{Rad}_{\mathrm{fill}}}
+\newcommand{\crit}{\mathrm{Rad}_{\mathrm{htpy}}}
+\newcommand{\firstdeath}[2]{\mathrm{Rad}_{#1}(#2)}
+%\newcommand{\homorad}[2]{\mathrm{Rad}_{#1}(#2)}
+%\newcommand{\thetarad}[2]{\mathrm{Rad}_{#1}(#2)}
+%`fillrad' for filling radius; `crit' for homotopy radius; `firstdeath' for both homological radius and image of theta. Please change the corresponding commands if you would like to change the notations later on.
