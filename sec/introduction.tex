@@ -8,16 +8,44 @@ A few among many examples can be found in: ... \ling{to fill in}
 Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces.
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
-To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information. One method is the shift to cohomology, which carries more algebraic structure.
-For the incorporation of the cup product into the persistent pipeline we refer to \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent}.
-The approach presented here is grounded in cohomology operations, such as the Steenrod squares, which are powerful yet computable homotopical invariants.
-Previous efforts to adapt Steenrod squares to the realm of persistent topology include Aubrey's PhD thesis \cite{aubrey2011thesis} and the work of Lupo et al.\ \cite{medina2022per_st}.
-The latter introduces computable invariants, known as Steenrod barcodes, along with software for their computation on real-world data.
-Despite these advances, a comprehensive exploration of persistent cohomology operations remained absent, leaving key questions about their properties and broader applications in theoretical mathematics unresolved.
+To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information.
+For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent}.
+We focus on cohomology operations, which are natural transformations between cohomology functors.
+%It had long been envisioned that these would enhance persistent topology.
+%, as explored, for instance, in Aubrey's Ph.D. thesis \cite{aubrey2011thesis} \anibal{anyone else?}.
+The first notable advances in this direction were achieved in \cite{medina2022per_st}, which, using new methods for the computation of Steenrod squares (\cite{medina2023fast_sq}), proposed and implemented algorithms for computing \textit{Steenrod barcodes} of finite filtered simplicial complexes.
+The resulting tool, \href{https://steenroder.github.io/steenroder/}{\texttt{steenroder}}, enabled the detection of nontrivial Steenrod barcodes in a sample of the conformation space of the cyclo-octane molecule.
 
-In this paper, we investigate \textit{persistent cohomology operations} with the goal of filling this gap and provide applications to Riemannian geometry.
-Specifically, we aim to systematically define these invariants, explore their stability properties, and derive decomposition formulas for wedge sums and products of metric spaces.
+Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
+In this paper, we systematically treat \textit{persistent cohomology operations} providing them with a general and firm foundation, and present applications of these invariants to Riemannian geometry.
+We now summarize our contributions.
 
+Let \(\k\) be a field.
+A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transformation
+\[
+\theta \colon \rH^\ell(-;\k) \to \rH^\degp(-;\k),
+\]
+between cohomology functors.
+The image and kernel of \(\theta\) define two persistent modules for every persistent space \(X\) which we denote \(\img_\theta(X)\) and \(\ker_\theta(X)\).
+When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\) we simplify notation writing \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
+We now state part of two decomposition theorems fully stated and proven in \cref{ss:sums_products}.
+
+\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$ and linear cohomology operation \(\theta\) one has:
+\[
+\img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
+\]
+where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
+
+\medskip\theorem
+For any two metric spaces $\cX$ and $\cY$, the total Steenrod square satisfies:
+\[
+\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY),
+\]
+where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
+
+STABILITY
+
+SHARPER ESTIMATES
 
 %Furthermore, our study offers a framework for leveraging cohomology operations to achieve finer discriminatory power of filtered spaces.
 %Specifically, we provide tighter bounds for the Gromov--Hausdorff distance of metric spaces than those obtained using persistent homology alone.
