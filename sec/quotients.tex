@@ -146,22 +146,22 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 
 %By \ref{label}, for any \(j \in \N\) we have
 %\[
-%\beta_{n_j}(\bS^{n_j}_G) \leq 2 \cdot \Rad(\bS^{n_j}_G)
+%\beta_{n_j}(\bS^{n_j}_G) \leq 2 \cdot \fillrad(\bS^{n_j}_G)
 %\]
 %where \(\beta_{n_j}(\bS^{n_j})\) is the first critical value of \(\rH_{n_j}(\VR \bS^{n_j}_G)\).
 
-\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible and $\Rad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for any \(i \leq j\),
+\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible and $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for any \(i \leq j\),
 \[
-\firstdeath{n_i}{\bS^{n_j}_G} \leq \Rad(\bS^{n_j}_G).
+\firstdeath{n_i}{\bS^{n_j}_G} \leq \fillrad(\bS^{n_j}_G).
 \]
 
 \begin{proof}
     To simplify notation, for any $i \leq j$, let
     \[
-        \cX_j = \bS^{n_j}_G, \,\delta_j = \Rad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.
+        \cX_j = \bS^{n_j}_G, \,\delta_j = \fillrad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.
     \]
 	We will use an induction argument on $j$.
-	When $j = 1$, because $\cX_1$ is connected and $n_1$-dimensional, we apply results in \cref{subsub:beta v.s. fillrad} to deduce that $\beta_1^1 = \delta_1$.
+	When $j = 1$, because $\cX_1$ is connected and $n_1$-dimensional, we apply results in \cref{ss:beta v.s. fillrad} to deduce that $\beta_1^1 = \delta_1$.
 	%Because $\delta_1 \leq \alpha_1$, $\rH_1(\VR\bS^1_G)$ retains the same isomorphism type before $\delta_1$, implying that $\beta_{1, 1} \geq \delta_1$.
 	%Thus, $\beta_{1, 1} =\delta_1$.
 
@@ -230,6 +230,6 @@ In this case, each orbit space is a closed manifold which is equipped with the q
 	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies after $\delta_j+\epsilon$.
     Since this holds for any \(\epsilon > 0\), we conclude that \(\beta_i^j \leq \delta_j\).
 
-	For the case when $i = j$, apply results in \cref{subsub:beta v.s. fillrad} again to get that $\beta_j^j = \delta_j$.
+	For the case when $i = j$, apply results in \cref{ss:beta v.s. fillrad} again to get that $\beta_j^j = \delta_j$.
 	This completes the proof.
 \end{proof}

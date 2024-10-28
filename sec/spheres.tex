@@ -1,21 +1,23 @@
 % !TEX root = ../vr_st.tex
 
-\subsection{Spheres and their wedge sum }\label{ss:Sn}\label{sub:Sn and wedge sum}
+\subsection{Spheres and their wedge sum}\label{ss:Sn}\label{sub:Sn and wedge sum}
 
 For any integer $n \geq 1$ and real number $\rho > 0$, let $\bS^n(\rho)$ be the \defn{$n$-sphere} of radius $\rho$ centered at the origin of $\R^{n+1}$.
 We consider it equipped with the geodesic distance and simplify notation writing \(\bS^n\) instead of \(\bS^n(1)\).
-The constant \(\zeta_n = \arccos(\tfrac{-1}{n+1})\) will play an important role.
-It is ... \anibal{Ling, please fill this. The sentence is something about distance in the sphere.}
+The constant 
+\[\zeta_n = \arccos\Big(\frac{-1}{n+1}\Big)\] 
+will play an important role.
+It is the diameter of an inscribed regular $(n+1)$-simplex in $\bS^n$. \anibal{Ling, please fill this. The sentence is something about distance in the sphere. \ling{done.}}
 
 \subsubsection{}\label{subsub:critical values of Sn}
 
 \medskip\proposition
 For any $m,n \in \N$ and linear cohomology operation $\theta$ we have:
 \begin{enumerate}
-	\item \(\crit(\bS^n) = \zeta_n\),
-	\item \(2\cdot\firstdeath{m}{\bS^n} =
+	\item \(\crit(\bS^n) = \frac{1}{2}\zeta_n\),
+	\item \(\firstdeath{m}{\bS^n} =
 	\begin{cases}
-		\zeta_n & m = n, \\
+		\frac{1}{2}\zeta_n & m = n, \\
 		\hfil 0 & m \neq n,
 	\end{cases}\)
 	\item \(\firstdeath{\theta}{\bS^n} = 0\).
@@ -32,8 +34,8 @@ For any $m,n \in \N$ and linear cohomology operation $\theta$ we have:
 %		Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
 	This implies $\crit(\bS^n)=\zeta_n$.
 
-	(2) According to \cite{katz1983filling}, \(\mathrm{FillRad}(\bS^n) = \frac{1}{2}\zeta_n\).
-	Applying \cref{subsub:beta v.s. fillrad}, we obtain \(\firstdeath{n}{\bS^n} = \frac{1}{2}\zeta_n\).
+	(2) According to \cite{katz1983filling}, \(\fillrad(\bS^n) = \frac{1}{2}\zeta_n\).
+	Applying \cref{ss:beta v.s. fillrad}, we obtain \(\firstdeath{n}{\bS^n} = \frac{1}{2}\zeta_n\).
     When $m\neq n$, the statement follows from the fact that the initial space in the filtration has a trivial degree $m$ reduced homology.
 
 	(3) We apply a similar argument as in the $m\neq n$ case of (2). The statement follows from the fact that the initial space in the filtration has trivial $\img_\theta$.
@@ -54,7 +56,6 @@ Here and for the remainder of this work, we do not distinguish between a simplic
 
 The well-definedness of $f_r^n$ follows from a similar argument to that in \cite[Lemma 3]{lovasz1983self}.
 While the original proof was carried out for Euclidean spheres, an analogous argument applies to geodesic spheres.
-%The main idea in the proof is that if the polytope formed by $\{x_i\}$ contains the origin, then the diameter of $\{x_i\}$ exceeds $\zeta_n$
 
 \medskip\proposition
 The \(\VR_r(\bS^n)\)-projection is a homotopy equivalence when $r \in (0, \zeta_n]$.
@@ -90,12 +91,6 @@ Using the homotopy equivalence between the Vietoris--Rips complex of a metric gl
 \]
 
 Therefore, both the homology barcodes and \(\img_\theta\)-barcodes of \(\VR(\VS^{u_1, \dots, u_n})\) are the multiset unions of the corresponding barcodes of \(\bS^{u_i}\); see \cref{fig:barcodes_vs}.
-
-% $\rH_\degp(\VS^{u_1,\dots,u_n})$ contains $u_\degp$ copies of $(0,\zeta_\degp)$.
-% All remaining bars in this barcode must be dominated by $(\zeta_n, \pi)$.
-% This holds for all degrees, with the convention that $u_\degp = 0$ for $\degp > n$.
-
-% Similarly, for any linear cohomology operation $\theta \in \cO(\ell,m)$ with $\ell \neq m$, every bar in either its $\img\theta$ or $\ker\theta$ barcode is dominated by $(\zeta_n, \pi)$.
 
 \begin{figure}
 	\centering
