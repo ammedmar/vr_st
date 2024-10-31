@@ -28,13 +28,16 @@ A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transforma
 between cohomology functors.
 In this introduction we will omit \(\k\) from the notation.
 
-For every persistent space \(X\), the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
-When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\) for these.
+For any functor \(X\) from the poset category $\R$ to the category of cellular spaces,
+\lz{(3) Persistent cohomology operations can be defined for persistent cellular spaces over any poset (not necessarily $(\R, \leq)$). Do we want to mention this? To talk about interleaving, we need some more conditions on the poset.
+To talk about barcodes and our estimates, we do need the persistence to be 1D.} 
+the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
+When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
 
 Our first contributions, fully detailed and proven in \cref{ss:sums_products}, presents decomposition theorems for wedge sums and products.
 Here we state them only for the image $\theta$-module, mentioning that the same holds for the kernel $\theta$-module.
 
-\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$ and a linear cohomology operation \(\theta\):
+\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
 \[
 \img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
 \]
@@ -57,18 +60,8 @@ A full statement and proof can be found in \cref{ss:stability}.
 \]
 where \(\di\) and \(\dgh\) are respectively the interleaving and Gromov--Hausdorff distances.
 
-%\medskip In recent work, \cite{lim2024vietoris} established a deep connection between the Vietoris--Rips filtration of a metric space \(\cX\) and its Kuratowski embedding \(K \colon \cX \to \rL^\infty(\cX)\), which is the canonical isometric inclusion of \(\cX\) into a Banach space.
-%%use by Gromov for the definition of the filling radius of closed connected Riemannian manifolds.
-%More precisely, \cite{lim2024vietoris} proved that, if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_r(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
-%
-%Gromov's filling radius is the smallest \(r\) for which the fundamental class of a closed connected Riemanninan manifold is null-homologous in \(\rU_r(\cM)\).
-%Using this invariant and other similar critical radii, construct examples of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provide bounds that are tighter than those obtained through persistent homology.
-%
-%Specifically, let us consider the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
-%Additionally, we consider the real projective space \(\rp^n\), obtained as the quotient of a round sphere under the antipodal action, also with diameter \(\pi\).
-
 \medskip In recent work, \cite{lim2024vietoris} established a deep connection between the Vietoris--Rips filtration of a metric space \(\cX\) and its Kuratowski embedding \(K \colon \cX \to \rL^\infty(\cX)\), the canonical isometric inclusion of \(\cX\) into a Banach space.
-More precisely, \cite{lim2024vietoris} proved that if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_r(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
+More precisely, \cite{lim2024vietoris} proved that if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_{2r}(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
 
 Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
 Using these invariants and other similar critical radii, we construct pairs of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimates derived from the stability of persistent cohomology operations provide sharper bounds than those obtained from persistent homology.
@@ -77,7 +70,7 @@ Using these invariants and other similar critical radii, we construct pairs of R
 
 %Specifically, we consider in one hand the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each having diameter \(\pi\), and in the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
 
-Specifically, we consider, on one hand, the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\); and on the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
+Specifically, we consider, on one hand, the wedge of round\lz{What does `round' mean?} spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\); and on the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
 
 \medskip\theorem
 For every \(n > 1\) we have the following inequalities:
@@ -95,5 +88,5 @@ For every \(n > 1\) we have the following inequalities:
 \end{enumerate}
 
 \medskip Our arguments would also apply to Lens spaces and odd prime Steenrod operations if certain statements about their critical radii were known.
-Please consult \cref{...} for the precise inequalities.
+Please consult \cref{ss:genberal_distance_comparison} for the precise inequalities.
 

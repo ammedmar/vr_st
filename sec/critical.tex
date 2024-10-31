@@ -15,7 +15,7 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 \subsubsection{}\label{ss:kuratowski_vr}
 
-As proven in \cite[Thm.~4.1]{lim2024vietoris}, there is deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at distance \(2r\), stated in the following.
+As proven in \cite[Thm.~4.1]{lim2024vietoris}, there is deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at scale \(2r\), stated in the following.
 
 \medskip\proposition The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
 
@@ -39,9 +39,7 @@ The natural homotopy equivalence described in \cref{ss:kuratowski_vr} implies
 Moreover, it gives rise to the following result proven in \cite[Prop.~9.28]{lim2024vietoris}.
 
 \medskip\lemma
-If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillrad(\cM))\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.\anibal{Fix interval please
-\ling{I use commands for all critical values.
-`fillrad' for filling radius; `crit' for homotopy radius; `firstdeath' for both homological radius and image of theta. Please change the corresponding commands if you would like to change the notations later on.} }
+If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillrad(\cM))\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.
 Moreover, this is the unique bar in \(\Hbarc{n}{\cM}\) starting at $0$.
 
 \subsubsection{}\label{ss:first_critical_value}
@@ -52,13 +50,13 @@ We define the \defn{homotopical radius} of \(\cM\), denoted by \(\crit(\cM)\), a
 
 \subsubsection{}
 
-Let us fix a field \(\bK\) and an integer \(m \in \N\), the \defn{\(m\)-homological radius} of a totally bounded metric space \(\cX\) is defined by
+Let us fix a field \(\field\) and an integer \(m \in \N\), the \defn{\(m\)-homological radius} of a totally bounded metric space \(\cX\) is defined by
 \[
-\firstdeath{m}{\cX; \bK} = \min\set[\big]{r \mid (0, 2r) \in \barc \rH_m(\VR(\cX); \bK)},
+\firstdeath{m}{\cX; \field} = \min\set[\big]{r \mid (0, 2r) \in \barc \rH_m(\VR(\cX); \field)},
 \]
 if \(\rH_\degp(\cX) \neq 0\).
 If \(\rH_\degp(\cX) = 0\), set \(\firstdeath{m}{\cX} = 0\).
-We will omit \(\bK\) from the notation when clear from the context.
+We will omit \(\field\) from the notation when clear from the context.
 
 Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\img_\theta\)-radius} of \(\cX\) by
 \[
@@ -97,9 +95,10 @@ and if $\cM$ is connected and $n$-dimensional, then
 
 \subsection{General estimates}\label{ss:barcode_general}
 
-Let \(\cM\) be a closed Riemannian manifold with diameter \(R\).
+Let \(\cM\) be a closed Riemannian manifold. 
 Consider \(\ell, \degp \in \N\) and \(\theta \in \cO(\ell,\degp)\).
-We will simplify notation writing \(\alpha = 2\crit(\cM)\), \(\beta_m = 2\firstdeath{\degp}{\cM}\), and \(\gamma_\theta = 2\firstdeath{\theta}{\cM}\).
+We will simplify notation writing \(R = \diam(\cM),\, \alpha = 2\crit(\cM)\), \(\beta_m = 2\firstdeath{\degp}{\cM}\), and \(\gamma_\theta = 2\firstdeath{\theta}{\cM}\). 
+We say a bar $(a, b)$ is \defn{dominated} by another $(c,d)$ if $c \leq a < b \leq d$.
 
 Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_\degp^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
 
@@ -107,7 +106,6 @@ More precisely,
 %we estimate the reduced homology barcode of $\cM$ by considering two cases.
 if \(k = \dim \opH_\degp(\cM) > 0\) then $\barc\rH_\degp^{\VR}(\cM)$ contains $(0, \beta_m)$ and \((k - 1)\) additional bars of the form \((0, b)\) with \(\beta_m \leq b \leq R\).
 Additionally, all other bars are dominated by \((\alpha, R)\).
-Recall that a bar $(a, b)$ is said to be dominated by another $(c,d)$ if $c \leq a < b \leq d$.
 If \(\dim \opH_\degp(\cM) = 0\) then all bars in \(\barc\rH_\degp^{\VR}(\cM)\) are dominated by \((\alpha, R)\).
 See the first row of \cref{fig:barcodes_general} for a pictorial representation of these estimates.
 
@@ -117,6 +115,10 @@ See the second row of \cref{fig:barcodes_general} for these estimates.
 \begin{figure}
 	\centering
 	\input{sec/fig_barcodes_general}
-	\caption{In each figure, the gray region represents where additional bars could potentially exist within the corresponding barcode.}
+	\caption{Let $\cM$ be a closed Riemannian manifold.
+    \emph{Top row:} persistent reduced homology barcodes of $\cM$.
+	\emph{Bottom row:} $\img_\theta$-barcodes of $\cM$.
+    In each figure, the gray region represents where additional bars could potentially exist within the corresponding barcode.
+    See \cref{ss:barcode_general} for details.}
 	\label{fig:barcodes_general}
 \end{figure}

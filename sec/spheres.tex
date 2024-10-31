@@ -32,7 +32,7 @@ For any $m,n \in \N$ and linear cohomology operation $\theta$ we have:
 %		Recall that a metric space $(\cX, d)$ is said to be a \defn{geodesic space} if for each $x, y \in \cX$ there exists geodesic from $x$ to $y$ of length $d(x, y)$.
 %		As stated in \cite[Prop.~7.10]{virk20201} one knows that if $\cX$ be a simply-connected geodesic space, then $\barc\rH_1(\cX) = \emptyset$.
 %		Since the spheres we are considering are geodesic their $\rH_1$ barcode is empty.}
-	This implies $\crit(\bS^n)=\zeta_n$.
+	This implies $\crit(\bS^n)=\frac{1}{2}\zeta_n$.
 
 	(2) According to \cite{katz1983filling}, \(\fillrad(\bS^n) = \frac{1}{2}\zeta_n\).
 	Applying \cref{ss:beta v.s. fillrad}, we obtain \(\firstdeath{n}{\bS^n} = \frac{1}{2}\zeta_n\).
@@ -75,6 +75,7 @@ We apply \cref{subsub:critical values of Sn} and the barcode estimates from \cre
 Using the facts that (1) the reduced homology of \(\bS^n\) has dimension one for \(m = n\) and is zero for all other values of \(m\), and (2) for any linear cohomology operation \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\img \theta_{\bS^n}\) is trivial, we proceed with the estimation but omit the figure, as it is simply a special case of \cref{fig:barcodes_vs}.
 
 \subsubsection{}
+\label{ss:barcodes_VS}
 
 For $n \in \N$ and $u_1, \dots, u_n \in \N^n$, let
 \[
@@ -98,6 +99,7 @@ Therefore, both the homology barcodes and \(\img_\theta\)-barcodes of \(\VR(\VS^
 	\caption{Let $\VS = \VS^{u_1,\dots,u_n}$ for some tuple of non-negative integers.
 		\emph{Top row:} persistent reduced homology barcodes of $\VS$, where the dot $(0,\zeta_m)$ has multiplicity $u_m$ which can be zero.
 		\emph{Bottom row:} $\img_\theta$-barcodes of $\VS$ where $\theta \in \cO(\ell,m)$ with \(\ell \neq m\).
-        In each figure, the gray region represents where additional bars could exist within the corresponding barcode.}
+        In each figure, the gray region represents where additional bars could exist within the corresponding barcode.
+        See \cref{subsub:barcode_Sn} for the case when the wedge sum is a single sphere and see \cref{ss:barcodes_VS} for the general case.}
 	\label{fig:barcodes_vs}
 \end{figure}
