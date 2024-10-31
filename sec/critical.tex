@@ -17,7 +17,7 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 As proven in \cite[Thm.~4.1]{lim2024vietoris}, there is deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at distance \(2r\), stated in the following.
 
-\medskip\lemma The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
+\medskip\proposition The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
 
 \subsubsection{}
 
@@ -32,15 +32,15 @@ For non-orientable manifolds, the filling radius is defined similarly using \(\F
 
 \subsubsection{}
 
-The natural homotopy equivalence described in \cref{ss:kuratowski_vr} implies 
+The natural homotopy equivalence described in \cref{ss:kuratowski_vr} implies
 \[
 \fillrad(\cM; \field) = \min\set[\big]{r \mid (0, 2r) \in \barc \rH_n(\VR(\cM); \field)}.
 \]
 Moreover, it gives rise to the following result proven in \cite[Prop.~9.28]{lim2024vietoris}.
 
 \medskip\lemma
-If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillrad(\cM))\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.\anibal{Fix interval please 
-\ling{I use commands for all critical values. 
+If $\cM$ is a closed connected $n$-dimensional Riemannian manifold, then \(\Hbarc{n}{\cM}\) contains the bar \((0,2\fillrad(\cM))\) for arbitrary field coefficients if $M$ is orientable, and for mod $2$ coefficients $M$ if not.\anibal{Fix interval please
+\ling{I use commands for all critical values.
 `fillrad' for filling radius; `crit' for homotopy radius; `firstdeath' for both homological radius and image of theta. Please change the corresponding commands if you would like to change the notations later on.} }
 Moreover, this is the unique bar in \(\Hbarc{n}{\cM}\) starting at $0$.
 
@@ -64,7 +64,7 @@ Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\
 \[
 \firstdeath{\theta}{\cX} = \min\set[\big]{r \mid (0, 2r) \in \barc \img_\theta(\VR(\cX))},
 \]
-if \(\img_\theta(\cX) \neq 0\). 
+if \(\img_\theta(\cX) \neq 0\).
 If \(\img_\theta(\cX) = 0\), set $\firstdeath{\theta}{\cX} = 0$.
 
 The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in this work.
