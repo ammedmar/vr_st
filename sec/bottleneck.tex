@@ -2,7 +2,7 @@
 
 \section{Gromov--Hausdorff estimates}\label{s:gh_estimates}
 
-In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through persistent homology.
+In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through the stability of persistent homology.
 This demonstrates the enhanced discriminatory power of these persistent invariants in the context of metric geometry.
 
 Specifically, let us consider, for any \(n \leq 2\), the wedge of Riemannian spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
@@ -30,13 +30,11 @@ Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$.
 % We are mostly thinking of a quotients of round spheres.
 Below is a list of properties that we want from one such space.
 
-\medskip\noindent\textit{\darkblue Desiderata}.\ 
-For any fixed coefficient field $\field$ (omitted from the notations below),
+\medskip\noindent\textit{\darkblue Desiderata}.\
 \begin{enumerate}
     \item $\crit(\cM) \geq \tfrac{\zeta_n}{2} $;
-    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in \N$.
-    \anibal{Do you need all $m$ or just the one related to the non-zero cohomology operation? \ling{I think we need all $m$, because our point is there is one cohomology operation that works better than all persistent homology. If we do not do so, it could be that at some $m$ persistent homology still does a good or even better job.} }
-    \item There exists a linear cohomology operation $\theta$ such that $\img_\theta(\cM)$ is non-zero. 
+    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in N$.
+    \item There exists $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) such that $\img_\theta(\cM) \neq 0$.
 \end{enumerate}
 
 As shown in ... real projective spaces satisfy these.
@@ -47,8 +45,7 @@ For Lens spaces ...
 \ling{I think the right place to write this is in the proof of position 4.6 (2). I have improved that part. Please take a look.}\anibal{OK}
 
 % More precisely, $\VS \defeq \VS^{u_1, \dots, u_n}$ with $u_i = \dim \opH_i(\cM)$ for each $i = 1,\dots, n$.
-
-% We establish the following result to show that the interleaving distance between persistent image $\theta$-modules can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cM$ and $\VS$ than the interleaving distance between the persistent homology.
+%We establish the following result to show that the interleaving distance between persistent image $\theta$-modules can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cM$ and $\VS$ than the interleaving distance between the persistent homology.
 
 \subsubsection{}
 
