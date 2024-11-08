@@ -25,28 +25,38 @@ Then,
 
 We will prove the relevant statements for the above inequalities in greater generality, allowing for similar estimates to be established for Lens spaces once their critical radii are determined.
 
-Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$ and, as before, $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
+Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$.
+% and, as before, $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
+% We are mostly thinking of a quotients of round spheres.
 Below is a list of properties that we want from one such space.
 
 \medskip\noindent\textit{\darkblue Desiderata}.\ 
+For any fixed coefficient field $\field$ (omitted from the notations below),
 \begin{enumerate}
     \item $\crit(\cM) \geq \tfrac{\zeta_n}{2} $;
-    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in N$.\anibal{is this the right scale? I would move the 2 to the RHS.\ling{fixed.}}
-    \item There exists a linear cohomology operation $\theta$ such that $\img_\theta(\cM)$. \lz{This sentence is incomplete.}
+    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in \N$.
+    \anibal{Do you need all $m$ or just the one related to the non-zero cohomology operation? \ling{I think we need all $m$, because our point is there is one cohomology operation that works better than all persistent homology. If we do not do so, it could be that at some $m$ persistent homology still does a good or even better job.} }
+    \item There exists a linear cohomology operation $\theta$ such that $\img_\theta(\cM)$ is non-zero. 
 \end{enumerate}
 
-\anibal{Ling: please explain how the lemma in the previous section can be used to get (2) from increasing fill rad. and reference the subsection on Lens spaces for (3). Also, one needs to fix a ring for this discussion. Here also one needs to foreshadow the computations in the next section where this desiderata is verified for real projective spaces.}
+As shown in ... real projective spaces satisfy these.
+For Lens spaces ...
+% This follows from the facts that (1) $\crit(\rp^n) = \tfrac{\pi}{3}$, (2) $\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}$ for $m \leq n$ and $0$ otherwise, and (3) $\rp^n$ admits non-trivial Steenrod square operations. 
+% Facts (1) and (2) were established in \cref{s:first_critical_value_rpn}. 
 
-For the rest of this section, let $\VS$ be the wedge of unit geodesic spheres with the same reduced homology groups as $\cM$, which we assume satisfies the above desiderata.
+\ling{I think the right place to write this is in the proof of position 4.6 (2). I have improved that part. Please take a look.}\anibal{OK}
+
 % More precisely, $\VS \defeq \VS^{u_1, \dots, u_n}$ with $u_i = \dim \opH_i(\cM)$ for each $i = 1,\dots, n$.
 
-We establish the following result to show that the interleaving distance between persistent image $\theta$-modules can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cM$ and $\VS$ than the interleaving distance between the persistent homology.
-\anibal{Ling, this still speaks of barcodes. ALso, it should be $\cM$ not $\cM$. The irst is a manifold, the second a (metric) space. \ling{fixed.}}
+% We establish the following result to show that the interleaving distance between persistent image $\theta$-modules can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cM$ and $\VS$ than the interleaving distance between the persistent homology.
 
 \subsubsection{}
 
+Let $\VS$ be the wedge sum of unit spheres with the same reduced homology groups as $\cM$, which we assume satisfies the desiderata.\anibal{What is the radius? This should depend on $\cM$, no? \ling{We requested $\cM$ to have diameter $\pi$, so the radius is one here.}}
+\anibal{What do you think about the notation $\bS_\cM$ \ling{Looks good to me. We will need both $\bS_\cM$ and $\bS_{\rp^n}$. If you also think they both look good, I can make the changes.}}
+
 \medskip\theorem
-For any $\cM$ satisfying the desiderata there is $\ell, m \in \N$ and $\theta \in \cO(\ell, m)$ such that
+There is $\ell, m \in \N$ and $\theta \in \cO(\ell, m)$ such that
 \begin{equation}\label{eq:comparison}
     \di \Big(\rH^{\VR}_{m}(\VS),\, \rH^{\VR}_{m}(\cM)\Big) < \di \big(\img^{\VR}_{\theta}(\VS),\, \img^{\VR}_{\theta}(\cM)\big).
 \end{equation}
@@ -186,7 +196,7 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 
 For \(\cM = \rp^n\) and cohomology operations \(\theta\) as Steenrod squares (mod 2 coefficients), we obtain a sharper comparison of the interleaving distances, summarized in the theorem below, where \(\VS = \bS^1 \vee \dots \vee \bS^n\).
 
-\medskip\theorem
+\medskip\theorem\anibal{Is this corollary? \ling{I do not think `corollary' is suitable because it is not the consequence of the general comparasion. It proves something stronger in the case of $\rp^n$. It can be a proposition.}}
 (1) For any \(n,m \in \N\), one has
 \[
 \di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi-\zeta_n}{2}.

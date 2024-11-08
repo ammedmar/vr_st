@@ -78,9 +78,9 @@ For example, the real and complex equatorial systems
 \[
 \bS^1 \subset \bS^2 \subset \bS^3 \subset \dotsb
 \quad\text{and}\quad
-\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb
+\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb,
 \]
-are respectively defined by the canonical inclusions
+used for the definition of real projective (\cref{sss:cohomology_rpn}) and Lens spaces (\cref{sss:cohomology_lens}), are defined by the canonical inclusions
 \[
 \R^2 \subset \R^3 \subset \R^4 \subset \dotsb
 \quad\text{and}\quad
@@ -134,28 +134,21 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
     %In the case of the $\rC_2$-action, because $f_r^{n}$ is $\rC_2$-equivariant, the induced map $\tilde{f}_r^{n}$ is also a homotopy equivalence. \ling{This is the argument used by \cite[Theorem 4.5]{adamaszek2018metric}, but I am not sure why it is true and I am not sure if it generalizes to $\rC_m$-actions.\anibal{Since the action is proper and free, a weak equivalence equivariant wrt the action induces a weak equivalence of orbits. It is easy to see that \(f\) is equivariant wrt the \(\bS^1\) action defining the action of \(\cyc_q\)}}
 \end{proof}
 
-\subsubsection{}\label{subsub:foundamental_bar_rpn_lemma}
+\subsubsection{}\label{ss:fundamental_lemma}
 
-A \(G\)-action on an equatorial system
+A \(G\)-action on an equatorial system is said to be \defn{free} if the \(G\)-action on every sphere is free.
+% In this case, each orbit space is a closed manifold which is equipped with the quotient metric.
+
+\medskip\lemma Consider a free $\VR$-compatible $G$-action on an equatorial system
 \[
-\bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb
+\bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb.
 \]
-is said to be \defn{free} if the \(G\)-action on every sphere is free.
-In this case, each orbit space is a closed manifold which is equipped with the quotient metric.\anibal{Do I need proper?}
-%Let us denote twice the filling radius of \(\bS^{n_i}_G\) by \(\delta_i\).
-
-%By \ref{label}, for any \(j \in \N\) we have
-%\[
-%\beta_{n_j}(\bS^{n_j}_G) \leq 2 \cdot \fillrad(\bS^{n_j}_G)
-%\]
-%where \(\beta_{n_j}(\bS^{n_j})\) is the first critical value of \(\rH_{n_j}(\VR \bS^{n_j}_G)\).
-
-\medskip\lemma If the free \(G\)-action in the above equatorial system is \(\VR\)-compatible and $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for any \(i \leq j\),
+If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for any \(i \leq j\),
 \[
 \firstdeath{n_i}{\bS^{n_j}_G} \leq \fillrad(\bS^{n_j}_G).
 \]
 
-\begin{proof}
+\begin{proof}\anibal{Ling: Did we decide to use the parenthesis on VR? \ling{We did not reach a conclusion.}}
     To simplify notation, for any $i \leq j$, let
     \[
         \cX_j = \bS^{n_j}_G, \,\delta_j = \fillrad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.

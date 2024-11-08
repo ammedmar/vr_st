@@ -13,7 +13,7 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 	\item \(\crit(\rp^n) = \frac{\pi}{3}\).
 	\item \(\firstdeath{m}{\rp^n} =
 	\begin{cases}
-		\frac{\pi}{3} & 1 \leq m \leq n, \\
+		\frac{\pi}{3} & m \leq n, \\
 		\hfil 0 & \text{otherwise}.
 	\end{cases}\)
 	\item \(\firstdeath{\Sq^k}{\rp^n} =
@@ -26,10 +26,17 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \begin{proof}
 	(1) This proposition is stated and proven in \cite[Thm.~4.5]{adams2022metric}.
 
-	(2) We only need to prove for the case of $1\leq m\leq n$, since the other case is follows from definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
-	Recall from \cite{katz1983filling} that the filling radius of $\rp^n$ is $\frac{\pi}{3}$ for any $n \geq 1$.
-	By \cref{subsub:foundamental_bar_rpn_lemma}, we have that $\firstdeath{m}{\rp^n}\leq \tfrac{\pi}{3}$.
+	(2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
+
+    Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
+    By \cref{subsub:system VR compatible}, this system is \(\VR\)-compatible.
+    By \cite{katz1983filling}, the filling radius of $\rp^i = \bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{3}$ for any $i \geq 1$, which implies that $\fillrad(\rp^i)$ is non-decreasing as a function of \(i\). 
+    Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
+    \[
+    \firstdeath{m}{\rp^n} \leq \fillrad(\rp^n) = \tfrac{\pi}{3}.
+    \]
 	On the other hand, $\firstdeath{m}{\rp^n}\geq \crit(\rp^n) = \tfrac{\pi}{3}$.
+    Thus, the equality holds.
 
 	(3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{m-k}{k}$ odd, since \(\Sq^k = 0\) otherwise.
 	Because $\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$.
