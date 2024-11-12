@@ -5,18 +5,18 @@
 In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through the stability of persistent homology.
 This demonstrates the enhanced discriminatory power of these persistent invariants in the context of metric geometry.
 
-Specifically, let us consider, for any \(n \leq 2\), the wedge of Riemannian spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
+Specifically, let us consider, for any \(n \leq 2\), the wedge of Riemannian spheres \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\), where each \(\bS^i\) has diameter \(\pi\).
 Additionally, we consider \(\rp^n\), the real projective space obtained as the quotient of \(\bS^n(2)\) under the antipodal action, where \(\bS^n(2)\) denotes the \(n\)-dimensional sphere of radius 2, and the resulting quotient space \(\rp^n\) also has diameter \(\pi\).
 Then,
 
 \medskip (1) For any \(m \in \N\) one has
 \[
-\di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
 \]
 
 (2) There is \(\degp \in \N\) and \(\Sq^k \in \cO(\degp-k, \degp)\) such that
 \[
-\di\Big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
+\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
 \]
 
 \subsection{General estimates}\label{ss:genberal_distance_comparison}
@@ -33,29 +33,39 @@ Below is a list of properties that we want from one such space.
 \medskip\noindent\textit{\darkblue Desiderata}.\
 \begin{enumerate}
     \item $\crit(\cM) \geq \tfrac{\zeta_n}{2} $;
-    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in N$.
+    \item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in \N$.
     \item There exists $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) such that $\img_\theta(\cM) \neq 0$.
 \end{enumerate}
 
-As shown in ... real projective spaces satisfy these.
-For Lens spaces ...
-% This follows from the facts that (1) $\crit(\rp^n) = \tfrac{\pi}{3}$, (2) $\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}$ for $m \leq n$ and $0$ otherwise, and (3) $\rp^n$ admits non-trivial Steenrod square operations. 
-% Facts (1) and (2) were established in \cref{s:first_critical_value_rpn}. 
+As shown in \cref{s:first_critical_value_rpn} real projective spaces satisfy these criteria. 
+For any Lens space $\rL^n_p$, 
+desiderata (3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}). 
+The remaining two desiderata are satisfied if the following conditions hold:
+\begin{enumerate}
+    \item [(a)] $\crit(\rL^n_p) \geq \tfrac{\zeta_{2n+1}}{2}$. 
+    \item [(b)] $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$ and is non-decreasing as a function of \(n\).
+\end{enumerate}
 
-\ling{I think the right place to write this is in the proof of position 4.6 (2). I have improved that part. Please take a look.}\anibal{OK}
-
-% More precisely, $\VS \defeq \VS^{u_1, \dots, u_n}$ with $u_i = \dim \opH_i(\cM)$ for each $i = 1,\dots, n$.
-%We establish the following result to show that the interleaving distance between persistent image $\theta$-modules can provide a better (lower-bound) approximation of the Gromov--Hausdorff distance between $\cM$ and $\VS$ than the interleaving distance between the persistent homology.
+We now explain why these two conditions are sufficient.
+Condition (a) is desiderata (1). 
+We then show that condition (b) implies desiderata (2), by applying an argument similar to that in the second part of the proposition in \cref{s:first_critical_value_rpn}.  
+It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
+By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
+This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$ 
+\[
+\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
+\]
+With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
+Thus, desiderata (2) also holds.
 
 \subsubsection{}
 
-Let $\VS$ be the wedge sum of unit spheres with the same reduced homology groups as $\cM$, which we assume satisfies the desiderata.\anibal{What is the radius? This should depend on $\cM$, no? \ling{We requested $\cM$ to have diameter $\pi$, so the radius is one here.}}
-\anibal{What do you think about the notation $\bS_\cM$ \ling{Looks good to me. We will need both $\bS_\cM$ and $\bS_{\rp^n}$. If you also think they both look good, I can make the changes.}}
+Let $\bS_{\cM}$ be the wedge sum of unit spheres with the same reduced homology groups as $\cM$, which we assume satisfies the desiderata.
 
 \medskip\theorem
 There is $\ell, m \in \N$ and $\theta \in \cO(\ell, m)$ such that
 \begin{equation}\label{eq:comparison}
-    \di \Big(\rH^{\VR}_{m}(\VS),\, \rH^{\VR}_{m}(\cM)\Big) < \di \big(\img^{\VR}_{\theta}(\VS),\, \img^{\VR}_{\theta}(\cM)\big).
+    \di \Big(\rH^{\VR}_{m}(\bS_{\cM}),\, \rH^{\VR}_{m}(\cM)\Big) < \di \big(\img^{\VR}_{\theta}(\bS_{\cM}),\, \img^{\VR}_{\theta}(\cM)\big).
 \end{equation}
 
 The proof of this theorem involves the following three steps, which we will respectively prove in \cref{sss:db_upper_bound}, \cref{sss:db_theta_lower_bound}, and \cref{sss:comparison_lemma_zeta_n}.
@@ -71,7 +81,7 @@ The proof of this theorem involves the following three steps, which we will resp
 \medskip\lemma
 If \( \opH_m(\cM) \) is non-zero, then
 \begin{equation}\label{eq:db_usual_upper_bound}
-    \di\Big(\rH^{\VR}_{m}(\VS),\, \rH^{\VR}_{m}(\cM)\Big)
+    \di\Big(\rH^{\VR}_{m}(\bS_{\cM}),\, \rH^{\VR}_{m}(\cM)\Big)
 	\leq \max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |,\, \tfrac{\pi - \zeta_n}{2}\big\}.
 \end{equation}
 If \( \opH_m(\cM) \) is zero, a similar result holds, with the upper bound being $\tfrac{\pi - \zeta_n}{2}$.
@@ -83,7 +93,7 @@ If \( \opH_m(\cM) \) is zero, a similar result holds, with the upper bound being
     To obtain an upper bound on the bottleneck distance, we only need to construct a matching and calculate its cost. Let \( \beta_m = 2\firstdeath{m}{\cM} \).
 
     First, suppose \( \opH_m(\cM) \) is non-zero.
-    Consider the matching \( P \) between \( \Hbarc[\field]{m}{\VS} \) and \( \Hbarc[\field]{m}{\cM} \) such that the bar \( (0, \zeta_m) \) from \( \Hbarc[\field]{m}{\VS} \) is matched to \( (0, \beta_m) \) from \( \Hbarc[\field]{m}{\cM} \), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \( P \) satisfies
+    Consider the matching \( P \) between \( \Hbarc[\field]{m}{\bS_{\cM}} \) and \( \Hbarc[\field]{m}{\cM} \) such that the bar \( (0, \zeta_m) \) from \( \Hbarc[\field]{m}{\bS_{\cM}} \) is matched to \( (0, \beta_m) \) from \( \Hbarc[\field]{m}{\cM} \), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \( P \) satisfies
     \begin{align*}
         \cost(P)
         = & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2},\, \frac{\pi - 2\crit(\cM)}{2}\Big\} \\
@@ -100,9 +110,7 @@ If \( \opH_m(\cM) \) is zero, a similar result holds, with the upper bound being
 Let $\theta \in \cO(\ell, m)$ be such that $\img \theta_\cM$ is non-zero.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
-	\di\big(\img^{\VR}_{\theta}(\VS), \img^{\VR}_{\theta}(\cM)\big)
-    %\db\big(\thetabarc{\VS}, \thetabarc{\cM}\big)
-	%= \min_Q \cost(Q)
+	\di\big(\img^{\VR}_{\theta}(\bS_{\cM}), \img^{\VR}_{\theta}(\cM)\big)
 	\geq \min\{\firstdeath{\theta}{\cM}, \zeta_n\}. %\geq \tfrac{\zeta_n}{2}.
 \end{equation}
 
@@ -116,10 +124,10 @@ Then,
     From \cref{fig:barcodes_general}, note that \( \thetabarc{\cM} \) contains a bar \( (0, \gamma_\theta) \).
     We now calculate the minimum cost of matching this bar.
 
-    Consider an arbitrary matching \( Q \) between \( \thetabarc{\VS} \) and \( \thetabarc{\cM} \).
+    Consider an arbitrary matching \( Q \) between \( \thetabarc{\bS_{\cM}} \) and \( \thetabarc{\cM} \).
     There are two cases to analyze.
 	If $(0,\gamma_\theta )$ is unmatched in $Q$, then $\cost(Q)$ is at least $ \tfrac{\gamma_\theta }{2}$.
-	If $(0,\gamma_\theta )$ is matched to some bar $(a,b) \in \thetabarc{\VS}$, then
+	If $(0,\gamma_\theta )$ is matched to some bar $(a,b) \in \thetabarc{\bS_{\cM}}$, then
 	$\cost(Q) =  \|(0,\gamma_\theta ) - (a,b)\|_\infty \geq a \geq \zeta_n$, because $(a,b) \subset (\zeta_n, \pi)$.
 	Thus, any matching $Q$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\theta }{2}, \zeta_n\}$, which proves \cref{eq:db_theta_lower_bound}.
 \end{proof}
@@ -191,17 +199,17 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
 
-For \(\cM = \rp^n\) and cohomology operations \(\theta\) as Steenrod squares (mod 2 coefficients), we obtain a sharper comparison of the interleaving distances, summarized in the theorem below, where \(\VS = \bS^1 \vee \dots \vee \bS^n\).
+For \(\cM = \rp^n\) and cohomology operations \(\theta\) as Steenrod squares (mod 2 coefficients), we obtain a sharper comparison of the interleaving distances, summarized in the theorem below, where \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
 
-\medskip\theorem\anibal{Is this corollary? \ling{I do not think `corollary' is suitable because it is not the consequence of the general comparasion. It proves something stronger in the case of $\rp^n$. It can be a proposition.}}
+\medskip\theorem
 (1) For any \(n,m \in \N\), one has
 \[
-\di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi-\zeta_n}{2}.
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi-\zeta_n}{2}.
 \]
 
 (2) For any \(n,m,k \in \N\) such that $m \leq n,\, k \leq \tfrac{n-1}{2},\, \binom{m-k}{k}$ odd and $\Sq^k\in \cO(m-k, k)$, one has
 \[
-\di\Big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
+\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
 \]
 
 \begin{proof}
@@ -210,7 +218,7 @@ For \(\cM = \rp^n\) and cohomology operations \(\theta\) as Steenrod squares (mo
     $2\firstdeath{m}{\rp^n} = \tfrac{2\pi}{3}$, which lies in $\big[\zeta_n,\, \tfrac{\pi - \zeta_n}{2}+\zeta_m\big]$.
     This satisfies the condition of Part (3) of the lemma in \cref{sss:comparison_lemma}.
 	By applying \cref{eq:db_usual_upper_bound} and \cref{sss:comparison_lemma}, we get
-	\[\di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big)
+	\[\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big)
     \leq
     \max \big\{ |\zeta_m  - \tfrac{2\pi}{3} |, \tfrac{\pi - \zeta_n}{2} \big\}
     = \tfrac{\pi - \zeta_n}{2}.\]
@@ -220,7 +228,7 @@ For \(\cM = \rp^n\) and cohomology operations \(\theta\) as Steenrod squares (mo
     (2) With $m,k$ satisfying the required conditions, we have shown in \cref{s:first_critical_value_rpn} that
 	$\firstdeath{\Sq^k}{\rp^n} = \tfrac{2\pi}{3}$.
     Applying \cref{eq:db_theta_lower_bound}, we have
-	\[\di\Big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\Big)
+	\[\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big)
 	\geq \min\Big\{\tfrac{\pi}{3},\, \zeta_n\Big\}
 	= \tfrac{\pi}{3}.\qedhere
     \]

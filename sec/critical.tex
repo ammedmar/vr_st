@@ -48,7 +48,7 @@ Let \(\cM\) be a closed Riemannian manifold.
 By \cite[Thm.~3.5]{hausmann1995vietoris} and \cite[Thm.~4.1]{lim2024vietoris}, we know that there exists \(r_\cM > 0\) such that for all \(r \in (0, r_\cM)\) the inclusion \(\cM \to \VR_{2r}(\cM)\) is a homotopy equivalence.
 We define the \defn{homotopical radius} of \(\cM\), denoted by \(\crit(\cM)\), as the supremum among all such real numbers.
 
-\subsubsection{}
+\subsubsection{} \label{ss:beta v.s. fillrad}
 
 Let us fix a field \(\field\) and an integer \(m \in \N\), the \defn{\(m\)-homological radius} of a totally bounded metric space \(\cX\) is defined by
 \[
@@ -64,15 +64,7 @@ Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\
 \]
 if \(\img_\theta(\cX) \neq 0\).
 If \(\img_\theta(\cX) = 0\), set $\firstdeath{\theta}{\cX} = 0$.
-
 The \(\ker_\theta\)-radius could be defined similarly, but we do not use it in this work.
-
-\anibal{Please study this label: \{subsub:beta v.s. fillrad\}. I.e., where is it used and what to cite instead.
-\ling{The label is needed to refer to what is commented out below. I brought them back and added the label back too.
-}}
-
-\subsubsection{}
-\label{ss:beta v.s. fillrad}
 
 Clearly, if \(\rH_m(\cX) \neq 0\) (resp. \(\img_\theta(\cX) \neq 0\)), then
 \[
@@ -80,18 +72,6 @@ Clearly, if \(\rH_m(\cX) \neq 0\) (resp. \(\img_\theta(\cX) \neq 0\)), then
 \]
 and if $\cM$ is connected and $n$-dimensional, then
 \[\firstdeath{n}{\cM} = \fillrad(\cM).\]
-
-%\subsubsection{}
-
-%Let us assume \(\cM\) connected.
-%Since, as stated in \cref{ss:kuratowski_vr}, \(\VR_{2r}(\cM)\) is homotopy equivalent to \(U_r(\cM) \subset \rL^\infty(\cM)\), an upper bound for \(\crit(\cM)\) is \(2\cdot\Rad(\cM)\).
-%
-%We generalize this from the top homology to every other degree \(\degp\) and to non-connected manifolds so that
-%\[
-%\Rad_\degp(\cM) = \Rad(\cM)
-%\]
-%if \(\cM\) is connected and \(\degp\)-dimensional.
-
 
 \subsection{General estimates}\label{ss:barcode_general}
 
