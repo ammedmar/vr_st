@@ -1,7 +1,6 @@
 % !TEX root = ../vr_st.tex
 
-\subsection{Real projective spaces}
-\label{s:first_critical_value_rpn}
+\subsection{Real projective spaces}\label{s:critical_radii_rpn}
 
 Let us now focus on the real equatorial system with the antipodal action.
 We will consider every sphere \(\bS^n(2)\) to have radius 2 so the quotient \(\rp^n\) has the same diameter as \(\bS^n\).
@@ -30,7 +29,7 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 
     Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
     By \cref{subsub:system VR compatible}, this system is \(\VR\)-compatible.
-    By \cite{katz1983filling}, the filling radius of $\rp^i = \bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{3}$ for any $i \geq 1$, which implies that $\fillrad(\rp^i)$ is non-decreasing as a function of \(i\). 
+    By \cite{katz1983filling}, the filling radius of $\rp^i = \bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{3}$ for any $i \geq 1$, which implies that $\fillrad(\rp^i)$ is non-decreasing as a function of \(i\).
     Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
     \[
     \firstdeath{m}{\rp^n} \leq \fillrad(\rp^n) = \tfrac{\pi}{3}.
@@ -56,8 +55,29 @@ Using the above values, the estimates resulting from the analysis of \cref{ss:ba
 		%When $1\leq \degp \leq n$, the barcode consists of one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$.
 		\emph{Bottom row:} the $\img_{\Sq^k}$-barcode of $\rp^n$.
 		%The leftmost barcode contains at least one $(0,\frac{2\pi}{3})$ and potentially some bars dominated by $(\frac{2\pi}{3}, \pi)$;
-        %See \cref{s:first_critical_value_rpn} for details.
+        %See \cref{s:critical_radii_rpn} for details.
         In each figure, the gray region represents where additional bars could exist within the corresponding barcode.
 	}
 	\label{fig:sq barcodes}
 \end{figure}
+
+\subsection{Lens spaces}\label{s:critical_radii_lens}
+
+Much less information is known about the cyclic quotients resulting from complex equatorial system.
+We are interested in spheres \(\bS^{2n+1}(p)\) of radius \(p\), so the quotient \(\rL_p^n\) has the same diameter as \(\bS^{2n+1}\).
+We will consider reduced (co)homology with mod \(p\) coefficients.
+
+\medskip\lemma
+-----------
+
+To show that Condition (b) implies Desideratum (2), we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
+It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
+By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
+This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$
+\[
+\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
+\]
+With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
+Thus, desiderata (2) also holds.
+
+-------------------------\anibal{Please make a statement here that can be used to check Desideratum (2) later. I am guessing something like the fundamental lemma. Then in the Desiderata section one would just reference this.}
