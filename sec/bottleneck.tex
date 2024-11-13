@@ -39,23 +39,24 @@ Below is a list of properties that we want from one such space.
 \end{enumerate}
 
 \medskip As shown in \cref{s:critical_radii_rpn}, round real projective spaces of radius \(\pi\) satisfy these Desiderata.
-For the round Lens space $\rL^n_p$ of radius \(\pi\), Desideratum (3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}).
-Desideratum (1) remains unproven, but for Desideratum (2) it suffices to check that
+For fixed $n\in \N$ and the round Lens space $\rL^n_p$ of radius \(\pi\), Desideratum (3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}).
+Desideratum (1) remains unproven, but for Desideratum (2) by \cref{s:critical_radii_lens} it suffices to check that
 \[
-\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2} \text{ and is non-decreasing as a function of \(n\)}.\anibal{What is \(m\)? This is not a math statement. The \(n\) was fixed, but now is a parameter.}
+\fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}.
+\anibal{What is \(m\)? This is not a math statement. The \(n\) was fixed, but now is a parameter. \ling{fixed}}
 \]
 
-%We now explain why these two conditions are sufficient.
-%Desideratum (1) as just being restated as Condition (a).
-%To show that Condition (b) implies Desideratum (2), we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
-%It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
-%By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
-%This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$
-%\[
-%\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
-%\]
-%With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
-%Thus, desiderata (2) also holds.
+% We now explain why these two conditions are sufficient.
+% Desideratum (1) as just being restated as Condition (a).
+% To show that Condition (b) implies Desideratum (2), we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
+% It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
+% By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
+% This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$
+% \[
+% \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
+% \]
+% With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
+% Thus, desiderata (2) also holds.
 
 \subsubsection{}
 
@@ -148,7 +149,7 @@ Let $m \leq n$.
 
     \item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
 
-    \item For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
+%    \item For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
 \end{enumerate}
 
 
@@ -160,20 +161,18 @@ Let $m \leq n$.
     	\(
     	|\zeta_m  - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
     	\) by Part (1).
-
-    	(3) %Assume, in addition, $r \leq \tfrac{\pi - \zeta_n}{2} + \zeta_m$.
-        It suffices to show $|\zeta_m  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
-        We consider two cases.
-        When $r$ is larger than $\zeta_m$, we have
-    	$|\zeta_m  - r | = r - \zeta_m \leq
-    	%\leq \tfrac{\pi - \zeta_n}{2} + \zeta_m - \zeta_m =
-        \tfrac{\pi - \zeta_n}{2}
-    	$ by the assumption on $r$.
-    	When $r$ is less than or equal to $\zeta_m$, we have
-    	\(
-    	|\zeta_m  - r | \leq \zeta_m - \zeta_n
-    	< \tfrac{\pi - \zeta_n}{2}
-    	\) by Part (1).
+    	% (3) It suffices to show $|\zeta_m  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
+     %    We consider two cases.
+     %    When $r$ is larger than $\zeta_m$, we have
+    	% $|\zeta_m  - r | = r - \zeta_m \leq
+    	% %\leq \tfrac{\pi - \zeta_n}{2} + \zeta_m - \zeta_m =
+     %    \tfrac{\pi - \zeta_n}{2}
+    	% $ by the assumption on $r$.
+    	% When $r$ is less than or equal to $\zeta_m$, we have
+    	% \(
+    	% |\zeta_m  - r | \leq \zeta_m - \zeta_n
+    	% < \tfrac{\pi - \zeta_n}{2}
+    	% \) by Part (1).
 \end{proof}
 
 \subsubsection{}
@@ -200,13 +199,14 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
 
 As stated earlier, the round \(\rp^n\) of radius \(\pi\) satisfies our Desiderata, so the previous theorem applies.
-In this subsection we provide even sharper bounds for the corresponding interleaving distances.
-Explicitly, if \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before, we have the following.
+In particular, we have the following precise estimate of the interleaving distances.
+Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
+Then, we have the following.
 
-\medskip\theorem
+\medskip\corollary
 (1) For any \(n,m \in \N\)
 \[
-\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi-\zeta_n}{2}.
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2}.
 \]
 
 \noindent (2) For any \(n,m,k \in \N\) such that $m \leq n,\, k \leq \tfrac{n-1}{2},\, \binom{m-k}{k}$ is odd, and $\Sq^k\in \cO(m-k, k)$
@@ -218,15 +218,13 @@ Explicitly, if \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before, we have 
     (1) %Let $\beta_m = 2\firstdeath{m}{\rp^n}$.
     When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
     $2\firstdeath{m}{\rp^n} = \tfrac{2\pi}{3}$, which lies in $\big[\zeta_n,\, \tfrac{\pi - \zeta_n}{2}+\zeta_m\big]$.
-    This satisfies the condition of Part (3) of the lemma in \cref{sss:comparison_lemma}.
-	By applying \cref{eq:db_usual_upper_bound} and \cref{sss:comparison_lemma}, we get
-	\[\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big)
-    \leq
+    Thus, the upper bound we computed in \cref{eq:db_usual_upper_bound} on the interleaving distance between persistent homology evaluates as
+    \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} = 
     \max \big\{ |\zeta_m  - \tfrac{2\pi}{3} |, \tfrac{\pi - \zeta_n}{2} \big\}
-    = \tfrac{\pi - \zeta_n}{2}.\]
-    When $m > n$, $\rH_m(\rp^n)$ is zero.
-    Using \cref{sss:comparison_lemma}, the interleaving distance is again bounded above by $\tfrac{\pi - \zeta_n}{2}$.
-
+    = \tfrac{\pi - \zeta_n}{2}.
+    \]
+    Here, we applied \cref{sss:comparison_lemma_zeta_n} to deduce that $|\zeta_m  - \tfrac{2\pi}{3} | = \zeta_1 - \zeta_m < \tfrac{\pi - \zeta_1}{2} \leq \tfrac{\pi - \zeta_n}{2}$.
+ 
     (2) With $m,k$ satisfying the required conditions, we have shown in \cref{s:critical_radii_rpn} that
 	$\firstdeath{\Sq^k}{\rp^n} = \tfrac{2\pi}{3}$.
     Applying \cref{eq:db_theta_lower_bound}, we have
@@ -236,4 +234,6 @@ Explicitly, if \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before, we have 
     \]
 \end{proof}
 
-As \(n\) grows, \(\tfrac{\pi - \zeta_n}{2}\) increases and approaches \(\tfrac{\pi}{4}\).\anibal{It seems that the inequality became sharper in the wrong direction tho?}
+As \(n\) grows, \(\tfrac{\pi - \zeta_n}{2}\) increases and approaches \(\tfrac{\pi}{4}\).\anibal{It seems that the inequality became sharper in the wrong direction tho? 
+\ling{I think `shaper' should be talked about for a fixed $n$.
+By the way, I found a way to prove the $\rp^n$ as a corollary of the previous section (not a corollary of the theorem, as the theorem does not include the bounds).}}

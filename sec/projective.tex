@@ -6,7 +6,7 @@ Let us now focus on the real equatorial system with the antipodal action.
 We will consider every sphere \(\bS^n(2)\) to have radius 2 so the quotient \(\rp^n\) has the same diameter as \(\bS^n\).
 We will consider reduced (co)homology with mod 2 coefficients.
 
-\medskip\proposition
+\medskip\lemma
 For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \begin{enumerate}
 	\item \(\crit(\rp^n) = \frac{\pi}{3}\).
@@ -23,7 +23,7 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \end{enumerate}
 
 \begin{proof}
-	(1) This proposition is stated and proven in \cite[Thm.~4.5]{adams2022metric}.
+	(1) This part is stated and proven in \cite[Thm.~4.5]{adams2022metric}.
 
 	(2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
 
@@ -63,21 +63,25 @@ Using the above values, the estimates resulting from the analysis of \cref{ss:ba
 
 \subsection{Lens spaces}\label{s:critical_radii_lens}
 
-Much less information is known about the cyclic quotients resulting from complex equatorial system.
+Much less information is known about Lens spaces.
 We are interested in spheres \(\bS^{2n+1}(p)\) of radius \(p\), so the quotient \(\rL_p^n\) has the same diameter as \(\bS^{2n+1}\).
 We will consider reduced (co)homology with mod \(p\) coefficients.
 
-\medskip\lemma
------------
-
-To show that Condition (b) implies Desideratum (2), we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
-It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
-By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
-This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$
+\medskip\lemma 
+For fixed $n\in \N$, if $\fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}$, then for any non-negative degree $m\leq 2n+1$, 
 \[
-\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
+\firstdeath{m}{\rL^n_p} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}.
 \]
-With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
-Thus, desiderata (2) also holds.
 
--------------------------\anibal{Please make a statement here that can be used to check Desideratum (2) later. I am guessing something like the fundamental lemma. Then in the Desiderata section one would just reference this.}
+\begin{proof}
+    It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
+    For odd degrees, we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
+    By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1(p) \subset \bS^3(p) \subset \dotsb \subset \bS^n (p)$ is \(\VR\)-compatible. \ling{verify the consistence of radius}
+    This, combined with the assumption that $\fillrad(\rL^{n'}_p)$ is non-decreasing in $n'$ for all $1\leq n' \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
+    \[
+    \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) \leq \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}. \qedhere
+    \]
+\end{proof}
+
+
+-------------------------\anibal{Please make a statement here that can be used to check Desideratum (2) later. I am guessing something like the fundamental lemma. Then in the Desiderata section one would just reference this. \ling{done.} }
