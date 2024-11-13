@@ -27,15 +27,26 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 
 	(2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
 
-    Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
+    Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1} \to \bS^{2} \to \dotsb \to \bS^{n}\) of unit spheres.
     By \cref{subsub:system VR compatible}, this system is \(\VR\)-compatible.
-    By \cite{katz1983filling}, the filling radius of $\rp^i = \bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{3}$ for any $i \geq 1$, which implies that $\fillrad(\rp^i)$ is non-decreasing as a function of \(i\).
+    By \cite{katz1983filling}, the filling radius of $\bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, which implies that $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
     Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
     \[
-    \firstdeath{m}{\rp^n} \leq \fillrad(\rp^n) = \tfrac{\pi}{3}.
+    \firstdeath{m}{\bS^{1}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
     \]
-	On the other hand, $\firstdeath{m}{\rp^n}\geq \crit(\rp^n) = \tfrac{\pi}{3}$.
+    On the other hand, $\firstdeath{m}{\bS^{n}_{\rC_2}}\geq \crit(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}$.
     Thus, the equality holds.
+    As $\rp^n$ is the quotient of the $n$-sphere with radius $2$, $\firstdeath{m}{\rp^n} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}$.
+    
+ %    Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
+ %    By \cref{subsub:system VR compatible}, this system is \(\VR\)-compatible.
+ %    By \cite{katz1983filling}, the filling radius of $\rp^i = \bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{3}$ for any $i \geq 1$, which implies that $\fillrad(\rp^i)$ is non-decreasing as a function of \(i\).
+ %    Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
+ %    \[
+ %    \firstdeath{m}{\rp^n} \leq \fillrad(\rp^n) = \tfrac{\pi}{3}.
+ %    \]
+	% On the other hand, $\firstdeath{m}{\rp^n}\geq \crit(\rp^n) = \tfrac{\pi}{3}$.
+ %    Thus, the equality holds.
 
 	(3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{m-k}{k}$ odd, since \(\Sq^k = 0\) otherwise.
 	Because $\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$.
@@ -76,11 +87,20 @@ For fixed $n\in \N$, if $\fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < 
 \begin{proof}
     It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
     For odd degrees, we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
-    By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1(p) \subset \bS^3(p) \subset \dotsb \subset \bS^n (p)$ is \(\VR\)-compatible. \ling{verify the consistence of radius}
-    This, combined with the assumption that $\fillrad(\rL^{n'}_p)$ is non-decreasing in $n'$ for all $1\leq n' \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
+    By \cref{subsub:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \dotsb \subset \bS^n$ of unit spheres is \(\VR\)-compatible. 
+    \ling{We did not define VR compatibility for non-unit spheres, so some of the proof needs to be written for unit spheres first and then be applied to the actual $L_p^n$.}
+    This, combined with the assumption that $\fillrad\big(\bS^{2\tilde{n}+1}_{\rC_p}\big) = \tfrac{1}{p} \fillrad(\rL^{\tilde{n}}_p)$ is non-decreasing in $\tilde{n}$ for all $1\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
+    \[
+    \mathrm{Rad}_m\big(\bS^{2n+1}_{\rC_p}\big) \leq \fillrad\big(\bS^{2n+1}_{\rC_p}\big)
+    \]
+    Consequently, for any $m \leq 2n+1$, we obtain
     \[
     \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) \leq \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}. \qedhere
     \]
+    % This, combined with the assumption that $\fillrad(\rL^{\tilde{n}}_p)$ is non-decreasing in $\tilde{n}$ for all $1\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
+    % \[
+    % \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) \leq \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}. \qedhere
+    % \]
 \end{proof}
 
 
