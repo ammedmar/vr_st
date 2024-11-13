@@ -41,22 +41,26 @@ A counterexample to the original statement and the above corrected one were prov
 
 \subsection{Quotients of spheres}
 
-\subsubsection{}
-\label{subsub:VR-compatible-Sn}
-A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{\(\VR\)-compatible} if, for each $r \in (0, \zeta_n]$, it commutes with the \(\VR_r(\bS^n)\)-projection (see \cref{ss:VRSn projection}) and the induced map
+\subsubsection{}\label{subsub:VR-compatible-Sn}
+
+We will be interested in round spherical quotients.
+These are manifolds obtained from the quotient of a round  --or standard-- sphere by a compact group acting freely, properly, and by isometries.
+For us the groups will be always finite.\anibal{Remain myself why complex projective spaces did not work for us.}
+
+A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{\(\VR\)-compatible} if, for each $r \in (0, \zeta_n]$, it commutes with the canonical projection of \(\VR_r(\bS^n)\) (see \cref{ss:VRSn projection}) and the induced map
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G,
 \]
 is a weak equivalence.
 For example, based on the results in \cref{ss:VRSn projection}, the trivial action is \(\VR\)-compatible.
 
-\subsubsection{}
-\label{subsub:VR-compatible-system}
+\subsubsection{}\label{subsub:VR-compatible-system}
+
 An \defn{equatorial system} is a diagram
 \[
 \bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb
 \]
-where each arrow is an isometric embedding and $n_i \in \N$.
+where each map is an isometric embedding and $n_i \in \N$.
 For example, the real and complex equatorial systems
 \[
 \bS^1 \subset \bS^2 \subset \bS^3 \subset \dotsb
@@ -70,22 +74,23 @@ used for the definition of real projective (\cref{sss:cohomology_rpn}) and Lens 
 \bC \subset \bC^2 \subset \bC^3 \subset \dotsb.
 \]
 
-\subsubsection{}
-\label{subsub:system VR compatible}
+\subsubsection{}\label{subsub:system VR compatible}
 
-A \defn{\(G\)-action} on an equatorial system consists of a \(G\)-action on each sphere commuting with the isometric embeddings.
-For example, the group \(\rC_2 = \set{1,-1} \subset \R\) acts antipodally on the real equatorial system.
-Similarly, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(q\)-roots of unity acts on the complex equatorial system.
+A \(G\)-action on an equatorial system consists of a \(G\)-action on each sphere commuting with the isometric embeddings.
+It is said to be free, proper, or by isometries if the \(G\)-action on every sphere is.
+
+The group \(\rC_2 = \set{1,-1} \subset \R\) acts on the real equatorial system, and, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(q\)-roots of unity acts on the complex one.
+Both of these actions are free, proper, and by isometries.
 
 We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
 \begin{equation}\label{eq:VR_quotient}
     \begin{tikzcd}
 	\VR_r(\bS^{n_i})_G
-	\ar[d, hook]
+	\ar[d]
 	\ar[r, "\tilde f_{\,r}^{\,n_i}" above]
 	&
 	\bS^{n_i}_G
-	\ar[d, hook]
+	\ar[d]
 	\\
 	\VR_r(\bS^{n_{i+1}})_G
 	\ar[r, "\tilde f_{\,r}^{\,n_{i+1}}" above]
@@ -112,10 +117,7 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
 
 \subsubsection{}\label{ss:fundamental_lemma}
 
-A \(G\)-action on an equatorial system is said to be \defn{free} if the \(G\)-action on every sphere is free.
-% In this case, each orbit space is a closed manifold which is equipped with the quotient metric.
-
-\medskip\lemma Consider a free $\VR$-compatible $G$-action on an equatorial system
+\medskip\lemma Consider a $\VR$-compatible, free, and proper $G$-action by isometries on an equatorial system
 \[
 \bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb.
 \]

@@ -26,7 +26,7 @@ A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transforma
 \theta \colon \rH^\ell(-;\k) \to \rH^\degp(-;\k),
 \]
 between cohomology functors.
-In this introduction we will omit \(\k\) from the notation.
+From now on we will omit \(\k\) from the notation.
 
 For any functor \(X\) from the poset category $\R$ to the category of cellular spaces, the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
 When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
@@ -41,14 +41,14 @@ Here we state them only for the image $\theta$-module, mentioning that the same 
 where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
 
 \medskip\theorem
-For any two metric spaces $\cX$ and $\cY$, the total Steenrod square satisfies:
+For any two metric spaces $\cX$ and $\cY$, the total Steenrod reduced power operation over any prime satisfies:
 \[
-\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY),
+\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY),
 \]
 where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 
 \medskip One of the primary reasons persistent homology is widely used is its stability.
-Persistent cohomology operations share this stability, as stated below for the image persistent module.
+Persistent cohomology operations share this stability, as stated below for their image.
 A full statement and proof can be found in \cref{ss:stability}.
 
 \medskip\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
@@ -67,21 +67,21 @@ Using these invariants and other similar critical radii, we construct pairs of R
 
 %Specifically, we consider in one hand the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each having diameter \(\pi\), and in the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
 
-Specifically, we consider, on one hand, the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\); and on the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
+Specifically, we consider, on one hand, the real projective space \(\rp^n\), with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action; and on the other, the wedge sum of round spheres \(\bS_{\mathbb{RP}^n} = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\).
 
 \medskip\theorem
 For every \(n > 1\) we have the following inequalities:
 \begin{enumerate}
 	\item For any \(m \in \N\)
 	\[
-	\di\Big(\rH^\VR_m(\VS),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
+	\di\Big(\rH^\VR_m(\rp^n),\, \rH^\VR_m(\bS_{\rp^n})\Big) < \frac{\pi}{4}.
 	\]
 
 	\item There are \(\degp, k \in \N\) such that
 	\[
-	\di\Big(\img_{\Sq^k}^\VR(\VS),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3},
+	\di\Big(\img_{\Sq^k}^\VR(\rp^n),\, \img_{\Sq^k}^\VR(\bS_{\rp^n})\Big) \geq \frac{\pi}{3},
 	\]
-	where \(\Sq^k\) is the Steenrod square between degrees \(\degp-k\) and \(\degp\).
+	where \(\Sq^k\) is the Steenrod square to degree \(\degp\).
 \end{enumerate}
 
 \medskip Our arguments would also apply to Lens spaces and odd prime Steenrod operations if certain statements about their critical radii were known.

@@ -175,7 +175,7 @@ and
 % \frac{1}{2} \sup \set[\Big]{|a - b| \text{ for } [a,b] \in A \cup A' \text{ unmatched}}.
 % \]
 
-\medskip\theorem(\cite[Thm.~5.14]{chazal2016stability})
+\medskip\proposition(\cite[Thm.~5.14]{chazal2016stability})
 The interleaving distance of $q$-tame persistence modules agrees with the bottleneck distance of its barcodes.
 
 %\subsection{Persistent (co)homology}
@@ -226,16 +226,21 @@ For any \(\degp \in \N\) we denote the persistence module \(\rH_\degp\big(\VR(\c
 \label{sss:q-tameness}
 
 Recall that a metric space is said to be \defn{totally bounded} if, for every $\epsilon > 0$, there exists a finite set of points in such that the entire space can be covered by the union of $\epsilon$-balls centered at these points.
-As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
+%As stated in \cite[Prop.~5.1]{chazal2014geometric} we have the following.
 
-\medskip\proposition
+\medskip\proposition (\cite[Prop.~5.1]{chazal2014geometric})
 If $\cX$ is a totally bounded metric space, then $\VR(\cX)$ is $q$-tame.
 \medskip
 
-Moreover, \cite[Thm.~5.2]{lim2024vietoris} states that, when $\cX$ is compact, the barcode of the persistent homology of $\VR(\cX)$ always consists of intervals that are left-open and right-closed.
+\subsubsection{}
 
 For notational simplicity, when referring to intervals (or bars) in a barcode of $\VR(\cX)$, we will use the notation $(a, b)$ to denote the left-open, right-closed interval $(a, b]$.
-This should not cause confusion, as $(a, b)$ and $(a, b]$ are identified with the same point in $\R^2$.
+This should not cause confusion
+%, as $(a, b)$ and $(a, b]$ are identified with the same point in $\R^2$ and we have
+due to the following.
+
+\medskip\proposition (\cite[Thm.~5.2]{lim2024vietoris})
+If $\cX$ is compact, the barcode of the persistent homology of $\VR(\cX)$ consists of only intervals that are left-open and right-closed.
 
 \subsubsection{}\label{thm:stability-HI}
 
@@ -248,14 +253,11 @@ where the infimum is taken over all metric spaces $\cZ$ and isometric embeddings
 %The Hausdorff distance $d_\rH(A, B)$ between two subsets $A$ and $B$ of a metric space is the greatest distance between a point in one set to its closest point in the other set.
 %}
 
-\medskip\theorem Let $\cX$ and $\cY$ be two metric spaces.
+\medskip\proposition (\cite[Thm.~1.9 \& 1.10]{blumberg2023interleaving})
+Let $\cX$ and $\cY$ be two metric spaces.
 Then, for any $k \in \N,$
 \[
 \di\big(\rH_k^\VR(\cX), \rH_k^\VR(\cY)\big) \leq
 \dhi\big(\VR(\cX), \VR(\cY)\big) \leq
 2 \cdot \dgh(\cX, \cY).
 \]
-
-\begin{proof}
-	These inequalities follow from Theorem.~1.9 and Theorem.~1.10 in \cite{blumberg2023interleaving}.
-\end{proof}

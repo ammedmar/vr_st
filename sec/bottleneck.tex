@@ -7,18 +7,21 @@ This demonstrates the enhanced discriminatory power of these persistent invarian
 
 Specifically, we consider for \(n > 1\) the real projective \(n\)-space obtained as the quotient of \(\bS^n(2)\), the Euclidean sphere of radius 2, under the antipodal action.
 We mention that this quotient space \(\rp^n\) has diameter \(\pi\).
-Let us also consider the wedge of Euclidean spheres of diameter \(\pi\) with the same homology \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
-Then, as a consequence of \cref{ss:distance_estimate_rpn}, we have
+Let us also consider the wedge of round spheres of diameter \(\pi\) with the same homology \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
+Then, in \cref{ss:distance_estimate_rpn}, we will prove the following statements.
 
-\medskip (1) For any \(m \in \N\) one has
-\[
-\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
-\]
+\begin{enumerate}
+	\item For any \(m \in \N\) one has
+	\[
+	\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
+	\]
 
-(2) There is \(\degp \in \N\) and \(\Sq^k \in \cO(\degp-k, \degp)\) such that
-\[
-\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
-\]
+	\item There is \(\degp, k \in \N\) such that
+	\[
+	\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}
+	\]
+	where \(\Sq^k\) lands in degree \(\degp\).
+\end{enumerate}
 
 \subsection{General estimates}\label{ss:genberal_distance_comparison}
 
@@ -29,7 +32,7 @@ We will prove the relevant statements for the above inequalities in greater gene
 Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$.
 % and, as before, $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
 % We are mostly thinking of a quotients of round spheres.
-Below is a list of properties that we want from one such space.
+Below is a list of properties that we want from one such \(n\)-manifold.
 
 \medskip\noindent\textit{\darkblue Desiderata}.\
 \begin{enumerate}
@@ -219,7 +222,7 @@ Then, we have the following result.
     When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
     $2\firstdeath{m}{\rp^n} = \tfrac{2\pi}{3}$.
     Thus, the upper bound we computed in \cref{eq:db_usual_upper_bound} on the interleaving distance between persistent homology evaluates as
-    \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} = 
+    \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} =
     \max \big\{ |\zeta_m  - \tfrac{2\pi}{3} |, \tfrac{\pi - \zeta_n}{2} \big\}
     = \tfrac{\pi - \zeta_n}{2}.
     \]
