@@ -18,10 +18,11 @@ d_{\cX_G}\big([x], [x']\big) = \inf_{g \in G} d_\cX(x, g \cdot x'),
 \]
 is well-defined on $\cX_G$.
 
-The action of a group $G$ on $\cX$ is said to be a \defn{strong $r^*$-diameter action} \lz{discuss}, where $r > 0$, if for any non-negative integer $k$, the condition $\diam_{\cX_G}\set[\big]{[x_0],\dots,[x_k]} < r$ implies the existence of a unique choice of $g_i$ for each $i \in \set{1,\dots,k}$ such that $\diam_{\cX}\set{x_0, g_1x_1, \dots, g_kx_k} < r$.
-% \anibal{Please finish this. Why \(r \neq 0\)? Whats the quantifier: for all or there is?
-% 	\ling{We need to be careful with the citation here: (1) cite \cite{adams2022metric} for the original definition; (2) cite Liam Barham for the fixed definition. We should ask Liam Barham for permission to cite his unpublished work.}}
-% \anibal{I ask this below, but here is the appropriate place to answer: Does \(r^*\)-diam imply proper?}
+The action of a group $G$ on $\cX$ is said to be a \defn{strong $r$-diameter action}, where $r > 0$, if for any non-negative integer $k$, the condition $\diam_{\cX_G}\set[\big]{[x_0],\dots,[x_k]} < r$ implies the existence of a unique choice of $g_i$ for each $i \in \set{1,\dots,k}$ such that $\diam_{\cX}\set{x_0, g_1x_1, \dots, g_kx_k} < r$.
+\lz{I think the citation of Liam should go right after the definition.}
+
+% \medskip\remark
+% If the action of $G$ on $\cX$ is a strong $r$-diameter action for some $r > 0$, then $G$ acts freely on $\cX$.
 
 \subsubsection{}\label{subsub:h}
 
@@ -35,24 +36,45 @@ With respect to this action, there is an induced map on orbit spaces given by
 	\tilde h_r \colon \VR_r(\cX_G) &\to \VR_r(\cX)_G \\
 	\textstyle\sum\lambda_i [x_i] &\mapsto \textstyle \big[\sum\lambda_i x_i\big].
 \end{align*}
-If the action is proper and by isometries as well as strong \(r^*\)-diameter, then for any \(s \leq r\), the map $\tilde{h}_s$ is a simplicial isomorphism.
-This result was initially stated in \cite[Prop.~3.5]{adams2022metric} under a weaker assumption than the strong \(r^*\)-diameter condition.
-A counterexample to the original statement and the above corrected one were provided by Benjamin Barham \cite{barham2024group}. \lz{discuss}
+If the action is proper and by isometries as well as strong \(r\)-diameter, then for any \(s \leq r\), the map $\tilde{h}_s$ is an isomorphism of simplicial complexes.
+This result was initially stated in \cite[Prop.~3.5]{adams2022metric} under a weaker assumption than the strong \(r\)-diameter condition.
+A counterexample to the original statement and the above corrected one were provided by Benjamin Barham through direct communication of his upcoming work.
+
+
+\subsubsection{} \label{sss:strong_r_action_examples}
+\lz{this section is newly added}
+
+Recall from \cref{sss:cohomology_rpn} and \cref{sss:cohomology_lens} the $\rC_2$ and $\rC_q$ actions on spheres, for $ q\in \N$, that define real projective spaces and lens spaces, respectively. 
+
+\medskip\lemma
+The above $\rC_2$ and $\rC_q$ actions on spheres are strong $r$-diameter actions for every $r\in (0, \zeta_n]$.
+
+\begin{proof}
+    For $\rC_2$, this is proved in \cite[Cor.~4.3]{adams2022metric}.
+
+    For $\rC_q$, \lz{to fill in}
+\end{proof}
+
+Complex projective spaces are quotients of spheres by the circle group.
+We note that, unlike the above finite group actions that form the real projective spaces and lens spaces, these circle group actions on spheres is not strong $r$-diameter actions for any $r\in (0, \zeta_n]$. 
+\lz{Do we need to write the proof for it?}
 
 \subsection{Quotients of spheres}
 
 \subsubsection{}\label{subsub:VR-compatible-Sn}
 
 We will be interested in round spherical quotients.
-These are manifolds obtained from the quotient of a round  --or standard-- sphere by a compact group acting freely, properly, and by isometries.
+These are manifolds obtained from the quotient of a round sphere by a compact group acting freely, properly, and by isometries.
 For us the groups will be always finite.\anibal{Remain myself why complex projective spaces did not work for us.}
 
-A \(G\)-action on \(\bS^n\) which is both proper and by isometries is said to be \defn{\(\VR\)-compatible} if, for each $r \in (0, \zeta_n]$, it commutes with the canonical projection of \(\VR_r(\bS^n)\) (see \cref{ss:VRSn projection}) and the induced map
+A \(G\)-action which acts properly by isometries on \(\bS^n\) \lz{I am not sure if it is a good idea to remove `proper', because `acts properly by isometries' is a commonly used terminology to guarantee the quotient metric is well-defined.} is said to be \defn{\(\VR\)-compatible} if, for each $r \in (0, \zeta_n]$, it is a strong $r$-diameter action and it commutes with the canonical projection of \(\VR_r(\bS^n)\) (see \cref{ss:VRSn projection}) and the induced map
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G,
 \]
 is a weak equivalence.
 For example, based on the results in \cref{ss:VRSn projection}, the trivial action is \(\VR\)-compatible.
+
+\lz{Strong $r$-diameter implies free (\cite{adams2022metric} mentioned so with the weaker definition). Does it imply discrete or finite? proper?}
 
 \subsubsection{}\label{subsub:VR-compatible-system}
 
@@ -102,17 +124,18 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
 \lemma The above \(\rC_2\)-action on the real equatorial system and the \(\rC_q\)-action on the complex one are \(\VR\)-compatible for every \(q \in \N\).
 
 \begin{proof}
-    Take any $n \in \N$ and arbitrary $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
-    The commutativity of diagram \ref{eq:VR_quotient}, with $n_i = n$ and $n_{i+1} = n+1$ follows directly from the commutativity of the corresponding diagram without group actions.
+    Let $n \in \N$ and take any $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
+    The commutativity of diagram \ref{eq:VR_quotient} with $n_i = n$ and $n_{i+1} = n+1$ follows directly from the commutativity of the analogous diagram without group actions.
 
-    It remains to check that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{subsub:VR-compatible-Sn}), which means the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and $f_r^{n}$ induces weak equivalences on the orbit spaces.
+    Next, we verify that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{subsub:VR-compatible-Sn}).
+    By \cref{sss:strong_r_action_examples}, these actions are strong \(r\)-diameter actions. \lz{This paragraph is newly edited.}
+    Therefore, it remains to verify that the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and that $f_r^{n}$ induces weak equivalences on the orbit spaces.
 
-    In the case of $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
+    For the $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
     By \cref{ss:VRSn projection}, $f_r^{n}$ is a homotopy equivalence.
     Because the $\rC_2$-action is proper and free, the $\rC_2$-equivariant homotopy equivalence $f_r^n$ induces homotopy equivalence (and thus weak equivalence) on the orbit spaces.
 
-    The case of $\rC_q$-action on the complex equatorial system follows from a similar argument.
-    %In the case of the $\rC_2$-action, because $f_r^{n}$ is $\rC_2$-equivariant, the induced map $\tilde{f}_r^{n}$ is also a homotopy equivalence. \ling{This is the argument used by \cite[Theorem 4.5]{adamaszek2018metric}, but I am not sure why it is true and I am not sure if it generalizes to $\rC_m$-actions.\anibal{Since the action is proper and free, a weak equivalence equivariant wrt the action induces a weak equivalence of orbits. It is easy to see that \(f\) is equivariant wrt the \(\bS^1\) action defining the action of \(\cyc_q\)}}
+    The case of $\rC_q$-action on the complex equatorial system follows similarly.
 \end{proof}
 
 \subsubsection{}\label{ss:fundamental_lemma}
@@ -162,7 +185,9 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
     The horizontal inclusion $v^{j-1}$ (resp. $v^j$) in the right-hand-side square is the inclusion map in the corresponding Vietoris--Rips filtration.
     The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{subsub:h} and \cref{ss:VRSn projection}, respectively:
     \[\VR_r(\cX_{j-1}) \xrightarrow{\tilde{h}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
-    The horizontal map $\rho^j$ is defined in a similar way.
+    \lz{this paragraph is newly edited:} Since the \( G \)-action on \( \bS^{n_{j-1}} \) is VR-compatible, it is also a strong \( r \)-diameter action, making \( \tilde{h}_r \) an isomorphism by \cref{subsub:h}. 
+    This VR-compatibility further implies that \( \tilde{f}_r^{n_{j-1}} \) is a weak equivalence, and therefore \( \rho^{j-1} \) is as well. 
+    The horizontal map \( \rho^j \), defined similarly, is likewise a weak equivalence.
 
     For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram (\ref{d:fundamental_bars_diagram}) and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{subsub:system VR compatible}), we obtain a commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
