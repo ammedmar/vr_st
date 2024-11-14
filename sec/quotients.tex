@@ -61,7 +61,7 @@ We note that, unlike the above finite group actions that form the real projectiv
 
 \subsection{Quotients of spheres}
 
-\subsubsection{}\label{subsub:VR-compatible-Sn}
+\subsubsection{}\label{ss:VR-compatible-Sn}
 
 We will be interested in round spherical quotients.
 These are manifolds obtained from the quotient of a round sphere by a compact group acting freely, properly, and by isometries.
@@ -80,9 +80,9 @@ For example, based on the results in \cref{ss:VRSn projection}, the trivial acti
 
 An \defn{equatorial system} is a diagram
 \[
-\bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb
+\bS^{n_1}(\rho) \to \bS^{n_2}(\rho) \to \bS^{n_3}(\rho) \to \dotsb
 \]
-where each map is an isometric embedding and $n_i \in \N$.
+of round spheres where each map is an isometric embedding.
 For example, the real and complex equatorial systems
 \[
 \bS^1 \subset \bS^2 \subset \bS^3 \subset \dotsb
@@ -96,7 +96,7 @@ used for the definition of real projective (\cref{sss:cohomology_rpn}) and Lens 
 \bC \subset \bC^2 \subset \bC^3 \subset \dotsb.
 \]
 
-\subsubsection{}\label{subsub:system VR compatible}
+\subsubsection{}\label{ss:system VR compatible}
 
 A \(G\)-action on an equatorial system consists of a \(G\)-action on each sphere commuting with the isometric embeddings.
 It is said to be free, proper, or by isometries if the \(G\)-action on every sphere is.
@@ -104,7 +104,7 @@ It is said to be free, proper, or by isometries if the \(G\)-action on every sph
 The group \(\rC_2 = \set{1,-1} \subset \R\) acts on the real equatorial system, and, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(q\)-roots of unity acts on the complex one.
 Both of these actions are free, proper, and by isometries.
 
-We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
+We say that a free and proper \(G\)-action by isometries on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
 \begin{equation}\label{eq:VR_quotient}
     \begin{tikzcd}
 	\VR_r(\bS^{n_i})_G
@@ -140,7 +140,7 @@ We say that a \(G\)-action on an equatorial system is \defn{\(\VR\)-compatible} 
 
 \subsubsection{}\label{ss:fundamental_lemma}
 
-\medskip\lemma Consider a $\VR$-compatible, free, and proper $G$-action by isometries on an equatorial system
+\medskip\lemma Consider a $\VR$-compatible \(G\)-action on an equatorial system
 \[
 \bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb.
 \]
@@ -183,13 +183,13 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
     \end{equation}
     Here, the vertical maps are all induced by the equatorial inclusion of the orbit spaces $\iota \colon \cX_{j-1} \hookrightarrow \cX_j$.
     The horizontal inclusion $v^{j-1}$ (resp. $v^j$) in the right-hand-side square is the inclusion map in the corresponding Vietoris--Rips filtration.
-    The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{subsub:h} and \cref{ss:VRSn projection}, respectively:
+    The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{ss:h} and \cref{ss:VRSn projection}, respectively:
     \[\VR_r(\cX_{j-1}) \xrightarrow{\tilde{h}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
     \lz{this paragraph is newly edited:} Since the \( G \)-action on \( \bS^{n_{j-1}} \) is VR-compatible, it is also a strong \( r \)-diameter action, making \( \tilde{h}_r \) an isomorphism by \cref{subsub:h}. 
     This VR-compatibility further implies that \( \tilde{f}_r^{n_{j-1}} \) is a weak equivalence, and therefore \( \rho^{j-1} \) is as well. 
     The horizontal map \( \rho^j \), defined similarly, is likewise a weak equivalence.
 
-    For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram (\ref{d:fundamental_bars_diagram}) and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{subsub:system VR compatible}), we obtain a commutative diagram of vector spaces:
+    For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram (\ref{d:fundamental_bars_diagram}) and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
 	\begin{equation}\label{eq:diagram of H}
 	\begin{tikzcd}[column sep = 4.5em]
