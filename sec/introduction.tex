@@ -4,7 +4,7 @@
 
 When studying the shape and structure of spaces equipped with a filtration, \textit{persistent homology} has emerged as a crucial tool in both applied and theoretical topology.
 By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning to simplectic geometry and functional analysis.
-A few among many examples can be found in: ... 
+A few among many examples can be found in: ...
 Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces.
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
@@ -19,7 +19,6 @@ The resulting tool, \href{https://steenroder.github.io/steenroder/}{\texttt{stee
 
 Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
 In this paper, we systematically treat \textit{persistent cohomology operations} providing them with a general and firm foundation, and present applications of these invariants to Riemannian geometry.
-We now summarize our contributions.
 
 Let \(\k\) be a field.
 A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transformation
@@ -29,11 +28,11 @@ A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transforma
 between cohomology functors.
 From now on we will omit \(\k\) from the notation.
 
-For any functor \(X\) from the poset category $\R$ to the category of cellular spaces, the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
+Given a functor \(X\) from the poset category $\R$ to the category of cellular spaces, the image and kernel of \(\theta\) define two persistent modules, denoted \(\img_\theta(X)\) and \(\ker_\theta(X)\), which we collectively refer to as \textit{persistent \(\theta\)-modules}.
 When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
 
 Our first contributions, fully detailed and proven in \cref{ss:sums_products}, presents decomposition theorems for wedge sums and products.
-Here we state them only for the image $\theta$-module, mentioning that the same holds for the kernel $\theta$-module.
+Here we state them only for \(\img^\VR_\theta\), mentioning that the same holds for \(\ker^\VR_\theta\).
 
 \medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
 \[
@@ -49,8 +48,8 @@ For any two metric spaces $\cX$ and $\cY$, the total Steenrod reduced power oper
 where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 
 \medskip One of the primary reasons persistent homology is widely used is its stability.
-Persistent cohomology operations share this stability, as stated below for their image.
-A full statement and proof can be found in \cref{ss:stability}.
+Persistent cohomology operations share this stability, as stated below for \(\img^\VR_\theta\).
+Once again we omit the version for \(\ker^\VR_\theta\), referring the reader to \cref{ss:stability} for a complete treatment.
 
 \medskip\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
 \[
@@ -62,7 +61,7 @@ where \(\di\) and \(\dgh\) are respectively the interleaving and Gromov--Hausdor
 More precisely, \cite{lim2024vietoris} proved that if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_{2r}(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
 
 Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
-Using these invariants and other similar critical radii, we construct pairs of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimates derived from the stability of persistent cohomology operations provide sharper bounds than those obtained from persistent homology.
+Using this invariant and other similar critical radii, we construct pairs of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimates derived from the stability of persistent cohomology operations provide sharper bounds than those obtained from persistent homology.
 
 %Using this invariant and other similar critical radii, we can construct examples of pairs of Riemannian pseudomanifolds where the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations, provides a sharper bound than those obtained through persistent homology.
 
@@ -85,6 +84,4 @@ For every \(n > 1\) we have the following inequalities:
 	where \(\Sq^k\) is the Steenrod square to degree \(\degp\).
 \end{enumerate}
 
-\medskip Our arguments would also apply to Lens spaces and odd prime Steenrod operations if certain statements about their critical radii were known.
-Please consult \cref{ss:genberal_distance_comparison} for the precise inequalities.
-
+\medskip As explained in \cref{ss:genberal_distance_comparison}, our arguments would also apply to Lens spaces and odd prime Steenrod operations if certain statements about their critical radii were known, which we leave for future work.
