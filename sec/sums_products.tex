@@ -10,8 +10,6 @@ The \defn{wedge sum} of two pointed $\R$-spaces $X$ and $Y$ is defined by
 \]
 where \(r,s,t \in \R\) and \(s \leq t\).
 
-Since for any \(r \in \R\), the natural inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Cor.~2.25.]{hatcher2000}), we have the following.
-
 \medskip\lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 For any linear cohomology operation $\theta$:
@@ -20,12 +18,9 @@ For any linear cohomology operation $\theta$:
 	\ker_\theta(X \vee Y) &\cong \ker_\theta(X) \oplus \ker_\theta(Y).
 \end{align*}
 
-%\begin{proof}
-%
-%	The claim follows from the naturality of \(\theta\).\anibal{note to self: Say more?}
-%%	By the naturality of $\theta$ we have that $\theta_{X \vee Y} \circ (\iota^*_X \oplus \iota^*_Y) = (\iota^*_X \circ \theta_X) \oplus (\iota^*_Y \circ \theta_Y)$.
-%%	So, $\img\theta_{X \vee Y} \cong \img\theta_X \oplus \img\theta_Y$ and $\ker\theta_{X \vee Y} \cong \ker\theta_X \oplus \ker\theta_Y$.
-%\end{proof}
+\begin{proof}
+	This follows directly from the fact that for any \(r \in \R\), the natural inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Cor.~2.25.]{hatcher2000}).
+\end{proof}
 
 \subsubsection{}\label{ss:wedge sum}
 
@@ -37,11 +32,6 @@ d(x, x') =
 	\hfil d_{\cX_i}(x, x') & i = j.
 \end{cases}
 \]
-%if $i \neq j$, and
-%\[
-%d(x, x') = d_{\cX_i}(x, x')
-%\]
-%if $i =j$,
 
 \medskip\theorem
 Let $\cX$ and $\cY$ be pointed metric spaces.
@@ -57,7 +47,7 @@ where \(\cX \vee \cY\) is equipped with the gluing metric.
 	\[
 	\VR_r(\cX) \vee \VR_r(\cY) \to \VR_r(\cX \vee \cY)
 	\]
-	is a homotopy equivalence for each $r \in \R$.
+	is a homotopy equivalence for each $r \in \R$ when \(\cX \vee \cY\) is equipped with the gluing metric.
 \end{proof}
 
 \subsubsection{}
@@ -73,18 +63,28 @@ Analogously, the \defn{tensor product} \(V \ot W\) of two persistence modules is
 
 %For a general cohomology operation there is no formula expressing its action on the product of two cellular \(\R\)spaces in terms of its action on its factors, but for Steenrod operations there is.
 
-From the naturality of the K\"unneth isomorphism and the Cartan relations we have the following.
-
 \medskip\lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
-The total Steenrod operations satisfy:
+Over any prime \(p\):
+%The total Steenrod operations satisfy:
 %For cohomology with coefficients in \(\Ftwo\) and \(\Fp\) respectively one has:
+%\begin{align*}
+%	\img_\Sq(X \times Y) &\cong \img_\Sq(X) \ot \img_\Sq(Y),
+%	&\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
+%	\ker_\Sq(X \times Y) &\cong \ker_\Sq(X) \ot \ker_\Sq(Y),
+%	&\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y).
+%\end{align*}
 \begin{align*}
-	\img_\Sq(X \times Y) &\cong \img_\Sq(X) \ot \img_\Sq(Y),
-	&\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
-	\ker_\Sq(X \times Y) &\cong \ker_\Sq(X) \ot \ker_\Sq(Y),
-	&\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y).
+	\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
+	\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y),
 \end{align*}
+where \(\rP\) is the total Steenrod reduced power if \(p > 2\) and \(\rP = \Sq\) if \(p = 2\).
+
+\begin{proof}
+	For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$ (\cite[Cor.~3B.7.]{hatcher2000}).
+	Under this isomorphism, the (exterior) Cartan formula states that \(\rP(\alpha \times \beta) \cong \rP(\alpha) \otimes \rP(\beta)\) (\cite[Cor.~2.7]{may1970general}).
+	The claim now follows directly from the naturality of the K\"unneth isomorphism.
+\end{proof}
 
 \subsubsection{}
 
@@ -96,14 +96,18 @@ d(x \times y, \, x' \times y') = \max\set{d(x,x'), d(y,y')}.
 
 \medskip\theorem
 Let $\cX$ and $\cY$ be metric spaces.
-The total Steenrod operations satisfy:
+Over any prime:
+%The total Steenrod square satisfies:
+%\begin{align*}
+%	&\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY), \\
+%	&\ker^{\VR}_\Sq(\cX \times \cY) \cong \ker^{\VR}_\Sq(\cX) \ot \ker^{\VR}_\Sq(\cY), \\
+%\end{align*}
+%and, analogously over odd primes, the total Steenrod reduced power satisfies:
 \begin{align*}
-	&\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY), \\
-	&\ker^{\VR}_\Sq(\cX \times \cY) \cong \ker^{\VR}_\Sq(\cX) \ot \ker^{\VR}_\Sq(\cY), \\
 	&\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY), \\
 	&\ker^{\VR}_\rP(\cX \times \cY) \cong \ker^{\VR}_\rP(\cX) \ot \ker^{\VR}_\rP(\cY),
 \end{align*}
-where \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
+where \(\rP\) is the total Steenrod reduced power if \(p > 2\),  \(\rP = \Sq\) if \(p = 2\), and \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 
 %\medskip\corollary
 %For any two metric spaces $\cX$ and $\cY$.
@@ -115,5 +119,5 @@ where \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 %for any $k \in \N$.
 
 \begin{proof}
-	This follows from the previous lemma and the proof of \cite[Thm.~6.1(1)]{lim2024vietoris}, which constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$ when the metric is \(\ell^\infty\).
+	This follows from the previous lemma and the proof of \cite[Thm.~6.1(1)]{lim2024vietoris}, which constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$ when \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 \end{proof}

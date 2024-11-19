@@ -6,7 +6,7 @@
 
 A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any cellular space $\cX$.
 We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$ and omit the field \(\k\) from the notation when no confusion arises from doing so.
-For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear.
+For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear in this case.
 %\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
 
 A linear cohomology operation \(\theta \in \cO(\ell,m)\) defines a natural morphism of persistence modules $\theta_X \colon \rH^\ell(X) \to \rH^m(X)$ for any cellular $\R$-space $X$.
@@ -22,9 +22,6 @@ The \defn{image} and \defn{kernel} of $\theta$ at \(X\), denoted \defn{$\img_\th
 
 If $\rH^m(X)$ (resp. \(\rH^\ell(X)\)) is q-tame, then $\img_\theta(X)$ (resp. $\ker_\theta(X)$) is q-tame.
 In this case we refer to its barcodes as the \defn{$\img_\theta$-barcode} (resp. \defn{\(\ker_\theta\)-barcode}) of \(X\).
-Barcodes of cohomology operations generalize the barcodes of persistent cohomology since, for the identity and zero maps in $\cO(m,m)$, we have $\img_\id(X) \cong \ker_0(X) \cong \rH^m(X)$.
-
-\subsubsection{}
-
-The image persistent modules of Steenrod squares were introduced in \cite{medina2022per_st} alongside the tool \texttt{steenroder} for the computation of \(\img_{\Sq^k}\)-barcodes of finite filtered simplicial complexes.
-By detecting non-trivial bars in the Vietoris--Rips filtration of a sample of the conformation space of a molecule, this tool was used establish the presence of non-trivial persistent cohomology operations in real-world data.
+Barcodes of cohomology operations generalize the barcodes of persistent cohomology since, for the identity and zero maps in $\cO(m,m)$, we have $\img_\id(X) \cong \ker_0(X) \cong \rH^m(X)$.\footnote{
+The image persistent module of Steenrod squares was introduced in \cite{medina2022per_st} alongside the tool \texttt{steenroder} for the computation of \(\img_{\Sq^k}\)-barcodes of finite filtered simplicial complexes.
+By detecting non-trivial bars in the Vietoris--Rips filtration of a sample of the conformation space of the cyclo-octane molecule, this tool was used to establish the presence of non-trivial persistent cohomology operations in real-world data.}
