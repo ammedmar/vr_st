@@ -43,25 +43,38 @@ Recall from \cref{sss:cohomology_rpn} and \cref{sss:cohomology_lens} the canonic
 The canonical $\rC_2$ and $\rC_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
 
 \begin{proof}
-    For $\rC_2$, this is established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$.
+    For $\rC_2$, this is established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
 
-    Let $G = \rC_q$, $\cX$ a round unit sphere with a canonical $G$-action, and $\omega = e^{2\pi i/q}$ the primitive $q$-th root of unity. Assume $\diam_{\cX_G}\{[x_0], \dots, [x_k]\} < r$. Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in G$ such that $d_{\cX}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\cX}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
-
-    Assume not. Then, there exists $0 < a < q-1$ such that $d_{\cX}(x_i^*, \omega^a x_j^*) < r$. This leads to a contradiction:
+    Let $\bS$
+%    $G = \rC_q$,
+    be an odd-dimensional round unit sphere
+%    with a canonical $G$-action,
+	and $\omega = e^{2\pi i/q}$.
+%	the
+%	primitive $q$-th root of unity.
+	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
+	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \rC_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
+%    Assume not.
+    If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+    This leads to the following
+%    a
+	contradiction:
     \begin{align*}
-    \frac{2\pi}{q} \,=\, d_{\cX}(x_0, \omega x_0) \leq\, & \, d_{\cX}(x_0, x_i^*) \, + \, d_{\cX}(x_i^*, \omega^a x_j^*) \, + \, \\
-    & \sum_{b=1}^a d_{\cX}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\cX}(\omega x_j^*, \omega x_0).
+    \frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0) \leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
+    & \sum_{b=1}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0).
     \end{align*}
-    The right-hand side is \emph{strictly} bounded above by $r \cdot (a + 2) \leq r \cdot (q + 1) \leq \frac{2\pi}{q}$, a contradiction. Thus, $d_{\cX}(x_i^*, x_j^*) < r$ holds, completing the proof.
+    The right-hand side is \emph{strictly} bounded above by $r \cdot (a + 2) \leq r \cdot (q + 1) \leq \frac{2\pi}{q}$, a contradiction. Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.\anibal{I think \(b=1\) was over-counted.}
 
     We still need to verify the uniqueness of such $\{g_i\}$.
-    This is because %straightforward, because \(r \leq \tfrac{2\pi}{q(q+1)} < \frac{1}{2} d_{\cX}(\omega x_i^*, x_i^*)\).
-    %Therefore, 
-    $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\cX}(x_0, x_i^*) < r$ and $d_{\cX}(x_0, gx_i^*) < r$.
-    If they were, then we would have 
-    \[\tfrac{2\pi}{q} \leq d_{\cX}(x_i^*, gx_i^*) \leq d_{\cX}(x_i^*, x_0) + d_{\cX}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1}, 
+    This is because %straightforward, because \(r \leq \tfrac{2\pi}{q(q+1)} < \frac{1}{2} d_{\bS}(\omega x_i^*, x_i^*)\).
+    %Therefore,
+    $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.
+    If they were, then we would have
+    \[\tfrac{2\pi}{q} \leq d_{\bS}(x_i^*, gx_i^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1},
     \]
-    contracting with $q \geq 2$.
+    contracting
+%    with
+	the assumption $q \geq 2$.
 \end{proof}
 
 A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the circle action on spheres defining complex projective spaces.
@@ -78,7 +91,7 @@ A \(G\)-action acting properly by isometries on \(\bS^n\) is \defn{\(\VR\)-compa
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G
 \]
-is then a weak equivalence. 
+is then a weak equivalence.
 For example, based on the results in \cref{ss:VRSn projection}, the trivial action is \(\VR\)-compatible.
 
 \lz{Strong $r$-diameter implies free (\cite{adams2022metric} mentioned so with the weaker definition). Does it imply discrete or finite? proper?}
@@ -135,7 +148,7 @@ We say that a free and proper \(G\)-action by isometries on an equatorial system
     The commutativity of Diagram~\ref{eq:VR_quotient} with $n_i = n$ and $n_{i+1} = n+1$ follows directly from the commutativity of the analogous diagram without group actions.
 
     Next, we verify that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{ss:VR-compatible-Sn}).
-    By \cref{sss:strong_r_action}, these actions are strong \(r\)-diameter actions for small enough $r>0$. 
+    By \cref{sss:strong_r_action}, these actions are strong \(r\)-diameter actions for small enough $r>0$.
     We need to verify that the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and that $f_r^{n}$ induces weak equivalences on the orbit spaces for all $0 < r \leq \zeta_{n}$.
 
     For the $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
