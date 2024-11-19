@@ -83,24 +83,24 @@ A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the cir
 
 \subsubsection{}\label{ss:VR-compatible-Sn}
 
-We will be interested in round spherical quotients.
-These are manifolds obtained from the quotient of a round sphere by a compact group acting freely, properly, and by isometries.
-For us the groups will be always finite.\anibal{Remain myself why complex projective spaces did not work for us.}
+%We will be interested in round spherical quotients.
+%These are manifolds obtained from the quotient of a round sphere by a compact group acting freely, properly, and by isometries.
+%For us the groups will be always finite.
 
-A \(G\)-action acting properly by isometries on \(\bS^n\) is \defn{\(\VR\)-compatible} if there exists \(r_0 > 0\) such that the action is a strong \(r\)-diameter action for all \(0 < r < r_0\), and for each \(r \in (0, \zeta_n]\), it commutes with the canonical projection of \(\VR_r(\bS^n)\) (see \cref{ss:VRSn projection}). The induced map
+A proper \(G\)-action by isometries on \(\bS^n\) is \defn{\(\VR\)-compatible} if there exists \(r_0 > 0\) such that the action is strong \(r\)-diameter for all \(0 < r < r_0\), for each \(r \in (0, \zeta_n]\) \anibal{I am surprise it is \(\zeta_n\) instead of \(\zeta_n/2\) which is the critical radii} it commutes with the canonical projection of \(\VR_r(\bS^n)\) (see \cref{ss:VRSn projection}), and the induced map
 \[
 \tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G
 \]
-is then a weak equivalence.
+is then a weak equivalence.\anibal{I think this 3er one is an additional property. I changed it from phrasing claiming that the first 2 conditions imply it.}
 For example, based on the results in \cref{ss:VRSn projection}, the trivial action is \(\VR\)-compatible.
 
 \lz{Strong $r$-diameter implies free (\cite{adams2022metric} mentioned so with the weaker definition). Does it imply discrete or finite? proper?}
 
 \subsubsection{}\label{subsub:VR-compatible-system}
 
-An \defn{equatorial system} of radius \(\rho\) is a diagram
+An \defn{equatorial system} is a diagram
 \[
-\bS^{n_1}(\rho) \to \bS^{n_2}(\rho) \to \bS^{n_3}(\rho) \to \dotsb
+\bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb
 \]
 of round spheres where each map is an isometric embedding.
 For example, the real and complex equatorial systems
@@ -124,7 +124,7 @@ It is said to be free, proper, or by isometries if the \(G\)-action on every sph
 The group \(\rC_2 = \set{1,-1} \subset \R\) acts on the real equatorial system, and, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(q\)-roots of unity acts on the complex one.
 Both of these actions are free, proper, and by isometries.
 
-We say that a free and proper \(G\)-action by isometries on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
+We say that a proper \(G\)-action by isometries on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:\anibal{\(\zeta_n\) decreases with \(n\), right?}
 \begin{equation}\label{eq:VR_quotient}
     \begin{tikzcd}
 	\VR_r(\bS^{n_i})_G

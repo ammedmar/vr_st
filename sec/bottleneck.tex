@@ -5,23 +5,23 @@
 In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through the stability of persistent homology.
 This demonstrates the enhanced discriminatory power of these persistent invariants in the context of metric geometry.
 
-Specifically, we consider for \(n > 1\) the real projective \(n\)-space obtained as the quotient of \(\bS^n(2)\), the Euclidean sphere of radius 2, under the antipodal action.
-We mention that this quotient space \(\rp^n\) has diameter \(\pi\).
-Let us also consider the wedge of round spheres of diameter \(\pi\) with the same homology \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
-Then, in \cref{ss:distance_estimate_rpn}, we will prove the following statements.
-
-\begin{enumerate}
-	\item For any \(m \in \N\) one has
-	\[
-	\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
-	\]
-
-	\item There is \(\degp, k \in \N\) such that
-	\[
-	\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}
-	\]
-	where \(\Sq^k\) lands in degree \(\degp\).
-\end{enumerate}
+%Specifically, we consider for \(n > 1\) the real projective \(n\)-space obtained as the quotient of \(\bS^n(2)\), the Euclidean sphere of radius 2, under the antipodal action.
+%We mention that this quotient space \(\rp^n\) has diameter \(\pi\).
+%Let us also consider the wedge of round spheres of diameter \(\pi\) with the same homology \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
+%Then, in \cref{ss:distance_estimate_rpn}, we will prove the following statements.
+%
+%\begin{enumerate}
+%	\item For any \(m \in \N\) one has
+%	\[
+%	\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
+%	\]
+%
+%	\item There is \(\degp, k \in \N\) such that
+%	\[
+%	\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}
+%	\]
+%	where \(\Sq^k\) lands in degree \(\degp\).
+%\end{enumerate}
 
 \subsection{General estimates}\label{ss:genberal_distance_comparison}
 
@@ -47,9 +47,9 @@ Desideratum~(1) remains unproven, but for Desideratum~(2) it suffices to check t
 \[
 \fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}.
 \]
-Because if the above condition holds, then \cref{s:critical_radii_lens} implies that for any degree $m \leq 2n+1$, 
+Because if the above condition holds, then \cref{s:critical_radii_lens} implies that for any degree $m \leq 2n+1$,
 \[
-\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}. 
+\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}.
 \]
 
 % We now explain why these two conditions are sufficient.
@@ -205,31 +205,31 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
 
 As stated earlier, the round \(\rp^n\) of radius \(\pi\) satisfies our Desiderata, so the discussions in the previous subsection applies.
-In particular, we obtain a precise estimate of the interleaving distances.
+Here we obtain a more precise estimate of the interleaving distances involved.
 Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
 Then, we have the following result.
 
-% In particular, we obtain a precise estimate of the interleaving distances. 
+% In particular, we obtain a precise estimate of the interleaving distances.
 % Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
 % Then, we have the following result.
 
-The difference between $\frac{\pi - \zeta_n}{2}$ and $\frac{\pi}{3}$ is no larger than $\frac{\pi}{12}$, since \(\tfrac{\pi - \zeta_n}{2}\) does not exceed \(\tfrac{\pi}{4}\).
+%The difference between $\frac{\pi - \zeta_n}{2}$ and $\frac{\pi}{3}$ is no larger than $\frac{\pi}{12}$, since \(\tfrac{\pi - \zeta_n}{2}\) does not exceed \(\tfrac{\pi}{4}\).
 %As \(n\) grows, \(\tfrac{\pi - \zeta_n}{2}\) increases and approaches \(\tfrac{\pi}{4}\).
 
 \medskip\theorem
 (1) For any \(n,m \in \N\),
 \[
-\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2}.
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2} \leq \frac{\pi}{4}.\anibal{Is this right? maybe strict inequality?}
 \]
 
-\noindent (2) For any \(n,m,k \in \N\) such that $m \leq n,\, k \leq \tfrac{n-1}{2},\, \binom{m-k}{k}$ is odd, and $\Sq^k\in \cO(m-k, k)$,
+\noindent (2) For any \(n,m,k \in \N\) such that \(m \leq n\), \(k \leq \tfrac{n-1}{2}\), and \(\binom{m-k}{k}\) is odd:
 \[
-\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}.
+\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3},
 \]
+where $\Sq^k$ lands in degree \(k\).
 
 \begin{proof}
-    (1) %Let $\beta_m = 2\firstdeath{m}{\rp^n}$.
-    When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
+    (1) When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
     $2\firstdeath{m}{\rp^n} = \tfrac{2\pi}{3}$.
     Thus, the upper bound we computed in \cref{eq:db_usual_upper_bound} on the interleaving distance between persistent homology evaluates as
     \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} =
