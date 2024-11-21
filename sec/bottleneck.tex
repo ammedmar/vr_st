@@ -30,8 +30,6 @@ This demonstrates the enhanced discriminatory power of these persistent invarian
 We will prove the relevant statements for the above inequalities in greater generality, allowing for similar estimates to be established for Lens spaces once their critical radii are determined.
 
 Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$.
-% and, as before, $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$.
-% We are mostly thinking of a quotients of round spheres.
 Below is a list of properties that we want from one such \(n\)-manifold.
 
 \medskip\noindent\textit{\darkblue Desiderata}.\
@@ -52,18 +50,6 @@ Because if the above condition holds, then \cref{s:critical_radii_lens} implies 
 \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}.
 \]
 
-% We now explain why these two conditions are sufficient.
-% Desideratum (1) as just being restated as Condition (a).
-% To show that Condition (b) implies Desideratum (2), we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
-% It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
-% By \cref{ss:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \bS^5 \subset \dotsb$ is \(\VR\)-compatible.
-% This, combined with the assumption that $\fillrad(\rL^n_p)$ is non-decreasing in $n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$
-% \[
-% \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
-% \]
-% With the assumption $\fillrad(\rL^n_p) < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$, we conclude that $\firstdeath{m}{\rL^n_p} < \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}$.
-% Thus, desiderata (2) also holds.
-
 \subsubsection{}
 
 Let \(\cM\) be a closed connected Riemannian \(n\)-manifold of radius \(\pi\) satisfying our Desiderata.
@@ -81,7 +67,6 @@ The proof of this theorem involves the following three steps, which we will resp
     \item [(b)] RHS of \cref{eq:comparison} is bounded below by $\min\{\firstdeath{\theta}{\cM}, \zeta_n\}$.
     \item [(c)] The value in (a) is strictly less than the value in (b).
 \end{enumerate}
-% Thus, LHS of \cref{eq:comparison} is strictly less than RHS of \cref{eq:comparison}.
 
 \subsubsection{}\label{sss:db_upper_bound}
 
@@ -219,7 +204,7 @@ Then, we have the following result.
 \medskip\theorem
 (1) For any \(n,m \in \N\),
 \[
-\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2} \leq \frac{\pi}{4}.\anibal{Is this right? maybe strict inequality?}
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2} < \frac{\pi}{4}.
 \]
 
 \noindent (2) For any \(n,m,k \in \N\) such that \(m \leq n\), \(k \leq \tfrac{n-1}{2}\), and \(\binom{m-k}{k}\) is odd:
