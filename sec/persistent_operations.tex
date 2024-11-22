@@ -4,26 +4,28 @@
 
 \subsubsection{}\label{ss:theta-modules}
 
-A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is said to be \defn{linear} if $\k$ is a field and the map $\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)$ is linear for any cellular space $\cX$.
+A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is \defn{linear} if \(\k\) is a field and the map \(\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)\) is a linear transformation for any cellular space \(\cX\).
 We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$ and omit the field \(\k\) from the notation when no confusion arises from doing so.
-For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear in this case.
-%\footnote{An example of an additive map that is not linear is complex conjugation $\bC \to \bC$.}
+For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear.
 
-A linear cohomology operation \(\theta \in \cO(\ell,m)\) defines a natural morphism of persistence modules $\theta_X \colon \rH^\ell(X) \to \rH^m(X)$ for any cellular $\R$-space $X$.
-The \defn{image} and \defn{kernel} of $\theta$ at \(X\), denoted \defn{$\img_\theta(X)$} and \defn{$\ker_\theta(X)$} respectively, are the natural persistence modules defined by
+A linear cohomology operation \(\theta \in \cO(\ell, m)\) induces a morphism of persistence modules, denoted \(\theta_X \colon \rH^\ell(X) \to \rH^m(X)\), for any cellular \(\R\)-space \(X\).
+The \defn{image} and \defn{kernel} of $\theta_X$, denoted \defn{$\img_\theta(X)$} and \defn{$\ker_\theta(X)$} respectively, are the persistence modules
 \begin{align*}
 	\img_\theta(X)_r &= \img((\theta_X)_r)\,, &
 	\ker_\theta(X)_r &= \ker((\theta_X)_r)\,, \\
 	\img_\theta(X)_{s,t} &= \rH^m(X)_{s,t}\big|_{\img(\theta_s)}\,, &
-	\ker_\theta(X)_{s,t} &= \rH^\ell(X)_{s,t}\big|_{\ker(\theta_s)}\,.
+	\ker_\theta(X)_{s,t} &= \rH^\ell(X)_{s,t}\big|_{\ker(\theta_s)}\,,
 \end{align*}
+where \(r, s, t \in \R\) and \(s \leq t\).
+
+Since the identity and zero maps are linear cohomology operations, for any \(m \in \N\) we have
+\[
+\img_\id(X) \cong \ker_0(X) \cong \rH^m(X),
+\]
+which shows that these invariants are strictly more general than persistent cohomology.
 
 \subsubsection{}\label{ss:theta-modules-q-tame}
 
-If $\rH^m(X)$ (resp. \(\rH^\ell(X)\)) is q-tame, then $\img_\theta(X)$ (resp. $\ker_\theta(X)$) is q-tame.
-In this case we refer to its barcodes as the \defn{$\img_\theta$-barcode} (resp. \defn{\(\ker_\theta\)-barcode}) of \(X\).
-Barcodes of cohomology operations generalize the barcodes of persistent cohomology since, for the identity and zero maps in $\cO(m,m)$, we have $\img_\id(X) \cong \ker_0(X) \cong \rH^m(X)$.
-When \(\theta\) is a Steenrod squares, the $\img_\theta$-barcodes agree with the Steenrod barcodes of \cite{medina2022per_st}.
-%\footnote{
-%The image persistent module of Steenrod squares was introduced in \cite{medina2022per_st} alongside the tool \texttt{steenroder} for the computation of \(\img_{\Sq^k}\)-barcodes of finite filtered simplicial complexes.
-%By detecting non-trivial bars in the Vietoris--Rips filtration of a sample of the conformation space of the cyclo-octane molecule, this tool was used to establish the presence of non-trivial persistent cohomology operations in real-world data.}
+If \(\rH^m(X)\) (resp. \(\rH^\ell(X)\)) is q-tame, then \(\img_\theta(X)\) (resp. \(\ker_\theta(X)\)) is also q-tame, implying that its barcode decomposition exists.
+In this case we refer to its barcode as the \defn{$\img_\theta$-barcode} (resp. \defn{\(\ker_\theta\)-barcode}) of \(X\).
+The Steenrod barcodes introduced in \cite{medina2022per_st} are specific instances of \(\img_\theta\)-barcodes, where \(\theta\) corresponds to a Steenrod square.

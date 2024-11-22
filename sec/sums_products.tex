@@ -4,13 +4,13 @@
 
 \subsubsection{}
 
-The \defn{wedge sum} of two pointed $\R$-spaces $X$ and $Y$ is defined by
+The \defn{wedge sum} of two pointed \(\R\)-spaces \(X\) and \(Y\) is given by
 \[
-(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = (X_{s,t} \vee Y_{s,t})
+(X \vee Y)_r = X_r \vee Y_r \quad\text{and}\quad (X \vee Y)_{s,t} = X_{s,t} \vee Y_{s,t},
 \]
-where \(r,s,t \in \R\) and \(s \leq t\).
+where \(r, s, t \in \R\) and \(s \leq t\).
 
-\medskip\lemma
+\lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 For any linear cohomology operation $\theta$:
 \begin{align*}
@@ -24,7 +24,7 @@ For any linear cohomology operation $\theta$:
 
 \subsubsection{}\label{ss:wedge sum}
 
-The \defn{gluing metric} on the wedge sum of pointed metric spaces ${(\cX_i, x_i)}_{i = 0}^k$ is defined as follows: For $x \in \cX_i$ and $x' \in \cX_j$, let
+The \defn{gluing metric} on the wedge sum of pointed metric spaces ${(\cX_i, x_i)}_{i = 0}^k$ is defined as follows: For $x \in \cX_i$ and $x' \in \cX_j$ their distance is
 \[
 d(x, x') =
 \begin{cases}
@@ -33,7 +33,7 @@ d(x, x') =
 \end{cases}
 \]
 
-\medskip\theorem
+\theorem
 Let $\cX$ and $\cY$ be pointed metric spaces.
 For any linear cohomology operation $\theta$:
 \begin{align*}
@@ -54,16 +54,16 @@ where \(\cX \vee \cY\) is equipped with the gluing metric.
 
 Similarly, for any two $\R$-spaces $X$ and $Y$, the $\R$-space $X \times Y$, their \defn{product}, is defined by
 \[
-(X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}).
+(X \times Y)_r = X_r \times Y_r \quad\text{and}\quad (X \times Y)_{s,t} = (X_{s,y} \times Y_{s,t}),
 \]
+where \(r, s, t \in \R\) and \(s \leq t\).
 Analogously, the \defn{tensor product} \(V \ot W\) of two persistence modules is defined by
 \[
-(M \ot N)_r = M_r \ot N_r \quad\text{and}\quad (M \ot N)_{s,t} = (M_{s,y} \ot N_{s,t}).
+(M \ot N)_r = M_r \ot N_r \quad\text{and}\quad (M \ot N)_{s,t} = (M_{s,y} \ot N_{s,t}),
 \]
+where \(r, s, t \in \R\) and \(s \leq t\).
 
-%For a general cohomology operation there is no formula expressing its action on the product of two cellular \(\R\)spaces in terms of its action on its factors, but for Steenrod operations there is.
-
-\medskip\lemma
+\lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 Over any prime \(p\):
 %The total Steenrod operations satisfy:
@@ -94,7 +94,7 @@ The \defn{$\ell^\infty$ metric} on $\cX \times \cY$ is defined by
 d(x \times y, \, x' \times y') = \max\set{d(x,x'), d(y,y')}.
 \]
 
-\medskip\theorem
+\theorem
 Let $\cX$ and $\cY$ be metric spaces.
 Over any prime:
 %The total Steenrod square satisfies:

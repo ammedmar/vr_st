@@ -1,28 +1,8 @@
 \subsection{Stability}\label{ss:stability}
 
-%Throughout this subsection we consider cohomology operations in $\cO(\k, m; \k, n)$ for some arbitrary $m$ and $n$.
-
-%, we establish that the interleaving distance $\di$ between the $\theta$-barcodes of two $\R$-spaces $X$ and $Y$ is bounded above by the homotopy interleaving distance $\dhi$ between $X$ and $Y$ (see Definition \ref{def:dhi}).
-%Furthermore, when the $\R$-diagrams are given by the Vietoris--Rips filtrations of two metric spaces, this upper bound can be replaced with twice the Gromov--Hausdorff distance $\dgh$ between the metric spaces. See Theorem \ref{thm:theta stability} for details.
-
-% Let $X$ be a q-tame $\R$-space.
-% Recall from \textsection \ref{ss:theta-barcodes} that any cohomology operation $\theta \in \cO(\kk,n; \kk,m)$ defines a morphism of persistence modules $\theta \colon \rH^n(X; \k) \to \rH^m(X; \k)$ for any $\R$-space.
-
-%\subsubsection{}\label{lem:di stability}
-%
-%\lemma Given two $\R$-spaces $X$ and $Y$, we have
-%\[
-%\di(\thetamodule{X}, \thetamodule{Y}) \leq \di(X,Y).
-%\]
-%
-%\begin{proof}
-%	This follows directly from the fact that $X \mapsto \thetamodule{X}$ defines a functor from the category of spaces to the category of vector spaces over $\k$.
-%	\anibal{I think more should be said.}
-%\end{proof}
-
 \subsubsection{}\label{lem:w.h.e. preservance}
 
-\lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent (\cref{ss:R-spaces}), then, for any linear cohomology operation $\theta$, one has
+\lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent (\cref{ss:R-spaces}), then, for any linear cohomology operation $\theta$
 \[
 \begin{split}
 	\di(\img_\theta(X), \img_\theta(X')) &= 0, \\
@@ -41,14 +21,12 @@
 	\di(\img_\theta(X),\img_\theta(Z)) + \di(\img_\theta(Z),\img_\theta(X')) =
 	0.\qedhere
 	\]
-	%	\ling{to continue: here we need to check that the image of $\theta$ is preserved up to isomorphism under w.h.e.}
-	%	\anibal{A bit tricky... One know that a weak equivalence induces iso. in cohomology (Hatcher 4.28), but I am not sure about how to make the inverse consistent across $\R$. This issue should have already appeared the study of persistent homology and the homotopy interleaving distance.}
 \end{proof}
 
 \subsubsection{}\label{thm:theta stability}
 
 \lemma
-For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$ one has
+For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$
 \begin{align*}
 	\di(\img_\theta(X), \img_\theta(Y)) &\leq \dhi(X,Y), \\
 	\di(\ker_\theta(X), \ker_\theta(Y)) &\leq \dhi(X,Y).
@@ -61,13 +39,6 @@ For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$ 
 	Applying the cofibrant replacement functor $\rQ$ we get $d_\rI(\rQ X', \rQ Y') \leq \delta$ since applying any functor does not increase the interleaving distance.
 	Both $\rQ X$ and $\rQ Y$ can be assumed to be cellular $\R$-spaces, since cofibrant objects in $\Top^\R$ are in particular objectwise cofibrant.
 	By applying the triangle inequality and Lemma \ref{lem:w.h.e. preservance}, we obtain
-	%	\begin{align*}
-		%		\di(\thetamodule{X}, \thetamodule{Y}) \leq& \,
-		%		\di(\thetamodule{X}, \thetamodule{X'}) + \di(\thetamodule{X'}, \thetamodule{Y'}) + \di(\thetamodule{Y'}, \thetamodule{Y}) \\ =& \,
-		%		0 + \di(\thetamodule{X'}, \thetamodule{Y'}) + 0 \\ \leq \,&
-		%		\di(X',Y') \\ \leq \,&
-		%		\delta.
-		%	\end{align*}
 	\begin{align*}
 		\di(\img_\theta(X), \img_\theta(Y)) \leq& \,
 		\di(\img_\theta(X), \img_\theta(\rQ X')) \\ +& \,
@@ -84,7 +55,8 @@ For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$ 
 
 For a metric space \(\cX\) and a linear cohomology operation \(\theta\) we denote \(\img_\theta\big(\VR(\cX)\big)\) and \(\ker_\theta\big(\VR(\cX)\big)\) respectively by \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
 
-\medskip\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$ one has
+\theorem
+For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$
 \begin{align*}
 	\di(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY), \\
 	\di(\ker_\theta^\VR(\cX),\, \ker_\theta^\VR(\cY)) \leq 2 \cdot \dgh(\cX,\cY).

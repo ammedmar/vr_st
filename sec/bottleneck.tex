@@ -2,26 +2,8 @@
 
 \section{Gromov--Hausdorff estimates}\label{s:gh_estimates}
 
-In this section, we aim to construct examples of Riemannian (pseudo-)manifolds for which the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations provides tighter bounds than those obtained through the stability of persistent homology.
-This demonstrates the enhanced discriminatory power of these persistent invariants in the context of metric geometry.
-
-%Specifically, we consider for \(n > 1\) the real projective \(n\)-space obtained as the quotient of \(\bS^n(2)\), the Euclidean sphere of radius 2, under the antipodal action.
-%We mention that this quotient space \(\rp^n\) has diameter \(\pi\).
-%Let us also consider the wedge of round spheres of diameter \(\pi\) with the same homology \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\).
-%Then, in \cref{ss:distance_estimate_rpn}, we will prove the following statements.
-%
-%\begin{enumerate}
-%	\item For any \(m \in \N\) one has
-%	\[
-%	\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi}{4}.
-%	\]
-%
-%	\item There is \(\degp, k \in \N\) such that
-%	\[
-%	\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3}
-%	\]
-%	where \(\Sq^k\) lands in degree \(\degp\).
-%\end{enumerate}
+In this section, we construct examples of Riemannian pseudomanifolds where Gromov--Hausdorff estimates from persistent cohomology operations yield tighter bounds than those from persistent homology.
+This demonstrates the enhanced discriminatory power of these persistent invariants in Riemannian geometry.
 
 \subsection{General estimates}\label{ss:genberal_distance_comparison}
 
@@ -30,7 +12,7 @@ This demonstrates the enhanced discriminatory power of these persistent invarian
 We will prove the relevant statements for the above inequalities in greater generality, allowing for similar estimates to be established for Lens spaces once their critical radii are determined.
 
 Let $\cM$ be a closed connected \(n\)-manifold of diameter $\pi$.
-Below is a list of properties that we want from one such \(n\)-manifold.
+Below is a list of required properties for such an \(n\)-manifold.
 
 \medskip\noindent\textit{\darkblue Desiderata}.\
 \begin{enumerate}
@@ -55,7 +37,7 @@ Because if the above condition holds, then \cref{s:critical_radii_lens} implies 
 Let \(\cM\) be a closed connected Riemannian \(n\)-manifold of radius \(\pi\) satisfying our Desiderata.
 Let $\bS_{\cM}$ be the wedge sum of spheres of radius \(\pi\) with the same reduced homology groups as $\cM$.
 
-\medskip\theorem
+\theorem
 There is $\ell, m \in \N$ and $\theta \in \cO(\ell, m)$ such that
 \begin{equation}\label{eq:comparison}
     \di \Big(\rH^{\VR}_{m}(\bS_{\cM}),\, \rH^{\VR}_{m}(\cM)\Big) < \di \big(\img^{\VR}_{\theta}(\bS_{\cM}),\, \img^{\VR}_{\theta}(\cM)\big).
@@ -70,7 +52,7 @@ The proof of this theorem involves the following three steps, which we will resp
 
 \subsubsection{}\label{sss:db_upper_bound}
 
-\medskip\lemma
+\lemma
 If \( \opH_m(\cM) \) is non-zero, then
 \begin{equation}\label{eq:db_usual_upper_bound}
     \di\Big(\rH^{\VR}_{m}(\bS_{\cM}),\, \rH^{\VR}_{m}(\cM)\Big)
@@ -82,8 +64,8 @@ If \( \opH_m(\cM) \) is zero, a similar result holds, with the upper bound being
     Because both metric spaces are totally bounded, their persistent homology is q-tame.
     By \cref{ss:algebraic_stability}, the interleaving distance between their persistent homology equals the bottleneck distance between the corresponding barcodes.
 
-    To obtain an upper bound on the bottleneck distance, we only need to construct a matching and calculate its cost. Let \( \beta_m = 2\firstdeath{m}{\cM} \).
-
+    To obtain an upper bound on the bottleneck distance, it suffices to construct a matching and calculate its cost.
+    Let \(\beta_m = 2\firstdeath{m}{\cM}\).
     First, suppose \( \opH_m(\cM) \) is non-zero.
     Consider the matching \( P \) between \( \Hbarc[\field]{m}{\bS_{\cM}} \) and \( \Hbarc[\field]{m}{\cM} \) such that the bar \( (0, \zeta_m) \) from \( \Hbarc[\field]{m}{\bS_{\cM}} \) is matched to \( (0, \beta_m) \) from \( \Hbarc[\field]{m}{\cM} \), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \( P \) satisfies
     \begin{align*}
@@ -98,7 +80,7 @@ If \( \opH_m(\cM) \) is zero, a similar result holds, with the upper bound being
 
 \subsubsection{}\label{sss:db_theta_lower_bound}
 
-\medskip\lemma
+\lemma
 Let $\theta \in \cO(\ell, m)$ be such that $\img \theta_\cM$ is non-zero.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
@@ -124,55 +106,35 @@ Then,
 	Thus, any matching $Q$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\theta }{2}, \zeta_n\}$, which proves \cref{eq:db_theta_lower_bound}.
 \end{proof}
 
-
-\subsubsection{}
-\label{sss:comparison_lemma}
+\subsubsection{}\label{sss:comparison_lemma}
 
 The following results will be used in \cref{sss:comparison_lemma_zeta_n} and \cref{ss:distance_estimate_rpn}.
 
 As before, let $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$, which decreases as $n$ increases.
 We derive the following lemma, which, while straightforward, requires careful exposition.
 
-\medskip\lemma
+\lemma
 Let $m \leq n$.
 \begin{enumerate}
     \item \(\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\)
-
     \item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
-
-%    \item For any $r \in \big[\zeta_n, \tfrac{\pi - \zeta_n}{2} + \zeta_m\big]$, $\max\{|\zeta_m  - r |, \tfrac{\pi - \zeta_n}{2}\} = \tfrac{\pi - \zeta_n}{2}$.
 \end{enumerate}
 
-
 \begin{proof}
-    	(1) The first inequality follows from $\zeta_m - \zeta_n < \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
-        The second inequality holds because $\zeta_n$ is larger than $\tfrac{\pi}{2}$.
+   	(1) The first inequality follows from $\zeta_m - \zeta_n < \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
+    The second inequality holds because $\zeta_n$ is larger than $\tfrac{\pi}{2}$.
 
-        (2) Since $\tfrac{\pi - \zeta_n}{2}$ is less than $\tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m  - r |$ is also less than $\tfrac{\zeta_n}{2}$, which follows from
-    	\(
-    	|\zeta_m  - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
-    	\) by Part (1).
-    	% (3) It suffices to show $|\zeta_m  - r | \leq \tfrac{\pi - \zeta_n}{2}$.
-     %    We consider two cases.
-     %    When $r$ is larger than $\zeta_m$, we have
-    	% $|\zeta_m  - r | = r - \zeta_m \leq
-    	% %\leq \tfrac{\pi - \zeta_n}{2} + \zeta_m - \zeta_m =
-     %    \tfrac{\pi - \zeta_n}{2}
-    	% $ by the assumption on $r$.
-    	% When $r$ is less than or equal to $\zeta_m$, we have
-    	% \(
-    	% |\zeta_m  - r | \leq \zeta_m - \zeta_n
-    	% < \tfrac{\pi - \zeta_n}{2}
-    	% \) by Part (1).
+    (2) Since $\tfrac{\pi - \zeta_n}{2}$ is less than $\tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m  - r |$ is also less than $\tfrac{\zeta_n}{2}$, which follows from
+   	\(
+   	|\zeta_m  - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
+   	\) by Part (1).
 \end{proof}
 
-\subsubsection{}
-\label{sss:comparison_lemma_zeta_n}
+\subsubsection{}\label{sss:comparison_lemma_zeta_n}
 
 We will finish the proof of \cref{ss:genberal_distance_comparison} by completing the third step.
-%demonstrating that the upper bound on the interleaving distance for the persistent homology is strictly less than the lower bound for the interleaving distance between the persistent $\img_\theta$-modules.
 
-\medskip \lemma
+\lemma
 For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is non-zero,
 \[\max\big\{|\zeta_m  - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} < \min\{\firstdeath{\theta}{\cM}, \zeta_n\}.\]
 \begin{proof}
@@ -189,19 +151,12 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
 
-As stated earlier, the round \(\rp^n\) of radius \(\pi\) satisfies our Desiderata, so the discussions in the previous subsection applies.
+As stated earlier, the round \(\rp^n\) of radius \(\pi\) satisfies our Desiderata, so the discussions in the previous subsection apply.
 Here we obtain a more precise estimate of the interleaving distances involved.
 Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
 Then, we have the following result.
 
-% In particular, we obtain a precise estimate of the interleaving distances.
-% Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
-% Then, we have the following result.
-
-%The difference between $\frac{\pi - \zeta_n}{2}$ and $\frac{\pi}{3}$ is no larger than $\frac{\pi}{12}$, since \(\tfrac{\pi - \zeta_n}{2}\) does not exceed \(\tfrac{\pi}{4}\).
-%As \(n\) grows, \(\tfrac{\pi - \zeta_n}{2}\) increases and approaches \(\tfrac{\pi}{4}\).
-
-\medskip\theorem
+\theorem
 (1) For any \(n,m \in \N\),
 \[
 \di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2} < \frac{\pi}{4}.

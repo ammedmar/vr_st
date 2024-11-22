@@ -2,29 +2,28 @@
 
 \section{Introduction} \label{s:introduction}
 
-When studying the shape and structure of spaces equipped with a filtration, \textit{persistent homology} has emerged as a crucial tool in both applied and theoretical topology.
-By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning to symplectic geometry and functional analysis.
-A few among many examples can be found in \cite{carlsson2013viral,hess2017nano} and \cite{polterovich2020persistence,medina2022fuct_top}.
+When studying the shape and structure of spaces equipped with a filtration, persistent homology has emerged as a crucial tool in both applied and theoretical topology.
+By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning (\cite{carlsson2013viral, hess2017nano}) to symplectic geometry and functional analysis (\cite{polterovich2020persistence, medina2022fuct_top}).
 Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces.
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
 To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information.
 For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent} and some of its derived structures in \cite{herscovich2018persistence, ginot2019distances, belchi2022persistence, hess2024minimalmodels}.
-In this work, we concentrate on cohomology operations, which are natural transformations between cohomology functors. We mention \cite{aubrey2011thesis} and \cite{postol2023persistence} as other attempts to towards similar objectives.
+In this work, we concentrate on cohomology operations, which are natural transformations between cohomology functors. We mention \cite{aubrey2011thesis} and \cite{postol2023persistence} as other attempts towards similar objectives.
 
 The first major developments integrating cohomology operations into the persistence framework were presented in \cite{medina2022per_st}.
-Using new methods for the computation of Steenrod squares (\cite{medina2023fast_sq}), this work proposed and implemented algorithms for computing the \textit{mod~2 Steenrod barcodes} of finite filtered simplicial complexes, with the resulting tool, \href{https://steenroder.github.io/steenroder/}{\texttt{steenroder}}, used to the detect nontrivial Steenrod barcodes on molecular data.
+Using new methods for the computation of Steenrod squares (\cite{medina2023fast_sq}), this work proposed and implemented algorithms for computing the \textit{Steenrod barcodes} of finite filtered simplicial complexes, with the resulting tool, \href{https://steenroder.github.io/steenroder/}{\texttt{steenroder}}, used to detect the nontrivial presence of these invariants on molecular data.
 
 Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
 
-In this paper, we systematically treat \textit{persistent cohomology operations} providing them with a general and firm foundation, and present applications of these invariants to Riemannian geometry.
+In this paper, we systematically treat \textit{persistent cohomology operations}, establishing a general and firm foundation for them., and present applications of these invariants to Riemannian geometry.
 
 \subsection*{Results}
 
 Let \(\k\) be a field.
 A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transformation
 \[
-\theta \colon \rH^\ell(-;\k) \to \rH^\degp(-;\k),
+\theta \colon \rH^\ell(-;\k) \to \rH^m(-;\k),
 \]
 between cohomology functors.
 From now on we will omit \(\k\) from the notation.
@@ -35,14 +34,14 @@ When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX
 
 Our first contributions, fully detailed and proven in \cref{ss:sums_products}, present decomposition theorems for wedge sums and products.
 
-\medskip\theorem For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
+\theorem For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
 \[
 \img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
 \]
 where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
 
-\medskip\theorem
-For any two metric spaces $\cX$ and $\cY$, over any prime the total Steenrod operation \(\rP\) satisfies:
+\theorem
+For any two metric spaces $\cX$ and $\cY$, over any prime, the total Steenrod operation \(\rP\) satisfies:
 \[
 \img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY),
 \]
@@ -52,7 +51,7 @@ where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric
 Persistent cohomology operations share this property.
 More precisely, in \cref{ss:stability} we prove the following.
 
-\medskip\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
+\theorem For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
 \[
 \di\big(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY),
 \]
@@ -62,15 +61,11 @@ where \(\di\) and \(\dgh\) are respectively the interleaving and Gromov--Hausdor
 More precisely, \cite{lim2024vietoris} proved that if \(\rU_r(\cX)\) is the radius \(r\) neighborhood of \(K(\cX)\), then \(\VR_{2r}(\cX)\) and \(\rU_r(\cX)\) are naturally homotopy equivalent for every \(r > 0\).
 
 Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
-Using this invariant and other similar critical radii, we construct pairs of Riemannian pseudomanifolds for which the Gromov--Hausdorff estimates derived from the stability of persistent cohomology operations provide sharper bounds than those obtained from persistent homology.
+Using this invariant and other similar critical radii, we construct pairs of Riemannian pseudomanifolds where stability-based Gromov--Hausdorff estimates from persistent cohomology operations yield sharper bounds than those from persistent homology.
 
-%Using this invariant and other similar critical radii, we can construct examples of pairs of Riemannian pseudomanifolds where the Gromov--Hausdorff estimate derived from the stability of persistent cohomology operations, provides a sharper bound than those obtained through persistent homology.
+Specifically, we consider the real projective space \(\rp^n\), with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action, and the wedge sum of round spheres \(\bS_{\mathbb{RP}^n} = \bS^1 \vee \dots \vee \bS^n\), each also with diameter \(\pi\).
 
-%Specifically, we consider in one hand the wedge of round spheres \(\VS = \bS^1 \vee \dots \vee \bS^n\), each having diameter \(\pi\), and in the other, the real projective space \(\rp^n\), also with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action.
-
-Specifically, we consider, on one hand, the real projective space \(\rp^n\), with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action; and on the other, the wedge sum of round spheres \(\bS_{\mathbb{RP}^n} = \bS^1 \vee \dots \vee \bS^n\), each with diameter \(\pi\).
-
-\medskip\theorem
+\theorem
 For every \(n > 1\) we have the following inequalities:
 \begin{enumerate}
 	\item For any \(m \in \N\)
@@ -85,4 +80,4 @@ For every \(n > 1\) we have the following inequalities:
 	where \(\Sq^k\) is the \(k^\th\) Steenrod square.
 \end{enumerate}
 
-\medskip As explained in \cref{ss:genberal_distance_comparison}, our arguments would extend to Lens spaces and odd prime Steenrod operations, provided certain statements about their critical radii are established---a topic we leave for future investigation.
+\medskip As explained in \cref{ss:genberal_distance_comparison}, our arguments would extend to Lens spaces and odd prime Steenrod operations, provided certain very concrete statements about their critical radii, which fall outside the scope of this work, are established.
