@@ -4,7 +4,7 @@
 
 When studying the shape and structure of spaces equipped with a filtration, persistent homology has emerged as a crucial tool in both applied and theoretical topology.
 By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning (\cite{carlsson2013viral, hess2017nano}) to symplectic geometry and functional analysis (\cite{polterovich2020persistence, medina2022fuct_top}).
-Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces.
+Despite its successes, persistent homology has limitations that mirror those of classical homology for the study of unfiltered topological spaces.
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
 To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information.
@@ -16,7 +16,7 @@ Using new methods for the computation of Steenrod squares (\cite{medina2023fast_
 
 Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
 
-In this paper, we systematically treat \textit{persistent cohomology operations}, establishing a general and firm foundation for them., and present applications of these invariants to Riemannian geometry.
+In this paper, we systematically treat \textit{persistent cohomology operations}, establishing a general and firm foundation for them, and present applications of these invariants to Riemannian geometry.
 
 \subsection*{Results}
 
@@ -40,8 +40,7 @@ Our first contributions, fully detailed and proven in \cref{ss:sums_products}, p
 \]
 where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
 
-\theorem
-For any two metric spaces $\cX$ and $\cY$, over any prime, the total Steenrod operation \(\rP\) satisfies:
+\theorem For any two metric spaces $\cX$ and $\cY$, over any prime, the total Steenrod operation \(\rP\) satisfies:
 \[
 \img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY),
 \]
@@ -72,7 +71,6 @@ For every \(n > 1\) we have the following inequalities:
 	\[
 	\di\Big(\rH^\VR_m(\rp^n),\, \rH^\VR_m(\bS_{\rp^n})\Big) < \frac{\pi}{4}.
 	\]
-
 	\item There is \(k \in \N\) such that
 	\[
 	\di\Big(\img_{\Sq^k}^\VR(\rp^n),\, \img_{\Sq^k}^\VR(\bS_{\rp^n})\Big) \geq \frac{\pi}{3},
