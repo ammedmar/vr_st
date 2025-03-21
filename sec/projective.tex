@@ -6,6 +6,9 @@ Let us now focus on the real equatorial system with its canonical \(\rC_2\)-acti
 We will consider every sphere \(\bS^n(2)\) to have radius 2 so the quotient \(\rp^n\) has the same diameter as \(\bS^n\).
 The ground field here is \(\Ftwo\).
 
+% \textcolor{red}{The first item below is stated in \cite[Thm.~4.5]{adams2022metric}, while the other two items follows from this result, previous sections, and \cite{katz1983filling}.
+% }
+
 \lemma
 For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \begin{enumerate}
@@ -23,7 +26,9 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 \end{enumerate}
 
 \begin{proof}
-	(1) This result is stated and proven in \cite[Thm.~4.5]{adams2022metric}.
+	(1) By \cite{katz1983filling}, the filling radius of $\rp^n$ is $\frac{\pi}{3}$. 
+    Since the homotopical critical radius is always bounded above by the filling radius, we have $\crit(\rp^n) \leq \frac{\pi}{3}$. 
+    The reverse inequality, $\crit(\rp^n) \geq \frac{\pi}{3}$, follows from the remark following \cite[Thm.~4.5]{adams2022metric}.
 
 	\smallskip (2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
     Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
@@ -59,26 +64,26 @@ Using the above values, the estimates resulting from the analysis of \cref{ss:ba
 
 \subsection{Lens spaces}\label{s:critical_radii_lens}
 
-Much less information is known about Lens spaces.
-We are interested in spheres \(\bS^{2n+1}(p)\) of radius \(p\), so the quotient \(\rL_p^n\) has the same diameter as \(\bS^{2n+1}\).
-The ground ring is \(\Fp\).
+Much less information is known about the critical radii of Lens spaces (\cref{sss:cohomology_lens}).
+In this section, we establish a relationship between the filling radius and the homological radii of Lens spaces, assuming certain monotonicity condition on the former.
+We are interested in spheres \(\bS^{2n+1}(q)\) of radius \(q\), so the quotient \(\rL_q^n\) has the same diameter as the unit sphere \(\bS^{2n+1}\). 
 
 \lemma
-For fixed $n\in \N$, if $\fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p)$, then for any degree $m\leq 2n+1$,
+For fixed $n\in \N$, if $\fillrad(\rL^1_q) \leq \dotsb \leq \fillrad(\rL^n_q)$, then for any degree $m\leq 2n+1$,
 \[
-\firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p).
+\firstdeath{m}{\rL^n_q} \leq \fillrad(\rL^n_q).
 \]
 
 \begin{proof}
-    It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_p} = 0$ when $m$ is even.
+    It is enough to consider odd homology degrees, since $\firstdeath{m}{\rL^n_q} = 0$ when $m$ is even.
     For odd degrees, we apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
-    By \cref{ss:system VR compatible}, the $\rC_p$-action on the system $\bS^1 \subset \bS^3 \subset \dotsb \subset \bS^n$ of unit spheres is \(\VR\)-compatible.
-    This, combined with the assumption that $\fillrad\big(\bS^{2\tilde{n}+1}_{\rC_p}\big) = \tfrac{1}{p} \fillrad(\rL^{\tilde{n}}_p)$ is non-decreasing in $\tilde{n}$ for all $1\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
+    By \cref{ss:system VR compatible}, the $\rC_q$-action on the system $\bS^1 \subset \bS^3 \subset \dotsb \subset \bS^n$ of unit spheres is \(\VR\)-compatible.
+    This, combined with the assumption that $\fillrad\big(\bS^{2\tilde{n}+1}_{\rC_q}\big) = \tfrac{1}{q} \fillrad(\rL^{\tilde{n}}_q)$ is non-decreasing in $\tilde{n}$ for all $1\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd integer $m \leq 2n+1$,
     \[
-    \mathrm{Rad}_m\big(\bS^{2n+1}_{\rC_p}\big) \leq \fillrad\big(\bS^{2n+1}_{\rC_p}\big)
+    \mathrm{Rad}_m\big(\bS^{2n+1}_{\rC_q}\big) \leq \fillrad\big(\bS^{2n+1}_{\rC_q}\big)
     \]
     Consequently, for any degree $m \leq 2n+1$, we obtain
     \[
-    \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p). \qedhere
+    \firstdeath{m}{\rL^n_q} \leq \fillrad(\rL^n_q). \qedhere
     \]
 \end{proof}

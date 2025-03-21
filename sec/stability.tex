@@ -1,29 +1,34 @@
 \subsection{Stability}\label{ss:stability}
 
+We prove the stability of cohomology operations using the homotopy interleaving distance of \cite{blumberg2023interleaving}.
+
+% \textcolor{red}{To prove the stability of persistent cohomology operations, we establish lemmas showing that weak equivalences between cellular $\R$-spaces preserve the images and kernels of linear cohomology operations. }
+
 \subsubsection{}\label{lem:w.h.e. preservance}
 
 \lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent (\cref{ss:R-spaces}), then, for any linear cohomology operation $\theta$
 \[
 \begin{split}
-	\di(\img_\theta(X), \img_\theta(X')) &= 0, \\
-	\di(\ker_\theta(X), \ker_\theta(X')) &= 0.
+	\img_\theta(X) & \cong \img_\theta(X'), \\
+	\ker_\theta(X)& \cong \ker_\theta(X').
 \end{split}
 \]
 
 \begin{proof}
 	We write the proof only for $\img_\theta(X)$ since that for $\ker_\theta(X)$ is analogous.
-	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to Y$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
+	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to X'$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
 	Without loss of generality we can assume $Z$ to be cellular using the cofibrant replacement functor of the model category structure on $\R$-spaces described in \cite{blumberg2023interleaving}.
 	Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\img_\theta(Z)$ and $\img_\theta(X)$ are isomorphic, as well as $\img_\theta(Z)$ and $\img_\theta(X')$.
-	Therefore,
-	\[
-	\di(\img_\theta(X),\img_\theta(X')) \leq
-	\di(\img_\theta(X),\img_\theta(Z)) + \di(\img_\theta(Z),\img_\theta(X')) =
-	0.\qedhere
-	\]
+    This finishes the proof.
+	% Therefore,
+	% \[
+	% \di(\img_\theta(X),\img_\theta(X')) \leq
+	% \di(\img_\theta(X),\img_\theta(Z)) + \di(\img_\theta(Z),\img_\theta(X')) =
+	% 0.\qedhere
+	% \]
 \end{proof}
 
-\subsubsection{}\label{thm:theta stability}
+\subsubsection{}\label{thm:stability theta}
 
 \lemma
 For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$
@@ -51,7 +56,7 @@ For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$
 	Since $\delta > \dhi(X,Y)$ is arbitrary, we obtain the desired inequality.
 \end{proof}
 
-\subsubsection{}\label{cor:theta stability VR}
+\subsubsection{}\label{thm:stability VR}
 
 For a metric space \(\cX\) and a linear cohomology operation \(\theta\) we denote \(\img_\theta\big(\VR(\cX)\big)\) and \(\ker_\theta\big(\VR(\cX)\big)\) respectively by \(\img_\theta^\VR(\cX)\) and \(\ker_\theta^\VR(\cX)\).
 

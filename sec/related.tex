@@ -1,0 +1,44 @@
+% !TEX root = ../vr_st.tex
+
+\section*{Related work}
+
+\subsection*{Decomposition formulas}
+
+% Building on prior studies of the Vietoris--Rips filtration of wedge sums \cite{adamaszek2020homotopy} and products \cite{adamaszek2017VietorisProduct,lim2024vietoris}, our first contributions, fully detailed and proven in \cref{ss:sums_products}, present decomposition theorems for these.
+
+Both \cref{thm:decomposition1} and \cref{thm:decomposition2} build on previous studies of the Vietoris--Rips filtration of metric spaces.
+Specifically of their wedge sums \cite{adamaszek2020homotopy} and products \cite{adamaszek2017VietorisProduct, gakhar2019k, lim2024vietoris}.
+
+\subsection*{Stability}
+
+In \cite[Theorem~87]{ginot2019distances}, Ginot and Leray prove a Gromov--Hausdorff inequality using the \textit{Steenrod interleaving distance}.  
+This is the interleaving distance in the category of persistent algebras that are also persistent modules over the Steenrod algebra \(\mathcal{A}_p\).
+Our stability result, \cref{thm:stability intro}, holds for all cohomology operations.  
+In the important case of Steenrod operations, it seems likely that our result could be deduced from theirs.  
+
+Our proof strategy builds on the techniques developed in \cite{zhou2023beyond,memoli2024persistent}.
+
+\subsection*{Gromov--Hausdorff estimates via interleaving estimates} 
+
+The exact value of the Gromov--Hausdorff distance is known in only a small number of cases \cite{memoli2012some,ji2021gromov,adams2022gromov,talipov2022gromov,lim2021gromov,harrison2023quantitative,saul2024gromov,saul2024some}. 
+Much of the effort in these works, as well as in the broader study of the Gromov--Hausdorff distance, has been devoted to establishing effective bounds on this distance (see \cite{lim2021gromov} for a comprehensive discussion of the literature).
+
+In this paper, we contribute to the line of work about estimating Gromov--Hausdorff distances between metric spaces by seeking lower bounds based on persistent cohomology operations. 
+Indeed, \cref{thm:inequalities intro} illustrates the stronger discriminating power of persistent cohomology operations over (standard) persistent homology. 
+It does so by providing bounds on the interleaving distance of the persistent homology and persistent cohomology operations of the Vietoris--Rips filtration of pairs of Riemannian pseudo-manifolds. 
+For example, combining \cref{thm:stability intro} and \cref{thm:inequalities intro}, we establish a lower bound of $\frac{\pi}{6}$ for the Gromov--Hausdorff distances between \(\rp^n\) and \(\bS_{\rp^n}\), which is strictly greater than the lower bound obtained from persistent homology, which does not exceed $\frac{\pi}{8}$.  
+See \cref{s:gh_estimates} for more details.
+
+This approach, which employs topological invariants more informative than persistent homology, builds upon prior work explored in \cite{zhou2023beyond, zhou2023persistent, memoli2024persistenthomotopy, memoli2024persistent, memoli2025ephemeral}. 
+These studies have investigated sharper lower bounds on the Gromov--Hausdorff distance by leveraging persistent invariants derived from homotopy groups, rational homotopy groups, the cohomology ring, the Lyusternik--Schnirelmann category, Sullivan minimal models, and filtered chain complexes.
+
+\subsection*{Critical radii} 
+
+The Kuratowski embedding \(K \colon \cX \to \rL^\infty(\cX)\) of a metric space \(\cX\) is its canonical isometric inclusion, given by \(\cX \ni x \mapsto d_\cX(x,\cdot)\), into the Banach space $\rL^\infty(\cX)$.
+For any $r>0$, let \(\rU_r(\cX)\) denote the radius \(r\) neighborhood of \(K(\cX)\) in \(\rL^\infty(\cX)\).
+It was established in \cite{chazal2009gromov} for finite metric spaces and later extended to compact metric spaces in \cite{lim2024vietoris} that the Vietoris--Rips complex \(\VR_{2r}(\cX)\) is naturally homotopy equivalent to \(\rU_r(\cX)\) for every \(r > 0\).
+
+Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
+The use of this invariant and other similar critical radii is crucial in our proof of \cref{thm:inequalities intro}.
+This approach is similar to the one used in \cite[Prop.~9.38]{lim2024vietoris} where the authors consider pairs of spaces consisting of an $n$-manifold \(\cM\) and a space \(\cX\) with trivial \(n\)-homology, and then bound the interleaving distance of the \(n\)-th persistent homology by the filling radius of \(\cM\).
+In contrast, we consider a space \(\cX\) whose homology in all degrees matches that of \(\cM\).
