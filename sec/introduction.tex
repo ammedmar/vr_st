@@ -8,8 +8,7 @@ Despite its successes, persistent homology has limitations that mirror those of 
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
 To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information.
-For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent} and some of its derived structures in \cite{herscovich2018higher, ginot2019distances, belchi2022persistence, zhou2023persistent,
-hess2024minimalmodels}. 
+For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent} and some of its derived structures in \cite{herscovich2018higher, ginot2019distances, belchi2022persistence, zhou2023persistent, hess2024minimalmodels}.
 In this work, we concentrate on cohomology operations, which are natural transformations between cohomology functors. We mention \cite{aubrey2011thesis} and \cite{postol2023persistence} as other attempts towards similar objectives.
 
 The first major developments integrating cohomology operations into the persistence framework were presented in \cite{medina2022per_st}.
@@ -17,7 +16,7 @@ Using new methods for the computation of Steenrod squares (\cite{medina2023fast_
 
 Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
 
-In this paper, we systematically treat \textit{persistent cohomology operations}, establishing a general and firm foundation for them, and present applications of these invariants to Riemannian geometry.
+In this paper, we systematically develop a general and firm foundation for \textit{persistent cohomology operations} and present applications of these invariants to Riemannian geometry.
 
 \medskip Let us now review in more detail the contributions of this work.
 Let \(\k\) be a field.
@@ -33,38 +32,36 @@ In this introduction we focus solely on the first of these, mentioning that all 
 
 When \(X\) is the Vietoris--Rips filtration \(\VR(\cX)\) of a metric space \(\cX\), we use the simplified notation \(\rH_m^\VR(\cX)\) and \(\img_\theta^\VR(\cX)\) instead of \(\rH_m(\VR(\cX))\) and \(\img_\theta(\VR(\cX))\).
 
-% Building on prior studies of the Vietoris--Rips filtration of wedge sums \cite{adamaszek2020homotopy} and products \cite{adamaszek2017VietorisProduct,lim2024vietoris}, our first contributions, fully detailed and proven in \cref{ss:sums_products}, present decomposition theorems for these.
-
 \medskip\noindent\textsc{Decomposition formulas.}
 Our first contributions are the following theorems, proven respectively in \cref{ss:wedge sum} and \cref{ss:products}, providing decomposition formulas for the persistent cohomology modules of wedge sums and products of metric spaces.
 
 \begin{introtheorem}\label{thm:decomposition1}
-    For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
-    \[
-    \img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
-    \]
-    where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
+	For any two pointed metric spaces $\cX$ and $\cY$, a linear cohomology operation \(\theta\) satisfies:
+	\[
+	\img_\theta^\VR(\cX \vee \cY) \cong \img_\theta^\VR(\cX) \oplus \img_\theta^\VR(\cY),
+	\]
+	where the wedge sum \(\cX \vee \cY\) is equipped with the gluing metric.
 \end{introtheorem}
 
 \begin{introtheorem}\label{thm:decomposition2}
-    For any two metric spaces $\cX$ and $\cY$, over any prime, the total Steenrod operation \(\rP\) satisfies:
-    \[
-    \img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY),
-    \]
-    where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
+	For any two metric spaces $\cX$ and $\cY$, over any prime, the total Steenrod operation \(\rP\) satisfies:
+	\[
+	\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY),
+	\]
+	where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 \end{introtheorem}
 
 These follow from corresponding statements holding for wedge sums and products of general cellular $\mathbb{R}$-spaces presented, respectively, in \cref{ss:wedge_sum_general} and \cref{ss:product_general}.
 
-\medskip\noindent\textsc{Gromov--Hausdorff Inequalities.}  
+\medskip\noindent\textsc{Gromov--Hausdorff Inequalities.}
 A fundamental property of persistent homology is its stability, which has multiple formulations; here, we focus on the Vietoris--Rips stability for metric spaces, as presented in the following.
 \begin{theorem*}[\cite{chazal2009gromov,
-chazal2014geometric}]
-    For any two metric spaces $\cX$ and $\cY$ and non-negative integer $m$:
-    \begin{equation}\label{eq:gh_inequality_intro_homology}
-    \di\big(\rH_m^\VR(\cX),\, \rH_m^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY),
-\end{equation}
-where \(\di\) and \(\dgh\) are respectively the interleaving and extended Gromov--Hausdorff distances.
+		chazal2014geometric}]
+	For any two metric spaces $\cX$ and $\cY$ and non-negative integer $m$:
+	\begin{equation}\label{eq:gh_inequality_intro_homology}
+		\di\big(\rH_m^\VR(\cX),\, \rH_m^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY),
+	\end{equation}
+	where \(\di\) and \(\dgh\) are respectively the interleaving and extended Gromov--Hausdorff distances.
 \end{theorem*}
 
 Our next contribution is to show that persistent cohomology operations are also stable in this sense.
@@ -72,35 +69,35 @@ Our next contribution is to show that persistent cohomology operations are also 
 More precisely, in \cref{thm:stability VR}, we prove the following result using the homotopy interleaving distance of \cite{blumberg2023interleaving}.
 
 \begin{introtheorem}\label{thm:stability intro}
-    For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
-    \begin{equation}\label{eq:gh_inequality_intro}
-        \di\big(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY).
-    \end{equation}
+	For any two metric spaces $\cX$ and $\cY$ and a linear cohomology operation~$\theta$:
+	\begin{equation}\label{eq:gh_inequality_intro}
+		\di\big(\img_\theta^\VR(\cX),\, \img_\theta^\VR(\cY)\big) \leq 2 \cdot \dgh(\cX,\cY).
+	\end{equation}
 \end{introtheorem}
 
 This follow from a statement holding for general cellular $\mathbb{R}$-spaces presented in \cref{thm:stability theta}.
 
-\medskip Given the inequalities \eqref{eq:gh_inequality_intro_homology} and \eqref{eq:gh_inequality_intro},  
-it is natural to ask whether persistent cohomology operations can yield sharper lower bounds for the Gromov--Hausdorff distance than those obtained via persistent homology.  
-This would demonstrate the greater discriminating power of persistent cohomology operations compared to persistent homology.  
+\medskip Given the inequalities \eqref{eq:gh_inequality_intro_homology} and \eqref{eq:gh_inequality_intro},
+it is natural to ask whether persistent cohomology operations can yield sharper lower bounds for the Gromov--Hausdorff distance than those obtained via persistent homology.
+This would demonstrate the greater discriminating power of persistent cohomology operations compared to persistent homology.
 
-We employ certain \textit{critical radii}, inspired by Gromov's filling radius~\cite{gromov1983filling}, to establish this result in \cref{ss:distance_estimate_rpn}.  
+We employ certain \textit{critical radii}, inspired by Gromov's filling radius~\cite{gromov1983filling}, to establish this result in \cref{ss:distance_estimate_rpn}.
 Specifically, we consider the real projective space \(\rp^n\), with diameter \(\pi\), obtained as the quotient of a round sphere under the antipodal action, and the wedge sum of round spheres \(\bS_{\mathbb{RP}^n} = \bS^1 \vee \dots \vee \bS^n\), each also with diameter \(\pi\).
 
 \begin{introtheorem}\label{thm:inequalities intro}
-    For every \(n > 1\) the following inequalities hold:
-    \begin{enumerate}
-    	\item For any \(m \in \N\)
-    	\[
-    	\di\Big(\rH^\VR_m(\rp^n),\, \rH^\VR_m(\bS_{\rp^n})\Big) < \frac{\pi}{4}.
-    	\]
-    
-    	\item There is \(k \in \N\) such that
-    	\[
-    	\di\Big(\img_{\Sq^k}^\VR(\rp^n),\, \img_{\Sq^k}^\VR(\bS_{\rp^n})\Big) \geq \frac{\pi}{3},
-    	\]
-    	where \(\Sq^k\) is the \(k^\th\) Steenrod square.
-    \end{enumerate}
+	For every \(n > 1\) the following inequalities hold:
+	\begin{enumerate}
+		\item For any \(m \in \N\)
+		\[
+		\di\Big(\rH^\VR_m(\rp^n),\, \rH^\VR_m(\bS_{\rp^n})\Big) < \frac{\pi}{4}.
+		\]
+
+		\item There is \(k \in \N\) such that
+		\[
+		\di\Big(\img_{\Sq^k}^\VR(\rp^n),\, \img_{\Sq^k}^\VR(\bS_{\rp^n})\Big) \geq \frac{\pi}{3},
+		\]
+		where \(\Sq^k\) is the \(k^\th\) Steenrod square.
+	\end{enumerate}
 \end{introtheorem}
 
 \medskip As explained in \cref{ss:genberal_distance_comparison}, our arguments extend to Lens spaces and odd prime Steenrod operations, provided certain concrete statements about their critical radii are established.

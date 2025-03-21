@@ -13,7 +13,7 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; \Z)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
 
-This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}. 
+This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}.
 We are interested in working over a field \(\k\), for which we have
 \[
 \fillrad(\cM; \field) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \field)}.
@@ -25,7 +25,7 @@ This is particularly meaningful when \(\cM\) is connected and not orientable, an
 Let \(\cM\) be a closed Riemannian manifold.
 By \cite[Thm.~3.5]{hausmann1995vietoris} and \cite[Thm.~4.1]{lim2024vietoris}, we know that there exists \(r_\cM > 0\) such that for all \(r \in (0, r_\cM)\) the inclusion \(\cM \to \rU_{r}(\cM)\) is a homotopy equivalence.
 This leads to considering the supremum of all such \(r > 0\) for which the inclusion \(\cM \to \rU_r(\cM)\) is a homotopy
-equivalence. 
+equivalence.
 We will refer to this value as the homotopical radius of $\cM$ and denote it by \(\crit(\mathcal{M})\).
 
 \subsubsection{} \label{ss:beta v.s. fillrad}
@@ -53,7 +53,7 @@ The \(\ker_\theta\)-radius is defined similarly, but we do not use it in this wo
 
 Clearly, if \(\rH_m(\cX) \neq 0\) (resp. \(\img_\theta(\cX) \neq 0\)), then
 \[
-\crit(\cX) \leq \firstdeath{m}{\cX} \qquad (\text{resp. }\crit(\cX) \leq  \firstdeath{\theta}{\cX}),
+\crit(\cX) \leq \firstdeath{m}{\cX} \qquad (\text{resp. }\crit(\cX) \leq \firstdeath{\theta}{\cX}),
 \]
 and if $\cM$ is connected and $n$-dimensional, then
 \[
@@ -67,8 +67,8 @@ There is a deep relationship between the \(r\)-neighborhood filtration of $\cX$ 
 
 \proposition \cite[Thm.~4.1]{lim2024vietoris} The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
 
-\medskip Due to the natural homotopy equivalence between these filtrations, we will use them interchangeably as needed. 
-In particular, this equivalence allows us to bound the Vietoris--Rips barcode of Riemannian pseudomanifolds using their critical radii. 
+\medskip Due to the natural homotopy equivalence between these filtrations, we will use them interchangeably as needed.
+In particular, this equivalence allows us to bound the Vietoris--Rips barcode of Riemannian pseudomanifolds using their critical radii.
 
 \subsection{General estimates}\label{ss:barcode_general}
 
@@ -91,9 +91,9 @@ See the second row of \cref{fig:barcodes_general} for these estimates.
 	\centering
 	\input{sec/fig_barcodes_general}
 	\caption{Let $\cM$ be a closed Riemannian manifold.
-    \emph{Top row:} persistent reduced homology barcodes of $\cM$.
-	\emph{Bottom row:} $\img_\theta$-barcodes of $\cM$.
-    In each figure, the gray region represents where additional bars could potentially exist within the corresponding barcode.
-    See \cref{ss:barcode_general} for details.}
+		\emph{Top row:} persistent reduced homology barcodes of $\cM$.
+		\emph{Bottom row:} $\img_\theta$-barcodes of $\cM$.
+		In each figure, the gray region represents where additional bars could potentially exist within the corresponding barcode.
+		See \cref{ss:barcode_general} for details.}
 	\label{fig:barcodes_general}
 \end{figure}

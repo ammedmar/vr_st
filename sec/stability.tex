@@ -2,8 +2,6 @@
 
 We prove the stability of cohomology operations using the homotopy interleaving distance of \cite{blumberg2023interleaving}.
 
-% \textcolor{red}{To prove the stability of persistent cohomology operations, we establish lemmas showing that weak equivalences between cellular $\R$-spaces preserve the images and kernels of linear cohomology operations. }
-
 \subsubsection{}\label{lem:w.h.e. preservance}
 
 \lemma If two cellular $\R$-spaces $X$ and $X'$ are weakly equivalent (\cref{ss:R-spaces}), then, for any linear cohomology operation $\theta$
@@ -19,13 +17,7 @@ We prove the stability of cohomology operations using the homotopy interleaving 
 	Given that $X$ and $X'$ are weakly equivalent, there exists an $\R$-space $Z$ and morphisms $f \colon Z \to X$ and $g \colon Z \to X'$ such that $f_r$ and $g_r$ are weak homotopy equivalences for any $r \in \R$.
 	Without loss of generality we can assume $Z$ to be cellular using the cofibrant replacement functor of the model category structure on $\R$-spaces described in \cite{blumberg2023interleaving}.
 	Both $f_r$ and $g_r$ induce an isomorphism on cohomology for each $r \in \R$, and the naturality of $\theta$ implies that $\img_\theta(Z)$ and $\img_\theta(X)$ are isomorphic, as well as $\img_\theta(Z)$ and $\img_\theta(X')$.
-    This finishes the proof.
-	% Therefore,
-	% \[
-	% \di(\img_\theta(X),\img_\theta(X')) \leq
-	% \di(\img_\theta(X),\img_\theta(Z)) + \di(\img_\theta(Z),\img_\theta(X')) =
-	% 0.\qedhere
-	% \]
+	This finishes the proof.
 \end{proof}
 
 \subsubsection{}\label{thm:stability theta}
@@ -43,7 +35,7 @@ For cellular $\R$-spaces $X$ and $Y$ and a linear cohomology operation $\theta$
 	By the definition of the homotopy interleaving distance, there exist $\R$-spaces $X' \simeq X$ and $Y' \simeq Y$ such that $X'$ and $Y'$ are $\delta$-interleaved.
 	Applying the cofibrant replacement functor $\rQ$ we get $d_\rI(\rQ X', \rQ Y') \leq \delta$ since applying any functor does not increase the interleaving distance.
 	Both $\rQ X$ and $\rQ Y$ can be assumed to be cellular $\R$-spaces, since cofibrant objects in $\Top^\R$ are in particular objectwise cofibrant.
-	By applying the triangle inequality and Lemma \ref{lem:w.h.e. preservance}, we obtain
+	By applying the triangle inequality and Lemma~\ref{lem:w.h.e. preservance}, we obtain
 	\begin{align*}
 		\di(\img_\theta(X), \img_\theta(Y)) \leq& \,
 		\di(\img_\theta(X), \img_\theta(\rQ X')) \\ +& \,

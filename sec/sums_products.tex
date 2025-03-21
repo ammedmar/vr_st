@@ -3,9 +3,6 @@
 \subsection{Sums and products}\label{ss:sums_products}
 
 We study persistent cohomology operations under sums and products, focusing only on Steenrod operations for the latter.
-% \textcolor{red}{By \cite{adamaszek2020homotopy}, the Vietoris--Rips filtration of a wedge sum is naturally homotopy equivalent to the wedge sum of the corresponding filtrations, and by \cite{lim2024vietoris}, an analogous result holds for products. 
-% Leveraging these results, we study persistent cohomology operations under sums and products.
-% }
 
 \subsubsection{}\label{ss:wedge_sum_general}
 
@@ -71,14 +68,6 @@ where \(r, s, t \in \R\) and \(s \leq t\).
 \lemma
 Let $X$ and $Y$ be pointed cellular $\R$-spaces.
 Over any prime \(p\):
-%The total Steenrod operations satisfy:
-%For cohomology with coefficients in \(\Ftwo\) and \(\Fp\) respectively one has:
-%\begin{align*}
-%	\img_\Sq(X \times Y) &\cong \img_\Sq(X) \ot \img_\Sq(Y),
-%	&\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
-%	\ker_\Sq(X \times Y) &\cong \ker_\Sq(X) \ot \ker_\Sq(Y),
-%	&\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y).
-%\end{align*}
 \begin{align*}
 	\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
 	\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y),
@@ -105,27 +94,8 @@ Furthermore, the proof of \cite[Thm.~6.1(1)]{lim2024vietoris} constructs a natur
 \theorem
 Let $\cX$ and $\cY$ be metric spaces.
 Over any prime:
-%The total Steenrod square satisfies:
-%\begin{align*}
-%	&\img^{\VR}_\Sq(\cX \times \cY) \cong \img^{\VR}_\Sq(\cX) \ot \img^{\VR}_\Sq(\cY), \\
-%	&\ker^{\VR}_\Sq(\cX \times \cY) \cong \ker^{\VR}_\Sq(\cX) \ot \ker^{\VR}_\Sq(\cY), \\
-%\end{align*}
-%and, analogously over odd primes, the total Steenrod reduced power satisfies:
 \begin{align*}
 	&\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY), \\
 	&\ker^{\VR}_\rP(\cX \times \cY) \cong \ker^{\VR}_\rP(\cX) \ot \ker^{\VR}_\rP(\cY),
 \end{align*}
-where \(\rP\) is the total Steenrod reduced power if \(p > 2\),  \(\rP = \Sq\) if \(p = 2\), and \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
-
-%\medskip\corollary
-%For any two metric spaces $\cX$ and $\cY$.
-%\begin{align*}
-%	\img\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\ \ker\Sq^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \Sq^i_{\VR\cX} \ot \Sq^j_{\VR\cY}\,, \\
-%	\img\rP^k_{\VR\cX \times \VR\cY} &\cong\, \img\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,, \\
-%	\ker\rP^k_{\VR\cX \times \VR\cY} &\cong\, \ker\sum_{\mathclap{i+j=k}} \rP^i_{\VR\cX} \otimes \rP^j_{\VR\cY}\,,
-%\end{align*}
-%for any $k \in \N$.
-
-% \begin{proof}
-% 	This follows from the previous lemma and the proof of \cite[Thm.~6.1(1)]{lim2024vietoris}, which constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$ when \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
-% \end{proof}
+where \(\rP\) is the total Steenrod reduced power if \(p > 2\), \(\rP = \Sq\) if \(p = 2\), and \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.

@@ -1,11 +1,14 @@
+%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{amsart}
 \input{aux/style}
 \input{aux/usualcmds}
 \addbibresource{aux/usualpapers.bib}
+
 %%%%%%%%%%%%%%%%%%%%%%
-\input{aux/commands}					% add commands here
-\input{aux/packages}					% add packages here
-\addbibresource{aux/bibliography.bib} 	% add references here
+\input{aux/commands} % add commands here
+\input{aux/packages} % add packages here
+\addbibresource{aux/bibliography.bib} % add references here
+
 %%%%%%%%%%%%%%%%%%%%%%
 \title[Persistent cohomology operations]{Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
 
@@ -22,22 +25,15 @@
 %	55N31 Persistent homology and applications, topological data analysis.
 %	55S05 Primary cohomology operations in algebraic topology,
 %	53C23 Global geometric and topological methods (à la Gromov); differential geometric analysis on metric spaces
-%	55U10 (Simplicial sets and complexes in algebraic topology),
-%	55P10 (Homotopy equivalences in algebraic topology),
-%	54E35 (Metric spaces, metrizability),
-%	05E45 (Combinatorial aspects of simplicial complexes), 20F65 (Geometric group theory)}
 
 \keywords{Persistence homology, cohomology operations, Vietoris--Rips filtration, Gromov--Hausdorff distance, filling radius, projective spaces}
-%	stability, orbit space
-
-\renewcommand{\anibal}[1]{\todo[An.\!]{#1}}
 
 \begin{document}
 	\input{sec/abstract}
 	\maketitle
 	\tableofcontents
 	\input{sec/introduction}
-    \input{sec/related}
+	\input{sec/related}
 	\input{sec/acknowledgment}
 	\input{sec/persistence}
 	\input{sec/operations}
@@ -45,5 +41,4 @@
 	\input{sec/bottleneck}
 	\sloppy
 	\printbibliography
-	\todos
 \end{document}

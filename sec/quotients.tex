@@ -2,7 +2,7 @@
 
 \subsection{General quotients}
 
-In this section, we review results from \cite{adams2022metric} concerning specific group actions on metric spaces, emphasizing how these actions interact favorably with the Vietoris--Rips filtration. 
+In this section, we review results from \cite{adams2022metric} concerning specific group actions on metric spaces, emphasizing how these actions interact favorably with the Vietoris--Rips filtration.
 Although the original paper primarily focuses on Vietoris--Rips thickenings, we leverage their findings to study the Vietoris--Rips filtration of metric spaces with group actions in later sections.
 
 \subsubsection{}
@@ -34,7 +34,6 @@ With respect to this action, there is an induced map on orbit spaces given by
 If the action is proper and by isometries, as well as satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $\tilde{h}_s$ is an isomorphism of simplicial complexes.
 This result was originally stated in \cite[Prop.~3.5]{adams2022metric} under an assumption weaker than strong \(r\)-diameter.
 We learned about a counterexample to the original statement and a stronger condition that addresses it, identified by Benjamin Barham, through discussions with the authors of \cite{adams2022metric}, who informed us of Barham's forthcoming work and facilitated our communication with him.
-%We learned about a counterexample to the original statement, along with the stronger condition that corrects it, through direct communication with Benjamin Barham regarding his forthcoming work on the subject.
 
 \subsubsection{}\label{sss:strong_r_action}
 
@@ -49,30 +48,26 @@ The case of $\rC_2$ in the following lemma was established in \cite[Cor.~4.3]{ad
 The canonical $\rC_2$ and $\rC_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
 
 \begin{proof}
-    %For $\rC_2$, this is established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
-    Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\rC_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
+	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\rC_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
 	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \rC_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
-    If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
-    This leads to the following	contradiction:
-    \begin{align*}
-    \frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0)
-    \leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
-    & \sum_{b=2}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0)\\
-    < \, & \, r \cdot (a + 2) \, \leq \, r \cdot (q + 1) \, \leq \, \frac{2\pi}{q}.
-    \end{align*}
-    Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.
+	If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+	This leads to the following	contradiction:
+	\begin{align*}
+		\frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0)
+		\leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
+		& \sum_{b=2}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0)\\
+		< \, & \, r \cdot (a + 2) \, \leq \, r \cdot (q + 1) \, \leq \, \frac{2\pi}{q}.
+	\end{align*}
+	Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.
 
-    We still need to verify the uniqueness of such $\{g_i\}$.
-    This is because $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.
-    If they were, then we would have
-    \[\tfrac{2\pi}{q} \leq d_{\bS}(x_i^*, gx_i^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1},
-    \]
-    contradicting the assumption $q \geq 2$.
+	We still need to verify the uniqueness of such $\{g_i\}$.
+	This is because $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.
+	If they were, then we would have
+	\[\tfrac{2\pi}{q} \leq d_{\bS}(x_i^*, gx_i^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1},
+	\]
+	contradicting the assumption $q \geq 2$.
 \end{proof}
-
-% A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the circle action on spheres defining complex projective spaces since its orbits are infinite.
-% \lz{@Anibal: should we add some more explanation?}
 
 \subsection{Quotients of spheres}
 
@@ -120,36 +115,36 @@ Both of these actions are free, proper, and by isometries.
 
 We say that a proper \(G\)-action by isometries on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
 \begin{equation}\label{eq:VR_quotient}
-    \begin{tikzcd}
-	\VR_r(\bS^{n_i})_G
-	\ar[d]
-	\ar[r, "\tilde f_{\,r}^{\,n_i}" above]
-	&
-	\bS^{n_i}_G
-	\ar[d]
-	\\
-	\VR_r(\bS^{n_{i+1}})_G
-	\ar[r, "\tilde f_{\,r}^{\,n_{i+1}}" above]
-	&
-	\bS^{n_{i+1}}_G.
-\end{tikzcd}
+	\begin{tikzcd}
+		\VR_r(\bS^{n_i})_G
+		\ar[d]
+		\ar[r, "\tilde f_{\,r}^{\,n_i}" above]
+		&
+		\bS^{n_i}_G
+		\ar[d]
+		\\
+		\VR_r(\bS^{n_{i+1}})_G
+		\ar[r, "\tilde f_{\,r}^{\,n_{i+1}}" above]
+		&
+		\bS^{n_{i+1}}_G.
+	\end{tikzcd}
 \end{equation}
 
 \lemma The above \(\rC_2\)-action on the real equatorial system and the \(\rC_q\)-action on the complex one are \(\VR\)-compatible for every \(q \in \N\).
 
 \begin{proof}
-    Let $n \in \N$ and take any $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
-    The commutativity of Diagram~\ref{eq:VR_quotient} for every $i \in \N$ follows directly from the commutativity of the analogous diagram without group actions.
+	Let $n \in \N$ and take any $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
+	The commutativity of Diagram~\ref{eq:VR_quotient} for every $i \in \N$ follows directly from the commutativity of the analogous diagram without group actions.
 
-    Next, we verify that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{ss:VR-compatible-Sn}).
-    By \cref{sss:strong_r_action}, these actions are strong \(r\)-diameter actions for small enough $r>0$.
-    We still need to verify that the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and that $f_r^{n}$ induces weak equivalences on the orbit spaces for all $0 < r \leq \zeta_{n}$.
+	Next, we verify that the group action on each sphere $\bS^n$ is \(\VR\)-compatible (see \cref{ss:VR-compatible-Sn}).
+	By \cref{sss:strong_r_action}, these actions are strong \(r\)-diameter actions for small enough $r>0$.
+	We still need to verify that the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and that $f_r^{n}$ induces weak equivalences on the orbit spaces for all $0 < r \leq \zeta_{n}$.
 
-    For the $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
-    By \cref{ss:VRSn projection}, $f_r^{n}$ is a homotopy equivalence.
-    Because the $\rC_2$-action is proper and free, the $\rC_2$-equivariant homotopy equivalence $f_r^n$ induces homotopy equivalence (and thus weak equivalence) on the orbit spaces.
+	For the $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
+	By \cref{ss:VRSn projection}, $f_r^{n}$ is a homotopy equivalence.
+	Because the $\rC_2$-action is proper and free, the $\rC_2$-equivariant homotopy equivalence $f_r^n$ induces homotopy equivalence (and thus weak equivalence) on the orbit spaces.
 
-    The case of $\rC_q$-action on the complex equatorial system follows similarly.
+	The case of $\rC_q$-action on the complex equatorial system follows similarly.
 \end{proof}
 
 \subsubsection{}\label{ss:fundamental_lemma}
@@ -167,77 +162,77 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 \]
 
 \begin{proof}
-    To simplify notation, for any $i \leq j$, let
-    \[
-        \cX_j = \bS^{n_j}_G, \,\delta_j = \fillrad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.
-    \]
+	To simplify notation, for any $i \leq j$, let
+	\[
+	\cX_j = \bS^{n_j}_G, \,\delta_j = \fillrad(\cX_j) \text{ and }\beta_i^j = \firstdeath{n_i}{\cX_j}.
+	\]
 	We will use an induction argument on $j$.
 	When $j = 1$, because $\cX_1$ is connected and $n_1$-dimensional, we apply results in \cref{ss:beta v.s. fillrad} to deduce that $\beta_1^1 = \delta_1$.
 
 	Assume the statement holds for $\cX_{j-1}$, that is, $\beta_i^{j-1} \leq \delta_{j-1}$ for any $i \leq j-1$.
 	Since $\delta_{j-1} \leq \delta_j$, we have the following commutative diagram of topological spaces for any $r,\epsilon>0$ small:
-    \begin{equation}\label{d:fundamental_bars_diagram}
-        \begin{tikzcd}
-            \cX_{j-1}
-            \ar[d, hook,"{\iota}" left]
-            &
-            \VR_r(\cX_{j-1})
-            \ar[d, hook,"\iota_r" left]
-            \ar[l, "\rho^{j-1}" above]
-            \ar[r, hook, "v^{j-1}"]
-            &
-            \VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})
-            \ar[d, hook]
-            \\
-            \cX_j
-            &
-            \VR_r(\cX_j)
-            \ar[l, "\rho^j" below]
-            \ar[r, hook, "v^j" below]
-            &
-            \VR_{\delta_j+\epsilon}(\cX_j).
-        \end{tikzcd}
-    \end{equation}
-    Here, the vertical maps are all induced by the equatorial inclusion of the orbit spaces $\iota \colon \cX_{j-1} \hookrightarrow \cX_j$.
-    The horizontal inclusion $v^{j-1}$ (resp. $v^j$) in the right-hand-side square is the inclusion map in the corresponding Vietoris--Rips filtration.
-    The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{ss:h} and \cref{ss:VRSn projection}, respectively:
-    \[\VR_r(\cX_{j-1}) \xrightarrow{\tilde{h}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
-    Since the \( G \)-action on \( \bS^{n_{j-1}} \) is VR-compatible, it is a strong \( r \)-diameter action for small enough $r>0$, making \( \tilde{h}_r \) an isomorphism by \cref{ss:h}.
-    This VR-compatibility further implies that \( \tilde{f}_r^{n_{j-1}} \) is a weak equivalence, and therefore \( \rho^{j-1} \) is as well.
-    The horizontal map \( \rho^j \), defined similarly, is likewise a weak equivalence.
+	\begin{equation}\label{eq:fundamental_bars_diagram}
+		\begin{tikzcd}
+			\cX_{j-1}
+			\ar[d, hook,"{\iota}" left]
+			&
+			\VR_r(\cX_{j-1})
+			\ar[d, hook,"\iota_r" left]
+			\ar[l, "\rho^{j-1}" above]
+			\ar[r, hook, "v^{j-1}"]
+			&
+			\VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})
+			\ar[d, hook]
+			\\
+			\cX_j
+			&
+			\VR_r(\cX_j)
+			\ar[l, "\rho^j" below]
+			\ar[r, hook, "v^j" below]
+			&
+			\VR_{\delta_j+\epsilon}(\cX_j).
+		\end{tikzcd}
+	\end{equation}
+	Here, the vertical maps are all induced by the equatorial inclusion of the orbit spaces $\iota \colon \cX_{j-1} \hookrightarrow \cX_j$.
+	The horizontal inclusion $v^{j-1}$ (resp. $v^j$) in the right-hand-side square is the inclusion map in the corresponding Vietoris--Rips filtration.
+	The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \cref{ss:h} and \cref{ss:VRSn projection}, respectively:
+	\[\VR_r(\cX_{j-1}) \xrightarrow{\tilde{h}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
+	Since the \(G\)-action on \(\bS^{n_{j-1}}\) is VR-compatible, it is a strong \(r\)-diameter action for small enough $r>0$, making \(\tilde{h}_r\) an isomorphism by \cref{ss:h}.
+	This VR-compatibility further implies that \(\tilde{f}_r^{n_{j-1}}\) is a weak equivalence, and therefore \(\rho^{j-1}\) is as well.
+	The horizontal map \(\rho^j\), defined similarly, is likewise a weak equivalence.
 
-    For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram (\ref{d:fundamental_bars_diagram}) and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
+	For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram \eqref{eq:fundamental_bars_diagram} and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
 	\begin{equation}\label{eq:diagram of H}
-	\begin{tikzcd}[column sep = 4.5em]
-		\rH_{n_i}(\cX_{j-1})
-		\ar[d, "\cong" left]
-		&
-		\rH_{n_i}\big(\VR_r(\cX_{j-1})\big)
-		\ar[d, "\rH_{n_i}(\iota_r)" left, "\cong" right, myred]
-		\ar[l, "\cong" above]
-		\ar[r, "\rH_{n_i}(v^{{j-1}})", myred]
-		&
-		\rH_{n_i}\big(\VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})\big)
-		\ar[d]
-		\\
-		\rH_{n_i}(\cX_j)
-		&
-		\rH_{n_i}\big(\VR_r(\cX_j)\big)
-		\ar[l, "\cong"]
-		\ar[r, "\rH_{n_i}(v^j)" below, myred]
-		&
-		\rH_{n_i}\big(\VR_{\delta_n+\epsilon}(\cX_j)\big).
-	\end{tikzcd}
+		\begin{tikzcd}[column sep = 4.5em]
+			\rH_{n_i}(\cX_{j-1})
+			\ar[d, "\cong" left]
+			&
+			\rH_{n_i}\big(\VR_r(\cX_{j-1})\big)
+			\ar[d, "\rH_{n_i}(\iota_r)" left, "\cong" right, myred]
+			\ar[l, "\cong" above]
+			\ar[r, "\rH_{n_i}(v^{{j-1}})", myred]
+			&
+			\rH_{n_i}\big(\VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})\big)
+			\ar[d]
+			\\
+			\rH_{n_i}(\cX_j)
+			&
+			\rH_{n_i}\big(\VR_r(\cX_j)\big)
+			\ar[l, "\cong"]
+			\ar[r, "\rH_{n_i}(v^j)" below, myred]
+			&
+			\rH_{n_i}\big(\VR_{\delta_n+\epsilon}(\cX_j)\big).
+		\end{tikzcd}
 	\end{equation}
 
 	Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
-	Commutativity of the left-hand-side square of diagram (\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
-    As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
+	Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
+	As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
 	Moreover, this bar dies after $\delta_j$ as explained below.
-    It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies after $\delta_{j-1}$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
+	It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies after $\delta_{j-1}$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
 	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies after $\delta_j+\epsilon$.
-    Since this holds for any \(\epsilon > 0\), we conclude that \(\beta_i^j \leq \delta_j\).
+	Since this holds for any \(\epsilon > 0\), we conclude that \(\beta_i^j \leq \delta_j\).
 
 	For the case when $i = j$, apply results in \cref{ss:beta v.s. fillrad} again to get that $\beta_j^j = \delta_j$.
 	This completes the proof.
