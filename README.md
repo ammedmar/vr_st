@@ -1,16 +1,16 @@
-# VR_ST
+# Persistent cohomology operations and Gromov-Hausdorff estimates
 
 ## Authors
-TBW
+Anibal M. Medina-Mardones and Ling Zhou
 
 ## Abstract
 
-TBW
+We establish the foundations of the theory of persistent cohomology operations, derive decomposition formulas for wedge sums and products, and prove their Gromov-Hausdorff stability. We use these results to construct pairs of Riemannian pseudomanifolds for which the Gromov-Hausdorff estimates derived from persistent cohomology operations are strictly sharper than those obtained using persistent homology.
 
 ## Bibliography: technical aspects 
 This project uses the package biblatex to handle the bibliography, therefore it needs biber as the bibliography tool, instead of bibtex. Additionally, it is suggested that all bib entries include a DOI and/or URL. 
 
-## Suggested LaTeX practices
+## Best LaTeX practices
 
 1. Use `\colon` instead of `:` for defining functions.
 
