@@ -13,7 +13,7 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; \Z)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
 
-This definition can be generalized by considering different homology coefficients.
+This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}. 
 We are interested in working over a field \(\k\), for which we have
 \[
 \fillrad(\cM; \field) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \field)}.
@@ -24,21 +24,28 @@ This is particularly meaningful when \(\cM\) is connected and not orientable, an
 
 Let \(\cM\) be a closed Riemannian manifold.
 By \cite[Thm.~3.5]{hausmann1995vietoris} and \cite[Thm.~4.1]{lim2024vietoris}, we know that there exists \(r_\cM > 0\) such that for all \(r \in (0, r_\cM)\) the inclusion \(\cM \to \rU_{r}(\cM)\) is a homotopy equivalence.
-We define the \defn{homotopical radius} of \(\cM\), denoted by \(\crit(\cM)\), as the supremum of all \(r > 0\) such that the inclusion \(\cM \to \rU_r(\cM)\) is a homotopy equivalence.
+This leads to considering the supremum of all such \(r > 0\) for which the inclusion \(\cM \to \rU_r(\cM)\) is a homotopy
+equivalence. 
+We will refer to this value as the homotopical radius of $\cM$ and denote it by \(\crit(\mathcal{M})\).
 
 \subsubsection{} \label{ss:beta v.s. fillrad}
 
+In \cite[Defn.~9.44]{lim2024vietoris}, the authors define the generalized filling radius of a homology class \(\omega\) in \(X\) as the smallest \(r > 0\) for which \(\omega\) becomes trivial in \(\rU_r(\cX)\), capturing the scale at which \(\omega\) vanishes under the inclusion of \(X\) into its \(r\)-neighborhood.
+Below, we consider a weaker version of this concept, which is equivalent to the smallest generalized filling radius among all non-zero homology classes \(\omega\) in \(X\) of a given degree $m$.
+
 Let us fix a field \(\field\) and an integer \(m \in \N\), the \defn{\(m\)-homological radius} of a totally bounded metric space \(\cX\) is defined by
 \[
-\firstdeath{m}{\cX; \field} = \min\set[\big]{r \mid (0, r) \in \barc \rH_m(\rU(\cX); \field)},
+\firstdeath{m}{\cX; \field} =
+\min \big\{r \mid (0, r) \in \barc \rH_m(\rU(\cX); \field)\big\},
 \]
 if \(\rH_m(\cX) \neq 0\).
 If \(\rH_m(\cX) = 0\), set \(\firstdeath{m}{\cX} = 0\).
 We will omit \(\field\) from the notation when clear from the context.
+A more general notion was independently introduced in \cite[Defn.~9.44]{lim2024vietoris}.
 
 Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\img_\theta\)-radius} of \(\cX\) by
 \[
-\firstdeath{\theta}{\cX} = \min\set[\big]{r \mid (0, r) \in \barc \img_\theta(\rU(\cX))},
+\firstdeath{\theta}{\cX} = \min \big\{r \mid (0, r) \in \barc \img_\theta(\rU(\cX))\big\},
 \]
 if \(\img_\theta(\cX) \neq 0\).
 If \(\img_\theta(\cX) = 0\), set $\firstdeath{\theta}{\cX} = 0$.
@@ -53,13 +60,15 @@ and if $\cM$ is connected and $n$-dimensional, then
 \firstdeath{n}{\cM} = \fillrad(\cM).
 \]
 
+
 \subsubsection{}\label{ss:kuratowski_vr}
 
-As proven in \cite[Thm.~4.1]{lim2024vietoris}, there is a deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at scale \(2r\), stated in the following.
+There is a deep relationship between the \(r\)-neighborhood filtration of $\cX$ in $\rL^\infty(\cX)$ and the Vietoris--Rips complex of \(\cX\) at scale \(2r\), stated in the following.
 
-\proposition The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
+\proposition \cite[Thm.~4.1]{lim2024vietoris} The spaces $\VR_{2r}(\cX)$ and $\rU_r(\cX)$ are naturally homotopy equivalent for every \(r > 0\).
 
-\medskip We will use this equivalence to bound the Vietoris--Rips barcode of Riemannian pseudomanifolds using their critical radii.
+\medskip Due to the natural homotopy equivalence between these filtrations, we will use them interchangeably as needed. 
+In particular, this equivalence allows us to bound the Vietoris--Rips barcode of Riemannian pseudomanifolds using their critical radii. 
 
 \subsection{General estimates}\label{ss:barcode_general}
 
@@ -68,7 +77,7 @@ Consider \(\ell, m \in \N\) and \(\theta \in \cO(\ell,m)\).
 We will simplify notation writing \(R = \diam(\cM),\, \alpha = 2\crit(\cM)\), \(\beta_m = 2\firstdeath{m}{\cM}\), and \(\gamma_\theta = 2\firstdeath{\theta}{\cM}\).
 We say a bar $(a, b)$ is \defn{dominated} by another $(c,d)$ if $c \leq a < b \leq d$.
 
-Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_m^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
+Because $\VR_r(\cM)$ is empty for \(r \leq 0\) and the homotopy type of $\VR_r(\cM)\simeq \rU_{r/2}(\cM)$ remains the homotopy type of $\cM$ for $r \in (0, \alpha)$, bars in \(\barc \rH_m^{\VR}(\cM)\) and $\barc\img_\theta^{\VR}(\cM)$ either start at $0$ or start after $\alpha$.
 
 More precisely, if \(k = \dim \opH_m(\cM) > 0\) then $\barc\rH_m^{\VR}(\cM)$ contains $(0, \beta_m)$ and \((k - 1)\) additional bars of the form \((0, b)\) with \(\beta_m \leq b \leq R\).
 Additionally, all other bars are dominated by \((\alpha, R)\).

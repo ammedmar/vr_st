@@ -2,12 +2,15 @@
 
 \subsection{General quotients}
 
+In this section, we review results from \cite{adams2022metric} concerning specific group actions on metric spaces, emphasizing how these actions interact favorably with the Vietoris--Rips filtration. 
+Although the original paper primarily focuses on Vietoris--Rips thickenings, we leverage their findings to study the Vietoris--Rips filtration of metric spaces with group actions in later sections.
+
 \subsubsection{}
 
 Let $G$ be a group acting on a metric space $\cX$, we denote its orbit space with the quotient topology by $\cX_G$.
 For $x \in \cX$, its orbits will be denoted as $[x]$.
-We say the action of $G$ is \defn{proper} if, for every $x \in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r) \cap B(x,r) = \emptyset\}$ is finite.
-We say $G$ \defn{acts by isometries} on $\cX$, if the map $g \colon \cX \to \cX$ is an isometry for every $g \in G$.
+The action of $G$ is called \defn{proper} if, for every $x \in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r) \cap B(x,r) = \emptyset\}$ is finite.
+We recall that $G$ \defn{acts by isometries} on $\cX$, if the map $g \colon \cX \to \cX$ is an isometry for every $g \in G$.
 
 Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
 Then the \defn{quotient metric}, defined by
@@ -29,8 +32,9 @@ With respect to this action, there is an induced map on orbit spaces given by
 	\textstyle\sum\lambda_i [x_i] &\mapsto \textstyle \big[\sum\lambda_i x_i\big].
 \end{align*}
 If the action is proper and by isometries, as well as satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $\tilde{h}_s$ is an isomorphism of simplicial complexes.
-This result was originally stated in \cite[Prop.~3.5]{adams2022metric} under a assumption weaker than strong \(r\)-diameter.
-We learned about a counterexample to the original statement, along with the stronger condition that corrects it, through direct communication with Benjamin Barham regarding his forthcoming work on the subject.
+This result was originally stated in \cite[Prop.~3.5]{adams2022metric} under an assumption weaker than strong \(r\)-diameter.
+We learned about a counterexample to the original statement and a stronger condition that addresses it, identified by Benjamin Barham, through discussions with the authors of \cite{adams2022metric}, who informed us of Barham's forthcoming work and facilitated our communication with him.
+%We learned about a counterexample to the original statement, along with the stronger condition that corrects it, through direct communication with Benjamin Barham regarding his forthcoming work on the subject.
 
 \subsubsection{}\label{sss:strong_r_action}
 
@@ -39,13 +43,14 @@ It is not hard to see that a strong $r$-diameter action is free.
 
 Recall from \cref{sss:cohomology_rpn} and \cref{sss:cohomology_lens} the canonical $\rC_2$- and $\rC_q$-actions on spheres, for $q \in \N$, that define real projective spaces and Lens spaces, respectively.
 
+The case of $\rC_2$ in the following lemma was established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
+
 \lemma
 The canonical $\rC_2$ and $\rC_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
 
 \begin{proof}
-    For $\rC_2$, this is established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
-
-    Let $\bS$  be an odd-dimensional round unit sphere, $\rL_q$ be the Lens space defined by the action of \(\rC_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
+    %For $\rC_2$, this is established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
+    Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\rC_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
 	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \rC_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
     If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
@@ -66,7 +71,8 @@ The canonical $\rC_2$ and $\rC_q$ actions on round unit spheres are strong $r$-d
     contradicting the assumption $q \geq 2$.
 \end{proof}
 
-A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the circle action on spheres defining complex projective spaces.
+% A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the circle action on spheres defining complex projective spaces since its orbits are infinite.
+% \lz{@Anibal: should we add some more explanation?}
 
 \subsection{Quotients of spheres}
 
@@ -75,11 +81,11 @@ A well-known action that is not strong \(r\)-diameter for any \(r>0\) is the cir
 A proper \(G\)-action by isometries on \(\bS^n\) is said to be \defn{\(\VR\)-compatible} if:
 \begin{enumerate}
 	\item There is \(r_0 > 0\) such that the action is strong \(r\)-diameter for all \(0 < r < r_0\).
-	\item For each \(r \in (0, \zeta_n]\), the action commutes with the canonical projection of \(\VR_r(\bS^n)\) with the induced map on orbits
+	\item For each \(r \in (0, \zeta_n]\), the action commutes with the canonical projection of \(\VR_r(\bS^n)\) and the induced map on orbits
 	\[
 	\tilde f_r^n \colon \VR_r(\bS^n)_G \to \bS^n_G
 	\]
-	a weak equivalence.
+	is a weak equivalence.
 \end{enumerate}
 
 For example, based on the results in \cref{ss:VRSn projection}, the trivial action is \(\VR\)-compatible.
@@ -147,6 +153,9 @@ We say that a proper \(G\)-action by isometries on an equatorial system is \defn
 \end{proof}
 
 \subsubsection{}\label{ss:fundamental_lemma}
+
+We establish the following lemma, which will be used in \cref{s:critical_radii_rpn} to obtain the homological radii of real projective spaces.
+Additionally, we expect that its utility will extend to Lens spaces; see \cref{s:critical_radii_lens}.
 
 \lemma Consider a $\VR$-compatible \(G\)-action on an equatorial system
 \[
