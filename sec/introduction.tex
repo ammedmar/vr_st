@@ -2,24 +2,23 @@
 
 \section{Introduction} \label{s:introduction}
 
-When studying the shape and structure of spaces equipped with a filtration, persistent homology has emerged as a crucial tool in both applied and theoretical topology.
+When studying the shape of spaces equipped with a filtration, persistent homology has emerged as a crucial tool in both applied and theoretical topology.
 By tracking the evolution of homological features across the filtration, this technique has found widespread applications in fields ranging from data analysis and machine learning (\cite{carlsson2013viral, lee2017quantifying}) to symplectic geometry and functional analysis (\cite{polterovich2020persistence, medina2023fuct_top}).
 Despite its successes, persistent homology has limitations that mirror those of classical homology in the study of unfiltered topological spaces.
 Just as homology fails to distinguish spaces with different homotopy types, persistent homology can overlook significant structural aspects of their filtered counterparts.
 
 To address these shortcomings, researchers have begun exploring extensions of persistent homology that incorporate more refined homotopical information.
-For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, belchi2021a, contreras2022persistent} and some of its derived structures in \cite{herscovich2018higher, ginot2019distances, belchi2022persistence, zhou2023persistent, hess2024minimalmodels}.
-In this work, we concentrate on cohomology operations, which are natural transformations between cohomology functors. We mention \cite{aubrey2011thesis} and \cite{postol2023persistence} as other attempts towards similar objectives.
+For example, the cup product in cohomology has been studied in \cite{contessoto_et_al:LIPIcs.SoCG.2022.31, memoli2024persistent, huang2005cup, yarmola2010persistence, herscovich2018higher, contreras2022persistent} and some of its derived structures in \cite{herscovich2018higher, ginot2019distances, belchi2022persistence, zhou2023persistent, hess2024minimalmodels}.
+In this work, we concentrate on cohomology operations, which are natural transformations between cohomology functors.
 
-The first major developments integrating cohomology operations into the persistence framework were presented in \cite{medina2022per_st}.
+The first major developments integrating cohomology operations into the persistence framework were presented in \cite{medina2022per_st}; for completeness, we also mention earlier approaches with related goals in \cite{aubrey2011thesis} and \cite{postol2023persistence}.
 Using new methods for the computation of Steenrod squares (\cite{medina2023fast_sq}), this work proposed and implemented algorithms for computing the \textit{Steenrod barcodes} of finite filtered simplicial complexes, with the resulting tool, \href{https://steenroder.github.io/steenroder/}{\texttt{steenroder}}, used to detect the nontrivial presence of these invariants on molecular data.
 
 Despite the conceptual and computational advances of \cite{medina2022per_st}, a comprehensive exploration of persistent cohomology operations has remained absent, leaving key questions about their theoretical properties and broader applicability unanswered.
 
 In this paper, we systematically develop a general and firm foundation for \textit{persistent cohomology operations} and present applications of these invariants to Riemannian geometry.
 
-\medskip Let us now review in more detail the contributions of this work.
-Let \(\k\) be a field.
+\medskip More precisely, let \(\k\) be a field.
 A \textit{\(\k\)-linear cohomology operation} \(\theta\) is a natural transformation
 \[
 \theta \colon \rH^\ell(-;\k) \to \rH^m(-;\k),
@@ -51,7 +50,7 @@ Our first contributions are the following theorems, proven respectively in \cref
 	where the product \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
 \end{introtheorem}
 
-These follow from corresponding statements holding for wedge sums and products of general cellular $\mathbb{R}$-spaces presented, respectively, in \cref{ss:wedge_sum_general} and \cref{ss:product_general}.
+These follow from corresponding statements for wedge sums and products of general cellular $\mathbb{R}$-spaces presented, respectively, in \cref{ss:wedge_sum_general} and \cref{ss:product_general}.
 
 \medskip\noindent\textsc{Gromov--Hausdorff Inequalities.}
 A fundamental property of persistent homology is its stability, which has multiple formulations; here, we focus on the Vietoris--Rips stability for metric spaces, as presented in the following.
@@ -75,7 +74,7 @@ More precisely, in \cref{thm:stability VR}, we prove the following result using 
 	\end{equation}
 \end{introtheorem}
 
-This follow from a statement holding for general cellular $\mathbb{R}$-spaces presented in \cref{thm:stability theta}.
+This follows from a statement holding for general cellular $\mathbb{R}$-spaces presented in \cref{thm:stability theta}.
 
 \medskip Given the inequalities \eqref{eq:gh_inequality_intro_homology} and \eqref{eq:gh_inequality_intro},
 it is natural to ask whether persistent cohomology operations can yield sharper lower bounds for the Gromov--Hausdorff distance than those obtained via persistent homology.

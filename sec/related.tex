@@ -9,12 +9,12 @@ Specifically of their wedge sums \cite{adamaszek2020homotopy} and products \cite
 
 \subsection*{Stability}
 
+Our proof of the stability of persistent cohomology operations builds upon the strategies developed in \cite{blumberg2023interleaving, zhou2023beyond, memoli2024persistent}.
+
 In \cite[Theorem~87]{ginot2019distances}, Ginot and Leray prove a Gromov--Hausdorff inequality using the \textit{Steenrod interleaving distance}.
 This is the interleaving distance in the category of persistent algebras that are also persistent modules over the Steenrod algebra \(\mathcal{A}_p\).
 Our stability result, \cref{thm:stability intro}, holds for all cohomology operations.
 In the important case of Steenrod operations, it seems likely that our result could be deduced from theirs.
-
-Our proof strategy builds on the techniques developed in \cite{zhou2023beyond,memoli2024persistent}.
 
 \subsection*{Gromov--Hausdorff estimates via interleaving estimates}
 
@@ -39,4 +39,4 @@ It was established in \cite{chazal2009gromov} for finite metric spaces and later
 Gromov's filling radius is defined as the smallest \(r\) for which the fundamental class of a closed connected Riemannian manifold becomes null-homologous in \(\rU_r(\cM)\).
 The use of this invariant and other similar critical radii is crucial in our proof of \cref{thm:inequalities intro}.
 This approach is similar to the one used in \cite[Prop.~9.38]{lim2024vietoris} where the authors consider pairs of spaces consisting of an $n$-manifold \(\cM\) and a space \(\cX\) with trivial \(n\)-homology, and then bound the interleaving distance of the \(n\)-th persistent homology by the filling radius of \(\cM\).
-In contrast, we consider a space \(\cX\) whose homology in all degrees matches that of \(\cM\).
+In contrast, we consider a space \(\cX\) whose homology matches that of \(\cM\) in all degrees.

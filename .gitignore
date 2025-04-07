@@ -12,3 +12,7 @@
 *.xml
 
 .DS_Store
+
+conference/
+
+arXiv/
