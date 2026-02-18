@@ -1,0 +1,118 @@
+\documentclass{amsart}
+\input{../aux/style}
+\input{../aux/usualcmds}
+\addbibresource{../aux/usualpapers.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\input{../aux/commands} % add commands here
+\addbibresource{../aux/bibliography.bib} % add references here
+\usepackage{enumitem}
+\setlist{label=\arabic{enumi}.,itemsep=\medskipamount, left=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\title[Referee reply]{\underline{REPLY TO REFEREE Y} \\ Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
+
+\newcommand{\ar}{\medskip\noindent\textit{Reply}:\ }
+\renewcommand{\thesection}{\arabic{section}}
+
+\begin{document}
+	\noindent\today
+	\maketitle
+
+	We would like to thank the reviewer for a careful and insightful analysis of our paper, and for the many suggestions improving its presentation.
+	We copy their report for completeness.
+
+	\section{Reviewer's summary}
+
+	This paper introduces considerations of cohomology operations in the theory of persistence. More precisely, the authors define the image and the kernel persistence module of a cohomology operation with respect to the Vietoris--Rips filtration of metric spaces. These represent more general concepts than the persistence module, as the identity and the trivial cohomology operation, respectively, recover the classical notions. The first general results in the paper are formulas for products (Theorem A) and wedge sums (Theorem B) of metric spaces. The second main result is a stability theorem (Theorem C), which represents a lower bound on the Gromov--Hausdorff distance between metric spaces by the interleaving distance of the persistence module of the image of a linear cohomology operation. Theorem C represents a generalization of stability results by Chazal et al.\ relating the Gromov--Hausdorff distance and the interleaving distance of persistence modules. One of the key tools for the proof of Theorem C is the notion of homotopy interleaving distance, due to Blumberg and Lesnick. Finally, the authors demonstrate (Theorem D) that their Theorem C yields a sharper lower bound for Gromov--Hausdorff distance than the classical stability result. Namely, they provide an example of $\mathbb{RP}^n$ and the wedge of spheres $S^1 \vee \cdots \vee S^n$ (spaces that have isomorphic mod $2$ cohomology groups) for which the new lower bound is improved.
+
+	The paper deals with a very relevant subject and offers interesting new results, improving upon classical results. It introduces new concepts that are likely to inspire future work in the area. With that said, there are some places in need of corrections and some occasions where more explanation was warranted. I would like to see these points be addressed prior to acceptance.
+
+	\section{Reviewer's individual items}
+
+	\begin{enumerate}
+		\item Page 6, line $-12$: Address the (non-trivial) fact that the weak equivalence of $\mathbb{R}$-spaces, as defined through a single $\mathbb{R}$-space $W$ (rather than a zig-zag) is an equivalence relation.
+
+		\ar As the referee points out, the transitivity of the relation defined via a single span is not automatic in the naive category of topological spaces.
+
+		In the revised version we now work in the category of compactly generated weak Hausdorff spaces and equip $\Top^\R$ with the projective model structure, whose weak equivalences and fibrations are defined objectwise. Since $\Top$ is a cofibrantly generated model category and $\R$ is small, this model structure exists, and all objects are fibrant.
+
+		In any model category, two objects are weakly equivalent if and only if they are connected by a zig--zag of weak equivalences. Moreover, when all objects are fibrant, this is equivalent to the existence of a span
+		\[
+		X \xleftarrow{\sim} W \xrightarrow{\sim} Y.
+		\]
+		We now make this precise in the text and refer to \cite[\S2.4]{blumberg2023interleaving}.
+
+		\medskip
+		\begin{quote}
+			Let $\Top$ denote the category of compactly generated weak Hausdorff spaces and continuous maps.
+			We write $\Top^\R \coloneqq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}, where $\R$ is regarded as a poset category, equipped with the projective model structure in which weak equivalences and fibrations are defined objectwise.
+			An $\R$-space $X$ is \defn{cellular} if each $X_r$ is a CW-complex.
+
+			We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if, for every $r \in \R$, the map $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence.
+			Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category $\mathrm{Ho}(\Top^\R)$.
+			Equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
+			\[
+			X \xleftarrow{\ \sim\ } W \xrightarrow{\ \sim\ } Y
+			\]
+			\cite[\S2.4]{blumberg2023interleaving}.
+		\end{quote}
+
+		\item Page 7, line 16: Define $C([0, 1/n])$ and the persistence module.
+
+		\item Page 9, \S3.1: For the representability of cohomology, $\pi$ should be abelian.
+
+		\item Page 12, second paragraph of \S3.3.7: It would be helpful to provide some information about cohomology of $L_q^n$, as this is later used in the proof of Lemma 4.7.
+
+		\item Page 12, second paragraph of \S3.3.7: It would also be helpful to provide more information on the action of $\mathcal{A}_p$, as this is used in \S5.1.1 to show that the round Lens space satisfies Desideratum (3).
+
+		\item Page 14, line 2: The reference for K\"unneth formula for cohomology should be [Hat02, Theorem 3.15] and its assumptions should be included in the statement of Lemma in 3.5.3.
+
+		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\pi^2 \zeta_n$ on the $x$-axis), since it is crucial in \S5.
+
+		\item Page 20, line $-6$: $G$ should act by isometries on $X$ in order for $g \cdot \sum \lambda_i x_i \in \mathrm{VR}_r(X)$ and should moreover act properly on $X$ in order for $X/G$ to have the quotient metric.
+
+		\item Page 20, line $-2$: The induced map $\tilde{h}_r$ goes in the opposite direction. Namely, the quotient $X \to X/G$ induces a map $\mathrm{VR}(X) \to \mathrm{VR}(X/G)$, which is $G$-invariant, hence factors through $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$. This affects some arguments later. For example, the definition of the map $\rho_{j-1}$ in the proof of Lemma 4.5.4 should use the inverse of $\tilde{h}_r$ under the assumption of a strong $r$-diameter action.
+
+		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
+		\[
+		d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) < r
+		\]
+		is used, but
+		\[
+		d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) = d_S(\omega x_j^*, x_j^*) = \frac{2\pi}{q}.
+		\]
+
+		\item Page 23, line 1: A reference should be provided for the (non-trivial) fact that $f_r^n$, being a homotopy equivalence and a $C_2$-equivariant map between free $C_2$-spaces, induces a homotopy equivalence on the orbit spaces.
+
+		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $S^n_i/G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
+
+		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
+
+		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_j^i \le \delta_{j-1}$, for $1 \le i \le j-1$.
+
+		\item Page 23, diagram (6): It would be helpful to include an explanation for why the left vertical map
+		\[
+		H^{n_i}(X_{j-1}) \to H^{n_i}(X_j)
+		\]
+		is an isomorphism.
+
+		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
+
+		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
+
+		\item Page 26, \S5.1.1: It would also be helpful to provide more details why the round Lens space satisfies Desideratum (3), because \S3.3.7 does not contain that information.
+
+		\item Page 27, proof of Lemma 5.1.5: It would be helpful to include a short explanation for $\zeta_m - \zeta_n < \frac{\pi}{6}$.
+
+		\item Page 28, proof of Theorem 5.2.(1): The regime $m > n$ is currently not included in the proof. It would be good either to include it, or impose assumption $1 \le m \le n$ in the statements of Theorem 5.2.(1) and Theorem D.
+
+		\item Page 28, line $-3$: Please provide more details or a reference for the lower bound for the Gromov--Hausdorff distance obtained via persistence homology, as its improvement is one of the highlights of the paper. It would also be good to include this in the introduction.
+	\end{enumerate}
+
+	\section{Other changes}
+
+	\begin{enumerate}
+		\item
+	\end{enumerate}
+\end{document}

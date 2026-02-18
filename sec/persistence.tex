@@ -48,13 +48,17 @@ This is because the $\delta$-interleaving functors of $F$ and $G$ compose with $
 
 \subsubsection{}\label{ss:R-spaces}
 
-Let $\Top$ be the category of topological spaces and continuous maps.
-We refer to $\Top^\R$ as the category of \defn{$\R$-spaces}.
-An $\R$-space $X$ for which each $X_r$ is a CW-complex is said to be \defn{cellular}.
-We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence for each $r \in \R$.
+Let $\Top$ denote the category of compactly generated weak Hausdorff spaces and continuous maps.
+We write $\Top^\R \defeq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}--where $\R$ is regarded as a poset category--equipped with the projective model structure in which weak equivalences and fibrations are defined objectwise.
+An $\R$-space $X$ is \defn{cellular} if each $X_r$ is a CW-complex.
 
-Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted by $X \simeq Y$, if there are weak equivalences $X \leftarrow W \rightarrow Y$ for some $\R$-space $W$.\footnote{
-For a convenient model of $\Top$, this is equivalent to asking the $\R$-spaces $X$ and $Y$ to be isomorphic in the localization of $\Top^\R$ with respect to weak equivalences \cite{blumberg2023interleaving}.}
+We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if, for every $r \in \R$, the map $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence.
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category $\mathrm{Ho}(\Top^\R)$.
+Equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
+\[
+X \xleftarrow{\ \sim\ } W \xrightarrow{\ \sim\ } Y
+\]
+\cite[\S2.4]{blumberg2023interleaving}.
 
 \subsubsection{}\label{def:dhi}
 
