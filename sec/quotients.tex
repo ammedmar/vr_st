@@ -2,14 +2,15 @@
 
 \subsection{General quotients}
 
-In this section, we review results from \cite{adams2022metric} concerning specific group actions on metric spaces, emphasizing how these actions interact favorably with the Vietoris--Rips filtration.
+In this section, we review results from \cite{adams2022metric} concerning specific group actions on metric spaces, emphasizing how these actions interact well with the Vietoris--Rips filtration.
 Although the original paper primarily focuses on Vietoris--Rips thickenings, we leverage their findings to study the Vietoris--Rips filtration of metric spaces with group actions in later sections.
 
 \subsubsection{}
 
-Let $G$ be a group acting on a metric space $\cX$, we denote its orbit space, equipped with the quotient topology, by $\cX_G$.
-For $x \in \cX$, its orbits will be denoted as $[x]$.
-The action of $G$ is called \defn{proper} if, for every $x \in \cX$, there is some $r>0$ such that $\{g \mid g\cdot B(x,r) \cap B(x,r) = \emptyset\}$ is finite.
+Let $G$ be a group acting on a metric space $\cX$.
+We denote its orbit space, equipped with the quotient topology, by $\cX_G$.
+For $x \in \cX$, its orbit will be denoted by $[x]$.
+The action of $G$ is called \defn{proper} if, for every $x \in \cX$, there is some $r > 0$ such that $\{g \mid g\cdot B(x,r) \cap B(x,r) \neq \emptyset\}$ is finite.
 We recall that $G$ \defn{acts by isometries} on $\cX$, if the map $g \colon \cX \to \cX$ is an isometry for every $g \in G$.
 
 Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
@@ -21,10 +22,11 @@ is well-defined on $\cX_G$.
 
 \subsubsection{}\label{ss:h}
 
-A \(G\)-action on $\cX$ induces a natural \(G\)-action on the Vietoris--Rips complex $\VR(\cX)$.
+Let $G$ be a group acting properly and by isometries on a metric space $\cX$.
+The \(G\)-action on $\cX$ induces a natural \(G\)-action on the Vietoris--Rips complex $\VR(\cX)$.
 Explicitly, for any \(r > 0, g\in G\) and $\sum \lambda_i x_i \in \VR_r(\cX)$,
 \[
-g \cdot \sum \lambda_i x_i = \sum \lambda_i (g\cdot x_i).
+g \cdot \sum \lambda_i x_i = \sum \lambda_i (g \cdot x_i).
 \]
 With respect to this action, there is an induced map on orbit spaces given by
 \begin{align*}
@@ -40,17 +42,18 @@ We learned about a counterexample to the original statement and a stronger condi
 The action of a group $G$ on $\cX$ is said to be a \defn{strong $r$-diameter action}, where $r > 0$, if for any non-negative integer $k$, the condition $\diam_{\cX_G}\set[\big]{[x_0],\dots,[x_k]} < r$ implies the existence of a unique choice of $g_i$ for each $i \in \set{1,\dots,k}$ such that $\diam_{\cX}\set{x_0, g_1x_1, \dots, g_kx_k} < r$.
 It is not hard to see that a strong $r$-diameter action is free.
 
-Recall from \cref{sss:cohomology_rpn} and \cref{sss:cohomology_lens} the canonical $\rC_2$- and $\rC_q$-actions on spheres, for $q \in \N$, that define real projective spaces and Lens spaces, respectively.
+Recall from \cref{sss:cohomology_rpn} and \cref{sss:cohomology_lens} the canonical $\cyc_2$- and $\cyc_q$-actions on spheres, for $q \in \N$, that define real projective spaces and Lens spaces, respectively.
 
-The case of $\rC_2$ in the following lemma was established in \cite[Cor.~4.3]{adams2022metric}. We extend the proof to the case of $\rC_q$ for \(q \geq 2\).
+The case of $\cyc_2$ in the following lemma was established in \cite[Cor.~4.3]{adams2022metric}.
+We extend the proof to $\cyc_q$ for \(q \geq 2\).
 
 \lemma
-The canonical $\rC_2$ and $\rC_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
+The canonical $\cyc_2$ and $\cyc_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
 
 \begin{proof}
-	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\rC_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
+	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\cyc_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
-	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \rC_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
+	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \cyc_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
 	If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
 	This leads to the following	contradiction:
 	\begin{align*}
@@ -110,7 +113,7 @@ used for the definition of real projective (\cref{sss:cohomology_rpn}) and Lens 
 A \(G\)-action on an equatorial system consists of a \(G\)-action on each sphere commuting with the isometric embeddings.
 It is said to be free, proper, or by isometries if the \(G\)-action on every sphere is.
 
-The group \(\rC_2 = \set{1,-1} \subset \R\) acts on the real equatorial system, and, for \(q \in \N\), the multiplicative subgroup \(\rC_q\) of \(q\)-roots of unity acts on the complex one.
+The group \(\cyc_2 = \set{1,-1} \subset \R\) acts on the real equatorial system, and, for \(q \in \N\), the multiplicative subgroup \(\cyc_q\) of \(q\)-roots of unity acts on the complex one.
 Both of these actions are free, proper, and by isometries.
 
 We say that a proper \(G\)-action by isometries on an equatorial system is \defn{\(\VR\)-compatible} if the \(G\)-action on each sphere is \(\VR\)-compatible and the following diagram commutes for every \(i \in \N\) and $0 < r < \zeta_{n_{i+1}}$:
@@ -130,7 +133,7 @@ We say that a proper \(G\)-action by isometries on an equatorial system is \defn
 	\end{tikzcd}
 \end{equation}
 
-\lemma The above \(\rC_2\)-action on the real equatorial system and the \(\rC_q\)-action on the complex one are \(\VR\)-compatible for every \(q \in \N\).
+\lemma The above \(\cyc_2\)-action on the real equatorial system and the \(\cyc_q\)-action on the complex one are \(\VR\)-compatible for every \(q \in \N\).
 
 \begin{proof}
 	Let $n \in \N$ and take any $0 < r \leq \zeta_{n+1} (< \zeta_{n})$.
@@ -140,11 +143,14 @@ We say that a proper \(G\)-action by isometries on an equatorial system is \defn
 	By \cref{sss:strong_r_action}, these actions are strong \(r\)-diameter actions for small enough $r>0$.
 	We still need to verify that the group action commutes with the $\VR_r(\bS^{n})$-projection $f_r^{n}\colon \VR_r(\bS^{n}) \to \bS^{n}$ and that $f_r^{n}$ induces weak equivalences on the orbit spaces for all $0 < r \leq \zeta_{n}$.
 
-	For the $\rC_2$-action on the real equatorial system, verifying that the $\rC_2$-action commutes with $f_r^{n}$ is straightforward.
+	For the $\cyc_2$-action on the real equatorial system, verifying that the $\cyc_2$-action commutes with $f_r^{n}$ is straightforward.
 	By \cref{ss:VRSn projection}, $f_r^{n}$ is a homotopy equivalence.
-	Because the $\rC_2$-action is proper and free, the $\rC_2$-equivariant homotopy equivalence $f_r^n$ induces homotopy equivalence (and thus weak equivalence) on the orbit spaces.
+	Because the \(\cyc_2\)-action is proper and free, the quotient maps to the orbit spaces are covering space projections \cite[Prop.~1.40]{hatcher2000}.
+	These projections induce isomorphisms on \(\pi_k\) for \(k \ge 2\) \cite[Prop.~4.1]{hatcher2000}, which, combined with the \(\cyc_2\)-equivariance of $f_r^n$, forces the induced map on the orbit spaces to also be an isomorphism for \(k \ge 2\).
+	For \(k=1\), a diagram chase in the short exact sequences of groups of the covering spaces ensures an isomorphism on fundamental groups.
+	Together with a natural bijection on path components, this establishes that the induced map on the orbit spaces is a weak equivalence.
 
-	The case of $\rC_q$-action on the complex equatorial system follows similarly.
+	The case of $\cyc_q$-action on the complex equatorial system follows similarly.
 \end{proof}
 
 \subsubsection{}\label{ss:fundamental_lemma}
@@ -201,7 +207,7 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 	This VR-compatibility further implies that \(\tilde{f}_r^{n_{j-1}}\) is a weak equivalence, and therefore \(\rho^{j-1}\) is as well.
 	The horizontal map \(\rho^j\), defined similarly, is likewise a weak equivalence.
 
-	For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram \eqref{eq:fundamental_bars_diagram} and using the fact that the $\rC_2$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
+	For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram \eqref{eq:fundamental_bars_diagram} and using the fact that the $\cyc_2$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
 	for $r,\epsilon>0$ small,
 	\begin{equation}\label{eq:diagram of H}
 		\begin{tikzcd}[column sep = 4.5em]

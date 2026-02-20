@@ -46,12 +46,11 @@
 		\medskip
 		\begin{quote}
 			Let $\Top$ denote the category of compactly generated weak Hausdorff spaces and continuous maps.
-			We write $\Top^\R \coloneqq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}, where $\R$ is regarded as a poset category, equipped with the projective model structure in which weak equivalences and fibrations are defined objectwise.
+			We write $\Top^\R \defeq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}--where $\R$ is regarded as a poset category--equipped with the projective model structure in which weak equivalences and fibrations are defined objectwise.
 			An $\R$-space $X$ is \defn{cellular} if each $X_r$ is a CW-complex.
 
 			We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if, for every $r \in \R$, the map $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence.
-			Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category $\mathrm{Ho}(\Top^\R)$.
-			Equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
+			Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category or, equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
 			\[
 			X \xleftarrow{\ \sim\ } W \xrightarrow{\ \sim\ } Y
 			\]
@@ -60,19 +59,41 @@
 
 		\item Page 7, line 16: Define $C([0, 1/n])$ and the persistence module.
 
+		\ar Changed as suggested (CAS).
+
 		\item Page 9, \S3.1: For the representability of cohomology, $\pi$ should be abelian.
+
+		\ar Added the missing hypothesis.
 
 		\item Page 12, second paragraph of \S3.3.7: It would be helpful to provide some information about cohomology of $L_q^n$, as this is later used in the proof of Lemma 4.7.
 
+		\ar CAS.
+
 		\item Page 12, second paragraph of \S3.3.7: It would also be helpful to provide more information on the action of $\mathcal{A}_p$, as this is used in \S5.1.1 to show that the round Lens space satisfies Desideratum (3).
+
+		\ar CAS.
 
 		\item Page 14, line 2: The reference for K\"unneth formula for cohomology should be [Hat02, Theorem 3.15] and its assumptions should be included in the statement of Lemma in 3.5.3.
 
+		\ar We changed the first line of the proof to refer to the cohomology K\"unneth formula (Thm.3.15) and make the assumptions of the theorem explicit (CW and free \(R\)-modules).
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Thm.~3.15]{hatcher2000}).
+		\end{quote}
+
 		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\pi^2 \zeta_n$ on the $x$-axis), since it is crucial in \S5.
+
+		\ar
 
 		\item Page 20, line $-6$: $G$ should act by isometries on $X$ in order for $g \cdot \sum \lambda_i x_i \in \mathrm{VR}_r(X)$ and should moreover act properly on $X$ in order for $X/G$ to have the quotient metric.
 
+		\ar Added the missing assumptions to the beginning of that subsection (4.4.2).
+
 		\item Page 20, line $-2$: The induced map $\tilde{h}_r$ goes in the opposite direction. Namely, the quotient $X \to X/G$ induces a map $\mathrm{VR}(X) \to \mathrm{VR}(X/G)$, which is $G$-invariant, hence factors through $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$. This affects some arguments later. For example, the definition of the map $\rho_{j-1}$ in the proof of Lemma 4.5.4 should use the inverse of $\tilde{h}_r$ under the assumption of a strong $r$-diameter action.
+
+		\ar
 
 		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
 		\[
@@ -84,6 +105,17 @@
 		\]
 
 		\item Page 23, line 1: A reference should be provided for the (non-trivial) fact that $f_r^n$, being a homotopy equivalence and a $C_2$-equivariant map between free $C_2$-spaces, induces a homotopy equivalence on the orbit spaces.
+
+		\ar We spelled out the proof of this fact with relevant refereces to Hatcher.
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			Because the \(\cyc_2\)-action is proper and free, the quotient maps to the orbit spaces are covering space projections \cite[Prop.~1.40]{hatcher2000}.
+			These projections induce isomorphisms on \(\pi_k\) for \(k \ge 2\) \cite[Prop.~4.1]{hatcher2000}, which, combined with the \(\cyc_2\)-equivariance of $f_r^n$, forces the induced map on the orbit spaces to also be an isomorphism for \(k \ge 2\).
+			For \(k=1\), a diagram chase in the short exact sequences of groups of the covering spaces ensures an isomorphism on fundamental groups.
+			Together with a natural bijection on path components, this establishes that the induced map on the orbit spaces is a weak equivalence.
+		\end{quote}
 
 		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $S^n_i/G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
 

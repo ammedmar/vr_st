@@ -53,8 +53,7 @@ We write $\Top^\R \defeq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}--
 An $\R$-space $X$ is \defn{cellular} if each $X_r$ is a CW-complex.
 
 We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if, for every $r \in \R$, the map $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence.
-Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category $\mathrm{Ho}(\Top^\R)$.
-Equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
+Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category or, equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
 \[
 X \xleftarrow{\ \sim\ } W \xrightarrow{\ \sim\ } Y
 \]
@@ -109,8 +108,11 @@ However, this condition is often too restrictive.
 A more general condition is q-tameness.
 For a detailed presentation of the approach we summarize below, consult \cite{Chazal.2016a, Chazal.2016b}.
 A persistence module \(V\) is \defn{q-tame} if the rank of the map \(V_{s,t} \colon V_s \to V_t\) is finite for all \(s < t\).
-For instance, the infinite product of interval modules \(\prod_{n \in \N_{> 0}} C([0,1/n))\) demonstrates that not all q-tame persistence modules can have a barcode decomposition in the traditional sense.
+
+For an interval \(I \subset \R\), let \(C(I)\) denote the interval module, i.e.\ the persistence module that is \(\Bbbk\) on \(I\), zero elsewhere, and whose structure maps are the identity within \(I\) and zero otherwise.
+The infinite product \(\prod_{n \in \N_{> 0}} C([0,1/n))\) demonstrates that not all q-tame persistence modules admit a barcode decomposition in the traditional sense.
 A persistence module \(V\) is termed \defn{ephemeral} if all the maps \(V_{s,t} \colon V_s \to V_t\) are zero for \(s < t\).
+
 The \defn{radical} \(\rad V\) of a persistence module \(V\) is defined as the unique minimal submodule of \(V\) such that the cokernel of the inclusion \(\rad V \hookrightarrow V\) is an ephemeral persistence module.
 Specifically, \((\rad V)_t = \sum_{s<t} \img V_{s,t}\).
 For example, the radical of the infinite product \(\prod_{n \in \N_{> 0}} C([0, 1/n))\) is the direct sum \(\bigoplus_{n \in \N_{> 0}} C((0,1/n))\).
