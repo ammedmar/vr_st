@@ -76,7 +76,8 @@ The canonical projection of the Vietoris--Rips complex \(\VR_r(\bS^n)\) is a hom
 \subsubsection{}\label{ss:barcode_Sn}
 
 We apply \cref{ss:critical values of Sn} and the barcode estimates from \cref{ss:barcode_general} to \(\bS^n\).
-Using the facts that (1) the reduced homology of \(\bS^n\) has dimension one for \(m = n\) and is zero for all other values of \(m\), and (2) for any linear cohomology operation \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\img \theta_{\bS^n}\) is trivial, we proceed with the estimation but omit the figure, as it is simply a special case of \cref{fig:barcodes_vs}.
+Using the facts that (1) the reduced homology of \(\bS^n\) has dimension one for \(m = n\) and is zero for all other values of \(m\), and (2) for any linear cohomology operation \(\theta \in \cO(\ell, m)\) with \(\ell \neq m\), \(\img \theta_{\bS^n}\) is trivial, we proceed with the estimation but omit the figure, as it is simply a special case of \cref{fig:barcodes_vs},
+corresponding to $u_n=1$ and $u_i=0$ for $i\neq n$.
 
 \subsubsection{}\label{ss:barcodes_VS}
 
@@ -94,6 +95,12 @@ Using the homotopy equivalence between the Vietoris--Rips complex of a metric gl
 \]
 
 Therefore, both the homology barcodes and \(\img_\theta\)-barcodes of \(\VR(\VS^{u_1, \dots, u_n})\) are the multiset unions of the corresponding barcodes of \(\bS^{u_i}\); see \cref{fig:barcodes_vs}.
+In particular, each $m$-sphere summand contributes a bar $(0,\zeta_m)$
+to $\Hbarc[\field]{m}{\VS^{u_1,\dots,u_n}}$,
+and this occurs with multiplicity $u_m$.
+Since $\zeta_1 > \dots > \zeta_n$,
+the smallest threshold $\zeta_n$ determines the vertical dashed line
+in Figure~\ref{fig:barcodes_vs}.
 
 \begin{figure}
 	\centering

@@ -83,9 +83,35 @@
 			For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Thm.~3.15]{hatcher2000}).
 		\end{quote}
 
-		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\pi^2 \zeta_n$ on the $x$-axis), since it is crucial in \S5.
+		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\frac{\pi}{2}\zeta_n$ on the $x$-axis), since it is crucial in \S5.
 
-		\ar \ling{I will work on this.}
+		\ling{Please help me check if this provides enough details.}
+		
+		\ar The $x$-axis values are $\frac{\pi}{2}$ and $\zeta_n$ seperately, not multiplied. To avoid confusion, we removed the value $\frac{\pi}{2}$ from the $x$-axis of the subfigures. 
+		Also, we provide more details on how the figure is obtained, as follows:
+
+		\smallskip
+
+		At the end of \S4.3.3, we now clarify that the barcode of a single sphere
+		is the special case of Figure~2 by adding the following phrase:
+
+		\begin{quote}
+			we proceed with $\dots$,
+			corresponding to $u_n=1$ and $u_i=0$ for $i\neq n$.
+		\end{quote}
+
+		\smallskip
+
+		At the end of \textsection 4.3.4, we add the following sentences:
+
+		\begin{quote}
+			In particular, each $m$-sphere summand contributes a bar $(0,\zeta_m)$
+			to $\Hbarc[\field]{m}{\VS^{u_1,\dots,u_n}}$,
+			and this occurs with multiplicity $u_m$.
+			Since $\zeta_1 > \dots > \zeta_n$,
+			the smallest threshold $\zeta_n$ determines the vertical dashed line
+			in Figure~2.
+		\end{quote}
 
 		\item Page 20, line $-6$: $G$ should act by isometries on $X$ in order for $g \cdot \sum \lambda_i x_i \in \mathrm{VR}_r(X)$ and should moreover act properly on $X$ in order for $X/G$ to have the quotient metric.
 
@@ -97,11 +123,11 @@
 
 		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
 		\[
-		d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) < r
+		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r
 		\]
 		is used, but
 		\[
-		d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) = d_S(\omega x_j^*, x_j^*) = \frac{2\pi}{q}.
+		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) = d_S(\omega x_j^*, x_j^*) = \frac{2\pi}{q}.
 		\]
 
 		\ar We thank the referee for pointing out the gap in the proof. We have followed the suggestion of another referee and modified the proof as follows to fill the gap:

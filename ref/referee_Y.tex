@@ -137,18 +137,18 @@
 
 		\item P.~21, sec.~4.4.3, in the proof of the Lemma, I am not sure I see why
 		\[
-		\sum_{b=2}^{a} d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) < r(a-1),
+		\sum_{b=2}^{a} d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r(a-1),
 		\]
 		which seems to be needed. If the assumption is that
-		$d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) < r$, then it seems to contradict
+		$d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r$, then it seems to contradict
 		the last paragraph of the proof where $2\pi/q \le d_S(x_i^*, g x_i^*)$.
 		I apologize if I am confusing something here.
 
 		If I am not confusing something, and there is indeed a contradiction,
 		then perhaps the proof can utilize the reverse triangle inequality with
 		\[
-		d_S(x_i^*, \omega_q x_j^*) \ge
-		\left| d_S(x_i^*, x_j^*) - d_S(x_j^*, \omega_q x_j^*) \right|
+		d_S(x_i^*, \omega^q x_j^*) \ge
+		\left| d_S(x_i^*, x_j^*) - d_S(x_j^*, \omega^q x_j^*) \right|
 		\]
 		for any $q$ and the inequality
 		\[
@@ -156,6 +156,8 @@
 		\]
 
 		\ar We thank the referee for pointing out the gap in the proof. We have followed the referee's suggestion and modified the proof as follows to fill the gap:
+
+		\ling{Please help me make sure this is correct.}
 
 		\medskip
 		\begin{quote}
