@@ -10,6 +10,8 @@
 *.txss
 *.bcf
 *.xml
+*.fls
+*.fdb_latexmk
 
 .DS_Store
 
