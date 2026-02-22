@@ -50,19 +50,48 @@ We extend the proof to $\cyc_q$ for \(q \geq 2\).
 \lemma
 The canonical $\cyc_2$ and $\cyc_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
 
+% \begin{proof}
+% 	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\cyc_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
+% 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
+% 	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \cyc_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
+% 	If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+% 	This leads to the following	contradiction:
+% 	\begin{align*}
+% 		\frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0)
+% 		\leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
+% 		& \sum_{b=2}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0)\\
+% 		< \, & \, r \cdot (a + 2) \, \leq \, r \cdot (q + 1) \, \leq \, \frac{2\pi}{q}.
+% 	\end{align*}
+% 	Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.
+
+% 	We still need to verify the uniqueness of such $\{g_i\}$.
+% 	This is because $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.
+% 	If they were, then we would have
+% 	\[\tfrac{2\pi}{q} \leq d_{\bS}(x_i^*, gx_i^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1},
+% 	\]
+% 	contradicting the assumption $q \geq 2$.
+% \end{proof}
+
 \begin{proof}
 	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\cyc_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
-	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \cyc_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
-	If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
-	This leads to the following	contradiction:
-	\begin{align*}
-		\frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0)
-		\leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
-		& \sum_{b=2}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0)\\
-		< \, & \, r \cdot (a + 2) \, \leq \, r \cdot (q + 1) \, \leq \, \frac{2\pi}{q}.
-	\end{align*}
-	Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.
+	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \cyc_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. For each $i$, let $x_i^* = g_i x_i$, and thus $d_{\bS}(x_0, x_i^*) < r$.
+
+	We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \le i,j \le k$.
+	If this is not the case, then there exist indices $i,j$ and $1 \leq a \leq q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+	Applying the triangle inequality to $x_i^*, x_j^*$ and $x_0$, we have
+	\[d_{\bS}(x_i^*, x_j^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, x_j^*) < 2r.\]
+	On the other hand, applying the triangle inequality to $x_i^*, x_j^*$ and $\omega^a x_j^*$, we have
+	\[
+	d_{\bS}(x_i^*, x_j^*) \geq d_{\bS}(x_j^*, \omega^a x_j^*) - d_{\bS}(x_i^*, \omega^a x_j^*) > \frac{2\pi}{q} - r,
+	\]
+	given $1 \leq a \leq q-1$.
+	Combining the above two inequalities, since $q \geq 2$, we have
+	\[
+	2r > \frac{2\pi}{q} - r \implies r > \frac{2\pi}{3q} \geq \frac{2\pi}{q(q+1)},
+	\]
+	which contradicts the assumption $r \le \frac{2\pi}{q(q+1)}$.
+	Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds for all $1 \le i,j \le k$, completing the proof of the claim.
 
 	We still need to verify the uniqueness of such $\{g_i\}$.
 	This is because $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.

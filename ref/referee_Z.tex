@@ -104,6 +104,27 @@
 		d_S(\omega_b x_j^*, \omega_{b-1} x_j^*) = d_S(\omega x_j^*, x_j^*) = \frac{2\pi}{q}.
 		\]
 
+		\ar We thank the referee for pointing out the gap in the proof. We have followed the suggestion of another referee and modified the proof as follows to fill the gap:
+
+		\medskip
+		\begin{quote}
+			We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \le i,j \le k$.
+			If this is not the case, then there exist indices $i,j$ and $1 \leq a \leq q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+			Applying the triangle inequality to $x_i^*, x_j^*$ and $x_0$, we have
+			\[d_{\bS}(x_i^*, x_j^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, x_j^*) < 2r.\]
+			On the other hand, applying the triangle inequality to $x_i^*, x_j^*$ and $\omega^a x_j^*$, we have
+			\[
+			d_{\bS}(x_i^*, x_j^*) \geq d_{\bS}(x_j^*, \omega^a x_j^*) - d_{\bS}(x_i^*, \omega^a x_j^*) > \frac{2\pi}{q} - r,
+			\]
+			given $1 \leq a \leq q-1$.
+			Combining the above two inequalities, since $q \geq 2$, we have
+			\[
+			2r > \frac{2\pi}{q} - r \implies r > \frac{2\pi}{3q} \geq \frac{2\pi}{q(q+1)},
+			\]
+			which contradicts the assumption $r \le \frac{2\pi}{q(q+1)}$.
+			Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds for all $1 \le i,j \le k$, completing the proof of the claim.
+		\end{quote}
+
 		\item Page 23, line 1: A reference should be provided for the (non-trivial) fact that $f_r^n$, being a homotopy equivalence and a $C_2$-equivariant map between free $C_2$-spaces, induces a homotopy equivalence on the orbit spaces.
 
 		\ar We spelled out the proof of this fact with relevant refereces to Hatcher.
