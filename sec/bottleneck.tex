@@ -9,9 +9,9 @@ This demonstrates the enhanced discriminating power of these persistent invarian
 
 \subsubsection{}
 
-We will prove the relevant statements in greater generality, allowing for similar estimates to be established for Lens spaces once their critical radii are determined determined.
+We will prove the relevant statements in greater generality, allowing for similar estimates to be established for Lens spaces once their critical radii are determined.
 
-Let $\cM$ be a closed connected Riemannian \(n\)-manifold of diameter $\pi$.
+\medskip\noindent Let $\cM$ be a closed connected Riemannian \(n\)-manifold of diameter $\pi$.
 
 \medskip\noindent\textit{\darkblue Desiderata}.\
 \begin{enumerate}
@@ -20,8 +20,31 @@ Let $\cM$ be a closed connected Riemannian \(n\)-manifold of diameter $\pi$.
 	\item There exists $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) such that $\img_\theta(\cM) \neq 0$.
 \end{enumerate}
 
-\medskip As shown in \cref{s:critical_radii_rpn}, round real projective spaces of radius \(\pi\) satisfy these Desiderata.
-For fixed $n\in \N$ and the round Lens space $\rL^n_p$ of radius \(\pi\), Desideratum~(3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}).
+\medskip We verify that the round real projective spaces of radius \(\pi\) satisfy these Desiderata.
+Recall that \(\zeta_n = \arccos(\tfrac{-1}{1+n})\) and, from \cref{s:critical_radii_rpn}, that \(\crit(\rp^n) = \tfrac{\pi}{3}\).
+For \(n \geq 1\) we have \(\crit(\rp^n) \geq \tfrac{\zeta_n}{2}\) since
+\[
+\tfrac{1}{2} \geq \tfrac{1}{1+n} \ \Leftrightarrow \
+\tfrac{-1}{2} \leq \tfrac{-1}{1+n} \ \Leftrightarrow \
+\arccos \tfrac{-1}{2} \geq \arccos\tfrac{-1}{1+n} \ \Leftrightarrow \
+\tfrac{2\pi}{3} \geq \zeta_n.
+\]
+
+Let us now focus on Desideratum~(2).
+For any integers $k \geq 1$ we have $\frac{-1}{1+k} < 0$.
+Because \(\arccos\) is decreasing, it follows that for any $k \geq 1$,
+\[
+\zeta_k = \arccos\left(\frac{-1}{1+k}\right) > \arccos(0) = \frac{\pi}{2}.
+\]
+Using this strict lower bound for both $\zeta_n$ and $\zeta_m$, we obtain:
+\[
+\frac{\zeta_n}{4} + \frac{\zeta_m}{2} > \frac{1}{4}\left(\frac{\pi}{2}\right) + \frac{1}{2}\left(\frac{\pi}{2}\right) = \frac{\pi}{8} + \frac{\pi}{4} = \frac{3\pi}{8} > \frac{\pi}{3}.
+\]
+By \cref{s:critical_radii_rpn} we know that either \(\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}\) or \(\firstdeath{m}{\rp^n} = 0\) from which the above inequality concludes the verification of Desideratum~(2).
+
+As shown in \cref{s:critical_radii_rpn}, Desideratum~(3) is satisfied by choosing a Steenrod square \(\Sq^k\) and degree \(m < n\) with \(k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ odd}\).
+
+\medskip For fixed $n \in \N$ and the round Lens space $\rL^n_p$ of radius \(\pi\), Desideratum~(3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}).
 Desideratum~(1) remains unproven, but for Desideratum~(2) it suffices to check that
 \[
 \fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}.

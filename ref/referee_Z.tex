@@ -86,8 +86,8 @@
 		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\frac{\pi}{2}\zeta_n$ on the $x$-axis), since it is crucial in \S5.
 
 		\ling{Please help me check if this provides enough details.}
-		
-		\ar The $x$-axis values are $\frac{\pi}{2}$ and $\zeta_n$ seperately, not multiplied. To avoid confusion, we removed the value $\frac{\pi}{2}$ from the $x$-axis of the subfigures. 
+
+		\ar The $x$-axis values are $\frac{\pi}{2}$ and $\zeta_n$ seperately, not multiplied. To avoid confusion, we removed the value $\frac{\pi}{2}$ from the $x$-axis of the subfigures.
 		Also, we provide more details on how the figure is obtained, as follows:
 
 		\smallskip
@@ -166,6 +166,8 @@
 
 		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $S^n_i/G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
 
+		\anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
+
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
 
 		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_j^i \le \delta_{j-1}$, for $1 \le i \le j-1$.
@@ -178,9 +180,43 @@
 
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
 
+		\anibal{I think this is because we are working with \(\Fp\) coefficients implicitly, but we never say that. Do you think it would be a good idea to always add the coefficients to critical radii?}
+
 		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
 
+		\ar We take the suggestion and now include the following detailed proof:
+
+		\medskip
+		\begin{quote}
+			We verify that the round real projective spaces of radius \(\pi\) satisfy these Desiderata.
+			Recall that \(\zeta_n = \arccos(\tfrac{-1}{1+n})\) and, from \cref{s:critical_radii_rpn}, that \(\crit(\rp^n) = \tfrac{\pi}{3}\).
+			For \(n \geq 1\) we have \(\crit(\rp^n) \geq \tfrac{\zeta_n}{2}\) since
+			\[
+			\tfrac{1}{2} \geq \tfrac{1}{1+n} \ \Leftrightarrow \
+			\tfrac{-1}{2} \leq \tfrac{-1}{1+n} \ \Leftrightarrow \
+			\arccos \tfrac{-1}{2} \geq \arccos\tfrac{-1}{1+n} \ \Leftrightarrow \
+			\tfrac{2\pi}{3} \geq \zeta_n.
+			\]
+
+			Let us now focus on Desideratum~(2).
+			For any integers $k \geq 1$ we have $\frac{-1}{1+k} < 0$.
+			Because \(\arccos\) is decreasing, it follows that for any $k \geq 1$,
+			\[
+			\zeta_k = \arccos\left(\frac{-1}{1+k}\right) > \arccos(0) = \frac{\pi}{2}.
+			\]
+			Using this strict lower bound for both $\zeta_n$ and $\zeta_m$, we obtain:
+			\[
+			\frac{\zeta_n}{4} + \frac{\zeta_m}{2} > \frac{1}{4}\left(\frac{\pi}{2}\right) + \frac{1}{2}\left(\frac{\pi}{2}\right) = \frac{\pi}{8} + \frac{\pi}{4} = \frac{3\pi}{8} > \frac{\pi}{3}.
+			\]
+			By \cref{s:critical_radii_rpn} we know that either \(\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}\) or \(\firstdeath{m}{\rp^n} = 0\) from which the above inequality concludes the verification of Desideratum~(2).
+
+			As shown in \cref{s:critical_radii_rpn}, Desideratum~(3) is satisfied by choosing a Steenrod square \(\Sq^k\) and degree \(m < n\) with \(k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ odd}\).
+		\end{quote}
+
 		\item Page 26, \S5.1.1: It would also be helpful to provide more details why the round Lens space satisfies Desideratum (3), because \S3.3.7 does not contain that information.
+
+		\ar As suggested by the reviewer earlier, we included now the action of \(\cA_p\) on the cohomology of Lens spaces.
+		Therefore, the reference to \S3.3.7 now included the relevant information.
 
 		\item Page 27, proof of Lemma 5.1.5: It would be helpful to include a short explanation for $\zeta_m - \zeta_n < \frac{\pi}{6}$.
 
