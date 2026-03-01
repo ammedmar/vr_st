@@ -130,7 +130,7 @@
 
 		\item Page 20, line $-2$: The induced map $\tilde{h}_r$ goes in the opposite direction. Namely, the quotient $X \to X/G$ induces a map $\mathrm{VR}(X) \to \mathrm{VR}(X/G)$, which is $G$-invariant, hence factors through $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$. This affects some arguments later. For example, the definition of the map $\rho_{j-1}$ in the proof of Lemma 4.5.4 should use the inverse of $\tilde{h}_r$ under the assumption of a strong $r$-diameter action.
 
-		\ar
+		\ar \anibal{I think this seems pretty serious. Can you take a close look, please?}
 
 		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
 		\[
@@ -230,6 +230,40 @@
 		Therefore, the reference to \S3.3.7 now includes the relevant information.
 
 		\item Page 27, proof of Lemma 5.1.5: It would be helpful to include a short explanation for $\zeta_m - \zeta_n < \frac{\pi}{6}$.
+
+		\ar We have expanded this proof, including the specific point raised by the reviewer.
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			As before, let $\zeta_n = \arccos\!\left(-\tfrac{1}{n+1}\right)$.
+			Since $\arccos$ is strictly decreasing on $[-1,1]$ and $-\frac{1}{n+1}$ is increasing in $n$, the sequence $(\zeta_n)_{n\ge 1}$ is strictly decreasing.
+
+			\lemma
+			Let $m \leq n$.
+
+			\noindent (1) $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$.
+
+			\noindent (2) For any $r \in \big[\zeta_n,\, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+
+			\medskip
+			\begin{proof}
+				Since $-\frac{1}{n+1} < 0$, we have $\zeta_n > \arccos(0) = \tfrac{\pi}{2}$.
+				Since $(\zeta_n)$ is decreasing and $\zeta_1 = \arccos\!\left(-\tfrac12\right) = \tfrac{2\pi}{3}$, we also have $\zeta_n \le \tfrac{2\pi}{3}$.
+
+				\smallskip
+				(1) Because $(\zeta_n)$ is decreasing and $m\le n$, we have $\zeta_m \le \zeta_1$, hence
+				$\zeta_m - \zeta_n \le \zeta_1 - \zeta_n < \tfrac{2\pi}{3} - \tfrac{\pi}{2} = \tfrac{\pi}{6}$.
+				Since $\zeta_n \le \tfrac{2\pi}{3}$, we have $\tfrac{\pi - \zeta_n}{2} \ge \tfrac{\pi}{6}$, so $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2}$.
+				Moreover $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ is equivalent to $\zeta_n > \tfrac{\pi}{2}$, which holds.
+
+				\smallskip
+				(2) Since $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ by Part (1), it remains to show $|\zeta_m - r| < \tfrac{\zeta_n}{2}$.
+				If $r \in [\zeta_n,\, \zeta_m)$, then $|\zeta_m - r| = \zeta_m - r \le \zeta_m - \zeta_n < \tfrac{\zeta_n}{2}$ by Part (1).
+				If $r \in [\zeta_m,\, \zeta_m + \tfrac{\zeta_n}{2})$, then $|\zeta_m - r| = r - \zeta_m < \tfrac{\zeta_n}{2}$ by the upper bound on $r$.
+				Thus in all cases $|\zeta_m - r| < \tfrac{\zeta_n}{2}$, and therefore $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+			\end{proof}
+		\end{quote}
 
 		\item Page 28, proof of Theorem 5.2.(1): The regime $m > n$ is currently not included in the proof. It would be good either to include it, or impose assumption $1 \le m \le n$ in the statements of Theorem 5.2.(1) and Theorem D.
 

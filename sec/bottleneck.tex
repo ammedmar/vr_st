@@ -132,25 +132,55 @@ Then,
 
 The following results will be used in \cref{sss:comparison_lemma_zeta_n} and \cref{ss:distance_estimate_rpn}.
 
-As before, let $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$, which decreases as $n$ increases.
-We derive the following lemma, which, while straightforward, requires careful exposition.
+As before, let $\zeta_n = \arccos\!\left(-\tfrac{1}{n+1}\right)$.
+Since $\arccos$ is strictly decreasing on $[-1,1]$ and $-\frac{1}{n+1}$ is increasing in $n$, the sequence $(\zeta_n)_{n\ge 1}$ is strictly decreasing.
 
 \lemma
 Let $m \leq n$.
 \begin{enumerate}
-	\item \(\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\)
-	\item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r |, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+	\item $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$.
+	\item For any $r \in \big[\zeta_n,\, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
 \end{enumerate}
 
 \begin{proof}
-	(1) The first inequality follows from $\zeta_m - \zeta_n < \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
-	The second inequality holds because $\zeta_n$ is larger than $\tfrac{\pi}{2}$.
+	Since $-\frac{1}{n+1} < 0$, we have $\zeta_n > \arccos(0) = \tfrac{\pi}{2}$.
+	Since $(\zeta_n)$ is decreasing and $\zeta_1 = \arccos\!\left(-\tfrac12\right) = \tfrac{2\pi}{3}$, we also have $\zeta_n \le \tfrac{2\pi}{3}$.
 
-	(2) Since $\tfrac{\pi - \zeta_n}{2}$ is less than $\tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m - r |$ is also less than $\tfrac{\zeta_n}{2}$, which follows from
-	\(
-	|\zeta_m - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
-	\) by Part (1).
+	\smallskip
+	(1) Because $(\zeta_n)$ is decreasing and $m\le n$, we have $\zeta_m \le \zeta_1$, hence
+	$\zeta_m - \zeta_n \le \zeta_1 - \zeta_n < \tfrac{2\pi}{3} - \tfrac{\pi}{2} = \tfrac{\pi}{6}$.
+	Since $\zeta_n \le \tfrac{2\pi}{3}$, we have $\tfrac{\pi - \zeta_n}{2} \ge \tfrac{\pi}{6}$, so $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2}$.
+	Moreover $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ is equivalent to $\zeta_n > \tfrac{\pi}{2}$, which holds.
+
+	\smallskip
+	(2) Since $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ by Part (1), it remains to show $|\zeta_m - r| < \tfrac{\zeta_n}{2}$.
+	If $r \in [\zeta_n,\, \zeta_m)$, then $|\zeta_m - r| = \zeta_m - r \le \zeta_m - \zeta_n < \tfrac{\zeta_n}{2}$ by Part (1).
+	If $r \in [\zeta_m,\, \zeta_m + \tfrac{\zeta_n}{2})$, then $|\zeta_m - r| = r - \zeta_m < \tfrac{\zeta_n}{2}$ by the upper bound on $r$.
+	Thus in all cases $|\zeta_m - r| < \tfrac{\zeta_n}{2}$, and therefore $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
 \end{proof}
+
+%As before, let $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$, which decreases as $n$ increases.
+%We derive the following lemma, which, while straightforward, requires careful exposition.
+%
+%\lemma
+%Let $m \leq n$.
+%\begin{enumerate}
+%	\item \(\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\)
+%	\item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r |, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+%\end{enumerate}
+%
+%\begin{proof}
+%	Since $-\frac{1}{n+1} < 0$ we have $\zeta_n = \arccos\!\left(-\frac{1}{n+1}\right) > \arccos(0) = \frac{\pi}{2}$.
+%	Also $\zeta_1 = \arccos\!\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$.
+%
+%	(1) The first inequality follows from $\zeta_m - \zeta_n \le \zeta_1 - \zeta_n < \tfrac{2\pi}{3} - \tfrac{\pi}{2} = \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
+%	The second inequality holds because $\zeta_n$ is larger than $\tfrac{\pi}{2}$.
+%
+%	(2) Since $\tfrac{\pi - \zeta_n}{2}$ is less than $\tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m - r |$ is also less than $\tfrac{\zeta_n}{2}$, which follows from
+%	\(
+%	|\zeta_m - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
+%	\) by Part (1).
+%\end{proof}
 
 \subsubsection{}\label{sss:comparison_lemma_zeta_n}
 
