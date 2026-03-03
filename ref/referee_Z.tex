@@ -129,8 +129,22 @@
 
 		\item Page 20, line $-2$: The induced map $\tilde{h}_r$ goes in the opposite direction. Namely, the quotient $X \to X/G$ induces a map $\mathrm{VR}(X) \to \mathrm{VR}(X/G)$, which is $G$-invariant, hence factors through $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$. This affects some arguments later. For example, the definition of the map $\rho_{j-1}$ in the proof of Lemma 4.5.4 should use the inverse of $\tilde{h}_r$ under the assumption of a strong $r$-diameter action.
 
-		\ar \anibal{I think this seems pretty serious. Can you take a close look, please?}
+		\ar We thank the reviewer for pointing out that the map $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$ is always well defined, whereas defining its inverse requires the strong $r$-diameter condition. We have revised the formula on page 20 accordingly:
+		\begin{quote}
+			\begin{align*}
+				h_r \colon \VR_r(\cX)_G &\to  \VR_r(\cX_G) \\
+				\textstyle \big[\sum\lambda_i x_i\big] & \mapsto \textstyle\sum\lambda_i [x_i].
+			\end{align*}
+			If the action is proper and by isometries, as well as satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $h_s$ is an isomorphism of simplicial complexes.
+		\end{quote}
 
+		\smallskip
+		We have also revised the definition of $\rho_{j-1}$ in the proof of Lemma 4.5.4 to use $h_r^{-1}$, as suggested by the reviewer. The revised definition is as follows:
+		\begin{quote}
+			\[\VR_r(\cX_{j-1}) \xrightarrow{h^{-1}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
+			Since the \(G\)-action on \(\bS^{n_{j-1}}\) is VR-compatible, it is a strong \(r\)-diameter action for small enough $r>0$, making \(h_r\) an isomorphism by \textsection 4.2.2 and thus we can consider the inverse map $h^{-1}_r$.
+		\end{quote}
+		
 		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
 		\[
 		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r

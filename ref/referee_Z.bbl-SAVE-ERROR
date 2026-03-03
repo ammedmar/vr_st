@@ -1,0 +1,100 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{blumberg2023interleaving}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e73a532bb1be860b8805a2c71d2aa224}{%
+           family={Blumberg},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=14544c90506aa2f3148e195c2237b5b6}{%
+           family={Lesnick},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{fullhash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{bibnamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authorbibnamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authornamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authorfullhash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \field{labelalpha}{BL23}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0002-9947}
+      \field{journaltitle}{Trans. Amer. Math. Soc.}
+      \field{number}{12}
+      \field{title}{Universality of the homotopy interleaving distance}
+      \field{volume}{376}
+      \field{year}{2023}
+      \field{pages}{8269\bibrangedash 8307}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1090/tran/8738
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/tran/8738
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/tran/8738
+      \endverb
+    \endentry
+    \entry{hatcher2000}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press, Cambridge}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{labelalpha}{Hat02}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic topology}
+      \field{year}{2002}
+      \field{pages}{xii+544}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://cds.cern.ch/record/478079
+      \endverb
+      \verb{url}
+      \verb https://cds.cern.ch/record/478079
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
