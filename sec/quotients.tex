@@ -221,7 +221,7 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\ar[l, "\rho^{j-1}" above]
 			\ar[r, hook, "v^{j-1}"]
 			&
-			\VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})
+			\VR_{2\delta_{j-1}+\epsilon}(\cX_{j-1})
 			\ar[d, hook]
 			\\
 			\cX_j
@@ -230,7 +230,7 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\ar[l, "\rho^j" below]
 			\ar[r, hook, "v^j" below]
 			&
-			\VR_{\delta_j+\epsilon}(\cX_j).
+			\VR_{2\delta_j+\epsilon}(\cX_j).
 		\end{tikzcd}
 	\end{equation}
 	Here, the vertical maps are all induced by the equatorial inclusion of the orbit spaces $\iota \colon \cX_{j-1} \hookrightarrow \cX_j$.
@@ -255,7 +255,7 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\ar[l, "\cong" above]
 			\ar[r, "\rH_{n_i}(v^{{j-1}})", myred]
 			&
-			\rH_{n_i}\big(\VR_{\delta_{j-1}+\epsilon}(\cX_{j-1})\big)
+			\rH_{n_i}\big(\VR_{2\delta_{j-1}+\epsilon}(\cX_{j-1})\big)
 			\ar[d]
 			\\
 			\rH_{n_i}(\cX_j)
@@ -264,16 +264,16 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\ar[l, "\cong"]
 			\ar[r, "\rH_{n_i}(v^j)" below, myred]
 			&
-			\rH_{n_i}\big(\VR_{\delta_n+\epsilon}(\cX_j)\big).
+			\rH_{n_i}\big(\VR_{2\delta_j+\epsilon}(\cX_j)\big).
 		\end{tikzcd}
 	\end{equation}
 
 	Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
 	Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
 	As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
-	Moreover, this bar dies after $\delta_j$ as explained below.
-	It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies after $\delta_{j-1}$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
-	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies after $\delta_j+\epsilon$.
+	Moreover, this bar dies before or at $2\delta_j$ as explained below.
+	It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies before $2\delta_{j-1} + \epsilon$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
+	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies before $2\delta_j+\epsilon$.
 	Since this holds for any \(\epsilon > 0\), we conclude that \(\beta_i^j \leq \delta_j\).
 
 	For the case when $i = j$, apply results in \cref{ss:beta v.s. fillrad} again to get that $\beta_j^j = \delta_j$.
