@@ -267,10 +267,19 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\rH_{n_i}\big(\VR_{2\delta_j+\epsilon}(\cX_j)\big).
 		\end{tikzcd}
 	\end{equation}
-
-	Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
+	We note that the left-most vertical map is an isomorphism.
+	Since no cells are introduced in dimensions $\le n_{j-1}$
+	when passing from $\bS^{n_{j-1}}$ to $\bS^{n_j}$,
+	the same holds for the quotient spaces.
+	Therefore the induced map on homology is an isomorphism
+	in degrees $< n_{j-1}$ \ling{how to prove the isomorphism in degree $n_{j-1}$ in the general case?}.
 	Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
 	As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
+
+	Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
+	% Let $\sigma_i$ be a representative cycle for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
+	% Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
+	% As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
 	Moreover, this bar dies before or at $2\delta_j$ as explained below.
 	It follows from the induction hypothesis $\beta_i^{j-1} \leq \delta_{j-1}$ that $\sigma_i$ dies before $2\delta_{j-1} + \epsilon$, implying that $\rH_{n_i}(v^{{j-1}})(\sigma_i) = 0$.
 	Using the right-hand-side square's commutativity, we have $(\rH_{n_i}(v^j) \circ \rH_{n_i}(\iota_r))(\sigma_i)=0$, which means $\rH_{n_i}(\iota_r)(\sigma_i)$ dies before $2\delta_j+\epsilon$.
