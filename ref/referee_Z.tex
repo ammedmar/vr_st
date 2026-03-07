@@ -198,13 +198,17 @@
 
 		The values $r$ and $\epsilon$ remain arbitrary small positive numbers and are unchanged.
 
-		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_j^i \le \delta_{j-1}$, for $1 \le i \le j-1$.
+		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_i^j \le \delta_{j-1}$, for $1 \le i \le j-1$.
+		
+		\ling{to be addressed}
 
 		\item Page 23, diagram (6): It would be helpful to include an explanation for why the left vertical map
 		\[
-		H^{n_i}(X_{j-1}) \to H^{n_i}(X_j)
+		\rH_{n_i}(X_{j-1}) \to \rH_{n_i}(X_j)
 		\]
 		is an isomorphism.
+
+		\ling{to be addressed}
 
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
 
@@ -284,7 +288,14 @@
 
 		\item Page 28, proof of Theorem 5.2.(1): The regime $m > n$ is currently not included in the proof. It would be good either to include it, or impose assumption $1 \le m \le n$ in the statements of Theorem 5.2.(1) and Theorem D.
 
-		\anibal{The referee is right here, not sure what is the best path though.}
+		\ar We have added the case $m > n$ to the proof of Theorem 5.2.(1) as follows:
+
+		\smallskip
+
+		\begin{quote}
+			When $m > n$, recall from Figure 2 that bars in the $m$-th persistent homology of $\bS_{\rp^n}$ (if any) are contained in $(\zeta_n, \pi)$, and from Figure 3 that bars in the $m$-th persistent homology of $\rp^n$ (if any) are contained in $(\tfrac{2\pi}{3}, \pi)$.
+			Thus, the interleaving distance between these persistent homology groups is at most half the maximum bar length (with all bars unmatched), which is bounded by $\max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi}{6}\} \leq \tfrac{\pi - \zeta_n}{2}$ since $\zeta_n \leq \tfrac{2\pi}{3}$.
+		\end{quote}
 
 		\item Page 28, line $-3$: Please provide more details or a reference for the lower bound for the Gromov--Hausdorff distance obtained via persistence homology, as its improvement is one of the highlights of the paper. It would also be good to include this in the introduction.
 
@@ -293,6 +304,8 @@
 		Regarding the lower bound for the Gromov--Hausdorff distance obtained via persistence homology, this paper constructs un upper bound for the interleaving distance between the \(\VR\)-homology modules of \(\bS_{\rp}\) and \(\rp\).
 		The connection to Grommov--Hausdorff distance is via the stability theorem, for which we have a subsection with multiple references.
 	\end{enumerate}
+
+	\ling{this report seems missing a section of `Minor comments and typos' from the referee}
 
 	\section{Other changes}
 
