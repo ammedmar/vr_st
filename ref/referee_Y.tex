@@ -152,7 +152,24 @@
 
 		\item Sec.~4.6, in the proof of the lemma, part~(2), sentence ``By~[Kat83], the filling radius of $S^i(2)_{C_2}$ is $\pi/6$'': probably a typo and it should be $S^i(1)_{C_2}$.
 
-		\ling{I will work on this.}
+		\ar We have corrected the typo as suggested. The proof now reads:
+
+		\smallskip
+
+		\begin{quote}
+			(2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
+			Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1} \to \bS^{2} \to \dotsb \to \bS^{n}\).
+			By \textsection 4.5.3, this system is \(\VR\)-compatible.
+			By \cite{katz1983filling}, the filling radius of the quotient space $\bS^{i}_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, and thus $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
+			Therefore, we can apply \textsection 4.5.4 to deduce that for any \(m \leq n\),
+			\[
+			\firstdeath{m}{\bS^{n}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
+			\]
+			On the other hand, $\firstdeath{m}{\bS^{n}_{\rC_2}}\geq \crit(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}$.
+			Thus, the equality holds.
+			As $\rp^n$ is the quotient of the $n$-sphere with radius $2$, 
+			\[\firstdeath{m}{\rp^n} = \firstdeath{m}{\bS^{n}(2)_{\rC_2}} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}.\]
+		\end{quote}
 	\end{enumerate}
 
 	\section{Other changes}

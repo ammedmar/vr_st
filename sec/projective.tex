@@ -27,17 +27,30 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 	Since the homotopical critical radius is always bounded above by the filling radius, we have $\crit(\rp^n) \leq \frac{\pi}{3}$.
 	The reverse inequality, $\crit(\rp^n) \geq \frac{\pi}{3}$, follows from the remark following \cite[Thm.~4.5]{adams2022metric}.
 
+	% \smallskip (2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
+	% Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
+	% By \cref{ss:system VR compatible}, this system is \(\VR\)-compatible.
+	% By \cite{katz1983filling}, the filling radius of $\bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, which implies that $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
+	% Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
+	% \[
+	% \firstdeath{m}{\bS^{1}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
+	% \]
+	% On the other hand, $\firstdeath{m}{\bS^{n}_{\rC_2}}\geq \crit(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}$.
+	% Thus, the equality holds.
+	% As $\rp^n$ is the quotient of the $n$-sphere with radius $2$, $\firstdeath{m}{\rp^n} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}$.
+
 	\smallskip (2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
-	Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1}(2) \to \bS^{2}(2) \to \dotsb \to \bS^{n}(2)\), where each $\bS^{i}(2)$ is the $i$-sphere with radius $2$.
+	Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1} \to \bS^{2} \to \dotsb \to \bS^{n}\).
 	By \cref{ss:system VR compatible}, this system is \(\VR\)-compatible.
-	By \cite{katz1983filling}, the filling radius of $\bS^{i}(2)_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, which implies that $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
+	By \cite{katz1983filling}, the filling radius of the quotient space $\bS^{i}_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, and thus $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
 	Therefore, we can apply \cref{ss:fundamental_lemma} to deduce that for any \(m \leq n\),
 	\[
-	\firstdeath{m}{\bS^{1}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
+	\firstdeath{m}{\bS^{n}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
 	\]
 	On the other hand, $\firstdeath{m}{\bS^{n}_{\rC_2}}\geq \crit(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}$.
 	Thus, the equality holds.
-	As $\rp^n$ is the quotient of the $n$-sphere with radius $2$, $\firstdeath{m}{\rp^n} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}$.
+	As $\rp^n$ is the quotient of the $n$-sphere with radius $2$, 
+	\[\firstdeath{m}{\rp^n} = \firstdeath{m}{\bS^{n}(2)_{\rC_2}} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}.\]
 
 	\smallskip (3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{m-k}{k}$ odd, since \(\Sq^k = 0\) otherwise.
 	Because $\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$.
