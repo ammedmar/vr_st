@@ -188,9 +188,16 @@
 			Together with a natural bijection on path components, this establishes that the induced map on the orbit spaces is a weak equivalence.
 		\end{quote}
 
-		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $S^n_i/G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
+		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $\bS^{n_i}_G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
 
 		\anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
+
+		\ling{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
+		We explictly using $\Z_2$ in 4.6 for real projective spaces. 
+		In Section 4.7, we should have added the coefficient choice for Lens spaces as well.
+		General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints. 
+		We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
+		}
 
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
 		
@@ -213,7 +220,7 @@
 		\ar We added the following explanation to the text:
 
 		\smallskip
-		
+
 		\begin{quote}
 			We note that the left-most vertical map is an isomorphism.
 			Since no cells are introduced in dimensions $\le n_{j-1}$
