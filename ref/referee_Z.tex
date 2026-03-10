@@ -9,7 +9,7 @@
 \setlist{label=\arabic{enumi}.,itemsep=\medskipamount, left=0pt}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\title[Referee reply]{\underline{REPLY TO REFEREE Z} \\ Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
+\title[Referee reply]{\underline{REPLY TO REFEREE Z} \\ \medskip Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
 
 \newcommand{\ar}{\medskip\noindent\textit{Reply}:\ }
 \renewcommand{\thesection}{\arabic{section}}
@@ -96,6 +96,8 @@
 		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\frac{\pi}{2}\zeta_n$ on the $x$-axis), since it is crucial in \S5.
 
 		\ling{Please help me check if this provides enough details.}
+
+		\anibal{Looks good to me. Please proceed.}
 
 		\ar The $x$-axis values are $\frac{\pi}{2}$ and $\zeta_n$ seperately, not multiplied. To avoid confusion, we removed the value $\frac{\pi}{2}$ from the $x$-axis of the subfigures.
 		Also, we provide more details on how the figure is obtained, as follows:
@@ -199,6 +201,8 @@
 		We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
 		}
 
+		\anibal{I am ok with that. Please proceed.}
+
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
 
 		\ar We thank the referee for pointing this out. We have corrected all death times in the proof of Lemma~4.5.4 by including the missing factor of $2$. In particular, Diagrams~(5) and~(6) and the surrounding text now correctly state all death times as $2\delta_j$ (or $2\delta_{j-1}$).
@@ -207,9 +211,13 @@
 
 		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_i^j \le \delta_{j-1}$, for $1 \le i \le j-1$.
 
-		\ar The referee is correct that the commutative diagram can be modified as suggested. However, the base case of the induction in the proof of Lemma~4.5.4 relies on the fact that $\beta_1^1 = \delta_1$, which means the $n_1$-th homological radius of $\bS^{n_1}_G$ agrees with the filling radius of $\bS^{n_1}_G$.
-		To establish the stronger bound $\beta_i^j \le \delta_{j-1}$, we would need to prove a new base case showing that the $n_1$-th homological radius of $\bS^{n_2}_G$ is bounded above by the filling radius of $\bS^{n_{1}}_G$.
+		\ar The referee is correct that the commutative diagram can be modified as suggested.
+		However, the base case of the induction in the proof of Lemma~4.5.4 relies on the fact that $\beta_1^1 = \delta_1$, which means the $n_1$-th homological radius of $\bS^{n_1}_G$ agrees with the filling radius of $\bS^{n_1}_G$.
+		To establish the stronger bound $\beta_i^j \le \delta_{j-1}$, we would need to prove a new base case showing that the $n_1$-th homological radius of $\bS^{n_2}_G$ is bounded above by the filling radius of $\bS^{n_{1}}_G$, which do not see how to prove.
+
 		\ling{I do not immediately see if this new base holds, and I prefer to not think too hard about it. How should we address this comment better?}
+
+		\anibal{I added a sentence at the end. It looks OK to me as is.}
 
 		\item Page 23, diagram (6): It would be helpful to include an explanation for why the left vertical map
 		\[
@@ -230,11 +238,16 @@
 			in degrees $< n_{j-1}$ \ling{how to prove the isomorphism in degree $n_{j-1}$ in the general case?}.
 		\end{quote}
 
+		\anibal{I am thinking that maybe this lemma should be restricted to the real and complex equatorial systems with their \(\cyc_2\) and \(\cyc_q\) actions.
+		Let us talk about it.}
+
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
 
 		\anibal{I think this is because we are working with \(\Fp\) coefficients implicitly, but we never say that. Do you think it would be a good idea to always add the coefficients to critical radii?}
 
 		\ling{I think better explanations are definitely needed, but adding them to the notation may not be necessary if our explanations are done well.}
+
+		\anibal{Sounds good. Lets talk about how to do that.}
 
 		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
 
