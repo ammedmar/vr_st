@@ -9,7 +9,7 @@
 \setlist{label=\arabic{enumi}.,itemsep=\medskipamount, left=0pt}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\title[Referee reply]{\underline{REPLY TO REFEREE Y} \\ Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
+\title[Referee reply]{\underline{REPLY TO REFEREE Z} \\ Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
 
 \newcommand{\ar}{\medskip\noindent\textit{Reply}:\ }
 \renewcommand{\thesection}{\arabic{section}}
@@ -135,7 +135,7 @@
 				h_r \colon \VR_r(\cX)_G &\to  \VR_r(\cX_G) \\
 				\textstyle \big[\sum\lambda_i x_i\big] & \mapsto \textstyle\sum\lambda_i [x_i].
 			\end{align*}
-			If the group action satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $h_s$ is an isomorphism of simplicial complexes. 
+			If the group action satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $h_s$ is an isomorphism of simplicial complexes.
 		\end{quote}
 
 		\smallskip
@@ -144,7 +144,7 @@
 			\[\VR_r(\cX_{j-1}) \xrightarrow{h^{-1}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
 			Since the \(G\)-action on \(\bS^{n_{j-1}}\) is VR-compatible, it is a strong \(r\)-diameter action for small enough $r>0$, making \(h_r\) an isomorphism by \textsection 4.2.2 and thus we can consider the inverse map $h^{-1}_r$.
 		\end{quote}
-		
+
 		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
 		\[
 		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r
@@ -193,22 +193,22 @@
 		\anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
 
 		\ling{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
-		We explictly using $\Z_2$ in 4.6 for real projective spaces. 
+		We explictly using $\Z_2$ in 4.6 for real projective spaces.
 		In Section 4.7, we should have added the coefficient choice for Lens spaces as well.
-		General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints. 
+		General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints.
 		We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
 		}
 
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
-		
-		\ar We thank the referee for pointing this out. We have corrected all death times in the proof of Lemma~4.5.4 by including the missing factor of $2$. In particular, Diagrams~(5) and~(6) and the surrounding text now correctly state all death times as $2\delta_j$ (or $2\delta_{j-1}$). 
+
+		\ar We thank the referee for pointing this out. We have corrected all death times in the proof of Lemma~4.5.4 by including the missing factor of $2$. In particular, Diagrams~(5) and~(6) and the surrounding text now correctly state all death times as $2\delta_j$ (or $2\delta_{j-1}$).
 
 		The values $r$ and $\epsilon$ remain arbitrary small positive numbers and are unchanged.
 
 		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_i^j \le \delta_{j-1}$, for $1 \le i \le j-1$.
-		
-		\ar The referee is correct that the commutative diagram can be modified as suggested. However, the base case of the induction in the proof of Lemma~4.5.4 relies on the fact that $\beta_1^1 = \delta_1$, which means the $n_1$-th homological radius of $\bS^{n_1}_G$ agrees with the filling radius of $\bS^{n_1}_G$. 
-		To establish the stronger bound $\beta_i^j \le \delta_{j-1}$, we would need to prove a new base case showing that the $n_1$-th homological radius of $\bS^{n_2}_G$ is bounded above by the filling radius of $\bS^{n_{1}}_G$. 
+
+		\ar The referee is correct that the commutative diagram can be modified as suggested. However, the base case of the induction in the proof of Lemma~4.5.4 relies on the fact that $\beta_1^1 = \delta_1$, which means the $n_1$-th homological radius of $\bS^{n_1}_G$ agrees with the filling radius of $\bS^{n_1}_G$.
+		To establish the stronger bound $\beta_i^j \le \delta_{j-1}$, we would need to prove a new base case showing that the $n_1$-th homological radius of $\bS^{n_2}_G$ is bounded above by the filling radius of $\bS^{n_{1}}_G$.
 		\ling{I do not immediately see if this new base holds, and I prefer to not think too hard about it. How should we address this comment better?}
 
 		\item Page 23, diagram (6): It would be helpful to include an explanation for why the left vertical map
@@ -327,7 +327,58 @@
 		The connection to Grommov--Hausdorff distance is via the stability theorem, for which we have a subsection with multiple references.
 	\end{enumerate}
 
-	\ling{this report seems missing a section of `Minor comments and typos' from the referee}
+	\section{Typos and minor comments}
+
+	\begin{enumerate}
+		\item Page 7, line $-7$: It should read ``is unmatched''.
+
+		\ar CAS
+
+		\item Page 10, commutative square: The bottom arrow should be labeled \(\theta_{n+1}^{\Sigma X}\).
+
+		\ar CAS
+
+		\item Page 11, line $8$: The notation for \(C_2\) should be changed to match the rest of the paper.
+
+		\ar CAS
+
+		\item Page 11, line $10$: The sentence beginning with ``Here is the revised \ldots'' should be removed.
+
+		\ar CAS
+
+		\item Page 11, line $-13$: The fact that \(\mathbb{RP}^{\infty}\) is a model for \(K(\mathbb{Z}/2,1)\) was already mentioned at the beginning of \S 3.3.5.
+
+		\ar We removed the redundant sentence.
+		Thanks for pointing it out.
+
+		\item Page 12, \S 3.3.7: The statement that \(L_p^{\infty}\) is a model for \(K(\mathbb{Z}/p,1)\) already appeared earlier in the text.
+
+		\ar We removed the redundant sentence.
+		Thanks for pointing it out.
+
+		\item Page 15, line $9$: ``Lemma 2.1.2'' should be replaced by ``Proposition 2.1.2''.
+
+		\ar CAS
+
+		\item Page 23, line $-4$: ``\(C_2\)-action'' should be replaced by ``\(G\)-action''.
+
+		\ar CAS
+
+		\item Page 23, diagram (6): There is a subscript typo in the bottom-right entry of the diagram; it should read
+		\[
+		H_{n_i}\!\bigl(\mathrm{VR}_{\delta_j + \varepsilon}(X_j)\bigr).
+		\]
+
+		\ar CAS
+
+		\item Page 24, line $1$: The element \(\sigma_i\) should be described as a ``representative class'', since cycles usually denote elements of the chain complex.
+
+		\ar CAS
+
+		\item Page 28, line $-14$ (last line of the statement of Theorem 5.2(2)): The operation \(Sq^k\) should land in degree \(m\).
+
+		\ar CAS
+	\end{enumerate}
 
 	\section{Other changes}
 
