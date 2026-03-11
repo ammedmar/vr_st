@@ -11,14 +11,30 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 \subsubsection{}\label{ss:filling_radii_def}
 
-Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; \Z)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
+% Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; \Z)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
 
-This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}.
-We are interested in working over a field \(\k\), for which we have
+% This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}.
+% We are interested in working over a field \(\k\), for which we have
+% \[
+% \fillrad(\cM; \field) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \field)}.
+% \]
+% This is particularly meaningful when \(\cM\) is connected and not orientable, and \(\k = \Ftwo\).
+
+The \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+
+This invariant was first introduced by Gromov \cite{gromov1983filling} in the case $G=\Z$, which requires $\cM$ to be orientable. 
+Subsequently, the definition has been considered with more general coefficients, in particular with $G$ a field, allowing one to treat non-orientable manifolds as well (see, e.g., \cite{lim2024vietoris}).
+
+In this work, we write the filling radius of \(\cM\) with coefficients in a field \(\field\) as
 \[
-\fillrad(\cM; \field) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \field)}.
+\fillrad(\cM;\field)
+=
+\min \big\{ r \mid (0,r) \in \barc H_n(\rU(\cM);\field) \big\}.
 \]
-This is particularly meaningful when \(\cM\) is connected and not orientable, and \(\k = \Ftwo\).
+When $\cM$ is non-orientable (e.g., $\mathbb{RP}^n$), we take $\field = \Ftwo$ so that the top-dimensional fundamental class is nontrivial.
+For spheres $S^n$, the choice of coefficients does not affect the filling radius.
+For lens spaces $L_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
+We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
 
 \subsubsection{}\label{ss:first_critical_value}
 

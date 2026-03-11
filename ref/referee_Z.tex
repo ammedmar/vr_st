@@ -189,14 +189,46 @@
 
 		\ar We have restricted this lemma to real projective spaces and Lens spaces only with coefficients in the appropriate finite field.
 
-		\anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
+		We also improved Section 4.1.2 to clarify the choice of coefficients:
 
-		\ling{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
-		We explictly using $\Z_2$ in 4.6 for real projective spaces.
-		In Section 4.7, we should have added the coefficient choice for Lens spaces as well.
-		General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints.
-		We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
-		}
+		\smallskip
+
+		\begin{quote}
+			The \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+
+			This invariant was first introduced by Gromov \cite{gromov1983filling} in the case $G=\Z$, which requires $\cM$ to be orientable. 
+			Subsequently, the definition has been considered with more general coefficients, in particular with $G$ a field, allowing one to treat non-orientable manifolds as well (see, e.g., \cite{lim2024vietoris}).
+
+			In this work, we write the filling radius of \(\cM\) with coefficients in a field \(\field\) as
+			\[
+			\fillrad(\cM;\field)
+			=
+			\min \big\{ r \mid (0,r) \in \barc H_n(\rU(\cM);\field) \big\}.
+			\]
+			When $\cM$ is non-orientable (e.g., $\mathbb{RP}^n$), we take $\field = \Ftwo$ so that the top-dimensional fundamental class is nontrivial.
+			For spheres $S^n$, the choice of coefficients does not affect the filling radius.
+			For lens spaces $L_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
+			We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
+		\end{quote}
+
+		\smallskip
+
+		In Section 4.7, we added the requirement of $q$ being an odd prime and the following sentence before the lemma:
+		
+		\smallskip
+
+		\begin{quote}
+			The ground field here is \(\mathbb{F}_q\).
+		\end{quote}
+
+		% \anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
+
+		% \l{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
+		% We explictly using $\Z_2$ in 4.6 for real projective spaces.
+		% In Section 4.7, we should have added the coefficient choice for Lens spaces as well.
+		% General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints.
+		% We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
+		% }
 
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
 
@@ -216,7 +248,7 @@
 		\]
 		is an isomorphism.
 
-		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and lens Spaces and homology with coefficients in the appropriate finite fields.
+		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and lens spaces and homology with coefficients in the appropriate finite fields.
 		In this case, the isomophism is a well-known fact.
 
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
