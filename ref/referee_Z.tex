@@ -187,6 +187,8 @@
 
 		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $\bS^{n_i}_G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
 
+		\ar We have restricted this lemma to real projective spaces and Lens spaces only with coefficients in the appropriate finite field.
+
 		\anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
 
 		\ling{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
@@ -195,8 +197,6 @@
 		General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints.
 		We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
 		}
-
-		\anibal{I am ok with that. Please proceed.}
 
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
 
@@ -216,21 +216,8 @@
 		\]
 		is an isomorphism.
 
-		\ar We added the following explanation to the text:
-
-		\smallskip
-
-		\begin{quote}
-			We note that the left-most vertical map is an isomorphism.
-			Since no cells are introduced in dimensions $\le n_{j-1}$
-			when passing from $\bS^{n_{j-1}}$ to $\bS^{n_j}$,
-			the same holds for the quotient spaces.
-			Therefore the induced map on homology is an isomorphism
-			in degrees $< n_{j-1}$ \ling{how to prove the isomorphism in degree $n_{j-1}$ in the general case?}.
-		\end{quote}
-
-		\anibal{I am thinking that maybe this lemma should be restricted to the real and complex equatorial systems with their \(\cyc_2\) and \(\cyc_q\) actions.
-		Let us talk about it.}
+		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and lens Spaces and homology with coefficients in the appropriate finite fields.
+		In this case, the isomophism is a well-known fact.
 
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
 
@@ -392,6 +379,12 @@
 		\begin{quote}
 			We do not claim that the bound \(\frac{\pi}{6}\) surpasses all known lower bounds.
 			For example, the diameter distance \(\frac{1}{2} \lvert \operatorname{diam}(\rp^n) - \operatorname{diam}(\bS_{\rp^n}) \rvert = \frac{1}{2} \lvert \pi - 2\pi \rvert = \frac{\pi}{2}\) is greater.
+		\end{quote}
+
+		\item Included to the Acknoledgements
+		\medskip
+		\begin{quote}
+			We extend our gratitude to the reviewers of this paper for their many suggestions improving the presentation of this work.
 		\end{quote}
 	\end{enumerate}
 \end{document}

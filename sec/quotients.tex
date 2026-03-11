@@ -192,10 +192,11 @@ We say that a proper \(G\)-action by isometries on an equatorial system is \defn
 We establish the following lemma, which will be used in \cref{s:critical_radii_rpn} to obtain the homological radii of real projective spaces.
 Additionally, we expect that its usefulness will extend to Lens spaces; see \cref{s:critical_radii_lens}.
 
-\lemma Consider a $\VR$-compatible \(G\)-action on an equatorial system
+\lemma Let
 \[
 \bS^{n_1} \to \bS^{n_2} \to \bS^{n_3} \to \dotsb .
 \]
+be either the real or complex equatorial system with \(G\) respectively \(\cyc_2\) or \(\cyc_q\) for \(q\) an odd prime.
 If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for any \(i \leq j\),
 \[
 \firstdeath{n_i}{\bS^{n_j}_G} \leq \fillrad(\bS^{n_j}_G).
@@ -243,8 +244,8 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 	This VR-compatibility further implies that \(\tilde{f}_r^{n_{j-1}}\) is a weak equivalence, and therefore \(\rho^{j-1}\) is as well.
 	The horizontal map \(\rho^j\), defined similarly, is likewise a weak equivalence.
 
-	For any $i \leq j-1$, applying the degree $n_i$ reduced homology functor to diagram \eqref{eq:fundamental_bars_diagram} and using the fact that the $G$-action on the system is $\VR$-compatible (cf. \cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces:
-	for $r,\epsilon>0$ small,
+	For any \(i \leq j - 1\), apply the degree \(n_i\) reduced homology functor with appropriate finite field coefficients to the diagram \eqref{eq:fundamental_bars_diagram}.
+	Using that the \(G\)-action on the system is \(\VR\)-compatible (cf.~\cref{ss:system VR compatible}), we obtain a commutative diagram of vector spaces for $r,\epsilon > 0$ small:
 	\begin{equation}\label{eq:diagram of H}
 		\begin{tikzcd}[column sep = 4.5em]
 			\rH_{n_i}(\cX_{j-1})
@@ -267,12 +268,6 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 			\rH_{n_i}\big(\VR_{2\delta_j+\epsilon}(\cX_j)\big).
 		\end{tikzcd}
 	\end{equation}
-	We note that the left-most vertical map is an isomorphism.
-	Since no cells are introduced in dimensions $\le n_{j-1}$
-	when passing from $\bS^{n_{j-1}}$ to $\bS^{n_j}$,
-	the same holds for the quotient spaces.
-	Therefore the induced map on homology is an isomorphism
-	in degrees $< n_{j-1}$ \ling{how to prove the isomorphism in degree $n_{j-1}$ in the general case?}.
 	Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.
 	As $r$ is arbitrarily small, we obtain that $\rH_{n_i}(\iota_r)(\sigma_i)$ creates a bar born at $0$.
 
