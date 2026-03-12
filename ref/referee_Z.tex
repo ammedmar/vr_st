@@ -187,47 +187,54 @@
 
 		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $\bS^{n_i}_G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
 
-		\ar We have restricted this lemma to real projective spaces and Lens spaces only with coefficients in the appropriate finite field.
+		\ar We have restricted this lemma to real projective spaces and Lens spaces only. To address the issue of coefficients, we have done the following changes.
 
-		We also improved Section 4.1.2 to clarify the choice of coefficients:
+		We improved \S4.1.2 to clarify the choice of coefficients for filling radius:
 
 		\smallskip
 
 		\begin{quote}
-			The \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+			Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
 
-			This invariant was first introduced by Gromov \cite{gromov1983filling} in the case $G=\Z$, which requires $\cM$ to be orientable. 
-			Subsequently, the definition has been considered with more general coefficients, in particular with $G$ a field, allowing one to treat non-orientable manifolds as well (see, e.g., \cite{lim2024vietoris}).
-
-			In this work, we write the filling radius of \(\cM\) with coefficients in a field \(\field\) as
+			In this work, we consider the filling radius of \(\cM\) with coefficients in a field \(\field\) as
 			\[
 			\fillrad(\cM;\field)
 			=
-			\min \big\{ r \mid (0,r) \in \barc H_n(\rU(\cM);\field) \big\}.
+			\min \big\{ r \mid (0,r) \in \barc \rH_n(\rU(\cM);\field) \big\}.
 			\]
-			When $\cM$ is non-orientable (e.g., $\mathbb{RP}^n$), we take $\field = \Ftwo$ so that the top-dimensional fundamental class is nontrivial.
-			For spheres $S^n$, the choice of coefficients does not affect the filling radius.
-			For lens spaces $\rL_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
-			We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
+			For non-orientable manifolds (e.g., \(\mathbb{RP}^n\)), we take \(\field = \Ftwo\) so that the top-dimensional fundamental class is nontrivial.
+			For orientable manifolds (e.g., spheres and lens spaces), the choice of coefficients does not affect the filling radius, as noted in \cite{gromov1983filling}.
+			We adopt these conventions throughout and omit \(\field\) from the notation when clear from the context.
 		\end{quote}
 
 		\smallskip
 
-		In Section 4.7, we added the requirement of $q$ being an odd prime and the following sentence before the lemma:
+		We improved \S4.1.4 to clarify the choice of coefficients for homological radius:
+
+		\smallskip
+
+		\begin{quote}
+			Although different choices of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
+			However, for the results presented in this work, the choice of field (specifically \(\Ftwo\) for non-orientable manifolds and any field for orientable manifolds) does not affect the statements, so we omit it from the notation when clear from context.
+		\end{quote}
+
+		\smallskip
+
+		In \S4.7, we added a reminder that the ground field considered here is arbitrary:
 		
 		\smallskip
 
 		\begin{quote}
-			The ground field here is \(\mathbb{F}_q\).
+			Here we work with any field as the ground field.
 		\end{quote}
 
 		% \anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
 
-		% \l{Results on spheres hold with $\Z$ (e.g. Section 4.3.1).
+		% \l{Results on spheres hold with $\Z$ (e.g. \S4.3.1).
 		% We explictly using $\Z_2$ in 4.6 for real projective spaces.
-		% In Section 4.7, we should have added the coefficient choice for Lens spaces as well.
-		% General cases appear in Section 4.5.4 and Section 5.1. We should probably follow the reviewer's suggestion to add constraints.
-		% We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in Section 5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
+		% In \S4.7, we should have added the coefficient choice for Lens spaces as well.
+		% General cases appear in \S4.5.4 and \S5.1. We should probably follow the reviewer's suggestion to add constraints.
+		% We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in \S5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
 		% }
 
 		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
@@ -248,16 +255,14 @@
 		\]
 		is an isomorphism.
 
-		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and lens spaces and homology with coefficients in the appropriate finite fields.
+		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and Lens spaces and homology with coefficients in the appropriate finite fields.
 		In this case, the isomophism is a well-known fact.
 
-		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(L_q^n) = 0$, for $m$ even.
+		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(\rL_q^n) = 0$, for $m$ even.
 
-		\anibal{I think this is because we are working with \(\Fp\) coefficients implicitly, but we never say that. Do you think it would be a good idea to always add the coefficients to critical radii?}
-
-		\ling{I think better explanations are definitely needed, but adding them to the notation may not be necessary if our explanations are done well.}
-
-		\anibal{Sounds good. Lets talk about how to do that.}
+		\ar The original proof separated the odd and even cases by assuming integer coefficients.
+		We observed that Lemma 4.5.3 does not depend on homology and thus is independent of the choice of coefficients, and Lemma 4.5.4 holds as long as coefficients are chosen consistently across the spaces.
+		Consequently, we modified the proof in \S4.7 to work with general coefficients, treating the odd and even cases uniformly and providing a more concise argument.
 
 		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
 

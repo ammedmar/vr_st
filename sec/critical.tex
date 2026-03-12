@@ -20,21 +20,17 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 % \]
 % This is particularly meaningful when \(\cM\) is connected and not orientable, and \(\k = \Ftwo\).
 
-The \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
 
-This invariant was first introduced by Gromov \cite{gromov1983filling} in the case $G=\Z$, which requires $\cM$ to be orientable. 
-Subsequently, the definition has been considered with more general coefficients, in particular with $G$ a field, allowing one to treat non-orientable manifolds as well (see, e.g., \cite{lim2024vietoris}).
-
-In this work, we write the filling radius of \(\cM\) with coefficients in a field \(\field\) as
+In this work, we consider the filling radius of \(\cM\) with coefficients in a field \(\field\) as
 \[
 \fillrad(\cM;\field)
 =
-\min \big\{ r \mid (0,r) \in \barc H_n(\rU(\cM);\field) \big\}.
+\min \big\{ r \mid (0,r) \in \barc \rH_n(\rU(\cM);\field) \big\}.
 \]
-When $\cM$ is non-orientable (e.g., $\mathbb{RP}^n$), we take $\field = \Ftwo$ so that the top-dimensional fundamental class is nontrivial.
-For spheres $S^n$, the choice of coefficients does not affect the filling radius.
-For lens spaces $\rL_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
-We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
+For non-orientable manifolds (e.g., \(\mathbb{RP}^n\)), we take \(\field = \Ftwo\) so that the top-dimensional fundamental class is nontrivial.
+For orientable manifolds (e.g., spheres and lens spaces), the choice of coefficients does not affect the filling radius, as noted in \cite{gromov1983filling}.
+We adopt these conventions throughout and omit \(\field\) from the notation when clear from the context.
 
 \subsubsection{}\label{ss:first_critical_value}
 
@@ -56,7 +52,9 @@ Let us fix a field \(\field\) and an integer \(m \in \N\), the \defn{\(m\)-homol
 \]
 if \(\rH_m(\cX) \neq 0\).
 If \(\rH_m(\cX) = 0\), set \(\firstdeath{m}{\cX} = 0\).
-We will omit \(\field\) from the notation when clear from the context.
+Although different choices of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
+However, for the results presented in this work, the choice of field (specifically \(\Ftwo\) for non-orientable manifolds and any field for orientable manifolds) does not affect the statements, so we omit it from the notation when clear from context.
+%We will omit \(\field\) from the notation when clear from the context.
 
 Similarly, for a linear cohomology operation \(\theta\), we define the \defn{\(\img_\theta\)-radius} of \(\cX\) by
 \[
