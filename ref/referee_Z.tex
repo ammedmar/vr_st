@@ -203,8 +203,9 @@
 			\min \big\{ r \mid (0,r) \in \barc \rH_n(\rU(\cM);\field) \big\}.
 			\]
 			For non-orientable manifolds (e.g., \(\mathbb{RP}^n\)), we take \(\field = \Ftwo\) so that the top-dimensional fundamental class is nontrivial.
-			For orientable manifolds (e.g., spheres and lens spaces), the choice of coefficients does not affect the filling radius, as noted in \cite{gromov1983filling}.
-			We adopt these conventions throughout and omit \(\field\) from the notation when clear from the context.
+			For spheres $S^n$, the choice of coefficients does not affect the filling radius.
+			For lens spaces $\rL_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
+			We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
 		\end{quote}
 
 		\smallskip
@@ -214,18 +215,18 @@
 		\smallskip
 
 		\begin{quote}
-			Although different choices of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
-			However, for the results presented in this work, the choice of field (specifically \(\Ftwo\) for non-orientable manifolds and any field for orientable manifolds) does not affect the statements, so we omit it from the notation when clear from context.
+			Although the choice of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
+			Throughtout, we follow the convention in \S4.1.2, and omit \(\field\) from the notation whenever it is clear from context.
 		\end{quote}
 
 		\smallskip
 
-		In \S4.7, we added a reminder that the ground field considered here is arbitrary:
+		In \S4.7, we clarified that $q$ is an odd prime and added the following reminder that we work with $\bF_q$ coefficients:
 		
 		\smallskip
 
 		\begin{quote}
-			Here we work with any field as the ground field.
+			The ground field here is $\bF_q$.
 		\end{quote}
 
 		% \anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
@@ -256,13 +257,24 @@
 		is an isomorphism.
 
 		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and Lens spaces and homology with coefficients in the appropriate finite fields.
-		In this case, the isomophism is a well-known fact.
+		%In this case, the isomorphism is a well-known fact.
+		We added the following explanation right after Diagram~(6) for clarity:
+
+		\smallskip
+
+		\begin{quote}
+			The left-most vertical map is an isomorphism in all degrees $\le n_{j-1}$.
+			Indeed, with appropriate finite field coefficients, the induced map on cohomology sends algebra generators (see \S3.3.5 and \S3.3.7) to algebra generators, hence is an isomorphism in all degrees $\le n_{j-1}$.
+			By the universal coefficient theorem, the same holds for homology.
+		\end{quote}
 
 		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(\rL_q^n) = 0$, for $m$ even.
 
-		\ar The original proof separated the odd and even cases by assuming integer coefficients.
-		We observed that Lemma 4.5.3 does not depend on homology and thus is independent of the choice of coefficients, and Lemma 4.5.4 holds as long as coefficients are chosen consistently across the spaces.
-		Consequently, we modified the proof in \S4.7 to work with general coefficients, treating the odd and even cases uniformly and providing a more concise argument.
+		\ar The original proof handled the odd and even cases separately using integer coefficients.
+		We observed that Lemma 4.5.3 is independent of the coefficient choice, whereas Lemma 4.5.4 requires appropriate field coefficients ($\Ftwo$ for $\rp^n$ and $\bF_q$ for $\rL_q^n$).
+		These coefficient choices ensure that the isomorphism mentioned in Item 15 holds up to the top dimension of the smaller space.
+		
+		We have now clarified the coefficient choices and adjust the proof in \S4.7, providing a unified treatment of the odd and even cases and a more streamlined argument.
 
 		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
 
