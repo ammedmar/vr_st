@@ -221,7 +221,10 @@ Then, we have the following result.
 where $\Sq^k$ lands in degree \(m\).
 
 \begin{proof}
-	(1) When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
+	(1) 
+	As in the proof of \cref{sss:db_upper_bound}, we first invoke \cref{ss:algebraic_stability} to replace the interleaving distance with the bottleneck distance between the corresponding barcodes, since both metric spaces are totally bounded and their persistent homology is therefore q-tame.
+
+	When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
 	$2\firstdeath{m}{\rp^n} = \tfrac{2\pi}{3}$.
 	Thus, the upper bound we computed in \cref{eq:db_usual_upper_bound} on the interleaving distance between persistent homology evaluates as
 	\[\max\big\{|\zeta_m - 2\firstdeath{m}{\cM} |, \tfrac{\pi - \zeta_n}{2}\big\} =
@@ -242,7 +245,10 @@ where $\Sq^k$ lands in degree \(m\).
 	\]
 \end{proof}
 
-By combining the above theorem with \cref{thm:stability intro}, we derive a lower bound of \(\frac{1}{2} \cdot \frac{\pi}{3}\) for the Gromov–Hausdorff distance between \(\rp^n\) and \(\bS_{\rp^n}\), larger than the bound obtained from persistent homology, which is at most \(\frac{1}{2} \cdot \frac{\pi}{4}\).
+% By combining the above theorem with \cref{thm:stability intro}, we derive a lower bound of \(\frac{1}{2} \cdot \frac{\pi}{3}\) for the Gromov–Hausdorff distance between \(\rp^n\) and \(\bS_{\rp^n}\), larger than the bound obtained from persistent homology, which is at most \(\frac{1}{2} \cdot \frac{\pi}{4}\).
+By combining Item~(2) of the above theorem with \cref{thm:stability intro}, we obtain a lower bound of \(\frac{1}{2}\cdot\frac{\pi}{3}\) for the Gromov--Hausdorff distance between \(\rp^n\) and \(\bS_{\rp^n}\).
+For comparison, applying Item~(1) together with the stability theorem for persistent homology (see page~\pageref{thm:stability ph}) yields a lower bound of at most \(\frac{1}{2}\cdot\frac{\pi}{4}\).
 This result demonstrates the stronger distinguishing power of persistent cohomology operations compared to persistent homology.
 We do not claim that the bound \(\frac{\pi}{6}\) surpasses all known lower bounds.
 For example, the diameter distance \(\frac{1}{2} \lvert \operatorname{diam}(\rp^n) - \operatorname{diam}(\bS_{\rp^n}) \rvert = \frac{1}{2} \lvert \pi - 2\pi \rvert = \frac{\pi}{2}\) is greater.
+
