@@ -8,7 +8,8 @@ We denote by $K(\pi, n)$ any connected cellular space which has only one non-tri
 Such a space is unique up to homotopy, and is referred to as an \defn{Eilenberg--MacLane space}.
 For example, since the circle has the real line as its universal cover and fundamental group isomorphic to $\Z$, it is a model for $K(\Z,1)$.
 
-Let $\cX$ be a space.
+Let $\cX$ be a space with the homotopy type of a connected cellular space.
+We use reduced homology and cohomology for the remaining of the text.
 The \defn{Hurewicz homomorphism} $h \colon \pi_i(\cX) \to \rH_i(\cX)$ is defined by choosing a generator $u$ of $\rH_i(\bS^i)$ and sending the homotopy class $[f]$ of a based map $f \colon \bS^i \to \cX$ to $f_*(u)$, where $\bS^i$ denotes the $i$-sphere.
 Using the properties of this map and the universal coefficient theorem for cohomology one shows the existence of a preferred class $\iota_n \in \rH^n(K(\pi, n); \pi)$ termed the \defn{fundamental class} of $K(\pi, n)$.
 
@@ -35,7 +36,7 @@ We will denote by $\cO(\pi, n; G,m)$ the set of cohomology operations of type $(
 
 \subsubsection{}
 There is a bijection between $\cO(\pi, n; G,m)$ and homotopy classes of based maps between their Eilenberg--MacLane spaces.
-Explicitly, given $[f] \in [K(\pi,n), K(G,m)]$ and an $n$-cohomology class in a space $\cX$ with $\pi$ coefficients, say $g^*(\iota_m)$ for some $g \colon \cX \to K(G, m)$, the value of the cohomology operation $\theta_{\cX}^{[f]}$ on it is
+Explicitly, given $[f] \in [K(\pi,n), K(G,m)]$ and an $n$-cohomology class in a space $\cX$ with $\pi$ coefficients, say $g^*(\iota_n)$ for some $g \colon \cX \to K(\pi, n)$, the value of the cohomology operation $\theta_{\cX}^{[f]}$ on it is
 \[
 \theta_{\cX}^{[f]}(g^*(\iota_m)) = (f \circ g)^*(\iota_m).
 \]
@@ -57,11 +58,44 @@ The inclusion of $\cX$ into $\sus \cX$ induces an isomorphism
 \]
 in cohomology with any coefficients, referred to as the \defn{suspension isomorphism}.
 
+%\subsubsection{}
+%
+%A \defn{stable cohomology operation of degree $k$} is a natural family of cohomology operations
+%\[
+%\set{\theta^n \in \cO(n,\pi ; n+k,G)}_{n \in \N}
+%\]
+%commuting with suspension isomorphisms, i.e., making the diagram
+%\[
+%\begin{tikzcd}
+%	\rH^n(\cX; \pi) \rar["\theta^n_\cX"] \dar["\cong" left] & \rH^{n+k}(\cX; G) \dar["\cong" right] \\
+%	\rH^{n+1}(\sus\cX; \pi) \rar["\theta^{n+1}_{\sus\cX}"] & \rH^{n+1+k}(\sus\cX; G)
+%\end{tikzcd}
+%\]
+%commute for each \(\cX\) and $n$.
+%We will denote by $\cO^{\mathrm{st}}_k(\pi, G)$ the set of stable cohomology operations of degree $k$.
+%
+%Using the representability of cohomology, $\cO^{\mathrm{st}}_k(\pi, G)$ can be described as the colimit of the groups
+%\[
+%\rH^{n+k}(K(\pi, n); G) \cong [K(\pi, n), K(G, n+k)]
+%\]
+%along certain maps
+%\[
+%[K(\pi, n), K(G, n+k)] \to [K(\pi, n+1), K(G, n+1+k)]
+%\]
+%defined by the functoriality of $\sus$ and a natural homotopy equivalence
+%\begin{equation}\label{eq:suspension of K(pi,n)}
+%	\sus K(\pi, n) \cong K(\pi, n+1).
+%\end{equation}
+%In other words, we have
+%\[
+%\cO^\st_k(\pi, G) \cong \colim_n \rH^{n+k}(K(\pi, n); G).
+%\]
+
 \subsubsection{}
 
-A \defn{stable cohomology operation of degree $k$} is a natural family of cohomology operations
+A \defn{stable cohomology operation of degree \(k\)} is a natural family of cohomology operations
 \[
-\set{\theta^n \in \cO(n,\pi,n+k,G)}_{n \in \N}
+\set{\theta^n \in \cO(n,\pi ; n+k,G)}_{n \in \N}
 \]
 commuting with suspension isomorphisms, i.e., making the diagram
 \[
@@ -70,27 +104,25 @@ commuting with suspension isomorphisms, i.e., making the diagram
 	\rH^{n+1}(\sus\cX; \pi) \rar["\theta^{n+1}_{\sus\cX}"] & \rH^{n+1+k}(\sus\cX; G)
 \end{tikzcd}
 \]
-commute for each \(\cX\) and $n$.
-We will denote by $\cO^{\mathrm{st}}_k(\pi, G)$ the set of stable cohomology operations of degree $k$.
+commute for each \(\cX\) and \(n\).
+We denote by \(\cO^{\mathrm{st}}_k(\pi, G)\) the set of stable cohomology operations of degree \(k\).
 
-Using the representability of cohomology, $\cO^{\mathrm{st}}_k(\pi, G)$ can be described as the colimit of the groups
+Using the representability of cohomology, \(\cO^{\mathrm{st}}_k(\pi, G)\) can be described as the colimit of the groups
 \[
-\rH^{n+k}(K(\pi, n); G) \cong [K(\pi, n), K(G, n+k)]
+\rH^{n+k}(K(\pi, n); G) \cong [K(\pi, n), K(G, n+k)].
 \]
-along certain maps
+Explicitly, the transition maps are induced by the suspension isomorphism together with a chosen map
 \[
-[K(\pi, n), K(\pi, n+k)] \to [K(\pi, n+1), K(G, n+1+k)]
+s_n \colon \sus K(\pi, n) \to K(\pi, n+1)
 \]
-defined by the functoriality of $\sus$ and a natural homotopy equivalence
-\begin{equation}\label{eq:suspension of K(pi,n)}
-	\sus K(\pi, n) \cong K(\pi, n+1).
-\end{equation}
-In other words, we have
+adjoint to a weak equivalence
 \[
-\cO^\st_k(\pi, G) \cong \colim_n \rH^{n+k}(K(\pi, n); G).
+K(\pi, n) \simeq \Omega K(\pi, n+1).
 \]
 
-\subsubsection{} We will be interested in combining all stable operations over a fixed coefficient field $\k$ to form, via compositions, the (graded) algebra:
+\subsubsection{}
+
+We will be interested in combining all stable operations over a fixed coefficient field $\k$ to form, via compositions, the (graded) algebra:
 \[
 \cO^\st(\k) = \bigsqcup_k \cO^{\mathrm{st}}_k(\k, \k).
 \]

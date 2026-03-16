@@ -11,16 +11,7 @@ Throughout the text, Riemannian manifolds are thought of as metric spaces with t
 
 \subsubsection{}\label{ss:filling_radii_def}
 
-% Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed orientable Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; \Z)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\).
-
-% This definition can be generalized to incorporate different homology coefficients, as explored in \cite{lim2024vietoris}.
-% We are interested in working over a field \(\k\), for which we have
-% \[
-% \fillrad(\cM; \field) = \min\set[\big]{r \mid (0, r) \in \barc \rH_n(\rU(\cM); \field)}.
-% \]
-% This is particularly meaningful when \(\cM\) is connected and not orientable, and \(\k = \Ftwo\).
-
-Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cM)\) and $G$ is an abelian group.
 
 In this work, we consider the filling radius of \(\cM\) with coefficients in a field \(\field\) as
 \[
@@ -29,7 +20,7 @@ In this work, we consider the filling radius of \(\cM\) with coefficients in a f
 \min \big\{ r \mid (0,r) \in \barc \rH_n(\rU(\cM);\field) \big\}.
 \]
 For non-orientable manifolds (e.g., \(\mathbb{RP}^n\)), we take \(\field = \Ftwo\) so that the top-dimensional fundamental class is nontrivial.
-For spheres $\bS^n$, the choice of coefficients does not affect the filling radius.
+For spheres $S^n$, the choice of coefficients does not affect the filling radius.
 For lens spaces $\rL_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
 We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
 
@@ -53,7 +44,7 @@ Let us fix a field \(\field\) and an integer \(m \in \N\), the \defn{\(m\)-homol
 \]
 if \(\rH_m(\cX) \neq 0\).
 If \(\rH_m(\cX) = 0\), set \(\firstdeath{m}{\cX} = 0\).
-Although the choice of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
+Although the choice of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius.
 Throughtout, we follow the convention in \cref{ss:filling_radii_def}, and omit \(\field\) from the notation whenever it is clear from context.
 %We will omit \(\field\) from the notation when clear from the context.
 
