@@ -29,11 +29,6 @@ Explicitly, for any \(r > 0, g\in G\) and $\sum \lambda_i x_i \in \VR_r(\cX)$,
 g \cdot \sum \lambda_i x_i = \sum \lambda_i (g \cdot x_i).
 \]
 With respect to this action, there is an induced map on orbit spaces given by
-% \begin{align*}
-% 	\tilde h_r \colon \VR_r(\cX_G) &\to \VR_r(\cX)_G \\
-% 	\textstyle\sum\lambda_i [x_i] &\mapsto \textstyle \big[\sum\lambda_i x_i\big].
-% \end{align*}
-% If the action is proper and by isometries, as well as satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $\tilde{h}_s$ is an isomorphism of simplicial complexes.
 \begin{align*}
 	h_r \colon \VR_r(\cX)_G &\to  \VR_r(\cX_G) \\
 	 \textstyle \big[\sum\lambda_i x_i\big] & \mapsto \textstyle\sum\lambda_i [x_i].
@@ -54,28 +49,6 @@ We extend the proof to $\cyc_q$ for \(q \geq 2\).
 
 \lemma
 The canonical $\cyc_2$ and $\cyc_q$ actions on round unit spheres are strong $r$-diameter for every $0 < r \leq \tfrac{2\pi}{q(q+1)}$.
-
-% \begin{proof}
-% 	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\cyc_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
-% 	Assume $\diam_{\rL_q}\{[x_0], \dots, [x_k]\} < r$.
-% 	Then, for each $i \in \{1, \dots, k\}$, there exists $g_i \in \cyc_q$ such that $d_{\bS}(x_0, g_i x_i) < r$. Let $x_i^* = g_i x_i$. We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \leq i, j \leq k$.
-% 	If this is not the case, then there exists $0 < a < q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
-% 	This leads to the following	contradiction:
-% 	\begin{align*}
-% 		\frac{2\pi}{q} \,=\, d_{\bS}(x_0, \omega x_0)
-% 		\leq\, & \, d_{\bS}(x_0, x_i^*) \, + \, d_{\bS}(x_i^*, \omega^a x_j^*) \, + \, \\
-% 		& \sum_{b=2}^a d_{\bS}(\omega^b x_j^*, \omega^{b-1} x_j^*) \, + \, d_{\bS}(\omega x_j^*, \omega x_0)\\
-% 		< \, & \, r \cdot (a + 2) \, \leq \, r \cdot (q + 1) \, \leq \, \frac{2\pi}{q}.
-% 	\end{align*}
-% 	Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds, completing the proof.
-
-% 	We still need to verify the uniqueness of such $\{g_i\}$.
-% 	This is because $x_i^*$ and $gx_i^*$, for $g$ a non-identity element, cannot simultaneously satisfy $d_{\bS}(x_0, x_i^*) < r$ and $d_{\bS}(x_0, gx_i^*) < r$.
-% 	If they were, then we would have
-% 	\[\tfrac{2\pi}{q} \leq d_{\bS}(x_i^*, gx_i^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, gx_i^*) < 2r \leq \tfrac{2\pi}{q} \cdot \tfrac{2}{q+1},
-% 	\]
-% 	contradicting the assumption $q \geq 2$.
-% \end{proof}
 
 \begin{proof}
 	Let $\bS$ be a round unit sphere of odd-dimension (or of any dimension if $q=2$), $\rL_q$ be the Lens space defined by the action of \(\cyc_q\) on \(\bS\), and $\omega = e^{2\pi i/q}$.
@@ -270,7 +243,7 @@ If $\fillrad(\bS^{n_i}_G)$ is non-decreasing as a function of \(i\) then, for an
 	\end{equation}
 	The left-most vertical map is an isomorphism in all degrees $\le n_{j-1}$.
 	Indeed, with appropriate finite field coefficients, the induced map on cohomology sends algebra generators (see \S\ref{sss:cohomology_rpn} and \S\ref{sss:cohomology_lens}) to algebra generators, hence is an isomorphism in all degrees $\le n_{j-1}$.
-	By the universal coefficient theorem, the corresponding maps on homology are also isomorphisms.
+	By the universal coefficient theorem, the same holds for homology.
 
 	Let $\sigma_i$ be a representative class for the bar $(0,\, 2\beta_{i}^{j-1})$ in $\VR(\cX_{j-1})$.
 	Commutativity of the left-hand-side square of Diagram~(\ref{eq:diagram of H}) implies that $\rH_{n_i}(\iota_r)$ is an isomorphism.

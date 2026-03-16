@@ -159,29 +159,6 @@ Let $m \leq n$.
 	Thus in all cases $|\zeta_m - r| < \tfrac{\zeta_n}{2}$, and therefore $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
 \end{proof}
 
-%As before, let $\zeta_n = \arccos{(-\tfrac{1}{n+1})}$, which decreases as $n$ increases.
-%We derive the following lemma, which, while straightforward, requires careful exposition.
-%
-%\lemma
-%Let $m \leq n$.
-%\begin{enumerate}
-%	\item \(\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}.\)
-%	\item For any $r \in \big[\zeta_n, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r |, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
-%\end{enumerate}
-%
-%\begin{proof}
-%	Since $-\frac{1}{n+1} < 0$ we have $\zeta_n = \arccos\!\left(-\frac{1}{n+1}\right) > \arccos(0) = \frac{\pi}{2}$.
-%	Also $\zeta_1 = \arccos\!\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$.
-%
-%	(1) The first inequality follows from $\zeta_m - \zeta_n \le \zeta_1 - \zeta_n < \tfrac{2\pi}{3} - \tfrac{\pi}{2} = \tfrac{\pi}{6} < \tfrac{\pi - \zeta_n}{2}$.
-%	The second inequality holds because $\zeta_n$ is larger than $\tfrac{\pi}{2}$.
-%
-%	(2) Since $\tfrac{\pi - \zeta_n}{2}$ is less than $\tfrac{\zeta_n}{2}$, it remains to show $|\zeta_m - r |$ is also less than $\tfrac{\zeta_n}{2}$, which follows from
-%	\(
-%	|\zeta_m - r | < \max\big\{\zeta_m - \zeta_n, \tfrac{\zeta_n}{2}\big\} = \tfrac{\zeta_n}{2},
-%	\) by Part (1).
-%\end{proof}
-
 \subsubsection{}\label{sss:comparison_lemma_zeta_n}
 
 We will finish the proof of \cref{sss:choice of S_M} by completing the third step outlined therein.
@@ -221,7 +198,7 @@ Then, we have the following result.
 where $\Sq^k$ lands in degree \(m\).
 
 \begin{proof}
-	(1) 
+	(1)
 	As in the proof of \cref{sss:db_upper_bound}, we first invoke \cref{ss:algebraic_stability} to replace the interleaving distance with the bottleneck distance between the corresponding barcodes, since both metric spaces are totally bounded and their persistent homology is therefore q-tame.
 
 	When $1 \leq m \leq n$, we have shown in \cref{s:critical_radii_rpn} that
