@@ -1,0 +1,662 @@
+\documentclass{amsart}
+\input{../aux/style}
+\input{../aux/usualcmds}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\input{../aux/commands} % add commands here
+\addbibresource{../aux/bibliography.bib} % add references here
+\usepackage{enumitem}
+\setlist{label=\arabic{enumi}.,itemsep=\medskipamount, left=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\title[Referee reply]{\underline{REPLY TO REFEREE Y} \\ \medskip Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
+
+\newcommand{\ar}{\medskip\noindent\textit{Reply}:\ }
+\renewcommand{\thesection}{\arabic{section}}
+
+\begin{document}
+	\noindent\today
+	\maketitle
+
+	We would like to thank the reviewer for a careful and insightful analysis of our paper, and for the many suggestions improving its presentation.
+	We copy their report for completeness.
+
+	\section{Reviewer's summary}
+
+	Recent years have seen the development of the theory of persistent cohomology operations.
+	The authors identify the lack of a comprehensive exploration of the properties of these operations in the literature and intend this paper to address this gap in the literature, as well as to contribute to questions of applicability of these operations.
+
+	For a fixed linear cohomology operation $\theta$ and an $\mathbb{R}$-filtered space $X$, one can study the $\mathbb{R}$-filtered modules defined by the images $\operatorname{Im}\theta$ and kernels $\operatorname{Ker}\theta$ of $\theta$.
+	This is what is understood by persistent cohomology operations.
+	Relying on prior decomposition results for the Vietoris--Rips filtration $\mathrm{VR}(X)$ of a metric space $X$ on the level of spaces (namely, that $\mathrm{VR}(X \times Y) \simeq \mathrm{VR}(X) \times \mathrm{VR}(Y)$ and $\mathrm{VR}(X \vee Y) \simeq \mathrm{VR}(X) \vee \mathrm{VR}(Y)$), the authors establish analogous decomposition results for
+	\[
+	\operatorname{Im}^{\mathrm{VR}}_{\theta}(\cdot) := \operatorname{Im}\theta(\mathrm{VR}(\cdot))
+	\quad \text{and} \quad
+	\operatorname{Ker}^{\mathrm{VR}}_{\theta}(\cdot) := \operatorname{Ker}\theta(\mathrm{VR}(\cdot)).
+	\]
+	The authors also establish Vietoris--Rips stability results for persistent cohomology operations, and use lower bounds on the interleaving distance between persistence modules $\operatorname{Im}^{\mathrm{VR}}_{\mathrm{Sq}^k}$ of the wedge product of spheres $\bS^1 \vee \dots \vee S^n$ and the real projective space $\mathbb{RP}^n$ to establish new lower bounds for the Gromov--Hausdorff distance between these spaces (here $\mathrm{Sq}^k$ are the Steenrod squares).
+	The authors demonstrate that the lower bounds achieved by using persistent cohomology operations are strictly greater than the bound possible from persistent homology, thus establishing a greater discriminatory power of persistent cohomology operations for this example.
+	The bounds in the proofs rely on the knowledge of certain critical radii of round spheres $\bS^{n+1}(r)$ and of $\mathbb{RP}^n$; however, the methods in the proofs are more general and can be applied to more spaces if their critical radii are known (the intermediate theorems are stated for more general spaces for that purpose).
+	For example, the authors specify the exact statements necessary to obtain lower bounds for the Lens spaces.
+
+	The authors succeed in the expressed goals of giving a unified account of persistent cohomology operations, establishing theoretical properties (like decomposition results and stability results), and exhibiting applicability of these modules.
+	The article is well-structured, clearly written, and provides the necessary background on cohomology operations, persistence functors, and metric geometry.
+	It also provides comprehensive references to the current literature on these topics.
+	Most proofs follow straightforward technical arguments, but require expert knowledge of previously established results in the above diverse topics, which makes a significant contribution to closing the existing gaps in the literature.
+	Additionally, the article contributes to the study of Gromov--Hausdorff distances of metric spaces, which is a difficult topic with not many results known.
+
+	\section{Reviewer's individual items}
+
+	\begin{enumerate}
+		\item P.~9, beginning of sec.~3.1.1, line ``We denote by $K(\pi, n)\dots$'':
+		maybe note that $K(\pi, n)$ is connected.
+
+		\ar Changed as suggested (CAS).
+
+		\item In sec.~3.2.1, the cohomology operations are defined for cellular spaces.
+		Why is such a restriction needed? Perhaps related, in the proof of Lemma~3.6.1, $Z$ is assumed to be cellular. I am not sure I see why it is needed in the proof.
+		I am guessing this is because the authors want to cite results from~[BL23] (where the category of spaces is restricted to CGWH), but it would be
+		nice if the authors could elaborate (add a couple of sentences, give specific references) on the necessity of the cellular assumption in general and for
+		the proofs of Lemmas~3.6.1 and~3.6.2 in particular.
+
+		\ar
+		% Together with the reasons presented by the referee, we also want to avoid the multiplicity of homology/cohomology theories that are available once the category of cellular spaces is abandoned.
+		% As the referee knows, there are multiple non-equivalent theories for more complicated spaces.
+		% \l{I propose the following: \\
+		% \\
+		Together with the reasons presented by the referee, we also want to avoid the multiplicity of homology/cohomology theories that are available once the category of cellular spaces is abandoned.
+		We agree with the referee that it will be nice to elaborate on the necessity of the cellular assumption. We added the following sentences to the begining of Section 3: \\
+		\\
+		``Throughout this section we work with cellular (in particular CW) spaces.
+		This ensures that singular and cellular (co)homology agree [Hat02, Theorem 2.35], allowing us to fix a single well-behaved cohomology theory.
+		Moreover, since CW complexes are CGWH spaces, the results of~[BL23], formulated in the category of CGWH spaces, are directly applicable.
+		This assumption is used in Lemmas~3.5.3, 3.6.1, and~3.6.2."
+
+		\item At the beginning of sec.~3.4.1, p.~12, the authors write ``For any prime $p$, the field $\mathbb{F}_p$ is additively generated, so all cohomology operations in $\mathcal{A}_p$ are linear''. I am not sure it is very easy/straightforward to see the implication, so I think it’s better to also give a reference. (Alternatively, one could also state, with a reference, that stable operations are additive, or that the Steenrod squares are homomorphisms.)
+
+		\ar
+		% We need to show that for any \(k \in \Fp\) the operation \(\phi\) satisfies \(\phi(k x) = k \phi(x)\) knowing that \(\phi(x+y) = \phi(x) + \phi(y)\).
+		% Since \(k x = \sum_{k} x\) this is immediate.
+		% \l{I propose the following:\\
+		% \\
+		We need to show that for any \(k \in \Fp\) the operation \(\phi\) satisfies \(\phi(k x) = k \phi(x)\) knowing that \(\phi(x+y) = \phi(x) + \phi(y)\).
+		Since scalar multiplication in $\mathbb{F}_p$ is given by repeated addition (\(k x = \sum_{k} x\)), additivity implies $\mathbb{F}_p$-linearity.\\
+		We have expanded the mentioned sentence to add the above explanation:\\
+		\\
+		``For any prime $p$, since scalar multiplication in $\mathbb{F}_p$ is given by repeated addition, additivity implies $\mathbb{F}_p$-linearity.
+		Hence all cohomology operations in $\cA_p$ are linear.''
+
+		\item Sec.~3.5.3, p.~13, subscripts in $X_{s,y}$ and $M_{s,y}$ are probably $X_{s,t}$ and $M_{s,t}$.
+
+		\ar Thank you, CAS.
+
+		\item P.~18, sec.~4.3.1, the sentence ending in ``\dots since the thickening shares the same homology as the original Vietoris--Rips complex.'' maybe needs a reference (e.g.~[Gil24], which is mentioned later in sec.~4.3.2).
+
+		\ar Thank you, CAS. We have added `[Cor.~3, Gil24]' to the sentence.
+
+		\item P.~21, sec.~4.4.3, in the proof of the Lemma, I am not sure I see why
+		\[
+		\sum_{b=2}^{a} d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r(a-1),
+		\]
+		which seems to be needed. If the assumption is that $d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r$, then it seems to contradict the last paragraph of the proof where $2\pi/q \le d_S(x_i^*, g x_i^*)$.
+		I apologize if I am confusing something here.
+
+		If I am not confusing something, and there is indeed a contradiction, then perhaps the proof can utilize the reverse triangle inequality with
+		\[
+		d_S(x_i^*, \omega^q x_j^*) \ge
+		\left| d_S(x_i^*, x_j^*) - d_S(x_j^*, \omega^q x_j^*) \right|
+		\]
+		for any $q$ and the inequality
+		\[
+		d_S(x_i^*, x_j^*) \le d_S(x_i^*, x_0) + d_S(x_0, x_j^*) < 2r.
+		\]
+
+		\ar We thank the referee for pointing out the gap in the proof. We have followed the referee's suggestion and modified the proof as follows to fill the gap:
+
+		\medskip
+		\begin{quote}
+			We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \le i,j \le k$.
+			If this is not the case, then there exist indices $i,j$ and $1 \leq a \leq q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+			Applying the triangle inequality to $x_i^*, x_j^*$ and $x_0$, we have
+			\[d_{\bS}(x_i^*, x_j^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, x_j^*) < 2r.\]
+			On the other hand, applying the triangle inequality to $x_i^*, x_j^*$ and $\omega^a x_j^*$, we have
+			\[
+			d_{\bS}(x_i^*, x_j^*) \geq d_{\bS}(x_j^*, \omega^a x_j^*) - d_{\bS}(x_i^*, \omega^a x_j^*) > \frac{2\pi}{q} - r,
+			\]
+			given $1 \leq a \leq q-1$.
+			Combining the above two inequalities, since $q \geq 2$, we have
+			\[
+			2r > \frac{2\pi}{q} - r \implies r > \frac{2\pi}{3q} \geq \frac{2\pi}{q(q+1)},
+			\]
+			which contradicts the assumption $r \le \frac{2\pi}{q(q+1)}$.
+			Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds for all $1 \le i,j \le k$, completing the proof of the claim.
+		\end{quote}
+
+		\item P.~24, first paragraph, in the sentence ``Moreover, this bar dies after $\delta_j$ as explained below.'' shouldn’t it be ``dies before'' instead? Similarly, in the two sentences that follow it (``dies before'' instead of ``dies after'').
+		Additionally, in this paragraph, one starts with the cycle representative with the lifespan $2\beta_{j-1}^i$ in $\mathrm{VR}$, so it seems to me that all
+		death times have to have a coefficient $2$ (since one is working in $\mathrm{VR}_{2r}$, instead of $U_r$).
+
+
+		\ar We thank the referee for pointing these out. We agree that the bars die `before' $2\delta_j$ (not `after'). We have also added the missing coefficient of $2$ to all death times in the proof of Lemma~4.5.4. We updated Diagrams~(5) and~(6) and the mentioned paragraph to reflect these corrections: all death times are now properly stated as $2\delta_j$ and $2\delta_{j-1}$.
+
+		\item P.~24, sec.~4.6, first paragraph, I think the reader might appreciate a reminder that here $\bS^n$ means $\bS^n(1)$.
+		Similarly, in the proof of the Lemma in that section, it would be nice to have a reminder that $\bS^n_{C_q}$ is a projective/Lens space of a different diameter.
+
+		\ar Added ``the round sphere of radius 1'' to this sentence:
+		We will consider every sphere \(\bS^n(2)\) to have radius 2 so the quotient \(\rp^n\) has the same diameter as \(\bS^n\), the round sphere of radius 1.
+
+		Added ``Lens space'' to this sentence:
+		We are interested in spheres \(\bS^{2n+1}(q)\) of radius \(q\), so the quotient Lens space \(\rL_q^n\) has the same diameter as the unit sphere \(\bS^{2n+1}\).
+
+		\item Sec.~4.6, in the proof of the lemma, part~(2), sentence ``By~[Kat83], the filling radius of $\bS^i(2)_{C_2}$ is $\pi/6$'': probably a typo and it should be $\bS^i(1)_{C_2}$.
+
+		\ar We have corrected the typo as suggested. The proof now reads:
+
+		\smallskip
+
+		\begin{quote}
+			(2) We only need to prove for the case of $m\leq n$, since the other case follows from the definition since \(\rH_m(\rp^n) = 0\) if \(m > n\) or \(m = 0\).
+			Consider the \(\rC_2\)-action on the real equatorial system \(\bS^{1} \to \bS^{2} \to \dotsb \to \bS^{n}\).
+			By \textsection 4.5.3, this system is \(\VR\)-compatible.
+			By \cite{katz1983filling}, the filling radius of the quotient space $\bS^{i}_{\rC_2}$ is $\frac{\pi}{6}$ for any $i \geq 1$, and thus $\fillrad(\bS^{i}_{\rC_2})$ is non-decreasing as a function of \(i\).
+			Therefore, we can apply \textsection 4.5.4 to deduce that for any \(m \leq n\),
+			\[
+			\firstdeath{m}{\bS^{n}_{\rC_2}} \leq \fillrad(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}.
+			\]
+			On the other hand, $\firstdeath{m}{\bS^{n}_{\rC_2}}\geq \crit(\bS^{n}_{\rC_2}) = \tfrac{\pi}{6}$.
+			Thus, the equality holds.
+			As $\rp^n$ is the quotient of the $n$-sphere with radius $2$,
+			\[\firstdeath{m}{\rp^n} = \firstdeath{m}{\bS^{n}(2)_{\rC_2}} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}.\]
+		\end{quote}
+	\end{enumerate}
+
+	\section{Other changes}
+
+	\begin{enumerate}
+		\item Added a `Recent developments' section to the introduction, describing some recent follow-up work:
+		\medskip
+		\begin{quote}
+			After the posting of the present work, F.~M\'emoli and the second-named author studied Gromov--Hausdorff estimates for \(\rp^n\) and \(\bS^n\) using persistent invariants derived from cup-length, the Lyusternik--Schnirelmann category, topological complexity, and zero-divisor cup-length \cite{memoli2025persistence}.
+			Their analysis also yields the lower bound \(\frac{\pi}{3}\) obtained here via persistent cohomology operations.
+		\end{quote}
+
+		\item Included to the Acknoledgements
+		\medskip
+		\begin{quote}
+			We extend our gratitude to the reviewers of this paper for their many suggestions improving the presentation of this work.
+		\end{quote}
+
+		\item Added this sentence to the last paragraph of the paper:
+		\medskip
+		\begin{quote}
+			We do not claim that the bound \(\frac{\pi}{6}\) surpasses all known lower bounds.
+			For example, the diameter distance \(\frac{1}{2} \lvert \operatorname{diam}(\rp^n) - \operatorname{diam}(\bS_{\rp^n}) \rvert = \frac{1}{2} \lvert \pi - 2\pi \rvert = \frac{\pi}{2}\) is greater.
+		\end{quote}
+	\end{enumerate}
+
+    
+    \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%
+% \title[Referee reply]{\underline{REPLY TO REFEREE Z} \\ \medskip Persistent cohomology operations \\ and Gromov--Hausdorff estimates}
+
+% 	\noindent\today
+% 	\maketitle
+
+    \begin{center}
+        {\large\bfseries\underline{REPLY TO REFEREE Z}\par}
+        \medskip
+        {\bfseries PERSISTENT COHOMOLOGY OPERATIONS \\ 
+        AND GROMOV--HAUSDORFF ESTIMATES\par}
+        \medskip
+        % \today
+    \end{center}
+
+    \setcounter{section}{0}
+
+	We would like to thank the reviewer for a careful and insightful analysis of our paper, and for the many suggestions improving its presentation.
+	We copy their report for completeness.
+
+	\section{Reviewer's summary}
+
+	This paper introduces considerations of cohomology operations in the theory of persistence.
+	More precisely, the authors define the image and the kernel persistence module of a cohomology operation with respect to the Vietoris--Rips filtration of metric spaces.
+	These represent more general concepts than the persistence module, as the identity and the trivial cohomology operation, respectively, recover the classical notions.
+	The first general results in the paper are formulas for products (Theorem A) and wedge sums (Theorem B) of metric spaces.
+	The second main result is a stability theorem (Theorem C), which represents a lower bound on the Gromov--Hausdorff distance between metric spaces by the interleaving distance of the persistence module of the image of a linear cohomology operation.
+	Theorem C represents a generalization of stability results by Chazal et al.\ relating the Gromov--Hausdorff distance and the interleaving distance of persistence modules.
+	One of the key tools for the proof of Theorem C is the notion of homotopy interleaving distance, due to Blumberg and Lesnick.
+	Finally, the authors demonstrate (Theorem D) that their Theorem C yields a sharper lower bound for Gromov--Hausdorff distance than the classical stability result.
+	Namely, they provide an example of $\mathbb{RP}^n$ and the wedge of spheres $\bS^1 \vee \cdots \vee \bS^n$ (spaces that have isomorphic mod $2$ cohomology groups) for which the new lower bound is improved.
+
+	The paper deals with a very relevant subject and offers interesting new results, improving upon classical results.
+	It introduces new concepts that are likely to inspire future work in the area.
+	With that said, there are some places in need of corrections and some occasions where more explanation was warranted.
+	I would like to see these points be addressed prior to acceptance.
+
+	\section{Reviewer's individual items}
+
+	\begin{enumerate}
+		\item Page 6, line $-12$: Address the (non-trivial) fact that the weak equivalence of $\mathbb{R}$-spaces, as defined through a single $\mathbb{R}$-space $W$ (rather than a zig-zag) is an equivalence relation.
+
+		\ar As the referee points out, the transitivity of the relation defined via a single span is not automatic in the naive category of topological spaces.
+
+		In the revised version we now work in the category of compactly generated weak Hausdorff spaces and equip $\Top^\R$ with the projective model structure, whose weak equivalences and fibrations are defined objectwise. Since $\Top$ is a cofibrantly generated model category and $\R$ is small, this model structure exists, and all objects are fibrant.
+
+		In any model category, two objects are weakly equivalent if and only if they are connected by a zig--zag of weak equivalences. Moreover, when all objects are fibrant, this is equivalent to the existence of a span
+		\[
+		X \xleftarrow{\sim} W \xrightarrow{\sim} Y.
+		\]
+		We now make this precise in the text and refer to \cite[\S2.4]{blumberg2023interleaving}.
+
+		\medskip
+		\begin{quote}
+			Let $\Top$ denote the category of compactly generated weak Hausdorff spaces and continuous maps.
+			We write $\Top^\R \defeq \Fun(\R,\Top)$ for the category of \defn{$\R$-spaces}--where $\R$ is regarded as a poset category--equipped with the projective model structure in which weak equivalences and fibrations are defined objectwise.
+			An $\R$-space $X$ is \defn{cellular} if each $X_r$ is a CW-complex.
+
+			We say that a morphism $f \colon X \to Y$ in $\Top^\R$ is a \defn{weak equivalence} if, for every $r \in \R$, the map $f_r \colon X_r \to Y_r$ is a weak homotopy equivalence.
+			Two $\R$-spaces $X$ and $Y$ are \defn{weakly equivalent}, denoted $X \simeq Y$, if they become isomorphic in the homotopy category or, equivalently, $X \simeq Y$ if there exists an $\R$-space $W$ and weak equivalences
+			\[
+			X \xleftarrow{\ \sim\ } W \xrightarrow{\ \sim\ } Y
+			\]
+			\cite[\S2.4]{blumberg2023interleaving}.
+		\end{quote}
+
+		\item Page 7, line 16: Define $C([0, 1/n])$ and the persistence module.
+
+		\ar Changed as suggested (CAS).
+
+		\item Page 9, \S3.1: For the representability of cohomology, $\pi$ should be abelian.
+
+		\ar Added the missing hypothesis.
+
+		\item Page 12, second paragraph of \S3.3.7: It would be helpful to provide some information about cohomology of $L_q^n$, as this is later used in the proof of Lemma 4.7.
+
+		\ar CAS.
+
+		\item Page 12, second paragraph of \S3.3.7: It would also be helpful to provide more information on the action of $\mathcal{A}_p$, as this is used in \S5.1.1 to show that the round Lens space satisfies Desideratum (3).
+
+		\ar CAS.
+
+		\item Page 14, line 2: The reference for K\"unneth formula for cohomology should be [Hat02, Theorem 3.15] and its assumptions should be included in the statement of Lemma in 3.5.3.
+
+		\ar We changed the first line of the proof to refer to the cohomology K\"unneth formula (Thm.3.15) and make the assumptions of the theorem explicit (CW and free \(R\)-modules).
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Thm.~3.15]{hatcher2000}).
+		\end{quote}
+
+		\item Page 19, \S4.3.3: It would be valuable to provide more details for how Figure 2 is obtained (such as the value $\frac{\pi}{2}\zeta_n$ on the $x$-axis), since it is crucial in \S5.
+
+		\ar The $x$-axis values are $\frac{\pi}{2}$ and $\zeta_n$ seperately, not multiplied. To avoid confusion, we removed the value $\frac{\pi}{2}$ from the $x$-axis of the subfigures.
+		Also, we provide more details on how the figure is obtained, as follows:
+
+		\smallskip
+
+		At the end of \S4.3.3, we added the following phrase, to clarify how the barcode of a single sphere
+		is the special case of Figure~2:
+
+		\begin{quote}
+			..., corresponding to $u_n=1$ and $u_i=0$ for $i\neq n$.
+		\end{quote}
+
+		\smallskip
+
+		At the end of \textsection 4.3.4, we add the following sentences:
+
+		\begin{quote}
+			In particular, each $m$-sphere summand contributes a bar $(0,\zeta_m)$
+			to $\Hbarc[\field]{m}{\VS^{u_1,\dots,u_n}}$,
+			and this occurs with multiplicity $u_m$.
+			Since $\zeta_1 > \dots > \zeta_n$,
+			the smallest threshold $\zeta_n$ determines the vertical dashed line
+			in Figure~2.
+		\end{quote}
+
+		\item Page 20, line $-6$: $G$ should act by isometries on $X$ in order for $g \cdot \sum \lambda_i x_i \in \mathrm{VR}_r(X)$ and should moreover act properly on $X$ in order for $X/G$ to have the quotient metric.
+
+		\ar Added the missing assumptions to the beginning of that subsection (4.4.2).
+
+		\item Page 20, line $-2$: The induced map $\tilde{h}_r$ goes in the opposite direction. Namely, the quotient $X \to X/G$ induces a map $\mathrm{VR}(X) \to \mathrm{VR}(X/G)$, which is $G$-invariant, hence factors through $\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$. This affects some arguments later. For example, the definition of the map $\rho_{j-1}$ in the proof of Lemma 4.5.4 should use the inverse of $\tilde{h}_r$ under the assumption of a strong $r$-diameter action.
+
+		\ar We thank the reviewer for pointing out that the map $h_r:\mathrm{VR}(X)/G \to \mathrm{VR}(X/G)$ is defined (when $G$ acts by isometries on $X$), whereas defining its inverse requires the strong $r$-diameter condition. We have revised the mentioned part on page 20 accordingly:
+		\begin{quote}
+			\begin{align*}
+				h_r \colon \VR_r(\cX)_G &\to  \VR_r(\cX_G) \\
+				\textstyle \big[\sum\lambda_i x_i\big] & \mapsto \textstyle\sum\lambda_i [x_i].
+			\end{align*}
+			If the group action satisfies the \textit{strong \(r\)-diameter} condition, a concept we review below, then for any \(s \leq r\), the map $h_s$ is an isomorphism of simplicial complexes.
+		\end{quote}
+
+		\smallskip
+		We have also revised the definition of $\rho_{j-1}$ in the proof of Lemma 4.5.4 to use $h_r^{-1}$, as suggested by the reviewer. The revised part reads:
+		\begin{quote}
+			... The horizontal map $\rho^{j-1}$ in the left-hand-side square is the composition of the following maps introduced in \S4.4.2 and \S4.3.2, respectively:
+			\[\VR_r(\cX_{j-1}) \xrightarrow{h^{-1}_r}\VR_r(\bS^{n_{j-1}})_G \xrightarrow{\tilde{f}_r^{n_{j-1}}} \cX_{j-1}.\]
+			Since the \(G\)-action on \(\bS^{n_{j-1}}\) is VR-compatible, it is a strong \(r\)-diameter action for small enough $r>0$, making \(h_r\) an isomorphism by \textsection 4.2.2 and thus we can consider the inverse map $h^{-1}_r$.
+		\end{quote}
+
+		\item Page 21, line $-9$ (proof of Lemma 4.4.3): It seems that the bound
+		\[
+		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) < r
+		\]
+		is used, but
+		\[
+		d_S(\omega^b x_j^*, \omega^{b-1} x_j^*) = d_S(\omega x_j^*, x_j^*) = \frac{2\pi}{q}.
+		\]
+
+		\ar We thank the referee for pointing out the gap in the proof. We have followed the suggestion of another referee and modified the proof as follows to fill the gap:
+
+		\medskip
+		\begin{quote}
+			We claim that $d_{\bS}(x_i^*, x_j^*) < r$ for all $1 \le i,j \le k$.
+			If this is not the case, then there exist indices $i,j$ and $1 \leq a \leq q-1$ such that $d_{\bS}(x_i^*, \omega^a x_j^*) < r$.
+			Applying the triangle inequality to $x_i^*, x_j^*$ and $x_0$, we have
+			\[d_{\bS}(x_i^*, x_j^*) \leq d_{\bS}(x_i^*, x_0) + d_{\bS}(x_0, x_j^*) < 2r.\]
+			On the other hand, applying the triangle inequality to $x_i^*, x_j^*$ and $\omega^a x_j^*$, we have
+			\[
+			d_{\bS}(x_i^*, x_j^*) \geq d_{\bS}(x_j^*, \omega^a x_j^*) - d_{\bS}(x_i^*, \omega^a x_j^*) > \frac{2\pi}{q} - r,
+			\]
+			given $1 \leq a \leq q-1$.
+			Combining the above two inequalities, since $q \geq 2$, we have
+			\[
+			2r > \frac{2\pi}{q} - r \implies r > \frac{2\pi}{3q} \geq \frac{2\pi}{q(q+1)},
+			\]
+			which contradicts the assumption $r \le \frac{2\pi}{q(q+1)}$.
+			Thus, $d_{\bS}(x_i^*, x_j^*) < r$ holds for all $1 \le i,j \le k$, completing the proof of the claim.
+		\end{quote}
+
+		\item Page 23, line 1: A reference should be provided for the (non-trivial) fact that $f_r^n$, being a homotopy equivalence and a $C_2$-equivariant map between free $C_2$-spaces, induces a homotopy equivalence on the orbit spaces.
+
+		\ar We spelled out the proof of this fact with relevant refereces to Hatcher.
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			Because the \(\cyc_2\)-action is proper and free, the quotient maps to the orbit spaces are covering space projections \cite[Prop.~1.40]{hatcher2000}.
+			These projections induce isomorphisms on \(\pi_k\) for \(k \ge 2\) \cite[Prop.~4.1]{hatcher2000}, which, combined with the \(\cyc_2\)-equivariance of $f_r^n$, forces the induced map on the orbit spaces to also be an isomorphism for \(k \ge 2\).
+			For \(k=1\), a diagram chase in the short exact sequences of groups of the covering spaces ensures an isomorphism on fundamental groups.
+			Together with a natural bijection on path components, this establishes that the induced map on the orbit spaces is a weak equivalence.
+		\end{quote}
+
+		\item Page 23, Lemma 4.5.4: It is needed to assume (or ensure) that $\bS^{n_i}_G$ is an orientable Riemannian manifold (with respect to the relevant coefficient field, which is not mentioned) in order to consider its filling radius. Moreover, throughout \S4--6 the use of coefficients should be pointed out more explicitly.
+
+		\ar We have restricted this lemma to real projective spaces and Lens spaces only. To address the issue of coefficients, we have done the following changes.
+
+		We improved \S4.1.2 to clarify the choice of coefficients for filling radius:
+
+		\smallskip
+
+		\begin{quote}
+			Following \cite{gromov1983filling}, the \defn{filling radius} of an \(n\)-dimensional closed Riemannian manifold \(\cM\), denoted \(\fillrad(\cM)\), is defined as the infimal \(\epsilon > 0\) such that the fundamental class in \(\rH_n(\cM; G)\) vanishes under the inclusion \(\cM \hookrightarrow \rU_\epsilon(\cM)\), where \(\rU_\epsilon(\cM)\) is the \(\epsilon\)-neighborhood of \(\cM\) in \(\rL^\infty(\cX)\) and $G$ is an abelian group.
+
+			In this work, we consider the filling radius of \(\cM\) with coefficients in a field \(\field\) as
+			\[
+			\fillrad(\cM;\field)
+			=
+			\min \big\{ r \mid (0,r) \in \barc \rH_n(\rU(\cM);\field) \big\}.
+			\]
+			For non-orientable manifolds (e.g., \(\mathbb{RP}^n\)), we take \(\field = \Ftwo\) so that the top-dimensional fundamental class is nontrivial.
+			For spheres $\bS^n$, the choice of coefficients does not affect the filling radius.
+			For lens spaces $\rL_p^n$ (with $p$ an odd prime), while any field suffices to define the filling radius, we work over $\field = \Fp$ to detect the $p$-torsion in degree one.
+			We adopt these conventions throughout and omit $\field$ from the notation whenever it is clear from the context.
+		\end{quote}
+
+		\smallskip
+
+		We added the following sentences to \S4.1.4 to clarify the choice of coefficients for homological radius:
+
+		\smallskip
+
+		\begin{quote}
+			Although the choice of \(\field\) does not affect the filling radius, it may affect the \(m\)-homological radius. 
+			Throughtout, we follow the convention in \S4.1.2, and omit \(\field\) from the notation whenever it is clear from context.
+		\end{quote}
+
+		\smallskip
+
+		In \S4.7, we clarified that $q$ is an odd prime and added the following reminder that we work with $\bF_q$ coefficients:
+		
+		\smallskip
+
+		\begin{quote}
+			The ground field here is $\bF_q$.
+		\end{quote}
+
+		% \anibal{I think this is an important observation. Is the key lemma holding for any field \(\k\)? Are we making any claims about the original \(\Z\)-coeff radius?}
+
+		% \l{Results on spheres hold with $\Z$ (e.g. \S4.3.1).
+		% We explictly using $\Z_2$ in 4.6 for real projective spaces.
+		% In \S4.7, we should have added the coefficient choice for Lens spaces as well.
+		% General cases appear in \S4.5.4 and \S5.1. We should probably follow the reviewer's suggestion to add constraints.
+		% We may do the following: in Lemma 4.5.4, add a condition to restrict the coefficients (i.e. making the quotient space orientable Riemannian manifold); in \S5.1, we say for general cases, we choose a coefficient such that the quotient space orientable Riemannian manifold. In particular, we can choose $\Z_2$ coefficients for real projective spaces and $\Z_q$ Lens spaces. We will omit the coefficient choice from the notaton for simplicity.
+		% }
+
+		\item Page 23, proof of Lemma 4.5.4: There is a factor of $2$ missing for the scale parameter in the index of $\mathrm{VR}$ throughout the proof, since filling radius (and other radii) are defined in terms of $U_r(X) \simeq \mathrm{VR}_{2r}(X)$.
+
+		\ar We thank the referee for pointing this out. We have corrected all death times in the proof of Lemma~4.5.4 by including the missing factor of $2$. In particular, Diagrams~(5) and~(6) and the surrounding text now correctly state all death times as $2\delta_j$ (or $2\delta_{j-1}$).
+
+		The values $r$ and $\epsilon$ remain arbitrary small positive numbers and are unchanged.
+
+		\item Page 23, diagram (5): The bottom-right slot could be replaced with a smaller space $\mathrm{VR}_{\delta_{j-1} + \varepsilon}(X_j)$ (then, the right vertical map would not witness the change of the scale parameter) and the whole proof would go unchanged. This would yield a stronger bound $\beta_i^j \le \delta_{j-1}$, for $1 \le i \le j-1$.
+
+		\ar The referee is correct that the commutative diagram can be modified as suggested.
+		However, the base case of the induction in the proof of Lemma~4.5.4 relies on the fact that $\beta_1^1 = \delta_1$, which means the $n_1$-th homological radius of $\bS^{n_1}_G$ agrees with the filling radius of $\bS^{n_1}_G$.
+		To establish the stronger bound $\beta_i^j \le \delta_{j-1}$, we would need to prove a new base case showing that the $n_1$-th homological radius of $\bS^{n_2}_G$ is bounded above by the filling radius of $\bS^{n_{1}}_G$, which we do not see how to prove.
+
+		\item Page 23, diagram (6): It would be helpful to include an explanation for why the left vertical map
+		\[
+		\rH_{n_i}(X_{j-1}) \to \rH_{n_i}(X_j)
+		\]
+		is an isomorphism.
+
+		\ar We have simplified Lemma 4.5.4. It now only includes real projective spaces and Lens spaces and homology with coefficients in the appropriate finite fields.
+		%In this case, the isomorphism is a well-known fact.
+		We added the following explanation right after Diagram~(6) for clarity:
+
+		\smallskip
+
+		\begin{quote}
+			The left-most vertical map is an isomorphism in all degrees $\le n_{j-1}$.
+			Indeed, with appropriate finite field coefficients, the induced map on cohomology sends algebra generators (see \S3.3.5 and \S3.3.7) to algebra generators, hence is an isomorphism in all degrees $\le n_{j-1}$.
+			By the universal coefficient theorem, the corresponding maps on homology are also isomorphisms.
+		\end{quote}
+
+		\item Page 25, line $-9$: It would be good to provide more explanation for the fact that $\operatorname{Rad}_m(\rL_q^n) = 0$, for $m$ even.
+
+		\ar The original proof handled the odd and even cases separately using integer coefficients.
+		We observed that Lemma 4.5.3 is independent of the coefficient choice, whereas Lemma 4.5.4 requires appropriate field coefficients ($\Ftwo$ for $\rp^n$ and $\bF_q$ for $\rL_q^n$).
+		These coefficient choices ensure that the isomorphism mentioned in Item 15 holds up to the top dimension of the smaller space.
+		
+		We have now clarified the coefficient choices and adjust the proof in \S4.7, providing a unified treatment of the odd and even cases and a more streamlined argument.
+
+		\item Page 26, \S5.1.1: It would be helpful to provide more details for the fact that real projective spaces satisfy Desiderata, as this is the crucial step later in \S5.2.
+
+		\ar We take the suggestion and now include the following detailed proof:
+
+		\medskip
+		\begin{quote}
+			We verify that the round real projective spaces of radius \(\pi\) satisfy these Desiderata.
+			Recall that \(\zeta_n = \arccos(\tfrac{-1}{1+n})\) and, from \S4.6, that \(\crit(\rp^n) = \tfrac{\pi}{3}\).
+			For \(n \geq 1\) we have \(\crit(\rp^n) \geq \tfrac{\zeta_n}{2}\) since
+			\[
+			\tfrac{1}{2} \geq \tfrac{1}{1+n} \ \Leftrightarrow \
+			\tfrac{-1}{2} \leq \tfrac{-1}{1+n} \ \Leftrightarrow \
+			\arccos \tfrac{-1}{2} \geq \arccos\tfrac{-1}{1+n} \ \Leftrightarrow \
+			\tfrac{2\pi}{3} \geq \zeta_n.
+			\]
+
+			Let us now focus on Desideratum~(2).
+			For any integers $k \geq 1$ we have $\frac{-1}{1+k} < 0$.
+			Because \(\arccos\) is decreasing, it follows that for any $k \geq 1$,
+			\[
+			\zeta_k = \arccos\left(\frac{-1}{1+k}\right) > \arccos(0) = \frac{\pi}{2}.
+			\]
+			Using this strict lower bound for both $\zeta_n$ and $\zeta_m$, we obtain:
+			\[
+			\frac{\zeta_n}{4} + \frac{\zeta_m}{2} > \frac{1}{4}\left(\frac{\pi}{2}\right) + \frac{1}{2}\left(\frac{\pi}{2}\right) = \frac{\pi}{8} + \frac{\pi}{4} = \frac{3\pi}{8} > \frac{\pi}{3}.
+			\]
+			By \S4.6 we know that either \(\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}\) or \(\firstdeath{m}{\rp^n} = 0\) from which the above inequality concludes the verification of Desideratum~(2).
+
+			As shown in \S4.6, Desideratum~(3) is satisfied by choosing a Steenrod square \(\Sq^k\) and degree \(m < n\) with \(k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ odd}\).
+		\end{quote}
+
+		\item Page 26, \S5.1.1: It would also be helpful to provide more details why the round Lens space satisfies Desideratum (3), because \S3.3.7 does not contain that information.
+
+		\ar As suggested by the reviewer earlier, we included now the action of \(\cA_p\) on the cohomology of Lens spaces.
+		Therefore, the reference to \S3.3.7 now includes the relevant information.
+
+		\item Page 27, proof of Lemma 5.1.5: It would be helpful to include a short explanation for $\zeta_m - \zeta_n < \frac{\pi}{6}$.
+
+		\ar We have expanded this proof, including the specific point raised by the reviewer.
+		It now reads:
+
+		\medskip
+		\begin{quote}
+			As before, let $\zeta_n = \arccos\!\left(-\tfrac{1}{n+1}\right)$.
+			Since $\arccos$ is strictly decreasing on $[-1,1]$ and $-\frac{1}{n+1}$ is increasing in $n$, the sequence $(\zeta_n)_{n\ge 1}$ is strictly decreasing.
+
+			\lemma
+			Let $m \leq n$.
+
+			\noindent (1) $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$.
+
+			\noindent (2) For any $r \in \big[\zeta_n,\, \tfrac{\zeta_n}{2}+\zeta_m\big)$, $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+
+			\medskip
+			\begin{proof}
+				Since $-\frac{1}{n+1} < 0$, we have $\zeta_n > \arccos(0) = \tfrac{\pi}{2}$.
+				Since $(\zeta_n)$ is decreasing and $\zeta_1 = \arccos\!\left(-\tfrac12\right) = \tfrac{2\pi}{3}$, we also have $\zeta_n \le \tfrac{2\pi}{3}$.
+
+				\smallskip
+				(1) Because $(\zeta_n)$ is decreasing and $m\le n$, we have $\zeta_m \le \zeta_1$, hence
+				$\zeta_m - \zeta_n \le \zeta_1 - \zeta_n < \tfrac{2\pi}{3} - \tfrac{\pi}{2} = \tfrac{\pi}{6}$.
+				Since $\zeta_n \le \tfrac{2\pi}{3}$, we have $\tfrac{\pi - \zeta_n}{2} \ge \tfrac{\pi}{6}$, so $\zeta_m - \zeta_n < \tfrac{\pi - \zeta_n}{2}$.
+				Moreover $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ is equivalent to $\zeta_n > \tfrac{\pi}{2}$, which holds.
+
+				\smallskip
+				(2) Since $\tfrac{\pi - \zeta_n}{2} < \tfrac{\zeta_n}{2}$ by Part (1), it remains to show $|\zeta_m - r| < \tfrac{\zeta_n}{2}$.
+				If $r \in [\zeta_n,\, \zeta_m)$, then $|\zeta_m - r| = \zeta_m - r \le \zeta_m - \zeta_n < \tfrac{\zeta_n}{2}$ by Part (1).
+				If $r \in [\zeta_m,\, \zeta_m + \tfrac{\zeta_n}{2})$, then $|\zeta_m - r| = r - \zeta_m < \tfrac{\zeta_n}{2}$ by the upper bound on $r$.
+				Thus in all cases $|\zeta_m - r| < \tfrac{\zeta_n}{2}$, and therefore $\max\big\{|\zeta_m - r|,\, \tfrac{\pi - \zeta_n}{2}\big\} < \tfrac{\zeta_n}{2}$.
+			\end{proof}
+		\end{quote}
+
+		\item Page 28, proof of Theorem 5.2.(1): The regime $m > n$ is currently not included in the proof. It would be good either to include it, or impose assumption $1 \le m \le n$ in the statements of Theorem 5.2.(1) and Theorem D.
+
+		\ar We have added the case $m > n$ to the proof of Theorem 5.2.(1) as follows:
+
+		\smallskip
+
+		\begin{quote}
+			When $m > n$, recall from Figure 2 that bars in the $m$-th persistent homology of $\bS_{\rp^n}$ (if any) are contained in $(\zeta_n, \pi)$, and from Figure 3 that bars in the $m$-th persistent homology of $\rp^n$ (if any) are contained in $(\tfrac{2\pi}{3}, \pi)$.
+			Thus, the interleaving distance between these persistent homology groups is at most half the maximum bar length (with all bars unmatched), which is no larger than by $\max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi}{6}\} \leq \tfrac{\pi - \zeta_n}{2}$ since $\zeta_n \leq \tfrac{2\pi}{3}$.
+		\end{quote}
+
+		\smallskip
+
+		We have also added a paragraph to explain that we are computing the interleaving distance as the bottleneck distance between barcodes in the beginning of the proof of Theorem 5.2.(1):
+
+		\smallskip
+
+		\begin{quote}
+			As in the proof of \S5.1.3, we first invoke \S2.3.4 to replace the interleaving distance with the bottleneck distance between the corresponding barcodes, since both metric spaces are totally bounded and their persistent homology is therefore q-tame.
+		\end{quote}
+
+		\item Page 28, line $-3$: Please provide more details or a reference for the lower bound for the Gromov--Hausdorff distance obtained via persistence homology, as its improvement is one of the highlights of the paper. It would also be good to include this in the introduction.
+
+		\ar We are confused by this request.
+		Given the high-level of undertanding the referee has on this paper, we fear we are missing the point, but here is our answer.
+		Regarding the lower bound for the Gromov--Hausdorff distance obtained via persistence homology, this paper constructs un upper bound for the interleaving distance between the \(\VR\)-homology modules of \(\bS_{\rp}\) and \(\rp\).
+		The connection to Grommov--Hausdorff distance is via the stability theorem, for which we have a subsection with multiple references.
+
+		In addition, to make this discussion clearer in the paper, we have added an explicit page reference to the stability theorem for persistent homology in the paragraph in question.
+		The beginning of the paragraph now reads:
+
+		\begin{quote}
+			By combining Item~(2) of the above theorem with Theorem C, we obtain a lower bound of \(\frac{1}{2}\cdot\frac{\pi}{3}\) for the Gromov--Hausdorff distance between \(\rp^n\) and \(\bS_{\rp^n}\).
+			For comparison, applying Item~(1) together with the stability theorem for persistent homology 
+			(see page 3) yields a lower bound of at most \(\frac{1}{2}\cdot\frac{\pi}{4}\).
+		\end{quote}
+	\end{enumerate}
+
+	\section{Typos and minor comments}
+
+	\begin{enumerate}
+		\item Page 7, line $-7$: It should read ``is unmatched''.
+
+		\ar CAS
+
+		\item Page 10, commutative square: The bottom arrow should be labeled \(\theta_{n+1}^{\Sigma X}\).
+
+		\ar CAS
+
+		\item Page 11, line $8$: The notation for \(C_2\) should be changed to match the rest of the paper.
+
+		\ar CAS
+
+		\item Page 11, line $10$: The sentence beginning with ``Here is the revised \ldots'' should be removed.
+
+		\ar CAS
+
+		\item Page 11, line $-13$: The fact that \(\mathbb{RP}^{\infty}\) is a model for \(K(\mathbb{Z}/2,1)\) was already mentioned at the beginning of \S 3.3.5.
+
+		\ar We removed the redundant sentence.
+		Thanks for pointing it out.
+
+		\item Page 12, \S 3.3.7: The statement that \(L_p^{\infty}\) is a model for \(K(\mathbb{Z}/p,1)\) already appeared earlier in the text.
+
+		\ar We removed the redundant sentence.
+		Thanks for pointing it out.
+
+		\item Page 15, line $9$: ``Lemma 2.1.2'' should be replaced by ``Proposition 2.1.2''.
+
+		\ar CAS
+
+		\item Page 23, line $-4$: ``\(C_2\)-action'' should be replaced by ``\(G\)-action''.
+
+		\ar CAS
+
+		\item Page 23, diagram (6): There is a subscript typo in the bottom-right entry of the diagram; it should read
+		\[
+		H_{n_i}\!\bigl(\mathrm{VR}_{\delta_j + \varepsilon}(X_j)\bigr).
+		\]
+
+		\ar CAS
+
+		\item Page 24, line $1$: The element \(\sigma_i\) should be described as a ``representative class'', since cycles usually denote elements of the chain complex.
+
+		\ar CAS
+
+		\item Page 28, line $-14$ (last line of the statement of Theorem 5.2(2)): The operation \(Sq^k\) should land in degree \(m\).
+
+		\ar CAS
+	\end{enumerate}
+
+	\section{Other changes}
+
+	\begin{enumerate}
+		\item Added a `Recent developments' section to the introduction, describing some recent follow-up work:
+		\medskip
+		\begin{quote}
+			After the posting of the present work, F.~M\'emoli and the second-named author studied Gromov--Hausdorff estimates for \(\rp^n\) and \(\bS^n\) using persistent invariants derived from cup-length, the Lyusternik--Schnirelmann category, topological complexity, and zero-divisor cup-length \cite{memoli2025persistence}.
+			Their analysis also yields the lower bound \(\frac{\pi}{3}\) obtained here via persistent cohomology operations.
+		\end{quote}
+
+		\item Included to the Acknoledgements
+		\medskip
+		\begin{quote}
+			We extend our gratitude to the reviewers of this paper for their many suggestions improving the presentation of this work.
+		\end{quote}
+
+		\item Added this sentence to the last paragraph of the paper:
+		\medskip
+		\begin{quote}
+			We do not claim that the bound \(\frac{\pi}{6}\) surpasses all known lower bounds.
+			For example, the diameter distance \(\frac{1}{2} \lvert \operatorname{diam}(\rp^n) - \operatorname{diam}(\bS_{\rp^n}) \rvert = \frac{1}{2} \lvert \pi - 2\pi \rvert = \frac{\pi}{2}\) is greater.
+		\end{quote}
+	\end{enumerate}
+\end{document}

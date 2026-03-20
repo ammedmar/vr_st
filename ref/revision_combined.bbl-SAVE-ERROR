@@ -1,0 +1,202 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{blumberg2023interleaving}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e73a532bb1be860b8805a2c71d2aa224}{%
+           family={Blumberg},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=14544c90506aa2f3148e195c2237b5b6}{%
+           family={Lesnick},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{fullhash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{bibnamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authorbibnamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authornamehash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \strng{authorfullhash}{a7bb7ed7c22b6a611e54e9de47faa15c}
+      \field{labelalpha}{BL23}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0002-9947}
+      \field{journaltitle}{Trans. Amer. Math. Soc.}
+      \field{number}{12}
+      \field{title}{Universality of the homotopy interleaving distance}
+      \field{volume}{376}
+      \field{year}{2023}
+      \field{pages}{8269\bibrangedash 8307}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1090/tran/8738
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/tran/8738
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/tran/8738
+      \endverb
+    \endentry
+    \entry{gromov1983filling}{article}{}
+      \name{author}{1}{}{%
+        {{hash=29614b28c97cd314c5624d6dde3ea402}{%
+           family={Gromov},
+           familyi={G\bibinitperiod},
+           given={Mikhael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{29614b28c97cd314c5624d6dde3ea402}
+      \strng{fullhash}{29614b28c97cd314c5624d6dde3ea402}
+      \strng{bibnamehash}{29614b28c97cd314c5624d6dde3ea402}
+      \strng{authorbibnamehash}{29614b28c97cd314c5624d6dde3ea402}
+      \strng{authornamehash}{29614b28c97cd314c5624d6dde3ea402}
+      \strng{authorfullhash}{29614b28c97cd314c5624d6dde3ea402}
+      \field{labelalpha}{Gro83}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-040X}
+      \field{journaltitle}{J. Differential Geom.}
+      \field{number}{1}
+      \field{title}{Filling {R}iemannian manifolds}
+      \field{volume}{18}
+      \field{year}{1983}
+      \field{pages}{1\bibrangedash 147}
+      \range{pages}{147}
+      \verb{urlraw}
+      \verb http://projecteuclid.org/euclid.jdg/1214509283
+      \endverb
+      \verb{url}
+      \verb http://projecteuclid.org/euclid.jdg/1214509283
+      \endverb
+    \endentry
+    \entry{hatcher2000}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press, Cambridge}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{labelalpha}{Hat02}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic topology}
+      \field{year}{2002}
+      \field{pages}{xii+544}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://cds.cern.ch/record/478079
+      \endverb
+      \verb{url}
+      \verb https://cds.cern.ch/record/478079
+      \endverb
+    \endentry
+    \entry{katz1983filling}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5f988d9f88604dfb8ce786708353662f}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Mikhail},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f988d9f88604dfb8ce786708353662f}
+      \strng{fullhash}{5f988d9f88604dfb8ce786708353662f}
+      \strng{bibnamehash}{5f988d9f88604dfb8ce786708353662f}
+      \strng{authorbibnamehash}{5f988d9f88604dfb8ce786708353662f}
+      \strng{authornamehash}{5f988d9f88604dfb8ce786708353662f}
+      \strng{authorfullhash}{5f988d9f88604dfb8ce786708353662f}
+      \field{labelalpha}{Kat83}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-040X}
+      \field{journaltitle}{J. Differential Geom.}
+      \field{number}{3}
+      \field{title}{The filling radius of two--point homogeneous spaces}
+      \field{volume}{18}
+      \field{year}{1983}
+      \field{pages}{505\bibrangedash 511}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb http://projecteuclid.org/euclid.jdg/1214437785
+      \endverb
+      \verb{url}
+      \verb http://projecteuclid.org/euclid.jdg/1214437785
+      \endverb
+    \endentry
+    \entry{memoli2025persistence}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2fd11e676a24c6aabdc0a0823f559d23}{%
+           family={Mémoli},
+           familyi={M\bibinitperiod},
+           given={Facundo},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2ec91a1514d3b30f418a2a2d289908d4}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{850d6787ec65f29ee5e24a987123019d}
+      \strng{fullhash}{850d6787ec65f29ee5e24a987123019d}
+      \strng{bibnamehash}{850d6787ec65f29ee5e24a987123019d}
+      \strng{authorbibnamehash}{850d6787ec65f29ee5e24a987123019d}
+      \strng{authornamehash}{850d6787ec65f29ee5e24a987123019d}
+      \strng{authorfullhash}{850d6787ec65f29ee5e24a987123019d}
+      \field{labelalpha}{MZ25}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2506.17888}
+      \field{title}{Persistence and Topological Complexity}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2506.17888
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2506.17888
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
