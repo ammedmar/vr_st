@@ -5,6 +5,7 @@
 *.log
 *.out
 *.pdf
+!agt_submission/*.pdf
 *.synctex.gz
 *.toc
 *.txss
