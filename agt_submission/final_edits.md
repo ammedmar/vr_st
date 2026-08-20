@@ -1,0 +1,30 @@
+- Changed the heading `Acknowledgment` to `Acknowledgements`.
+- Changed `e.g.` to `eg` in `sec/critical.tex`.
+- Expanded `Thm. 3.5` to `Theorem 3.5` in `sec/critical.tex`.
+- Expanded `Thm. 4.1` to `Theorem 4.1` in `sec/critical.tex` (first occurrence).
+- Expanded `Defn. 9.44` to `Definition 9.44` in `sec/critical.tex`.
+- Expanded `Thm. 4.1` to `Theorem 4.1` in `sec/critical.tex` (second occurrence).
+- Expanded `p. 1508` to `page 1508` in `sec/persistence.tex`.
+- Changed `i.e.` to `ie` in `sec/persistence.tex`.
+- Expanded `Thm. 5.14` to `Theorem 5.14` in `sec/persistence.tex`.
+- Expanded `Prop. 5.1` to `Proposition 5.1` in `sec/persistence.tex`.
+- Expanded `Thm. 5.2` to `Theorem 5.2` in `sec/persistence.tex`.
+- Expanded `Thm. 1.9 & 1.10` to `Theorems 1.9 and 1.10` in `sec/persistence.tex`.
+- Expanded `Thm. 4.5` to `Theorem 4.5` in `sec/projective.tex`.
+- Expanded `Prop. 3.5` to `Proposition 3.5` in `sec/quotients.tex`.
+- Expanded `Cor. 4.3` to `Corollary 4.3` in `sec/quotients.tex`.
+- Expanded `Prop. 1.40` to `Proposition 1.40` in `sec/quotients.tex`.
+- Expanded `Prop. 4.1` to `Proposition 4.1` in `sec/quotients.tex`.
+- Changed `cf.` to `cf` in `sec/quotients.tex`.
+- Expanded `Prop. 9.38` to `Proposition 9.38` in `sec/related.tex`.
+- Expanded `Cor. 3` to `Corollary 3` in `sec/spheres.tex`.
+- Expanded `Thm. 7.1` to `Theorem 7.1` in `sec/spheres.tex` (first occurrence).
+- Expanded `Thm. 7.1` to `Theorem 7.1` in `sec/spheres.tex` (second occurrence).
+- Changed `i.e.` to `ie` in `sec/static_operations.tex` (first occurrence).
+- Changed `i.e.` to `ie` in `sec/static_operations.tex` (second occurrence).
+- Expanded `Cor. 2.25.` to `Corollary 2.25` in `sec/sums_products.tex`.
+- Expanded `Prop. 1` to `Proposition 1` in `sec/sums_products.tex`.
+- Expanded `Thm. 3.15` to `Theorem 3.15` in `sec/sums_products.tex`.
+- Expanded `Cor. 2.7` to `Corollary 2.7` in `sec/sums_products.tex`.
+- Expanded `Prop. 10.2` to `Proposition 10.2` in `sec/sums_products.tex`.
+- Expanded `Thm. 6.1(1)` to `Theorem 6.1(1)` in `sec/sums_products.tex`.

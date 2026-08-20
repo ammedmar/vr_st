@@ -21,7 +21,7 @@ For any linear cohomology operation $\theta$:
 \end{align*}
 
 \begin{proof}
-	This follows directly from the fact that for any \(r \in \R\), the natural inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Cor.~2.25.]{hatcher2000}).
+	This follows directly from the fact that for any \(r \in \R\), the natural inclusions $X_r \to X_r \vee Y_r \leftarrow Y_r$ induce an isomorphism $\rH^*(X_r \vee Y_r) \to \rH^*(X_r) \oplus \rH^*(Y_r)$ (\cite[Corollary~2.25]{hatcher2000}).
 \end{proof}
 
 \subsubsection{}\label{ss:wedge sum}
@@ -45,7 +45,7 @@ For any linear cohomology operation $\theta$:
 where \(\cX \vee \cY\) is equipped with the gluing metric.
 
 \begin{proof}
-	This follows from the previous lemma and the fact, proven in \cite[Prop.~1]{adamaszek2020homotopy}, that the natural inclusion
+	This follows from the previous lemma and the fact, proven in \cite[Proposition~1]{adamaszek2020homotopy}, that the natural inclusion
 	\[
 	\VR_r(\cX) \vee \VR_r(\cY) \to \VR_r(\cX \vee \cY)
 	\]
@@ -75,8 +75,8 @@ Over any prime \(p\):
 where \(\rP\) is the total Steenrod reduced power if \(p > 2\) and \(\rP = \Sq\) if \(p = 2\).
 
 \begin{proof}
-	For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Thm.~3.15]{hatcher2000}).
-	Under this isomorphism, the (exterior) Cartan formula states that \(\rP(\alpha \times \beta) \cong \rP(\alpha) \otimes \rP(\beta)\) (\cite[Cor.~2.7]{may1970general}).
+	For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Theorem~3.15]{hatcher2000}).
+	Under this isomorphism, the (exterior) Cartan formula states that \(\rP(\alpha \times \beta) \cong \rP(\alpha) \otimes \rP(\beta)\) (\cite[Corollary~2.7]{may1970general}).
 	The claim now follows directly from the naturality of the K\"unneth isomorphism.
 \end{proof}
 
@@ -88,8 +88,8 @@ The \defn{$\ell^\infty$ metric} on $\cX \times \cY$ is defined by
 d((x,y), \, (x',y')) = \max\set{d_{\cX}(x,x'), d_{\cY}(y,y')}.
 \]
 
-In \cite[Prop.~10.2]{adamaszek2017VietorisProduct}, it was shown that the Vietoris--Rips complex of a product space is homotopy equivalent to the product of the Vietoris--Rips complexes of the individual spaces at any specific scale.
-Furthermore, the proof of \cite[Thm.~6.1(1)]{lim2024vietoris} constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$, which, combined with the previous lemma gives the following.
+In \cite[Proposition~10.2]{adamaszek2017VietorisProduct}, it was shown that the Vietoris--Rips complex of a product space is homotopy equivalent to the product of the Vietoris--Rips complexes of the individual spaces at any specific scale.
+Furthermore, the proof of \cite[Theorem~6.1(1)]{lim2024vietoris} constructs a natural isomorphism $\rH^\VR(\cX) \ot \rH^\VR(\cY) \cong \rH^\VR(\cX \times \cY)$, which, combined with the previous lemma gives the following.
 
 \theorem
 Let $\cX$ and $\cY$ be metric spaces.
