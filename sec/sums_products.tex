@@ -66,18 +66,22 @@ Analogously, the \defn{tensor product} \(V \ot W\) of two persistence modules is
 where \(r, s, t \in \R\) and \(s \leq t\).
 
 \lemma
-Let $X$ and $Y$ be pointed cellular $\R$-spaces.
+Let $X$ and $Y$ be pointed cellular $\R$-spaces, at least one of them landing in the full subcategory of finite type spaces.
 Over any prime \(p\):
 \begin{align*}
 	\img_\rP(X \times Y) &\cong \img_\rP(X) \ot \img_\rP(Y),\\
 	\ker_\rP(X \times Y) &\cong \ker_\rP(X) \ot \ker_\rP(Y),
 \end{align*}
-where \(\rP\) is the total Steenrod reduced power if \(p > 2\) and \(\rP = \Sq\) if \(p = 2\).
+where \(\rP\) is the total Steenrod power if \(p > 2\) and \(\rP = \Sq\) if \(p = 2\), acting on unreduced cohomology.
 
 \begin{proof}
 	For any \(r \in \R\), the natural projections $X_r \leftarrow X_r \times Y_r \to Y_r$ induce the K\"unneth isomorphism $\rH^*(X_r) \otimes \rH^*(Y_r) \to \rH^*(X_r \times Y_r)$, since we are working with cellular spaces over a field. (\cite[Theorem~3.15]{hatcher2000}).
-	Under this isomorphism, the (exterior) Cartan formula states that \(\rP(\alpha \times \beta) \cong \rP(\alpha) \otimes \rP(\beta)\) (\cite[Corollary~2.7]{may1970general}).
-	The claim now follows directly from the naturality of the K\"unneth isomorphism.
+	Under this isomorphism, the (exterior) Cartan formula identifies \(\rP_{X_r \times Y_r}\) with \(\rP_{X_r} \otimes \rP_{Y_r}\) (\cite[Corollary~2.7]{may1970general}).
+	Over a field, the image of a tensor product of linear maps is the tensor product of their images, proving the image formula.
+
+	For the kernel formula, note that \(\rP\) is injective: since \(\rP^0 = \id\) and every other component raises degree.
+	Thus, all three kernels in the formula are zero.
+	The resulting identifications are natural in \(r\), so they define isomorphisms of persistence modules.
 \end{proof}
 
 \subsubsection{}\label{ss:products}
@@ -98,4 +102,4 @@ Over any prime:
 	&\img^{\VR}_\rP(\cX \times \cY) \cong \img^{\VR}_\rP(\cX) \ot \img^{\VR}_\rP(\cY), \\
 	&\ker^{\VR}_\rP(\cX \times \cY) \cong \ker^{\VR}_\rP(\cX) \ot \ker^{\VR}_\rP(\cY),
 \end{align*}
-where \(\rP\) is the total Steenrod reduced power if \(p > 2\), \(\rP = \Sq\) if \(p = 2\), and \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.
+where \(\rP\) is the total Steenrod power if \(p > 2\), \(\rP = \Sq\) if \(p = 2\), acting on unreduced cohomology, and \(\cX \times \cY\) is equipped with the \(\ell^\infty\) metric.

@@ -17,10 +17,15 @@ We will prove the relevant statements in greater generality, allowing for simila
 \begin{enumerate}
 	\item $\crit(\cM) \geq \tfrac{\zeta_n}{2} $;
 	\item $\firstdeath{m}{\cM} < \tfrac{\zeta_n}{4}+\tfrac{\zeta_m}{2}$ for any $m \in \N$.
-	\item There exists $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) such that $\img_\theta(\cM) \neq 0$.
+	\item There exists $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) such that
+	\[
+	\img_\theta(\cM) \neq 0
+	\quad\text{and}\quad
+	\dim \opH_m(\cM) = 1.
+	\]
 \end{enumerate}
 
-\medskip We verify that the round real projective spaces of radius \(\pi\) satisfy these Desiderata.
+\medskip We verify that the round real projective spaces of diameter \(\pi\) satisfy these Desiderata.
 Recall that \(\zeta_n = \arccos(\tfrac{-1}{1+n})\) and, from \cref{s:critical_radii_rpn}, that \(\crit(\rp^n) = \tfrac{\pi}{3}\).
 For \(n \geq 1\) we have \(\crit(\rp^n) \geq \tfrac{\zeta_n}{2}\) since
 \[
@@ -42,22 +47,28 @@ Using this strict lower bound for both $\zeta_n$ and $\zeta_m$, we obtain:
 \]
 By \cref{s:critical_radii_rpn} we know that either \(\firstdeath{m}{\rp^n} = \tfrac{\pi}{3}\) or \(\firstdeath{m}{\rp^n} = 0\) from which the above inequality concludes the verification of Desideratum~(2).
 
-As shown in \cref{s:critical_radii_rpn}, Desideratum~(3) is satisfied by choosing a Steenrod square \(\Sq^k\) and degree \(m < n\) with \(k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ odd}\).
-
-\medskip For fixed $n \in \N$ and the round Lens space $\rL^n_p$ of radius \(\pi\), Desideratum~(3) is achieved by selecting $\theta$ as an appropriate Steenrod reduced power (see \cref{sss:cohomology_lens}).
-Desideratum~(1) remains unproven, but for Desideratum~(2) it suffices to check that
+As shown in \cref{s:critical_radii_rpn}, for every $n>1$ Desideratum~(3) is satisfied by
 \[
-\fillrad(\rL^1_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}.
+\Sq^1 \colon \rH^1(\rp^n;\Ftwo) \to \rH^2(\rp^n;\Ftwo),
 \]
-Because if the above condition holds, then \cref{s:critical_radii_lens} implies that for any degree $m \leq 2n+1$,
+since \(\Sq^1(\sigma)=\sigma^2\neq 0\) and \(\dim \opH_2(\rp^n;\Ftwo)=1\).
+
+\medskip For fixed $n \geq 1$ and the round Lens space $\rL^n_p$ of diameter \(\pi\), Desideratum~(3) is achieved by selecting $\theta$ as the Bockstein \(\beta \colon \rH^1(-;\Fp) \to \rH^2(-;\Fp)\) (see \cref{sss:cohomology_lens}); its target homology group is one-dimensional.
+Desideratum~(1) remains unproven.
+For odd degrees, Desideratum~(2) follows if
+\[
+\fillrad(\rL^0_p) \leq \dotsb \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4}.
+\]
+Indeed, under this condition, \cref{s:critical_radii_lens} implies that for every odd degree $m \leq 2n+1$,
 \[
 \firstdeath{m}{\rL^n_p} \leq \fillrad(\rL^n_p) < \tfrac{3\zeta_{2n+1}}{4} \leq \tfrac{\zeta_{2n+1}}{4} + \tfrac{\zeta_{m}}{2}.
 \]
+For even degrees, the corresponding inequalities in Desideratum~(2) remain additional conditions to be verified.
 
 \subsubsection{}\label{sss:choice of S_M}
 
-Let \(\cM\) be a closed connected Riemannian \(n\)-manifold of radius \(\pi\) satisfying our Desiderata.
-Let $\bS_{\cM}$ be the wedge sum of spheres of radius \(\pi\) with the same reduced homology groups as $\cM$.
+Let \(\cM\) be a closed connected Riemannian \(n\)-manifold of diameter \(\pi\) satisfying our Desiderata.
+Let $\bS_{\cM}$ be the wedge sum of spheres of diameter \(\pi\) with the same reduced homology groups as $\cM$.
 
 \theorem
 There is $\ell, m \in \N$ and $\theta \in \cO(\ell, m)$ such that
@@ -75,7 +86,7 @@ The proof of this theorem involves the following three steps, which we will resp
 \subsubsection{}\label{sss:db_upper_bound}
 
 \lemma
-If \(\opH_m(\cM)\) is non-zero, then
+If \(\dim \opH_m(\cM) = 1\), then
 \begin{equation}\label{eq:db_usual_upper_bound}
 	\di\Big(\rH^{\VR}_{m}(\bS_{\cM}),\, \rH^{\VR}_{m}(\cM)\Big)
 	\leq \max\big\{|\zeta_m - 2\firstdeath{m}{\cM} |,\, \tfrac{\pi - \zeta_n}{2}\big\}.
@@ -88,7 +99,7 @@ If \(\opH_m(\cM)\) is zero, a similar result holds, with the upper bound being $
 
 	To obtain an upper bound on the bottleneck distance, it suffices to construct a matching and calculate its cost.
 	Let \(\beta_m = 2\firstdeath{m}{\cM}\).
-	First, suppose \(\opH_m(\cM)\) is non-zero.
+	First, suppose \(\dim \opH_m(\cM) = 1\).
 	Consider the matching \(P\) between \(\Hbarc[\field]{m}{\bS_{\cM}}\) and \(\Hbarc[\field]{m}{\cM}\) such that the bar \((0, \zeta_m)\) from \(\Hbarc[\field]{m}{\bS_{\cM}}\) is matched to \((0, \beta_m)\) from \(\Hbarc[\field]{m}{\cM}\), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \(P\) satisfies
 	\begin{align*}
 		\cost(P)
@@ -103,7 +114,7 @@ If \(\opH_m(\cM)\) is zero, a similar result holds, with the upper bound being $
 \subsubsection{}\label{sss:db_theta_lower_bound}
 
 \lemma
-Let $\theta \in \cO(\ell, m)$ be such that $\img \theta_\cM$ is non-zero.
+Let $\theta \in \cO(\ell, m)$ with \(\ell \neq m\) be such that $\img \theta_\cM$ is non-zero.
 Then,
 \begin{equation}\label{eq:db_theta_lower_bound}
 	\di\big(\img^{\VR}_{\theta}(\bS_{\cM}), \img^{\VR}_{\theta}(\cM)\big)
@@ -180,7 +191,7 @@ For any $m \in \N$ and $\theta \in \cO(\ell, m)$ such that $\img \theta_\cM$ is 
 
 \subsection{Real projective spaces}\label{ss:distance_estimate_rpn}
 
-As stated earlier, the round \(\rp^n\) of radius \(\pi\) satisfies our Desiderata, so the discussions in the previous subsection apply.
+As stated earlier, the round \(\rp^n\) of diameter \(\pi\) satisfies our Desiderata, so the discussions in the previous subsection apply.
 Here we obtain a more precise estimate of the interleaving distances involved.
 Let \(\bS_{\rp^n} = \bS^1 \vee \dots \vee \bS^n\) as before.
 Then, we have the following result.
@@ -188,10 +199,10 @@ Then, we have the following result.
 \theorem
 (1) For any \(n,m \in \N\),
 \[
-\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) < \frac{\pi - \zeta_n}{2} < \frac{\pi}{4}.
+\di\Big(\rH^\VR_m(\bS_{\rp^n}),\, \rH^\VR_m(\rp^n)\Big) \leq \frac{\pi - \zeta_n}{2} < \frac{\pi}{4}.
 \]
 
-\noindent (2) For any \(n,m,k \in \N\) such that \(m \leq n\), \(k \leq \tfrac{n-1}{2}\), and \(\binom{m-k}{k}\) is odd:
+\noindent (2) For any \(n,m,k \in \N\) such that \(0 < k \leq m \leq n\) and \(\binom{m-k}{k}\) is odd:
 \[
 \di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big) \geq \frac{\pi}{3},
 \]
@@ -213,8 +224,8 @@ where $\Sq^k$ lands in degree \(m\).
 	When $m > n$, recall from \cref{fig:barcodes_vs} that bars in the $m$-th persistent homology of $\bS_{\rp^n}$ (if any) are contained in $(\zeta_n, \pi)$, and from \cref{fig:sq barcodes} that bars in the $m$-th persistent homology of $\rp^n$ (if any) are contained in $(\tfrac{2\pi}{3}, \pi)$.
 	Thus, the interleaving distance between these persistent homology groups is at most half the maximum bar length (with all bars unmatched), which is no larger than $\max\{\tfrac{\pi - \zeta_n}{2}, \tfrac{\pi}{6}\} \leq \tfrac{\pi - \zeta_n}{2}$ since $\zeta_n \leq \tfrac{2\pi}{3}$.
 
-	(2) With $n,k,\Sq^k$ satisfying the required conditions, we have shown in \cref{s:critical_radii_rpn} that
-	$\firstdeath{\Sq^k}{\rp^n} = \tfrac{2\pi}{3}$.
+	(2) With $n,m,k,\Sq^k$ satisfying the required conditions, we have shown in \cref{s:critical_radii_rpn} that
+	$\firstdeath{\Sq^k}{\rp^n} = \tfrac{\pi}{3}$.
 	Applying \cref{eq:db_theta_lower_bound}, we have
 	\[\di\Big(\img_{\Sq^k}^\VR(\bS_{\rp^n}),\, \img_{\Sq^k}^\VR(\rp^n)\Big)
 	\geq \min\Big\{\tfrac{\pi}{3},\, \zeta_n\Big\}
@@ -228,4 +239,3 @@ For comparison, applying Item~(1) together with the stability theorem for persis
 This result demonstrates the stronger distinguishing power of persistent cohomology operations compared to persistent homology.
 We do not claim that the bound \(\frac{\pi}{6}\) surpasses all known lower bounds.
 For example, the diameter distance \(\frac{1}{2} \lvert \operatorname{diam}(\rp^n) - \operatorname{diam}(\bS_{\rp^n}) \rvert = \frac{1}{2} \lvert \pi - 2\pi \rvert = \frac{\pi}{2}\) is greater.
-

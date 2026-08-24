@@ -17,7 +17,7 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 	\end{cases}\)
 	\item \(\firstdeath{\Sq^k}{\rp^n} =
 	\begin{cases}
-		\tfrac{\pi}{3} & k \leq \frac{n-1}{2} \text{ and } \binom{m-k}{k} \text{ is odd},\\
+		\tfrac{\pi}{3} & m \leq n \text{ and } \binom{m-k}{k} \text{ is odd},\\
 		\hfil 0 & \text{otherwise}. \\
 	\end{cases}\)
 \end{enumerate}
@@ -40,9 +40,10 @@ For \(k,n,m \in \N\) and \(\Sq^k \in \cO(m-k, m)\) we have:
 	As $\rp^n$ is the quotient of the $n$-sphere with radius $2$,
 	\[\firstdeath{m}{\rp^n} = \firstdeath{m}{\bS^{n}(2)_{\rC_2}} = 2\cdot \firstdeath{m}{\bS^{n}_{\rC_2}} = \frac{\pi}{3}.\]
 
-	\smallskip (3) We only need a proof for the case $k \leq \frac{n-1}{2}$ and $\binom{m-k}{k}$ odd, since \(\Sq^k = 0\) otherwise.
-	Because $\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$.
-	Recall from \cref{sss:cohomology_rpn} the cohomology algebra \(\rH^\ast(\rp^n; \Ftwo) \cong \frac{\Ftwo[\sigma]}{(\sigma^{n+1} = 1)}.\)
+	\smallskip (3) If $m > n$ or $\binom{m-k}{k}$ is even, then \(\img((\Sq^k)_{\rp^n}) = 0\).
+	Assume therefore that $m \leq n$ and $\binom{m-k}{k}$ is odd.
+	Because $2\crit(\rp^n)=\frac{2\pi}{3}$, $\VR_r(\rp^n)$ retains the homotopy type of $\rp^n$ for $r \in (0,\tfrac{2\pi}{3})$.
+	Recall from \cref{sss:cohomology_rpn} the cohomology algebra \(\rH^\ast(\rp^n; \Ftwo) \cong \frac{\Ftwo[\sigma]}{(\sigma^{n+1})}.\)
 	Thus, $\Sq^k(\sigma^{m-k}) = \sigma^{m}$ generates a bar in the $\img_{\Sq^k}$-barcode that is born at $0$ and stays alive until the non-trivial class $\sigma^{m}$ dies at $\tfrac{2\pi}{3}$.
 	Thus, $\firstdeath{\Sq^k}{\rp^n} \leq \tfrac{\pi}{3}$.
 	On the other hand, $\firstdeath{\Sq^k}{\rp^n} \geq \crit(\rp^n) = \tfrac{\pi}{3}$.
@@ -63,12 +64,13 @@ Using the above values, the estimates resulting from the analysis of \cref{ss:ba
 \subsection{Lens spaces}\label{s:critical_radii_lens}
 
 Much less information is known about the critical radii of Lens spaces (\cref{sss:cohomology_lens}).
-In this section, we establish a relationship between the filling radius and the homological radii of Lens spaces, assuming certain monotonicity condition on the former.
-We are interested in spheres \(\bS^{2n+1}(q)\) of radius \(q\) with $q$ an odd prime, so the quotient Lens space \(\rL_q^n\) has the same diameter as the unit sphere \(\bS^{2n+1}\).
+In this section, we establish a relationship between the filling radius and the homological radii of Lens spaces, assuming a monotonicity condition on the former.
+For $n \geq 1$, the quotient of the unit sphere \(\bS^{2n+1}\) by \(\rC_q\), with $q$ an odd prime, has diameter \(\frac{\pi}{2}\).
+We equip every \(\rL_q^n\) with the quotient metric induced by \(\bS^{2n+1}(2)\); for $n \geq 1$, this gives \(\diam(\rL_q^n) = \pi\).
 The ground field here is $\bF_q$.
 
 \lemma
-For fixed $n\in \N$, if $\fillrad(\rL^1_q) \leq \dotsb \leq \fillrad(\rL^n_q)$, then for any degree $m\leq 2n+1$,
+For fixed $n \geq 1$, if $\fillrad(\rL^0_q) \leq \dotsb \leq \fillrad(\rL^n_q)$, then for any odd degree $m$ with $1 \leq m \leq 2n+1$,
 \[
 \firstdeath{m}{\rL^n_q} \leq \fillrad(\rL^n_q).
 \]
@@ -76,11 +78,11 @@ For fixed $n\in \N$, if $\fillrad(\rL^1_q) \leq \dotsb \leq \fillrad(\rL^n_q)$, 
 \begin{proof}
 	We apply an argument similar to that in the second part of the proof of \cref{s:critical_radii_rpn}.
 	By \cref{ss:system VR compatible}, the $\rC_q$-action on the system $\bS^1 \subset \bS^3 \subset \dotsb \subset \bS^{2n+1}$ of unit spheres is \(\VR\)-compatible.
-	This, combined with the assumption that $\fillrad\big(\bS^{2\tilde{n}+1}_{\rC_q}\big) = \tfrac{1}{q} \fillrad(\rL^{\tilde{n}}_q)$ is non-decreasing in $\tilde{n}$ for all $1\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any degree $m \leq 2n+1$,
+	This, combined with the assumption that $\fillrad\big(\bS^{2\tilde{n}+1}_{\rC_q}\big) = \tfrac{1}{2} \fillrad(\rL^{\tilde{n}}_q)$ is non-decreasing in $\tilde{n}$ for all $0\leq \tilde{n} \leq n$, meets the conditions of \cref{ss:fundamental_lemma}, implying that for any odd degree $m$ with $1 \leq m \leq 2n+1$,
 	\[
 	\mathrm{Rad}_m\big(\bS^{2n+1}_{\rC_q}\big) \leq \fillrad\big(\bS^{2n+1}_{\rC_q}\big)
 	\]
-	Consequently, for any degree $m \leq 2n+1$, we obtain
+	Consequently, for any such odd degree $m$, we obtain
 	\[
 	\firstdeath{m}{\rL^n_q} \leq \fillrad(\rL^n_q). \qedhere
 	\]

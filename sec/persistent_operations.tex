@@ -6,23 +6,24 @@
 
 A cohomology operation $\theta \in \cO(\kk,m; \kk,n)$ is \defn{linear} if \(\k\) is a field and the map \(\theta_{\cX} \colon \rH^m(\cX; \k) \to \rH^n(\cX; \k)\) is a linear transformation for any cellular space \(\cX\).
 We denote the subset of $\cO(\kk,m; \kk,n)$ containing the linear cohomology operations by $\cO(m,n;\k)$ and omit the field \(\k\) from the notation when no confusion arises from doing so.
-For any prime $p$, the field $\Fp$ is additively generated, so all cohomology operations in $\cA_p$ are linear.
+Since every additive map between \(\mathbb F_p\)-vector spaces is automatically \(\mathbb F_p\)-linear, and since the Steenrod operations are additive \cite[\S4.L]{hatcher2000}, every homogeneous operation in \(\cA_p\) of degree \(d\) determines an element of \(\cO(m,m+d;\mathbb F_p)\) for every \(m\).
 
 A linear cohomology operation \(\theta \in \cO(\ell, m)\) induces a morphism of persistence modules, denoted \(\theta_X \colon \rH^\ell(X) \to \rH^m(X)\), for any cellular \(\R\)-space \(X\).
 The \defn{image} and \defn{kernel} of $\theta_X$, denoted \defn{$\img_\theta(X)$} and \defn{$\ker_\theta(X)$} respectively, are the persistence modules
 \begin{align*}
 	\img_\theta(X)_r &= \img((\theta_X)_r)\,, &
 	\ker_\theta(X)_r &= \ker((\theta_X)_r)\,, \\
-	\img_\theta(X)_{s,t} &= \rH^m(X)_{s,t}\big|_{\img(\theta_s)}\,, &
-	\ker_\theta(X)_{s,t} &= \rH^\ell(X)_{s,t}\big|_{\ker(\theta_s)}\,,
+	\img_\theta(X)_{s,t} &= \rH^m(X)_{s,t}\big|_{\img(\theta_t)}\,, &
+	\ker_\theta(X)_{s,t} &= \rH^\ell(X)_{s,t}\big|_{\ker(\theta_t)}\,,
 \end{align*}
 where \(r, s, t \in \R\) and \(s \leq t\).
+Here \(\rH^j(X)_{s,t}\) denotes the contravariant map \(\rH^j(X_t) \to \rH^j(X_s)\).
 
 Since the identity and zero maps are linear cohomology operations, for any \(m \in \N\) we have
 \[
 \img_\id(X) \cong \ker_0(X) \cong \rH^m(X),
 \]
-which shows that these invariants are strictly more general than persistent cohomology.
+which shows that these invariants include persistent cohomology as a special case.
 
 \subsubsection{}\label{ss:theta-modules-q-tame}
 
