@@ -103,7 +103,7 @@ If \(\opH_m(\cM)\) is zero, a similar result holds, with the upper bound being $
 	Consider the matching \(P\) between \(\Hbarc[\field]{m}{\bS_{\cM}}\) and \(\Hbarc[\field]{m}{\cM}\) such that the bar \((0, \zeta_m)\) from \(\Hbarc[\field]{m}{\bS_{\cM}}\) is matched to \((0, \beta_m)\) from \(\Hbarc[\field]{m}{\cM}\), with all other bars remaining unmatched. Using the estimates from \cref{fig:barcodes_general} and \cref{fig:barcodes_vs}, we find that the cost of \(P\) satisfies
 	\begin{align*}
 		\cost(P)
-		= & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2},\, \frac{\pi - 2\crit(\cM)}{2}\Big\} \\
+		\leq & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2},\, \frac{\pi - 2\crit(\cM)}{2}\Big\} \\
 		= & \max\Big\{|\zeta_m - \beta_m|,\, \frac{\pi - \zeta_n}{2}\Big\} \quad \text{(since \(\zeta_n \leq 2\crit(\cM)\))}.
 	\end{align*}
 	Thus, \cref{eq:db_usual_upper_bound} follows.
@@ -135,7 +135,7 @@ Then,
 	There are two cases to analyze.
 	If $(0,\gamma_\theta )$ is unmatched in $Q$, then $\cost(Q)$ is at least $ \tfrac{\gamma_\theta }{2}$.
 	If $(0,\gamma_\theta )$ is matched to some bar $(a,b) \in \thetabarc{\bS_{\cM}}$, then
-	$\cost(Q) = \|(0,\gamma_\theta ) - (a,b)\|_\infty \geq a \geq \zeta_n$, because $(a,b) \subset (\zeta_n, \pi)$.
+	$\cost(Q) \geq \|(0,\gamma_\theta ) - (a,b)\|_\infty \geq a \geq \zeta_n$, because $(a,b) \subset (\zeta_n, \pi)$.
 	Thus, any matching $Q$ must satisfy $\cost(Q) \geq \min\{\tfrac{\gamma_\theta }{2}, \zeta_n\}$, which proves \cref{eq:db_theta_lower_bound}.
 \end{proof}
 
