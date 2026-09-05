@@ -1,0 +1,69 @@
+AGT 250908-Zhou-2 — Change List
+Persistent cohomology operations and Gromov--Hausdorff estimates
+Anibal M. Medina-Mardones and Ling Zhou
+
+This list compares the accepted version (6e23f50a836f2437f624fc83c1c04cf8bfd0df53) with the final manuscript (8158217da5eaf78cc04dbf55e42412e372ea8442). Section numbers refer to the final manuscript. Mathematical notation below is written in plain text with LaTeX notation where needed.
+
+1. Cohomology operations (Sections 3.1–3.3)
+
+1.1. Assumed the group pi to be abelian in the discussion of Eilenberg–MacLane spaces, rather than imposing this assumption only for n >= 2.
+1.2. Rephrased the convention on reduced homology and cohomology as applying unless otherwise indicated. Explicitly specified unreduced cohomology for the projective-space and lens-space examples.
+1.3. Corrected the input fundamental class in the representability formula from g*(iota_m) to g*(iota_n).
+1.4. Described the suspension isomorphism as a natural isomorphism in reduced cohomology, removing the incorrect assertion that it is induced by the inclusion into the suspension.
+1.5. Corrected the parameter order for a stable operation from O(n,pi;n+k,G) to O(pi,n;G,n+k).
+1.6. Replaced the colimit description of stable operations by the inverse limit lim_n H^{n+k}(K(pi,n);G). Specified the transition maps as pullback along s_n: Sigma K(pi,n) -> K(pi,n+1), followed by the inverse suspension isomorphism.
+1.7. Replaced the disjoint union of the graded groups of stable operations by their direct sum in the definition of the graded algebra. Standardized the source notation for the superscript “st”.
+1.8. Changed the punctuation at the ends of the second and third Steenrod-square axioms from full stops to commas.
+
+2. Persistent theta-modules (Section 3.4)
+
+2.1. Replaced the brief assertion of linearity of Steenrod operations over F_p by an explanation that additive maps of F_p-vector spaces are F_p-linear. Specified that a homogeneous operation of degree d gives an operation from degree m to degree m+d, and added the citation to Hatcher, Section 4.L.
+2.2. Corrected the restrictions defining the structure maps of the image and kernel modules: Im(theta_s) and Ker(theta_s) were replaced by Im(theta_t) and Ker(theta_t), respectively. Added the explicit convention that H^j(X)_{s,t}: H^j(X_t) -> H^j(X_s) is contravariant for s <= t. The objectwise image and kernel formulas are unchanged.
+2.3. Replaced “strictly more general than persistent cohomology” by “include persistent cohomology as a special case”.
+
+3. Products (Section 3.5)
+
+3.1. Added the hypothesis that at least one of the two pointed cellular R-spaces takes values in finite-type spaces in the product lemma.
+3.2. Specified that the total Steenrod operation acts on unreduced cohomology, both in the product lemma and in the Vietoris–Rips product theorem. Replaced “total Steenrod reduced power” by “total Steenrod power”.
+3.3. Expanded the proof: the Cartan formula identifies the operation on a product with the tensor product of the operations; the image formula follows from the image formula for tensor products of linear maps over a field. For the kernel formula, the total operation is injective because its degree-zero component is the identity and its other components raise degree, so all three kernels are zero. Stated that the identifications are natural in the filtration parameter.
+
+4. Critical radii and spherical quotients (Section 4)
+
+4.1. In Section 4.1.3, removed the assertion that the choice of coefficient field does not affect the filling radius. Retained the statement that the m-homological radius may depend on the coefficient field, and corrected “Throughtout” to “Throughout”.
+4.2. In Section 4.3.4, corrected the sphere indexing in the description of the wedge-sum barcodes from S^{u_i} to S^i. The following multiplicity statement remains unchanged: an m-sphere contributes the bar (0,zeta_m) with multiplicity u_m.
+4.3. In Section 4.4.1, corrected Benjamin Barham's name to Liam Barham and added a reference to his talk “Group Actions on Metric Spaces”, presented at the 58th Spring Topology and Dynamics Conference on 8 March 2025, in the discussion of the counterexample and stronger diameter condition.
+4.4. In Section 4.6, replaced the condition k <= (n-1)/2 in the formula for the Sq^k-image radius by m <= n, retaining the condition that binom(m-k,k) is odd. Revised the corresponding proof to state the zero-image cases explicitly.
+4.5. In that proof, corrected the scale relation from crit(RP^n)=2pi/3 to 2 crit(RP^n)=2pi/3. Corrected the cohomology-ring relation from sigma^{n+1}=1 to sigma^{n+1}=0, written as the quotient by (sigma^{n+1}).
+4.6. In Section 4.7, corrected the lens-space metric normalization: the unit-sphere quotient has diameter pi/2 for n >= 1, and the lens spaces are equipped with the quotient metric from a sphere of radius 2, giving diameter pi. This replaces the former radius-q normalization.
+4.7. Restricted the lens-space homological-radius lemma to odd degrees 1 <= m <= 2n+1. Extended the monotonicity assumption to start with L_q^0, rather than L_q^1. In the proof, changed the filling-radius scaling factor from 1/q to 1/2 and the index range from 1 <= n-tilde <= n to 0 <= n-tilde <= n. Made the corresponding odd-degree restrictions throughout the proof. Also corrected “certain monotonicity condition” to “a monotonicity condition”.
+
+5. Gromov–Hausdorff estimates (Section 5)
+
+5.1. Added dim H_m(M)=1 to Desideratum (3), alongside the existence of a nonzero image of an operation between distinct degrees.
+5.2. Corrected “radius pi” to “diameter pi” in the descriptions of the projective spaces, lens spaces, the manifold M, and the constituent spheres of its comparison wedge.
+5.3. Replaced the projective-space verification of Desideratum (3) by the explicit operation Sq^1: H^1(RP^n;F_2) -> H^2(RP^n;F_2) for n>1, with Sq^1(sigma)=sigma^2 nonzero and one-dimensional target homology.
+5.4. Replaced the suggested Steenrod reduced power for lens spaces by the Bockstein beta: H^1(-;F_p) -> H^2(-;F_p), and specified that the target homology is one-dimensional, for n >= 1.
+5.5. Revised the conditional verification of Desideratum (2) for lens spaces to apply only in odd degrees, with the filling-radius chain beginning at L_p^0. Explicitly stated that the even-degree inequalities remain additional conditions to be verified. Desideratum (1) remains unproven for lens spaces.
+5.6. In Section 5.1.3, strengthened the hypothesis of the ordinary persistent-homology upper-bound lemma from H_m(M) nonzero to dim H_m(M)=1, and made the same change in its proof.
+5.7. In that proof, changed the first equality for cost(P) to an upper bound (<=). The subsequent simplification of the upper bound is unchanged.
+5.8. In Section 5.1.4, added the hypothesis ell != m to the operation used in the lower-bound lemma. In the matched-bar case, changed cost(Q)=||(0,gamma_theta)-(a,b)||_infinity to cost(Q)>=||(0,gamma_theta)-(a,b)||_infinity.
+5.9. In Section 5.2, changed the first strict inequality in the ordinary persistent-homology estimate to a non-strict inequality: d_I <= (pi-zeta_n)/2 < pi/4.
+5.10. In the operation-sensitive estimate, replaced the restrictions m <= n and k <= (n-1)/2 by 0 < k <= m <= n, retaining the odd-binomial-coefficient condition. Updated the proof to include m among the parameters and corrected the Sq^k-image radius from 2pi/3 to pi/3. The stated lower bound pi/3 for the interleaving distance is unchanged.
+
+6. Acknowledgements and bibliography
+
+6.1. Changed the heading “Acknowledgment” to “Acknowledgements”. Corrected Benjamin Barham's name to Liam Barham in the acknowledgements and in the existing personal-communication bibliography entry.
+6.2. Added the bibliography entry for Liam Barham's 2025 talk described in item 4.3, including its event URL and access date.
+
+7. Citation style and minor presentation changes
+
+7.1. Replaced “e.g.” by “eg” in Section 4.1; “i.e.” by “ie” in Sections 2.3 and 3.3; and “cf.” by “cf” in Section 4.5.
+7.2. Expanded abbreviated citation locators as follows (reference titles/authors and the cited result numbers are otherwise unchanged):
+  - Section 2: p. 1508 -> page 1508 (Bubenik et al.); Thm. 5.14 -> Theorem 5.14 (Chazal et al.); Prop. 5.1 -> Proposition 5.1 (Chazal et al.); Thm. 5.2 -> Theorem 5.2 (Lim et al.); Thm. 1.9 & 1.10 -> Theorems 1.9 and 1.10 (Blumberg and Lesnick).
+  - Section 3.5: Cor. 2.25. -> Corollary 2.25 (Hatcher); Prop. 1 -> Proposition 1 (Adamaszek et al.); Thm. 3.15 -> Theorem 3.15 (Hatcher); Cor. 2.7 -> Corollary 2.7 (May); Prop. 10.2 -> Proposition 10.2 (Adamaszek and Adams); Thm. 6.1(1) -> Theorem 6.1(1) (Lim et al.).
+  - Section 4.1: Thm. 3.5 -> Theorem 3.5 (Hausmann); Thm. 4.1 -> Theorem 4.1 (Lim et al., both occurrences); Defn. 9.44 -> Definition 9.44 (Lim et al.).
+  - Section 4.3: Cor. 3 -> Corollary 3 (Gillespie); Thm. 7.1 -> Theorem 7.1 (Lim et al., both occurrences).
+  - Sections 4.4–4.5: Prop. 3.5 -> Proposition 3.5 and Cor. 4.3 -> Corollary 4.3 (Adams et al.); Prop. 1.40 -> Proposition 1.40 and Prop. 4.1 -> Proposition 4.1 (Hatcher).
+  - Section 4.6: Thm. 4.5 -> Theorem 4.5 (Adams et al.).
+  - Related work: Prop. 9.38 -> Proposition 9.38 (Lim et al.).
+7.3. Source-only whitespace changes include final newlines and removal of a trailing blank line. The automatically generated manuscript date and pagination reflect recompilation of the final source.

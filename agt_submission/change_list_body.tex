@@ -1,0 +1,95 @@
+\section*{Major changes}
+\begin{enumerate}
+\item \textbf{Cohomology operations (\S3.1--3.3).}
+\begin{itemize}
+\item In \S3.1, added the assumption that $\pi$ is abelian also for $n=1$.
+\item In \S3.3, corrected the description of the suspension isomorphism as a natural isomorphism, rather than a map induced by inclusion into the suspension.
+\item Corrected the description of stable operations from a colimit to an inverse limit and specified its transition maps.
+\item Corrected the definition of the graded algebra of stable operations by replacing the disjoint union with a direct sum.
+\item In the projective- and lens-space examples, specified that cohomology is unreduced.
+\end{itemize}
+
+\item \textbf{Persistent operations (\S3.4).}
+Explained why additive Steenrod operations over $\mathbb F_p$ are linear, citing Hatcher, \S4.L.
+
+\item \textbf{Product formulas (\S3.5).}
+\begin{itemize}
+\item In the product lemma, added the hypothesis that at least one factor takes values in finite-type spaces.
+\item In the lemma and the Vietoris--Rips product theorem, specified that the total Steenrod operation acts on unreduced cohomology.
+\item Expanded the proof of the image formula using the Cartan formula and the image of a tensor product.
+\item Added the justification for the kernel formula: the total operation is injective, so all three kernels are zero.
+\item Clarified that the identifications are natural in the filtration parameter.
+\end{itemize}
+
+\item \textbf{Critical radii (\S4.1, 4.6).}
+\begin{itemize}
+\item In \S4.1.3, removed the incorrect assertion that filling radius is independent of the coefficient field.
+\item In item (3) of the lemma in \S4.6, corrected the nonzero-image condition from $k\leq(n-1)/2$ to $m\leq n$, retaining the condition that $\binom{m-k}{k}$ is odd.
+\item In the proof of item (3), made the zero-image cases explicit: $m>n$ or $\binom{m-k}{k}$ even.
+\end{itemize}
+
+\item \textbf{Lens spaces (\S4.7 and \S5.1).}
+\begin{itemize}
+\item In \S4.7, corrected the metric normalization by replacing the radius-$q$ sphere with the radius-$2$ sphere, giving the quotient diameter $\pi$ for $n\geq1$.
+\item In the lemma, restricted the conclusion from all degrees $m\leq2n+1$ to odd degrees $1\leq m\leq2n+1$.
+\item Extended the filling-radius monotonicity assumption to begin with $L_q^0$, rather than $L_q^1$.
+\item In the proof, corrected the scaling factor from $1/q$ to $1/2$ and the starting index from $1$ to $0$.
+\item In \S5.1, restricted the conditional verification of Desideratum~(2) to odd degrees and stated that the even-degree inequalities remain to be verified.
+\end{itemize}
+
+\item \textbf{Hypotheses for the distance estimates (\S5.1).}
+\begin{itemize}
+\item Added $\dim H_m(M)=1$ to Desideratum~(3).
+\item In the upper-bound lemma (\S5.1.3), strengthened the hypothesis from $H_m(M)\neq0$ to $\dim H_m(M)=1$.
+\item In the lower-bound lemma (\S5.1.4), added the hypothesis $\ell\neq m$.
+\item For real projective spaces, replaced the verification of Desideratum~(3) by the explicit choice $\mathrm{Sq}^1:H^1\to H^2$ for $n>1$.
+\item For lens spaces, corrected the choice of operation in Desideratum~(3) from a reduced power to the Bockstein $H^1\to H^2$ for $n\geq1$.
+\item In both verifications, specified that the target homology is one-dimensional.
+\end{itemize}
+
+\item \textbf{Bounds and parameter ranges (\S5.2).}
+\begin{itemize}
+\item In item (1) of the theorem, corrected the first inequality from $<$ to $\leq$.
+\item In item (2) of the theorem, corrected the parameter restrictions from $m\leq n$ and $k\leq(n-1)/2$ to $0<k\leq m\leq n$, retaining the condition that $\binom{m-k}{k}$ is odd.
+\end{itemize}
+\end{enumerate}
+
+\section*{Minor changes}
+\begin{itemize}
+\item \textbf{Typos.}
+\begin{itemize}
+\item Corrected $\iota_m$ to $\iota_n$ in the input of the representability formula (\S3.2).
+\item Corrected the parameter order to $\mathcal O(\pi,n;G,n+k)$ in the definition of stable operations (\S3.3).
+\item Corrected $\operatorname{Im}(\theta_s)$ and $\operatorname{Ker}(\theta_s)$ to $\operatorname{Im}(\theta_t)$ and $\operatorname{Ker}(\theta_t)$ in the structure-map restrictions, and clarified the direction $H^j(X_t)\to H^j(X_s)$ (\S3.4).
+\item Corrected $S^{u_i}$ to $S^i$ in the wedge-sum barcode description (\S4.3).
+\item Corrected $\operatorname{crit}(\mathbb{RP}^n)=2\pi/3$ to $2\operatorname{crit}(\mathbb{RP}^n)=2\pi/3$ (\S4.6).
+\item Corrected the cohomology-ring relation from $\sigma^{n+1}=1$ to $\sigma^{n+1}=0$ (\S4.6).
+\item Corrected radius $\pi$ to diameter $\pi$ in \S5.
+\item Corrected the first equality for $\operatorname{cost}(P)$ to $\leq$ (\S5.1.3).
+\item Corrected the equality between $\operatorname{cost}(Q)$ and the cost of a single matched pair to $\geq$ (\S5.1.4).
+\item Corrected the $\mathrm{Sq}^k$-image radius used in the proof from $2\pi/3$ to $\pi/3$ (\S5.2).
+\end{itemize}
+
+\item \textbf{Attribution and reference.}
+\begin{itemize}
+\item Corrected Benjamin Barham's name to Liam Barham in the acknowledgements and quotient discussion.
+\item Added his 2025 talk, \emph{Group Actions on Metric Spaces}, as a reference for the counterexample and stronger diameter condition (\S4.4).
+\end{itemize}
+
+\item \textbf{Wording.}
+\begin{itemize}
+\item Clarified that the reduced-cohomology convention applies unless otherwise indicated (\S3.1).
+\item Replaced ``strictly more general than persistent cohomology'' by ``include persistent cohomology as a special case'' (\S3.4).
+\item Replaced ``total Steenrod reduced power'' by ``total Steenrod power'' in the product statements (\S3.5).
+\item Corrected ``Throughtout'' to ``Throughout'' (\S4.1.3) and ``certain monotonicity condition'' to ``a monotonicity condition'' (\S4.7).
+\end{itemize}
+
+\item \textbf{Journal style.}
+\begin{itemize}
+\item Changed the heading ``Acknowledgment'' to ``Acknowledgements''.
+\item Replaced ``e.g.'', ``i.e.'', and ``cf.'' by ``eg'', ``ie'', and ``cf''.
+\item Expanded ``Thm.'', ``Prop.'', ``Cor.'', ``Defn.'', and ``p.'' to ``Theorem'', ``Proposition'', ``Corollary'', ``Definition'', and ``page'' in citation locators.
+\item Replaced ``Thm.~1.9 \& 1.10'' by ``Theorems~1.9 and~1.10'' (\S2.4).
+\item Replaced the full stops at the ends of the second and third Steenrod-square axioms by commas (\S3.3), and removed the extra full stop after ``2.25'' in the citation to Hatcher (\S3.5).
+\end{itemize}
+\end{itemize}

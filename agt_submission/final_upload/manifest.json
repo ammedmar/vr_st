@@ -1,0 +1,37 @@
+{
+  "accepted_commit": "6e23f50a836f2437f624fc83c1c04cf8bfd0df53",
+  "current_commit": "8158217da5eaf78cc04dbf55e42412e372ea8442",
+  "source_sha256": {
+    "aux/bibliography.bib": "4ee98cba57024cc07aec8115fd8fc66e54fe73ca0007501fa9bf110b30b61a76",
+    "aux/commands.tex": "c820b53ef1b23907bd56665f4ec63f2757d01c808648d967dd480425bafa829f",
+    "aux/packages.tex": "9b3ae0a4c64206eed2aa5bb08a920a75e45e322970f525f5544d9fb792412982",
+    "aux/style.tex": "506b0c6c04fd105642d55ec38b3ab4d46d782ff870869f799c155b0f63b111b0",
+    "aux/usualcmds.tex": "41d1be765db7fb611ac29c96afad6f3f2da2ec1a91c1b04809bbfa6fc19a4d2b",
+    "sec/abstract.tex": "9292b3bd008c101386a999ebd5bc2d37a7a46d6aa339f7d8dbc21fb6dc1bc7b8",
+    "sec/acknowledgment.tex": "95a0c205cd3402e890ecbcd3d1c5ec75c6646ba27b0200b279a6f05a2ba9e70b",
+    "sec/bottleneck.tex": "61aac65250e0809d4c9194fc6eeb64f0e488a8fa1563dbdc9a65e66339f6d73b",
+    "sec/critical.tex": "42d8e0aeefeee4ebfe24ad2a6bfa744e613474bce2e55e67460a82ec04daf60f",
+    "sec/estimates.tex": "59d38469da6818acca04255b5228f328a162ee378fdeabbf14afe17d8046ae88",
+    "sec/fig_barcodes_general.tex": "b2bd542a353339da58a125301e48581d78cd7ec69f9d857c634f0fc3c5e6c30a",
+    "sec/fig_barcodes_rpn.tex": "92af5954b76e07689334e6f32917f97bc1adde225d8e8ca2ee646f9c87b82349",
+    "sec/fig_barcodes_spheres.tex": "dcf0c5c5c4fbcb9d9e014d4d933a6e4932d4e17451cc8f6475acf64ede58863b",
+    "sec/introduction.tex": "36c91f46ba698ec22e3b3303aeef70a96c3fc47e811dc78a1f05617f520ad946",
+    "sec/operations.tex": "8fd4571696f65fd27d8b6cadebf265be4b765844d90d26e2c2b9c94016696c52",
+    "sec/persistence.tex": "27cca89ec02df3d136875d4284e0c3d03669a0989271056b2a172f6f3abd6c5d",
+    "sec/persistent_operations.tex": "067f2abfe726532b60f16dc53b9b518d63f8b02a820f0851f344715acec75403",
+    "sec/projective.tex": "d58dddc40fe79c2dbf8f7809d903478700b4eb18a0d09f9741ae2a51e56ca611",
+    "sec/quotients.tex": "2be6c6587a4f85a37baef39a1992c3f6dfb67098685975ec0709330160f04065",
+    "sec/related.tex": "82a1845cdcd8c0755498fada0c18637b66db5832a9b8e9b1162bcc2c89f745cd",
+    "sec/spheres.tex": "a9c48b1181daa9d787bae8cd1b7fc3448849108efd829e1479b9e8ffac067825",
+    "sec/stability.tex": "590163d4dedb92ed69d5f19c5f34018da5955262ce835beee05fecf06facd5aa",
+    "sec/static_operations.tex": "e3a683cf7d55a8fe68ee20c080a309412da9ae187b6a336ebc3bf0be94b5ab41",
+    "sec/sums_products.tex": "2a3270b5e5b0e07ce713b2b4468ec6dd1baf0527dfe914dfe61a7bd828e88f0a",
+    "vr_st.bbl": "e807fa8d0060e4f98b39f8256b13df9f5b7bc4e8fd875d2b96c441044c4ecfbf",
+    "vr_st.tex": "e8968e6b5a27196d66fd4c92bd560afb9d4af5aea396ebb4aaa8b73d2ec023ec"
+  },
+  "upload_sha256": {
+    "article.pdf": "6e62b761db49e60bcfc0f0e4523684c90744e96d83e6ea9e6580b4fd3994f0ce",
+    "change_list.txt": "eb606d53c2f868e757d1b4a694a784af9896f78e105935ceda8c84a113d59b49",
+    "article_sources.zip": "8dcc0748df8109806f91ba6d5b728ce9c8b584776b89dffb1b67e209373dbde6"
+  }
+}
